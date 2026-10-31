@@ -197,6 +197,11 @@
     } catch (e) { console.warn("[webblox] diagnostics failed", e); }
   };
   const reloadOnce = (why) => {
+    if (tries() >= 3 && /; wv\)/.test(navigator.userAgent)) {
+      console.error("[webblox] this is an Android WebView (an in-app browser), which does not support cross-origin isolation. Open " + location.origin + location.pathname + " in the real Chrome app instead.");
+      const el = document.getElementById("wb-status"); if (el) el.textContent = "In-app browser detected: open this page in the Chrome app (WebViews can't run Roblox's threaded wasm).";
+      return;
+    }
     if (tries() >= 3) diagnose();
     if (tries() >= 3) return console.error("[webblox] still not cross-origin isolated after " + tries() + " reloads (" + why + "); is coi-sw.js served next to index.html? Try a normal (non-hard) refresh or clear site data.");
     bump(); location.reload();
