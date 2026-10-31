@@ -47,8 +47,8 @@ test("provisional wisp is set synchronously (libcurl needs one before its wasm f
   assert.equal(url, FALLBACK);
 });
 
-test("start url defaults to placeId 187909 and only accepts numeric ids", () => {
-  assert.equal(startUrlFor(null), "https://play.roblox.com/games/start?placeId=187909");
+test("start url defaults to placeId 10879318443 and only accepts numeric ids", () => {
+  assert.equal(startUrlFor(null), "https://play.roblox.com/games/start?placeId=10879318443");
   assert.equal(startUrlFor("920587237"), "https://play.roblox.com/games/start?placeId=920587237");
-  assert.equal(startUrlFor("1&x=2"), "https://play.roblox.com/games/start?placeId=187909");
+  assert.equal(startUrlFor("1&x=2"), "https://play.roblox.com/games/start?placeId=10879318443");
 });

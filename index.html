@@ -4,6 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WebBlox</title>
+<script>
+// Cross-origin isolation (needed for the Roblox client's SharedArrayBuffer/pthreads). If the host already sends
+// COOP/COEP this does nothing; on hosts that can't (GitHub Pages) a same-origin service worker adds them and the
+// page reloads once. Only runs as a top-level page: an embedding page has to send the headers itself.
+(() => {
+  if (window.crossOriginIsolated || window !== window.top) return;
+  const KEY = "webblox_coi_reloaded";
+  if (!window.isSecureContext || !("serviceWorker" in navigator)) return console.warn("[webblox] cannot enable cross-origin isolation here (needs HTTPS + service workers)");
+  navigator.serviceWorker.register(new URL("coi-sw.js", document.baseURI).href)
+    .then(() => navigator.serviceWorker.ready)
+    .then(() => {
+      if (window.crossOriginIsolated) return;
+      try { if (sessionStorage.getItem(KEY) === "1") return console.error("[webblox] still not cross-origin isolated after reload; is coi-sw.js served next to index.html?"); sessionStorage.setItem(KEY, "1"); } catch { return; }
+      location.reload();
+    })
+    .catch((e) => console.warn("[webblox] isolation worker failed", e));
+})();
+</script>
+
 <style>
   html, body { margin: 0; height: 100%; background: #111; color: #ddd; font-family: system-ui, sans-serif; overflow: hidden; }
   #wb-boot { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; }
