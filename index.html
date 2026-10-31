@@ -35,11 +35,11 @@
   };
   (async () => {
     say("Checking for updates…");
-    const [own, sand, kst] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff")]);
+    const [own, sand, kst, stor] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff"), bases("TongSherbet/storage")]);
     let mod = null, last = null;
     for (const b of own) { try { mod = await import(b + "src/main.mjs"); break; } catch (e) { last = e; } }
     if (!mod) throw last || new Error("could not load WebBlox from jsdelivr");
-    await mod.boot(status, { sandstoneBases: sand, kstuffBases: kst });
+    await mod.boot(status, { sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
   })().catch((e) => { say("Failed: " + (e && e.message || e)); console.error(e); });
 })();
 </script>

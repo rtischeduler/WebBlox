@@ -25,7 +25,7 @@ export async function boot(statusEl, opts = {}) {
   const frame = new sandstone.controller.ProxyFrame();
   Object.assign(frame.iframe.style, { position: "fixed", inset: "0", width: "100%", height: "100%", border: "0", background: "#fff" });
   await frame.wait_for_libcurl();
-  console.log("[webblox] wisp:", await pickWisp(sandstone.network, say, opts.kstuffBases));
+  console.log("[webblox] wisp:", await pickWisp(sandstone.network, say, { kstuffBases: opts.kstuffBases, storageBases: opts.storageBases }));
 
   // Interception 1: every navigation (including in-page links and the Roblox login redirect) goes through here.
   const navigate = frame.navigate_to.bind(frame);

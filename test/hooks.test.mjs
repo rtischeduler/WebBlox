@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { injectIntoHtml, runNavHooks, onNavigate, runHtmlHooks, injectJs, resetHooks } from "../src/hooks.mjs";
-import { parseWispList, toWss } from "../src/wisps.mjs";
+import vm from "node:vm";
+import { parseWispList, toWss, parseServerList, decodeLoaderList, HOST_RE, WSS_RE } from "../src/wisps.mjs";
 
 test("injects after <head>", () => {
   assert.equal(injectIntoHtml("<html><head lang=x><title>a</title>", "<b></b>"), "<html><head lang=x><b></b><title>a</title>");
@@ -26,4 +27,15 @@ test("wisp list decoding", () => {
   const b64 = Buffer.from(JSON.stringify(["wss://a.b/wisp/", "nope"])).toString("base64");
   assert.deepEqual(parseWispList([b64]), ["wss://a.b/wisp/"]);
   assert.equal(toWss("cdn.x.org"), "wss://cdn.x.org/");
+});
+
+test("TongSherbet-style obfuscated loader decodes in a sealed vm", () => {
+  const inner = 'var serverList=["a.example.org","b.example.org","c.example.org","wss://d.example.org/wisp/"]';
+  const src = `globalThis["ev"+"al"](${JSON.stringify(inner.replace(/\\/g, ""))})`;
+  const decode = (s) => vm.runInNewContext(`(${decodeLoaderList})(s,h,w,32)`, { s, h: HOST_RE, w: WSS_RE }, { timeout: 2000 });
+  assert.deepEqual(parseServerList(src, decode), ["a.example.org", "b.example.org", "c.example.org", "wss://d.example.org/wisp/"]);
+});
+
+test("plain serverList with reversed hosts", () => {
+  assert.deepEqual(parseServerList('serverList=["gro.elpmaxe.a".split("").reverse().join(""),"b.example.org"];'), ["a.example.org", "b.example.org"]);
 });
