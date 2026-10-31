@@ -1,6 +1,7 @@
 import * as hooks from "./hooks.mjs";
 import { startUrlFor, runHtmlHooks, runNavHooks } from "./hooks.mjs";
-import { pickWisp, provisionalWisp } from "./wisps.mjs";
+import { pickWisp, provisionalWisp, markWispBad } from "./wisps.mjs";
+import { createWatchdog } from "./health.mjs";
 
 // Singuloxy build: pinned jsdelivr bases from index.html first, raw.githubusercontent (text/plain, so via blob) last.
 const DIST = "dist/sandstone.mjs";
@@ -27,7 +28,20 @@ export async function boot(statusEl, opts = {}) {
   const frame = new sandstone.controller.ProxyFrame();
   Object.assign(frame.iframe.style, { position: "fixed", inset: "0", width: "100%", height: "100%", border: "0", background: "#fff" });
   await frame.wait_for_libcurl();
-  console.log("[webblox] wisp:", await pickWisp(sandstone.network, say, { kstuffBases: opts.kstuffBases, storageBases: opts.storageBases }));
+  const wispOpts = { kstuffBases: opts.kstuffBases, storageBases: opts.storageBases };
+  let activeWisp = await pickWisp(sandstone.network, say, wispOpts);
+  console.log("[webblox] wisp:", activeWisp);
+  const watchdog = createWatchdog({
+    current: () => activeWisp,
+    markBad: markWispBad,
+    switchWisp: async (exclude) => {
+      activeWisp = await pickWisp(sandstone.network, say, { ...wispOpts, exclude });
+      console.log("[webblox] wisp:", activeWisp);
+      return activeWisp;
+    },
+    relaunch: () => frame.navigate_to(startUrl()),
+    log: (m) => console.warn("[webblox] " + m),
+  });
 
   // Interception 1: every navigation (including in-page links and the Roblox login redirect) goes through here.
   const navigate = frame.navigate_to.bind(frame);
@@ -40,7 +54,10 @@ export async function boot(statusEl, opts = {}) {
   frame.send_page = (page) => send({ ...page, html: runHtmlHooks(page.html, page.url) });
 
   // Page console output -> the on-screen console (index.html).
-  frame.on_console = (batch) => { try { globalThis.__wbConsole && globalThis.__wbConsole.frame(batch); } catch {} };
+  frame.on_console = (batch) => {
+    try { globalThis.__wbConsole && globalThis.__wbConsole.frame(batch); } catch {}
+    try { for (const item of batch || []) watchdog.feed(item && item[1]); } catch {}
+  };
   frame.on_info = ({ title }) => { if (title) document.title = title; };
   frame.on_progress = (_, text) => say(text || "Loading…");
 

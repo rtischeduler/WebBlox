@@ -1,5 +1,7 @@
 // Wisp discovery + validation, ported from lotsacookie/kstuff (Assets/js/wisp.js).
 // Sources: TongSherbet/storage loader.js (primary list), kstuff Assets/json/wss.json (backups), built-ins.
+import { createBadList } from "./health.mjs";
+
 const KSTUFF = "lotsacookie/kstuff";
 const STORAGE = "TongSherbet/storage";
 const LIST_PATH = "Assets/json/wss.json";
@@ -29,6 +31,8 @@ export const toWss = (e) => {
   const u = isBackup(e) ? e : `wss://${e}/`;
   return u.endsWith("/") ? u : u + "/";
 };
+const bad = createBadList({ key: toWss });
+export const markWispBad = (entry) => bad.add(entry);
 
 // ---- TongSherbet/storage loader.js -> server list -------------------------------------------
 // loader.js is obfuscated: it hands its real code to eval() via globalThis. We run it against a capturing
@@ -200,7 +204,7 @@ async function firstAlive(entries, say, label, waveSize = 6) {
 // session as soon as the wasm is ready; with no websocket URL set by then, the session fails and never recovers.
 export function provisionalWisp(network) {
   const last = store.get("WB_LAST");
-  const url = toWss((last && last.entry) || FALLBACK);
+  const url = toWss(last && last.entry && !bad.has(last.entry) ? last.entry : FALLBACK);
   network.set_websocket(url);
   return url;
 }
@@ -208,6 +212,12 @@ export function provisionalWisp(network) {
 // Never hangs: the whole search is capped by `budgetMs`, then we fall back to a known wisp.
 export async function pickWisp(network, say = () => {}, opts = {}) {
   const budgetMs = opts.budgetMs || 15000;
+  const excluded = new Set((opts.exclude || []).map(toWss));
+  const allowed = (entry) => !excluded.has(toWss(entry));
+  const prefer = (list) => {
+    const ok = list.filter(allowed);
+    return [...ok.filter((e) => !bad.has(e)), ...ok.filter((e) => bad.has(e))];
+  };
   const apply = (entry) => {
     const url = toWss(entry);
     network.set_websocket(url);
@@ -217,18 +227,18 @@ export async function pickWisp(network, say = () => {}, opts = {}) {
   };
   const search = async () => {
     const last = store.get("WB_LAST");
-    if (last && last.entry && Date.now() - last.ts < 600000 && (await probeWisp(last.entry)) !== null) return apply(last.entry);
+    if (last && last.entry && allowed(last.entry) && !bad.has(last.entry) && Date.now() - last.ts < 600000 && (await probeWisp(last.entry)) !== null) return apply(last.entry);
 
     say("Syncing wisp list…");
     const synced = await syncStorageList(opts.storageBases ? [...opts.storageBases, ...STORAGE_MIRRORS.filter((m) => !opts.storageBases.includes(m))] : STORAGE_MIRRORS);
-    const all = [...new Set([...synced, ...BUILTIN])];
+    const all = prefer([...new Set([...synced, ...BUILTIN])]);
     const primary = all.filter((e) => !isBackup(e));
     const hit = await firstAlive(primary, say, "Testing wisp servers");
     if (hit) return apply(hit.entry);
 
     say("Trying backup wisps…");
     const remote = await fetchWispList(opts.kstuffBases ? [...opts.kstuffBases, ...KSTUFF_MIRRORS.filter((m) => !opts.kstuffBases.includes(m))] : KSTUFF_MIRRORS);
-    const backups = [...new Set([...all.filter(isBackup), FALLBACK, ...shuffle(remote.filter((u) => !all.includes(u))).slice(0, 16)])];
+    const backups = prefer([...new Set([...all.filter(isBackup), FALLBACK, ...shuffle(remote.filter((u) => !all.includes(u))).slice(0, 16)])]);
     const bhit = await firstAlive(backups, say, "Testing backup wisps");
     if (bhit) return apply(bhit.entry);
     return null;
@@ -239,5 +249,5 @@ export async function pickWisp(network, say = () => {}, opts = {}) {
     if (url) return url;
   } catch (e) { console.warn("[wisp] pick failed", e); }
   console.warn("[wisp] no wisp validated, using fallback");
-  return apply(FALLBACK);
+  return apply([FALLBACK, ...BUILTIN.filter(isBackup)].find(allowed) || FALLBACK);
 }
