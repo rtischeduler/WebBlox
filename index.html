@@ -184,7 +184,20 @@
   const swUrl = new URL("coi-sw.js", document.baseURI).href;
   const tries = () => { try { return +sessionStorage.getItem(KEY) || 0; } catch { return 99; } };
   const bump = () => { try { sessionStorage.setItem(KEY, String(tries() + 1)); } catch {} };
+  const diagnose = async () => {
+    try {
+      const nav = performance.getEntriesByType("navigation")[0] || {};
+      const r = await fetch(location.href, { cache: "no-store" });
+      const c = navigator.serviceWorker.controller;
+      console.warn("[webblox] isolation diagnostics " + JSON.stringify({
+        ua: navigator.userAgent, credentiallessSupported: "credentialless" in HTMLIFrameElement.prototype,
+        controller: c && c.scriptURL, navHandledByWorker: nav.workerStart > 0, navType: nav.type,
+        fetchedCOOP: r.headers.get("cross-origin-opener-policy"), fetchedCOEP: r.headers.get("cross-origin-embedder-policy"),
+        hasOpener: !!window.opener, framed: window !== window.top, href: location.href }));
+    } catch (e) { console.warn("[webblox] diagnostics failed", e); }
+  };
   const reloadOnce = (why) => {
+    if (tries() >= 3) diagnose();
     if (tries() >= 3) return console.error("[webblox] still not cross-origin isolated after " + tries() + " reloads (" + why + "); is coi-sw.js served next to index.html? Try a normal (non-hard) refresh or clear site data.");
     bump(); location.reload();
   };
