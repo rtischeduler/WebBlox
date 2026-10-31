@@ -10,6 +10,7 @@ const MAX_DEPTH = 6;
 const MAX_SAVE = 6 * 1024 * 1024;
 const WORKERS = 8;
 const HOSTS = /(^|\.)(roblox\.com|rbxcdn\.com)$/i;
+const DENY = /^(devforum|devforum-uploads|create|help|en\.help|corp|blog|about|prod\.docsiteassets|assets\.create)(\.|-)|docsiteassets|devforum/i;
 const TEXTUAL = /(javascript|json|html|css|xml|text\/)/i;
 const BINARY_EXT = /\.(wasm|data|bin|png|jpe?g|gif|webp|svg|woff2?|ttf|ico|mp3|ogg|zip|br|gz)(\?|#|$)/i;
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
@@ -90,7 +91,7 @@ async function visit(item) {
   catch {
     return;
   }
-  if (!HOSTS.test(parsed.hostname) || !/^https?:$/.test(parsed.protocol)) {
+  if (!HOSTS.test(parsed.hostname) || DENY.test(parsed.hostname) || !/^https?:$/.test(parsed.protocol)) {
     rows.push([depth, "skipped", "", "", url, from]);
     return;
   }

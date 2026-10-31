@@ -2,6 +2,7 @@ import * as hooks from "./hooks.mjs";
 import { startUrlFor, runHtmlHooks, runNavHooks } from "./hooks.mjs";
 import { pickWisp, provisionalWisp, markWispBad } from "./wisps.mjs";
 import { createWatchdog } from "./health.mjs";
+import { parseFlagParams, flagOverrideScript } from "./flags.mjs";
 
 // Singuloxy build: pinned jsdelivr bases from index.html first, raw.githubusercontent (text/plain, so via blob) last.
 const DIST = "dist/sandstone.mjs";
@@ -42,6 +43,8 @@ export async function boot(statusEl, opts = {}) {
     relaunch: () => frame.navigate_to(startUrl()),
     log: (m) => console.warn("[webblox] " + m),
   });
+
+  hooks.injectJs(flagOverrideScript(opts.flagOverrides || parseFlagParams(location.search)));
 
   // Interception 1: every navigation (including in-page links and the Roblox login redirect) goes through here.
   const navigate = frame.navigate_to.bind(frame);
