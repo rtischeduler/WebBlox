@@ -9,8 +9,10 @@ export const engineBaseForUpload = (upload, server = "prod") => `${SERVERS[serve
 export const versionUrl = (server = "prod") => `https://${SERVERS[server].clientSettingsHost}/v2/client-version/${BINARY_TYPE}`;
 export const channelUrl = (server = "prod") => `https://${SERVERS[server].clientSettingsHost}/v2/user-channel?binaryType=${BINARY_TYPE}`;
 
+export const flagsUrl = (server = "prod") => `https://${SERVERS[server].settingsFlagsHost}/v2/settings/application/${BINARY_TYPE}`;
+
 export function loaderSeeds(upload, server = "prod") {
-  const seeds = [versionUrl(server), channelUrl(server), `https://${SERVERS[server].settingsFlagsHost}/`];
+  const seeds = [versionUrl(server), channelUrl(server), flagsUrl(server)];
   if (upload) seeds.push(...ENGINE_FILES.map((f) => `${engineBaseForUpload(upload, server)}/${f}`));
   return seeds;
 }
