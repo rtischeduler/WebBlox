@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+    <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391</link>
+    <description>Hello Developers,
+
+If you are using Roblox Studio on Windows or a version of MacOS 10.13 (High Sierra) or later then you can ignore this post.
+
+**Beginning June 1st, 2022 we will begin discontinuing support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra).**
+
+Discontinuing support is not an easy decision, but is necessary for us to keep Studio moving forward. This deprecation allows us to upgrade our core UI framework, gaining several new features which we believe will improve the visual and performance quality of Studio.
+
+These deprecated versions are no longer supported by Apple, and our analytics show almost all of our users are either already on 10.13 or are on hardware capable of upgrading to 10.13.
+
+Please upgrade as soon as possible. Below are official Apple Support links to get you started:
+
+* How to update the software on your Mac: https://support.apple.com/en-us/HT211683
+
+* Find out which macOS version your Mac is using: https://support.apple.com/en-us/HT201260
+
+With this deprecation users on these platforms will become unable to launch new releases of Studio. If you believe this deprecation is going to cause significant hardship to you, please respond in the thread below.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Mar 2023 21:52:40 +0000</lastBuildDate>
+    <category>Announcements</category>
+    <atom:link href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[system]]></dc:creator>
+        <description><![CDATA[
+            <p>This topic was automatically closed 120 days after the last reply. New replies are no longer allowed.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/53">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/53</link>
+        <pubDate>Fri, 21 Jul 2023 21:52:40 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-53</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[OneEDM]]></dc:creator>
+        <description><![CDATA[
+            <p>Yes! Apple Silicon Support please!</p>
+<aside class="quote no-group" data-username="megametamelt" data-post="51" data-topic="1787391">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/megametamelt/60/5800699_2.png" class="avatar"> megametamelt:</div>
+<blockquote>
+<p>Metal and other M1-M2-M? architectural optimizations.</p>
+</blockquote>
+</aside>
+<p>Adding on to that, Roblox should utilize some of the new features introduced in Metal 3:<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/5/0/8/2/5082ee8120b0b34e99d5e1b64e1d45115b0cd7c2.png" data-download-href="/uploads/short-url/bueItL3ttoX6KmYS2EPAsHub4au.png?dl=1" title="Screenshot 2023-03-23 at 4.51.36 PM" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/5/0/8/2/5082ee8120b0b34e99d5e1b64e1d45115b0cd7c2_2_382x500.png" alt="Screenshot 2023-03-23 at 4.51.36 PM" data-base62-sha1="bueItL3ttoX6KmYS2EPAsHub4au" width="382" height="500" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/5/0/8/2/5082ee8120b0b34e99d5e1b64e1d45115b0cd7c2_2_382x500.png, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/5/0/8/2/5082ee8120b0b34e99d5e1b64e1d45115b0cd7c2_2_573x750.png 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/5/0/8/2/5082ee8120b0b34e99d5e1b64e1d45115b0cd7c2_2_764x1000.png 2x"></a></div><p></p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/52">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/52</link>
+        <pubDate>Thu, 23 Mar 2023 21:52:40 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-52</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[megametamelt]]></dc:creator>
+        <description><![CDATA[
+            <p>Another necro-bump for ARM-support on this too. I have to keep an old PC laptop around because I am trying to keep my Mac Studio an all-ARM-native application machine.</p>
+<p>Would love to see some Metal and other M1-M2-M? architectural optimizations. Thanks!</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/51">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/51</link>
+        <pubDate>Thu, 23 Mar 2023 15:21:39 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-51</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[LocalDev]]></dc:creator>
+        <description><![CDATA[
+            <p>Sorry for necrobumping. Since it’s 2023 now: I don’t want a specific date, just, do you think it’s possible support will arrive this year? I’m craving for a better experience on my Mac.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/50">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/50</link>
+        <pubDate>Thu, 26 Jan 2023 22:28:05 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-50</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[obviouslypurple]]></dc:creator>
+        <description><![CDATA[
+            <p>Not forgotten about. I spoke with a few people @ RDC including Dave himself. Expect M1 support soon. Not this year tho.</p>
+<p>I’m working on this as well, as I’m preparing documents and PDFs for the team, to work on a whole better experience for Mac users.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/49">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/49</link>
+        <pubDate>Sat, 01 Oct 2022 06:43:52 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-49</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[TrackMinded]]></dc:creator>
+        <description><![CDATA[
+            <p>Any news on this…? Might be a bit too early but I am longing for this and I hope it doesn’t get forgotten.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/48">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/48</link>
+        <pubDate>Fri, 30 Sep 2022 21:29:26 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-48</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[ChildrenDetonator]]></dc:creator>
+        <description><![CDATA[
+            <p>oh man <img src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/frowning.png?v=12" title=":frowning:" class="emoji" alt=":frowning:"> i cant update to 10.13 idk why. now i cant finish my unfinished gfx comms</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/47">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/47</link>
+        <pubDate>Thu, 14 Jul 2022 05:11:51 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-47</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Tee Vee]]></dc:creator>
+        <description><![CDATA[
+            <p>I am excited for this, I am glad that Roblox and Roblox studio is getting support for m1/arm</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/46">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/46</link>
+        <pubDate>Wed, 15 Jun 2022 18:29:30 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-46</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Quinnz]]></dc:creator>
+        <description><![CDATA[
+            <p>Me when having a macOS High Sierra 10.13.6 and studio doesn’t work and gives me a red screen when I press play be like:</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/45">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/45</link>
+        <pubDate>Sat, 11 Jun 2022 16:12:06 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-45</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[ChildrenDetonator]]></dc:creator>
+        <description><![CDATA[
+            <p>me who is in macOS 10.12 sierra who gets errors everytime I update:</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/44">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/44</link>
+        <pubDate>Tue, 24 May 2022 16:56:02 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-44</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Toad]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="VioletshineSkC" data-post="18" data-topic="1787391">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/violetshineskc/60/8537809_2.png" class="avatar"> VioletshineSkC:</div>
+<blockquote>
+<p>Is a Linux version of Studio coming???</p>
+</blockquote>
+</aside>
+<p>yes</p>
+<p>Studio might come to Linux</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/43">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/43</link>
+        <pubDate>Mon, 23 May 2022 02:38:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-43</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Staffy]]></dc:creator>
+        <description><![CDATA[
+            <p>I have a question. Does the ROBLOX Studio application will be uninstalled when ROBLOX Studio is ending support on Mac OS Sierra, or you could still use Roblox Studio but it won’t receive latest updates, features etc? I’m just curious is because ROBLOX Studio (including ROBLOX Player) got uninstalled after it got shut off in August 2019.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/42">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/42</link>
+        <pubDate>Sat, 21 May 2022 16:59:34 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-42</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Staffy]]></dc:creator>
+        <description><![CDATA[
+            <p>I’m very disappointed when I heard that ROBLOX (ROBLOX Studio) is no longer supporting on Mac OS Sierra. Great, first Windows XP ended support on ROBLOX back in 2019 and now this. Now I can’t use ROBLOX Studio on my Mac Computer anymore, but at least I have my Windows 10 PC. Anyways, it was fun for using ROBLOX Studio from this computer. However, at least I can still play ROBLOX on my Mac Computer. Anyways, have a good day or evening (depending of what time zone your from).</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/40">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/40</link>
+        <pubDate>Fri, 20 May 2022 18:38:05 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-40</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[qwertyexpert]]></dc:creator>
+        <description><![CDATA[
+            <p>Exactly, that’s one reason that I’m unable to update past 10.14. On a new Mac this would not be an issue, but my Mac already has software installed, and some of it happens to be 32-bit.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/39">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/39</link>
+        <pubDate>Wed, 18 May 2022 04:20:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-39</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[GRUM]]></dc:creator>
+        <description><![CDATA[
+            <p>This is basically some good news, the first time we have ever heard anything about native ARM64 support, even if it’s not a number 1 priority. ARM64 is definitely an important part of the future in terms of power efficiency and speed. Studio and Roblox run “undesirable” under Rosetta, when both are open. Can’t wait for more news</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/38">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/38</link>
+        <pubDate>Wed, 18 May 2022 01:55:46 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-38</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Baller]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="qwertyexpert" data-post="36" data-topic="1787391">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/qwertyexpert/60/8630899_2.png" class="avatar"> qwertyexpert:</div>
+<blockquote>
+<p>because for personal &amp; software reasons</p>
+</blockquote>
+</aside>
+<p>Isn’t 10.15 the version where they killed off 32-bit support?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/37">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/37</link>
+        <pubDate>Tue, 17 May 2022 19:53:26 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-37</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[qwertyexpert]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="PoshKiwi" data-post="1" data-topic="1787391">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/poshkiwi/60/4917940_2.png" class="avatar"> PoshKiwi:</div>
+<blockquote>
+<p>on hardware capable of upgrading to 10.13.</p>
+</blockquote>
+</aside>
+<p>This should <strong>not</strong> be a factor in your decision. Just because someone is <strong>capable</strong> of updating to  newer releases of macOS doesn’t mean they <strong>want to</strong>. This makes me concerned because for personal &amp; software reasons (again, not hardware!) I can’t update past 10.14, and one day (soon! Probably in the next year or so!) Roblox is going to remove support for it because everyone who uses it “is capable of upgrading”.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/36">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/36</link>
+        <pubDate>Sat, 14 May 2022 23:00:44 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-36</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[PoshKiwi]]></dc:creator>
+        <description><![CDATA[
+            <p>If this accurately describes your issue no need to make another one. I’ll make sure someone is taking a look at this.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/35">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/35</link>
+        <pubDate>Thu, 12 May 2022 16:39:00 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-35</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[viper]]></dc:creator>
+        <description><![CDATA[
+            <p>I suggest you that you can download the windows 10 system so you can enter the studio, I’m just kidding or you need to download the compatible version on your computer I hope you can help</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/34">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/34</link>
+        <pubDate>Thu, 12 May 2022 15:09:27 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-34</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[Free_Keycard]]></dc:creator>
+        <description><![CDATA[
+            <p>Should I still create another post if there is already one?</p><aside class="quote quote-modified" data-post="1" data-topic="1153286">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/lavender_sys/60/8860671_2.png" class="avatar">
+    <a href="https://devforum.roblox.com/t/roblox-studio-crashes-on-apple-silicon-mac/1153286">Roblox Studio Crashes on Apple Silicon Mac</a> <a class="badge-category__wrapper " href="https://devforum.roblox.com/c/bug-reports/studio-bugs/29"><span data-category-id="29" style="--category-badge-color: #FD2843; --category-badge-text-color: #FFF; --parent-category-badge-color: #F68802;" data-parent-category-id="10" data-drop-close="true" class="badge-category --has-parent" title="This category is for known bugs with Roblox Studio. When posting, please be as specific as you can and provide enough detail to reproduce the bug."><span class="badge-category__name">Studio Bugs</span></span></a>
+  </div>
+  <blockquote>
+    Issue Type: Crashing 
+Impact: Low 
+Frequency: Very Rare 
+Date First Experienced: 2021-04-06 19:04:00 (-04:00) 
+Date Last Experienced: 2021-04-06 19:04:00 (-04:00) 
+Reproduction Steps: 
+I simply left Studio opened and closed the lid of my MacBook Pro, putting the system to sleep. When waking up the system by opening the lid I saw a messaging stating that “RobloxStudio quit unexpectedly”. 
+ <a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/c/b/7cb947fc120f4916764968f6bcb29259d8df6753.png" data-download-href="/uploads/short-url/hNmavnLGIopTZltO5hs93kbHlN9.png?dl=1" title="System Specs" rel="noopener nofollow ugc">[System Specs]</a> 
+Expected Behavior: 
+I expect Roblox Studio to not crash unexpectedly. 
+Actual Behavior: 
+Rob…
+  </blockquote>
+</aside>
+
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/33">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/33</link>
+        <pubDate>Thu, 12 May 2022 04:39:41 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-33</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[PoshKiwi]]></dc:creator>
+        <description><![CDATA[
+            <p>You can find out what version of Mac OS you are on by following these <a href="https://support.apple.com/en-us/HT201260" rel="noopener nofollow ugc">instructions</a>.  If you are on 10.13 or higher you are good!  If you are on 10.11 or 10.12 you will need to upgrade to a newer version.  This is free, and should be supported by an mac newer than 2010.  Upgrade instructions can be found <a href="https://support.apple.com/en-us/HT211683" rel="noopener nofollow ugc">here</a>.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/32">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/32</link>
+        <pubDate>Wed, 11 May 2022 22:12:02 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-32</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[burg]]></dc:creator>
+        <description><![CDATA[
+            <p>So I’m still able to use studio on my Macbook Air Retina right?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/31">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/31</link>
+        <pubDate>Wed, 11 May 2022 20:15:24 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-31</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[AdvancedDrone]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks for keeping everyone in the loop! It’s great to finally hear that M1 support is coming soon since this has been requested for a long time and nothing has been said about it until now.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/30">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/30</link>
+        <pubDate>Wed, 11 May 2022 18:40:16 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-30</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[PoshKiwi]]></dc:creator>
+        <description><![CDATA[
+            <p>Just double checked with my team.  I was a bit off base with my previous comment.  Native support for M1 is a priority, there just isn’t a team currently working on it as there are a couple of prerequisites we needed to fulfill before we can support it.  One of these prereqs is upgrading our UI framework and deprecating these older versions of MacOS.  So this is a first step towards M1 support.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/29">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/29</link>
+        <pubDate>Wed, 11 May 2022 16:59:11 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-29</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+      <item>
+        <title>Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</title>
+        <dc:creator><![CDATA[PoshKiwi]]></dc:creator>
+        <description><![CDATA[
+            <p>Thanks for all the feedback guys.  I will pass on your ARM concerns at the next team meeting.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/28">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391/28</link>
+        <pubDate>Wed, 11 May 2022 16:43:41 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1787391-28</guid>
+        <source url="https://devforum.roblox.com/t/studio-is-ending-support-for-mac-os-x-1011-el-capitan-and-macos-1012-sierra/1787391.rss">Studio is ending support for Mac OS X 10.11 (El Capitan) and MacOS 10.12 (Sierra)</source>
+      </item>
+  </channel>
+</rss>

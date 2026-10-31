@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Video uploads [Beta]: Add short-form video to your experience</title>
+    <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621</link>
+    <description>Hello Developers! 
+
+Today, we are announcing the beta release of short-form video uploads, accessible to ID-verified developers that are 13+. Now, you can make your experiences more engaging by adding videos up to 30 seconds long. Use it for cutscenes, background décor, or tutorials to take immersion to a deeper level. 
+
+&lt;div align=&quot;center&quot;&gt;
+
+![|600x338, 55%](upload://yEJtKE67d5aXPSH1xJFfojPnhW4.gif) ![|600x338, 55%](upload://oAZMmmhIaQ54LEBfk77aoQoVF01.gif) 
+
+![|600x338, 55%](upload://dGIWsv1jONP0IIBbLbLR0HlxTDi.gif)
+
+***Cutscene, Background detail, Tutorial***
+
+&lt;/div&gt;
+
+Here’s how to get started with video:
+
+* Your account must be 13+ and ID-verified
+* Enable the “Video Uploads” [beta feature](https://devforum.roblox.com/t/studio-beta-its-for-everyone/384108) in Roblox Studio
+* Your videos must be 30 seconds or less
+* You can upload 3 videos every 30 days (refreshes 30 days after your first upload)
+* Each video upload requires 2000 Robux
+
+To learn more, please check out our [documentation on video uploads.](https://create.roblox.com/docs/ui/video-assets)
+
+Uploaded videos can be placed in an experience via [VideoFrame](https://create.roblox.com/docs/reference/engine/classes/VideoFrame) class. We&#39;re actively working on additional VideoFrame performance improvements, including increasing the maximum number of playable VideoFrames at once.
+
+If you have any feedback, feature requests, or encounter any bugs with video uploads or VideoFrames, please share them below, and feel free to tag me — @phri — on your post!
+
+Thank you.
+
+---
+
+### FAQ
+
+[details=Click here to view the FAQ! (Updated on September 26, 2024)]
+
+**Why does my account need to be ID-verified to upload video?**
+
+- All video uploads must be tied to an ID-verified account to increase accountability and ensure the safety of video on Roblox. Check out our [Help Center](https://en.help.roblox.com/hc/en-us/articles/4407276151188) to learn more about our ID verification and privacy policies.
+
+**Will you lower the video upload fee?**
+
+- We are always assessing where we can pass along additional savings to developers on Roblox. As video uploads evolve, we will continue to look into adjusting the fee structure but do not have anything planned at this time. To ensure we provide the best quality video to as many users and upload access to as many devs as possible, the video upload fee reflects the cost of providing video on Roblox.
+
+**Why can I only upload 3 videos per month?**
+
+- We allow three video uploads a month in order to ensure that video is accessible to all developers at a high quality of service while still providing a reasonable moderation time. We do not currently have plans to change the monthly quota for video uploads, but we are exploring expanding this at some point in the future.
+
+**What about 60+fps videos?**
+
+- Our engine dynamically adjusts to ensure the best performance across devices. Uploading at 120fps won&#39;t increase the overall game engine&#39;s frame rate to match video playback. For video uploads, we recommend uploading 1920x1080 at 60 fps.
+
+**What about alpha channel (transparency)?**
+
+- At this time, we do not preserve alpha channel (transparency) for video uploads. If you attempted to upload video with alpha channel and were dissatisfied with the result, we recommend reaching out to Customer Support.
+
+**Will video be supported on Creator Marketplace?**
+
+- We’re exploring how to best support video in the Creator Marketplace, but we don’t have concrete details to share yet. The upload fee and fee structure may change in the future, especially as this feature evolves, and we will keep you updated on any future developments.
+
+**Are the videos in 4k? Can this be used for decals?**
+
+- We accept 4K video uploads, but our systems transcode the video to lower resolutions to ensure the best performance during playback. This is similar to how decal/image uploads support 8000x8000 but are downsized to 1024x1024 for their highest quality. The ideal video format is 1920x1080 at 60 fps.
+
+**Do videos have an audio track? Can I have a property to situationally play them? Can I control playback quality?**
+
+- You can upload videos with or without an audio track. We currently support 0 or 1 audio tracks on a video. For the other features/ideas you mentioned, please make sure to file a [feature request](https://devforum.roblox.com/c/feature-requests/engine-features/23) since we do not currently offer these capabilities.
+
+**Will there be a copyright detection system? Will we be able to upload videos longer than 30 seconds in the near future?**
+
+- Yes, we do have a copyright detection system. Please do not upload videos that you do not own as your video may be rejected and your upload fee will not be refunded. We eventually want to expand support to videos of longer duration but do not currently have a timeline.
+
+**Can I upload videos in any language?**
+
+- Currently, a video’s audio and text (if applicable) must be in English and/or Spanish. However, we are looking to expand support to other languages as soon as we can.
+
+**What are the rules for video uploads?**
+
+* There are no new rules for video uploads. Just like image and audio uploads, your video must be appropriate, in line with our Terms of Use and Community Standards, and respect the intellectual property rights of others. Your video cannot contain any personally identifiable information.
+
+* For additional guidance, please consult the [Roblox Terms of Use](https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use) and the [Roblox Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410-Roblox-Community-Standards).
+
+**What if my video is rejected?**
+
+* If your video is rejected and you believe that decision is incorrect, you can appeal through our normal appeals process. If we determine that it was correctly rejected and does not abide by our Community Standards or Terms of Service, the 2000 Robux will not be refunded, and the rejected video will count towards your monthly quota of 3 videos. Please upload wisely.
+
+**Why did it take several years to release video uploads?**
+
+* Video uploads, while seemingly simple on the surface, require a lot of complexity when thinking about safety and scale. We wanted to ensure that what we provided would be as powerful and safe as possible.
+
+**Where did the current video uploads requirements come from?**
+
+* These requirements were designed to get video uploads into the hands of as many developers as possible while ensuring safety and scalability. However, we are constantly assessing our requirements and they may change over time.
+
+**What is the ideal video file to upload?**
+
+* The ideal video format is 1920x1080, 60 fps. At this time, VideoFrames will never be displayed in any resolution higher than 720p.
+
+**What are the min/max requirements for a video file?**
+
+* Must be an .mp4 or .mov
+* 30 seconds in duration
+* 120 frames per second
+* Maximum file size of 375 MB
+* Minimum resolution of 160x160
+* Maximum resolution of 4096x2160
+* Resolution height and width must be divisible by 2
+
+**How many videos can I play at once? Is it still two?**
+
+* At this time, for performance reasons, only up to two videos can be played simultaneously on a client. We are making improvements to allow for more than two videos in the near future.
+
+**Do Video assets use Asset Privacy? Can I distribute my Video asset on the Creator Marketplace?**
+
+* Videos do indeed use the same Asset Privacy system as Audio assets. At this time, Video assets cannot be distributed via the Creator Marketplace.
+
+[/details]</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jun 2026 00:13:57 +0000</lastBuildDate>
+    <category>Announcements</category>
+    <atom:link href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[system]]></dc:creator>
+        <description><![CDATA[
+            <p>This topic was automatically closed 120 days after the last reply. New replies are no longer allowed.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/352">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/352</link>
+        <pubDate>Thu, 22 Oct 2026 00:13:15 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-352</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Royee]]></dc:creator>
+        <description><![CDATA[
+            <p>It’s broken, I can’t upload any videos, fix this! (for game’s page)<br>
+Gets stuck at this and then “upload failed” constantly<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/8/d/a/0/8da064f9371c441360657791577b0c9c661876a2.png" data-download-href="/uploads/short-url/kcSXWpR95upnNxNuYNR6ga6mpbA.png?dl=1" title="image" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/a/0/8da064f9371c441360657791577b0c9c661876a2_2_690x282.png" alt="image" data-base62-sha1="kcSXWpR95upnNxNuYNR6ga6mpbA" width="690" height="282" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/a/0/8da064f9371c441360657791577b0c9c661876a2_2_690x282.png, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/a/0/8da064f9371c441360657791577b0c9c661876a2_2_1035x423.png 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/a/0/8da064f9371c441360657791577b0c9c661876a2_2_1380x564.png 2x" data-dominant-color="18171A"></a></div><p></p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/351">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/351</link>
+        <pubDate>Wed, 24 Jun 2026 00:12:38 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-351</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[phri]]></dc:creator>
+        <description><![CDATA[
+            <p>These issues are unrelated; however, a fix for the file you’re trying to upload should be live in the coming week. Similarly, we doubled checked and you did indeed receive an automatic refund for the error.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/350">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/350</link>
+        <pubDate>Tue, 21 Apr 2026 22:07:07 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-350</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Jake]]></dc:creator>
+        <description><![CDATA[
+            <p>I am having the same exact problem and it is very frustrating on how Roblox is not doing anything to that issues yet. They should atleast show some processing or uploading progress bar in both <strong>Roblox Studio</strong> and the <strong>Creator Studio</strong> just like YouTube Studio, so developers can become aware if the upload progress hasn’t being done yet before purchasing the upload fee. 2000 Robux is quite big.</p>
+<p>Although chances of your video being uploaded and shown to your inventory is really a hit-or-miss. But I am so glad that the issue resolves itself after 12 hours.<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/8/d/c/2/8dc2f8f1511cef12ee908febbafc2798ca94ba9f.png" data-download-href="/uploads/short-url/ke535AVCzbsncf5xnt4VUHyt54X.png?dl=1" title="image" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/c/2/8dc2f8f1511cef12ee908febbafc2798ca94ba9f_2_690x163.png" alt="image" data-base62-sha1="ke535AVCzbsncf5xnt4VUHyt54X" width="690" height="163" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/c/2/8dc2f8f1511cef12ee908febbafc2798ca94ba9f_2_690x163.png, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/c/2/8dc2f8f1511cef12ee908febbafc2798ca94ba9f_2_1035x244.png 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/d/c/2/8dc2f8f1511cef12ee908febbafc2798ca94ba9f_2_1380x326.png 2x" data-dominant-color="1B1C20"></a></div><p></p>
+<p>Also it seems that there’s a chance that you’ll get a full Robux refund if one of your uploads has been interrupted by computer crashes or any uncertain circumstances without giving any notice. While uploading a testing video in April 6 and my PC decides to force reboot for a Microslop update.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/349">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/349</link>
+        <pubDate>Tue, 21 Apr 2026 08:19:29 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-349</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[wuwu]]></dc:creator>
+        <description><![CDATA[
+            <p>My apologies for the late reply. This is exactly what I would be looking for. Excited to see this release in the near future, thank you!!</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/348">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/348</link>
+        <pubDate>Mon, 13 Apr 2026 18:23:32 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-348</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Number1Designer]]></dc:creator>
+        <description><![CDATA[
+            <p>WARNING here’s what Roblox said: so all are aware of the risk of uploading a video.</p>
+<p>"Thank you for contacting Roblox Technical Support regarding your concern with uploading video.</p>
+<p>Unfortunately, if a video is uploaded and has inappropriate content or is otherwise removed/deleted from the site, the Robux spent on that video is non-refundable."</p>
+<p>The video was just text and when I reuploaded it was approved just fine. Sooooo I spent 4000 Robux on one video.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/347">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/347</link>
+        <pubDate>Thu, 12 Feb 2026 20:00:05 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-347</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Number1Designer]]></dc:creator>
+        <description><![CDATA[
+            <p>It has been a couple hours and no word from support on my missing 2000 Robux for purchasing a Video that failed to upload. Anybody else have a problem with Roblox charging 20 dollars for a no-upload?</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/344">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/344</link>
+        <pubDate>Thu, 15 Jan 2026 22:32:48 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-344</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Number1Designer]]></dc:creator>
+        <description><![CDATA[
+            <p>I spent 2k and uploaded a video. It failed to upload but still charged me 2k. I’m sitting here with no video and missing 2000 Robux and no information what the status is. Can I get a status update on my upload?</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/343">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/343</link>
+        <pubDate>Thu, 15 Jan 2026 20:56:04 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-343</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[phri]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi there! Additional video playback is something we want to enable, but can’t promise a timeline just yet.</p>
+<p>We are currently working on an <a href="https://devforum.roblox.com/t/studio-beta-advanced-video-api-synchronize-video-control-3d-audio-and-more/3972775">advanced video API</a> which should allow for your specific use case (one video source to multiple screens). Once this is out of client beta, it should help.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/342">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/342</link>
+        <pubDate>Wed, 07 Jan 2026 18:59:29 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-342</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[wuwu]]></dc:creator>
+        <description><![CDATA[
+            <p>Wondering if there’s any update on increasing the limit for running video instances, I think its been capped at 2 since it released? (Feel free to correct me if I am wrong)</p>
+<p>I’m trying to do a cool venue theater setup with a big TV in the middle and two smaller ones on the sides, so I’d love to be able to have more than just two videos playing at the same time <img src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/slightly_smiling_face.png?v=14" title=":slightly_smiling_face:" class="emoji" alt=":slightly_smiling_face:" loading="lazy" width="20" height="20"></p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/341">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/341</link>
+        <pubDate>Wed, 31 Dec 2025 04:47:12 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-341</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Walsh_cola2]]></dc:creator>
+        <description><![CDATA[
+            <p>I really hope they can change the ID verify to phone verify and have both as options to make a video</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/340">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/340</link>
+        <pubDate>Thu, 25 Dec 2025 21:56:22 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-340</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[AxeMan]]></dc:creator>
+        <description><![CDATA[
+            <p>How long does it take to review these videos? I uploaded a 1:23 min video about 63mb around 18 hours ago and its still not been reviewed?</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/339">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/339</link>
+        <pubDate>Wed, 01 Oct 2025 11:59:25 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-339</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Shamzeez]]></dc:creator>
+        <description><![CDATA[
+            <p>I am in a huge need to have 4 videos to be played, because I have 4 screens that play 1 whole video. It wont look good to have only 2 videos playing while the other 2 remain off. Just to be clear, the videos are split into 4 parts since these screens move and rotate.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/338">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/338</link>
+        <pubDate>Sat, 13 Sep 2025 03:58:12 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-338</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Ilan]]></dc:creator>
+        <description><![CDATA[
+            <p>As of right now you can upload 4k videos but they are automatically downscaled to 720p. That kinds of sucks, especially since the documentation as far as I’m aware does not explicitly mention that videos are downscaled to 720p.</p>
+<p>I assume this is only temporary, but can we have any update on how this is going and how Roblox plans on bringing 4k videos? Will it be a property you play with or is it going to be automatically downscaled by your client?</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/337">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/337</link>
+        <pubDate>Tue, 26 Aug 2025 21:41:19 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-337</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[robloxian]]></dc:creator>
+        <description><![CDATA[
+            <blockquote>
+<p>Today, we are announcing the beta release of short-form video uploads</p>
+</blockquote>
+<p>cool</p>
+<blockquote>
+<p>accessible to ID-verified developers that are 13+</p>
+</blockquote>
+<p>they gotta have saftey ig.</p>
+<blockquote>
+<ul>
+<li>Each video upload requires 2000 Robux</li>
+</ul>
+</blockquote>
+<p>ok that’s just SILLY you just lost everyone at that point.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/336">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/336</link>
+        <pubDate>Tue, 29 Jul 2025 13:51:04 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-336</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[phri]]></dc:creator>
+        <description><![CDATA[
+            <p>Hi folks! Even more updates to the max video duration and upload quota for video uploads:</p>
+<aside class="quote quote-modified" data-post="144" data-topic="3532432">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/phri/60/7853355_2.png" class="avatar">
+    <a href="https://devforum.roblox.com/t/longer-video-uploads-more-video-uploads/3532432/144">Longer video uploads, more video uploads!</a> <a class="badge-category__wrapper " href="https://devforum.roblox.com/c/updates/announcements/36"><span data-category-id="36" style="--category-badge-color: #E2231A; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #E2231A;" data-parent-category-id="45" data-drop-close="true" class="badge-category --has-parent" title="Official announcements about Roblox products and features"><span class="badge-category__name">Announcements</span></span></a>
+  </div>
+  <blockquote>
+    Hi all - exciting news to share! <img width="20" height="20" src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/drum.png?v=14" title="drum" alt="drum" class="emoji"> 
+As of this week, EVEN LONGER VIDEO UPLOADS, EVEN MORE VIDEO UPLOADS: 
+
+Quintupled the maximum video upload duration to 5 minutes
+Trigintupled the monthly video upload quota to a daily quota of 10 uploads/day
+
+<a href="https://devforum.roblox.com/t/longer-video-uploads-more-video-uploads/3532432#p-12113964-plans-for-the-future-4">Our plans for the future</a> are underway to bring you even more video-y goodness. Thanks all for your continued feedback. <img width="20" height="20" src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/pray.png?v=14" title="pray" alt="pray" class="emoji"> 
+ <a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/e/e/1/1/ee1137cf2189e3cfc5193d215c408d1f0bb4ae5a.jpeg" data-download-href="/uploads/short-url/xY2wHdh0PoBfbur6qRcxni7AtaG.jpeg?dl=1" title="image" rel="noopener nofollow ugc">[image]</a>
+  </blockquote>
+</aside>
+
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/335">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/335</link>
+        <pubDate>Fri, 18 Jul 2025 21:27:03 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-335</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Maxwell_Edison]]></dc:creator>
+        <description><![CDATA[
+            <p>Man, this upload fee is pretty rough.  I planned on using multiple short, low-resolution videos in my game, but while this fee works well for uploading longer high-resolution videos, I get no leeway for uploading particularly short and particularly low resolution videos.  Non-dynamic pricing!</p>
+<p>EDIT: 2000 ROBUX IS LIKE, <strong>$7 DOLLARS PER 60 SECOND VIDEO</strong>?</p>
+<p>My goodness, <em>what</em> were you thinking roblox!</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/334">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/334</link>
+        <pubDate>Wed, 11 Jun 2025 06:10:53 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-334</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[bloodwolfe]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="CptRaphie2" data-post="332" data-topic="2630621">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/cptraphie2/60/8826384_2.png" class="avatar"> Raphie:</div>
+<blockquote>
+<p>Then you’d probably devex, right?</p>
+</blockquote>
+</aside>
+<p>If I could get 15k dollars then probably, pretty much anybody would unless they were reinvesting it into the game. DevEx needs ID stuff since its paying out money and I fully respect that. Uploading videos on the other hand I do not respect needing ID verification since nowhere else does it need that and I can just recreate “videos” using some clever scripting. We can already link YouTube videos (a platform notorious for its mehhh moderation) and even embed them on the homepage without giving either platform our ID.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/333">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/333</link>
+        <pubDate>Sat, 07 Jun 2025 21:14:26 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-333</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Raphie]]></dc:creator>
+        <description><![CDATA[
+            <p>Hmm well I don’t know what your financial position you’re in but… Let’s say a project you worked on suddenly got a lot of players and now earned like 15k dollars worth of Robux.</p>
+<p>Then you’d probably devex, right?<br>
+I mean… Without sponsorships or some kind of marketing most games don’t really got on the algorithm anyways but sometimes it happens.<br>
+So who knows. Maybe one of your games blows up even tho you only do it as a hobby.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/332">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/332</link>
+        <pubDate>Sat, 07 Jun 2025 10:03:08 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-332</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[bloodwolfe]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="CptRaphie2" data-post="326" data-topic="2630621">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/cptraphie2/60/8826384_2.png" class="avatar"> Raphie:</div>
+<blockquote>
+<p>Did you ever devex before? … You gotta give them so much information.</p>
+</blockquote>
+</aside>
+<p>No! And I don’t plan to! A lot of people here (and also who Roblox targeted before targeting game companies) are just nerds who want to make things for fun, me included. Actually, a lot of those corporate games before they get sold start as projects by a nerd or group of nerds who want to have fun. If I have to give <em>government identification to a video game</em> just to make my silly nerdy projects I’ll just stop. It won’t be worth it.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/331">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/331</link>
+        <pubDate>Sat, 07 Jun 2025 07:14:34 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-331</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Pyx]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="CptRaphie2" data-post="329" data-topic="2630621">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/cptraphie2/60/8826384_2.png" class="avatar"> Raphie:</div>
+<blockquote>
+<p>I’d rather tell Roblox where I live, etc. than some random newsletter page I just wanted to read through for a minute xd</p>
+</blockquote>
+</aside>
+<p>If you’re giving this info to news sites then you are underprotected, some good <a href="https://github.com/adguardteam/adguardhome" rel="noopener nofollow ugc">DNS rules</a> or <a href="https://github.com/gorhill/uBlock" rel="noopener nofollow ugc">extensions</a> solve this.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/330">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/330</link>
+        <pubDate>Fri, 06 Jun 2025 22:35:43 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-330</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Raphie]]></dc:creator>
+        <description><![CDATA[
+            <p>But when devexing you need to give them way more info than there is on your ID anyways.<br>
+I guess if you just do Roblox development as a hobby that allows you to stay anonymous…But if you take it serious you need to give them your info anyways.</p>
+<p>And to be honest…Who cares. it’s not like we’re not constantly (without even noticing it) giving our data to tons of other big companies… So why not give it to Roblox.<br>
+I’d rather tell Roblox where I live, etc. than some random newsletter page I just wanted to read through for a minute xd</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/329">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/329</link>
+        <pubDate>Fri, 06 Jun 2025 21:45:06 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-329</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Pyx]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="CptRaphie2" data-post="327" data-topic="2630621">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/cptraphie2/60/8826384_2.png" class="avatar"> Raphie:</div>
+<blockquote>
+<p>Just get a new ID I guess.</p>
+</blockquote>
+</aside>
+<p>That doesn’t fix the privacy nightmare that is ID verification. This isn’t just a Roblox problem.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/328">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/328</link>
+        <pubDate>Fri, 06 Jun 2025 18:46:39 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-328</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Raphie]]></dc:creator>
+        <description><![CDATA[
+            <p>Ever heard of “condo games”?.. Now imagine what could end up on the platform if everyone was given access to uploading videos.</p>
+<p>It’s a risky feature.<br>
+So of course they include safety measures.</p>
+<p>Just get a new ID I guess.<br>
+But to be honest… I haven’t seen many games use videos in them so it’s not like you’re missing out on a lot.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/327">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/327</link>
+        <pubDate>Fri, 06 Jun 2025 09:23:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-327</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+      <item>
+        <title>Video uploads [Beta]: Add short-form video to your experience</title>
+        <dc:creator><![CDATA[Raphie]]></dc:creator>
+        <description><![CDATA[
+            <p>Did you ever devex before? … You gotta give them so much information.</p>
+<p>It doesn’t matter if you give them your info before making money on Roblox or after it.<br>
+Eventually you gotta do it anyways. So why not just do it before being allowed to publish things on here so that their moderation doesn’t need to be as strict?<br>
+Would make a ton of things easier.<br>
+… Way less false bans for uploading textures or decals, etc.</p>
+          <p><a href="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/326">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621/326</link>
+        <pubDate>Fri, 06 Jun 2025 09:21:07 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-2630621-326</guid>
+        <source url="https://devforum.roblox.com/t/video-uploads-beta-add-short-form-video-to-your-experience/2630621.rss">Video uploads [Beta]: Add short-form video to your experience</source>
+      </item>
+  </channel>
+</rss>

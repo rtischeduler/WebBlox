@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+    <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099</link>
+    <description>Update: Launched Jan 26, 2026
+https://devforum.roblox.com/t/avatar-joint-upgrade-for-physically-simulated-character-movement-is-now-live/4298561
+
+Update: May 6, 2025
+We added the option to make avatars ragdoll on death. Long term, newly created places will use this by default. Details below.
+https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/188?u=homeomorph
+
+___
+
+Hello Creators!
+
+We’re thrilled to announce the **Avatar Joint Upgrade Studio Beta,** an exciting new step in expanding what Roblox avatars can do. With this update, setting up physical avatar interactions, like ragdoll effects, becomes significantly easier. This upgrade introduces **force and torque-limited constraints** directly into avatars, **allowing you to create realistic, physics-driven movements effortlessly.**
+
+&lt;div align=&quot;center&quot;&gt;
+
+![image11|610x500, 75%](upload://nW99VhVBhEDv2Pt3GvE7bq9suDC.gif)
+&lt;/div&gt;
+
+# 📘 Overview of the Upgrade
+
+To enable the Avatar Joint Upgrade:
+
+1. Opt into the Studio Beta going to **File &gt; Beta Features and enable “Avatar Joint Upgrade”**
+
+2. Set **StarterPlayer.AvatarJointUpgrade** to *Enabled*.
+
+   ![image6|406x366, 75%](upload://gZYQA4pLzXWySRswFFlLVotpJat.png)
+
+Once enabled, this feature will replace every `Motor6D` joint in spawned character models with several constraints:
+
+* A **[BallSocketConstraint](https://create.roblox.com/docs/reference/engine/classes/BallSocketConstraint)** to keep the body parts attached and apply cone limits during physics simulation.
+* A new **[AnimationConstraint](https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint)** to play animations on the parts, either kinematically (like Motor6D) or physically with forces and torques.
+
+* A **[NoCollisionConstraint](https://create.roblox.com/docs/reference/engine/classes/NoCollisionConstraint)** only on certain body parts, to improve ragdoll fidelity across diverse avatar bodies.
+
+&lt;div align=&quot;center&quot;&gt;
+
+![image10|192x500, 80%](upload://aj3KLxw39u5xC7Hov9V21N0eDoV.png) ![image4|532x500, 80%](upload://awIPXyiNJZJTzyEAMqT4kYubcRy.jpeg)
+&lt;/div&gt;
+
+# 🧩 Key Components
+
+## AnimationConstraints
+
+The **[AnimationConstraint](https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint)** is a new type of constraint designed replace Motor6Ds, with a few key enhancements:
+
+* **[Transform](https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint#Transform) Property:** This CFrame property allows animation control via an `Animator` or `LocalScript`.
+* **[IsKinematic](https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint#IsKinematic) Property:**
+  * When set to `True`, AnimationConstraints will perfectly align parts to animations without physics influence, or in other words, **behave the same as Motor6Ds.**
+  * When set to `False`, AnimationConstraints will use physics to achieve its target transform, making it possible for animations to drive physical interactions. If the values specified in `MaxForce` or `MaxTorque` aren’t high enough, characters might not fully reach their target poses, **enabling more dynamic, physics-based animation blending.**
+
+&lt;div align=&quot;center&quot;&gt;
+
+![slept9|690x452, 75%](upload://nGrN7oCNazOpZgy1g5vAIy1KEtB.gif)
+
+&lt;/div&gt;
+
+
+## BallSocketConstraints
+
+The **[BallSocketConstraints](https://create.roblox.com/docs/reference/engine/classes/BallSocketConstraint)** provide a foundation for physics-based interactions, enabling realistic ragdoll effects. The joints default to human-like limits, but they can be fully customized or disabled entirely.
+
+In the example provided, a character entering a ragdoll state plays a defensive curl animation. The AnimationConstraints lack the strength to hold the pose, resulting in natural movement.
+
+&lt;div align=&quot;center&quot;&gt;
+
+![image1|498x269](upload://ifr11Io2qUyrtiR7u5ZoUKkIPjB.gif)
+
+Note: For ragdoll on character death, set **Humanoid.BreakJointsOnDeath** to *False*. See the example script provided.
+
+&lt;/div&gt;
+
+BallSocketConstraint limits apply to [IKControls](https://create.roblox.com/docs/reference/engine/classes/IKControl). Note how this IKControl set to [LookAt](https://create.roblox.com/docs/reference/engine/classes/IKControl#Type) the red part no longer twists the neck 180° with the joint upgrade active. This can be disabled by setting the BallSocketConstraint.LimitsEnabled to False or disabling the Constraint.
+
+&lt;div align=&quot;center&quot;&gt;
+
+**Before (no BallSocketConstraint)**
+
+![image8|690x448, 75%](upload://xFQFTsVpNRNmwA7xJwXb0FHbOWl.gif)
+
+**After (with BallSocketConstraint LimitsEnabled)**
+
+![image9|690x449, 75%](upload://aag0kbt5ZB4KQIZpmyFsWbHe7Oh.gif)
+
+&lt;/div&gt;
+
+# 🛠️ What Can You Create?
+
+This upgrade opens up a world of possibilities for physically-driven character interactions. To inspire you, we’ve released an uncopylocked example place.
+
+https://www.roblox.com/games/112102002474941/Physically-Simulated-Characters-Demo
+
+This place includes features like:
+
+* Ragdoll on character death, upon falling, and when getting knocked out
+* Physics enabled on arms when holding tools
+
+Get started by checking out this place and experimenting with the new capabilities.
+
+
+&lt;div align=&quot;center&quot;&gt;
+
+![image5|690x458, 75%](upload://1kq42tMewHScLGUj4ShmkwbHTpo.gif)
+&lt;/div&gt;
+
+# ❓What’s Next?
+
+Once this Avatar Joint Upgrade exits Studio Beta, it will be rolled out in phases, similar to other major engine changes, to ensure a smooth transition across the platform. This phased approach allows eager developers to test the upgrade early and provides flexibility for those who may need additional time to adapt.
+
+In Phase 1, developers can enable the upgrade in live experiences so players can use it. Once we move to Phase 2, the upgrade will become the default setting for all experiences. However, any developers who didn’t test the feature in Phase 1 can still disable it temporarily if it disrupts their experience, allowing them time to make necessary adjustments.
+
+Finally, in Phase 3, AnimationConstraints will be the standard for all avatars across Roblox, ensuring consistent, high-quality character simulation. Motor6Ds will still be supported for legacy content, so any existing projects using them will continue to function as expected.
+
+While we don’t have set dates yet for these phases, we will keep you all updated and share more early next year.
+
+# 🚀 Join the Studio Beta and Share Your Feedback
+
+We’re eager to see the creative ways you’ll use this upgrade to bring avatars to life! Let us know your thoughts, feedback, and any issues you encounter.
+
+Happy building,
+The Physics Team
+
+---
+
+# FAQ &amp; Known Issues
+
+Will enabling the joint upgrade change or break my experience? Do I need to update my scripts?
+
+*  In most cases, your experience should behave the same. The AnimationConstraints in spawned players have `IsKinematic` set to `True` by default, so they will match Motor6D behavior. However, if your scripts access specific Motor6D properties, you may need to update them.
+   * Scripts checking `instance:IsA(“Motor6D”)` will not detect AnimationConstraints.
+   * Setting `C0`, `C1`, `Part0`, or `Part1` properties will error. AnimationConstraints use Attachments instead.
+
+   You can Ctrl + Shift + F search your codebase for references to these properties and update them to use Attachments.
+
+   ![image3|491x168, 70%](upload://squ4v9ugUV6ybHf6tacQtR11uK9.png)
+
+   Before:
+
+   ![image7|686x151, 60%](upload://6XWLDZBPWtlb6zOZ0m8upBTqaKE.png)
+
+   After: 
+
+   ![image2|690x126, 75%](upload://eIk1nJGx7Y46mONpvyGN1sfX9dy.png)
+
+ **Does the joint upgrade affect R6?**
+
+* Currently, no. R6 is structurally different from R15. We’re open to adding support in the future.
+
+**Are upgraded joints applied to all characters?**
+
+* Currently, upgraded joints are only added to characters from the Player spawning flow. We plan to extend this to all character-creation flows, like from HumanoidDescription, in the coming weeks. Upgraded joints will not be added to existing character Models, like NPCs already in your place.
+
+**Do AnimationConstraints work with the Animation Editor?**
+
+* Yes. However, the editor currently does not preview animations on joints that have IsKinematic set to False. We plan to enable this soon!
+
+**Does enabling the joint upgrade impact performance?**
+
+* No, the base joint upgrade has little to no effect on performance. Further explanation in [this reply](https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/15).
+
+**Known Issues**
+
+* There are some visual glitches in some cases on skinned avatars. The parts appear to have correct CFrames, but the visual is wrong. We&#39;re investigating.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Mar 2026 21:58:27 +0000</lastBuildDate>
+    <category>Announcements</category>
+    <atom:link href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[system]]></dc:creator>
+        <description><![CDATA[
+            <p>This topic was automatically closed 14 days after the last reply. New replies are no longer allowed.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/276">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/276</link>
+        <pubDate>Wed, 01 Apr 2026 21:59:13 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-276</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>Alright, alright. I’ve seen the ServerAuthority updates rolling out in studio, and it seems that replication fix might be included in it. So I guess the eta is around 1-2 months, anyway thanks for replying! I didn’t wanna seem rude with all those messages but I feared that the thread might’ve gone unseen. Have a nice day</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/275">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/275</link>
+        <pubDate>Wed, 18 Mar 2026 21:58:27 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-275</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Homeomorph]]></dc:creator>
+        <description><![CDATA[
+            <p>Right now we’re focused on making kinematic AnimationConstraints in avatars good enough for people to adopt them with minimal effort and issues. We aren’t currently working on improving replication lag in simulated mode.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/274">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/274</link>
+        <pubDate>Mon, 16 Mar 2026 15:58:34 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-274</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>No, that makes it so that it’s physically affected, isKinematic property, when turned on, makes the constraints act like Motor6Ds</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/273">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/273</link>
+        <pubDate>Sun, 15 Mar 2026 21:15:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-273</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Dummy]]></dc:creator>
+        <description><![CDATA[
+            <p>maybe turn root IsKinematic to false? it worked for me</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/272">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/272</link>
+        <pubDate>Sat, 14 Mar 2026 10:24:20 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-272</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>could I get an answer?<br>
+I’d really appreciate to know what caused that</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/271">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/271</link>
+        <pubDate>Mon, 09 Mar 2026 20:54:18 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-271</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Magus_ArtStudios]]></dc:creator>
+        <description><![CDATA[
+            <p>This is absolutely wonderful! I was ready to write a whole algorithm that converts all motor6ds to animation constraints and whatnot and it just does it itself. Scaled up in scope it also appears to perform better than motor 6Ds. But also, I think this update should fix any issues with Adaptive Animations so I’m going to restart studio and hope for the best.<br>
+But yeah this update works great! No issues yet.</p>
+<p>Meanwhile my ragdoll system is ready for this but I forgot to test it. Will update this post soon!</p>
+<p>Also the physics were so broken with the motor6D ragdolls that I had to write up some custom physics constraints to make the ragdolls not explode.</p>
+<pre data-code-wrap="lua"><code class="lang-lua">local CollectionService = game:GetService("CollectionService")
+local Players = game:GetService("Players")
+local RigTypes = require(script.RigTypes)
+local ragdolls={}
+local RAGDOLLED_TAG = "Ragdolled"
+local dynamicfeet={RightAnkle = {	
+},
+LeftAnkle = {
+},}
+local DefaultCollision="Default"
+local CharacterCollision="NoCollidePlayer"
+local MAX_FRICTION_TORQUE = 10
+local jointSettings = {
+	Neck = {
+		ragdollConstraintSettings = {
+			TwistLowerAngle = 80,
+			TwistUpperAngle = 60,
+			MaxFrictionTorque = 3 * MAX_FRICTION_TORQUE
+		},
+	},
+	Waist = {
+		ragdollConstraintSettings = {
+			UpperAngle = 22.5,
+			TwistLowerAngle = -90,
+			TwistUpperAngle = 11.25,
+			MaxFrictionTorque = 3 * MAX_FRICTION_TORQUE
+		},
+	},
+	LeftShoulder = {
+		ragdollConstraintSettings = {
+			UpperAngle = 180,
+			TwistLowerAngle = 0,-- -180,
+			TwistUpperAngle = 0-- 90
+			,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	RightShoulder = {
+		ragdollConstraintSettings = {
+			UpperAngle = 180,
+			TwistLowerAngle = 0,-- -180,
+			TwistUpperAngle = 0-- 90
+			,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	RightElbow = {
+		ragdollConstraintSettings = {
+			UpperAngle = 11.25,
+			TwistLowerAngle = 0,
+			TwistUpperAngle = 170
+			,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	LeftElbow = {
+		ragdollConstraintSettings = {
+			UpperAngle = 11.25,
+			TwistLowerAngle = 0,
+			TwistUpperAngle = 170,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	LeftWrist = {
+		ragdollConstraintSettings = {
+			UpperAngle = 11.25,
+			TwistLowerAngle = -80,
+			TwistUpperAngle = 80,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	RightWrist = {
+		ragdollConstraintSettings = {
+			UpperAngle = 11.25,
+			TwistLowerAngle = -80,
+			TwistUpperAngle = 80,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	RightHip = {
+		ragdollConstraintSettings = {
+			UpperAngle = 22.5,
+			TwistLowerAngle = -11.25,
+			TwistUpperAngle = 135,
+			MaxFrictionTorque = 3 * MAX_FRICTION_TORQUE
+		},
+	},
+	LeftHip = {
+		ragdollConstraintSettings = {
+			UpperAngle = 22.5,
+			TwistLowerAngle = -11.25,
+			TwistUpperAngle = 135,
+			MaxFrictionTorque = 3 * MAX_FRICTION_TORQUE
+
+		},
+	},
+	LeftKnee = {
+		ragdollConstraintSettings = {
+			UpperAngle = 0,
+			TwistLowerAngle = -170,
+			TwistUpperAngle = 0
+			,MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		},
+	},
+	RightKnee = {
+		ragdollConstraintSettings = {
+			UpperAngle = 0,
+			TwistLowerAngle = -170,
+			TwistUpperAngle = 0
+		},
+	},
+	RightAnkle = {
+		ragdollConstraintSettings = {
+			UpperAngle = 22.5,
+			TwistLowerAngle = -45,
+			TwistUpperAngle = 11.25
+		},
+	},
+	LeftAnkle = {
+		ragdollConstraintSettings = {
+			UpperAngle = 22.5,
+			TwistLowerAngle = -45,
+			TwistUpperAngle = 11.25
+		},
+	},
+}
+local R15Bodyparts={
+	["Head"] = "Neck",
+	["LeftFoot"] = "LeftAnkle",
+	["LeftHand"] = "LeftWrist",
+	["LeftLowerArm"] = "LeftElbow",
+	["LeftLowerLeg"] = "LeftKnee",
+	["LeftUpperArm"] = "LeftShoulder",
+	["LeftUpperLeg"] = "LeftHip",
+	["LowerTorso"] = "Root",
+	["RightFoot"] = "RightAnkle",
+	["RightHand"] = "RightWrist",
+	["RightLowerArm"] = "RightElbow",
+	["RightLowerLeg"] = "RightKnee",
+	["RightUpperArm"] = "RightShoulder",
+	["RightUpperLeg"] = "RightHip",
+	["UpperTorso"] = "Waist"
+}
+local states= Enum.HumanoidStateType:GetEnumItems()
+table.remove(states,17)
+local function disablestates(Humanoid,boolean)
+	for _,v in states do 
+		Humanoid:SetStateEnabled(v,boolean)
+	end
+end	
+
+local function unragdollnodata(model,humanoid)
+	if CollectionService:HasTag(model, RAGDOLLED_TAG) then
+		--model:RemoveTag(RAGDOLLED_TAG)
+		model.PrimaryPart.Anchored=true
+		model.PrimaryPart.Massless=false
+		if not humanoid then
+			humanoid=model:FindFirstChildOfClass("Humanoid")
+		end
+		
+		model.PrimaryPart.CanCollide=true
+		humanoid.PlatformStand=false
+		local player=game.Players:GetPlayerFromCharacter(model)
+		local data={Enable={},Delete={}}
+		for i,key in R15Bodyparts do 
+			if model:FindFirstChild(i) then
+				model[i].CanCollide=false
+				model[i][key].Enabled=true
+				model[i].Anchored=false
+				table.insert(data.Enable,model[i][key])
+			else print("Cannot find "..i) end
+		end
+		--model.PrimaryPart.CanCollide=true
+		local attachments = RigTypes.getAttachments(model, humanoid.RigType)
+		for name, objects in pairs(attachments) do
+			local parent = model:FindFirstChild(name)
+			if parent then
+				local key= name.."RagdollBallSocketConstraint"
+
+				local motor=parent:FindFirstChildOfClass("Motor6D")
+				
+				if motor and jointSettings[motor.Name] then					
+					motor.Enabled=true
+				end
+				
+				local ballsocket=parent:FindFirstChild(key)
+				if ballsocket then
+					ballsocket:Destroy()						
+				end
+			end
+		end
+		local parts = RigTypes.getNoCollisions(model, humanoid.RigType)
+		for i, objects in pairs(parts) do
+			local constraint = objects[1]:FindFirstChild(objects[1].Name.."BallSocket"..i)
+			if constraint then
+				constraint:Destroy()
+			end						
+		end
+		local clones={}
+		for i,v in model:GetChildren() do 
+			if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle.Transparency~=1 then
+				local WrapLayer=v.Handle:FindFirstChildOfClass("WrapLayer")
+
+				if WrapLayer and WrapLayer.Enabled then
+					WrapLayer.Enabled=false
+					task.delay(1,function()
+						WrapLayer.Enabled=true
+					end)
+				end
+
+			end
+		end
+		--for i,v in model:GetChildren() do 
+		--	if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle:FindFirstChildOfClass("WrapLayer") then
+		--		table.insert(clones,v:Clone())
+		--		v:Destroy()
+		--	end
+		--end
+		--task.delay(1,function()
+		--for i,v in clones do 
+		--	humanoid:AddAccessory(v)
+		--end
+		--model.PrimaryPart.Anchored=false
+		humanoid.EvaluateStateMachine=true
+		humanoid.PlatformStand=false
+		model.PrimaryPart.Anchored=false
+		humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+		CollectionService:RemoveTag(model, RAGDOLLED_TAG)
+		
+	end	
+end
+function ragdolls.unragdoll(model,humanoid,data)
+if data==nil then
+	unragdollnodata(model,humanoid)
+else 
+if CollectionService:HasTag(model, RAGDOLLED_TAG) then	
+	
+		model.PrimaryPart.Massless=false
+		model.PrimaryPart.CanCollide=true
+		model.PrimaryPart.Anchored=true
+		if model:FindFirstChild("HumanoidRootPart") then
+			model.HumanoidRootPart.CanCollide=true
+		end
+		if not humanoid then
+			humanoid=model:FindFirstChildOfClass("Humanoid")
+		end
+		for i,v in data.Delete do 	
+			v:Destroy()
+		end
+		for i,v in data.Enable do 
+			v.Enabled=true
+		end
+		--humanoid:BuildRigFromAttachments()
+	end
+
+		end
+		--local clones={}
+		--task.wait()
+	for i,v in model:GetChildren() do 
+		if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle.Transparency~=1 then
+			local WrapLayer=v.Handle:FindFirstChildOfClass("WrapLayer")
+			
+			if WrapLayer and WrapLayer.Enabled==true then
+				--local originalsize=v.Handle:FindFirstChild("OriginalSize")
+				--if originalsize then
+				--v.Handle.Size=v.Handle.OriginalSize.Value
+				--end	
+				WrapLayer.Enabled=false
+				task.delay(1,function()
+				WrapLayer.Enabled=true
+				end)
+			end
+		--table.insert(clones,v:Clone())
+		--	v:Destroy()
+		end
+	end
+		
+		--task.delay(1,function()
+	--for i,v in clones do 
+	--	humanoid:AddAccessory(v)
+	--end
+	humanoid.EvaluateStateMachine=true
+	humanoid.PlatformStand=false
+
+	--humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+	model.PrimaryPart.Anchored=false
+--task.wait(.3)
+
+humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+--	humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	--end)
+	CollectionService:RemoveTag(model, RAGDOLLED_TAG)
+end
+function ragdolls.ragdoll(model, humanoid,duration)
+	--assert(humanoid:IsDescendantOf(model))
+	if CollectionService:HasTag(model, RAGDOLLED_TAG) then
+		return
+	end
+	if not humanoid then
+		humanoid=model:FindFirstChildOfClass("Humanoid")
+	end
+	if humanoid then
+	CollectionService:AddTag(model, RAGDOLLED_TAG)
+	model.PrimaryPart.Massless=true
+	-- Turn into loose body:
+	--if humanoid then
+	humanoid:ChangeState(Enum.HumanoidStateType.PlatformStanding)
+	humanoid.PlatformStand=true
+	humanoid.EvaluateStateMachine=false
+	local player=game.Players:GetPlayerFromCharacter(model)
+	local data={Enable={},Delete={}}
+	for i,key in R15Bodyparts do 
+		local part= model:FindFirstChild(i) 
+		if part then
+			part.CanCollide=true	
+			part.Anchored=true
+			local motor=model[i]:FindFirstChild(key)
+			if motor then motor.Enabled=false		
+			table.insert(data.Enable,model[i][key])
+			end
+		else 
+			--print("Cannot find "..i)
+		end
+	end
+	--
+	--local tool= model:FindFirstChildOfClass("Tool")
+--	humanoid:UnequipTools()
+	-- Instantiate BallSocketConstraints:
+	local attachments = RigTypes.getAttachments(model, humanoid.RigType)
+		local velocities={}
+		for name, objects in pairs(attachments) do
+		local parent = model:FindFirstChild(name)
+		if parent then
+			parent.CollisionGroup = DefaultCollision
+			local constraint = Instance.new("BallSocketConstraint")
+			
+			constraint.Name = name.."RagdollBallSocketConstraint"
+		
+		
+			constraint.Attachment0 = objects.attachment0
+			constraint.Attachment1 = objects.attachment1
+			constraint.LimitsEnabled = true
+			constraint.UpperAngle = objects.limits.UpperAngle
+			constraint.TwistLimitsEnabled = true
+			constraint.TwistLowerAngle = objects.limits.TwistLowerAngle
+			constraint.TwistUpperAngle = objects.limits.TwistUpperAngle
+			constraint.Parent = parent
+			local velocityconstraint=Instance.new("LinearVelocity")
+			velocityconstraint.MaxForce=20--Vector3.new(20,20,20)
+			velocityconstraint.Parent=parent
+			local motor=parent:FindFirstChildOfClass("Motor6D")
+			if motor and jointSettings[motor.Name] then
+				for t,o in  jointSettings[motor.Name].ragdollConstraintSettings do 
+					constraint[t]=o
+				end
+		--	local c=Instance.new("RopeConstraint")
+		--	c.Length=.15
+		--	c.Name=name.."RopeConstraint"
+		--	c.Restitution=1
+		--	c.Visible=false
+		--	c.WinchForce=math.huge
+		--	c.WinchSpeed=math.huge
+		--	c.WinchEnabled=true
+		----	c.WinchTarget=.25
+		--	c.WinchResponsiveness=math.huge
+		--	c.Attachment0= objects.attachment0
+		--	c.Attachment1= objects.attachment1
+		--	c.Parent=parent		
+		--	c.WinchTarget=math.max(.15,(motor.C0.Position-motor.C1.Position).Magnitude)
+			--table.insert(data.Delete,c)
+			table.insert(data.Enable,motor)
+			motor.Enabled=false		
+			constraint.Restitution=0.05
+			
+			end
+			table.insert(velocities,parent)	
+			table.insert(data.Delete,constraint)	table.insert(data.Delete,velocityconstraint)
+		end
+		end
+		for i,v in model:GetChildren() do 
+			if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle.Transparency~=1 then
+				local WrapLayer=v.Handle:FindFirstChildOfClass("WrapLayer")
+
+				if WrapLayer and WrapLayer.Enabled then
+					WrapLayer.Enabled=false
+					task.delay(1,function()
+						WrapLayer.Enabled=true
+					end)
+				end
+				
+			end
+		end
+	--model.UpperTorso.Waist.Enabled=true--Layered Clothing Fix 
+	-- Instantiate NoCollisionConstraints:
+	local parts = RigTypes.getNoCollisions(model, humanoid.RigType)
+	for i, objects in pairs(parts) do
+		local constraint = objects[1]:FindFirstChild(objects[1].Name.."BallSocket"..i) or Instance.new("NoCollisionConstraint")
+		constraint.Name =  objects[1].Name.."BallSocket"..i
+		constraint.Part0 = objects[1]
+		constraint.Part1 = objects[2]
+		constraint.Parent = objects[1]
+		table.insert(data.Delete,constraint)
+	end
+	--model
+	
+	
+	for _,o in jointSettings do 
+		if o.ragdollConstraintSettings.MaxFrictionTorque==nil then
+			o.ragdollConstraintSettings.MaxFrictionTorque =  MAX_FRICTION_TORQUE
+		end
+	end
+	-- Destroy all regular joints:
+
+	for _, motor in pairs(model:GetDescendants()) do
+		if motor:IsA("Motor6D") then		
+		table.insert(velocities,motor.Parent)				
+		end
+	end
+	
+	local function weldmotor(Root1,Root2)
+		local	w = Instance.new("Weld")
+		w.Part0,w.Part1 = Root1,Root2	
+		--w.C0 = Root2.CFrame:toObjectSpace(Root1.CFrame):inverse()
+		w.Parent = Root1
+		w.Name=Root2.Name.."Joint"
+		return w
+	end
+	table.insert(data.Delete,weldmotor(model.HumanoidRootPart,model:FindFirstChild("UpperTorso") or model:FindFirstChild("Head")))
+
+	if game.Players:GetPlayerFromCharacter(model) then
+		disablestates(humanoid,false)
+	task.spawn(function()	
+		local vec=Vector3.new(0,0,0)
+		local VelocityConstraint=40
+		local function constrainsum(v)
+			local x,y,z=v.X,v.Y,v.Z
+			if x&gt;VelocityConstraint then
+				x=VelocityConstraint
+			elseif x&lt;-VelocityConstraint then 
+				x=-VelocityConstraint
+			end
+			if y&gt;VelocityConstraint then
+				y=VelocityConstraint	
+			elseif y&lt;-VelocityConstraint then 
+				y=-VelocityConstraint	
+			end
+			if z&gt;VelocityConstraint then
+				z=VelocityConstraint
+			elseif z&lt;-VelocityConstraint then 
+				z=-VelocityConstraint
+			end
+			return Vector3.new(x,y,z)
+		end
+	--while CollectionService:HasTag(model, RAGDOLLED_TAG) do --lose velocity
+				local positionalconstraints={}
+				local primp=model.PrimaryPart.CFrame
+				for i,key in R15Bodyparts do 
+					if model:FindFirstChild(i) then
+						positionalconstraints[key]={CFrame=model[i].CFrame,Magnitude=2+(model[i].Position-primp.Position).Magnitude*2}
+						--pcall(function() model[i]:SetNetworkOwner(player) end)
+					end
+				end	
+				local render=nil	
+				local scale=model:GetScale()
+				--local origin=model.PrimaryPart.CFrame.Position
+
+			render=game["Run Service"].PreRender:Connect(function()		
+				local prim=model~=nil and model.PrimaryPart and model.PrimaryPart.Parent and model.PrimaryPart.CFrame.Position
+					
+					if not prim or not CollectionService:HasTag(model, RAGDOLLED_TAG) then disablestates(humanoid,true) render:Disconnect() return end 
+					
+					for i,key in R15Bodyparts do 
+						if model:FindFirstChild(i) then
+							if (model[i].Position-prim).Magnitude&gt;positionalconstraints[key].Magnitude then
+							--local motor=	model[i]:FindFirstChildOfClass("Motor6D")
+							--	if motor then
+							--		motor.Enabled=true
+							--		task.wait()
+							--		motor.enabled=false
+							--	end
+								model[i].AssemblyLinearVelocity=Vector3.new(0,0,0)
+								model[i].CFrame=positionalconstraints[key].CFrame
+							else 
+							positionalconstraints[key].CFrame=model[i].CFrame
+							end
+						end
+					end	
+				
+			for i,v in velocities do
+				local constrain=constrainsum(v.AssemblyLinearVelocity)
+			if constrain~=v.AssemblyLinearVelocity then	
+				v.AssemblyLinearVelocity=constrain
+			end			
+						--v.AssemblyLinearVelocity
+			--v.AssemblyAngularVelocity*=.95	
+					end
+					for i,key in R15Bodyparts do 
+						if model:FindFirstChild(i) then
+							model[i].CanCollide=true
+						end
+					end
+					prim=model.PrimaryPart.CFrame.Position
+		end)			
+	end)			
+	end
+	
+	if model:FindFirstChild("HumanoidRootPart") then
+	model.HumanoidRootPart.CanCollide=false
+	end
+	task.wait()
+	for i,_ in R15Bodyparts do 
+		if model:FindFirstChild(i) then
+			model[i].CanCollide=true
+			model[i].Anchored=false
+			model[i].AssemblyLinearVelocity*=.75--vec--Vector3.new(0,0,0)
+			--model[i].AssemblyAngularVelocity=Vector3.new(0,0,0)
+			if player then
+			pcall(function() model[i]:SetNetworkOwner(player) end)
+			end
+		else 
+			print("Cannot find "..i)
+		end
+	end
+	if duration then
+		task.delay(duration, function()  ragdolls.unragdoll(model,humanoid,data) end)
+	end
+	return data
+	end
+end
+return ragdolls
+
+</code></pre>
+<p>Hopefully this new version has the correct ragdolling effect I’m looking for.<br>
+Once I get familiar with the animation constraint I can set up some ways to interact with it.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/270">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/270</link>
+        <pubDate>Wed, 25 Feb 2026 04:07:58 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-270</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p><a class="mention" href="https://devforum.roblox.com/u/homeomorph">@Homeomorph</a> I’d like to know what could’ve possibly caused this and if it’s gonna be fixed anytime soon or not fixed at all</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/269">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/269</link>
+        <pubDate>Fri, 20 Feb 2026 19:41:02 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-269</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Werty]]></dc:creator>
+        <description><![CDATA[
+            <p>the ragdolls are quite nice, but is there a way for them to persist on respawn or would i have to do my own hacky workaround?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/268">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/268</link>
+        <pubDate>Tue, 17 Feb 2026 06:26:54 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-268</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>This is what it used to look like right when the feature had gotten released:<a href="https://youtu.be/Ja4NFzUmlrA" rel="noopener nofollow ugc">https://youtu.be/Ja4NFzUmlrA</a></p>
+<p>now it’s all jittery &amp; unpredictable, how it a fighting game supposed to work this way</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/267">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/267</link>
+        <pubDate>Sun, 15 Feb 2026 16:59:02 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-267</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>It was working fine earlier, but in the apst days I’ve noticed that the replication bug is back? for some reason the movements are now twitchy and weird, I’d like to know what the solution to this would be?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/266">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/266</link>
+        <pubDate>Sun, 15 Feb 2026 16:26:20 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-266</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Dummy]]></dc:creator>
+        <description><![CDATA[
+            <p>No there is no r6 support but i can do this: script: local Motor6DRig = script.Parent<br>
+for i, Joint in ipairs(Motor6DRig:GetDescendants()) do<br>
+if Joint:IsA(“Motor6D”) then<br>
+if Joint.Part0 ~= nil and Joint.Part1 ~= nil then<br>
+local AnimationConstraint = Instance.new(“AnimationConstraint”)<br>
+local Attach0 = Instance.new(“Attachment”)<br>
+local Attach1 = Instance.new(“Attachment”)<br>
+Attach0.Name = Joint.Name..“Motor6D”..Joint.Part0.Name<br>
+Attach1.Name = Joint.Name..“Motor6D”..Joint.Part1.Name<br>
+Attach0.CFrame = Joint.C0<br>
+Attach1.CFrame = Joint.C1<br>
+AnimationConstraint.Attachment0 = Attach0<br>
+AnimationConstraint.Attachment1 = Attach1<br>
+AnimationConstraint.Name = Joint.Name<br>
+AnimationConstraint.IsKinematic = true<br>
+Attach0.Parent = Joint.Part0<br>
+Attach1.Parent = Joint.Part1<br>
+AnimationConstraint.Parent = Joint.Parent<br>
+Joint:Destroy()<br>
+end<br>
+end<br>
+end</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/265">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/265</link>
+        <pubDate>Sat, 07 Feb 2026 14:51:04 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-265</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[fin]]></dc:creator>
+        <description><![CDATA[
+            <p>Greetings</p>
+<p>Does this support R6? I hope it does !</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/264">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/264</link>
+        <pubDate>Mon, 02 Feb 2026 13:54:53 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-264</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[zwrif]]></dc:creator>
+        <description><![CDATA[
+            <p>And right after I just got done making a homebrewed R15 ragdoll solution. <img src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/broken_heart.png?v=14" title=":broken_heart:" class="emoji" alt=":broken_heart:" loading="lazy" width="20" height="20"></p>
+<p>Happy to have more options though!</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/263">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/263</link>
+        <pubDate>Fri, 30 Jan 2026 00:58:41 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-263</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>This is awesome <img src="https://doy2mn9upadnk.cloudfront.net/images/emoji/twitter/smiley.png?v=14" title=":smiley:" class="emoji" alt=":smiley:" loading="lazy" width="20" height="20"><br>
+my game works perfectly<br>
+there used to be a replication bug before with R6 which had laggy replication and I was worried about that but the update fixed that aswell so that’s soooo nice lol</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/262">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/262</link>
+        <pubDate>Tue, 27 Jan 2026 11:03:56 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-262</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Homeomorph]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote quote-modified" data-post="1" data-topic="4298561">
+  <div class="title">
+    <div class="quote-controls"></div>
+    <img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/homeomorph/60/8938304_2.png" class="avatar">
+    <a href="https://devforum.roblox.com/t/avatar-joint-upgrade-for-physically-simulated-character-movement-is-now-live/4298561">Avatar Joint Upgrade for Physically-Simulated Character Movement is Now Live!</a> <a class="badge-category__wrapper " href="https://devforum.roblox.com/c/updates/announcements/36"><span data-category-id="36" style="--category-badge-color: #E2231A; --category-badge-text-color: #FFFFFF; --parent-category-badge-color: #E2231A;" data-parent-category-id="45" data-drop-close="true" class="badge-category --has-parent" title="Official announcements about Roblox products and features"><span class="badge-category__name">Announcements</span></span></a>
+  </div>
+  <blockquote>
+    Hello Creators! 
+We are thrilled to announce that the <a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099">Avatar Joint Upgrade</a> is officially graduating from Studio Beta and is now available for use in your published, live experiences! 
+
+[image] 
+With the upgrade, parts driven by Animation can interact physically with the environment, rather than rigidly following predetermined Animation transforms. This can produce emergent behavior, like the arms and legs swinging above. 
+
+As a reminder, this upgrade introduces force and torque-limited <a href="https://create.roblox.com/docs/reference/engine/classes/AnimationConstraint">Animati…</a>
+  </blockquote>
+</aside>
+
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/261">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/261</link>
+        <pubDate>Mon, 26 Jan 2026 23:31:00 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-261</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Ita]]></dc:creator>
+        <description><![CDATA[
+            <p>Is it possibly releasing today?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/260">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/260</link>
+        <pubDate>Mon, 26 Jan 2026 13:56:18 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-260</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[icarus]]></dc:creator>
+        <description><![CDATA[
+            <p>Very excited for the release of AnimationConstraints. Will there be any relation between Server Authority and the joint upgrade in the future?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/259">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/259</link>
+        <pubDate>Sun, 25 Jan 2026 20:16:12 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-259</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Homeomorph]]></dc:creator>
+        <description><![CDATA[
+            <p>That’s great! I’d love to hear more about how this goes.</p>
+<p>Right now we’re expecting to enable the replication improvements everywhere when they’re ready. Rolling the improvements out has been complex because a lot of the fundamental Roblox replication system is being improved to support Server Authority. We don’t want to make too many changes to the system all at once.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/258">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/258</link>
+        <pubDate>Thu, 22 Jan 2026 23:14:38 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-258</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Homeomorph]]></dc:creator>
+        <description><![CDATA[
+            <p>No, we’re mainly renaming the property. If you disable BreakJointsOnDeath, your BallSocketConstraints don’t get removed on death. So effectively you will still see this when you die.</p>
+<p><img src="/secure-uploads/uploads/original/5X/4/4/0/d/440d9dd3a5dfd7e8351d62bfd909f160f94fd7e9.gif" alt="plugin-240hz" data-base62-sha1="9I1DKT7G3Qy9XK1d7FSyUC4QRC1" width="545" height="396" class="animated"></p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/257">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/257</link>
+        <pubDate>Thu, 22 Jan 2026 23:11:23 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-257</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[PeZsmistic]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote group-Roblox_Staff" data-username="Homeomorph" data-post="254" data-topic="3266099">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/homeomorph/60/8938304_2.png" class="avatar"> Homeomorph:</div>
+<blockquote>
+<h3>Visual artifacts on other physically simulated players</h3>
+<p>We have several solutions that reduce the visual stuttering you sometimes see on other players with physically simulated limbs. We haven’t enabled these yet because they’re tied to the Roblox replication system, which is undergoing other major improvements right now. Our current plan is to allow using the AvatarJointUpgrade in live experiences, and ship the visual improvements shortly after.</p>
+</blockquote>
+</aside>
+<p>I have grappled with what I assume are the same stuttering artifacts in my own partial ragdoll character system for several years, and have numerous insane hacks to avoid them. Do these improvements require any other additional tech (e.g. server authority), or are they an in-place improvement? Super excited for this, I will switch human characters to this on D1 if possible, and start working with this tech for my other characters the minute I ship my pending update.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/256">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/256</link>
+        <pubDate>Thu, 22 Jan 2026 23:08:47 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-256</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[xand]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote group-Roblox_Staff" data-username="Homeomorph" data-post="254" data-topic="3266099">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/homeomorph/60/8938304_2.png" class="avatar"> Homeomorph:</div>
+<blockquote>
+<p>We’ve replaced the ClassicDeath property with <a href="https://create.roblox.com/docs/reference/engine/classes/StarterPlayer#CharacterBreakJointsOnDeath">StarterPlayer.CharacterBreakJointsOnDeath</a>. This simply initializes the <a href="https://create.roblox.com/docs/reference/engine/classes/Humanoid#BreakJointsOnDeath">Humanoid.BreakJointsOnDeath</a> property, which then determines whether your joints fall apart with the Joint Upgrade.</p>
+</blockquote>
+</aside>
+<p>Does this mean it won’t automatically ragdoll with the setting disabled?</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/255">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/255</link>
+        <pubDate>Thu, 22 Jan 2026 22:21:28 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-255</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[Homeomorph]]></dc:creator>
+        <description><![CDATA[
+            <p>We’re preparing to support the AvatarJointUpgrade in live experiences very soon. Currently planning for Monday Jan 26.</p>
+<h3><a name="p-13768324-classicdeath-characterbreakjointsondeath-1" class="anchor" href="https://devforum.roblox.com#p-13768324-classicdeath-characterbreakjointsondeath-1"></a>ClassicDeath → CharacterBreakJointsOnDeath</h3>
+<p>We’ve replaced the ClassicDeath property with <a href="https://create.roblox.com/docs/reference/engine/classes/StarterPlayer#CharacterBreakJointsOnDeath">StarterPlayer.CharacterBreakJointsOnDeath</a>. This simply initializes the <a href="https://create.roblox.com/docs/reference/engine/classes/Humanoid#BreakJointsOnDeath">Humanoid.BreakJointsOnDeath</a> property, which then determines whether your joints fall apart with the Joint Upgrade.<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/7/4/3/2/7432f11f6d3f617536ea2c7ac012d2e33cfd5333.png" data-download-href="/uploads/short-url/gzWwNHzSURhPNUWjmqzB2Xx9C95.png?dl=1" title="image" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/7/4/3/2/7432f11f6d3f617536ea2c7ac012d2e33cfd5333.png" alt="image" data-base62-sha1="gzWwNHzSURhPNUWjmqzB2Xx9C95" width="303" height="121"></a></div><p></p>
+<p>We changed property name to more clearly explain what it does and match the other Character_____ properties on StarterPlayer.</p>
+<h3><a name="p-13768324-visual-artifacts-on-other-physically-simulated-players-2" class="anchor" href="https://devforum.roblox.com#p-13768324-visual-artifacts-on-other-physically-simulated-players-2"></a>Visual artifacts on other physically simulated players</h3>
+<p>We have several solutions that reduce the visual stuttering you sometimes see on other players with physically simulated limbs. We haven’t enabled these yet because they’re tied to the Roblox replication system, which is undergoing other major improvements right now. Our current plan is to allow using the AvatarJointUpgrade in live experiences, and ship the visual improvements shortly after.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/254">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/254</link>
+        <pubDate>Thu, 22 Jan 2026 22:13:59 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-254</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[tnavarts]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group quote-modified" data-username="JustBorgar" data-post="252" data-topic="3266099">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/justborgar/60/8803447_2.png" class="avatar"> JustBorgar:</div>
+<blockquote>
+<p>Did [the StarterPlayer.ClassicDeath] property dissapear for anyone else?</p>
+</blockquote>
+</aside>
+<p>The behavior isn’t gone, we’re just doing some adjustments to how exactly this will be exposed.</p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/253">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/253</link>
+        <pubDate>Thu, 22 Jan 2026 21:53:29 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-253</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+      <item>
+        <title>[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</title>
+        <dc:creator><![CDATA[JustBorgar]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote group-Roblox_Staff" data-username="Homeomorph" data-post="188" data-topic="3266099">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/homeomorph/60/8938304_2.png" class="avatar"> Homeomorph:</div>
+<blockquote>
+<p>StarterPlayer.ClassicDeath</p>
+</blockquote>
+</aside>
+<p>Did this property dissapear for anyone else? Worked fine last night and now the setting is just gone and so is the ragdoll (really hope this is not server authority becoming mandatory to use something as basic as a ragdoll death)<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/0/b/1/0/0b1093b12781abffc445eb1a193f552979b202b8.png" data-download-href="/uploads/short-url/1zSLCrIeNaDcjsI0rOJLEPeK8gE.png?dl=1" title="Captura de pantalla de 2026-01-22 18-38-17" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/0/b/1/0/0b1093b12781abffc445eb1a193f552979b202b8_2_302x250.png" alt="Captura de pantalla de 2026-01-22 18-38-17" data-base62-sha1="1zSLCrIeNaDcjsI0rOJLEPeK8gE" width="302" height="250" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/0/b/1/0/0b1093b12781abffc445eb1a193f552979b202b8_2_302x250.png, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/0/b/1/0/0b1093b12781abffc445eb1a193f552979b202b8_2_453x375.png 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/0/b/1/0/0b1093b12781abffc445eb1a193f552979b202b8_2_604x500.png 2x" data-dominant-color="252731"></a></div><p></p>
+          <p><a href="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/252">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099/252</link>
+        <pubDate>Thu, 22 Jan 2026 21:40:13 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-3266099-252</guid>
+        <source url="https://devforum.roblox.com/t/studio-beta-avatar-joint-upgrade-enabling-physically-simulated-characters/3266099.rss">[Studio Beta] Avatar Joint Upgrade: Enabling Physically-Simulated Characters</source>
+      </item>
+  </channel>
+</rss>

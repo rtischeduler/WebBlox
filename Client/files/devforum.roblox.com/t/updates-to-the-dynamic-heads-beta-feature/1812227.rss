@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Updates to the Dynamic Heads Beta Feature</title>
+    <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227</link>
+    <description>### [Update] September 12, 2022
+
+[quote]
+
+Dynamic Heads will now be referred to as **Facial Animation**.
+
+[/quote]
+
+---
+
+### [Update] June 28, 2022
+
+&gt; This feature is no longer in beta, you can find more information here: [Link](https://devforum.roblox.com/t/full-release-of-dynamic-heads/1849867)
+
+---
+
+
+Hi Developers!
+
+Last October we released the [Dynamic Heads &amp; Facial Animation Preview Beta](https://devforum.roblox.com/t/dynamic-heads-facial-animation-preview-beta/1508623). Today we’re making some updates to this beta feature and releasing some new functionality to prepare for our full release of Dynamic Heads and Facial Animation later this year.
+
+To use the features mentioned in this post, you will need to turn on the following two beta features in Studio:
+
+* Facial Animation
+* Automatic Skinning Transfer
+
+---
+
+### Update to the Beta Feature
+
+The major change we’re making to the beta feature involves hiding the bone instances under the head MeshPart in the Data Model. Previously we’ve shown these bone instances, but moving forward they won’t be visible in any Dynamic Head asset.
+
+We’re primarily making this change to simplify the Data Model and avoid any confusion around animating Dynamic Heads using the bones. All face animations should use [FACS](https://create.roblox.com/docs/avatar/dynamic-heads/facs-poses-reference), which standardizes the animation of Dynamic Heads to a set of 50 controls regardless of the underlying bone count.
+
+Below you can see that the Data Model has changed to hide the bone instances under the Head MeshPart.
+
+&lt;div align=&quot;center&quot;&gt;
+
+| Previously| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;| Going Forward|
+| :---   |    :----:   |  :---: |
+| | |
+&lt;/div&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+ ![1|186x500, 75%](upload://z1oR0Mg03FAhdPynR8HI9WCD2ot.png) ![1|107x500, 50%](upload://v9C4tGt7jaOUz2cxImXOc3Ulf6U.png)![2|356x500, 75%](upload://xihy4GRQA6ogGFZR58pNkytMmI7.png)
+
+&lt;/div&gt;
+
+---
+### Documentation
+
+Alongside this update, we’re releasing some fresh documentation, example files, and test scenes to help with creating, implementing, and animating Dynamic Heads!
+
+Below is the full list of the documentation:
+
+* [Overview](https://create.roblox.com/docs/avatar/dynamic-heads)
+* [Using Dynamic Heads in Studio](https://create.roblox.com/docs/avatar/dynamic-heads/using-dynamic-heads-in-studio)
+* [Animating Dynamic Heads](https://create.roblox.com/docs/avatar/dynamic-heads/animating-dynamic-heads)
+* [Creating a Basic Dynamic Head](https://create.roblox.com/docs/avatar/dynamic-heads/creating-basic-dynamic-heads)
+* [FACS Poses Reference](https://create.roblox.com/docs/avatar/dynamic-heads/facs-poses-reference)
+
+We’ve also updated the example scenes we released last year to reflect the changes in the assets we mentioned above. Here are the links to those place files:
+* [Dynamic Head Schema Example.rbxl|attachment](upload://dcG90OPHw1a0sWLuOeoxa4zjWh6.rbxl) (183.2 KB)
+
+* [Dynamic Head Customization Example.rbxl|attachment](upload://zY1IQEHg9b6OhriKYY53p8lZuwc.rbxl) 
+
+---
+
+### Face Animation Editor
+
+To help with the creation of Face Animations, we’re excited to release the **Face Animation Editor** into beta! The Face Animation Editor provides an intuitive interface to animate Dynamic Heads using FACS within the existing Animation Clip Editor plugin. More information can be found [here](https://create.roblox.com/docs/avatar/dynamic-heads/animating-dynamic-heads)!
+
+![3|690x419, 50%](upload://9eWoEmsFwv5Px1oHl5cHgTmgERh.jpeg) ![4|690x419, 50%](upload://ldbLgGSx9GALM0sISbLFLSDjOPD.jpeg) 
+
+
+---
+### Automatic Skinning Transfer
+
+We have also released [Automatic Skinning Transfer](https://devforum.roblox.com/t/automatic-skinning-transfer-beta/1812230) into Beta. This enables layered clothing accessories without built-in skinning to deform properly. By turning on the “Automatic Skinning Transfer” Beta Feature, you will see a new property under the WrapDeformer’s WrapLayer instances which allows the deformation of accessories based on the skinning information of the character it’s attached to. More information can be found here!
+
+---
+### Future Plans
+
+This release brings us one step closer to more immersive social communication and self-expression through Dynamic Heads and Facial Animation.
+
+As a sneak peek, we’re working towards several upcoming releases that will expand the use of Dynamic Heads &amp; Facial Animation:
+
+* Full Release of Dynamic Heads and Facial Animation
+  * This will allow developers to integrate Dynamic Head assets in live experiences along with face animations for emotes and locomotions.
+* Catalog Release of Dynamic Heads
+  * This release will add characters to the Avatar Shop that have Dynamic Heads and are capable of Facial Animation.
+* Live Facial Animation
+  * This introduces the ability for players to drive the facial animation of their avatar using their live facial expressions through audio and video input.
+
+As we move towards the above releases, players will begin entering your experiences with Dynamic Heads equipped. As such, we’d love for all of you to play around with this tech and ensure your experience is well equipped for this new functionality that will become available later this year.
+
+We’re continuously working to develop these features and would love to hear any feedback, bug reports, or feature requests from all of you!
+
+We have also opened a Beta program that will allow interested developers to integrate Dynamic Heads in a live experience ahead of the full public release as a way to provide us with feedback and suggestions. If this is something that you would like to participate in, please fill out this [form](https://www.google.com/url?q=https://roblox.qualtrics.com/jfe/form/SV_0B7oy81tQwJZTIW&amp;sa=D&amp;source=docs&amp;ust=1653505561242802&amp;usg=AOvVaw0NHOdT7Br2tsLfhw9ZDNvX)!
+
+We’re super excited to push this tech further and see what all of you create! Please try out this new feature and let us know if you have any questions, suggestions, or if you run into any issues.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 Jun 2022 09:43:50 +0000</lastBuildDate>
+    <category>Announcements</category>
+    <atom:link href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[system]]></dc:creator>
+        <description><![CDATA[
+            <p>This topic was automatically closed 120 days after the last reply. New replies are no longer allowed.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/47">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/47</link>
+        <pubDate>Thu, 27 Oct 2022 09:44:45 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-47</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[aseden]]></dc:creator>
+        <description><![CDATA[
+            <p>I don’t know what youre talking about, they’re looking amazing for me</p>
+<p></p><div class="video-container">
+    <video width="100%" height="100%" preload="metadata" controls="">
+      <source src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/5/e/c/5ec25aad0aca8e7d4a48221b33346d6bc22ad2d9.mp4">
+      <a href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/5/e/c/5ec25aad0aca8e7d4a48221b33346d6bc22ad2d9.mp4" rel="noopener nofollow ugc">//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/5/e/c/5ec25aad0aca8e7d4a48221b33346d6bc22ad2d9.mp4</a>
+    </video>
+  </div><p></p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/46">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/46</link>
+        <pubDate>Wed, 29 Jun 2022 09:43:50 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-46</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Following up to provide some more clarity here.<br>
+Long term we’d love for all avatar bundles to include a Dynamic Head, but that may take time. In the meantime we’re discussing how to prioritize which bundles should include a Dynamic Head and it’s likely going to depend on the usage/adoption of those characters. We don’t have an ETA for how long it would take to update all characters to become Dynamic but it’s a long and challenging process that will likely extend into 2023. We’re very excited to see developers like start creating new Dynamic Heads and potentially use existing bundles as inspiration. Let us know if you have any other feedback or concerns!</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/45">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/45</link>
+        <pubDate>Wed, 08 Jun 2022 16:42:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-45</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Silly_Doge33]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="pyxfluff" data-post="43" data-topic="1812227">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/pyxfluff/60/8888814_2.png" class="avatar"> pyxfluff:</div>
+<blockquote>
+<p>everybody hates rthro/anthro lol</p>
+</blockquote>
+</aside>
+<p>Just because not many voted for it doesn’t mean they hate it. It just means they prefer everything else. I also think your assumption on your poll is a tad over the top: over half voted for the new system which you said hardly nobody wanted??</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/44">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/44</link>
+        <pubDate>Thu, 02 Jun 2022 14:05:51 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-44</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Pyx]]></dc:creator>
+        <description><![CDATA[
+            <p>The results from this ere pretty expected coming from the Roblox community;</p>
+<ul>
+<li>Mixed results for new/old heads, very close (53%/47%)</li>
+<li>everybody hates rthro/anthro lol</li>
+</ul>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/43">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/43</link>
+        <pubDate>Tue, 31 May 2022 23:00:41 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-43</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[DetaScripts]]></dc:creator>
+        <description><![CDATA[
+            <p>Personally, I think it’s cool, but again I don’t love the new face look. It seems that you guys are putting in a lot of effort just for people to troll with it. Kind of what happened to RTHRO. Sure the head dynamics look cool, but the facial expressions just don’t look like anyone would use them simply because it doesn’t fit the classic look everyone loves. However, I do admire the work you guys are putting into the game recently.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/42">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/42</link>
+        <pubDate>Tue, 31 May 2022 22:51:46 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-42</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[brooke]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group quote-modified" data-username="darkmodeonn" data-post="1" data-topic="1812227">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/darkmodeonn/60/4994641_2.png" class="avatar"> darkmodeonn:</div>
+<blockquote>
+<ul>
+<li><a class="attachment" href="https://prod.docsiteassets.roblox.com/assets/dynamic-heads/reference-files/Dynamic-Head-Schema.rbxl">Dynamic Head Schema Reference.rbxl </a></li>
+<li><a class="attachment" href="https://devforum.roblox.com/uploads/short-url/zY1IQEHg9b6OhriKYY53p8lZuwc.rbxl">Dynamic Head Customization Example.rbxl</a></li>
+</ul>
+</blockquote>
+</aside>
+<p>What is the license on these files? I’d really like to use assets like the eyebrows but want to double-check before I do</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/41">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/41</link>
+        <pubDate>Mon, 30 May 2022 15:39:04 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-41</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Wither]]></dc:creator>
+        <description><![CDATA[
+            <p>Me waiting to see someone make a facial rig for the cyber critter (protogen)…</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/40">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/40</link>
+        <pubDate>Mon, 30 May 2022 15:38:04 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-40</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[B_TheDude]]></dc:creator>
+        <description><![CDATA[
+            <p>You can make some pretty cursed expressions with the dynamic heads…<br>
+<img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/f/1/7f12e901062f18fbce03342ca5f158bb0df83d82.png" alt="Face" data-base62-sha1="i899wrZOhISBe2GK5WlMJ69DidY" width="547" height="465"><br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf.png" data-download-href="/uploads/short-url/fIwVaHmUkIppQq56SOSFU6GuOTR.png?dl=1" title="Goblin Face" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf_2_457x500.png" alt="Goblin Face" data-base62-sha1="fIwVaHmUkIppQq56SOSFU6GuOTR" width="457" height="500" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf_2_457x500.png, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf.png 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf.png 2x" data-small-upload="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/6/e/2/6e2942b57da80c29afef6d46711adb302b2332bf_2_10x10.png"></a></div><p></p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/39">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/39</link>
+        <pubDate>Sat, 28 May 2022 19:51:32 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-39</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Corpze_TheDeadestOne]]></dc:creator>
+        <description><![CDATA[
+            <p>Oh darn, this looks pretty cool actually.</p>
+<p>While I doubt if dynamic facial animations will fit the style/aesthetic of Roblox,<br>
+I think this would definitely be amazing for developers who want to make a game or project that goes for a entirely different art and graphics style.</p>
+<p>I could imagine this being used for a game that doesn’t look like a Roblox game where the characters look realistic with PBR materials and may have voice lines with lip-syncing and facial expressions?</p>
+<p>This could also be fun for cartoony games perhaps, I wonder if this feature works on other body parts than just the face, could be useful if you want character models to deform or such in a very cartoony way.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/38">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/38</link>
+        <pubDate>Sat, 28 May 2022 15:00:47 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-38</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[cody]]></dc:creator>
+        <description><![CDATA[
+            <p>A few questions:</p>
+<p>1- How are facial animations going to work with heads that don’t have distinct facial features?<br>
+For example:<br>
+<a href="https://www.roblox.com/catalog/134082579/Headless-Head" class="inline-onebox">Headless Head - Roblox</a> (especially curious to know about this one)<br>
+<a href="https://www.roblox.com/catalog/2807164805/Mech-Golem-Head" class="inline-onebox">Mech Golem - Head - Roblox</a><br>
+<a href="https://www.roblox.com/catalog/4639101534/Cyclock-Head" class="inline-onebox">Cyclock - Head - Roblox</a></p>
+<p>2-</p>
+<aside class="quote no-group" data-username="darkmodeonn" data-post="1" data-topic="1812227">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/darkmodeonn/60/4994641_2.png" class="avatar"> darkmodeonn:</div>
+<blockquote>
+<p>The major change we’re making to the beta feature involves hiding the bone instances under the head MeshPart in the Data Model. Previously we’ve shown these bone instances, but moving forward they won’t be visible in any Dynamic Head asset.</p>
+</blockquote>
+</aside>
+<p>Is there any chance we can get the ability to manually set the bone’s properties? I understand you guys want to respect realism but the ability to move the face in unrealistic ways might be useful in some circumstances, for example a horror game or a game that is supposed to be funny, opening the eyes so wide that the eyes spring out of the head might be useful in some circumstances, even if not realistic.</p>
+<p>3- How are live facial animations going to work? Is it going to use an app or something? Will I be able to use live facial animations on my computer from my phone since I don’t have a webcam or will it be closer to VC?</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/37">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/37</link>
+        <pubDate>Sat, 28 May 2022 08:11:31 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-37</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[auzl]]></dc:creator>
+        <description><![CDATA[
+            <p>Very excited for the release of this feature. The amount of possibilities Developers could create with this especially cutscene animations and story telling are endless! I do have one question though, will the Dynamic face animations be tied with Spatial voice in any way using some sort of 3rd party application or possibly an in game facial recognition that could detect live expressions?</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/36">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/36</link>
+        <pubDate>Sat, 28 May 2022 01:12:34 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-36</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Noble_Draconian]]></dc:creator>
+        <description><![CDATA[
+            <p>I’ve sent you a DM with some further questions!</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/35">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/35</link>
+        <pubDate>Fri, 27 May 2022 21:43:51 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-35</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[tmofldepe]]></dc:creator>
+        <description><![CDATA[
+            <p>I have a question will this make people with 2 GB RAM device <strong>10 years or older device</strong> lag? or how about average mobile phone.<br>
+I mean I have try it and there is no lag, but what if there were like 10 or 20-100 of these?</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/32">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/32</link>
+        <pubDate>Fri, 27 May 2022 18:56:26 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-32</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[kostis]]></dc:creator>
+        <description><![CDATA[
+            <p></p><div class="lightbox-wrapper"><a class="lightbox" href="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84.jpeg" data-download-href="/uploads/short-url/a7umsTGMhi27oEv09YDwHe0SkEQ.jpeg?dl=1" title="image" rel="noopener nofollow ugc"><img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84_2_690x419.jpeg" alt="image" data-base62-sha1="a7umsTGMhi27oEv09YDwHe0SkEQ" width="690" height="419" srcset="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84_2_690x419.jpeg, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84.jpeg 1.5x, //devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84.jpeg 2x" data-small-upload="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/4/6/e/46ee7aafc55c0e8db809d5fe9e4e2e1f6ac7da84_2_10x10.png"></a></div><br>
+this is gonna go terribly bad<p></p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/31">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/31</link>
+        <pubDate>Fri, 27 May 2022 18:37:26 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-31</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Great question! Currently the best way to create a Dynamic Head that is inspired by a 2D face is using one of the template files we provided. We’ve provided the blocky character model in <a href="https://create.roblox.com/docs/avatar/dynamic-heads/using-dynamic-heads-in-studio">this</a> tutorial which you can modify by changing the texture or modifying the geometry for the eyes/mouth to create a new looking Dynamic Head. You can also create a Dynamic Head from scratch using <a href="https://create.roblox.com/docs/avatar/dynamic-heads/creating-basic-dynamic-heads">this</a> tutorial we posted. In the future we’re going to continue building tools and sharing new templates that will help with Dynamic Head creation.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/30">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/30</link>
+        <pubDate>Fri, 27 May 2022 18:24:03 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-30</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Good point! We’re currently reviewing and will be converting some of the popular faces and characters that would be a good fit for Dynamic Heads. Some characters like Junkbot or Magma Fiend are great candidates for Dynamic Heads and Facial Animation.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/29">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/29</link>
+        <pubDate>Fri, 27 May 2022 18:23:47 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-29</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Great question! One of the ways we’d like to help with animation creation is by recording live face animations in Studio. Later this year you could record a face animation using your camera and play it in your experience</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/28">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/28</link>
+        <pubDate>Fri, 27 May 2022 18:23:34 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-28</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Thank you for raising this issue. We’re currently investigating the root cause but as a work around you could: Click the head, in the properties panel copy the TextureId ( rbxassetid://9738703854 ), then on the head press the plus button to add a SurfaceAppearance. Uncollapse the head, select the created SurfaceAppearance in the head and in the properties panel paste texture id rbxassetid://9738703854 into the ColorMap field.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/27">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/27</link>
+        <pubDate>Fri, 27 May 2022 18:23:22 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-27</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Bun]]></dc:creator>
+        <description><![CDATA[
+            <p>Amazing update, about the live facial animation, will it be an in game only thing or are there any plans on having this working in the animation editor too? Cause i feel like that’d help a lot on animating faces.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/26">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/26</link>
+        <pubDate>Fri, 27 May 2022 10:27:13 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-26</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Noble_Draconian]]></dc:creator>
+        <description><![CDATA[
+            <aside class="quote no-group" data-username="darkmodeonn" data-post="1" data-topic="1812227">
+<div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="24" height="24" src="https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/darkmodeonn/60/4994641_2.png" class="avatar"> darkmodeonn:</div>
+<blockquote>
+<p>This release will add characters to the Avatar Shop that have Dynamic Heads and are capable of Facial Animation.</p>
+</blockquote>
+</aside>
+<p>Will existing characters (such as the crimson claw package) get facial animations? It would be a shame if only new characters moving forward had facial animations, since a majority of player avatars use bodies that exist <em>today</em>!</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/25">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/25</link>
+        <pubDate>Fri, 27 May 2022 02:01:30 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-25</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[ImFeelingLucky]]></dc:creator>
+        <description><![CDATA[
+            <p>I don’t think that any of these options are objectively better. In my opinion, while I will always be drawn towards the old blocky look, I understand that these new dynamic heads will be more immersive for our games and could result in some amazing avatar bundles.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/24">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/24</link>
+        <pubDate>Fri, 27 May 2022 00:17:49 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-24</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Pyseph]]></dc:creator>
+        <description><![CDATA[
+            <p>An additional question: is there any process for porting existing 2D faces onto Dynamic Heads? or is this a manual process which has to be undertaken? I’m asking this since this thread had several “classical” faces working on Dynamical Heads:<br>
+<a href="https://devforum.roblox.com/t/looking-for-feedback-dynamic-heads-facial-animation/1573773/">https://devforum.roblox.com/t/looking-for-feedback-dynamic-heads-facial-animation/1573773/</a></p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/23">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/23</link>
+        <pubDate>Fri, 27 May 2022 00:09:18 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-23</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[Pyseph]]></dc:creator>
+        <description><![CDATA[
+            <p>The file opened like that, yes. I’d like to note that I got the file from <a href="https://create.roblox.com/docs/avatar/dynamic-heads/using-dynamic-heads-in-studio" class="inline-onebox">Using Dynamic Heads in Studio | Roblox Creator Documentation</a><br>
+<img src="//devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/2/5/1/2516eafa994c674085b4f44b6defbed244f3af24.png" alt="image" data-base62-sha1="5i6LBeI6xdsHu4HGO7BGjFO7E44" width="685" height="397"></p>
+<p>I was looking into trying to fix the issue myself, and it seems like it’s related to the fact that once you give a MeshPart a texture, like in the case of that reference file which has a TextureId set, you will lose the ability to change it’s color.<br>
+I’m unsure as to why the <em>whole</em> head appears black though, since when downloading the TextureId, only certain parts were colored black.</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/22">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/22</link>
+        <pubDate>Fri, 27 May 2022 00:08:05 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-22</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+      <item>
+        <title>Updates to the Dynamic Heads Beta Feature</title>
+        <dc:creator><![CDATA[darkmodeonn]]></dc:creator>
+        <description><![CDATA[
+            <p>Long term we’d like to explore ways to enable developers and creators to upload Dynamic Heads to the Avatar Shop although that is further out. In the meantime, any Dynamic Head you create can work in your experience</p>
+          <p><a href="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/21">Read full topic</a></p>
+        ]]></description>
+        <link>https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227/21</link>
+        <pubDate>Thu, 26 May 2022 23:59:35 +0000</pubDate>
+        <guid isPermaLink="false">devforum.roblox.com-post-1812227-21</guid>
+        <source url="https://devforum.roblox.com/t/updates-to-the-dynamic-heads-beta-feature/1812227.rss">Updates to the Dynamic Heads Beta Feature</source>
+      </item>
+  </channel>
+</rss>
