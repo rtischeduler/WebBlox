@@ -177,17 +177,36 @@
 // COOP/COEP this does nothing; on hosts that can't (GitHub Pages) a same-origin service worker adds them and the
 // page reloads once. Only runs as a top-level page: an embedding page has to send the headers itself.
 (() => {
-  if (window.crossOriginIsolated || window !== window.top) return;
-  const KEY = "webblox_coi_reloaded";
+  const KEY = "webblox_coi_reloads";
+  if (window.crossOriginIsolated) { try { sessionStorage.removeItem(KEY); } catch {} return; }
+  if (window !== window.top) return;
   if (!window.isSecureContext || !("serviceWorker" in navigator)) return console.warn("[webblox] cannot enable cross-origin isolation here (needs HTTPS + service workers)");
-  navigator.serviceWorker.register(new URL("coi-sw.js", document.baseURI).href)
-    .then(() => navigator.serviceWorker.ready)
-    .then(() => {
+  const swUrl = new URL("coi-sw.js", document.baseURI).href;
+  const tries = () => { try { return +sessionStorage.getItem(KEY) || 0; } catch { return 99; } };
+  const bump = () => { try { sessionStorage.setItem(KEY, String(tries() + 1)); } catch {} };
+  const reloadOnce = (why) => {
+    if (tries() >= 3) return console.error("[webblox] still not cross-origin isolated after " + tries() + " reloads (" + why + "); is coi-sw.js served next to index.html? Try a normal (non-hard) refresh or clear site data.");
+    bump(); location.reload();
+  };
+  (async () => {
+    try {
+      const probe = await fetch(swUrl, { cache: "no-store" });
+      if (!probe.ok) return console.error("[webblox] coi-sw.js not reachable: HTTP " + probe.status + " at " + swUrl);
+      // Drop stale registrations that cover this page but aren't ours (they would shadow the isolation worker).
+      for (const r of await navigator.serviceWorker.getRegistrations()) {
+        const u = (r.active || r.waiting || r.installing || {}).scriptURL;
+        if (u && u !== swUrl && location.href.startsWith(r.scope)) { console.warn("[webblox] removing conflicting service worker", u); await r.unregister(); }
+      }
+      const reg = await navigator.serviceWorker.register(swUrl, { updateViaCache: "none" });
+      await navigator.serviceWorker.ready;
+      if (!navigator.serviceWorker.controller) {
+        // Page was loaded without the worker (first visit / hard refresh): wait for it to take control, then reload.
+        await new Promise((res) => { navigator.serviceWorker.addEventListener("controllerchange", res, { once: true }); setTimeout(res, 1500); });
+      }
       if (window.crossOriginIsolated) return;
-      try { if (sessionStorage.getItem(KEY) === "1") return console.error("[webblox] still not cross-origin isolated after reload; is coi-sw.js served next to index.html?"); sessionStorage.setItem(KEY, "1"); } catch { return; }
-      location.reload();
-    })
-    .catch((e) => console.warn("[webblox] isolation worker failed", e));
+      reloadOnce(navigator.serviceWorker.controller ? "worker active but headers missing, scope " + reg.scope : "worker not controlling page");
+    } catch (e) { console.warn("[webblox] isolation worker failed", e); }
+  })();
 })();
 </script>
 
