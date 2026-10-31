@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { injectIntoHtml, runNavHooks, onNavigate, runHtmlHooks, injectJs, resetHooks } from "../src/hooks.mjs";
+import { startUrlFor, injectIntoHtml, runNavHooks, onNavigate, runHtmlHooks, injectJs, resetHooks } from "../src/hooks.mjs";
 import vm from "node:vm";
 import { parseWispList, toWss, parseServerList, decodeLoaderList, provisionalWisp, FALLBACK, HOST_RE, WSS_RE } from "../src/wisps.mjs";
 
@@ -45,4 +45,10 @@ test("provisional wisp is set synchronously (libcurl needs one before its wasm f
   const url = provisionalWisp({ set_websocket: (u) => { set = u; } });
   assert.equal(set, FALLBACK);
   assert.equal(url, FALLBACK);
+});
+
+test("start url defaults to placeId 187909 and only accepts numeric ids", () => {
+  assert.equal(startUrlFor(null), "https://play.roblox.com/games/start?placeId=187909");
+  assert.equal(startUrlFor("920587237"), "https://play.roblox.com/games/start?placeId=920587237");
+  assert.equal(startUrlFor("1&x=2"), "https://play.roblox.com/games/start?placeId=187909");
 });

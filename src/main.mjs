@@ -1,5 +1,5 @@
 import * as hooks from "./hooks.mjs";
-import { START_URL, runHtmlHooks, runNavHooks } from "./hooks.mjs";
+import { startUrlFor, runHtmlHooks, runNavHooks } from "./hooks.mjs";
 import { pickWisp, provisionalWisp } from "./wisps.mjs";
 
 // Singuloxy build: pinned jsdelivr bases from index.html first, raw.githubusercontent (text/plain, so via blob) last.
@@ -13,9 +13,10 @@ async function loadSandstone(bases) {
   return import(URL.createObjectURL(new Blob([code], { type: "text/javascript" })));
 }
 
+// #https://... overrides the whole URL, ?placeId=123 overrides just the game, default is placeId 187909.
 const startUrl = () => {
   const h = location.hash.slice(1);
-  return /^https?:\/\//i.test(h) ? h : START_URL;
+  return /^https?:\/\//i.test(h) ? h : startUrlFor(new URLSearchParams(location.search).get("placeId"));
 };
 
 export async function boot(statusEl, opts = {}) {

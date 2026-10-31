@@ -1,5 +1,8 @@
 // Injection / interception layer. Pure functions so they are easy to test.
-export const START_URL = "https://play.roblox.com/games/start";
+export const DEFAULT_PLACE_ID = "187909";
+export const START_BASE = "https://play.roblox.com/games/start";
+// Digits only, so a stray query param can't change the target URL.
+export const startUrlFor = (placeId) => `${START_BASE}?placeId=${/^\d{1,20}$/.test(placeId || "") ? placeId : DEFAULT_PLACE_ID}`;
 
 const htmlHooks = [];
 const navHooks = [];
