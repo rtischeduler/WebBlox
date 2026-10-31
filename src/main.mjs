@@ -2,18 +2,13 @@ import * as hooks from "./hooks.mjs";
 import { START_URL, runHtmlHooks, runNavHooks } from "./hooks.mjs";
 import { pickWisp } from "./wisps.mjs";
 
-// Singuloxy build, jsdelivr first. raw.githubusercontent serves text/plain, so it is imported via a blob.
-const SRC = "lotsacookie/Singuloxy";
+// Singuloxy build: pinned jsdelivr bases from index.html first, raw.githubusercontent (text/plain, so via blob) last.
 const DIST = "dist/sandstone.mjs";
-const CDNS = [
-  `https://cdn.jsdelivr.net/gh/${SRC}@main/${DIST}`,
-  `https://fastly.jsdelivr.net/gh/${SRC}@main/${DIST}`,
-  `https://cdn.statically.io/gh/${SRC}/main/${DIST}`,
-];
-const RAW = `https://raw.githubusercontent.com/${SRC}/main/${DIST}`;
+const DEFAULT_BASES = ["https://cdn.jsdelivr.net/gh/lotsacookie/Singuloxy@main/"];
+const RAW = "https://raw.githubusercontent.com/lotsacookie/Singuloxy/main/" + DIST;
 
-async function loadSandstone() {
-  for (const u of CDNS) { try { return await import(u); } catch (e) { console.warn("[webblox] import failed", u); } }
+async function loadSandstone(bases) {
+  for (const b of bases) { try { return await import(b + DIST); } catch (e) { console.warn("[webblox] import failed", b); } }
   const code = await (await fetch(RAW)).text();
   return import(URL.createObjectURL(new Blob([code], { type: "text/javascript" })));
 }
@@ -23,14 +18,14 @@ const startUrl = () => {
   return /^https?:\/\//i.test(h) ? h : START_URL;
 };
 
-export async function boot(statusEl) {
+export async function boot(statusEl, opts = {}) {
   const say = (t) => { if (statusEl) statusEl.textContent = t; };
   say("Loading proxy…");
-  const sandstone = await loadSandstone();
+  const sandstone = await loadSandstone(opts.sandstoneBases || DEFAULT_BASES);
   const frame = new sandstone.controller.ProxyFrame();
-  frame.iframe.className = "wb-frame";
+  Object.assign(frame.iframe.style, { position: "fixed", inset: "0", width: "100%", height: "100%", border: "0", background: "#fff" });
   await frame.wait_for_libcurl();
-  console.log("[webblox] wisp:", await pickWisp(sandstone.network, say));
+  console.log("[webblox] wisp:", await pickWisp(sandstone.network, say, opts.kstuffBases));
 
   // Interception 1: every navigation (including in-page links and the Roblox login redirect) goes through here.
   const navigate = frame.navigate_to.bind(frame);

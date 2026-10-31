@@ -4,7 +4,9 @@ A small Roblox web client: `index.html` loads [Singuloxy](https://github.com/lot
 picks a wisp server (list from `lotsacookie/kstuff` via jsdelivr + backups), pulls
 `https://play.roblox.com/games/start` and swaps it in as the whole page. Navigation (e.g. the Roblox login) is proxied the same way.
 
-Serve over HTTP(S) (modules don't load from `file://`): `npx serve .`  Optional start URL: `/#https://www.roblox.com/login`.
+`index.html` is self-contained so it can be fetched and embedded: it asks the GitHub API for the latest commit sha of this repo, Singuloxy and kstuff, then loads everything from jsdelivr pinned to that sha (falling back to `@main` and mirrors). Nothing else needs to be hosted next to it.
+
+Optional start URL: `/#https://www.roblox.com/login`.
 
 Hooks (`src/hooks.mjs`, also on `window.webblox`): `injectCss`, `injectJs`, `injectHead`, `onHtml(fn)`, `onNavigate(fn)`.
 Test: `npm test`.

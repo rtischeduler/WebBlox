@@ -51,17 +51,17 @@ async function getJson(url, ms = 5000) {
   } finally { clearTimeout(t); }
 }
 
-export async function fetchWispList() {
-  try { return parseWispList(await Promise.any(MIRRORS.map((m) => getJson(m + LIST_PATH)))); }
+export async function fetchWispList(mirrors = MIRRORS) {
+  try { return parseWispList(await Promise.any(mirrors.map((m) => getJson(m + LIST_PATH)))); }
   catch { return []; }
 }
 
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
 // Pick a working wisp with Singuloxy's own benchmark, falling back to a known one.
-export async function pickWisp(network, say = () => {}) {
+export async function pickWisp(network, say = () => {}, bases = null) {
   say("Finding a wisp server…");
-  const remote = await fetchWispList();
+  const remote = await fetchWispList(bases ? [...bases, ...MIRRORS.filter((m) => !bases.includes(m))] : MIRRORS);
   const builtin = BUILTIN.map(toWss);
   const extra = shuffle(remote.map(toWss).filter((u) => !builtin.includes(u))).slice(0, 12);
   const pool = [...new Set([...builtin, ...extra])].filter(Boolean);
