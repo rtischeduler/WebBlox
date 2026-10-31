@@ -33,7 +33,7 @@ test("TongSherbet-style obfuscated loader decodes in a sealed vm", () => {
   const inner = 'var serverList=["a.example.org","b.example.org","c.example.org","wss://d.example.org/wisp/"]';
   const src = `globalThis["ev"+"al"](${JSON.stringify(inner.replace(/\\/g, ""))})`;
   const decode = (s) => vm.runInNewContext(`(${decodeLoaderList})(s,h,w,32)`, { s, h: HOST_RE, w: WSS_RE }, { timeout: 2000 });
-  assert.deepEqual(parseServerList(src, decode), ["a.example.org", "b.example.org", "c.example.org", "wss://d.example.org/wisp/"]);
+  assert.deepEqual([...parseServerList(src, decode)], ["a.example.org", "b.example.org", "c.example.org", "wss://d.example.org/wisp/"]);
 });
 
 test("plain serverList with reversed hosts", () => {
