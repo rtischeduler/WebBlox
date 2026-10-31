@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { injectIntoHtml, runNavHooks, onNavigate, runHtmlHooks, injectJs, resetHooks } from "../src/hooks.mjs";
 import vm from "node:vm";
-import { parseWispList, toWss, parseServerList, decodeLoaderList, HOST_RE, WSS_RE } from "../src/wisps.mjs";
+import { parseWispList, toWss, parseServerList, decodeLoaderList, provisionalWisp, FALLBACK, HOST_RE, WSS_RE } from "../src/wisps.mjs";
 
 test("injects after <head>", () => {
   assert.equal(injectIntoHtml("<html><head lang=x><title>a</title>", "<b></b>"), "<html><head lang=x><b></b><title>a</title>");
@@ -38,4 +38,11 @@ test("TongSherbet-style obfuscated loader decodes in a sealed vm", () => {
 
 test("plain serverList with reversed hosts", () => {
   assert.deepEqual(parseServerList('serverList=["gro.elpmaxe.a".split("").reverse().join(""),"b.example.org"];'), ["a.example.org", "b.example.org"]);
+});
+
+test("provisional wisp is set synchronously (libcurl needs one before its wasm finishes loading)", () => {
+  let set = null;
+  const url = provisionalWisp({ set_websocket: (u) => { set = u; } });
+  assert.equal(set, FALLBACK);
+  assert.equal(url, FALLBACK);
 });

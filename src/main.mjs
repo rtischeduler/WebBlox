@@ -1,6 +1,6 @@
 import * as hooks from "./hooks.mjs";
 import { START_URL, runHtmlHooks, runNavHooks } from "./hooks.mjs";
-import { pickWisp } from "./wisps.mjs";
+import { pickWisp, provisionalWisp } from "./wisps.mjs";
 
 // Singuloxy build: pinned jsdelivr bases from index.html first, raw.githubusercontent (text/plain, so via blob) last.
 const DIST = "dist/sandstone.mjs";
@@ -22,6 +22,7 @@ export async function boot(statusEl, opts = {}) {
   const say = (t) => { if (statusEl) statusEl.textContent = t; };
   say("Loading proxy…");
   const sandstone = await loadSandstone(opts.sandstoneBases || DEFAULT_BASES);
+  provisionalWisp(sandstone.network); // must happen before libcurl finishes loading, see wisps.mjs
   const frame = new sandstone.controller.ProxyFrame();
   Object.assign(frame.iframe.style, { position: "fixed", inset: "0", width: "100%", height: "100%", border: "0", background: "#fff" });
   await frame.wait_for_libcurl();

@@ -196,6 +196,15 @@ async function firstAlive(entries, say, label, waveSize = 6) {
   return alive.sort((a, b) => a.ping - b.ping)[0] || null;
 }
 
+// A wisp URL we can set *immediately* after importing Singuloxy. libcurl starts loading on import and creates its
+// session as soon as the wasm is ready; with no websocket URL set by then, the session fails and never recovers.
+export function provisionalWisp(network) {
+  const last = store.get("WB_LAST");
+  const url = toWss((last && last.entry) || FALLBACK);
+  network.set_websocket(url);
+  return url;
+}
+
 // Never hangs: the whole search is capped by `budgetMs`, then we fall back to a known wisp.
 export async function pickWisp(network, say = () => {}, opts = {}) {
   const budgetMs = opts.budgetMs || 15000;
