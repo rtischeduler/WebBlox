@@ -4,6 +4,13 @@ const ENGINE_FAILURE_RE = /\[LoadingScreen\]\s*Engine failure/i;
 
 export const classifyLog = (text) => (typeof text === "string" && ENGINE_FAILURE_RE.test(text) ? "engine-failure" : null);
 
+export function parseEngineFailure(text) {
+  if (classifyLog(text) !== "engine-failure") return null;
+  const msg = /"message"\s*:\s*"((?:[^"\\]|\\.)*)"/.exec(text);
+  const code = /"errorCode"\s*:\s*(-?\d+)/.exec(text);
+  return { message: msg ? msg[1] : "", code: code ? Number(code[1]) : null };
+}
+
 export function createBadList({ storage, now = () => Date.now(), ttl = BAD_TTL_MS, key = (entry) => String(entry) } = {}) {
   const box = () => {
     try { return storage || globalThis.localStorage || null; } catch { return null; }
@@ -38,12 +45,22 @@ export function createBadList({ storage, now = () => Date.now(), ttl = BAD_TTL_M
 }
 
 export function createWatchdog({ current, markBad, switchWisp, relaunch, log = () => {}, max = 2 }) {
-  let used = 0, busy = false;
+  let used = 0, busy = false, lastSig = null, shared = false;
   return {
     get used() { return used; },
     async feed(text) {
       if (classifyLog(text) !== "engine-failure") return false;
-      if (busy || used >= max) return false;
+      if (busy || used >= max || shared) return false;
+      const info = parseEngineFailure(text);
+      const sig = info ? info.code + "|" + info.message : "";
+      if (info) log("engine failure detail: code=" + info.code + " message=" + info.message);
+      if (lastSig !== null && sig === lastSig) {
+        // identical failure on a different server: not the server's fault, so stop blaming/cycling servers
+        shared = true;
+        log("same engine failure on " + (used + 1) + " servers, not server-specific; not retrying (check Roblox API/chat traffic through the proxy)");
+        return false;
+      }
+      lastSig = sig;
       busy = true;
       used++;
       try {

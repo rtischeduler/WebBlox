@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { classifyLog, createBadList, createWatchdog } from "../src/health.mjs";
+import { parseEngineFailure, classifyLog, createBadList, createWatchdog } from "../src/health.mjs";
 import { provisionalWisp, markWispBad, FALLBACK } from "../src/wisps.mjs";
 
 const memory = () => {
@@ -68,4 +68,16 @@ test("provisional wisp skips a last-used server that was marked bad", () => {
   } finally {
     delete globalThis.localStorage;
   }
+});
+
+test("identical failure on a second server stops retries and does not blame it", async () => {
+  const bad = [];
+  let n = 0;
+  const dog = createWatchdog({ current: () => "wss://s" + n, markBad: (w) => bad.push(w), switchWisp: async () => "wss://s" + ++n, relaunch: async () => {}, max: 5 });
+  const f = '[LoadingScreen] Engine failure: {"message":"Error: Failed to open send channel Chat!","errorCode":256}';
+  assert.deepEqual(parseEngineFailure(f), { message: "Error: Failed to open send channel Chat!", code: 256 });
+  assert.equal(await dog.feed(f), true);
+  assert.equal(await dog.feed(f), false);
+  assert.equal(await dog.feed(f), false);
+  assert.deepEqual(bad, ["wss://s0"]);
 });
