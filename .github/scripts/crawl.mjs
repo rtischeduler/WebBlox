@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
+import { engineBaseForUpload, loaderSeeds, versionUrl } from "./loader-map.mjs";
 
 const start = process.argv[2];
 const out_dir = process.argv[3];
@@ -173,8 +174,26 @@ async function worker() {
   }
 }
 
+async function resolve_loader() {
+  let upload = null;
+  try {
+    const response = await fetch(versionUrl(), { headers: { "User-Agent": UA, "Accept": "application/json" } });
+    if (response.ok) upload = (await response.json()).clientVersionUpload || null;
+    console.log(`client-version ${response.status} upload=${upload}`);
+  }
+  catch (error) {
+    console.log(`client-version failed: ${error?.message || error}`);
+  }
+  if (upload) engine_base = engineBaseForUpload(upload);
+  for (const url of loaderSeeds(upload)) {
+    note(url, "WasmLoader.js");
+    queue.push({ url, depth: 1, from: "WasmLoader.js" });
+  }
+}
+
 mkdirSync(out_dir, { recursive: true });
 note(start, "");
+await resolve_loader();
 await Promise.all(Array.from({ length: WORKERS }, () => worker()));
 
 rows.sort((a, b) => String(a[4]).localeCompare(String(b[4])));
