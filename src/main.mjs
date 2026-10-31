@@ -39,6 +39,8 @@ export async function boot(statusEl, opts = {}) {
   const send = frame.send_page;
   frame.send_page = (page) => send({ ...page, html: runHtmlHooks(page.html, page.url) });
 
+  // Page console output -> the on-screen console (index.html).
+  frame.on_console = (batch) => { try { globalThis.__wbConsole && globalThis.__wbConsole.frame(batch); } catch {} };
   frame.on_info = ({ title }) => { if (title) document.title = title; };
   frame.on_progress = (_, text) => say(text || "Loading…");
 
