@@ -60,7 +60,6 @@ export function createWatchdog({ current, markBad, switchWisp, relaunch, log = (
         log("same engine failure on " + (used + 1) + " servers, not server-specific; not retrying (check Roblox API/chat traffic through the proxy)");
         return false;
       }
-      lastSig = sig;
       busy = true;
       used++;
       try {
@@ -73,6 +72,7 @@ export function createWatchdog({ current, markBad, switchWisp, relaunch, log = (
           return false;
         }
         await relaunch();
+        lastSig = sig;
         return true;
       } catch (e) {
         log("recovery failed: " + ((e && e.message) || e));
