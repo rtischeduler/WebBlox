@@ -8,6 +8,7 @@ import {
   joinGame,
   normalizeHash,
   parseJoinScript,
+  probeJoin,
   randomTrackerId,
   redact,
 } from "../src/join/gamejoin.mjs";
@@ -160,4 +161,26 @@ test("joinGame stops when aborted", async () => {
 
 test("joinGame fails clearly when success has no script", async () => {
   await assert.rejects(joinGame({ ...base, request: async () => reply(200, { status: 2 }) }), /no join script/);
+});
+
+test("probeJoin checks auth then tries each variant once and reports rows", async () => {
+  const seen = [];
+  const request = async (url, init) => {
+    seen.push({ url, method: init.method, headers: init.headers });
+    if (url.includes("users.roblox.com")) return { status: 200, ok: true, text: async () => JSON.stringify({ id: 9 }) };
+    return reply(200, { status: 12, message: "Unable to join Game 211" });
+  };
+  const rows = await probeJoin({ request, placeId: 5, browserTrackerId: 1 });
+  assert.equal(rows[0].authenticated, true);
+  assert.equal(rows[0].userId, 9);
+  assert.equal(rows.length, 6);
+  assert.ok(rows.slice(1).every((r) => r.status === 12 && r.http === 200));
+  assert.ok(seen.some((r) => r.url === "https://gamejoin.roblox.com/v2/join-game"));
+  assert.deepEqual(Object.keys(seen.find((r) => r.method === "POST" && r.headers["user-agent"]).headers).includes("user-agent"), true);
+});
+
+test("probeJoin records network errors per variant", async () => {
+  const rows = await probeJoin({ request: async () => { throw new Error("boom"); }, placeId: 5, browserTrackerId: 1 });
+  assert.equal(rows.length, 6);
+  assert.ok(rows.every((r) => r.error === "boom"));
 });

@@ -1,5 +1,5 @@
 import { createProxy } from "./proxy.mjs";
-import { joinGame, describeJoin, redact, randomTrackerId } from "./gamejoin.mjs";
+import { joinGame, describeJoin, redact, randomTrackerId, probeJoin } from "./gamejoin.mjs";
 import { findServer, loadAvatars } from "./servers.mjs";
 import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
@@ -263,6 +263,13 @@ async function run() {
     const cancelled = controller.signal.aborted;
     say(cancelled ? "Cancelled." : "Failed: " + (e.message || e));
     if (!cancelled) log("[join]", e);
+    if (!cancelled && new URLSearchParams(location.search).has("probe") && proxy) {
+      say("Failed: " + (e.message || e) + " — probing variants…");
+      try {
+        const rows = await probeJoin({ request: proxy.request, placeId, browserTrackerId: Number(store.get("wb.tracker")) || undefined, signal: controller.signal, log });
+        log("[probe] done", rows.length, "rows");
+      } catch (pe) { log("[probe] failed", pe); }
+    }
     for (const li of document.querySelectorAll('[data-step][data-state="run"]')) {
       li.dataset.state = cancelled ? "warn" : "fail";
       li.querySelector(".note").textContent = cancelled ? "cancelled" : e.message || "error";

@@ -104,6 +104,40 @@ export async function joinGame({
   throw new JoinError("Timed out waiting for a server");
 }
 
+export const PROBE_VARIANTS = [
+  { name: "baseline", url: ENDPOINTS.join, headers: (place) => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: `https://www.roblox.com/games/${place}/` }) },
+  { name: "v2 endpoint", url: "https://gamejoin.roblox.com/v2/join-game", headers: (place) => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: `https://www.roblox.com/games/${place}/` }) },
+  { name: "content-type only", url: ENDPOINTS.join, headers: () => ({ "content-type": "application/json" }) },
+  { name: "referer root", url: ENDPOINTS.join, headers: () => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: "https://www.roblox.com/" }) },
+  { name: "desktop user-agent", url: ENDPOINTS.join, headers: (place) => ({ "content-type": "application/json", accept: "application/json", "user-agent": "Roblox/WinInet", referer: `https://www.roblox.com/games/${place}/` }) },
+];
+
+export async function probeJoin({ request, placeId, browserTrackerId, signal, log = () => {} }) {
+  const out = [];
+  try {
+    const res = await request("https://users.roblox.com/v1/users/authenticated", { method: "GET", signal });
+    const j = res.ok ? JSON.parse(await res.text()) : null;
+    out.push({ name: "auth check", http: res.status, authenticated: Boolean(j && j.id), userId: j?.id ?? null });
+  } catch (e) {
+    out.push({ name: "auth check", error: String(e.message || e) });
+  }
+  const body = JSON.stringify(buildJoinBody({ placeId, browserTrackerId }));
+  for (const v of PROBE_VARIANTS) {
+    let row;
+    try {
+      const res = await request(v.url, { method: "POST", headers: v.headers(placeId), body, signal });
+      let data = null;
+      try { data = JSON.parse(await res.text()); } catch {}
+      row = { name: v.name, http: res.status, status: data?.status ?? null, message: data?.message ?? "", hasJoinScript: Boolean(data?.joinScript || data?.joinScriptUrl) };
+    } catch (e) {
+      row = { name: v.name, error: String(e.message || e) };
+    }
+    out.push(row);
+    log("[probe]", JSON.stringify(row));
+  }
+  return out;
+}
+
 const ci = (obj, ...names) => {
   if (!obj || typeof obj !== "object") return undefined;
   const wanted = names.map((n) => n.toLowerCase());
