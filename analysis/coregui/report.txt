@@ -27,3 +27,42 @@ LinkedSource prefixes [('', 34225)]
 sample [('', '{c600a4ce-3c2d-4515-a1e3-c3124c856f7f}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient'), ('', '{b7e5e6bc-c15d-4c31-a038-3ca606bd06dc}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache'), ('', '{21e46648-1d5e-44b8-bbe1-ff09f8a6d52c}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/cache'), ('', '{ccf14c07-95cb-44f9-8889-a5649960d206}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/Cache'), ('', '{91d8c7c4-8505-43a0-ac2a-23110aa2b5f6}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/common')]
 instances 36964 classes 4 scripts with Source 0 bytecode 0
 top classes [('ModuleScript', 34225), ('Folder', 2731), ('StringValue', 6), ('LocalizationTable', 2)]
+ModuleScript props+types {'AttributesSerialize': 1, 'Capabilities': 33, 'DefinesCapabilities': 2, 'LinkedSource': 1, 'Name': 1, 'ScriptGuid': 1, 'Source': 29, 'SourceAssetId': 27, 'Tags': 28}
+online InExperience https://assetdelivery.roblox.com/v2/assetId/80471914653504/version/15919 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encodin'
+   location https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encoding=gzip&version=1&__token__=key-id=1~exp=1793671404~acl=/sc2/5d4067e3d8dfb7e98a58c200d1560a39*~hmac=c340996e4878af65a46adede20af8b429e20bee469cf4ecf4a84e5713ae9c738&Expires=1793671404
+   downloaded 14537511 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
+chunk b'SSTR' cl 20 ul 28 zstd
+chunk b'INST' cl 1772 ul 10943 zstd
+chunk b'HASH' cl 370702 ul 547607 zstd
+HASH head b18500001000761803b875a122503a37fe389a9ed473358c03fae93614c1bed0f6aec9aafd6b534a0adad44766d338cc len 547607
+chunk b'PROP' cl 47 ul 10952 zstd
+chunk b'PRNT' cl 23869 ul 295717 zstd
+chunk b'SIGU' cl 0 ul 324 raw
+chunk b'SIGN' cl 0 ul 324 raw
+chunk b'END\x00' cl 0 ul 9 raw
+   parsed InExperience instances 36964 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+online UniversalApp https://assetdelivery.roblox.com/v2/assetId/118593852151835/version/16012 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encodin'
+   location https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encoding=gzip&version=1&__token__=key-id=1~exp=1793751818~acl=/sc1/8a058871b2547e4b4ec7e1faca15a145*~hmac=4a9f6c67d0b31340495b52c05f1297bd9092ebe1186975bf0c6567714d779a77&Expires=1793751818
+   downloaded 13380245 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
+chunk b'SSTR' cl 20 ul 28 zstd
+chunk b'INST' cl 388 ul 2579 zstd
+chunk b'HASH' cl 68726 ul 75255 zstd
+HASH head 5f1200001000a35fc370232528a2f20165d45f46f6c2012dbcf25bf0e32ccdb4a1427c958d5f8a6a0060697cddffd5cf len 75255
+chunk b'PROP' cl 44 ul 2588 zstd
+chunk b'PRNT' cl 4566 ul 42797 zstd
+chunk b'SIGU' cl 0 ul 324 raw
+chunk b'SIGN' cl 0 ul 324 raw
+chunk b'END\x00' cl 0 ul 9 raw
+   parsed UniversalApp instances 5349 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+online DataModelPatch https://assetdelivery.roblox.com/v2/assetId/115043838414809/version/6833 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encodin'
+   location https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encoding=gzip&version=1&__token__=key-id=1~exp=1793730258~acl=/sc2/8ab1de1819d66bfe7ade69f6dbe398d7*~hmac=c775444f8454657ff0465c0c1abab7f0fa7c65c96f5a22293d59c0bcb387a343&Expires=1793730258
+   downloaded 14705294 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
+chunk b'INST' cl 2045 ul 13583 zstd
+chunk b'HASH' cl 357359 ul 481015 zstd
+HASH head 6f75000010009cce8dad1e68f3f37a1218744bb43db22ca2e627e74c44162c1ec444d15ba8b6c3525162966453045669 len 481015
+chunk b'PROP' cl 47 ul 13592 zstd
+chunk b'PRNT' cl 23339 ul 267717 zstd
+chunk b'SIGU' cl 0 ul 324 raw
+chunk b'SIGN' cl 0 ul 324 raw
+chunk b'END\x00' cl 0 ul 9 raw
+   parsed DataModelPatch instances 33464 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
