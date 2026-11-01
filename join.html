@@ -45,6 +45,13 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 .plist{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
 .prow{display:flex;gap:10px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:8px;background:#12161b}
 .prow img,.prow .ph{width:48px;height:48px;border-radius:8px;flex:none;background:#0b0d10}
+#chat-log{height:220px;overflow:auto;background:#0b0d10;border:1px solid var(--line);border-radius:6px;padding:8px;font-size:14px}
+.cline{display:flex;gap:8px;align-items:baseline;overflow-wrap:anywhere}
+.cline.system{color:var(--dim);font-style:italic}
+.ctime{color:var(--dim);font-size:11px;flex:none}
+.cwho{font-weight:600;flex:none}
+#chat-form{display:flex;gap:8px;margin-top:10px}
+#chat-form input{flex:1}
 .pname{font-weight:600;overflow-wrap:anywhere}
 </style></head><body>
 <main>
@@ -58,11 +65,12 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 <label id="wb-cookie-field">.ROBLOSECURITY<input id="wb-cookie" type="password" autocomplete="off" placeholder="Saved on this device only"></label>
 <p id="wb-cookie-note" class="dim" hidden>Signed in with the .ROBLOSECURITY cookie this site already set.</p>
 </div>
-<label class="check" style="margin-top:14px"><input id="wb-direct" type="checkbox"><span>Also open the game WebTransport connection and record what the server sends. This one connection goes straight from your browser to the game server; it cannot be sent through the proxy. <span id="wb-wt-support" class="dim"></span></span></label>
+<label class="check" style="margin-top:14px"><input id="wb-direct" type="checkbox"><span>Open the game WebTransport connection, record what the server sends, and stay connected until I press Leave. This one connection goes straight from your browser to the game server; it cannot be sent through the proxy. <span id="wb-wt-support" class="dim"></span></span></label>
 <div class="fields" style="margin-top:12px"><label>WebTransport URL override (optional)<input id="wb-wt-url" type="text" autocomplete="off" placeholder="https://host:port/path"></label></div>
 <div class="actions">
 <button id="wb-go" class="primary">Join</button>
 <button id="wb-cancel" hidden>Cancel</button>
+<button id="wb-leave" hidden>Leave server</button>
 <span id="wb-status" role="status" aria-live="polite">Starting…</span>
 </div>
 <p class="dim">Your cookie is only attached to requests for Roblox hosts, and every request goes through the proxy.</p>
@@ -77,6 +85,13 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 <li data-step="players" data-state="idle"><span class="dot"></span><span>Player avatars</span><span class="note"></span></li>
 <li data-step="transport" data-state="idle"><span class="dot"></span><span>Game transport</span><span class="note"></span></li>
 </ol>
+</section>
+
+<section class="card" aria-label="Chat">
+<h2>Chat</h2>
+<div id="chat-log" role="log" aria-live="polite"></div>
+<form id="chat-form" autocomplete="off"><input id="chat-input" type="text" placeholder="Message" aria-label="Chat message" disabled><button id="chat-send" disabled>Send</button><button id="chat-leave" type="button" hidden>Leave server</button></form>
+<p id="chat-note" class="dim"></p>
 </section>
 
 <div class="cols">

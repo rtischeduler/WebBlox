@@ -69,6 +69,28 @@ export class Transport {
     this.handlers = new Set();
     this.nextStream = 1;
     this.closed = false;
+    this.closeInfo = null;
+    this.closeHandlers = new Set();
+    this.initiatedClose = false;
+  }
+
+  onClose(fn) {
+    this.closeHandlers.add(fn);
+    return () => this.closeHandlers.delete(fn);
+  }
+
+  settleClose(info) {
+    if (this.closeInfo) return;
+    this.closed = true;
+    this.closeInfo = { by: this.initiatedClose ? "client" : "server", ...info };
+    this.capture.event("closed", this.closeInfo);
+    for (const fn of this.closeHandlers) {
+      try {
+        fn(this.closeInfo);
+      } catch (e) {
+        this.log("[transport] close handler error", e);
+      }
+    }
   }
 
   static supported(WT = globalThis.WebTransport) {
@@ -120,14 +142,8 @@ export class Transport {
     const maxDatagramSize = wt.datagrams?.maxDatagramSize ?? 0;
     this.capture.event("ready", { maxDatagramSize });
     wt.closed.then(
-      (info) => {
-        this.closed = true;
-        this.capture.event("closed", { closeCode: info?.closeCode ?? null, reason: info?.reason ?? "" });
-      },
-      (err) => {
-        this.closed = true;
-        this.capture.event("closed", { error: String(err?.message || err) });
-      },
+      (info) => this.settleClose({ closeCode: info?.closeCode ?? null, reason: info?.reason ?? "" }),
+      (err) => this.settleClose({ error: String(err?.message || err) }),
     );
     this.datagramWriter = wt.datagrams?.writable ? wt.datagrams.writable.getWriter() : null;
     this.readLoop(wt.datagrams?.readable, "datagram", 0);
@@ -210,10 +226,37 @@ export class Transport {
     await writer.close();
   }
 
+  // How the real engine leaves (WebClient.js rbx_wasm_rna_send_connection_close_js / _close_js):
+  // it flags the connection closed, then calls WebTransport.close({ closeCode: 0, reason: "" }) and drops
+  // the connection from its table. Per-stream shutdowns are writer.close() (write side) and reader.cancel()
+  // (read side). Whatever a "leave" message looks like on the wire is written by the wasm *before* this call
+  // and is not decoded yet, so this only reproduces the transport half of leaving.
   close() {
+    this.initiatedClose = true;
     this.closed = true;
     try {
-      this.wt?.close({ closeCode: 0, reason: "client closing" });
+      this.wt?.close({ closeCode: 0, reason: "" });
     } catch {}
+  }
+
+  // Graceful leave: finish our write sides, then close the session and wait (bounded) for the browser to confirm.
+  async leave({ waitMs = 2000 } = {}) {
+    if (!this.wt || this.closeInfo) return this.closeInfo;
+    this.initiatedClose = true;
+    this.capture.event("leave");
+    const writers = [...this.writers.values()];
+    this.writers.clear();
+    await Promise.all(writers.map((w) => Promise.resolve(w.close()).catch(() => {})));
+    this.close();
+    let timer;
+    await Promise.race([
+      this.wt.closed.catch(() => {}),
+      new Promise((resolve) => {
+        timer = setTimeout(resolve, waitMs);
+      }),
+    ]);
+    clearTimeout(timer);
+    this.settleClose({ closeCode: 0, reason: "" });
+    return this.closeInfo;
   }
 }

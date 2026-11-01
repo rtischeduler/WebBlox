@@ -68,3 +68,15 @@ Strings in code order for the real builders (`analysis/join/join-request.txt`):
 ## Fix for status 12 "Unable to join Game 211"
 
 `join.html?probe` showed that only the request carrying `user-agent: Roblox/WinInet` was accepted (status 2 with a join script). Browser-style headers, `content-type` only, and a root referer all returned status 12 / 211, and `/v2/join-game` returned 404 for that account. `joinGame` now always sends that user-agent and no `Origin`.
+
+## How the real engine leaves a server (from `engine/WebClient.js`)
+
+The JS half of leaving is small. `rbx_wasm_rna_send_connection_close_js` and `rbx_wasm_rna_close_js` both mark the connection closed and call `WebTransport.close({ closeCode: 0, reason: "" })`; `close_js` also removes the connection from the engine's table and queues a `closeComplete` callback back into the wasm (`rbx_wasm_rna_on_close_complete`). Per stream, `shutdown_stream_write_js` is `writer.close()` and `shutdown_stream_read_js` is `reader.cancel()`.
+
+What the JS does not show: the in-protocol goodbye. The wasm has `ClientDisconnect`, `ClientDisconnectWithCode`, `DisconnectClientInitiated` and `DisconnectClientRequest` strings, so the client almost certainly sends a disconnect message over the RNA channels before it calls `send_connection_close_js`. That message is encrypted and not decoded, so `Transport.leave()` reproduces only the transport half (finish write sides, then `close({ closeCode: 0, reason: "" })`).
+
+## Staying in a server, chat, and what is still missing
+
+`join.html` now keeps the WebTransport session open until you press **Leave server** (or the server closes it), instead of dropping it after 4 seconds. `Session` reports the result honestly: `left` if you left, `dropped` if the server closed it first.
+
+Expect `dropped`. Nothing answers the server's RUPP handshake or keepalives yet, so a real server will close the connection on its own. Staying for real, and reading or sending chat, both need open questions 3 to 5 above (channel header, RUPP, key agreement, replication decoding). `ChatClient` has slots for a `decode` and an `encode` function; until they exist, the chat panel shows connection events only and Send is disabled.

@@ -3,6 +3,8 @@ import { joinGame, describeJoin, redact, randomTrackerId, probeJoin } from "./ga
 import { findServer, loadAvatars } from "./servers.mjs";
 import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
+import { ChatClient, ChatLog, MAX_LENGTH } from "./chat.mjs";
+import { Session } from "./session.mjs";
 import { downloadText } from "../download.mjs";
 import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
 
@@ -177,7 +179,39 @@ async function lookupPlayers(jobId, placeId) {
   setStep("players", list.length ? "ok" : "warn", `${list.length} avatars`);
 }
 
-async function probeTransport(info) {
+const chatLog = new ChatLog();
+const chat = new ChatClient({ log: chatLog });
+let session = null;
+
+const fmtTime = (t) => new Date(t).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+const renderChat = (lines) => {
+  const root = $("chat-log");
+  root.replaceChildren();
+  for (const l of lines) {
+    const row = el("div", { className: "cline " + l.kind });
+    row.append(el("span", { className: "ctime", textContent: fmtTime(l.at) }));
+    if (l.kind === "chat") row.append(el("span", { className: "cwho", textContent: l.speaker + ":" }));
+    row.append(el("span", { className: "ctext", textContent: l.text }));
+    root.append(row);
+  }
+  root.scrollTop = root.scrollHeight;
+};
+
+chatLog.onChange((_, lines) => renderChat(lines));
+
+const syncSessionUi = () => {
+  const live = Boolean(session?.live);
+  $("wb-leave").hidden = !live;
+  $("chat-leave").hidden = !live;
+  $("wb-leave").disabled = session?.state === "leaving";
+  $("wb-go").disabled = live || Boolean(controller);
+  $("chat-input").disabled = !chat.canSend || session?.state !== "connected";
+  $("chat-send").disabled = $("chat-input").disabled;
+  $("chat-note").textContent = chat.status;
+};
+
+async function startSession(info) {
   setStep("transport", "run");
   const endpoint = info.udmux[0];
   const url = $("wb-wt-url").value.trim() || (endpoint ? `https://${hostForUrl(endpoint.host)}:${endpoint.port}/` : "");
@@ -185,23 +219,31 @@ async function probeTransport(info) {
     setStep("transport", "warn", "no endpoint in join script");
     return;
   }
-  const transport = new Transport({ capture, log });
-  let frames = 0;
-  transport.onData(() => {
-    frames++;
+  session = new Session({ chat, capture, log });
+  session.onState((state, detail) => {
+    syncSessionUi();
+    if (state === "connected") setStep("transport", "ok", `connected (max datagram ${detail.maxDatagramSize}) \u2014 press Leave to disconnect`);
+    else if (state === "left") setStep("transport", "ok", `left after ${detail.stayed}`);
+    else if (state === "dropped") setStep("transport", "warn", `server closed it after ${detail.stayed}`);
+    else if (state === "failed") setStep("transport", "fail", detail.error);
   });
+  syncSessionUi();
   try {
-    const result = await transport.connect(url, info.certHashes);
-    setStep("transport", "ok", `connected, max datagram ${result.maxDatagramSize}`);
-    await sleep(4000);
-    setStep("transport", frames ? "ok" : "warn", `${frames} frames received in 4s`);
+    await session.join(url, info.certHashes);
   } catch (e) {
-    setStep("transport", "fail", e.message || String(e));
     log("[transport]", url, e.message || String(e));
-  } finally {
-    transport.close();
   }
 }
+
+async function leaveSession() {
+  if (!session?.live) return;
+  await session.leave();
+  syncSessionUi();
+}
+
+addEventListener("pagehide", () => {
+  if (session?.live) session.transport?.close();
+});
 
 async function run() {
   const hostCookie = readHostCookie();
@@ -219,6 +261,7 @@ async function run() {
   if (!hostCookie) store.set("wb.cookie", cookie);
   store.set("wb.place", String(placeId));
   store.set("wb.job", jobId);
+  chatLog.clear();
   controller = new AbortController();
   for (const url of blobUrls.splice(0)) URL.revokeObjectURL(url);
   capture = new Capture();
@@ -257,8 +300,8 @@ async function run() {
     ]);
     setStep("join", "ok", `status ${result.status}`);
     await lookupPlayers(result.jobId || info.jobId, placeId);
-    if ($("wb-direct").checked) await probeTransport(info);
-    say("Done.");
+    if ($("wb-direct").checked) await startSession(info);
+    say(session?.live ? "In server. Press Leave when you are done." : "Done.");
   } catch (e) {
     const cancelled = controller.signal.aborted;
     say(cancelled ? "Cancelled." : "Failed: " + (e.message || e));
@@ -277,6 +320,7 @@ async function run() {
   } finally {
     setBusy(false);
     controller = null;
+    syncSessionUi();
   }
 }
 
@@ -297,6 +341,20 @@ export function boot() {
   renderInfo(null);
   $("wb-go").onclick = () => run();
   $("wb-cancel").onclick = () => controller?.abort();
+  $("wb-leave").onclick = () => leaveSession();
+  $("chat-leave").onclick = () => leaveSession();
+  $("chat-input").maxLength = MAX_LENGTH;
+  $("chat-form").onsubmit = async (ev) => {
+    ev.preventDefault();
+    const input = $("chat-input");
+    try {
+      await chat.send(input.value);
+      input.value = "";
+    } catch (e) {
+      chatLog.system(e.message || String(e));
+    }
+  };
+  syncSessionUi();
   $("wb-copy").onclick = () => navigator.clipboard?.writeText($("wb-log").textContent).catch(() => {});
   $("wb-export").onclick = () =>
     downloadText("webblox-capture.json", JSON.stringify({ version: 1, join: lastJoin, capture: capture.toJSON() }, null, 1));
