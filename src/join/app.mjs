@@ -4,6 +4,7 @@ import { findServer, loadAvatars } from "./servers.mjs";
 import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
 import { downloadText } from "../download.mjs";
+import { readHostCookie } from "./cookie.mjs";
 
 const $ = (id) => document.getElementById(id);
 
@@ -203,7 +204,8 @@ async function probeTransport(info) {
 }
 
 async function run() {
-  const cookie = $("wb-cookie").value.trim() || store.get("wb.cookie");
+  const hostCookie = readHostCookie();
+  const cookie = hostCookie || $("wb-cookie").value.trim() || store.get("wb.cookie");
   const placeId = Number($("wb-place").value);
   const jobId = $("wb-job").value.trim();
   if (!cookie) {
@@ -214,7 +216,7 @@ async function run() {
     say("Enter a numeric place id.");
     return;
   }
-  store.set("wb.cookie", cookie);
+  if (!hostCookie) store.set("wb.cookie", cookie);
   store.set("wb.place", String(placeId));
   store.set("wb.job", jobId);
   controller = new AbortController();
@@ -227,7 +229,7 @@ async function run() {
   setBusy(true);
   try {
     setStep("proxy", "run");
-    proxy ||= await createProxy({ getCookie: () => store.get("wb.cookie"), log, say });
+    proxy ||= await createProxy({ getCookie: () => readHostCookie() || store.get("wb.cookie"), log, say });
     setStep("proxy", "ok", proxy.wisp.replace(/^wss:\/\//, "").replace(/\/$/, ""));
     setStep("join", "run");
     say("Requesting a server…");
@@ -269,7 +271,12 @@ export function boot() {
   const params = new URLSearchParams(location.search);
   $("wb-place").value = params.get("placeId") || store.get("wb.place");
   $("wb-job").value = params.get("jobId") || store.get("wb.job");
-  if (store.get("wb.cookie")) $("wb-cookie").placeholder = "Saved on this device — paste to replace";
+  if (readHostCookie()) {
+    $("wb-cookie-field").hidden = true;
+    $("wb-cookie-note").hidden = false;
+  } else if (store.get("wb.cookie")) {
+    $("wb-cookie").placeholder = "Saved on this device — paste to replace";
+  }
   const supported = Transport.supported();
   $("wb-wt-support").textContent = supported ? "WebTransport is available in this browser." : "WebTransport is not available in this browser.";
   $("wb-direct").disabled = !supported;

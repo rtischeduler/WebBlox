@@ -5,6 +5,7 @@
 <style>
 :root{color-scheme:dark;--bg:#0e1013;--panel:#161a20;--line:#262c35;--text:#e6e9ee;--dim:#8d97a5;--ok:#4cc38a;--warn:#e5b34a;--bad:#ef6a6a;--run:#6ea8fe}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,sans-serif}
 main{max-width:960px;margin:0 auto;padding:20px 16px 56px;display:grid;gap:16px}
 header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
@@ -54,7 +55,8 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 <div class="fields">
 <label>Place id<input id="wb-place" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 10879318443"></label>
 <label>Server id (optional)<input id="wb-job" type="text" autocomplete="off" placeholder="Job id of a specific server"></label>
-<label>.ROBLOSECURITY<input id="wb-cookie" type="password" autocomplete="off" placeholder="Saved on this device only"></label>
+<label id="wb-cookie-field">.ROBLOSECURITY<input id="wb-cookie" type="password" autocomplete="off" placeholder="Saved on this device only"></label>
+<p id="wb-cookie-note" class="dim" hidden>Signed in with the .ROBLOSECURITY cookie this site already set.</p>
 </div>
 <label class="check" style="margin-top:14px"><input id="wb-direct" type="checkbox"><span>Also open the game WebTransport connection and record what the server sends. This one connection goes straight from your browser to the game server; it cannot be sent through the proxy. <span id="wb-wt-support" class="dim"></span></span></label>
 <div class="fields" style="margin-top:12px"><label>WebTransport URL override (optional)<input id="wb-wt-url" type="text" autocomplete="off" placeholder="https://host:port/path"></label></div>

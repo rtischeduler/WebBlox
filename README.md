@@ -38,5 +38,7 @@ The engine-free path for the rewrite. It does not need cross-origin isolation, t
 
 Every request goes through the proxy except that one WebTransport connection: it is HTTP/3 over UDP, which a wisp proxy cannot carry, so it is off by default and goes straight from the browser to the game server. The cookie is only ever attached to requests for Roblox hosts.
 
+Sign-in: if the page already has a `.ROBLOSECURITY` cookie that script can read (same origin as `join.html`, not `HttpOnly`), it is used automatically, re-read on every request, and the paste box is hidden. A URL-encoded value is decoded. Set `window.WEBBLOX_COOKIE_NAME` before the page script if your endpoint uses another cookie name. Without that cookie the page falls back to the paste box.
+
 Open with `?placeId=123` and optionally `&jobId=...`. Modules: `gamejoin.mjs` (join, polling, join script parsing, redaction), `requester.mjs` (proxy fetch with cookie and CSRF handling), `servers.mjs` (server list and avatars), `players.mjs` (player list by source, with a slot for replicated players), `transport.mjs` (WebTransport wrapper that records traffic), `proxy.mjs` (Singuloxy loading).
 Test: `node --test test/gamejoin.test.mjs test/servers.test.mjs test/players.test.mjs test/requester.test.mjs test/transport.test.mjs`.
