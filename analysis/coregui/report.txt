@@ -1,6 +1,20 @@
 flags total 22937 matching 322
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp failed: <HTTPError 400: 'Bad Request'>
-GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp failed: <HTTPError 400: 'Bad Request'>
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer failed: <HTTPError 400: 'Bad Request'>
+client-version {'version': '0.745.0.7451145', 'clientVersionUpload': 'version-75f1039cb4964863', 'bootstrapperVersion': ''}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?version=version-75f1039cb4964863 -> []
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?clientVersion=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?channelName=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?version=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?clientVersion=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?channelName=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?version=version-75f1039cb4964863 -> []
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?clientVersion=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?channelName=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?version=0.745.0.7451145 -> []
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?clientVersion=0.745.0.7451145 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?channelName=0.745.0.7451145 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
+GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
+GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp?version=version-75f1039cb4964863 -> []
 candidate patch assets: []
 instances 0 scripts with Source 0
