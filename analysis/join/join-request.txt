@@ -1,0 +1,378 @@
+# targets (address, category, text)
+13055	key	{{"placeId":{0},"playerIds":[{1}]}}
+13116	key	{{"browserTrackerId":{},"status":"{}"}}
+14090	key	{{ "userId" : %lld, "placeId" : %lld, "os" : "%s" }}
+16643	url	JoinGamePlaceLauncher-FailureStatus{}
+60974	url	JoinGamePlaceLauncher-{}
+77462	url	[FLog::GameJoinUtil] Get EventId from joinGameParams {}
+212892	url	[FLog::GameJoinUtil] joinGamePostTeamTest: unique gameCode: {}
+233809	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostParty: URL: {} BODY: {}
+233880	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateParty: URL: {} BODY: {}
+233958	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateServer: URL: {} BODY: {}
+234037	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostReservedServer: URL: {} BODY: {}
+234117	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostSpecificUser: URL: {} BODY: {}
+234195	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame: URL: {} BODY: {}
+234277	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostGameInstance: URL: {} BODY: {}
+234355	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostCrossExpVoice: URL: {} BODY: {}
+234434	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostStandard: URL: {} BODY: {}
+234578	url	[FLog::GameJoinV2] GameJoinV2::finishJoinGamePostV2: URL: {} BODY: {}
+236029	url	[FLog::GameJoinUtil] joinGamePostTeamTest: URL: {}
+236080	url	[FLog::GameJoinUtil] joinGamePostIsolatedTeamTest: URL: {}
+273764	url	/v1/join-private-party
+279797	header	Roblox-Script-Identity
+305134	url	JoinGamePlaceLauncherTimeoutRetry
+328752	header	roblox-esi-partition-key
+336519	header	Roblox-Api-Key
+337644	url	[FLog::GameJoinUtil] [ForcedPop] attached forcedPop='{}' to /join-game body
+414689	key	gameJoinContext
+416042	header	Roblox-Matchmaking-Context
+416069	header	Roblox-Usage-Context
+422957	url	JoinGameSuccessV2POCCounterForRollout
+441271	url	JoinGamePlaceLauncher-PartyLeaderRequest
+452303	key	isTeleport
+459205	url	JoinGamePlaceLauncher-Start
+463311	url	joinGameAttempt
+466070	header	accept
+534997	header	rbx-user-agent
+535150	header	Roblox-Proxied-Player-User-Agent
+539948	url	joinGameAttemptEventThrottleHundrethsPercent
+540222	url	joinGameSuccessEventThrottleHundrethsPercent
+587146	header	rbx-bypass-universe-rate-limit
+711805	url	joinGameSuccess
+712732	url	JoinGamePlaceLauncher-Success
+819108	header	Roblox-Object-Attributes
+896640	header	Roblox-Object-Userids
+1045325	url	JoinGameAttemptEphemeralCounter
+1045357	url	JoinGameSuccessEphemeralCounter
+1053562	url	JoinGameSuccessV2POCCounter
+1092764	header	Rbx-Cdn-Provider
+1094856	key	isPartyLeader
+1120380	key	forcedPop
+1169837	header	Roblox-Usn
+1200673	header	authorization
+1200738	header	RBX-ExperienceAuthorization
+1248756	key	joinAttemptOrigin
+1248837	key	joinOrigin
+1260785	header	roblox-user-presence-token
+1262680	header	Roblox-Channel-Token
+1282729	url	/v1/authentication-ticket/redeem
+1469738	header	rbx-bypass-universe-rate-limiting
+1469772	header	rbx-use-universe-rate-limiting
+1617939	url	JoinGamePlaceLauncherHttpResponse
+1631033	header	Roblox-Job-Signature
+1631065	header	rbx-client-feature
+1635223	url	JoinGamePlaceLauncherFailure
+1637795	url	JoinGamePlaceLauncher-Failure
+1643576	header	content-type
+1657274	header	rbx-memorystore-scope
+1677565	header	Roblox-Object-Created-Time
+1677592	header	Roblox-Object-Version-Created-Time
+1688897	url	/v1/join-play-together-game
+1688925	url	/v2/join-game
+1688939	url	/v1/join-game
+1689015	url	/v2/join-private-game
+1689037	url	/v1/join-private-game
+1689059	url	/v2/join-reserved-game
+1689082	url	/v1/join-reserved-game
+1696439	header	Roblox-Channel-Name
+1696804	key	isPlayTogetherGame
+1696823	url	[FLog::GameJoinUtil] GameJoinUtil::joinGame
+1731969	header	Rbx-In-Experience-Locale
+1735148	header	cookie
+1754632	url	JoinGameFailureInfluxHundredthsPercentage
+1754809	url	ReactiveJoinGameRolloutHundredthsPercentage
+1754956	url	ReactiveJoinGameInstanceRolloutHundredthsPercentage
+1772048	header	rbx-storage
+1778429	key	referralPage
+1800397	header	Roblox-DataModel-Mode
+1801456	key	accessCode
+1802176	key	linkCode
+1802349	url	RandomizeTeamTestJoinGameCode
+1813934	url	/v2/join-game-instance
+1813957	url	/v1/join-game-instance
+1901145	header	roblox-assettypeid
+1903344	header	rbx-rotrace-run-id
+1903385	header	roblox-play-session-id
+1903408	header	roblox-studio-play-test-session-id
+1903472	header	roblox-universe-id
+1903522	header	roblox-machine-id
+1903540	header	roblox-game-id
+1903573	header	roblox-place-id
+1980477	url	JoinGameFailed
+2031844	url	JoinGameSucceeded
+2053136	key	partyId
+2054555	key	joinAttemptId
+2054613	key	gameJoinAttemptId
+2059946	key	browserTrackerId
+2060883	key	conversationId
+2065944	key	gameId
+2067791	key	placeId
+2069501	header	Roblox-Play-Session-Id
+2069524	header	Roblox-Session-Id
+2069542	header	Roblox-Object-Version-Id
+2069567	header	Roblox-Universe-Id
+2069586	header	Roblox-Game-Id
+2069601	header	Roblox-Place-Id
+2096994	header	rbx-storage-sc
+2165524	header	rbx-audit-data
+2165549	header	rbx-session-data
+2173809	key	launchData
+2232786	header	Roblox-Proxied-IP
+2239085	header	RBX-DURATION
+2240008	header	X-CSRF-TOKEN
+2254999	header	RBX-VIDEOTYPE
+2256020	header	COOKIE
+2343820	url	joinGameSuccessV2
+2344380	url	JoinGameAttemptCounterV2
+2344405	url	JoinGameSuccessCounterV2
+2346365	url	JoinGameServerTypeTransitionV2
+2346414	url	JoinGamePlaceLauncherDurationV2
+2347803	url	JoinGamePlaceLauncherFailureV2
+2365118	header	Roblox-2004-2021
+2664860	url	[FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame recieved an invalid conversation id ({}) or place id ({})
+2685864	url	[FLog::GameJoinUtil] [PopUdpProbe] attached popUdpProbeReport to /join-game body ({} bytes)
+2804712	header	Content-Type: 
+2825816	url	[LIFECYCLE] joinGameSucceeded\n
+2826417	url	[LIFECYCLE] joinGameFailed state=%d\n
+2852208	header	rbx-public-caller-application-name
+2922684	key	conversationId
+2922733	key	userId
+3168919	key	userId
+3341084	key	placeId
+3342963	key	userId
+3343744	key	placeId
+3517018	key	userId
+3575176	key	userId
+4472192	key	placeId
+4501644	key	userId
+4654232	header	Roblox-Id
+4691020	key	placeId
+4710272	key	linkCode
+6214084	key	launchData
+6214095	key	placeId
+6284965	key	userId
+7141131	key	userId
+7276524	header	X-CSRF-TOKEN
+
+# candidate functions (most body keys first)
+f2568 keys=10 urls=29 instrs=10840 callers=[2981, 3420]
+    strings in code order: [FLog::GameJoinUtil] GameJoinUtil::joinGame | JoinGamePlaceLauncher-Start | JoinGamePlaceLauncher-{} | JoinGamePlaceLauncher-PartyLeaderRequest | placeId | /v1/join-game | placeId | [FLog::GameJoinUtil] Get EventId from joinGameParams {} | browserTrackerId | forcedPop | [FLog::GameJoinUtil] [ForcedPop] attached forcedPop='{}' to /join-game body | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostStandard: URL: {} BODY: {} | /v2/join-game | placeId | partyId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostCrossExpVoice: URL: {} BODY: {} | /v1/join-game-instance | placeId | gameId | isPlayTogetherGame | browserTrackerId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostGameInstance: URL: {} BODY: {} | /v2/join-game-instance | /v1/join-private-game | placeId | linkCode | accessCode | browserTrackerId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateServer: URL: {} BODY: {} | /v2/join-private-game | browserTrackerId | placeId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostSpecificUser: URL: {} BODY: {} | placeId | isPartyLeader | gameId | browserTrackerId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostParty: URL: {} BODY: {} | /v1/join-play-together-game | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame recieved an invalid conversation id ({}) or place id ({} | placeId | conversationId | browserTrackerId | isPlayTogetherGame | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame: URL: {} BODY: {} | /v1/join-reserved-game | placeId | accessCode | browserTrackerId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostReservedServer: URL: {} BODY: {} | /v2/join-reserved-game | /v1/join-private-party | placeId | browserTrackerId | [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateParty: URL: {} BODY: {} | [FLog::GameJoinUtil] joinGamePostTeamTest: unique gameCode: {} | [FLog::GameJoinUtil] joinGamePostTeamTest: URL: {} | [FLog::GameJoinUtil] joinGamePostIsolatedTeamTest: URL: {} | [FLog::GameJoinUtil] joinGamePostTeamTest: URL: {}
+    calls: f627 f630 f631 f1010 f1946 f1965 f1967 f1983 f1989 f2477 f2478 f2479 f2480 f2481 f2489 f2557 f2567 f2660 f2707 f50054 f50061 f67098 f77749 f146647 f147858 f151868 f157182 f157229 f157296 f157330 f157343 f157367 f157492 f157633 f157704 f163515 f164173 f164270 f164271 f164272
+    info: is_teleport
+f4493 keys=9 urls=0 instrs=1990 callers=[]
+    strings in code order: placeId | accessCode | linkCode | gameId | conversationId | joinAttemptId | joinAttemptOrigin | launchData | placeId | referralPage | accessCode | linkCode | conversationId | joinAttemptId | joinAttemptOrigin | launchData
+    calls: f993 f87653 f150742 f153724 f153726 f153735 f157229 f157296 f157330 f157367 f157499 f164270 f166565 f166568 f166570 f166574
+    info: [FLog::Warning] WebPlayGameLaunch joinScriptUrl is empty
+f273 keys=6 urls=14 instrs=1170245 callers=[]
+    strings in code order: launchData | joinAttemptId | joinGameAttempt | joinGameSuccessV2 | joinGameSuccess | JoinGameAttemptEphemeralCounter | JoinGameSuccessEphemeralCounter | JoinGameAttemptCounterV2 | JoinGameSuccessCounterV2 | JoinGamePlaceLauncherHttpResponse | JoinGamePlaceLauncherTimeoutRetry | JoinGamePlaceLauncherFailureV2 | JoinGameServerTypeTransitionV2 | JoinGamePlaceLauncherDurationV2 | JoinGameSuccessV2POCCounter | JoinGameSuccessV2POCCounterForRollout | placeId | {{"placeId":{0},"playerIds":[{1}]}} | {{ "userId" : %lld, "placeId" : %lld, "os" : "%s" }} | partyId | placeId | Roblox-Object-Version-Created-Time | Roblox-Object-Attributes | Roblox-Object-Created-Time | Roblox-Object-Userids | Roblox-Usn | Roblox-Object-Version-Id | partyId | Roblox-Session-Id | Roblox-Game-Id | Roblox-Place-Id | Roblox-Play-Session-Id | roblox-studio-play-test-session-id | Roblox-Universe-Id | Rbx-In-Experience-Locale | Roblox-Job-Signature | Roblox-Proxied-IP | Roblox-Proxied-Player-User-Agent | Roblox-DataModel-Mode | Roblox-Script-Identity | Roblox-Matchmaking-Context | Rbx-Cdn-Provider | roblox-machine-id | RBX-ExperienceAuthorization | roblox-assettypeid | rbx-session-data
+    calls: f10 f241 f242 f256 f257 f276 f278 f318 f328 f349 f358 f363 f369 f396 f402 f407 f410 f456 f463 f518 f558 f559 f580 f608 f618 f733 f734 f742 f743 f744 f852 f855 f858 f946 f997 f1051 f1063 f1078 f1170 f1177
+    info: teleportSuccessCall
+    info: handleTeleportingCall
+    info: handleTransferCallTeleportLeave
+    info: handleTransferCallTeleportJoin
+    info: teleportInProgress
+    info: teleportFailed
+    info: teleportSuccess
+    info: GameJoinWithLaunchData
+    info: Cannot teleport to empty instance id. Aborting teleport.
+    info: TeleportHttpResultV2
+    info: TeleportPlaceLauncherResponseV2
+    info: TeleportThreadImplErrorV2
+    info: EnableClientTeamTestTeleport
+    info: GameJoinUtil-JoinAsh-2
+    info: LeaveDuringTeleportCounter
+    info: RemoveObserverPartyVoiceGameJoinStarted
+    info: NotifyPartyVoiceGameJoinStarted
+    info: AddObserverPartyVoiceGameJoinStarted
+    info: NotifyPartyVoiceGameJoinSucceeded
+    info: AddObserverPartyVoiceGameJoinSucceeded
+f2558 keys=6 urls=6 instrs=4291 callers=[3103]
+    strings in code order: placeId | /v1/join-game-instance | placeId | isTeleport | gameId | browserTrackerId | /v2/join-game-instance | /v1/join-reserved-game | placeId | isTeleport | accessCode | browserTrackerId | /v2/join-reserved-game | /v1/join-private-game | placeId | isTeleport | linkCode | accessCode | linkCode | browserTrackerId | /v2/join-private-game
+    calls: f627 f630 f631 f1010 f1152 f1724 f1731 f1735 f1737 f1983 f1989 f2270 f2477 f2478 f2480 f2496 f2504 f2517 f2518 f2519 f2540 f2559 f2560 f2710 f2715 f92807 f147858 f148691 f148701 f157229 f157296 f157330 f157343 f157367 f157478 f157492 f164173 f164270 f164272 f164273
+    info: TeleportThreadImpl-UGC
+    info: is_teleport
+    info: teleportType
+    info: isImmersiveAdsTeleport
+    info: isTrustedTeleport
+    info: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToInstance: URL: {} POST Body: {}
+    info: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToReservedServer: URL: {} POST Body: {}
+    info: [FLog::VIPTeleport] Called initiateTeleportToPrivateServer
+f2471 keys=4 urls=0 instrs=301 callers=[2595]
+    strings in code order: joinAttemptId | joinAttemptOrigin | placeId | referralPage
+    calls: f970 f1117 f1189 f1478 f1488
+f2560 keys=3 urls=2 instrs=1430 callers=[2483, 2558]
+    strings in code order: /v1/join-game | placeId | isTeleport | browserTrackerId | /v2/join-game
+    calls: f1731 f1737 f2270 f2477 f2478 f2480 f2496 f2504 f2517 f2518 f2519 f2557 f2710 f2715 f77749 f92807 f148691 f148701 f148745 f148746 f157229 f157275 f157293 f157296 f157330 f157343 f157367 f157382 f157478 f157492 f164173 f164270 f166565 f166568 f166570 f166572 f166574 f168019
+    info: isImmersiveAdsTeleport
+    info: isTrustedTeleport
+    info: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToPlace: URL: {} POST Body: {}
+f2491 keys=3 urls=0 instrs=191 callers=[2481, 2707]
+    strings in code order: joinAttemptId | joinAttemptOrigin | placeId
+    calls: f970 f1117 f1189 f1478 f1488
+f7469 keys=3 urls=0 instrs=6551 callers=[7314, 7376, 7455]
+    strings in code order: placeId | launchData | joinAttemptId | placeId | joinAttemptId
+    calls: f362 f518 f970 f978 f993 f1118 f1189 f1478 f1488 f1519 f4490 f7467 f7470 f7479 f7493 f87653 f115360 f153715 f153726 f153735 f153741 f153745 f153747 f153748 f157182 f157199 f157212 f157229 f157277 f157296 f157309 f157330 f157348 f157349 f157363 f157383 f157492 f157606 f163273 f163435
+f67247 keys=3 urls=0 instrs=9680 callers=[67237, 67246, 67250]
+    strings in code order: placeId | gameId | accessCode
+    calls: f302 f382 f396 f410 f445 f499 f518 f742 f743 f744 f1624 f1866 f2005 f4973 f4974 f10222 f16499 f21265 f23851 f64154 f67105 f67108 f67113 f67119 f67172 f67211 f67220 f67225 f67232 f67277 f67323 f87653 f92717 f92788 f92827 f92878 f104583 f104822 f138372 f148586
+    info: teleportData
+    info: teleportMethod
+    info: groupTeleportGuid
+    info: InitGroupTeleport
+    info: GroupTeleportLog
+    info: /v1/teleport
+    info: teleportId
+    info: /v1/teleport/authorize
+f4231 keys=2 urls=1 instrs=6858 callers=[]
+    strings in code order: /v1/authentication-ticket/redeem | placeId | launchData
+    calls: f410 f459 f627 f630 f631 f742 f743 f744 f970 f993 f1034 f1143 f1152 f1177 f1226 f1478 f1488 f1497 f1591 f1646 f1666 f1779 f1861 f4225 f51118 f87653 f151496 f151939 f151957 f153726 f153729 f153735 f153739 f153741 f153747 f153751 f157417 f157492 f158113 f163273
+f1665 keys=2 urls=0 instrs=929 callers=[1682, 1868]
+    strings in code order: gameJoinContext | partyId
+    calls: f1724 f1731 f1735 f1737 f1738 f1739 f164173 f166574 f168019
+f6461 keys=2 urls=0 instrs=312 callers=[6452, 6458]
+    strings in code order: conversationId | userId
+    calls: f157189 f157229 f157243 f157275 f157293 f157296 f157330 f157343 f157382 f166565 f166568 f166570
+f78974 keys=2 urls=0 instrs=2211 callers=[]
+    strings in code order: placeId | userId
+    calls: f396 f407 f19886 f87653 f87920 f103721 f104822 f138372 f147705 f151965 f153741 f153747 f157182 f157229 f157296 f157303 f157330 f157343 f157417 f164173 f164174 f164270 f164519 f164524 f166565 f166568 f166570 f166574 f166575 f167329 f168019
+f92712 keys=2 urls=0 instrs=9041 callers=[92709, 92720, 103405]
+    strings in code order: placeId | linkCode | placeId
+    calls: f336 f407 f499 f518 f627 f630 f631 f742 f743 f744 f970 f978 f1010 f1029 f1117 f1118 f1130 f1148 f1152 f1177 f1178 f1189 f1473 f1478 f1488 f1493 f1624 f1684 f1724 f1731 f1735 f1737 f1748 f1866 f1946 f1965 f1967 f2103 f2230 f2529
+    info: TeleportInvokedUniverse
+    info: Teleports are disabled
+    info: teleportMethod
+    info: The previous teleport is in processing
+    info: groupTeleportGuid
+    info: teleportData
+    info: hasTeleportData
+    info: [FLog::VIPTeleport] create! On teleport impl values are not null serverid: {} placeid: {}
+    info: [FLog::VIPTeleport] On teleport impl doing VIP teleport
+    info: isTeleportInferredVip
+    info: [FLog::VIPTeleport] Emplaced the values vipcode: {} placeid: {}
+    info: TeleportData contains {} which is unsupported
+    info: isTrustedTeleport
+    info: teleportClientStartMsSinceEpoch
+    info: [FLog::Teleport] Save joinData
+    info: [FLog::Teleport] joinData writeJSON failed
+    info: TeleportService: Failed to load custom teleport GUI: %s. Proceeding with default.
+    info: TeleportThreadImpl-InvokingTeleportThread
+f98701 keys=2 urls=0 instrs=1584 callers=[]
+    strings in code order: placeId | gameId | Roblox-Api-Key
+    calls: f302 f362 f499 f1731 f1739 f1962 f87653 f115360 f138351 f138372 f150759 f150768 f150771 f150779 f150826 f151945 f153712 f153737 f153741 f153747 f157229 f157243 f157275 f157293 f157296 f157330 f157382 f157417 f157492 f157704 f158155 f158158 f164173 f164174 f164270 f164531 f166565 f166568 f166570 f166574
+f102247 keys=2 urls=0 instrs=1202 callers=[]
+    strings in code order: conversationId | userId
+    calls: f6434 f6439 f6457 f151135 f151143 f151146 f151147 f157199 f157209 f157216 f157258 f157277 f157309 f157310 f157328 f157333 f157362 f157363 f157375 f157377 f157417 f166566 f166567 f166574 f166575 f166871
+f124461 keys=2 urls=0 instrs=125 callers=[124453, 124460]
+    strings in code order: placeId | launchData
+    calls: f157275 f166568 f166570
+f2566 keys=0 urls=3 instrs=1049 callers=[2500, 2570, 2642]
+    strings in code order: JoinGamePlaceLauncher-Failure | JoinGamePlaceLauncher-FailureStatus{} | JoinGamePlaceLauncherFailure
+    calls: f518 f627 f630 f631 f632 f633 f970 f1117 f1118 f1261 f2005 f2469 f2581 f147838 f147858 f150838 f151772 f151790 f151791 f151810 f151811 f157633 f157704 f164173 f164255 f165277 f166572 f166574 f168019
+f525 keys=0 urls=1 instrs=25 callers=[]
+    strings in code order: [LIFECYCLE] joinGameSucceeded\n
+    calls: f6 f638 f163157
+f541 keys=0 urls=1 instrs=76 callers=[]
+    strings in code order: [LIFECYCLE] joinGameFailed state=%d\n
+    calls: f6 f339 f638 f2469 f163158 f166574
+f2441 keys=0 urls=1 instrs=5 callers=[]
+    strings in code order: RandomizeTeamTestJoinGameCode
+    calls: f156909
+f2480 keys=0 urls=1 instrs=303 callers=[2558, 2560, 2568]
+    strings in code order: [FLog::GameJoinUtil] [PopUdpProbe] attached popUdpProbeReport to /join-game body ({} bytes)
+    calls: f50051 f50054 f157199 f157299 f157363 f157364 f157492 f164173 f166574 f168019
+    info: [FLog::GameJoinUtil] [PopUdpProbe] no probe data cached yet; skipping popUdpProbeReport injection
+f2531 keys=0 urls=1 instrs=2115 callers=[2570, 2642]
+    strings in code order: JoinGamePlaceLauncher-Success
+    calls: f632 f633 f970 f1034 f1118 f1143 f1261 f2103 f2205 f2269 f2377 f2469 f2485 f2498 f2499 f2500 f2512 f2527 f2532 f2533 f2534 f67098 f67101 f78569 f138327 f146983 f147838 f147858 f151939 f157417 f157492 f157508 f157633 f157704 f158113 f163272 f163515 f164173 f164174 f164255
+    info: [FLog::GameJoinUtil] GameJoin V2 stat Random Metric Value is: {}
+    info: [FLog::GameJoinUtil] Team test server full; trying {}
+    info: [FLog::GameJoinUtil] Creator experience ban message upon place launch: {}
+f2707 keys=0 urls=1 instrs=1043 callers=[2568]
+    strings in code order: [FLog::GameJoinV2] GameJoinV2::finishJoinGamePostV2: URL: {} BODY: {}
+    calls: f518 f618 f2205 f2269 f2377 f2391 f2469 f2491 f2644 f2694 f2700 f2708 f157417 f157492 f163435 f164173 f164272 f164273 f166572 f166574 f168019
+f3491 keys=0 urls=1 instrs=414 callers=[]
+    strings in code order: JoinGameFailed
+    calls: f407 f410 f3432 f3433 f3492 f157417 f157492 f158113 f164173 f166572 f168019
+    info: [FLog::CrossExperienceVoiceController] CrossExperienceVoiceController: handleGameJoinFailed {}
+f3531 keys=0 urls=1 instrs=390 callers=[]
+    strings in code order: JoinGameSucceeded
+    calls: f407 f410 f3432 f3433 f157417 f157492 f158113 f164173 f166572 f168019
+    info: [FLog::CrossExperienceVoiceController] CrossExperienceVoiceController: handleGameJoinSucceeded
+f93744 keys=0 urls=1 instrs=829 callers=[93743]
+    strings in code order: /v1/authentication-ticket/redeem
+    calls: f398 f595 f742 f743 f744 f1279 f3902 f60857 f93534 f93747 f138434 f148049 f153164 f153235 f153241 f157417 f157633 f164519 f164524 f164525 f164526 f164531 f164573 f166574
+
+# callers of candidates (join-related strings they reference)
+f2981 (calls f2568) instrs=3991
+f3420 (calls f2568) instrs=7116
+f3103 (calls f2558) instrs=2511
+    info: Teleports are disabled during Team Test.
+    info: groupTeleportGuid
+    info: The teleport is not available during Team Test.
+    info: teleportType
+    info: [FLog::UgcExperienceController] TeamTestTeleport: teleportInfo missing required keys; aborting
+    info: [FLog::UgcExperienceController] TeamTestTeleport: TeleportService not found; aborting
+    info: [FLog::UgcExperienceController] TeamTestTeleport: blocked non-place teleport (teleportType={})
+    info: This kind of teleport is not supported during Team Test.
+    info: [FLog::UgcExperienceController] TeamTestTeleport: blocked cross-place teleport (current={}, dest={})
+    info: [FLog::UgcExperienceController] TeamTestTeleport: routing teleport via /v1/join-team-test (current={}, dest={})
+    info: [FLog::UgcExperienceController] TeamTestTeleport: routing same-place teleport via /v1/join-team-test (placeId={})
+f2595 (calls f2471) instrs=2789
+    info: [FLog::GameJoinUtil] Null EventId
+    info: [FLog::GameJoinUtil] Successfully writing the EventId {}
+f2483 (calls f2560) instrs=503
+    info: teleportType
+    info: isTeleportInferredVip
+f2558 (calls f2560) instrs=4291
+    info: TeleportThreadImpl-UGC
+    info: is_teleport
+    info: teleportType
+    info: isImmersiveAdsTeleport
+    info: isTrustedTeleport
+    info: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToInstance: URL: {} POST Body: {}
+    info: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToReservedServer: URL: {} POST Body: {}
+    info: [FLog::VIPTeleport] Called initiateTeleportToPrivateServer
+f2481 (calls f2491) instrs=407
+f2707 (calls f2491) instrs=1043
+f7314 (calls f7469) instrs=2282
+f7376 (calls f7469) instrs=1965
+f7455 (calls f7469) instrs=2689
+f67237 (calls f67247) instrs=8953
+    info: teleport_method
+    info: teleportMethod
+    info: TeleportService: Players Service is null.
+    info: All players in teleport request are already in progress or throttled.
+    info: TeleportOptionsNull
+    info: Teleport options has no values set.
+    info: Invalid player for teleport. The invalid instance name is %s.
+    info: Invalid list of players for teleport.
+    info: TeleportPartyAsync error: Must be passed an array of players.
+    info: TeleportPartyAsync error: A supplied instance is null.
+    info: TeleportPartyAsync error: Supplied Player is not valid. Invalid instance name is %s.
+    info: TeleportPartyAsync error: The player[%lld] is already in another teleporting party.
+    info: TeleportPartyAsync error: A supplied Player is not valid.
+    info: TeleportPartyAsync error: Doesn't support a guest.
+    info: TeleportPartyAsync error: The player[%lld] with wrong session.
+    info: teleport_options_private_server_type
+    info: [FLog::Teleport] HttpRbxApiService is null.
+    info: Unexpected Teleport Failure when Reserving Server
+    info: Only TeleportAsync is supported during play testing.
+    info: Teleports to VIP servers are not supported during play testing.
+f67246 (calls f67247) instrs=706
+    info: TeleportServiceNull
+f67250 (calls f67247) instrs=702
+    info: TeleportServiceNull
+f1682 (calls f1665) instrs=72
+f1868 (calls f1665) instrs=187
+f6452 (calls f6461) instrs=1399
+f6458 (calls f6461) instrs=1771
+f92709 (calls f92712) instrs=734
+    info: Teleport timed out
+    info: teleportMethod
+f92720 (calls f92712) instrs=1751
+    info: Cannot teleport to invalid place id %lld. Aborting teleport.
+    info: Cannot teleport to invalid place id. Aborting teleport.
+    info: teleportData
+    info: teleportMethod
+    info: isTrustedTeleport
+f103405 (calls f92712) instrs=178
