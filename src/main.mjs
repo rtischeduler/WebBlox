@@ -3,7 +3,7 @@ import { startUrlFor, runHtmlHooks, runNavHooks } from "./hooks.mjs";
 import { pickWisp, provisionalWisp, markWispBad } from "./wisps.mjs";
 import { createWatchdog } from "./health.mjs";
 import { parseFlagParams, flagOverrideScript } from "./flags.mjs";
-import { explainIsolation } from "./isolation.mjs";
+import { explainIsolation, ensureIsolation } from "./isolation.mjs";
 
 const DIST = "dist/sandstone.mjs";
 const DEFAULT_BASES = ["https://cdn.jsdelivr.net/gh/lotsacookie/Singuloxy@main/"];
@@ -22,11 +22,19 @@ const startUrl = () => {
 
 export async function boot(statusEl, opts = {}) {
   const say = (t) => { if (statusEl) statusEl.textContent = t; };
-  const iso = globalThis.__wbIsolation ? await globalThis.__wbIsolation : { ok: globalThis.crossOriginIsolated !== false, reason: "" };
+  const iso = await ensureIsolation();
   if (!iso.ok && !new URLSearchParams(location.search).has("force")) {
     const msg = explainIsolation(iso.reason, navigator.userAgent);
-    say(msg);
     console.error("[webblox] " + msg + " (add ?force=1 to try anyway)");
+    if (statusEl && iso.url) {
+      statusEl.textContent = msg + " ";
+      const a = document.createElement("a");
+      a.href = iso.url;
+      a.target = "_top";
+      a.textContent = "Tap to open the full page";
+      a.style.cssText = "color:#7cc7ff;display:block;margin-top:12px;font-size:16px";
+      statusEl.appendChild(a);
+    } else say(msg);
     return;
   }
   say("Loading proxy…");

@@ -169,58 +169,6 @@
   };
 })();
 </script>
-<script>
-(() => {
-  const KEY = "webblox_coi_reloads";
-  const HOST = String(window.WEBBLOX_HOST || "https://rtischeduler.github.io/WebBlox/").replace(/\/?$/, "/");
-  const forever = () => new Promise(() => {});
-  const result = (ok, reason) => ({ ok, reason: reason || "" });
-  const tries = () => { try { return +sessionStorage.getItem(KEY) || 0; } catch { return 99; } };
-  const bump = () => { try { sessionStorage.setItem(KEY, String(tries() + 1)); } catch {} };
-  const diagnose = async () => {
-    try {
-      const nav = performance.getEntriesByType("navigation")[0] || {};
-      const r = await fetch(location.href, { cache: "no-store" });
-      const c = navigator.serviceWorker.controller;
-      console.warn("[webblox] isolation diagnostics " + JSON.stringify({
-        ua: navigator.userAgent, credentiallessSupported: "credentialless" in HTMLIFrameElement.prototype,
-        controller: c && c.scriptURL, navHandledByWorker: nav.workerStart > 0, navType: nav.type,
-        fetchedCOOP: r.headers.get("cross-origin-opener-policy"), fetchedCOEP: r.headers.get("cross-origin-embedder-policy"),
-        hasOpener: !!window.opener, framed: window !== window.top, href: location.href }));
-    } catch (e) { console.warn("[webblox] diagnostics failed", e); }
-  };
-  window.__wbIsolation = (async () => {
-    if (window.crossOriginIsolated) { try { sessionStorage.removeItem(KEY); } catch {} return result(true); }
-    const target = HOST + location.search + location.hash;
-    if (!/^https?:$/.test(location.protocol) || location.origin === "null") {
-      console.warn("[webblox] no real origin here (" + location.protocol + "), moving to " + HOST);
-      try { if (window === window.top) { location.replace(target); return forever(); } window.top.location.replace(target); return forever(); } catch {}
-      return result(false, "opaque-origin-framed");
-    }
-    if (window !== window.top) return result(false, "framed");
-    if (!window.isSecureContext || !("serviceWorker" in navigator)) { console.warn("[webblox] cannot enable cross-origin isolation here (needs HTTPS + service workers)"); return result(false, "no-service-worker"); }
-    const coep = "credentialless" in HTMLIFrameElement.prototype ? "credentialless" : "require-corp";
-    const swUrl = new URL("coi-sw.js?coep=" + coep, document.baseURI).href;
-    try {
-      const probe = await fetch(swUrl, { cache: "no-store" });
-      if (!probe.ok) { console.error("[webblox] coi-sw.js not reachable: HTTP " + probe.status + " at " + swUrl); return result(false, "no-service-worker"); }
-      for (const r of await navigator.serviceWorker.getRegistrations()) {
-        const u = (r.active || r.waiting || r.installing || {}).scriptURL;
-        if (u && u !== swUrl && location.href.startsWith(r.scope)) { console.warn("[webblox] removing conflicting service worker", u); await r.unregister(); }
-      }
-      await navigator.serviceWorker.register(swUrl, { updateViaCache: "none" });
-      await navigator.serviceWorker.ready;
-      if (!navigator.serviceWorker.controller) {
-        await new Promise((res) => { navigator.serviceWorker.addEventListener("controllerchange", res, { once: true }); setTimeout(res, 1500); });
-      }
-      if (window.crossOriginIsolated) return result(true);
-      if (tries() < 3) { bump(); location.reload(); return forever(); }
-      await diagnose();
-      return result(false, "no-isolation-after-reload");
-    } catch (e) { console.warn("[webblox] isolation worker failed", e); return result(false, "no-service-worker"); }
-  })();
-})();
-</script>
 
 <style>
   html, body { margin: 0; height: 100%; background: #111; color: #ddd; font-family: system-ui, sans-serif; overflow: hidden; }

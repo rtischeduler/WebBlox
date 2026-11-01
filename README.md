@@ -12,12 +12,12 @@ Hooks (`src/hooks.mjs`, also on `window.webblox`): `injectCss`, `injectJs`, `inj
 Test: `npm test`.
 
 ## Cross-origin isolation (required for the game)
-The Roblox client needs `crossOriginIsolated`. `index.html` works through these cases in order:
+The Roblox client needs `crossOriginIsolated`. `src/isolation.mjs` (loaded fresh by `main.mjs`, so a stale or pasted `index.html` still gets it) works through these cases in order:
 
 1. Already isolated (host sends `Cross-Origin-Opener-Policy: same-origin` + `Cross-Origin-Embedder-Policy`): starts straight away.
-2. Loaded as inline HTML / `srcdoc` / `data:` / `file:` (no real origin): moves the WebView to `https://rtischeduler.github.io/WebBlox/`. Set `window.WEBBLOX_HOST = "https://your.host/"` before the page script to use another host.
+2. Loaded as inline HTML / `srcdoc` / `data:` / `file:` (no real origin), or inside a frame (e.g. a game site's iframe): navigates the whole WebView to `https://rtischeduler.github.io/WebBlox/`. Set `window.WEBBLOX_HOST = "https://your.host/"` before the page script to use another host.
 3. Real https origin, top-level: registers `coi-sw.js` (picks `credentialless` or `require-corp` by browser support) and reloads up to 3 times.
-4. Anything else: shows why it cannot run instead of crashing. `?force=1` tries anyway.
+4. Anything else: shows why it cannot run, with a tap-to-open link to the full page, instead of crashing. `?force=1` tries anyway.
 
 For WebViews with no service worker support, serve the page from a host that sends the headers itself:
 `worker/coi-proxy.js` (Cloudflare Worker in front of GitHub Pages, set `UPSTREAM` to change the source), `_headers` (Cloudflare Pages), `netlify.toml`, `vercel.json`.
