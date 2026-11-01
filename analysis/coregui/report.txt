@@ -1,3 +1,6 @@
 flags total 22937 matching 322
+GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp failed: <HTTPError 400: 'Bad Request'>
+GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp failed: <HTTPError 400: 'Bad Request'>
+GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer failed: <HTTPError 400: 'Bad Request'>
 candidate patch assets: []
 instances 0 scripts with Source 0
