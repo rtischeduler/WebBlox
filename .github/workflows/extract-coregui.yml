@@ -16,7 +16,7 @@ jobs:
         run: python3 -u .github/scripts/extract-coregui.py analysis/coregui
       - name: summary
         run: |
-          { echo "```"; cat analysis/coregui/report.txt; echo "```"; } >> "$GITHUB_STEP_SUMMARY"
+          { printf '%s\n' '```'; cat analysis/coregui/report.txt; printf '%s\n' '```'; } >> "$GITHUB_STEP_SUMMARY"
       - name: commit to main
         run: |
           git config user.name github-actions
