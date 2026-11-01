@@ -1,1 +1,4 @@
-
+34225	ModuleScript
+2731	Folder
+6	StringValue
+2	LocalizationTable

@@ -1,1 +1,23 @@
-{}
+{
+"Folder": [
+"AttributesSerialize",
+"Name"
+],
+"LocalizationTable": [
+"AttributesSerialize",
+"Contents",
+"Name",
+"SourceLocaleId"
+],
+"ModuleScript": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+],
+"StringValue": [
+"AttributesSerialize",
+"Name",
+"Value"
+]
+}

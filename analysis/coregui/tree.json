@@ -1,1 +1,835 @@
-[]
+[
+{
+"path": "PatchRoot",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances/CorePackages",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances/CorePackages/Packages",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances/CorePackages/Workspace",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances/CoreGui",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/DataModelInstances/CoreGui/RobloxGui",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/CoreScripts",
+"class": "Folder",
+"props": [
+"AttributesSerialize",
+"Name"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScriptLocalization",
+"class": "LocalizationTable",
+"props": [
+"AttributesSerialize",
+"Contents",
+"Name",
+"SourceLocaleId"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScriptLocalizationTrimmed",
+"class": "LocalizationTable",
+"props": [
+"AttributesSerialize",
+"Contents",
+"Name",
+"SourceLocaleId"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerStarterScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/AntiAddictionPrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/AppChatMain",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/AvatarMood",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/BlockPlayerPrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CancelSubscriptionApp",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CharacterNameHandler",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ChatEmoteUsage",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CommercePurchaseApp",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ContextActionTouch",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CoreGuiEnableAnalytics",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CoreScriptErrorReporter",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CoreScriptsGlobalEffects",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CrossExperienceVoiceDefaultChannel",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/CrossExperienceVoiceErrorReporter",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/DefaultListenerLocation",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ExperienceAudioFocusBinder",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ExperienceChatMain",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ExperienceNotifications",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/FacialAnimationStreaming",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/FriendPlayerPrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/FriendsCallingMain",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/GameInviteModalGUI",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/InExperienceDataModelStreamStarter",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/InExperienceDetailsPrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/InExperienceTransferApp",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/InspectAndBuy",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/jest.config",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/MainBotChatScript2",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/MicrophoneDevicePermissionsLoggingInitializer",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/NetworkPause",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/NotificationScript2",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/OpenShareSheetWithLink",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/PerformanceStatsManagerScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/PlayerBillboards",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/PlayerRagdoll",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/PlayerView",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/PortalTeleportGUI",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ProximityPrompt",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ScreenshotHud",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ScreenTimeInGame",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/SendCameraAccessAnalytics",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/SocialContextToast",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/SoundTelemetry",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/SystemScrim",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/ToastNotificationGUI",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/UniversalShareSheetScreenGui",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/VehicleHud",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/VoiceAttention",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/VoiceDefaultChannel",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CoreScripts/VoiceUserAgency",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/Connection",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/LoadingScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/challenge",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/CaptureModeModuleStarterScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/StarterScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/EmoteSkinningDisable",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/PlayerRagdollRigCreator",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/PlayerViewCapability",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ReferredByPlayerRemoteEvent",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerBuildExperiencePlaytestTeleport",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerBulkPurchaseEvent",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerDialog",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerInGameMenu",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerLeaderstats",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerPlatformLeaderboard",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerPlatformLeaderboardDevMock",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerRoCaptchaHandler",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerSocialScript",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/VersionedFlagTest",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/ServerCoreScripts/VoiceDefault",
+"class": "ModuleScript",
+"props": [
+"AttributesSerialize",
+"LinkedSource",
+"Name",
+"ScriptGuid"
+]
+},
+{
+"path": "PatchRoot/CoreScripts/Assets",
+"class": "StringValue",
+"props": [
+"AttributesSerialize",
+"Name",
+"Value"
+]
+}
+]
