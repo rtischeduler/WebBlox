@@ -1,0 +1,3143 @@
+##### join-game @92660164
+ublicKey
+id-ecPublicKey
+i2o_ECPublicKey
+o2i_ECPublicKey
+RSAPublicKey
+tcg-tr-cat-PublicKey
+tcg-tr-ID-PublicKey
+Error_RemoteSystemRequiresPubcKey
+pubKey
+EphemeralEarlyPubKey
+ephPubKey
+rbxTransportHasValidPubKey
+SessionServiceRemoveSessionsWithMetadataKey
+DebugStreamingPresenceAPIKey
+Thumbnail-Moderation-Access-Key
+Roblox-Api-Key
+X-Static-Api-Key
+DH Private-Key
+DH Public-Key
+Humanoid Description apply new asset's compose decal failed: Invalid Texture Pack Key
+DenseMap does not contain the specified Key
+ContentProviderToAssetDeliveryMarkFromLodLoadStudy
+Everybody
+Nobody
+unsupported pkibody
+unexpected pkibody
+httpresponsebody
+num_sleep_body
+use_pre_gen_body
+num_sim_body
+google.api.HttpRule.response_body
+include_body
+physics/primitive/body
+google.api.HttpRule.body
+member-body
+CacheEntry::open: 200 response cannot have empty body
+[DFLog::HttpTraceError] Failed to allocated %zu bytes for headers and %zu bytes for body
+AutoSetupAvatarAsync - unexpected error cloning body
+Internal error: Received non-array "content.items" in response body
+Internal error: Missing "content.items[{}].video.uploadUri" in response body
+Internal error: Missing "content.items[{}].image.uploadUri" in response body
+Internal error: Missing "path" in response body
+invalid "path" in response body
+Failed to parse bundle poll response body
+[DFLog::VideoServer] postConnectAsync: invalid response body
+[DFLog::VideoServer] reserveAsync: invalid response body
+[FLog::GameJoinUtil] [ForcedPop] attached forcedPop='{}' to /join-game body
+ << body
+EmptyBody
+replyBody
+requestBody
+SpeechEncoder::makeRequestBody
+compressBody
+UpperBody
+UseSizedHttpBody
+SimSolverUseGuidIndexOnBody
+CustomBody
+SimSolverSingleAxisSpringReducedMassFromBody
+FullBody
+InternalAvatarRulesRootPartSizeScalesWithBody
+responseBody
+ResponseBody
+LuauHeapMemoryReport::processCoroutineBody
+LuauUniqueReferenceReportProcess::processCoroutineBody
+Feature.PlayWithReward.Message.ErrorBanner.Body
+ISO US Member Body
+ISO Member Body
+ISO CN Member Body
+Roundy
+DebugRenderMeshManagerGreedy
+Steady
+notready
+[FLog::WrapLogChannel] WrapDeformer {} - Start async skinning transfer for context {}, {} in flight already
+[FLog::WrapLogChannel] WrapDeformer {} - Start async perform for context {}, {} in flight already
+There is an asynchronous recv in progress already
+CapturingAlready
+home_page_functionally_ready
+stream_ready
+home_page_surface_ready
+[FLog::TestServiceConnectionManager] Failed to send since WebSocket client or connection is not ready
+WebSocket connection not ready
+[FLog::TestServiceLog] WS image send skipped: WS connection not ready
+Operation not ready
+SdfSolve: grid not ready
+WS not ready
+[FLog::RenderAdvSkyGroup] AdvSky: kDirtySky: all textures ready
+[FLog::TestServiceLog] WS handshake acknowledged; link ready
+[FLog::RenderAdvSkyGroup] AdvSky: kDirtySun: texture ready
+[FLog::RenderAdvSkyGroup] AdvSky: kDirtyMoon: texture ready
+AvatarEditorFunctionallyReady
+ExperienceDetailPageFunctionallyReady
+AvatarMarketplaceFunctionallyReady
+Screensho
+
+##### join-game @94011388
+empty name
+Player's display name
+unknown object name
+a pseudo-class name
+a class name
+Player's name
+Character's name
+invalid parameter name
+cannot get group name
+global function name
+type function name
+expected a section name
+invalid configuration name
+unknown extension name
+%s: Selection '%s' is not an input pin name
+Unknown variable: variable set does not contain the given name
+Player's platform name
+conflicting algorithm name
+bad algorithm name
+Error reading controls driver data: invalid control name
+could not bind to the requested symbol name
+FeatureMatchingService:CreateTable: rawFeatures must be a float32 buffer (flat, row-major) or a table keyed by channel name
+FeatureMatchingService:CreateTable: %s must be a float32 buffer (one value per dimension) or a table keyed by channel name
+Expected default type pack after type pack name
+a tag name
+an attribute name
+Invalid ISR attribute name
+supertype name
+Expected default type after type name
+Could not parse time zone name
+unknown module name
+'{}' is a reserved namespace and cannot be used as a local variable name
+global variable name
+[DFLog::AnalyticsService] AnalyticsProcessor couldn't parse input json some caller passed us an invalid source name
+{} has an entry with an empty instance name
+'%s' is not a valid Service name
+Unknown method name
+unknown cmd name
+invalid null cmd name
+invalid field name
+invalid name
+tlsv1 unrecognized name
+generic name
+not a name
+assetgame
+Home,Watch,ingame
+_game
+/v1/join-play-together-game
+/v2/join-game
+/v1/join-game
+[FLog::SingleSurfaceApp] leaveUGCGame: ... no-op, not in-game
+/v2/join-private-game
+/v1/join-private-game
+/v2/join-reserved-game
+/v1/join-reserved-game
+You have been kicked by server. Please close and rejoin another game
+Error accessing game
+Failed to set %s's team because the player left the game
+MarketplaceService:{}() requires a player that is in the game
+You have been kicked from the game
+Can't report abuse: Not in a networked game
+ThirdPartyUserSame
+propertyName
+localityName
+jurisdictionLocalityName
+countryName
+friendlyCountryName
+jurisdictionCountryName
+libraryName
+FamilyName
+friendlyName
+journeyName
+InvalidKeyName
+InvalidObjectLifeCyclePolicyName
+names.displayName
+Missing field displayName
+senderDisplayName
+InternalDisplayName
+MemoryStoreCacheDataStructuresByName
+TeleportSuccessEvent-TeleportToSpawnByName
+TeleportFailedEvent-TeleportToSpawnByName
+InstancesToPoolByName
+GetBoneByName
+SnowName
+subflowName
+ShowName
+textChannelWindowName
+DebugMrRouterEnvName
+gpuName
+GpuName
+menuName
+AddCurrentContextName
+IASDefaultContextName
+InputName
+tryoutName
+TryoutName
+HostName
+requestName
+testName
+LoadTestName
+reportName
+bodyPartName
+maxMeshVertBodyPartName
+AccessoryOrPartName
+bodyMeshPartName
+scriptName
+LuaHangScriptName
+RootName
+CIDFontName
+missing param eventName
+EventName
+ParentName
+treatmentName
+ClientEngineRenderingFRMIxpLayerDefaultTreatmentName
+ClientEngineRenderingFRMIxpLayerTreatmentName
+FrmIxpTreatmentName
+FRMIxpTreatmentName
+IXPPerformanceControlMLT
+
+##### join-game @94011402
+yer's display name
+unknown object name
+a pseudo-class name
+a class name
+Player's name
+Character's name
+invalid parameter name
+cannot get group name
+global function name
+type function name
+expected a section name
+invalid configuration name
+unknown extension name
+%s: Selection '%s' is not an input pin name
+Unknown variable: variable set does not contain the given name
+Player's platform name
+conflicting algorithm name
+bad algorithm name
+Error reading controls driver data: invalid control name
+could not bind to the requested symbol name
+FeatureMatchingService:CreateTable: rawFeatures must be a float32 buffer (flat, row-major) or a table keyed by channel name
+FeatureMatchingService:CreateTable: %s must be a float32 buffer (one value per dimension) or a table keyed by channel name
+Expected default type pack after type pack name
+a tag name
+an attribute name
+Invalid ISR attribute name
+supertype name
+Expected default type after type name
+Could not parse time zone name
+unknown module name
+'{}' is a reserved namespace and cannot be used as a local variable name
+global variable name
+[DFLog::AnalyticsService] AnalyticsProcessor couldn't parse input json some caller passed us an invalid source name
+{} has an entry with an empty instance name
+'%s' is not a valid Service name
+Unknown method name
+unknown cmd name
+invalid null cmd name
+invalid field name
+invalid name
+tlsv1 unrecognized name
+generic name
+not a name
+assetgame
+Home,Watch,ingame
+_game
+/v1/join-play-together-game
+/v2/join-game
+/v1/join-game
+[FLog::SingleSurfaceApp] leaveUGCGame: ... no-op, not in-game
+/v2/join-private-game
+/v1/join-private-game
+/v2/join-reserved-game
+/v1/join-reserved-game
+You have been kicked by server. Please close and rejoin another game
+Error accessing game
+Failed to set %s's team because the player left the game
+MarketplaceService:{}() requires a player that is in the game
+You have been kicked from the game
+Can't report abuse: Not in a networked game
+ThirdPartyUserSame
+propertyName
+localityName
+jurisdictionLocalityName
+countryName
+friendlyCountryName
+jurisdictionCountryName
+libraryName
+FamilyName
+friendlyName
+journeyName
+InvalidKeyName
+InvalidObjectLifeCyclePolicyName
+names.displayName
+Missing field displayName
+senderDisplayName
+InternalDisplayName
+MemoryStoreCacheDataStructuresByName
+TeleportSuccessEvent-TeleportToSpawnByName
+TeleportFailedEvent-TeleportToSpawnByName
+InstancesToPoolByName
+GetBoneByName
+SnowName
+subflowName
+ShowName
+textChannelWindowName
+DebugMrRouterEnvName
+gpuName
+GpuName
+menuName
+AddCurrentContextName
+IASDefaultContextName
+InputName
+tryoutName
+TryoutName
+HostName
+requestName
+testName
+LoadTestName
+reportName
+bodyPartName
+maxMeshVertBodyPartName
+AccessoryOrPartName
+bodyMeshPartName
+scriptName
+LuaHangScriptName
+RootName
+CIDFontName
+missing param eventName
+EventName
+ParentName
+treatmentName
+ClientEngineRenderingFRMIxpLayerDefaultTreatmentName
+ClientEngineRenderingFRMIxpLayerTreatmentName
+FrmIxpTreatmentName
+FRMIxpTreatmentName
+IXPPerformanceControlMLThresholdTreatm
+
+##### join-game @94136397
+rence
+EngineUGCValidateUVValuesInReference
+IsFromReference
+setTransitionData.customTeleportGuiReference
+GetStringReference
+GetRepeatedStringReference
+attributeReference
+SubtractorDspResyncReference
+imageS3Reference
+HF Reference
+turbulence
+Turbulence
+vad_silence
+Vertex valence
+avgVertexValence
+is_in_experience
+app-patch-in-experience
+EditableMesh is fixed-size, adding or removing elements is not allowed in-experience
+No assets for this experience
+Not authorized to join this experience
+You were banned from this experience
+[FLog::Safety] Local player has left the experience
+Followed user has left the experience
+The specified player is not in the experience
+Player is not in the experience
+StartCrossExperience
+StopCrossExperience
+NumCrashMetricsRecordsForExperience
+FreeOsMemAverageForExperience
+ReturnToPublisherExperience
+PinExperience
+ExperienceServiceExposeIsInExperience
+shouldRemainInExperience
+EnableSegmentMeshAsyncInExperience
+JobTimerDuringInitialExperience
+WebLoginProtocolLaunchExperience
+SpeechToTextOutsideExperience
+AllowPurchasesOutsideExperience
+EnablePlayerHostedExperience
+RevealPinnedExperience
+{} - Experience
+CollectionInRadiusSynchronousConvergence
+SimAdaptiveRemoveVelocityCriteriaHistoryDependence
+id-pda-countryOfResidence
+ComparisonPrecedence
+WaitOnRenderNodeQueryFence
+OcclusionFence
+CullJobFence
+Relevance
+isinstance
+object_not_instance
+object_manager_null_object_or_instance
+reserved_servers_get_player_place_instance
+instance_count/instance
+animation/instance
+/v2/join-game-instance
+/v1/join-game-instance
+http://www.w3.org/2001/XMLSchema-instance
+Segmented model must contain exactly one root instance
+Generated RBXM must contain exactly one root instance
+Cannot set GamepadService.EnableGamepadCursor on %s because it is not a GuiObject instance
+dialog must be a GuiObject instance
+Nil passed to TextService:GetTextBoundsAsync(), expected GetTextBoundsParams instance
+OnMessageTagAdded callback failed: Did not return ChatWindowMessageProperties instance
+OnIncomingMessage callback failed: Did not return TextChatMessageProperties instance
+OnBubbleAdded callback failed: Did not return BubbleChatMessageProperties instance
+[FLog::InferredCrashBacktraceReportLog] Created InferredCrashBacktraceReporter instance
+unknown instance
+[FLog::MessageBus] destroying connection instance
+[FLog::MegaClusterInit] onServiceProvider: Clearing terrain instance
+unable to resolve module path "%s": path did not resolve to an instance
+does not contain an instance
+[DFLog::RbxStorage] RbxStorage::getStorageInterface failed to get RbxStorage subsystem instance
+Can't send message to null instance
+ContentProvider:GetDependancyContentIds expects non nil instance
+Cannot connect to a nil instance
+Cannot send a message to a nil instance
+AutoSetupAvatarAsync - accessoryDescription must contain a Model instance
+Humanoid Description error cloning makeup decal instance
+[FLog::RenderTextureCompositor] TC Job[%p]: detach instance
+AvatarCreationService::PromptCreateAvatarAsync invali
+
+##### authentication-ticket @93605192
+mJob when recv InstanceRemovalItem
+BackpackItem
+Unnamed GuiItem
+deserializeItem
+RemoveItem
+RankedItem
+addItem
+AddItem
+NetworkReadItem
+InternalSyncItem
+LogFileSyncItem
+[FLog::NetworkReadItem] Replicator::processDeserializedJoinDataItem() : Procsssing DeserializedJoinDataItem
+network/streamDataItem
+StreamDataItem
+[FLog::ReplicationDataLifetime] handleChildAddedHelper()::Adding instance %s to DataItem
+Change Inst Item
+Instance Intent Item
+Stream Excluded Instances Item
+Change ObjProp Item
+Shared Event Invocation Item
+Stream Terrain Item
+Region Terrain LOD Removal Item
+Deferred SharedString Item
+Shared Change Attribute Item
+Shared Reference Property Change Item
+Shared Property Change Item
+Shared Destroy Instance Item
+Shared New Instance Item
+Shared Delete Instance Item
+Send Item
+End Item
+Large Replicator Cancel Completed Item
+Unknown Shared Item
+provider=default,fips=yes,input=pem
+provider=base,fips=yes,input=pem
+cacert.pem
+mem_recl_v2_start_available_mem
+mem_recl_v2_diff_available_mem
+mem_recl_v2_end_available_mem
+mem_recl_v2_start_free_mem
+mem_recl_v2_diff_free_mem
+mem_recl_v2_end_free_mem
+mem_recl_v2_start_categorized_mem
+mem_recl_v2_diff_categorized_mem
+mem_recl_v2_end_categorized_mem
+navigation/navmesh/offmeshlink_add_mem
+telem
+OCNewTelem
+EnableUnexpectedServiceInstanceCountsTelem
+FixInvalidAssetIdInTelem
+SendDetailedARWorkflowFailureTelem
+Alignment Problem
+Twist Limit Problem
+Angular Limit Problem
+Length Limit Problem
+Twist Limits Problem
+tls-group-is-kem
+meridiem
+/v1/authentication-ticket/redeem
+DebugFriendsCallingClientPrivateKeyPem
+DebugFriendsCallingClientCertificatePem
+AndroidJavaMaxMem
+VideoCaptureBlockedOnLowMem
+VideoCaptureMaxShortSideLowMem
+VideoCaptureMaxLongSideLowMem
+GpuMem
+CpuMem
+TotalOsMem
+freeOsMem
+AndroidAdviceFreeOsMem
+androidFreeOsMem
+AndroidFreeOsMem
+UsedOsMem
+AndroidJavaTotalMem
+availableMem
+AndroidJavaFreeMem
+AndroidJavaUsedMem
+x942kdf_hash_kdm
+preload-dm
+[DFLog::DynamicTranslation] Sender::tryStart: received nullptr dm
+aes-gcm
+aes-128-gcm
+aria-128-gcm
+camellia-128-gcm
+aes-256-gcm
+aria-256-gcm
+camellia-256-gcm
+sm4-gcm
+aes-192-gcm
+aria-192-gcm
+camellia-192-gcm
+aes-128-ccm
+aria-128-ccm
+camellia-128-ccm
+aes-256-ccm
+aria-256-ccm
+camellia-256-ccm
+sm4-ccm
+aes-192-ccm
+aria-192-ccm
+camellia-192-ccm
+rakIsAesGcm
+gfx/vram
+gpu/vram
+rbxtelemetry_invalid_histogram
+generate cryptogram
+generic cryptogram
+SkipInvalidProgram
+AvailableBetaProgram
+ConstructLDLMxVProgram
+ConstructLDLProgram
+buildLDLProgram
+BuildLDLProgram
+Unnamed Shader Program
+raknet/tx-datagram
+deviceram
+rsa_pss_verify_param
+evp_pkey_ctx_ctrl_to_param
+OSSL_PARAM_BLD_to_param
+dh_param
+BN_BLINDING_create_param
+alg_id_param
+can't find SRP server param
+[FLog::SharedWebViewProtocol] WebViewImpl::openBrowser default handler dropping hideHeader param
+[FLog::SharedWebViewProtocol] WebViewImpl::openBrowser default handler dropping backButtonVisible param
+FriendsApiCallerIdentityParam
+IXPPerformanceControlSoundTunableUtilityParam
+CLI52064IxpTxParam
+CLI52064IxpRxParam
+
+##### MachineAddress @92399616
+t {} 
+Uploaded at {}
+[DFLog::AuroraInputLogging] Server: Received input for step {} (client step {}) at {}
+Instance operation types incompatible: {} vs {}
+[DFLog::TextChatSummary] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::UniverseChatMessageManager] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::SocialCounterpartyManager] hasCommunicationAccess status {}
+[FLog::Calling] call '{}': action {} not allowed from status {}
+[DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. Graceful close. streamId {}, stream status {}
+CompletePost failed with status {}
+CreatePost failed with status {}
+[FLog::RealtimeProtocol] connectionStatus {}
+[DFLog::NetworkStreamingExpandedShapeQuery] Client frustum progress: horizontal angle: {} of max {} vertical angle: {} of max {}, near {} far {} max region radius {}
+[DFLog::NetworkPauseLogging] Last known server center at region {}, {}, {} with radius {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterStandardLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterSets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedSets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterGets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterVersionGets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedGets {}
+[DFLog::RuppTokenLog] RakPeer::setServerMachineAddress {}
+[DFLog::MarketplaceRecommendationsApi] Parsed result Success {}
+Current thread doesn't have permissions to access child {} of class {}
+[DFLog::MarketplaceRecommendationsApi] Invoking RankProducts with Product Identifiers {}
+[FLog::WrapLogChannel] Layered clothing cache optimizations {}
+[FLog::GameJoinUtil] Get EventId from joinGameParams {}
+[DFLog::AuroraInputLogging] [Server] smoothStepOffset result {} current {} target {} smoothValue {} smoothingMillis {}
+[DFLog::VideoPlaylistSelector] Estimated codec and texture memory usage for variant {} is {}
+[DFLog::VideoPlaylistSelector] Starting variant chosen by harmony is {}
+[DFLog::VideoPlaylistSelector] Harmony starting selector worst index is {}
+`backends` of event {} should contain "Points" and/or "EventIngest". it is {}
+[DFLog::SlimServiceLog] SLIM isBusyFetching Check: Load Balancer Status is {}
+[FLog::HSRLogChannel] Hidden Surface Removal data generated for {} {}, version is {}
+[FLog::ClientRunInfo] The base url is {}
+[FLog::ClientRunInfo] The channel is {}
+SocialService:PromptLinkSharing Max allowed LaunchData length is {}
+[DFLog::ModelDeliveryTrace] Priority list is of size {}, but expected size is {}
+[FLog::Error] Error message is {}
+[DFLog::VideoTrace] [VideoStream::open] failOnLowResource is {}
+[DFLog::Rupp] ruppEnabled is {}
+[DFLog::LoadTesting] LoadTestCoordinator: create: This datamodel's UniverseId: {}, DFInt::LoadTestingUniverseId is {}
+[FLog::BaseUrlProtocol] Receiving deep linking message, match
+
+##### MachineAddress @93028780
+TelemetryBatchManager] BatchManager::httpCallback - returning early due to shutdown in progress
+Run still in progress
+[DFLog::RewardedVideo] AdService::doAdAvailabilityRequest AdsLifecycleManager eligibility check still in progress
+[FLog::FriendsCallingModule] FriendsCallingModule: dropping calling state update for call '{}' version {}: no call in progress
+AvatarCreationSkipAbsentProgress
+ImmersiveAdVideoProgress
+inProgress
+ImportInProgress
+teleportInProgress
+TeleportInProgress
+isInProgress
+maxWritesInProgress
+CacheWritesInProgress
+maxReadsInProgress
+CacheReadsInProgress
+GenerationInProgress
+ReportSubmissionInProgress
+EligibilityCheckInProgress
+IsRecordingInProgress
+[DFLog::MatchmakingService] ServerAttributesUpdateInProgress
+VideoCaptureInProgress
+pipelineProgress
+TimeProgress
+AvatarCreationDetailedProgress
+adProgress
+[DFLog::RewardedVideo] NativeAdsCore::registerForAdProgress
+NativeAdsProtocolRegisterForAdProgress
+TrackDPJProgress
+RCU Reader Progress
+Still In Progress
+Indoor Env Texture In Progress
+Delta Progress
+RakNetIngress
+_RakIngress
+RakNetEgress
+_RakEgress
+invalid ipaddress
+eventstream.eventingest.EventsParquet.ip_address
+tcg-address
+Invalid endpoint address
+bad ip address
+getsockname truncated address
+memoryAddress
+streetAddress
+requestIpAddress
+ClientIpAddress
+ExceptionAddress
+presentationAddress
+systemAddress
+DebugRakNetConnectTracePrintRcsSystemAddress
+RemoveUnassignedSystemAddress
+UnhandledReflectionType_SystemAddress
+emailAddress
+postalAddress
+homePostalAddress
+MachineAddress
+rbxTransportHasValidAddress
+unstructuredAddress
+registeredAddress
+textEncodedORAddress
+x121Address
+Compilation Cache Key Address
+Ethernet MAC Address
+Bluetooth MAC Address
+WLAN MAC Address
+TODO (RbxTransportIntegration): Address
+TouchLongPress
+ISRAttributeReplicationRobustness
+id-cmc-popLinkWitness
+EditableMeshHasSkinningWitness
+id-cmc-lraPOPWitness
+displayBrightness
+PowerTraceIncludeDisplayBrightness
+SessionStart_screenBrightness
+SessionEnd_screenBrightness
+CollectSessionScreenBrightness
+shadowSoftness
+ShadowSoftness
+metalness
+AvgMetalness
+thickness
+SelectionBoxThickness
+ScrollBarThickness
+SelectionThickness
+UnderlineThickness
+SelectionLineThickness
+puffiness
+WrapDeformerPuffiness
+smoothness
+roughness
+AvgRoughness
+WrapDeformerStiffness
+DebugSimAdaptiveIncreaseCollisionStiffness
+rotateStiffness
+translateStiffness
+ValidateEditableMeshFacialExpressiveness
+SimAnimationConstraintResponsiveness
+SimSolverResponsiveness
+AngularResponsiveness
+LinearResponsiveness
+WinchResponsiveness
+AirControllerTurningResponsiveness
+GroundControllerTurningResponsiveness
+AirControllerBalancingResponsiveness
+GroundControllerBalancingResponsiveness
+network/modelCompleteness
+RaiseCompleteness
+lateness
+Studio.Collaboration.PackageDiscoveryAndAwareness
+SimFixVehicleSeatHingeCacheStaleness
+Channel weightings for loudness
+PlaybackLoudness
+Bevel Roundness
+PerformanceControlEnableSimulationBoundedness
+Massless
+DisconnectPlayerless
+IsGapless
+Is Gapless
+FmodAudioDeviceBusType::ContinuityCaptureWi
+
+##### UdmuxEndpoints @92995848
+s material slots
+SlimLoadBalancerNumVisibilitySlots
+StateObjectSchemaMaxSlots
+SmoothRegionMaterialSlots
+HeightmapImporterServiceCantFindMaterialSlots
+MpNumScriptScopeSlots
+Script Scope Slots
+LibMP Slots
+SessionTrackingMaxErrorSnapshots
+SlimAnimationUseSkeletonOriginForSnapshots
+rm3-scene-automod/v1/scene/screenshots
+/moderation-screenshot/v2/upload-screenshots
+Screenshots
+DebugRomarkNumHeadlessBots
+ExpectedHeadlessBots
+DebugRomarkNumHeadedBots
+ExpectedHeadedBots
+discounts
+privateServerDiscounts
+PrivateServerDiscounts
+virtualTransactionDiscounts
+VirtualTransactionDiscounts
+excludeAltAccounts
+loop_counts
+Failed to allocate thread_data->td->counts
+Unexpected number of elements in bitCounts
+propertySetterDeserializerCounts
+propertyGetterDeserializerCounts
+CharacterWrapCounts
+AssetRequestCacheCounts
+updatedAppBadgeCounts
+clearFeatureBadgeCounts
+updateFeatureBadgeCounts
+instanceAddedCounts
+VideoPlaybackLoadCounts
+propertySetterLuaCounts
+propertyGetterLuaCounts
+Input Drop Reason Counts
+winfonts
+render/fonts
+[FLog::RenderTest] Waiting On: Loading fonts
+DmInitContents/loadFonts
+VisualEngine Fonts
+color-sequence(): invalid keypoints
+ColorSequence: requires at least 2 keypoints
+NumberSequence: requires at least 2 keypoints
+Keypoints
+[FLog::ChangeHistoryPerformance] Detaching ChangeHistoryService... dataSize: {} MB, {} waypoints
+ResetWaypoints
+GetWaypoints
+numWaypoints
+UserNavigationClickToMoveSkipPassedWaypoints
+GetBreakpoints
+SetSecurityIdentityAtBreakpoints
+ClearBreakpoints
+endpoints
+UdmuxEndpoints
+WhitelistFollowingsAndBadgesEndpoints
+legacy_points
+store_number_of_encoded_points
+%s called with too many points
+Adding invalid key to client tracking points
+[FLog::WrapLogChannel] WrapDeformerContextCore %p, piece %d, base layer %d points
+str_total_joints
+str_total_spanning_joints
+physics/joints
+Error reading controls driver data: too many driven joints
+PathfindingStatsPerRequestThrottleHundrethsPercentDirtyPoints
+ConnectionClosedSecurityPoints
+VoiceSubscriberAudioQualityPoints
+DeprecateLegacyTelemetryPoints
+MaxTransparencyKeyPoints
+MaxColorKeyPoints
+DirectionalAttenuationMaxPoints
+AudioEmitterDistanceAttenuationMaxPoints
+castPoints
+ConnectionClosedTeleportPoints
+ConnectionClosedPortPoints
+PathfindingPartPositionExceedTileCapacityThrottleHundrethsPercentPoints
+PathfindingHFBHighMemoryThrottleHundrethsPercentPoints
+PathfindingStatsPerRequestThrottleHundrethsPercentPoints
+PathfindingHighComputeImplTimeReportThrottleHundrethsPercentPoints
+PathfindingEstimatedNavmeshCountThrottleHundrethsPercentPoints
+PathfindingRaycastLoopCapThrottleHundrethsPercentPoints
+PathfindingLinkThrottleHundrethsPercentPoints
+PathfindingBuildCountourFailureThrottleHundrethsPercentPoints
+PathfindingLargeTileThrottleHundrethsPercentPoints
+ClientConnectionAttemptResultPoints
+RbxTransportDummyClientConnectResultPoints
+WebSocketConnectResultPoints
+ClientGameLoadResultPoints
+WebSocketDisconnectPoints
+RuppMissingTlvsPoints
+RbxTransportHandshakeStatsPoints
+RbxTransportDummyServiceStatsPoints
+
+##### ClientTicket @92941816
+cannot be set
+fastFlags.load.channel requires fastFlags.load.app to be set
+hexsecret
+derive_secret
+shared_secret
+missing pbm secret
+missing secret
+invalid secret
+HttpServiceOpenCloudApiKeySecret
+GetSecret
+ClientStorageChecksumSecret
+Currently API Key can only be a Secret
+Caret
+assertion failed: !ret
+carpet
+Carpet
+raknet/raknet
+ClientRecvFromRaknet
+addrinfo addr is not af inet
+gethostbyname addr is not af inet
+Roblox/WinInet
+b.ns1p.net
+Bright violet
+Pastel violet
+Tr. Bright bluish violet
+Light bluish violet
+Medium bluish violet
+Bright reddish violet
+Light reddish violet
+Tr. Medi. reddish violet
+Med. reddish violet
+Sand violet
+Inlet
+physics/bullet
+PercentLuaGameDetailsPageOnAndroidTablet
+Android Tablet
+VideoMarkRodeoDataInHttpCacheBlanket
+Video2MarkRodeoDataInHttpCacheBlanket
+memory_bucket
+forced_user_bucket
+std_hash_bucket
+user_id_bucket
+xxhash32_bucket
+NoHttpResponseCountBucket
+AbortedOrStaleCountBucket
+HttpNon204CountBucket
+ProbesSentBucket
+ProbeTimeoutMsBucket
+TtiExperiment2025ForceUserBucket
+lodBucket
+unable to listen socket
+unable to create socket
+unable to bind socket
+invalid socket
+RbxTransportSysSocket
+RbxTransportQuicServerSocket
+NetworkEmulationUdpSocket
+RbxTransportDecoupleIoSocket
+BallInSocket
+RagdollBallSocket
+RbxTransportQuicSocket
+HttpParallelLimit_RequestWebSocket
+Failed to send testControlsRequest over WebSocket
+Failed to create WebSocket
+Failed to close WebSocket
+Rocket
+ticket
+EnableCheckUploadCaptureStatusForSupportTicket
+EnableCaptureUploadForSupportTicket
+ClientTicket
+authenticationTicket
+__joinTicket
+WebLoginProtocolHandleAuthTicket
+DisconnectDuplicateTicket
+right-curly-bracket
+left-curly-bracket
+right-square-bracket
+left-square-bracket
+Missing closing bracket
+missing close square bracket
+RightBracket
+LeftBracket
+ageBracket
+network/decompresspacket
+network/compresspacket
+video/packet
+rc_twopass_stats_in missing EOS stats packet
+[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet
+[DFLog::RealtimeMedia] appHidden: skip audio packet
+[DFLog::RealtimeMedia] appHidden: skip video packet
+[FLog::Network] call to onreceive before physicsReceiver is initialized are ready, dropping packet
+[DFLog::AuroraInputLogging] Server: ControlState field size {} exceeds remaining packet
+Failed to receive packet
+Failed to write packet
+Truncated packet
+[FLog::Error] Failed to read packet
+bad packet
+Game server received an ID_REQUEST_MARKER packet
+[DFLog::WebrtcInput] Sending PLI packet
+jacket
+ShortPacket
+processPacket
+BlockInvalidClusterPacket
+ObjectsSentPerPacket
+GroupsSentPerPacket
+FramesSentPerPacket
+_lastPhysicsUpdatesPerPacket
+LastPhysicsUpdatesPerPacket
+MaxSharedStringHashesPerPacket
+ObjectsReceivedPerPacket
+RealtimeMedia::onAudioPacket
+RealtimeMedia::onVideoPacket
+RakPeer::ProcessNetworkPacket
+VideoRingGrowToPercentOfPacket
+prof/Network/deserializePacket
+StuckOnOnePacket
+StreamJobStopCantSendPacket
+DataSender - canSendPacket
+[DFLog::RVideoTrace] WebmInputFormat::readPacket
+[DFLog::RVideoTrace] MockInputFormat::readPacket
+Items Pe
+
+##### GameJoinResponse @94360626
+ Handing to Workspace early because event is grabbed
+ChatRed
+avgRed
+weightedAvgRed
+Fallback_Red
+Tr. Flu. Red
+Tr. Red
+[DFLog::ShipsInNightGarbageCollection] INFO REDUCE ==> Region: {}, radius {} at version {} was reduced to radius {} because it is marked as GCed
+[DFLog::NetworkStreaming] Sending item with {} instances from evaluating required sets that were GCed
+infopair_add
+ossl_rand_pool_add
+__add
+EC_POINT_add
+ASN1_STRING_TABLE_add
+/ums-service/queue/v1/add
+[DFLog::DynamicTranslation] ServerToClientState::onPlayerAdded: failed to add
+ScriptContextAdd
+instancesToAdd
+BatchAdd
+processEvalOps::Add
+Queue.Add
+IkControl::resolveCcd
+id-smime-cd
+TrailVSQuad
+TrailFSQuad
+All Quad
+StudioStreamingLimitedRadiusGCYieldsToForceIrad
+StudioOpenWithStreamingForceIrad
+ButtonTouchpad
+VRTouchpad
+num_input_bindings_gamepad
+UserPlayerScriptsSupportMicroGamepad
+SetNavigationGamepad
+IsNavigationGamepad
+ActivatedCountTimerMSGamepad
+tlsaadpad
+TouchMovementModeThumbpad
+ossl_param_build_set_bn_pad
+EVP_PKEY_CTX_set_dh_pad
+id-aes128-wrap-pad
+id-aes256-wrap-pad
+id-aes192-wrap-pad
+[FLog::TestServiceLog] [requestValidation] using deprecated ValidationResult.payload
+[FLog::RenderTest] Submit test timeout payload
+[FLog::RenderTest] Submit test payload
+[FLog::AnimatedImage] AnimatedImageService::UserCreatedTracks: unknown version {}; discarding payload
+[FLog::AnimatedImage] AnimatedImageService::UserCreatedTracks: magic mismatch; discarding payload
+feature and metadata payload
+Failed to decode GameJoinResponse JSON payload
+GetPreinitPayload
+clientEventsPayload
+EnableSettingsPayload
+EnableSupportTicketAssetIdsInPayload
+purchasePayload
+EnablePurchasePayload
+MarketplacePurchasePayload
+AddHashToCompressedPayload
+Invalid Payload
+RakNetDetectRecvThreadOverload
+TextureAtlas::upload
+/posts-api/v1/content-posts/upload
+WS connection lost mid-upload
+DataModel gone mid-upload
+HSR data is empty when trying to upload
+All makeup assets failed to upload
+hsr data for %s is empty when upload
+hsr mesh id data for %s is empty when upload
+[FLog::RenderMeshManager] Mesh manager: '{}' empty geom for LODs {}-{}, skipping upload
+No file ID returned from QR upload
+NetworkBandwidthReportUpload
+/assets/user-auth/v1/assets/{assetId}:multipartUpload
+/assets/user-auth/v1/operations/{operationId}:multipartUpload
+/assets/user-auth/v1/assets:multipartUpload
+AssetMultiPartUpload
+SinglePartUpload
+EnableTextDocumentAssetUpload
+EnableCreateAssetAsyncAudioUpload
+EnableCreateAssetAsyncPluginUpload
+StudioParseNonBlockingDependencyIssuesOnUpload
+EngineSplitHumanoidRigDescriptionInUpload
+PerformUpload
+NoAvatarAutoSetupInputModelUpload
+EnableCreateAssetAsyncModelUpload
+EnableCreateAssetAsyncMeshUpload
+VJMAsyncMeshUpload
+EnableCaptureUpload
+TriggeredCaptureUpload
+CaptureServiceAllowCrossExperienceUpload
+ReadAndUpload
+SmoothClusterDisableAsyncUpload
+ClientFSUpload
+CaptureServiceMomentTextR3Upload
+SLIM Shadow Upload
+MLPostProcess Upload
+/download
+[FLog::Graphics] TextureDownloadResource asyncDownload failed, fa
+
+##### GameJoinApiResponse @93940936
+No assetid in JSON response
+Can't parse JSON response
+Players:GetCharacterAppearanceInfoAsync() failed to parse JSON response
+Failed to parse GetFriendsWhoPlayedAsync JSON response
+Failed to parse Notifications API response
+[DFLog::RewardedVideo] OnDemandAdsProvider::fetchAd receiving backend ads API response
+GmaEligibiltyResponse
+AssetDeliveryResponse
+IsURLRegisteredUseNewRequestResponse
+PushUpsellChatEduPromptResponse
+PushUpsellEduPromptResponse
+ChatServiceTextFilterNoOptResponse
+DynamicTranslationServerToClientResponse
+AdsApiClientResponse
+getUserLayerLoadingStatusResponse
+getBrowserTrackerLayerLoadingStatusResponse
+CannotParseSuccessResponse
+permissionsResponse
+testControlsResponse
+getUserLayerVariablesResponse
+getBrowserTrackerLayerVariablesResponse
+TextChatRequireVerifiedMessagesResponse
+httpErrorResponse
+IrisMoreDetailedErrorResponse
+getUserLayerLoadingStatusForLayerResponse
+getBrowserTrackerLayerLoadingStatusForLayerResponse
+httpResponse
+JoinGamePlaceLauncherHttpResponse
+NoHttpResponse
+PolicyServiceHttpResponse
+AdsCriticalInvalidHttpResponse
+MalformedHttpResponse
+DisconnectNoResponse
+ChatFloodcheckNoResponse
+ConnectionClosedNoResponse
+Error_NoResponse
+Failure_NoResponse
+jsonResponse
+MemoryStoreStatusCounterInvalidServiceJsonResponse
+ReportAbuseV3-InGame-UnexpectedJsonResponse
+ReportAbuseV2-InGame-UnexpectedJsonResponse
+id-it-subscriptionResponse
+includeChannelInfoInResponse
+parseObjectVersionFromResponse
+RegisterRecommendationItemResponse
+DebugMockThumbnailResponse
+GameJoinApiResponse
+handleAvatarFetchResponse
+HttpThrottlingQualifyingResponse
+sourceOfResponse
+DurationReceiveResponse
+CannotParseFailureResponse
+RemoteRequireResponse
+HttpClientDetectInvalidRangeResponse
+HttpClientResolveInvalidRangeResponse
+HttpServiceResponse
+SubscribeToProtocolMethodResponse
+PublishProtocolMethodResponse
+thumbnailInvalidResponse
+isURLRegisteredResponse
+openedResponse
+MalformedResponse
+AudioMetadataFailedResponse
+ChatFloodcheckNotFloodedResponse
+ChatFloodcheckFloodedResponse
+[DFLog::NativeAdsCore] [{}] Calling platformImpl->onServeInterstitialAdResponse
+AudioMetadataResponse
+basicOCSPResponse
+openURLResponse
+id-cct-PKIResponse
+Non200Response
+%s.%s.Response
+Physics Response
+[DFLog::ChatFiltering] Got TextFilter Response
+[DFLog::EditableServiceLog] Handling Amp Response
+No Response
+Impulse Response
+Basic OCSP Response
+Signing KDC Response
+offense
+Sense
+EngineApiMetricsDense
+impulse
+ApplyImpulse
+ApplyAngularImpulse
+LinearImpulse
+ApplySpecificImpulse
+assertion failed: K>0
+alg_unquant() needs at least one pulse
+assertion failed: K>0
+alg_quant() needs at least one pulse
+universeIds={}&size=256x256&format={}&isCircular=false
+universeIds={}&size=256x256&format=WebP&isCircular=false
+bidir:false
+rewardedVideoEnabledOnClient is false
+PromptCreateOutfit failed: Unexpected error, success was false
+GetBanHistoryAsync is disabled due to Players:BanningEnabled being set to false
+UnbanAsync is disabled due to Players:BanningEnabled being set to false
+BanAsync is disa
+
+##### joinScript @92364048
+ter={} inserting id={} at size={}
+[FLog::Graphics] activeNonSimStepParticleIds emitter={} erasing id={} at size={}
+[DFLog::AssetQualityService] poll success: bodySize={}
+[DFLog::AssetQualityService] schedule success: bodySize={}
+[DFLog::AssetQualityService] upload success: bodySize={}
+InvalidRangeResponse: status=206 reqRange="{}" gotContentRange="{}" bodySize={}
+[DFLog::RealtimeCoreNotification] SeqNum map after durable replay: mapSize={}
+[DFLog::RealtimeCoreNotification] SeqNum map after SignalR notification: ns={}, seqNum={}, mapSize={}
+[FLog::WrapLogChannel] LLT allocation OOM [buildOrGetFromRegistry]: rbfSize={}
+[FLog::WrapLogChannel] LLT solve allocation OOM [buildInternalWithCachedLlt]: rbfSize={}
+[FLog::WrapLogChannel] LLT allocation OOM [buildInternal/ws]: rbfSize={}
+[FLog::WrapLogChannel] RBF allocation OOM [buildInternal/ws]: rbfSize={}
+[FLog::WrapLogChannel] RBF allocation OOM [packZeroWeights]: rbfSize={}
+[FLog::WrapLogChannel] LLT allocation OOM [buildInternal]: rbfSize={}
+[FLog::WrapLogChannel] RBF allocation OOM [buildInternal]: rbfSize={}
+[FLog::WrapLogChannel] LLT decomposition failed [buildOrGetFromRegistry]: info={}, rbfSize={}
+[FLog::WrapLogChannel] LLT decomposition failed [buildInternal/ws]: info={}, rbfSize={}
+[FLog::WrapLogChannel] LLT decomposition failed [buildInternal]: info={}, rbfSize={}
+[DFLog::RbxTransportClientLog] Message queued (channel not yet open), queueSize={}
+[FLog::GameJoinV2] GameJoinV2 onResponseReady: status={} jobId={} queuePos={} joinScriptPayloadSize={}
+[DFLog::RbxTransportRnaExpConnection] {}. onDatagramReceived: receiveBytes failed for wireChannelId={} err={} dataSize={}
+[DFLog::GamePassFreeTrial] cache hit user={} pass={} owned={} active={}
+[DFLog::SocialCounterpartyManager] UserBlockingData cached for userId={}: {} pairs, blockedUsersListIsComplete={}, blockedByUsersListIsComplete={}
+[DFLog::DeeplinkIntentContext] terminal_emit | id={} category={} reason={} state={}
+[DFLog::DeeplinkIntentContext] state_update | id={} state={}
+[DFLog::SoundTrace] Not creating FMOD Channel because sound={} in bad open state={}
+[FLog::Graphics] SolidTextures::processUsedMaterialChanges: specular texture state={}
+[DFLog::HttpTrace] HttpRequest(#{} {}) abort, state={}
+[DFLog::HttpTrace] HttpRequest(#{} {}) oldState={}, newState={}
+[FLog::ExperienceStateCaptureController] onSwitch: null parameter(s): dm={}, loadedState={}
+[FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer: first writeData channels={} bytesPerSample={} sampleRate={}
+non-attachment in hierarchy: name={} type={}
+[FLog::TestServiceConnectionManager] Outbox full ({} msgs); dropping outbound type={}
+[FLog::TestServiceConnectionManager] Invalid outbound payload; not queued. type={}
+https://apis.rbxcdn.com/config-asset-mapping-api/v1/get-asset-id?resourceId={}&resourceType=1&repositoryType={}
+&model.creatorType={}
+{}?captureType={}
+&itemCategories[{}].itemType=1&itemCategories[{}].itemSubType={}
+[FLog::SingleSurfaceApp] [DeferredRbxm] join outcome={}
+[DFLog::D
+
+##### joinScript @92422988
+tance of call '{}' in {}
+[FLog::FriendsCallingModule] FriendsCallingModule: created the instance of call '{}' in {}
+[DFLog::RbxTransportRnaExpConnection] {}. Send channel app={} channelId={} open {}
+Missing core script {}, hidden {}
+Missing core script child {}, hidden {}
+[DFLog::RbxTransportRnaExpConnection] {}. QUIC stream acked data. streamId {}, offset {}, dataLen {}
+[FLog::DataStore] Version {} in cache is greater than {}
+preInitFiles.{} is an object, so it must have an {}
+[DFLog::AssetQualityService] fetched validation content from {}
+Protocol mismatch from {}
+Resimulating from {}
+Derive from {}
+[FLog::TelemetryReliabilityCounters] No underscore was found for event name from {}
+[DFLog::NetworkClient] Connection accepted from {}
+[FLog::UgcExperienceController] UgcExperienceController: join: initialized dm {}
+[FLog::CrossExperienceVoiceController] CrossExperienceVoiceController: join: initialized dm {}
+[FLog::Graphics] Error {} attribute {} in stream index {} exceeds the max stream {}
+[DFLog::CaptureEngine] codec parameters is null for stream {}
+[DFLog::VideoSelfTest] validateSelfTest videoIndex {} not a video stream {}
+[DFLog::RbxTransportRnaExpConnection] {}. No stream {}
+[DFLog::AnalyticsService] httpRequestGetImpl request url {}
+[FLog::UgcExperienceController] UgcExperienceController: makeJoinScriptRequestForTeleport: url {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: url {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: joinScriptUrl {}
+[DFLog::CaptureService] startVideoCaptureInternalImpl {}
+[DFLog::CaptureService] stopVideoCaptureInternalImpl {}
+[DFLog::LargeReplicatorTrace] Delta base missing: sourceId guid {} version {} lookupType {} assetExists {} containerNull {}
+[DFLog::ThumbnailVideoStreamTrace] render: thumbnail {}
+[FLog::RuntimeContentLog] Processing RemoteEvent Fail {}
+[FLog::Graphics] [GridReadJob] {} setupLocked: built chunk list with {} chunks at level {}
+[DFLog::InternalMessagingService] Received backend message: {} for channel {}
+[DFLog::RbxTransportRnaExpConnection] {}. No channel {}
+[DFLog::SoundTrace] FMODPlaybackChannel::createFMODChannelIfPlaying({}) creating FMOD channel {}
+[DFLog::SoundTrace] LegacySoundImpl::onOpenFmod({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onClosingFmod({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onChildRemoved({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onChildAdded({}) fmodChannel {}
+[FLog::AerodynamicsLogs] Blew away mesh from interpolated force model {}
+[DFLog::LargeReplicatorTrace] Creating Asset From {} Deltas for guid {} version {} with additional {}
+[DFLog::LargeReplicatorTrace] Received Delta for guid {} version {} with additional {}
+[FLog::WrapLogChannel] WrapDeformMeshProvider updateTunable: min {}, cur {}, ideal {}
+[FLog::WrapLogChannel] WrapContentProvider::ProcessTask unexpectedly invoked for task {}
+[DFLog::MarketplaceRecommendationsApi] Invoking GetTopRecommendedProducts with InfoType BitMask {
+
+##### joinScript @92597449
+perty
+styleProperty
+SlimReplicateModelScaleProperty
+UpdateGraphNodeProperty
+SandboxedInstanceModeProperty
+HeadShapesHideProperty
+NotificationServiceIsConnectedProperty
+ReflectedProperty
+BaseScriptEnabledProperty
+RenderAPI979Property
+network/ISR/Property
+/v1/play-with-party
+/v1/join-private-party
+[FLog::Teleport] Group Teleport Analytics removed party
+CreateNewParty
+RequestPlayWithParty
+DeleteParty
+isPrivateParty
+Social.Party
+boost::filesystem::is_empty
+token_empty
+initial_batch_empty
+file_read_empty
+[DFLog::AssetPreloading] preload:empty
+message must be non-empty
+RegisterTest: field '%s' must be non-empty
+[FLog::RuntimeContentLog] Transcoding queue unexpectedly empty
+[FLog::Warning] Deeplink attributionAdName present but empty
+[FLog::CSG3Errors] DCDRecomputeTask silently failed. RecomputePromise status is not empty
+EditableMesh is not empty
+TriangleMeshPart physicalConfigData deprecated storage is not empty
+AssemblyStage::DEBUG_removeAssembly - assemblyEdges not empty
+AssemblyStage::DEBUG_addAssembly - assemblyEdges not empty
+AssemblyStage::~AssemblyStage - assemblyEdges not empty
+BVH collection not empty
+[FLog::ModelTranscoder] Slim Asset {} LOD {} is empty
+videoContent is empty
+[FLog::Warning] WebLogin cannot run as authentication url or ticket is empty
+[FLog::Warning] WebLogin Error: auth URL or ticket is empty
+[FLog::Warning] WebLogin Error: auth ticket is empty
+[FLog::Serialization] Instance vector is empty
+Emulated policy info is empty
+[FLog::Warning] WebPlayGameLaunch joinScriptUrl is empty
+Invalid request options, Url is empty
+random pool is empty
+[FLog::DataModelPatcher] Post-TTI: ABORT - deserialized model is empty
+interval is empty
+[DFLog::AppendOnlyBuffer] Cache directory path is empty
+[FLog::Error] Asset file path is empty
+[FLog::TelemetryBatchManager] [tryCutAndSendBatch] Batch cut unsuccessful - batch is empty
+Raw Request: string is empty
+[DFLog::PlayerConfigurer] RbxTransportConfig is empty
+%s: 'Mask' ObjectValue is empty
+[FLog::DataStore] Response is empty
+ReserveServer error: Response is empty
+Invalid request options, Request_Type is empty
+Generated animation file is empty
+[FLog::Warning] LocalStorage loading file is empty
+[FLog::IxpStorageManager] Random ID file is empty
+ProfileConfiguration table is empty
+[FLog::DataModelPatcher] Post-TTI: ABORT - postTtiContentId is empty
+[DFLog::RccSoundLength] Sound::constructGetSoundLengthUrl assetId is empty
+targetId is empty
+MarketplaceService:PromptNativePurchaseWithContext() productId is empty
+MarketplaceService:PromptThirdPartyPurchase() productId is empty
+MarketplaceService:PromptNativePurchase() productId is empty
+MarketplaceService:PromptNativePurchaseWithLocalPlayerWithPaymentSessionId() productId is empty
+MarketplaceService:PromptNativePurchaseWithPaymentSessionId() productId is empty
+itemId is empty
+tracingId is empty
+Asset quality jobId is empty
+Unable to trigger mesh segmentation: jobId is empty
+Unable to trigger model generation: jobId is empty
+[FLog::AerodynamicsLogs] Aero m
+
+##### joinScript @92787701
+SocialService:OnCallInviteInvoked Must be set from a server script
+Started join script
+invalid permissions for opening given script
+Cannot attach debugger to a null script
+Player:requestFriendship must be called from local script
+RequestFriendship must be called from local script
+ExperienceNotificationService:PromptOptIn can only be executed by a local script
+ExperienceNotificationService:CanPromptOptInAsync can only be executed by a local script
+MarketplaceService.PromptBulkPurchaseFinished can only be subscribed to from a local script
+LoginService:logout() should only be accessed from a local script
+LoginService:promptLogin() should only be accessed from a local script
+ContextActionService:BindAction can only be called from a local script
+ContextActionService:UnbindActivate can only be called from a local script
+ContextActionService:BindActivate can only be called from a local script
+[DFLog::StratusWebView] bs:execJs missing script
+Character has no Animate script
+Debugger can be attached to a script or module script
+Not enough stack space to reload module script
+isRobloxScript
+EnableCreateAssetAsyncForRobloxScript
+Cannot require a non-RobloxScript module from a RobloxScript
+IsPackageRootScript
+RunClientScript
+propertySetScript
+propertyGetScript
+RequestAllRemoteCursorPositionForScript
+isPlayerScript
+AvatarAbilitiesServerScript
+RunServerScript
+UnificationServerScript
+starterScript
+ServerStarterScript
+LuaAppStarterScript
+CEVStarterScript
+PartInstance_GetNetworkOwnerScript
+joinScript
+FetchedJoinScript
+OpenScript
+ControlScript
+Can only call UserEligibleForRealWorldCommerce from LocalScript
+Cannot kick a non-local Player from a LocalScript
+HungScript
+LoadingScript
+BouncingScript
+DebugDisableLogServiceExecuteScript
+AnimateScript
+instanceCreateScript
+BaseScript
+GetPlayingAnimationTracksCoreScript
+isCoreScript
+IsCoreScript
+LoadAnimationCoreScript
+MissingCoreScript
+AnimationPlayedCoreScript
+TestingGameScript
+ElevatedGameScript
+unable to resolve module path "%s": resolved to a %s, not a ModuleScript
+ExperienceScript
+LuaHangedScript
+ReturnToJavaScript
+ExecuteJavaScript
+DMCTMigrateAuroraScript
+CameraScript
+$Script
+Can only add debugger for a Script
+id-smime-ct-receipt
+not a signed receipt
+ProcessReceipt
+DataWithReceipt
+FetchReceipt
+id-smime-cti-ets-proofOfReceipt
+ noexcept
+NativeCloseIntercept
+accept
+FailureOnAccept
+JoinMemoryOpt
+MeshOpt
+SLC2BindingUpdateOpt
+SlimRenderingUpdCFrameOpt
+pt-pt
+GetPivot
+WorldPivot
+gfx/lighting/unshadowed_light_type_spot
+gfx/lighting/shadowed_light_type_spot
+gfx/lighting/light_type_spot
+HotSpot
+ShadowObjectSpot
+set-policy-root
+Failed to determine new root
+[DFLog::GenerationService] Removed root instance from parent, making it root
+[DFLog::GenerationService] Looking for '{}' instance to extract as root
+[DFLog::GenerationService] Failed to extract {} instance as root
+character model root
+DialogChoice must be a child of this dialog root
+Overrides anchor {} is not a scope root
+VoiceReboot
+trustRoot
+SyncedAsRoot
+DebugSimParent
+
+##### JoinScript @92417198
+ideoTrace] MpegTsInputFormat::seek to {}
+Rolling back to {}
+[DFLog::AuroraScriptRollback] {} objects on frame {} not rolled back to {}
+[DFLog::AssetReader] setBasePath(): Set basePath to {}
+[DFLog::CaptureEngine] saving to {}
+[DFLog::RVideoTrace] Overriding VP8 encoder token partition setting to {}
+[DFLog::RVideoTrace] Overriding VP9 encoder CPUUSED setting to {}
+[DFLog::RVideoTrace] Overriding VP8 encoder CPUUSED setting to {}
+[DFLog::CaptureEngine] Failed to create MCP capture directory {} due to {}
+[DFLog::CaptureEngine] Failed to rename MCP capture {} to {} due to {}
+[DFLog::CaptureStorage] Failed to remove temp directory '{}' due to {}
+[FLog::AppLifecycleManager] AppLifecycleStateManager: updating state to {}
+[DFLog::CoordinatorMemoryPressure] Setting memory pressure threshold to {}
+[FLog::LinkingProtocolCore] {} is matched to {}
+[DFLog::RbxTransportRnaExpConnection] {}. QUIC handshake state changed to {}
+[DFLog::AssetQualityService] firing poll POST to {}
+Failed to write Slim PropertySet JSON to {}
+[FLog::ModelTranscoder] Dumped SLIM resource OBJ to {}
+[DFLog::NetworkTrace] sendto failed with code {} msg len {} errno {}
+[DFLog::NetworkSocketReceiveError] poll failed with errno {}
+[DFLog::RewardedVideo] NativeAdsCore platformImpl->getQueryInfo {}
+[DFLog::VideoSelfTest] validateSelfTest videoIndex {} not a AVC/HEVC video {}
+[FLog::FRM] FRM status. Frame time average: {}, Delay up {}, Delay down {}
+[FLog::UgcExperienceController] UgcExperienceController: finishTeleportWithJoinScriptPayload: failed to parse json {}
+[DFLog::RbxTransportRnaExpConnection] {}. QUIC connection closed with reason {}
+[DFLog::RbxTransportDummyClient] Failed to establish connection to server at {}:{}, reason {}
+[DFLog::RbxTransportRnaExpConnection] {}. closeSendChannel. app={} channelId {}, reason {}
+[DFLog::RbxTransportRnaExpConnection] {}. closeReceiveChannel. channelId {}, reason {}
+[DFLog::SessionCrypto] RbxOpenRequest2 using encryption {}
+[FLog::WrapLogChannel] WrapDeformMeshProvider move mesh to RbxStorage throw exception {}
+[FLog::WrapLogChannel] WrapDeformMeshProvider move mesh to RbxStorage threw exception {}
+Script '{}', Line {} - function {}
+[DFLog::RbxTransportClientLog] RbxTransportClient ACK ReceiveChannelOpened IN WaitForConnection {}
+[DFLog::AuroraInputLogging] Input action type is None for action {}
+[FLog::UIDragDetectorLog] UIDragDetector::dragContinue || inputPosition <{}, {}>, dragDelta.translation <{}, {}>, dragDelta.rotation {}
+[DFLog::RbxTransportClientLog] Failed to start the BaseClient with configuration {}
+[FLog::Output] Reporting success or error {} for operation {}
+[FLog::CSGErrors] unknown CSG4::Operation {}
+[FLog::RealtimeProtocol] topicNotification {}
+[DFLog::LargeReplicatorTrace] Cancel received for stream {} guid {} version {}
+[DFLog::LargeReplicatorTrace] Cancel cleaning up state for guid {} version {}
+[DFLog::LargeReplicatorTrace] Delta source {} version {} found Published, unblocking delta for guid {} version {}
+[DFLog::ShipsInNightGa
+
+##### JoinScript @92422806
+rted key '{}' in {}
+[FLog::FriendsCallingModule] FriendsCallingProjectedView: created the view of call '{}' in {}
+[FLog::FriendsCallingModule] FriendsCallingModule: releasing the instance of call '{}' in {}
+[FLog::FriendsCallingModule] FriendsCallingModule: created the instance of call '{}' in {}
+[DFLog::RbxTransportRnaExpConnection] {}. Send channel app={} channelId={} open {}
+Missing core script {}, hidden {}
+Missing core script child {}, hidden {}
+[DFLog::RbxTransportRnaExpConnection] {}. QUIC stream acked data. streamId {}, offset {}, dataLen {}
+[FLog::DataStore] Version {} in cache is greater than {}
+preInitFiles.{} is an object, so it must have an {}
+[DFLog::AssetQualityService] fetched validation content from {}
+Protocol mismatch from {}
+Resimulating from {}
+Derive from {}
+[FLog::TelemetryReliabilityCounters] No underscore was found for event name from {}
+[DFLog::NetworkClient] Connection accepted from {}
+[FLog::UgcExperienceController] UgcExperienceController: join: initialized dm {}
+[FLog::CrossExperienceVoiceController] CrossExperienceVoiceController: join: initialized dm {}
+[FLog::Graphics] Error {} attribute {} in stream index {} exceeds the max stream {}
+[DFLog::CaptureEngine] codec parameters is null for stream {}
+[DFLog::VideoSelfTest] validateSelfTest videoIndex {} not a video stream {}
+[DFLog::RbxTransportRnaExpConnection] {}. No stream {}
+[DFLog::AnalyticsService] httpRequestGetImpl request url {}
+[FLog::UgcExperienceController] UgcExperienceController: makeJoinScriptRequestForTeleport: url {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: url {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: joinScriptUrl {}
+[DFLog::CaptureService] startVideoCaptureInternalImpl {}
+[DFLog::CaptureService] stopVideoCaptureInternalImpl {}
+[DFLog::LargeReplicatorTrace] Delta base missing: sourceId guid {} version {} lookupType {} assetExists {} containerNull {}
+[DFLog::ThumbnailVideoStreamTrace] render: thumbnail {}
+[FLog::RuntimeContentLog] Processing RemoteEvent Fail {}
+[FLog::Graphics] [GridReadJob] {} setupLocked: built chunk list with {} chunks at level {}
+[DFLog::InternalMessagingService] Received backend message: {} for channel {}
+[DFLog::RbxTransportRnaExpConnection] {}. No channel {}
+[DFLog::SoundTrace] FMODPlaybackChannel::createFMODChannelIfPlaying({}) creating FMOD channel {}
+[DFLog::SoundTrace] LegacySoundImpl::onOpenFmod({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onClosingFmod({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onChildRemoved({}) fmodChannel {}
+[DFLog::SoundTrace] LegacySoundImpl::onChildAdded({}) fmodChannel {}
+[FLog::AerodynamicsLogs] Blew away mesh from interpolated force model {}
+[DFLog::LargeReplicatorTrace] Creating Asset From {} Deltas for guid {} version {} with additional {}
+[DFLog::LargeReplicatorTrace] Received Delta for guid {} version {} with additional {}
+[FLog::WrapLogChannel] WrapDeformMeshProvider updateTunable: min {}, cur {}, ideal {}
+
+##### JoinScript @92533995
+JSON: {}. Protocol: {}. Method: {}. Message: {}
+[FLog::MessageBus] MessageBusService::setRequestHandler failed to decode JSON: {}. Protocol: {}. Method: {}. Message: {}
+[FLog::MessageBus] MessageBusService::subscribeInternal failed to decode JSON: {}. Mid: {}. Message: {}
+ HTTP StatusCode: {}, Message: {}
+[DFLog::CrashMetricStorage] CrashMetricStorage: Successfully parsed crash metrics from storage: {}
+[FLog::AssetsManifestManager] Checking existence of OTA Assets Manifest with OTA Config Name '{}' in RbxStorage: {}
+[FLog::StartupController] BrowserTrackerIdRequest: BTID in cookie does not match AppStorage. Cookie: {} AppStorage: {}
+[FLog::Photo2Avatar] Invalid number of arguments for remote event RequestAvatarGenerationImage: {}
+[FLog::AvatarMemoryTracker] Track texture[{:X}] for EditableImage: {}
+[FLog::VoiceChatLogs] ClientPublishOperation [Sdp Compression] compressed pub offer size: {}, original size: {}, compress mode: {}
+[FLog::VoiceChatLogs] ClientSubscribeOperation [Sdp Compression] compressed sdp size: {}, original size: {}, compress mode: {}
+[DFLog::NetworkClient] Failed to connect to server with RakNet, falling back to RbxTransport. Disconnect code: {}
+[DFLog::NetworkClient] Failed to connect to server with RakNet, but fallback to RbxTransport is not available. Disconnect code: {}
+Unexpected status code: {}
+[FLog::TelemetryBatchManager] BatchManager::httpCallback called with err: {} ({}), status code: {}
+[FLog::UgcExperienceController] UgcExperienceController: makeJoinScriptRequestForTeleport: response:
+status code: {}
+MarketplaceService:GetUsersPriceLevelsAsync(): HTTP request failed with error code: {}
+[DFLog::RbxStorage] NullCache::setFromFile failed to remove file: {}, error code: {}
+[DFLog::RbxStorage] MockStorageInterface::setFromFile, failed to remove file: {}, error code: {}
+[FLog::WebLoginProtocol] Error performing web login, error code: {}
+[DFLog::NetworkClient] Successfully connected to server after falling back from RakNet to RbxTransport. Original connection failure reason code: {}
+[DFLog::RewardedVideo] AdUtils::sendGmaEligibilityRequest gma-eligibility-check responded with code: {}
+[DFLog::RewardedVideo] AdUtils::gmaEligibilityCheck gma-eligibility-check responded with code: {}
+[FLog::VoiceChatLogs] Received SubscriptionHandshakeAckedWithCompressedSdp. SessionId: {}, Tag: {}, CompressMode: {}
+[DFLog::CaptureService] Dev capture params overriden by script. UI Capture Mode: {}
+[DFLog::RccSoundLength] SoundService::loadSoundLengthForServer: unexpected response for {}, statusCode: {}
+[FLog::Warning] WebLogin http error: {}, statusCode: {}
+[FLog::Warning] WebLogin HTTP error, statusCode: {}
+[FLog::AssetsUploadApiFlow] OperationId:{} error status errorCode: {}
+[DFLog::RccSoundLength] SoundService::loadSoundLengthForServer: request error for {}, errorCode: {}
+ Detailed ErrorCode: {}
+[FLog::GameJoinUtil] joinGamePostTeamTest: unique gameCode: {}
+[FLog::CSG3Errors] Upload CSG failed. Status Code: {}
+[FLog::PackageLink] Error w
+
+##### JoinScript @92787719
+OnCallInviteInvoked Must be set from a server script
+Started join script
+invalid permissions for opening given script
+Cannot attach debugger to a null script
+Player:requestFriendship must be called from local script
+RequestFriendship must be called from local script
+ExperienceNotificationService:PromptOptIn can only be executed by a local script
+ExperienceNotificationService:CanPromptOptInAsync can only be executed by a local script
+MarketplaceService.PromptBulkPurchaseFinished can only be subscribed to from a local script
+LoginService:logout() should only be accessed from a local script
+LoginService:promptLogin() should only be accessed from a local script
+ContextActionService:BindAction can only be called from a local script
+ContextActionService:UnbindActivate can only be called from a local script
+ContextActionService:BindActivate can only be called from a local script
+[DFLog::StratusWebView] bs:execJs missing script
+Character has no Animate script
+Debugger can be attached to a script or module script
+Not enough stack space to reload module script
+isRobloxScript
+EnableCreateAssetAsyncForRobloxScript
+Cannot require a non-RobloxScript module from a RobloxScript
+IsPackageRootScript
+RunClientScript
+propertySetScript
+propertyGetScript
+RequestAllRemoteCursorPositionForScript
+isPlayerScript
+AvatarAbilitiesServerScript
+RunServerScript
+UnificationServerScript
+starterScript
+ServerStarterScript
+LuaAppStarterScript
+CEVStarterScript
+PartInstance_GetNetworkOwnerScript
+joinScript
+FetchedJoinScript
+OpenScript
+ControlScript
+Can only call UserEligibleForRealWorldCommerce from LocalScript
+Cannot kick a non-local Player from a LocalScript
+HungScript
+LoadingScript
+BouncingScript
+DebugDisableLogServiceExecuteScript
+AnimateScript
+instanceCreateScript
+BaseScript
+GetPlayingAnimationTracksCoreScript
+isCoreScript
+IsCoreScript
+LoadAnimationCoreScript
+MissingCoreScript
+AnimationPlayedCoreScript
+TestingGameScript
+ElevatedGameScript
+unable to resolve module path "%s": resolved to a %s, not a ModuleScript
+ExperienceScript
+LuaHangedScript
+ReturnToJavaScript
+ExecuteJavaScript
+DMCTMigrateAuroraScript
+CameraScript
+$Script
+Can only add debugger for a Script
+id-smime-ct-receipt
+not a signed receipt
+ProcessReceipt
+DataWithReceipt
+FetchReceipt
+id-smime-cti-ets-proofOfReceipt
+ noexcept
+NativeCloseIntercept
+accept
+FailureOnAccept
+JoinMemoryOpt
+MeshOpt
+SLC2BindingUpdateOpt
+SlimRenderingUpdCFrameOpt
+pt-pt
+GetPivot
+WorldPivot
+gfx/lighting/unshadowed_light_type_spot
+gfx/lighting/shadowed_light_type_spot
+gfx/lighting/light_type_spot
+HotSpot
+ShadowObjectSpot
+set-policy-root
+Failed to determine new root
+[DFLog::GenerationService] Removed root instance from parent, making it root
+[DFLog::GenerationService] Looking for '{}' instance to extract as root
+[DFLog::GenerationService] Failed to extract {} instance as root
+character model root
+DialogChoice must be a child of this dialog root
+Overrides anchor {} is not a scope root
+VoiceReboot
+trustRoot
+SyncedAsRoot
+DebugSimParentPrimReplicationRoo
+
+##### RbxTransport @92337019
+aceId":{0},"playerIds":[{1}]}}
+{{"permissions":["{}"]}}
+{{"browserTrackerId":{},"status":"{}"}}
+[DFLog::NetworkAudit] {"http":{"method":"%s","url":"%s","asset":"%d","fromLua":"%d","reqDataSize":"%zu","respDataSize":"%zu"}}
+[FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryStat"}}
+[FLog::TelemetryService] `backends` of event {} should be exactly {{"RobloxTelemetryStat"}}
+`backends` of event {} should be exactly {{"Stat"}}
+[FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryCounter"}}
+[FLog::TelemetryService] `backends` of event {} should be exactly {{"RobloxTelemetryCounter"}}
+`backends` of event {} should be exactly {{"Counter"}}
+buffer {{ Size = {} }}
+AdReward {{ type = DevProduct, productId = {} }}
+ClipEvaluator {{ Duration = {}, AnimationId = {} }}
+{{ "purchaserId": {0}, "purchaserType": "User", "idempotencyKey": "{1}", "collectibleProductId": "{2}" }}
+{{ "{0}": "{1}" }}
+{{ "purchaserId": {0}, "purchaserType": "User", "idempotencyKey": "{1}" }}
+{{ "userId" : %lld, "placeId" : %lld, "os" : "%s" }}
+datastore={}{}{}{}{}
+datastore={}&objectKey={}&sortOrder={}{}{}{}
+{} {} ({}MB; {}x{}; {}x{}; {}x{}; {}; {}{}{}) Browser/{}/{}{}{}
+{}_{}_{}{}
+LocalDisconnect_{}_{}{}
+datastore={}&objectKey={}{}
+datastore={}&objectKey={}&incrementBy={}{}
+timeUs: start={} end={} duration={}{}
+{}-{}{}
+rbxassetid://{}&{}{}
+[FLog::Error] {}{}
+[DFLog::NetworkProfilerChannel] {}|{:.6f}|peer:{}|local:{}|remote:{}|{}
+[DFLog::NetworkClient] RbxTransport Client will connect to server {}|{}, udmux {}|{}
+x3_{}_{}x{}x{}
+x2_{}_{}x{}
+[FLog::Graphics] DRS framebuffer clamp: active={} areaPercent={} axisScale={} originalDpiScale={} framebuffer={}x{} deviceTarget={}x{}
+[FLog::Safety] resizeEncodeWithParams() - expected GPU-resized image to have larger dimension of {}, but got image with dimensions {}x{}
+[FLog::Safety] screenshotResizeEncode() - expected GPU-resized image to have larger dimension of {}, but got image with dimensions {}x{}
+[DFLog::Video] RawInputFormat: invalid Y4M dimensions {}x{}
+[DFLog::Video] renderFrameWithImmutableSampler: createTexture failed for {}x{}
+[DFLog::Video] renderFrameWithCustomShader: createTexture failed for {}x{}
+[DFLog::Video] renderFrameWithFullSoftware: createTexture failed for {}x{}
+GridReducedAlternateProblem: full form Hessian is {}x{}, expected scalar {}x{}
+GridReducedAlternateProblem: reduced form Hessian is {}x{}, expected scalar {}x{}
+[FLog::Graphics] Device target size changed to {}x{}
+[FLog::Graphics] TextureDownloadResource: skipping zero-sized capture {}x{}
+[FLog::Safety] resizeEncodeWithParams() - skipping zero sized capture {}x{}
+[FLog::Safety] screenshotResizeEncode() - skipping zero sized capture {}x{}
+[FLog::Graphics] Error creating TextureDownloadResource {}x{}
+[DFLog::VideoAdaption] Next resolution chosen to be {}x{}
+[FLog::Safety] resizeEncodeWithParams() - failed to resize image to expected dimensions. Expected: {}x{}, Got: {}x{}
+[FLog::Safety] screenshotResizeEnc
+
+##### RbxTransport @92340286
+y] screenshotResizeEncode() - GPU resize already performed, skipping CPU resize. Image dimensions: {}x{}
+Image has invalid dimensions: {}x{}
+[DFLog::StratusSession] [Resolution] display(dp): {}x{}, renderView: {}x{}, dpiScale: {:.2f}, server: {}x{}
+maxResolution: {}x{}
+PNG dimensions too large: {}x{}
+g{}|v{}
+Bit{}
+JoinGamePlaceLauncher-FailureStatus{}
+has{}
+{}ChangeReq{}
+OnMessage{}
+Code{}
+NavigationTerrainMeshThread{}
+{}_{}_{}_{}
+unban_u_{}_{}
+unban_p_{}_{}
+tunable_{}_{}
+{}_secondary_{}
+upload_early_{}
+max_{}
+required_asset_{}
+{}_effect_{}
+upload_peak_bps_{}
+ContentProvider_{}
+Unknown_{}
+$UserToken_{}
+upload_overall_{}
+pack_{}
+mesh_{}
+tunable_{}
+handshakeStage_{}
+TextScraperSendContentBadResponseStatusCode_{}
+upload_{}
+upload_peak_offset_sec_{}
+{}_RESOURCE_{}
+_LOD_{}
+{}:P{}:V{}
+{}_P{}
+StreamingPauseFlickerDurationMs_P{}
+UnpausedDurationMs_P{}
+LocalizationServicePerformance_AttemptTranslationExecTime_P{}
+LocalizationServicePerformance_AttemptTranslationByExpressionMatchExecTime_P{}
+{}@{}
+{}?{}
+[FLog::Graphics] SceneManager: main targets mode={}->{} samples={}->{} highlightScale={}->{}
+[FLog::ModelTranscoder] Unsetting previous FFlag::{}={}
+[FLog::ModelTranscoder] Setting FFlag::{}={}
+&{}={}
+[DFLog::AdaptiveConfig]   request header {}={}
+[DFLog::AdaptiveConfig]   sent header {}={}
+[DFLog::StratusSession] Control(proto): set user setting {}={}
+[FLog::ShapeFit] [ProperArapForm] constant Hessian nnz={}
+[FLog::ShapeFit] Grid-cage LS init: computing JtJ ({} x {}), L nnz={}
+[DFLog::RbxTransportRnaExpConnection] {}. Opening send channel: app={} channelId={} reliability={}
+[DFLog::RealtimeMediaTelemetry] Stratus session quality recorded: rttMs={} jitterMs={} lossPctHp={} quality={}
+[FLog::Graphics] activeNonSimStepParticleIds emitter={} reserving n={} at size={}, capacity={}
+[DFLog::AppendOnlyBuffer] GrowableHeapAppendOnlyBuffer exceeded max capacity: size_={} + size={} > kMaxCapacity={}
+[DFLog::RealtimeMedia] StratusEligibility(precheck): eligible={}, flag={}, placeId={} ({}), rttMs={} ({}), discovery={}
+[DFLog::CharacterRepresentation] primary={}
+multipart/{}; boundary={}
+{}?exclusiveStartKey={}
+{}?{}&exclusiveStartKey={}
+[DFLog::AdaptiveConfig] ACS poll non-200 status={} body={}
+[DFLog::SocialCounterpartyManager] makeBatchCheckReciprocalBlockRequest: userId={} serverUserIds={} body={}
+[DFLog::TextToSpeech] TTSOpenCloud: request failed HTTP {} body={}
+[DFLog::TextToSpeech] TTSPublish: generate-audio-asset failed HTTP {} body={}
+[DFLog::TextToSpeech] TTSPublish: upload failed HTTP {} body={}
+[DFLog::RealtimeCoreNotification] Durable replay HTTP response: status={}, body={}
+[DFLog::RealtimeCoreNotification] Durable replay HTTP request failed: status={}, body={}
+[FLog::CallingLegClient] {} request failed: err={}, status={}, body={}
+[FLog::CallingLegClient] createCall request failed: err={}, status={}, body={}
+[DFLog::RealtimeCoreNotification] Durable replay request: namespaces={}, body={}
+[DFLog::VideoServer] postConnectAsync failed: httpCode={}, body={}
+
+##### RbxTransport @92343085
+eateCall request failed: err={}, status={}, body={}
+[DFLog::RealtimeCoreNotification] Durable replay request: namespaces={}, body={}
+[DFLog::VideoServer] postConnectAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] reserveAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] postOfferAsync failed: status={}, httpCode={}, body={}
+[DFLog::HttpTraceNew] HttpRequest(#{} {}) {} 200->206: reqRange="{}" trim=[{},{}) totalBody={}
+[FLog::TestServiceLog] [requestValidation] ENTER artifactName='{}' ready={}
+[FLog::TestServiceLog] [fetchTestControls] request initiated category='{}' wsReady={}
+[FLog::Graphics] DRS framebuffer halved: denied={} deviceDenied={} placeDenied={} fullSizeDenied={} unhalvedPolicy={}
+&prefix={}
+[DFLog::GenerationService] AnimationGenerationJob motion update: PriorJobId prefix={}
+audioMuxedIntoVideo: {} sourcePlaylistIndex={}
+[FLog::RenderTest] RenderingTest capture: SSAO frameIndex={}
+[DFLog::ReplicationDataCaching] Pushing instance {}[type={}][guid={}] with metaDataOffset={} into blobIndex={}
+BroadPhaseColliderBinding::setBroadPhaseAabb called with NaN/Inf AABB: min={}, max={}
+Count={} Max={}
+[DFLog::TextSafetyAnalyticsSender] TextSafetyAnalyticsSender: analyzeTextSafety context={} text={}
+[DFLog::MLPostProcess] First frame: {}x{} (fmt={}/{}) -> model {}x{} -> {}x{} in {:.1f}ms  resize_in={} resize_out={}
+&artist={}
+[FLog::Graphics] EnableTexturePackGeneratorOnClient=true, but pattern is in deny list={}
+[DFLog::NetworkClient] RakNet connection selected. RbxTransport cannot be used as fallback because rbxTransportHasValidPort={}, rbxTransportHasValidAddress={}, rbxTransportHasValidPubKey={}, canUseRbxTransport={}
+[DFLog::PreloadLinkedScriptsTiming] Done counting linked scripts id={} count={}
+[channel] Buffering stats: loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs={}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[DFLog::VideoServiceClient] Buffering stats: sequence id={}, loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs=%{}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[FLog::WrapLogChannel] Deformer vertex buffer allocation OOM: vertexCount={}
+[FLog::WrapContentProviderCache] MCP_CACHE_HIT bundleHash={} tier=memory componentCount={}
+[FLog::TestServiceLog] [fetchTestControls] stored pending request requestId='{}' category='{}' pendingCount={}
+[FLog::RenderTest] deterministicCapture started: requestId={} qualityLevel={} frameCount={}
+[FLog::WrapLogChannel] LC_FP_CLAIM fingerprint={} result=component_count_mismatch cached={} current={}
+[FLog::Graphics] Discarding terrain texture-pack co
+
+##### RbxTransport @92343231
+Server] postConnectAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] reserveAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] postOfferAsync failed: status={}, httpCode={}, body={}
+[DFLog::HttpTraceNew] HttpRequest(#{} {}) {} 200->206: reqRange="{}" trim=[{},{}) totalBody={}
+[FLog::TestServiceLog] [requestValidation] ENTER artifactName='{}' ready={}
+[FLog::TestServiceLog] [fetchTestControls] request initiated category='{}' wsReady={}
+[FLog::Graphics] DRS framebuffer halved: denied={} deviceDenied={} placeDenied={} fullSizeDenied={} unhalvedPolicy={}
+&prefix={}
+[DFLog::GenerationService] AnimationGenerationJob motion update: PriorJobId prefix={}
+audioMuxedIntoVideo: {} sourcePlaylistIndex={}
+[FLog::RenderTest] RenderingTest capture: SSAO frameIndex={}
+[DFLog::ReplicationDataCaching] Pushing instance {}[type={}][guid={}] with metaDataOffset={} into blobIndex={}
+BroadPhaseColliderBinding::setBroadPhaseAabb called with NaN/Inf AABB: min={}, max={}
+Count={} Max={}
+[DFLog::TextSafetyAnalyticsSender] TextSafetyAnalyticsSender: analyzeTextSafety context={} text={}
+[DFLog::MLPostProcess] First frame: {}x{} (fmt={}/{}) -> model {}x{} -> {}x{} in {:.1f}ms  resize_in={} resize_out={}
+&artist={}
+[FLog::Graphics] EnableTexturePackGeneratorOnClient=true, but pattern is in deny list={}
+[DFLog::NetworkClient] RakNet connection selected. RbxTransport cannot be used as fallback because rbxTransportHasValidPort={}, rbxTransportHasValidAddress={}, rbxTransportHasValidPubKey={}, canUseRbxTransport={}
+[DFLog::PreloadLinkedScriptsTiming] Done counting linked scripts id={} count={}
+[channel] Buffering stats: loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs={}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[DFLog::VideoServiceClient] Buffering stats: sequence id={}, loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs=%{}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[FLog::WrapLogChannel] Deformer vertex buffer allocation OOM: vertexCount={}
+[FLog::WrapContentProviderCache] MCP_CACHE_HIT bundleHash={} tier=memory componentCount={}
+[FLog::TestServiceLog] [fetchTestControls] stored pending request requestId='{}' category='{}' pendingCount={}
+[FLog::RenderTest] deterministicCapture started: requestId={} qualityLevel={} frameCount={}
+[FLog::WrapLogChannel] LC_FP_CLAIM fingerprint={} result=component_count_mismatch cached={} current={}
+[FLog::Graphics] Discarding terrain texture-pack completion: loaded={} current={}
+[DFLog::AgeCheck] Player::promptAgeCheck isClient={}
+[FLog::Graphics] DRS state: ql={} mode={} msaa={} halved={} cl
+
+##### RakNet @92343057
+[FLog::CallingLegClient] createCall request failed: err={}, status={}, body={}
+[DFLog::RealtimeCoreNotification] Durable replay request: namespaces={}, body={}
+[DFLog::VideoServer] postConnectAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] reserveAsync failed: httpCode={}, body={}
+[DFLog::VideoServer] postOfferAsync failed: status={}, httpCode={}, body={}
+[DFLog::HttpTraceNew] HttpRequest(#{} {}) {} 200->206: reqRange="{}" trim=[{},{}) totalBody={}
+[FLog::TestServiceLog] [requestValidation] ENTER artifactName='{}' ready={}
+[FLog::TestServiceLog] [fetchTestControls] request initiated category='{}' wsReady={}
+[FLog::Graphics] DRS framebuffer halved: denied={} deviceDenied={} placeDenied={} fullSizeDenied={} unhalvedPolicy={}
+&prefix={}
+[DFLog::GenerationService] AnimationGenerationJob motion update: PriorJobId prefix={}
+audioMuxedIntoVideo: {} sourcePlaylistIndex={}
+[FLog::RenderTest] RenderingTest capture: SSAO frameIndex={}
+[DFLog::ReplicationDataCaching] Pushing instance {}[type={}][guid={}] with metaDataOffset={} into blobIndex={}
+BroadPhaseColliderBinding::setBroadPhaseAabb called with NaN/Inf AABB: min={}, max={}
+Count={} Max={}
+[DFLog::TextSafetyAnalyticsSender] TextSafetyAnalyticsSender: analyzeTextSafety context={} text={}
+[DFLog::MLPostProcess] First frame: {}x{} (fmt={}/{}) -> model {}x{} -> {}x{} in {:.1f}ms  resize_in={} resize_out={}
+&artist={}
+[FLog::Graphics] EnableTexturePackGeneratorOnClient=true, but pattern is in deny list={}
+[DFLog::NetworkClient] RakNet connection selected. RbxTransport cannot be used as fallback because rbxTransportHasValidPort={}, rbxTransportHasValidAddress={}, rbxTransportHasValidPubKey={}, canUseRbxTransport={}
+[DFLog::PreloadLinkedScriptsTiming] Done counting linked scripts id={} count={}
+[channel] Buffering stats: loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs={}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[DFLog::VideoServiceClient] Buffering stats: sequence id={}, loadWhilePausedMs={}, playingMs={}, pausedMs={}, rebufferingMs=%{}, stutteringMs={}, waitingForDecodeMs={}, idleMs={}, endedMs={}, loadBeforeFirstPlayMs={}, loadAfterFirstPlayBeforeFirstReadyMs={}, unknownMs={}, seekCount={}, externalSeekCount={}, decodeStutterCount={}, decodeSlowCount={}, rebufferCount={}, readyCount={}
+[FLog::WrapLogChannel] Deformer vertex buffer allocation OOM: vertexCount={}
+[FLog::WrapContentProviderCache] MCP_CACHE_HIT bundleHash={} tier=memory componentCount={}
+[FLog::TestServiceLog] [fetchTestControls] stored pending request requestId='{}' category='{}' pendingCount={}
+[FLog::RenderTest] deterministicCapture started: requestId={} qualityLevel={} frameCount={}
+[FLog::WrapLogChannel] LC_FP_CLAIM fingerprint={} result=component_count_mismatch cached={} current={}
+[FLog::Graphics] Discar
+
+##### RakNet @92370447
+Locally={} Culled={}
+[DFLog::RealtimeMediaTelemetry] Periodic stats emitted: rendered={} drained={} decoded={} polled={}
+[DFLog::TextChannelWindow] updateProtectedChatCache: phase={} enabled={}
+[DFLog::SocialCounterpartyManager] updateBlockStatus: blockerId={} blockeeId={} blocked={}
+activeSubStreams: video={} audio={} everSwitched={}
+cache: eligible={} cached={}
+[FLog::TestServiceLog] ValidationResult: no pending callback for requestId={}
+[FLog::RenderTest] deterministicCapture: capture complete for requestId={}
+[FLog::TestServiceLog] [captureScreenshot] failed requestId={}
+[FLog::RenderTest] deterministicCapture cancelled: requestId={}
+[DFLog::RobuxTransfers] processReceipt: missing or invalid CurrencySpent for DeveloperProduct receipt, receiptId={}
+[DFLog::RobuxTransfers] processReceipt: missing or invalid CurrencyType for DeveloperProduct receipt, receiptId={}
+[FLog::DataModelPatchConfigurer] getCachedPatchFromConfig: contentId={}
+recipientId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::fetchAd queryInfo={}, adUnitId={}
+[DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] PlayerSupport CreateTicket POST success ticketId={}
+&model.creatorTargetId={}
+[DFLog::NetworkClient] Transport selection: useRbxTransportEnabled=true, rbxTransportHasValidPort={}, rbxTransportHasValidAddress={}, rbxTransportHasValidPubKey={}, canUseRbxTransport={}, selectedTransport={}, rccPort={}, DatacenterId={}
+[DFLog::NetworkClient] Transport selection: useRbxTransportEnabled=false, selectedTransport=RakNet, rccPort={}, DatacenterId={}
+reserved-servers-service/get-player-place-instance?currentPlaceId={}&userId={}
+[DFLog::RewardedVideo] AdService::getAdAvailabilityNowForUniverseAsync ignoring a cached result because the shared OnDemandAdsProvider has a ready ad for universeId={} userId={}
+[DFLog::SocialCounterpartyManager] fetchMissingBlockingData: firing reverse batch check for remote userId={} against primary userId={}
+[DFLog::SocialCounterpartyManager] fetchMissingBlockingData: triggering initial fetch retry for primary userId={}
+[DFLog::AgeCheck] AgeCheckedRCCManager::verifyAndUpdateAgeChecked starting for userId={}
+[DFLog::SocialCounterpartyManager] Handling batch check reciprocal block response for userId={}
+[DFLog::AgeCheck] Studio trust-mode setAgeChecked(Checked) for userId={}
+[DFLog::SocialCounterpartyManager] fetchMissingBlockingData: triggering initial fetch retry for uncached userId={}
+[FLog::PaymentsProtocol] performSubscriptionPurchase start: productType={}, productId={}, paymentProvider={}, paymentSessionId={}
+[DFLog::SubscriptionPurchase] performSubscriptionPurchaseV3Async start: productType={}, productId={}, paymentProvider={}, paymentSessionId={}
+[DFLog::StratusSession] preActivate: stratusSessionId={}
+callId={}
+[DFLog::RbxTransportRnaExpConnection] {}. Refusing duplicate send channel open: app={} channelId={}
+[DFLog::RbxTransportRnaExpConnection] Unreliable datagram dropped: recv queue full for channelId={}
+[FLog::VoiceChatLogs] ClientContextParsingStat
+
+##### RakNet @92389563
+ict encountered when attempting to unlock key {}
+Internal error encountered when attempting to unlock key {}
+Conflict encountered when attempting to lock key {}
+Internal error encountered when attempting to lock key {}
+[FLog::Output] Can't find secret with key {}
+[DFLog::MarketplaceRecommendationsApi] Parse Response for TopRecommendedProducts with key {}
+[FLog::DataStore] Updating key {}
+[DFLog::ModerationService] Received triggeredCaptureUpload with unknown ContentKey {}
+[FLog::RuntimeContentLog] Calling callbacks for acrKey {}
+[FLog::RuntimeContentLog] Dispatching callbacks for acrKey {}
+[FLog::RuntimeContentLog] Calling received callbacks for acrKey {}
+[FLog::RuntimeContentLog] Invalid acrKey {}
+[FLog::Output] AnimationFromVideoCreatorService::downloadJobResult response body {}
+[FLog::Output] AnimationFromVideoCreatorService::getJobStatus response body {}
+[FLog::Output] AnimationFromVideoCreatorService::createJob response body {}
+[DFLog::AnalyticsService] sendBatchEvents: sent {} events, body {}
+[FLog::LinkingProtocolCore] URL {} matched registered regex: {} by {}
+[DFLog::RbxStorage] RbxStorage::getStorageInterface double-checked locking succeeded after waiting {:.3f} ms by {}
+BitStream string read: String too long by {}
+[FLog::LinkingProtocolCore] {} successfully registered by {}
+[FLog::Warning] {} was already registered by {}
+[DFLog::RbxStorage] RbxStorage::getStorageInterface called before fast flags are loaded by {}
+[DFLog::ReliabilityLayerLog] An attempt to serialize RakNet ACKs failed. Increasing maxDatagramPayload ({}) by {}
+AMP returned an invalid response: features field is not an array {}
+[FLog::AnimationGraphSA] AnimationGraph: short-id collision for node id prefix {}
+[DFLog::RbxTransportTimepointTracker] Logged event: {} at index {}
+Expected type number in UserIds at index {}
+MarketplaceService:RankProductsAsync(): Invalid ProductIdentifier at index {}
+The schema for the state object doesn't have a value at index {}
+MarketplaceService:RecommendTopProductsAsync(): Invalid InfoType at index {}
+[FLog::AnimatingEverythingLog] ----- parentFolderIndex named {} has index {}
+[DFLog::CaptureEngine] Failed to get/copy data for buffer index {}
+[DFLog::VideoSelfTest] validateSelfTest videoIndex {}
+[DFLog::SoundTrace] FmodAudioDevice::setInputDevice deviceIndex {}
+[DFLog::SoundTrace] FmodAudioDevice::startRecording inputDeviceIndex {}
+[DFLog::InstanceStitchingLog] Generated deterministic GUID with scriptGuid {}, stableId {}, frameId {}, count {}: Guid Index {}
+[DFLog::RbxStorage] ClientStorageInterface::set rejected: key length {} exceeds max {}
+[DFLog::RbxStorage] ClientStorageInterface::get rejected: key length {} exceeds max {}
+[DFLog::RbxStorage] ClientStorageInterface::remove rejected: key length {} exceeds max {}
+[DFLog::RbxStorage] ClientStorageInterface::set rejected: value size {} exceeds max {}
+[FLog::Graphics] GradientCache: failed to create atlas texture {} x {}
+[DFLog::VideoService] Adding play time {} ms for source video type {} t
+
+##### RakNet @92396997
+::release({}) fmod dsp {} result {}
+[DFLog::VideoScreenCaptureService] onstarted with result {}
+[DFLog::VideoScreenCaptureService] onStopped with result {}
+[FLog::RuntimeContentLog] Transcoding job {}, {}, {}, {} finished with result {}
+[FLog::RuntimeContentLog] Storing data for {}, result {}
+[DFLog::VideoScreenCaptureService] saveSelfTestResult {}
+[DFLog::CaptureService] saveSelfTestResult {}
+[DFLog::VideoScreenCaptureService] loadSelfTestResult {}
+[DFLog::CaptureService] loadSelfTestResult {}
+[DFLog::VideoScreenCaptureService] onStopped VideoCaptureResult {}
+[DFLog::CaptureService] onStopped VideoCaptureResult {}
+[DFLog::VideoScreenCaptureService] onStarted VideoCaptureStartedResult {}
+[DFLog::CaptureService] onStarted VideoCaptureStartedResult {}
+[FLog::WRR] tier {} value={} -> no match, default {}
+[FLog::WRR] tier {} -> no match, default {}
+[DFLog::VideoSelfTest] frame->video.height {}
+[DFLog::VideoAdaption] Forcing highest resolution for asset {}
+[DFLog::AuroraRollback] [Client] receivedDataFromReplicator() remoteTimestamp {} localTimestamp {} offset {}
+Invalid font family json: {} at offset {}
+[FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync: voice settings returned invalid JSON: {} at offset {}
+[DFLog::AuroraInputLogging] Client stepId {} inputLatency {} = resims {} + lastInputLatency {} - min(clientPredictedFrames {}, getClientMaxResimFrames() {}). stepOffset {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: ticket {}
+[DFLog::RakNetMissingPingPong] Decryption failed {}, invalid dhf {}, incoming ack deserialize failure {}, ack range bad {}, incoming nak deserialize failure {}, nak range bad {}, on got packet failed {}, failed create internal packet {}, dropped packet {}
+[DFLog::AuroraInputLogging] [Server] smoothStepOffset max smooth delta {} exceeded reset from {} to target {}
+[DFLog::RbxTransportChannelTracker] Rejecting datagram sendId {} 
+ claimed size {} exceeds budget {}
+[DFLog::SoundCheckResult] Result {} operation {} fmodParent {} fmodObject {}
+[FLog::TextureManager2] Image dimensions: {}x{} format {}
+[DFLog::CaptureEngine] creating muxer with container format {}
+[DFLog::RVideoTrace] VpxSoftwareCodec::getVpxImage: Unsupported pixel format {}
+[DFLog::MarketplaceRecommendationsApi] Adding productIdentifier {} at {}
+ERROR: Failed to parse groupListJson: {} at {}
+ERROR: Failed to parse schemaJson: {} at {}
+[DFLog::RbxmFileManager] Cache for contentId {} exists at {}
+[FLog::TombstoneCache] {} Unknown issue reading tombstone file at {}
+[DFLog::RccRealtimeRelay] RccRealtimeRelay::create - relay created at {}
+{} captured at {} 
+Uploaded at {}
+[DFLog::AuroraInputLogging] Server: Received input for step {} (client step {}) at {}
+Instance operation types incompatible: {} vs {}
+[DFLog::TextChatSummary] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::UniverseChatMessageManager] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::SocialCounterpartyManager] hasCommunicationAccess status {}
+
+##### Roblox-Place-Id @94392060
+akesOptionalPlaceId
+ContentProviderUseRealPlaceId
+launchPlaceId
+ExitingPlaceId
+TM2TextureAssetRemappingPlaceId
+JoiningPlaceId
+VideoServicePricingPlaceId
+ExperienceLeavePlaceId
+modulePlaceId
+CrashUploadForceFullPercentagePlaceId
+MemoryPageFaultsIncludePlaceId
+SourcePlaceId
+CreatorConfigAssetProviderTelemetryIncludeUniverseIdAndPlaceId
+CreatorExperimentationProviderTelemetryIncludeUniverseIdAndPlaceId
+CreatorConfigProviderTelemetryIncludeUniverseIdAndPlaceId
+ConfigServiceTelemetryIncludeUniverseIdAndPlaceId
+PlayerDataMetricsIncludeUniverseIdAndPlaceId
+InvalidPlaceId
+AddPlaceId
+srcPlaceId
+DMPlaceId
+[FLog::AdService] Invalid Teleport PlaceId
+Invalid faceId
+CustomFaceId
+CachedFaceId
+RewardId
+CustomMoodId
+soundId
+Flyweight_SoundId
+worldId
+ReservedId
+UnexpectedId
+selectedId
+deprecatedId
+feedId
+squadId
+threadId
+DetectedHangThreadId
+CustomHeadId
+BadId
+immersiveBrandedAdId
+GCFuncId
+topicId
+subscriptionTopicId
+VideoCodecId
+[FLog::AvatarCreation] Avatar creation {}: server returned no jobId
+[DFLog::GenerationService] Unable to acquire jobId
+FetchResultByJobId
+previewJobId
+screenshotJobId
+NumFrames cannot be set with PriorJobId
+serverJobId
+aqJobId
+validationJobId
+AvatarSettingsUseDataModelJobId
+ReplicatorUseDataModelJobId
+hashJobId
+FixUsingGameIdInsteadOfJobId
+DeltaFactoryCloneJobId
+rccJobId
+NS1JobId
+CameraId
+mediaId
+Last-Event-Id
+RCC-Committer-User-Id
+RCC-Autosave-User-Id
+RCC-Save-User-Id
+Roblox-Play-Session-Id
+Roblox-Session-Id
+Roblox-Object-Version-Id
+Roblox-Universe-Id
+Roblox-Game-Id
+Roblox-Place-Id
+Large Replicator Invalid Stream Id
+Large Replicator Invalid Network Id
+MarketplaceService:RankProductsAsync(): ProductIdentifier at index {} does not contain valid Id
+DisplayAd
+[DFLog::RewardedVideo] DefaultNativeAdsProtocol::showAd
+[DFLog::RewardedVideo] NativeAdsCore::showAd
+NativeAdsProtocolShowAd
+[DFLog::RewardedVideo] NativeAdsCore::registerForReportAd
+NativeAdsProtocolRegisterForReportAd
+[DFLog::RewardedVideo] NativeAdsCore::cleanupAd
+FirstPartyVideoAd
+ThirdPartyVideoAd
+ShowVideoAd
+PortalAd
+[DFLog::NativeAdsCore] [{}] Calling platformImpl->destroyInterstitialAd
+serveInterstitialAd
+[DFLog::NativeAdsCore] [{}] Calling platformImpl->loadInterstitialAd
+EnableLoadInterstitialAd
+[DFLog::RewardedVideo] OnDemandAdsProvider::retrieveQueryInfoAndFetchAd
+OnDemandNativeAd
+closeAd
+NativeAdsProtocolCloseAd
+FeatureTileAd
+ImageAd
+UniverseEnabledRewardedAd
+Rewarded Video Ad
+On Demand Ad
+module=%s, value=%s retcode=%-8d
+ce9c9cc54cf2b3cf2277135a3013ef7d
+culltest.ez3d
+swocc.ez3d
+buildClientRegion3d
+GuiBase3d
+generate_3d
+        %3d %3d %3d %3d %3d %3d %3d %3d
+Rect2d
+prof/Render/Pass2d
+ASN1_item_ex_i2d
+asn1_template_ex_i2d
+IsGuiBase2d
+DMCTMigrateGuiBase2d
+generate_2d
+template_name_2d
+_Checkpoint_%02d
+Phase_%02d
+%02d:%02d
+%d:%02d
+%d/%02d/%02d
+%d/%d/%02d
+%s,%s.%02d.%02d
+%s.%02d.%02d.%02d.%02d.%02d.%02d.%02d.%02d
+Warning: unknown JFIF revision number %d.%02d
+%d-%02d-%02d
+L%d;%d,%d,%d;N%*d
+x|%d|%d
+[FLog::RenderFastCluster] 
+
+##### ChatMessage @92374499
+vider::getAdAvailabilityOrFetch evicting expired ad: universeId={} userId={} adTracingId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::getAdAvailabilityOrFetch evicting ad for a different key: oldUniverseId={} oldUserId={} newUniverseId={} newUserId={} adTracingId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::markPlayingAdAsConsumedIfCurrent completing shared OnDemandAdsProvider ad: outcome={} adTracingId={} currentPlayingAdTracingId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::retrieveQueryInfoAndFetchAd ignored stale query info: adTracingId={} activeAdTracingId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::getAdAvailabilityOrFetch rejected overlapping fetch: adTracingId={} activeAdTracingId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::fetchAd ignored stale failure: adTracingId={} activeAdTracingId={}
+[DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] PlayerSupport eligibility GET url={} universeId={}
+[DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] Eligibility GET url={} placeId={} assetId={} universeId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::getAdAvailabilityOrFetch - adUnitId={}, requestExperimentVariant={}, adTracingId={}, universeId={}
+[DFLog::RbxTransportRnaExpConnection] {}. Compat control: received OpenUnreliableChannel app={} channelId={} wireId={}
+[DFLog::RbxTransportRnaExpConnection] Received OpenUnreliableChannel: app={} channelId={} wireId={}
+[DFLog::AssetQualityService] dispatching upload[{}] rbxmBytes={} assetTypeId={}
+&gameId={}
+[DFLog::UniverseChatMessageManager] Parsed ingest message result: messageId={}
+groupUpId={}&universeId={}&placeId={}&instanceId={}
+reserved-servers-service/create?placeId={}
+[DFLog::AdaptiveConfig] Issuing ACS poll url={} placeId={}
+[DFLog::DeferredRbxmJoin] [DeferredRbxm] deferring join (download in progress), placeId={}
+[FLog::SingleSurfaceApp] [DeferredRbxm] launchUGCGameInternal: deferring join (download in progress), placeId={}
+reserved-servers-service/grantaccess?reservedServerAccessCode={}&sourcePlaceId={}&targetPlaceId={}
+[DFLog::RbxTransportRnaExpConnection] ackedSendIdQueue overflow: dropping ACK for sendId={}
+getBlockingThreadId={}
+https://apis.simulprod.com/avatar-auto-setup-api/v1/auto-setup-assets?jobId={}
+==== element[{}] Validation end ==== pass={} numFailures={} numWarnings={} internalError={} aqJobId={} validationJobId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::swapAd readyAd_={} newAd={}
+?fromUtc={}
+[DFLog::UniverseChatMessageManager] Parsed allocate channel response for user {}: channelId={}, channelGroup={}, channelGroupRaw={}, subscriptionTopic={}
+[DFLog::VideoAdaption] AbrSelectorConfig: selector parse failed 
+ starting={} dynamic={}
+[DFLog::AppendOnlyBuffer] HeapAppendOnlyBuffer exceeded capacity: size_={} + size={} > capacity_={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::consumeReadyAdFor readyAd_={} playingAd_={} timeOfLastAdReceivedEpochMs_={}
+&vars[place_id]={}
+[FLog::Text]   RichText: Typesetter::layoutThisLine startIdx={} endIdx={} willOverflowX={}
+[FLog
+
+##### ChatMessage @92375435
+FeedbackPromptLog] [PlayerFeedback] Eligibility GET url={} placeId={} assetId={} universeId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::getAdAvailabilityOrFetch - adUnitId={}, requestExperimentVariant={}, adTracingId={}, universeId={}
+[DFLog::RbxTransportRnaExpConnection] {}. Compat control: received OpenUnreliableChannel app={} channelId={} wireId={}
+[DFLog::RbxTransportRnaExpConnection] Received OpenUnreliableChannel: app={} channelId={} wireId={}
+[DFLog::AssetQualityService] dispatching upload[{}] rbxmBytes={} assetTypeId={}
+&gameId={}
+[DFLog::UniverseChatMessageManager] Parsed ingest message result: messageId={}
+groupUpId={}&universeId={}&placeId={}&instanceId={}
+reserved-servers-service/create?placeId={}
+[DFLog::AdaptiveConfig] Issuing ACS poll url={} placeId={}
+[DFLog::DeferredRbxmJoin] [DeferredRbxm] deferring join (download in progress), placeId={}
+[FLog::SingleSurfaceApp] [DeferredRbxm] launchUGCGameInternal: deferring join (download in progress), placeId={}
+reserved-servers-service/grantaccess?reservedServerAccessCode={}&sourcePlaceId={}&targetPlaceId={}
+[DFLog::RbxTransportRnaExpConnection] ackedSendIdQueue overflow: dropping ACK for sendId={}
+getBlockingThreadId={}
+https://apis.simulprod.com/avatar-auto-setup-api/v1/auto-setup-assets?jobId={}
+==== element[{}] Validation end ==== pass={} numFailures={} numWarnings={} internalError={} aqJobId={} validationJobId={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::swapAd readyAd_={} newAd={}
+?fromUtc={}
+[DFLog::UniverseChatMessageManager] Parsed allocate channel response for user {}: channelId={}, channelGroup={}, channelGroupRaw={}, subscriptionTopic={}
+[DFLog::VideoAdaption] AbrSelectorConfig: selector parse failed 
+ starting={} dynamic={}
+[DFLog::AppendOnlyBuffer] HeapAppendOnlyBuffer exceeded capacity: size_={} + size={} > capacity_={}
+[DFLog::RewardedVideo] OnDemandAdsProvider::consumeReadyAdFor readyAd_={} playingAd_={} timeOfLastAdReceivedEpochMs_={}
+&vars[place_id]={}
+[FLog::Text]   RichText: Typesetter::layoutThisLine startIdx={} endIdx={} willOverflowX={}
+[FLog::ShapeFit] [ProperArapForm] Initialized: mode={}, active vertices={} of nV={}
+[DFLog::StreamMRF] streamMRFRequests: deferred notify: focusId={} completedR={} targetR={} minR={}
+[FLog::DataModelPatchConfigurer] getCachedPatch Local Patch DataModelPatchConfig : type={}, assetId={}, assetVersion={}, maxAppVersion={}, localAssetURI={}
+[FLog::HangDetectionJob] TaskScheduler Hang Detected getBlockingThreadID={}
+[FLog::DeviceRecovery] trigger: {} reason={} attempt={} in60s={} vramLocalMB={}/{} vramNonLocalMB={} dedicatedMB={} pageFaultDelta={} sysAvailMB={}
+[FLog::Graphics] DRS place override: placeId={} placeDenied={} denied={} canUseHighDPIFullFB={}
+[FLog::Graphics] DRS init: denied={} fullSizeFramebufferDenied={} canUseHighDPIFullFB={}
+[FLog::Graphics] DRS init: deviceKey={} deviceDenied={} fullSizeFramebufferDenied={} canUseHighDPIFullFB={}
+[DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] Classification: canSubmitReview={} 
+
+##### ChatMessage @92398359
+s {}, getClientMaxResimFrames() {}). stepOffset {}
+[FLog::UgcExperienceController] UgcExperienceController: doTeleport: ticket {}
+[DFLog::RakNetMissingPingPong] Decryption failed {}, invalid dhf {}, incoming ack deserialize failure {}, ack range bad {}, incoming nak deserialize failure {}, nak range bad {}, on got packet failed {}, failed create internal packet {}, dropped packet {}
+[DFLog::AuroraInputLogging] [Server] smoothStepOffset max smooth delta {} exceeded reset from {} to target {}
+[DFLog::RbxTransportChannelTracker] Rejecting datagram sendId {} 
+ claimed size {} exceeds budget {}
+[DFLog::SoundCheckResult] Result {} operation {} fmodParent {} fmodObject {}
+[FLog::TextureManager2] Image dimensions: {}x{} format {}
+[DFLog::CaptureEngine] creating muxer with container format {}
+[DFLog::RVideoTrace] VpxSoftwareCodec::getVpxImage: Unsupported pixel format {}
+[DFLog::MarketplaceRecommendationsApi] Adding productIdentifier {} at {}
+ERROR: Failed to parse groupListJson: {} at {}
+ERROR: Failed to parse schemaJson: {} at {}
+[DFLog::RbxmFileManager] Cache for contentId {} exists at {}
+[FLog::TombstoneCache] {} Unknown issue reading tombstone file at {}
+[DFLog::RccRealtimeRelay] RccRealtimeRelay::create - relay created at {}
+{} captured at {} 
+Uploaded at {}
+[DFLog::AuroraInputLogging] Server: Received input for step {} (client step {}) at {}
+Instance operation types incompatible: {} vs {}
+[DFLog::TextChatSummary] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::UniverseChatMessageManager] makeGetActionsRequest: HTTP error {} status {}
+[DFLog::SocialCounterpartyManager] hasCommunicationAccess status {}
+[FLog::Calling] call '{}': action {} not allowed from status {}
+[DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. Graceful close. streamId {}, stream status {}
+CompletePost failed with status {}
+CreatePost failed with status {}
+[FLog::RealtimeProtocol] connectionStatus {}
+[DFLog::NetworkStreamingExpandedShapeQuery] Client frustum progress: horizontal angle: {} of max {} vertical angle: {} of max {}, near {} far {} max region radius {}
+[DFLog::NetworkPauseLogging] Last known server center at region {}, {}, {} with radius {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterStandardLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedLists {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterSets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedSets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterGets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterVersionGets {}
+[FLog::DataStore] addBudgetsOnClose add throttleCounterOrderedGets {}
+[DFLog::RuppTokenLog] RakPeer::setServerMachineAddress {}
+[DFLog::MarketplaceRecommendationsApi] Parsed result Success {}
+Current thread doesn't have permissions to access child {} of class {}
+[DFLog::MarketplaceRecommendationsApi] Invoking RankProducts with Product Identifiers {}
+
+##### ChatMessage @92459722
+] Failed to create directory {}, errorCode = {}
+[FLog::IxpStorageManager] hash compute duration = {}, userId = {}, bucket = {}, xxhash32 seed = {}
+[DFLog::PartStreamingRequests] Deleted region ({},{},{}), gcdist = {}, currentRad = {}
+[FLog::FacialAgeEstimationService] Calling updateConfiguration for userId = {}
+No LODs found for MeshId = {}
+Mesh simplification failed. MeshId = {}
+[FLog::WebLoginProtocol] Launch data = {}
+[DFLog::RealtimeCoreNotification]   seqNumMap[{}] = {}
+[DFLog::MLService] Failed early input shape validation, expected dim[{}] = {}, but found dim[{}] = {}
+[DFLog::VideoFrameTrace] TIME_POS = {}
+[FLog::TtiTelemetryIntegrationCheck] Random ID = {}
+[DFLog::RbxTransportDummyClient] Received invalid ping message (too small) {} < {}
+[DFLog::RbxTransportDummyClient] Received invalid performance message (too small) {} < {}
+[DFLog::RbxTransportDummyClient] Received invalid time sync message (too small) {} < {}
+{}; {}
+Unexpected error while getting QR result; {}
+Unexpected error; {}
+Unexpected error taking photo; {}
+Unexpected error while getting QR token; {}
+Unexpected error while uploading image; {}
+Failed to create AvatarGenerationJob for QR code; {}
+Failed to create Avatar Generation ID; {}
+[FLog::Graphics] Error creating TextureDownloadResource {}x{}: {}
+SimpleJson, @{}: {}
+[DFLog::SocialCounterpartyManager] BatchCheckReciprocalBlock raw response for userId={}: {}
+[DFLog::SocialCounterpartyManager] UserBlockingData raw response for userId={}: {}
+[DFLog::UniverseChatMessageManager] Received CSM message for channelId={}: {}
+[FLog::RuntimeContentLog] Texture streaming transcode for {} produced {} outputs, requested key {}: {}
+[DFLog::GenerationService] Failed to convert {}: {}
+[FLog::InferredCrash] Failed to remove stale snapshot {}: {}
+[FLog::Error] Failed to download eager content {}: {}
+[FLog::CreatorConfigPlatformProvider] Creator Config CSM fetch failed for resource {} version {} with status {}: {}
+[DFLog::RobuxTransfers] Error occurred during Robux transfer with status {}: {}
+[DFLog::LargeReplicatorTrace] Failed Asset Checksum Compare Type {} Flags {} Expected Hash {} Generated Hash {} Source {} Target {} Result Size {} Num Deltas {} Progress {}: {}
+[DFLog::VideoPlaybackManagerTrace] Setting play for {}: {}
+[FLog::RuntimeContentLog] Failed to store deserialized content for {}: {}
+[FLog::RuntimeContentLog] Failed to parse serialized content for {}: {}
+[FLog::RuntimeContentLog] Storage result for {}: {}
+[DFLog::VideoPlaybackManagerTrace] set stream for {}: {}
+[DFLog::VideoPlaybackManagerTrace] Requesting seek for {}: {}
+[FLog::VCS] Error appyling patch for {}: {}
+[FLog::LuaHangedScript] Hang stack trace for {}: {}
+[DFLog::VideoPlaybackManagerTrace] Setting loadAllowed for {}: {}
+[DFLog::ReconcileChatAccess] AMP ExperienceChatAvailabilityStatus changed for player {}: {}
+[DFLog::UniverseChatMessageManager] Missing required fields in allocate channel response for user {}: {}
+[DFLog::UniverseChatMessageManager] Handling allocate channe
+
+##### TextChatService @92610937
+RenderSavedQuality
+RenderCachedQuality
+dSAQuality
+FRM Auto Quality
+FRM Quality
+LodFaceMappingOffsetsWrongCardinality
+conversionModality
+RenderParticlesOptimizeVisibleSimLocality
+LODCriticality
+angularvelocity
+BodyVelocity
+MaxVelocity
+DebugSimPrimalWarmstartVelocity
+RotVelocity
+TargetVelocity
+OutPhysicsVelocity
+InPhysicsVelocity
+OutISRPhysicsVelocity
+InISRPhysicsVelocity
+VectorVelocity
+angularVelocity
+AssemblyAngularVelocity
+BodyAngularVelocity
+LegacyAngularVelocity
+MaxAngularVelocity
+linearVelocity
+AssemblyLinearVelocity
+TripleAxisLinearVelocity
+SingleAxisLinearVelocity
+DoubleAxisLinearVelocity
+RenderFixParticleZeroVelocity
+ScrollerUseNativeIOSPanVelocity
+ScrollerUsePlatformVelocity
+ResetScrollVelocity
+GetScrollVelocity
+GetSampledInertialVelocity
+SmoothDampFixInitialVelocity
+angVelocity
+GetMoveVelocity
+UserSoundsUseRelativeVelocity
+RiseVelocity
+LineVelocity
+PlaneVelocity
+RelativeWindVelocity
+SimControllerStepWithoutDesiredVelocity
+Max Velocity
+Max Angular Velocity
+World Space Velocity
+ << elasticity
+Elasticity
+AppShellMemoryReportPeriodicity
+ring_capacity
+flow reached maxium capacity
+WriteRequestingThreadHistoryCapacity
+RbxStorageDBCleanTargetPercentMaxCapacity
+RbxStorageDeleteTailWhenReachedPercentMaxCapacity
+SlimAssetFetchFlowCapacity
+FeatureRestrictionManagerAmpLimitCapacity
+SocialAmpRephraseMessageRefetchLimitCapacity
+VoiceChatServiceRetryJoinRequestRateLimitCapacity
+VoiceChatServiceUpdateTurnAuthRequestRateLimitCapacity
+TextChatUniverseChatClientIngestRateLimitCapacity
+TextChatServiceChatableUserCountRateLimitCapacity
+VoiceChatServiceMiscEventRateLimitCapacity
+ServerBreakJointsRateLimitCapacity
+MpsRateLimitCapacity
+VoiceChatServiceIceCandidatesRateLimitCapacity
+ServerResetCharacterRateLimitCapacity
+GamePassTrialRedeemRateLimitCapacity
+ToolRateLimitCapacity
+CsFilterMessageSignalRateLimitCapacity
+LogServiceSignalRateLimitCapacity
+CaptureServiceSignalRateLimitCapacity
+ChatSettingsLocaleIdSetFromLuaSignalRateLimitCapacity
+ExperienceSettingsLocaleIdSetFromLuaSignalRateLimitCapacity
+VoiceChatServiceSubscriptionHandshakeAckRateLimitCapacity
+TextChatUniverseChatServerReceiveRateLimitCapacity
+MeshUpdateRateLimitCapacity
+PartyDataUpdateRateLimitCapacity
+IrisInviteInvokeRateLimitCapacity
+VoiceChatServicePublishHandshakeRateLimitCapacity
+VoiceChatServiceStateChangeRateLimitCapacity
+VoiceChatServiceSubscribeStateChangeRateLimitCapacity
+AvatarChatServiceRateLimitCapacity
+AgeCheckedRccRateLimitCapacity
+TextChatUserMessageIntentRaisedLimitCapacity
+AudioMetadataLimitCapacity
+StreamingObserverInitialReplicatorCapacity
+PerformanceControlComputePerfFrameBufferCapacity
+itemFreeHead == kOctreeItemHandleInvalid || placeIndex < itemCapacity
+setInternalCapacity
+UnbatchedAssetDeliveryClientFreeListInitialCapacity
+UnbatchedAssetDeliveryClientActiveReqsInitialCapacity
+PpjCapacity
+SlimShadowTelemetryEmittedHashCapacity
+OcclusionSolverInitialSearchCapacity
+NavigationPreTelemetryQueueCapacity
+PathfindingPartPositionExceedTileCapacity
+availableCapacity
+totalAvailableCapac
+
+##### TextChatService @92663415
+Log] Both channels ready, firing connectionReady
+MpStreamWorkReady
+setAudioOutputSink.setStateReady
+UpdateReady
+SSE stream closed before ResponseReady
+onCaptureReady
+PartyPageSurfaceReady
+avgACRResourcesUsedReady
+waitForDataReady
+WaitForDataReady
+IsHSRReady
+NotifyForegroundUIReady
+RemoveObserverForegroundUIReady
+AddObserverForegroundUIReady
+Manifest Ready
+Pending Resources Ready
+[FLog::SingleSurfaceApp] launchUGCGameInternal: Restore rendering frequency
+SetMaxFrequency
+ScriptProfilerMaxFrequency
+AudioReverb.HighCutFrequency
+ContactManifoldCountReportingAttemptFrequency
+Channel::setFrequency
+Channel::getFrequency
+DistanceFilterCenterFrequency
+TelemetryProfilerFrequency
+TelemetryMemoryProfilerFrequency
+ScriptProfilerFrequency
+NativeFunctionProfilerFrequency
+StepFrequency
+UserPSSpecifySimulationFrequency
+ReplicationFrequency
+RetargetingPoseBufferingFrequency
+DistanceFilterLowShelfFrequency
+AudioReverb.LowShelfFrequency
+DistanceFilterHighShelfFrequency
+DenseCacheSampleFrequency
+AudioReverb.ReferenceFrequency
+AnalyticsServiceJobFrequency
+AudioFilter.Frequency
+AudioTremolo.Frequency
+Low Shelf Frequency
+Inner SlotMap key is dead, internal inconsistency
+max_latency
+last_latency
+min_latency
+total_latency
+avg_latency
+loading_latency
+txLatency
+rxLatency
+VideoVpxEncodeLowLatency
+System::getOutputLatency
+ServerAuthorityEnableInputLatency
+ReportRetriedAssetRequestLatency
+RCCNetLatency
+WatermarkRendererLatency
+UsedPopLatency
+HasRobloxSubscriptionAmpLatency
+TextChatTelemetryRoundtripLatency
+TextChatServiceRoundtripLatency
+RaknetArtificialLatency
+loadingLatency
+pipelineLatency
+OcclusionSettingsMaxTolerableLatency
+FriendServiceMethodLatency
+SoundCacheReportPlayLoadLatency
+PlayersGetFriendsAsyncLatency
+AcousticSimulation_Latency
+Induced Input Latency
+SelfViewPoseSyncFixConcurrency
+AnimatorParallelManagerUseLiveTaskSchedulerConcurrency
+HumanoidParallelManagerUseLiveTaskSchedulerConcurrency
+ActorPoolWithChangingConcurrency
+expectedCurrency
+background_transparency
+CollisionGeomOverlayTransparency
+EnableStudioQWidgetWindowTransparency
+TextTransparency
+CollisionGeomMatchPartTransparency
+RenderHighlightTransparency
+WaterTransparency
+FCFixProceduralAvatarTransparency
+SetTopbarTransparency
+GetTopbarTransparency
+GroupTransparency
+UIStrokeClampTransparency
+VideoTransparency
+FillTransparency
+EngineUGCValidateTransparency
+OutlineTransparency
+TextStrokeTransparency
+EngineUGCValidationGetImageTransparency
+ScrollBarImageTransparency
+SurfaceTransparency
+BackgroundTransparency
+PreferredTransparency
+EngineUGCValidateOrthographicTransparency
+ReplicatorJoinDataItemCacheEfficiency
+ReplicatorJoinDataItemV2CacheEfficiency
+DebugDisableAvatarFetchCacheInEmergency
+AppPlatformQoSEmergency
+EnablePlatformQoSEmergency
+Cannot reparent '{}' to '{}' because this would create a circular package dependency
+Cannot reparent '%s' to '%s' because this would create a circular package dependency
+NoContextFieldDependency
+Failed Dependency
+ContentResidency
+TextureManager2::setResidency
+SlimLoadBalancerCommo
+
+##### TextChatService @92674721
+VideoEnableEvx
+AXEnhancedAvatarHeadsFtux
+ExpChatDictationFtux
+AXSlotBasedEditorCustomizeFtux
+AXAvatarsTabFtux
+GetDetailedNetworkAddressesAppleLinux
+robux
+AddIxpLayersPaymentsBuyRobux
+InsufficientRobux
+AmountInRobux
+priceInRobux
+premiumPriceInRobux
+userBasePriceInRobux
+UserBasePriceInRobux
+orderTotalRobux
+EnableDevSubscriptionPurchaseWithRobux
+currentPriceRobux
+ExpectedAccessoryPublishPriceRobux
+ExpectedEmotePublishPriceRobux
+Buy Robux
+psaux
+AlphaAux
+output.ktx
+%s%s.ktx
+ecx_dupctx
+eddsa_dupctx
+evp_md_ctx_free_algctx
+ossl_rsa_pss_to_ctx
+Ed25519ctx
+ED25519ctx
+not able to copy ctx
+null mac pkey ctx
+unclean ctx
+null ssl ctx
+DebugVoiceChatDisableDtx
+InspectPlayerFromUserIdWithCtx
+movsx
+metal_osx
+microprofile-%Y%m%d-%H%M%S.gprx
+Upgrades/Robux.aspx
+<roblox
+SaveSelectedToRoblox
+meshRoblox
+imageRoblox
+Some files are missing or corrupted. Please reinstall Roblox
+Disconnected due to unsupported version. Please upgrade to the latest version of Roblox
+IndoorSkybox
+janetMailbox
+otherMailbox
+RealtimeMediaPresentationMailbox
+id-on-SmtpUTF8Mailbox
+rfc822Mailbox
+Smtp UTF8 Mailbox
+The current thread cannot {} - the target uses APIs not available in the current sandbox
+The current thread cannot {} '{}' - the target uses APIs not available in the current sandbox
+The current thread cannot {} '{}' - the target can use APIs not available in the current sandbox
+ShowIsInSandbox
+RenderFixCloudsXbox
+VideoCaptureXbox
+ConsumerPlatforms.UnifyConsoleUA.Xbox
+SkyBox
+RoxBox
+TextChatServicePropertyTextBox
+StratusKeyboardOnRemoteTextBox
+DMCTMigrateTextBox
+GetFocusedTextBox
+OuterBox
+applyInnerBox
+StudioSelectionBox
+ReadingTerrainBox
+GetPartBoundsInBox
+PerformanceControlAddSupportForOomBox
+DebugSimClampPrimitiveBoundsTouchingBox
+ComputeR15BodyBoundingBox
+GetBoundingBox
+VideoVisibilityUseBoundingBox
+VideoVisibilityV3UseBoundingBox
+CalculateEditableMeshModifiedCageBoundingBox
+unclampSdfBox
+postOfficeBox
+SimModelingAddRoundedBox
+UIFSAdvSDBox
+UIFSMdrSDBox
+UILitFogFSShadowedSDBox
+UILitFogFSSDBox
+UIFogFSSDBox
+UILitFogFSShadowedFSMSDBox
+FontBBox
+UGCValidateFullBodyFacsBBox
+avatar/scripts/humanoidHealthRegenScript.rbxmx
+es-mx
+%s: 0x%016llx
+table: 0x%016llx
+%016llx:%016llx
+[DFLog::NetworkTrace] Peer has capabilities: 0x%llx ,common capabilities: 0x%llx
+%x_%llx
+%s.%s%d.%X.%c%d.%llx
+EnableSwitchBaseUrlToRblx
+%08lx
+err:%lx:%lx:%lx:%lx
+[FLog::RemoteDebuggerServer] RemoteDebuggerServer encounteredBreak: %s %s:%i. Thread: %lx
+target_matrix
+distance_matrix
+pcr_simd_matrix
+DSPConnection::setMixMatrix
+FontMatrix
+TM2FixMipMatrix
+fromMatrix
+DebugPVLOD0SerializeFullMatrix
+LoadTestStartTimeUnix
+SubtractorDspFixReferenceRemix
+FMOD::Output::mix
+SinglePointMesh3DThumbnailBugfix
+luau-telemetry.parse-vararg-annotation-type-suffix
+SCMEnableChatGroupsSuffix
+LocalizationTableAnalyticsSenderImplementationAnalyticsSuffix
+DebugLuauReportReturnTypeVariadicWithTypeSuffix
+ExperienceSignalsProcessorNameSuffix
+addSuffix
+AddSuffix
+LocalizationServiceIntegrityCheckedProcessorIdSuff
+
+##### TextChatService @92751918
+InAndOut
+SoldOut
+ActiveUserSignedOut
+timedOut
+ErrorTimedOut
+Fallback_TimedOut
+TM fallback TimedOut
+IsStreamedOut
+DifferentiateStreamedOut
+{}_isCheckedOut
+PlayerDataMaxRecordsCheckedOut
+[FLog::RealtimeProtocol] userLoggedOut
+Streamed Out
+EventBroadcastMut
+SquadInvitationV2VersionCut
+High Cut
+max_rtt
+httpCliPopLatencyRtt
+httpPopDcLatencyRtt
+RakNetUseSlidingWindow2_minRtt
+invalid trust
+BodyThrust
+MaxThrust
+accepted without EvaluatePlayerDeviceTrust
+invoking EvaluatePlayerDeviceTrust
+EnablePlayerDeviceTrust
+NumOffsetUpdatesBeforeWeTrust
+app_duration_adjust
+shrinkStepsForLargeStreamingQueryAdjust
+ISRMTUAdjust
+RenderStatsFRMAdjust
+August
+AvatarBust
+Context should be init first
+This Terrain is not loaded yet; access it from serial (non-parallel) code first
+PSS saltlen can only be specified if PSS padding has been specified first
+%s: WrapTextureTransfer projection data is not prepared; call PrepareProjectionMeshDataAsync first
+ClientGCSetsDependentByFirst
+StratusEligibilityLocalGatesFirst
+GImageTryFpngDecoderFirst
+UserChatValidateFirst
+operationStatusDetailedErrorCodeFirst
+replicatedFirst
+totalInstanceBytesRxInReplicatedFirst
+totalInstancesInReplicatedFirst
+CLI225144_First
+ec_GF2m_simple_ladder_post
+https://uploads.backtrace.rbx.com/post
+google.api.HttpRule.post
+/content-captures-api/v1/complete-post
+/content-captures-api/v1/create-post
+loadContent re-entrant post
+LuauJitInlineThresholdMaxBoost
+LuaGcBoost
+mem_recl_v2_tunables_lost
+rbx_wasm_rna_on_datagram_lost
+facs/lost
+TextChatService::OnIncomingMessage error: Incoming messages lost
+TextChatService::OnChatWindowAdded error: Incoming messages lost
+TextChatService::OnBubbleAdded error: Incoming messages lost
+[FLog::Network] Connection lost
+[FLog::PackageLink] Overrides blob on {} dropped {} unreadable record(s); those overrides are lost
+localhost
+x-forwarded-host
+[FLog::ClientSettings] LoadIxpSettingsFromLocal: No IXP settings cached by the web host
+kx-gost
+memcost
+kdf_argon2_ctx_set_t_cost
+kdf_argon2_ctx_set_m_cost
+EventIngestPost
+CreatePostParams must contain either videoPost or screenshotPost
+CreatePostParams must contain only one of videoPost or screenshotPost
+avatarPost
+MomentsServiceAvatarPost
+videoPost
+UseRigAttachmentsForMotorPrePost
+CLI183138Post
+pktLost
+PluginGuiResetsSelectionOnFocusLost
+audioRtpPacketsLost
+videoPacketsLost
+outgoingPacketsLost
+VoiceRtcStatsTotalOutgoingPacketsLost
+incomingPacketsLost
+VoiceRtcStatsTotalIncomingPacketsLost
+bytesLost
+DMRecorderBufferLost
+ISRStopResendAfterOwnershipLost
+RbxTransportWasmReportConnectionLost
+DisconnectConnectionLost
+DebugSignalOnIdConnectionLost
+SelectionLost
+FaceTrackingLost
+InstanceLost
+telemetryBlockingSend_DeviceLost
+proxyHost
+DebugStudioAssetProxyHost
+Http2_InProgressCountForHost
+Http2_PendingQueueSizeForHost
+HttpCurlMaxCachedHandlesPerHost
+LightstepHTTPTransportUrlHost
+LastVisitedUrlHost
+lastVisitedHost
+GetPhysicsCost
+AcousticSimulationForegroundCost
+DataCost
+FloatImage *nv::FloatImage::resize(const Filter &, uint, uint, uint, Wrap
+
+##### SendAsync @93039522
+tcg-platformClass
+VmClass
+externalClass
+ExternalClass
+GuiClass
+ReflectionServiceAddGetEventsOfClass
+GetPropertiesOfClass
+GetMethodsOfClass
+FindFirstAncestorOfClass
+FindFirstChildOfClass
+instanceClass
+ReflectedClass
+LuauAllowGlobalDeclarationToBeCalledClass
+Disk Component Class
+TCG Component Class
+PCIE Component Class
+DefaultPass
+Id_HighlightPass
+RenderStatsPass
+renderMobileHighlightIdsPass
+PlayerHasPass
+renderMobileHighlightDepthMarkPass
+permissionCheckPass
+depthPass
+OpaqueWithAlphaLateDepthPass
+OpaqueWithAlphaDepthPass
+DepthPrePass
+GamePass
+depthCachePass
+DebugFriendsCallingServerIcePass
+renderHighlightIdPass
+Preauth-Pass
+AssemblyMass
+getMass
+GetMass
+AvatarSettingsConsistentColliderMass
+AssemblyCenterOfMass
+ApplyAtCenterOfMass
+AndroidApplicationExitRss
+PeakRss
+AndroidApplicationExitPss
+rsassaPss
+vcvtsi2ss
+vcvtsd2ss
+Failed to allocate cpi->mb.ss
+buildContours
+hours
+secondary_hash_ours
+PlayerHydrationServiceTtlHours
+Past12Hours
+id-aca-encAttrs
+motors
+FixRegisterMotors
+Selector groups cannot include empty selectors
+StyleTree::updateSelectors
+fromRotationBetweenVectors
+Failed to allocate cpi->mi_ssim_rdmult_scaling_factors
+Bogus sampling factors
+PlayerSetCharacterAllowActors
+ParallelLuaHybridQueueMaxAnonymousActors
+GetRegisteredOrchestrators
+DisconnectCollaboratorTooManyCollaborators
+DisconnectEvictedCollabTooManyCollaborators
+ImprovePluginSpeed_ManageCollaborators
+QueryComparisonOperators
+AnimationCoreCurveAccelerators
+[FLog::UserInputProfile] Handing to Accelerators
+TextChat.SendAsync.Server.Processed.ForModerators
+allowedCreators
+[DFLog::ReplicationJoinBatchLog] Add replicator in batch [Index: %d] [Time Waited : %f ms] Batch will contain %zu replicators
+RoMarkError: Attempted to disconnect but found no server or replicators
+ParallelResolveMetadataMinReplicators
+Detect Join-Batchable Replicators
+ProximityPromptIndicators
+BindViolationProcessor() exceeded the maximum number of bound violation processors
+ModerationServiceMaxViolationProcessors
+CollectionTopLevelAccessors
+MigrateUserIdAccessors
+ImprovedCursors
+s->waitp != nullptr || s->suppress_fatal_errors
+s->waitp == nullptr || s->waitp == waitp || s->suppress_fatal_errors
+waitp == nullptr || waitp->thread->waitp == nullptr || waitp->thread->suppress_fatal_errors
+cloud_pricing_http_service_errors
+Diagnostics.errors
+Ignoring ScaleTo(infinity) call, check your code for divide by zero errors
+Ignoring ScaleTo(NaN) call, check your code for divide by zero errors
+[FLog::TelemetryReliabilityCounters] RbxStorage has json doc parsing errors
+DevFrameworkFixMissingKeyErrors
+PlayErrors
+LayoutErrors
+TransportErrors
+TeleportErrors
+FriendsCallingParticipantErrors
+AllQosExitErrors
+MatchmakingAttributesInitErrors
+DisconnectRaknetErrors
+DisconnectErrors
+ConnectErrors
+VideoAnalyticsErrors
+PrintPhysicsErrors
+hasErrors
+NetworkOwnershipErrors
+RbxTransportUniqueConnectionErrors
+AllocationErrors
+GetLatestAssetVersionErrors
+LuaShellErrors
+TeleportAllErrors
+cumulativeSessionCountWithoutFatalErrors
+cumulativeSessionDuration
+
+##### SendAsync @94071045
+AspectRatioRange
+SoundShimDisconnectWhenNotInRange
+GetDataInRange
+RobloxTelemetryStatV2POCRandomRange
+RenderParticlesSimulateQualityLevelRange
+RingRange
+SubsetPaletteEntryOutOfRange
+FaceVertexIndexOutOfRange
+FacsCorrectiveIndexOutOfRange
+ClosestOutOfRange
+JointParentOutOfRange
+JointLodParentOutOfRange
+digitOutOfRange
+JointNameOffsetOutOfRange
+MemoryStoreStatusCounterOutOfRange
+SubsetVertRangeOutOfRange
+SubMeshVertRangeOutOfRange
+SubsetFaceRangeOutOfRange
+LodMetaDataPackIdOutOfRange
+SlimAnimationReplicationPositionQuantizeRange
+EmitterSimulateRange
+timeRange
+MiddleRange
+AudioEqualizer.MidRange
+ThumbRange
+Content-Range
+Bulge
+Fallback_Beige
+lr_bridge
+start_app_bridge
+update_setting_to_app_bridge
+TelemetryBridge
+UseConnectivityV2HttpRecoveryBridge
+TelemetryServiceAsBridge
+AppBridge
+ILegacyStudioBridge
+LuaBridge
+SlimOnlySetUse2022MaterialsForWedge
+InverseCornerWedge
+FillWedge
+HorizontalWedge
+VerticalWedge
+x-roblox-edge
+Unknown edge
+/v1/users/%lld/badges/%lld/award-badge
+Revenue.RobuxBadge
+UserHasBadge
+UserDoesNotHaveBadge
+AwardBadge
+hasVerifiedBadge
+creatorHasVerifiedBadge
+PerEdge
+DebugNavigationNavmeshDrawWallEdge
+Vertex or Edge
+VoroCDPremergePlaneSalvage
+telemetry.sdk.language
+Any language
+[DFLog::DynamicTranslation] Sender::fetchTranslation: trying to call fetchTranslation for source {}, requested locale id {} with empty game language
+id-ppl-anyLanguage
+DevelopmentLanguage
+shadingLanguage
+deviceShadingLanguage
+DeviceShadingLanguage
+sourceLanguage
+SourceLanguage
+TextChat.SendAsync.Server.SkippedPresetBlockedLanguage
+handshakeRetryEvent_{}_stage
+elf/debug_flow_stage
+is_initial_join_stage
+AssemblyStage::DEBUG_pushEdgeToDownstream - joint is not downstream of this stage
+Operation not authorized at current processing stage
+progress_percentage
+completion_percentage
+[DFLog::NotificationService] setupRccRealtimeRelayIfReady: relay disabled for this RCC by rollout percentage
+CanaryPercentage
+DebugAudioSpreadPanningThrowPercentage
+FacsIngressBwPercentage
+ProcessInputPercentage
+UILayoutPercentage
+BadgeSlpInsightsClientRolloutPercentage
+BadgeSlpInsightsRolloutPercentage
+FriendsListCacheOptimizationRolloutPercentage
+HttpServiceInsightMetricsUniverseRolloutPercentage
+ImageStartPercentage
+robuxDiscountPercentage
+PropRejectedCountPercentage
+CacheHitPercentage
+SimilarHipHeightPercentage
+GetProductInfoErrorThrottlingBaseOffsetPercentage
+StreamingMaxTargetPercentage
+StreamOutOpportunisticMaxTargetPercentage
+SlimTransitionStreamingRadiusPercentage
+SlimAssetFetchStreamingRadiusPercentage
+EarlyPhysicsPacketsLossPercentage
+_PhysicsPacketsLossPercentage
+DetailedBandwidthStatsPlayerLotteryHundrethsPercentage
+ReplicatorCountLimitInfluxReportOnlyHundrethsPercentage
+LuaGcStatsNonDefaultInfluxHundrethsPercentage
+ReplicatorCountLimitInfluxHundrethsPercentage
+ReplicatorJoinDataItemStatsInfluxHundrethsPercentage
+DetailedBandwidthStatsInfluxHundrethsPercentage
+LuaGcStatsInfluxHundrethsPercentage
+ParallelLuaStatsInfluxHundrethsPercentage
+ReplicatorJoinDataItemV2StatsInfluxHu
+
+##### SendAsync @94149200
+SupportedByService
+TextBoxService
+PlayerViewService
+CommerceServiceUsesWebViewService
+EnableWebViewService
+EnableAndroidWebViewService
+[WebView] mutateBrowser ignored: active owner is not WebViewService
+[WebView] closeBrowser ignored: active owner is not WebViewService
+[FLog::WebView] Sending command: {} to WebViewService
+VideoCaptureUseNewService
+TextService
+UserInputService
+TouchInputService
+EnablePinShortcutService
+EventIngestService
+DebugEnableClientTestService
+HasMigratedSettingsToTestService
+ScopeTime is not a valid member of TestService
+Can't find TestService
+HttpParallelLimit_RequestTeleportService
+HttpParallelLimit_RequestInsertService
+[FLog::UserInputProfile] Handing to ProximityPromptService
+AppRatingPromptService
+DMCTMigrateServerScriptService
+BackendServerScriptService
+internal/RuntimeScriptService
+Behavior bindings may only be the children of AuroraScriptService
+AccountService
+EnableActivityHistoryEventService
+RuntimeContentService
+IntentService
+AchievementService
+CloudClientService
+ScriptCommitService
+FlyweightService
+HttpParallelLimit_RequestAssetService
+UnvalidatedAssetService
+WebSocketService
+getService
+SecurityCheckForGetService
+ProjectService
+LegacyChatService
+[DFLog::TextChatSummary] TextChannelPolling: TextChannel is not under TextChatService
+DisplaySystemMessage error: TextChannel not a descendant of TextChatService
+SendPresetAsync error: TextChannel not a descendant of TextChatService
+AddUserAsync error: TextChannel not a descendant of TextChatService
+SendAsync error: TextChannel not a descendant of TextChatService
+AvatarChatService
+EnableBubbleChatFromChatService
+VoiceChatService
+internal/ChatService
+No ChatService
+[DFLog::SocialCounterpartyManager] Failed to find ChatService
+AudioFocusService
+AddMessageBusService
+HttpParallelLimit_RequestPointsService
+JointsService
+MomentsService
+PlaceStatsService
+HttpParallelLimit_RequestGamePassService
+CollaboratorsService
+[FLog::Safety] Failed to get strongPlayersService
+InvalidPlayersService
+AnnotationsService
+EnableDesignFoundationsService
+OmniRecommendationsService
+PermissionsService
+InstanceExtensionsService
+AppAgeSignalsService
+SceneAnalysisService
+CookiesService
+PlatformFriendsService
+PlaceAssetIdsService
+RomarkRbxAnalyticsService
+HttpParallelLimit_RequestAnalyticsService
+ProcessInstancePhysicsService
+Can't get lock on AvatarEditorService
+Could not create AvatarEditorService
+UIDragDetectorService
+RequestOrchestratorService
+DebugEnableTestCoordinatorService
+FaceAnimatorService
+EnablePartyEmulatorService
+DMCTMigratePlayerEmulatorService
+AnimationFromVideoCreatorService
+RemoteCursorService
+ServerInspectionAddInspectorToHiddenPlayerService
+Inspector connection has no HiddenPlayerService
+EnableAppLifecycleObserverService
+ConfigureServerService
+HeightmapImporterService
+BugReporterService
+LogReporterService
+AssetCounterService
+[WebView] closeBrowserWindow ignored: active owner is not BrowserService
+ThirdPartyUserService
+HttpParallelLimit_RequestUserService
+SpawnerService
+ScriptScannerS
+
+##### SendAsync @94270795
+Cannot perform this operation unless the thread is paused
+GameplayPaused
+ChannelControl::setPaused
+ChannelControl::getPaused
+IsPaused
+SetImportHeightmapPaused
+isInternalPublishPaused
+DisconnectedWhilePaused
+performance_control/java_heap_used
+gfx/drs/used
+memory/os/used
+Invalid attribute type index used
+a null shared library handle was used
+dismissed
+AXCatalogOffersDismissed
+FAEUpsellBannerDismissed
+MeTabBadgeDismissed
+inviteemissed
+RenderVSyncFramesMissed
+CallNotificationMissed
+CacheMissed
+suppressed
+terrain/grid/uncompressed
+jdiv2TotalBatchNetAssetBytesUncompressed
+TotalJoinBytesUncompressed
+UITextureUncompressed
+terrain/grid/compressed
+[FLog::Serializer] StringView is provided and chunk data is not compressed
+chunk#%d[%.*s], signatures chunk must not be compressed
+TotalJoinBytesCompressed
+IsCompressed
+sdfToCompressed
+upsampleCompressed
+TargetCageCompressed
+TargetLayerCageCompressed
+SmoothClusterVTFSUnifiedCompressed
+AnimationGraph: %s and %s share the node id '%s'; only the first can be addressed
+SpecialKeyPressed
+MicroprofilerShortcutPressed
+GetKeysPressed
+GetMouseButtonsPressed
+isPressed
+enterPressed
+IsMouseButtonPressed
+server_character_load_data_processed
+[FLog::UserInputProfile] DM event processed
+WaitForInputEventsProcessed
+VirtualInputEventsProcessed
+_RakIngressProcessed
+gameLoadProgressTimeMs.gameLoadTagProcessed
+gameLoadProgressCycle.gameLoadTagProcessed
+onPurchaseProcessed
+TotalTileProcessed
+numJdiV2Processed
+TextChat.MessageReceived.Client.Processed
+TextChat.SendAsync.Client.Processed
+TextChat.SendAsync.Server.Processed
+is_passed
+[FLog::InExperienceCreation] promptImportAnimationClipFromVideoAsync operationPath not properly passed
+argument #{} expects a string, but {} was passed
+null ssl method passed
+PercentageSamplesMinRadiusPassed
+PercentageSamplesQueueCheckPassed
+NotifyAgeCheckPassed
+PercentageSamplesCameraCheckPassed
+PercentageSamplesQuotaPassed
+Debugger.Breakpoint.Logpoint.Passed
+Debugger.Breakpoint.Condition.Passed
+isEndorsed
+IsEndorsed
+[FLog::Error] Validation response cannot be parsed
+AndroidProcMapsParsed
+collapsed
+ShowWhenCollapsed
+fd_elapsed
+[DFLog::RbxStorage] BrowserCache::reloadStats [FINISHED] {} ms elapsed
+reloadStatsElapsed
+Lapsed
+PerformanceControlExperimentExposed
+rbx_wasm_rna_on_connection_closed
+window_time_closed
+ice_closed
+wv:closed
+bs:closed
+app-closed
+flow is already closed
+[FLog::Safety] Party chat window closed
+[FLog::Safety] Menu closed
+Websocket closed
+[FLog::TestServiceConnectionManager] WebSocket closed
+[DFLog::WebrtcInput] Connection failed or closed
+[FLog::Safety] Chat suspension dialog closed
+[FLog::Safety] Chat line reporting closed
+game closed
+[FLog::Safety] Captures UI closed
+[FLog::Safety] Build UI closed
+BrowserWindowClosed
+OnWindowClosed
+MenuClosed
+InvokeOptInPromptClosed
+PhoneBookPromptClosed
+InvokeIrisInvitePromptClosed
+InvokeGameInvitePromptClosed
+InvokeShareSheetClosed
+PurchaseBrowserClosed
+HttpError: ConnectionClosed
+WebSocketServiceKeepClientsAliveUntilClosed
+datamodelClosed
+SignalSe
+
