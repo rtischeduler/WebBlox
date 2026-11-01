@@ -1,0 +1,58 @@
+name: fetch-engine
+on:
+  workflow_dispatch:
+    inputs:
+      engine_base:
+        description: Engine base URL (leave empty to resolve the current production version)
+        required: false
+        default: ""
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: download repo
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: fetch engine
+        run: node .github/scripts/fetch-engine.mjs engine "${{ inputs.engine_base }}"
+
+      - name: summary
+        run: |
+          {
+            echo "## engine"
+            echo '```'
+            cat engine/engine-base.txt
+            cat engine/manifest.json
+            cat engine/wasm-info.txt
+            echo '```'
+            echo "## js hints"
+            echo '```'
+            head -c 50000 engine/js-hints.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: engine
+          path: engine
+          retention-days: 14
+
+      - name: publish snapshot branch
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cp -r engine/. /tmp/pub/
+          cd /tmp/pub
+          git init -q -b engine-snapshot
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add -A
+          git commit -qm "engine snapshot $(cat engine-base.txt)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" engine-snapshot
