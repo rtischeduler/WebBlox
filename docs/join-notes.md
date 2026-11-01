@@ -53,3 +53,14 @@ To answer 1 to 4 against the real engine, hook `WebTransport` inside the pthread
 ## Extracting the real join request (workflow `extract-join`)
 
 The engine builds the join body inside the wasm, so strings alone do not show it. Run the `extract-join` workflow (Actions tab, "Run workflow"). Tick `refetch` to pull the current production engine first. It unpacks `WebClient.wasm`, finds the functions that reference the body keys (`placeId`, `isTeleport`, `gameJoinAttemptId`, ...) and the join URLs, and writes `analysis/join/join-request.txt` (strings in code order per function), `join-neighbors.txt` and `join-request-functions.wat`. The unpacked wasm is attached as the `WebClient-wasm` artifact.
+
+## Result of the wasm extraction (engine `f2568` joinGame, `f2560` teleport)
+
+Strings in code order for the real builders (`analysis/join/join-request.txt`):
+
+- Standard join, `/v1/join-game` (log: `joinGamePostStandard: URL: {} BODY: {}`): keys `placeId`, `browserTrackerId`, and `forcedPop` only when set.
+- Instance join, `/v1/join-game-instance`: `placeId`, `gameId`, `isPlayTogetherGame`, `browserTrackerId`.
+- Private server: `placeId`, `linkCode`, `accessCode`, `browserTrackerId`. Reserved server: `placeId`, `accessCode`, `browserTrackerId`.
+- `isTeleport` appears only in the teleport functions, not in the first join. `gameJoinAttemptId` is not in any of these bodies.
+- The log format `{"browserTrackerId":{},"status":"{}"}` suggests `browserTrackerId` is numeric.
+- Not decoded: how the engine obtains `browserTrackerId`, its header set, and when it picks `/v2/join-game`.

@@ -14,12 +14,20 @@ export class JoinError extends Error {
   }
 }
 
-export const buildJoinBody = ({ placeId, jobId, attemptId, browserTrackerId, joinOrigin, gameJoinContext }) => {
-  const body = { placeId: Number(placeId), isTeleport: false, gameJoinAttemptId: attemptId, isPlayTogetherGame: false };
-  if (jobId) body.gameId = jobId;
-  if (browserTrackerId) body.browserTrackerId = Number(browserTrackerId);
-  if (joinOrigin) body.joinOrigin = String(joinOrigin);
-  if (gameJoinContext) body.gameJoinContext = String(gameJoinContext);
+export const randomTrackerId = (random = Math.random) => {
+  let n = "";
+  for (let i = 0; i < 12; i++) n += Math.floor(random() * 10);
+  return Number(n.replace(/^0+/, "") || "1");
+};
+
+export const buildJoinBody = ({ placeId, jobId, browserTrackerId, forcedPop, tracker = randomTrackerId }) => {
+  const body = { placeId: Number(placeId) };
+  if (jobId) {
+    body.gameId = jobId;
+    body.isPlayTogetherGame = false;
+  }
+  body.browserTrackerId = Number(browserTrackerId) || tracker();
+  if (forcedPop) body.forcedPop = forcedPop;
   return body;
 };
 
@@ -48,8 +56,7 @@ export async function joinGame({
   placeId,
   jobId = "",
   browserTrackerId = "",
-  joinOrigin = "",
-  gameJoinContext = "",
+  forcedPop = "",
   signal,
   onStatus = () => {},
   sleep = defaultSleep,
@@ -59,7 +66,7 @@ export async function joinGame({
 }) {
   if (!Number.isFinite(Number(placeId)) || Number(placeId) <= 0) throw new JoinError("Invalid place id");
   const url = jobId ? ENDPOINTS.instance : ENDPOINTS.join;
-  const body = JSON.stringify(buildJoinBody({ placeId, jobId, attemptId: uuid(), browserTrackerId, joinOrigin, gameJoinContext }));
+  const body = JSON.stringify(buildJoinBody({ placeId, jobId, browserTrackerId, forcedPop }));
   const headers = {
     "content-type": "application/json",
     accept: "application/json",

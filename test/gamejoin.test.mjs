@@ -8,15 +8,26 @@ import {
   joinGame,
   normalizeHash,
   parseJoinScript,
+  randomTrackerId,
   redact,
 } from "../src/join/gamejoin.mjs";
 
 const reply = (status, body) => ({ status, ok: status >= 200 && status < 300, text: async () => JSON.stringify(body) });
 const base = { placeId: 123, uuid: () => "attempt-1", sleep: async () => {} };
 
-test("buildJoinBody only sends gameId for a specific server", () => {
-  assert.deepEqual(buildJoinBody({ placeId: "5", attemptId: "a" }), { placeId: 5, isTeleport: false, gameJoinAttemptId: "a", isPlayTogetherGame: false });
-  assert.equal(buildJoinBody({ placeId: 5, jobId: "job", attemptId: "a" }).gameId, "job");
+test("buildJoinBody matches the engine's standard and instance join bodies", () => {
+  const tracker = () => 777;
+  assert.deepEqual(buildJoinBody({ placeId: "5", tracker }), { placeId: 5, browserTrackerId: 777 });
+  assert.deepEqual(buildJoinBody({ placeId: 5, browserTrackerId: "42", tracker }), { placeId: 5, browserTrackerId: 42 });
+  assert.deepEqual(buildJoinBody({ placeId: 5, jobId: "job", browserTrackerId: 42 }), { placeId: 5, gameId: "job", isPlayTogetherGame: false, browserTrackerId: 42 });
+  assert.equal(buildJoinBody({ placeId: 5, browserTrackerId: 1, forcedPop: "x" }).forcedPop, "x");
+  assert.equal("isTeleport" in buildJoinBody({ placeId: 5, tracker }), false);
+  assert.equal("gameJoinAttemptId" in buildJoinBody({ placeId: 5, tracker }), false);
+});
+
+test("randomTrackerId makes a positive integer without a leading zero", () => {
+  const n = randomTrackerId(() => 0.05);
+  assert.ok(Number.isInteger(n) && n > 0 && !String(n).startsWith("0"));
 });
 
 test("parseJoinScript accepts objects and signed text", () => {
@@ -91,7 +102,7 @@ test("joinGame polls until joined and returns the script", async () => {
   assert.deepEqual(result.script, { UserId: 1 });
   assert.equal(calls[0].url, ENDPOINTS.join);
   assert.equal(calls[0].method, "POST");
-  assert.equal(calls[0].body.gameJoinAttemptId, "attempt-1");
+  assert.deepEqual(Object.keys(calls[0].body).sort(), ["browserTrackerId", "placeId"]);
 });
 
 test("joinGame uses the instance endpoint with a job id", async () => {

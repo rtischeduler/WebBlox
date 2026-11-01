@@ -35,3 +35,10 @@ test("supports a custom cookie name", () => {
     delete globalThis.WEBBLOX_COOKIE_NAME;
   }
 });
+
+import { readBrowserTrackerId } from "../src/join/cookie.mjs";
+test("readBrowserTrackerId pulls browserid out of RBXEventTrackerV2", () => {
+  assert.equal(readBrowserTrackerId("a=1; RBXEventTrackerV2=CreateDate=11%2F1%2F2026&rbxid=9&browserid=123456789012; b=2"), 123456789012);
+  assert.equal(readBrowserTrackerId("RBXEventTrackerV2=CreateDate=x&browserid=55"), 55);
+  assert.equal(readBrowserTrackerId("a=1"), 0);
+});

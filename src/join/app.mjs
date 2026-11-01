@@ -1,10 +1,10 @@
 import { createProxy } from "./proxy.mjs";
-import { joinGame, describeJoin, redact } from "./gamejoin.mjs";
+import { joinGame, describeJoin, redact, randomTrackerId } from "./gamejoin.mjs";
 import { findServer, loadAvatars } from "./servers.mjs";
 import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
 import { downloadText } from "../download.mjs";
-import { readHostCookie } from "./cookie.mjs";
+import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
 
 const $ = (id) => document.getElementById(id);
 
@@ -233,10 +233,16 @@ async function run() {
     setStep("proxy", "ok", proxy.wisp.replace(/^wss:\/\//, "").replace(/\/$/, ""));
     setStep("join", "run");
     say("Requesting a server…");
+    let browserTrackerId = readBrowserTrackerId() || Number(store.get("wb.tracker")) || 0;
+    if (!browserTrackerId) {
+      browserTrackerId = randomTrackerId();
+      store.set("wb.tracker", String(browserTrackerId));
+    }
     const result = await joinGame({
       request: proxy.request,
       placeId,
       jobId,
+      browserTrackerId,
       signal: controller.signal,
       onStatus: (s) => {
         say(`Waiting for a server (status ${s.status}${s.message ? ": " + s.message : ""})`);

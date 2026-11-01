@@ -31,3 +31,10 @@ export const readHostCookie = (source = globalThis.document?.cookie ?? "", names
   }
   return "";
 };
+
+export const readBrowserTrackerId = (source = globalThis.document?.cookie ?? "") => {
+  const raw = parseCookies(source).get("RBXEventTrackerV2");
+  if (!raw) return 0;
+  const m = decode(raw).match(/(?:^|&)browserid=(\d{1,20})/i);
+  return m ? Number(m[1]) : 0;
+};
