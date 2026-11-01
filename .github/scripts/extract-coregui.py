@@ -5,7 +5,7 @@ Writes: report.txt, flags-matching.json, tree.json, src/<instance path>.luau
 No third-party deps (pure-python LZ4 + rbxm reader)."""
 import sys, os, re, json, struct, urllib.request, urllib.error
 
-OUT = sys.argv[1]; os.makedirs(os.path.join(OUT, "src"), exist_ok=True)
+OUT = sys.argv[1]; SRC = "/tmp/cg-src"; os.makedirs(SRC, exist_ok=True)
 REPORT = []
 def log(*a):
     s = " ".join(str(x) for x in a); print(s, flush=True); REPORT.append(s)
@@ -32,6 +32,37 @@ def lz4_block(d, size):
             for k in range(m): o.append(o[s + k])
     if len(o) != size: raise ValueError(f"lz4 size {len(o)} != {size}")
     return bytes(o)
+
+class _L(list): how = ""
+
+def _plausible(v):
+    if not v: return True
+    if v[:4] == b"\x28\xb5\x2f\xfd": return True
+    t = v[:200]; return v[0] < 10 or sum(32 <= x < 127 or x in (9, 10, 13) for x in t) > 0.85 * len(t)
+
+def decode29(b, n):
+    """try plausible layouts for the new Source property encoding"""
+    def seq(b, n, off):  # (u32 len + data) * n
+        out = _L(); p = off
+        for _ in range(n):
+            if p + 4 > len(b): return None
+            l = struct.unpack_from("<I", b, p)[0]; p += 4
+            if p + l > len(b): return None
+            out.append(b[p:p + l]); p += l
+        return out if p == len(b) else None
+    def blk(b, n):  # interleaved lengths then data
+        if 4 * n > len(b): return None
+        ls = [(b[i] << 24) | (b[n + i] << 16) | (b[2 * n + i] << 8) | b[3 * n + i] for i in range(n)]
+        out = _L(); p = 4 * n
+        for l in ls:
+            if p + l > len(b): return None
+            out.append(b[p:p + l]); p += l
+        return out if p == len(b) else None
+    for how, fn in (("seq", lambda: seq(b, n, 0)), ("seq+1", lambda: seq(b, n, 1)), ("blk", lambda: blk(b, n))):
+        try: o = fn()
+        except Exception: o = None
+        if o is not None and all(_plausible(v) for v in o[:50]): o.how = how; return o
+    return None
 
 def zstd_block(raw, size):
     try:
@@ -86,7 +117,16 @@ def parse_rbxm(data):
             elif name == b"PROP":
                 cid = struct.unpack_from("<i", c, 0)[0]; pn, q = rstr(c, 4); pn = pn.decode("latin1")
                 t = c[q]; q += 1; PTYPES.setdefault(cls[cid], {})[pn] = t
-                if t == 1:  # string
+                if t == 29 and pn == "Source":
+                    refs = cls.get((cid, "refs"), []); body = c[q:]
+                    if cls[cid] == "ModuleScript" and "src29" not in seen:
+                        seen.add("src29"); log("Source(29) class", cls[cid], "n", len(refs), "bytes", len(body), "head", body[:96].hex())
+                    got = decode29(body, len(refs))
+                    if got:
+                        for r, v in zip(refs, got): props.setdefault(r, {})["Source"] = v
+                        if "src29ok" not in seen: seen.add("src29ok"); log("Source(29) decoded via", got.how, "sample", got[0][:80] if got else b"")
+                    else: log("Source(29) undecoded", cls[cid], len(refs), len(body))
+                elif t == 1:  # string
                     for r in cls.get((cid, "refs"), []):
                         s, q = rstr(c, q); props.setdefault(r, {})[pn] = s
             elif name == b"PRNT":
@@ -162,8 +202,11 @@ def main():
     n = bc = 0; rows = []
     for e in tree:
         if e["source"] is not None:
+            if e["source"][:4] == b"\x28\xb5\x2f\xfd":
+                try: e["source"] = zstd_block(e["source"], 1 << 26)
+                except Exception: pass
             isb = is_bytecode(e["source"]); bc += isb; n += 1
-            f = os.path.join(OUT, "src", re.sub(r"[^\w./-]", "_", e["path"]) + (".luauc" if isb else ".luau"))
+            f = os.path.join(SRC, re.sub(r"[^\w./-]", "_", e["path"]) + (".luauc" if isb else ".luau"))
             os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
             rows.append(f"{e['class']}\t{len(e['source'])}\t{'bytecode' if isb else 'source'}\t{e['path']}")
     open(os.path.join(OUT, "scripts.tsv"), "w").write("\n".join(rows) + "\n")
@@ -190,6 +233,8 @@ def main():
             except Exception as ex: log("probe", u, "failed", repr(ex)[:100])
     log("instances", len(tree), "classes", len(cc), "scripts with Source", n, "bytecode", bc)
     log("top classes", cc.most_common(12))
+    import shutil
+    if os.listdir(SRC): shutil.make_archive(os.path.join(OUT, "src-InExperience"), "gztar", SRC); log("archived baked sources")
     json.dump(PTYPES, open(os.path.join(OUT, "prop-types.json"), "w"), indent=0)
     log("ModuleScript props+types", PTYPES.get("ModuleScript"))
     for pth, nm in (("/content/configs/InExperiencePatchConfig/InExperiencePatchConfig.json", "InExperience"),
@@ -208,10 +253,12 @@ def main():
                     PTYPES.clear(); items = parse_rbxm(d); src = [e for e in items if e["source"] is not None]
                     log("   parsed", nm, "instances", len(items), "with Source", len(src), "props", {c: sorted(v) for c, v in PTYPES.items() if c.endswith("Script")})
                     for e in src:
-                        f = os.path.join(OUT, "online", nm, re.sub(r"[^\w./-]", "_", e["path"]) + ".luau"); os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
+                        f = os.path.join("/tmp/cg-online", nm, re.sub(r"[^\w./-]", "_", e["path"]) + ".luau"); os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
                     break
             except urllib.error.HTTPError as ex: log("online", nm, u, "HTTP", ex.code, ex.read()[:160])
             except Exception as ex: log("online", nm, u, "failed", repr(ex)[:140])
+    if os.path.isdir("/tmp/cg-online"):
+        for nm in os.listdir("/tmp/cg-online"): shutil.make_archive(os.path.join(OUT, "src-online-" + nm), "gztar", os.path.join("/tmp/cg-online", nm)); log("archived online", nm)
     open(os.path.join(OUT, "report.txt"), "w").write("\n".join(REPORT) + "\n")
 
 if __name__ == "__main__": main()
