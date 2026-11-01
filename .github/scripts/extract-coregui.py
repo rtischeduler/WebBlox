@@ -91,6 +91,7 @@ def parse_rbxm(data):
                 n = struct.unpack_from("<i", c, 1)[0]
                 ch, q = ints(c, 5, n); ch = delta(ch); pa, _ = ints(c, q, n); pa = delta(pa)
                 parent.update(zip(ch, pa))
+            elif name == b"HASH": log("HASH head", c[:48].hex(), "len", len(c))
             elif name == b"END\0": break
         except Exception as e: log("chunk", name, "parse failed:", repr(e)[:160])
     out = []
@@ -104,7 +105,8 @@ def parse_rbxm(data):
     for r, cid in ref2cls.items():
         pr = props.get(r, {})
         out.append({"path": path(r), "class": cls[cid], "props": sorted(pr),
-                    "source": pr["Source"] if "Source" in pr else None})
+                    "source": pr["Source"] if "Source" in pr else None,
+                    "link": pr.get("LinkedSource", b"").decode("utf8", "replace"), "guid": pr.get("ScriptGuid", b"").decode("utf8", "replace")})
     return out
 
 # ---------- network ----------
@@ -161,6 +163,24 @@ def main():
     # structure: everything within 4 levels, plus every script path
     json.dump([{k: v for k, v in e.items() if k != "source"} for e in tree if e["path"].count("/") < 4 or e["source"] is not None],
               open(os.path.join(OUT, "tree.json"), "w"), indent=0)
+    mods = [e for e in tree if e["class"] == "ModuleScript"]
+    open(os.path.join(OUT, "linked.tsv"), "w").write("\n".join(f"{e['guid']}\t{e['link']}\t{e['path']}" for e in mods) + "\n")
+    pre = collections.Counter(re.sub(r"[A-Za-z0-9_./-]{12,}.*", "...", e["link"])[:40] for e in mods)
+    log("LinkedSource prefixes", pre.most_common(8)); log("sample", [(e["link"][:120], e["guid"][:40], e["path"]) for e in mods[:5]])
+    probed = 0
+    for e in mods:
+        l = e["link"]
+        if not l or probed >= 4: continue
+        probed += 1; cand = []
+        if l.startswith("http"): cand = [l]
+        elif l.startswith("rbxasset://"): cand = [base + "/content/" + l[11:], base + "/ExtraContent/" + l[11:]]
+        else:
+            m = re.search(r"(\d{6,})", l)
+            if m: cand = [f"https://assetdelivery.roblox.com/v1/asset/?id={m.group(1)}"]
+        for u in cand:
+            try: d = get(u); log("probe", u, "->", len(d), d[:80])
+            except urllib.error.HTTPError as ex: log("probe", u, "HTTP", ex.code)
+            except Exception as ex: log("probe", u, "failed", repr(ex)[:100])
     log("instances", len(tree), "classes", len(cc), "scripts with Source", n, "bytecode", bc)
     log("top classes", cc.most_common(12))
     open(os.path.join(OUT, "report.txt"), "w").write("\n".join(REPORT) + "\n")
