@@ -15,15 +15,21 @@ async function loadSandstone(bases) {
   return import(URL.createObjectURL(new Blob([code], { type: "text/javascript" })));
 }
 
+const pageLocation = () => {
+  if (location.search || location.hash) return location;
+  try { void window.top.location.href; return window.top.location; } catch { return location; }
+};
+
 const startUrl = () => {
-  const h = location.hash.slice(1);
-  return /^https?:\/\//i.test(h) ? h : startUrlFor(new URLSearchParams(location.search).get("placeId"));
+  const loc = pageLocation();
+  const h = loc.hash.slice(1);
+  return /^https?:\/\//i.test(h) ? h : startUrlFor(new URLSearchParams(loc.search).get("placeId"));
 };
 
 export async function boot(statusEl, opts = {}) {
   const say = (t) => { if (statusEl) statusEl.textContent = t; };
   const iso = await ensureIsolation();
-  if (!iso.ok && !new URLSearchParams(location.search).has("force")) {
+  if (!iso.ok && !new URLSearchParams(pageLocation().search).has("force")) {
     const msg = explainIsolation(iso.reason, navigator.userAgent);
     console.error("[webblox] " + msg + " (add ?force=1 to try anyway)");
     if (statusEl && iso.url) {
@@ -58,7 +64,7 @@ export async function boot(statusEl, opts = {}) {
     log: (m) => console.warn("[webblox] " + m),
   });
 
-  hooks.injectJs(flagOverrideScript(opts.flagOverrides || parseFlagParams(location.search)));
+  hooks.injectJs(flagOverrideScript(opts.flagOverrides || parseFlagParams(pageLocation().search)));
 
   const navigate = frame.navigate_to.bind(frame);
   frame.navigate_to = (target, ...rest) => {

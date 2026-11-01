@@ -1,18 +1,23 @@
-// Engine flag overrides. WasmPlayer.js merges window.__wasmDevSettings.getFlagOverrides() into the
-// preloaded flags before handing them to the engine, so injecting this before the page scripts is enough.
-// Values are strings exactly like the clientsettings JSON ("True"/"False"/"123").
 export const DEFAULT_FLAG_OVERRIDES = {
-  // Suspected cause of "Failed to open send channel Chat!": the base client gates startup on the send channel opening.
   FFlagBaseClientGateOnSendChannel: "False",
+};
+
+export const DEBUG_NET_FLAGS = {
+  DFLogRbxTransportRnaExpConnection: "7",
+  DFLogRbxTransportRtcIo: "7",
+  FLogNetwork: "7",
+  DFLogHttpTraceLight: "7",
+  DFLogNetworkAudit: "7",
 };
 
 const NAME_RE = /^[A-Za-z0-9_]{1,120}$/;
 const VALUE_RE = /^[A-Za-z0-9_.\-]{0,60}$/;
 
-// ?flag=Name=Value (repeatable). An empty value removes a default override.
 export function parseFlagParams(search = "", base = DEFAULT_FLAG_OVERRIDES) {
   const out = { ...base };
-  for (const raw of new URLSearchParams(search).getAll("flag")) {
+  const params = new URLSearchParams(search);
+  if (params.has("debugnet")) Object.assign(out, DEBUG_NET_FLAGS);
+  for (const raw of params.getAll("flag")) {
     const i = raw.indexOf("=");
     if (i < 1) continue;
     const name = raw.slice(0, i), value = raw.slice(i + 1);

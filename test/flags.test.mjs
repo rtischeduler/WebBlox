@@ -18,3 +18,10 @@ test("script exposes getFlagOverrides and merges any previous provider", () => {
   new Function("window", "console", flagOverrideScript({ FFlagB: "True" }))(window, { warn() {} });
   assert.deepEqual(window.__wasmDevSettings.getFlagOverrides(), { Old: "1", FFlagB: "True" });
 });
+
+test("debugnet adds logging flags and can be combined with flag params", () => {
+  const f = parseFlagParams("?debugnet=1&flag=DFFlagRbxTransportRtcioRejectChannelOpenOnFailedConnect=False");
+  assert.equal(f.FLogNetwork, "7");
+  assert.equal(f.DFFlagRbxTransportRtcioRejectChannelOpenOnFailedConnect, "False");
+  assert.equal(f.FFlagBaseClientGateOnSendChannel, "False");
+});
