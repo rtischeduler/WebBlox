@@ -14,3 +14,16 @@ test("cookieHeader accepts a full pasted cookie with the warning prefix", () => 
   assert.equal(cookieHeader(v.replace(/\|/g, "%7C")), ".ROBLOSECURITY=" + v);
   assert.equal(cookieHeader("  "), "");
 });
+
+import { isJoinUrl, describeRequest } from "../src/netpatch.mjs";
+test("describeRequest redacts secrets and decodes bodies", () => {
+  assert.equal(isJoinUrl("https://gamejoin.roblox.com/v1/join-game"), true);
+  assert.equal(isJoinUrl("https://www.roblox.com/x"), false);
+  const d = describeRequest("post", "https://gamejoin.roblox.com/v1/join-game", { "Content-Type": "application/json", "X-CSRF-TOKEN": "abc", Cookie: "secret" }, new TextEncoder().encode('{"placeId":1}'));
+  assert.equal(d.method, "POST");
+  assert.equal(d.headers["Content-Type"], "application/json");
+  assert.equal(d.headers["X-CSRF-TOKEN"], "<redacted 3>");
+  assert.equal(d.headers.Cookie, "<redacted 6>");
+  assert.equal(d.body, '{"placeId":1}');
+  assert.equal(describeRequest("get", "u").body, null);
+});

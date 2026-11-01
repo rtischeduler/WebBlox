@@ -25,3 +25,15 @@ export const shape = (o, depth = 0) => {
   if (o && typeof o === "object") return depth > 3 ? "{..}" : Object.fromEntries(Object.entries(o).map(([k, v]) => [k, shape(v, depth + 1)]));
   return o;
 };
+export const isJoinUrl = (u) => { try { return /(^|\.)gamejoin\.roblox\.com$/i.test(new URL(u).hostname); } catch { return false; } };
+const SECRETISH = /cookie|csrf|auth|token|ticket|signature|session/i;
+export const describeRequest = (method, url, headers = {}, body) => {
+  const h = {};
+  for (const [k, v] of Object.entries(headers || {})) h[k] = SECRETISH.test(k) ? "<redacted " + String(v).length + ">" : String(v);
+  let text = null;
+  if (typeof body === "string") text = body;
+  else if (body instanceof ArrayBuffer) text = new TextDecoder().decode(body);
+  else if (ArrayBuffer.isView(body)) text = new TextDecoder().decode(body);
+  else if (body != null) text = "[" + Object.prototype.toString.call(body) + "]";
+  return { method: String(method || "GET").toUpperCase(), url: String(url), headers: h, body: text };
+};

@@ -1,5 +1,6 @@
 export const DEFAULT_FLAG_OVERRIDES = {
   FFlagBaseClientGateOnSendChannel: "False",
+  FLogGameJoinUtil: "7",
 };
 
 export const DEBUG_NET_FLAGS = {

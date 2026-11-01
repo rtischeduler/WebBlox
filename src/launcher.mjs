@@ -1,6 +1,6 @@
 import { ensureIsolation, explainIsolation } from "./isolation.mjs";
 import { pickWisp, provisionalWisp } from "./wisps.mjs";
-import { isProxied, cookieHeader, engineName, hex, shape } from "./netpatch.mjs";
+import { isProxied, cookieHeader, engineName, hex, shape, isJoinUrl, describeRequest } from "./netpatch.mjs";
 
 const $ = (id) => document.getElementById(id);
 const say = (t) => { const s = $("wb-status"); if (s) s.textContent = t; };
@@ -100,12 +100,15 @@ function patchNetwork(libcurl, getCookie, getWisp, cdnBase) {
     abort() { this._ac?.abort(); this._emit("abort"); }
     async send(body) {
       this._ac = new AbortController();
+      const join = isJoinUrl(this._u);
+      if (join) log("[engine-join] ->", JSON.stringify(describeRequest(this._m, this._u, this._h, body)));
       try {
         const r = await window.fetch(this._u, { method: this._m, headers: this._h, body: body ?? undefined, signal: this._ac.signal });
         this.status = r.status; this.statusText = r.statusText; this.responseURL = this._u; this._rhm = r.headers;
         this._rh = [...r.headers].map(([k, v]) => k + ": " + v).join("\r\n") + "\r\n";
         this.readyState = 2; this._emit("readystatechange");
         const buf = await r.arrayBuffer(); const txt = () => new TextDecoder().decode(buf);
+        if (join) { let j = null; try { j = JSON.parse(txt()); } catch {} log("[engine-join] <-", r.status, j ? JSON.stringify({ status: j.status, message: j.message, jobId: j.jobId, queuePosition: j.queuePosition, hasJoinScript: Boolean(j.joinScript || j.joinScriptUrl) }) : txt().slice(0, 120)); }
         this.response = this.responseType === "arraybuffer" ? buf : this.responseType === "blob" ? new Blob([buf]) : this.responseType === "json" ? JSON.parse(txt()) : txt();
         if (!this.responseType || this.responseType === "text") this.responseText = this.response;
         this.readyState = 4; this._emit("readystatechange");
