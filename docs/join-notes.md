@@ -1,16 +1,51 @@
 # Join flow notes (from engine snapshot, version-75f1039cb4964863)
 
-Source: strings and imports in engine/ (wasm is engine/WebClient.wasm.gz.part000, 100 MB raw).
+Source: strings, imports and glue code in `engine/` and `analysis/` (wasm is `engine/WebClient.wasm.gz.part000`, 100 MB raw).
 Rebuild: `cat engine/WebClient.wasm.gz.part* | gunzip > WebClient.wasm`
 
-Verified from imports (engine/wasm-imports.txt)
-- Networking is only `emscripten_websocket_*` (new, send_binary, send_utf8_text, callbacks) plus `emscripten_start_fetch` / `js_fetch_file` for HTTP. No WebRTC/UDP.
-- Memory is shared (pthreads), so `SharedArrayBuffer` / cross-origin isolation is mandatory.
+## Correction: the game connection is WebTransport, not WebSocket
 
-Inferred from strings (not yet confirmed at runtime)
-- HTTP join: `/v1/join-game`, `/v2/join-game`, `*-instance` variants (PlaceLauncher), `/v1/authentication-ticket/redeem`. Response is parsed as a GameJoinResponse JSON.
-- Fields seen: MachineAddress, UdmuxEndpoints (UdMuxIp / UdMuxPort / UdmuxToken), ClientTicket, SessionId.
-- CORRECTION: `utpprotocols/uts/*.proto` (Handshake{run_id, role}, ImageBegin/Chunk/End, ProfilingControl) is an automated test harness (screenshots, profiling), NOT the game join protocol. The game connection is not described by any embedded protobuf schema; it is Roblox's native binary replication carried over WebSocket and must be reconstructed from captured frames.
-- Chat/game state ride the replication stream after the handshake.
+The earlier notes assumed the replication stream rides a WebSocket. The evidence says otherwise.
 
-Next: capture real websocket frames and join-game request/response in a live session.
+- `engine/wasm-imports.txt` has a `rbx_wasm_rna_*` family (`connect_js`, `open_stream_js`, `write_stream_js`, `send_datagram_js`, `close_js`, `is_supported_js`, receive-ring callbacks). That is the game transport.
+- `rbx_wasm_rna_connect_js` in `WebClient.js` calls the browser's `new WebTransport(url, { serverCertificateHashes })`. The hashes are base64 SHA-256 strings passed in by the wasm. It then reads `datagrams.readable` and `incomingUnidirectionalStreams`, and opens streams and datagrams on request. Data is handed to the wasm through a shared receive ring.
+- Log strings confirm it: `Connecting WASM WebTransport to {}`, `QUIC handshake state changed to {}`, `WASM WebTransport connection to {}:{} completed successfully`, `RbxTransportClient connected to server at {}:{}`.
+- The `emscripten_websocket_*` imports and `WebSocketService` strings belong to the TestService / UTP harness (`DebugUTPLauncherWebSocketUri`, `TestServiceConnectionManager`). The old launcher's websocket logging therefore captured nothing about the game.
+- The connect function has no `if (T) return M(...)` guard like the websocket glue, so it can run on a pthread worker. A tap installed on the main window will not see it.
+- WebTransport is HTTP/3 over QUIC (UDP). It cannot be tunnelled through a TCP/wisp proxy, so this one connection goes straight from the browser to the game server. All HTTP traffic still goes through the proxy.
+
+## HTTP join (high confidence, strings in `analysis/join-context.txt`)
+
+- Endpoints: `/v1/join-game`, `/v1/join-game-instance`, `/v2/join-game`, `/v2/join-game-instance`, `/v1/join-private-game`, `/v1/join-reserved-game`, `/v1/authentication-ticket/redeem`.
+- Body fields seen as strings: `placeId`, `isTeleport`, `gameJoinAttemptId`, `gameJoinContext`, `joinOrigin`, `browserTrackerId`, `isPlayTogetherGame`.
+- Response is a join reply with `status`, `jobId`, queue position and a join script payload (`GameJoinV2 onResponseReady: status={} jobId={} queuePos={} joinScriptPayloadSize={}`).
+- Join script fields seen: `MachineAddress`, `UdmuxEndpoints`, `UdMuxIp`, `UdMuxPort`, `ClientTicket`, `SessionId`, and an `RbxTransportConfig` holding a token, a port, server capabilities and `ephemeralEarlyPublicKey`.
+- Certificate hashes can come from config (`RbxTransportCertHashesInNetStackConfig`, `DebugRbxTransportWtCertHash`).
+- `join.html` uses `/v1/join-game` and `/v1/join-game-instance` and polls while `status` is 0 or 1. The numeric status meanings other than "2 = joined" are not verified; unknown statuses are shown with their raw code and message.
+
+## Layers above the transport (inferred, not decoded)
+
+1. RbxTransport "RNA" connection: numbered channels with a channel header, reliable (stream) and unreliable (datagram) channels, fragment ids and ACKs (`Received unrecognized channel header`, `Received too large channelId value`, `Received ACK for unknown fragment id`).
+2. RUPP token handshake (`Invalid Rupp header length {} > bytes read {}`, `Client failed Rupp setup`).
+3. Session keys derived from the ephemeral early public key in the join config.
+4. Roblox replication (`Replicator`, `ClientReplicator`) carrying the Players service, instances and chat.
+
+Embedded protobuf schemas (`utpprotocols/uts/*.proto`) are a test harness, not the game protocol.
+
+## What `join.html` does today
+
+1. Loads Singuloxy and picks a wisp server.
+2. Gets a CSRF token and calls the join endpoint through the proxy with your cookie (only attached to Roblox hosts).
+3. Shows the join script with tickets and session data redacted, and extracts the UDMUX endpoints and any certificate hashes.
+4. Finds the server in the public server list and shows its players. The list exposes anonymous player tokens; avatars are fetched through the proxy. Names are not available this way.
+5. Optionally opens the WebTransport connection directly and records every datagram and stream chunk into a capture you can download.
+
+## Open questions, in the order they block progress
+
+1. The exact WebTransport URL (host, port, path) and where the certificate hashes sit in the join reply. Join with the URL override empty first; the capture records the URL tried and the failure reason.
+2. Who speaks first: whether the server sends anything unprompted or waits for a client stream or datagram.
+3. Channel header layout and the RUPP handshake.
+4. Key agreement from the ephemeral key, and the cipher used per channel.
+5. Replication packet layout, starting with the Players service so names can replace the anonymous avatars.
+
+To answer 1 to 4 against the real engine, hook `WebTransport` inside the pthread workers as well as the main thread, and log the constructor arguments plus every chunk. `PlayerList` already has a `replication` source ready for the decoder.

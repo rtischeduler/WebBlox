@@ -25,4 +25,18 @@ For WebViews with no service worker support, serve the page from a host that sen
 Check `crossOriginIsolated` in the console. A WebView that does not implement isolation cannot run the game whatever the headers are.
 
 ## Launcher (`launcher.html`)
-Runs the engine top-level (no proxy iframe). `src/launcher.mjs` isolates the page (same `ensureIsolation`), loads Singuloxy, then patches `fetch`, `XMLHttpRequest` and `WebSocket` so Roblox traffic goes through its libcurl/wisp, with your `.ROBLOSECURITY` added as a Cookie header. The wasm is unpacked in the browser from `engine/WebClient.wasm.gz.part*`; other engine files come from `engine/` or the CDN. Join/websocket traffic is logged (values redacted for join responses) so the protocol can be mapped. Test: `node --test test/netpatch.test.mjs`.
+Runs the engine top-level (no proxy iframe). `src/launcher.mjs` isolates the page (same `ensureIsolation`), loads Singuloxy, then patches `fetch`, `XMLHttpRequest` and `WebSocket` so Roblox traffic goes through its libcurl/wisp, with your `.ROBLOSECURITY` added as a Cookie header. The wasm is unpacked in the browser from `engine/WebClient.wasm.gz.part*`; other engine files come from `engine/` or the CDN. Join/websocket traffic is logged (values redacted for join responses) so the protocol can be mapped. The game connection itself is WebTransport, which this logging does not see (see `docs/join-notes.md`). Test: `node --test test/netpatch.test.mjs`.
+
+## Join launcher (`join.html`)
+The engine-free path for the rewrite. It does not need cross-origin isolation, the wasm or any service worker, so it runs on any static host and in WebViews that cannot isolate.
+
+`src/join/app.mjs` loads Singuloxy, gets a CSRF token, posts to `gamejoin.roblox.com` (`/v1/join-game`, or `/v1/join-game-instance` when you give a server id) and polls until the server is ready. It then:
+
+- shows the join script with tickets and session data redacted, and pulls out the UDMUX endpoints and certificate hashes;
+- looks the server up in the public server list and shows its players as avatars (the list only exposes anonymous player tokens, so names are not available yet), plus you from the join script;
+- optionally opens the game WebTransport connection and records everything the server sends into a capture you can download.
+
+Every request goes through the proxy except that one WebTransport connection: it is HTTP/3 over UDP, which a wisp proxy cannot carry, so it is off by default and goes straight from the browser to the game server. The cookie is only ever attached to requests for Roblox hosts.
+
+Open with `?placeId=123` and optionally `&jobId=...`. Modules: `gamejoin.mjs` (join, polling, join script parsing, redaction), `requester.mjs` (proxy fetch with cookie and CSRF handling), `servers.mjs` (server list and avatars), `players.mjs` (player list by source, with a slot for replicated players), `transport.mjs` (WebTransport wrapper that records traffic), `proxy.mjs` (Singuloxy loading).
+Test: `node --test test/gamejoin.test.mjs test/servers.test.mjs test/players.test.mjs test/requester.test.mjs test/transport.test.mjs`.

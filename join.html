@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebBlox Join</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1013;--panel:#161a20;--line:#262c35;--text:#e6e9ee;--dim:#8d97a5;--ok:#4cc38a;--warn:#e5b34a;--bad:#ef6a6a;--run:#6ea8fe}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,sans-serif}
+main{max-width:960px;margin:0 auto;padding:20px 16px 56px;display:grid;gap:16px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+h1{font-size:20px;margin:0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+h3{font-size:14px;margin:14px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.dim{color:var(--dim);font-size:13px;margin:2px 0}
+.fields{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+label{display:grid;gap:4px;font-size:13px;color:var(--dim)}
+label.check{display:flex;gap:8px;align-items:flex-start;color:var(--text)}
+input:not([type=checkbox]){font:15px system-ui,sans-serif;padding:10px;border-radius:6px;border:1px solid var(--line);background:#0b0d10;color:var(--text);width:100%}
+input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--run);outline-offset:2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+button{font:15px system-ui,sans-serif;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:#1e242c;color:var(--text);cursor:pointer}
+button.primary{background:#2a5db0;border-color:#2a5db0}
+button:disabled{opacity:.5;cursor:default}
+#wb-status{margin-left:auto;color:var(--dim);font-size:13px}
+ol#steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#steps li{display:grid;grid-template-columns:14px 110px 1fr;gap:10px;align-items:center;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+li[data-state=run] .dot{background:var(--run);animation:pulse 1s infinite}
+li[data-state=ok] .dot{background:var(--ok)}
+li[data-state=warn] .dot{background:var(--warn)}
+li[data-state=fail] .dot{background:var(--bad)}
+.note{color:var(--dim);font-size:13px;overflow-wrap:anywhere}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){li[data-state=run] .dot{animation:none}}
+.cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0;font-size:14px}
+dl.kv dt{color:var(--dim)}
+dl.kv dd{margin:0;overflow-wrap:anywhere}
+details{margin-top:12px}
+summary{cursor:pointer;color:var(--dim);font-size:13px}
+pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);border-radius:6px;font:12px/1.4 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto}
+#wb-log{max-height:260px;min-height:120px}
+.plist{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.prow{display:flex;gap:10px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:8px;background:#12161b}
+.prow img,.prow .ph{width:48px;height:48px;border-radius:8px;flex:none;background:#0b0d10}
+.pname{font-weight:600;overflow-wrap:anywhere}
+</style></head><body>
+<main>
+<header><h1>WebBlox Join</h1><span class="dim">Join a server through the proxy and read its player list. No cross-origin isolation or wasm engine needed.</span></header>
+
+<section class="card" aria-label="Join settings">
+<h2>Join</h2>
+<div class="fields">
+<label>Place id<input id="wb-place" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 10879318443"></label>
+<label>Server id (optional)<input id="wb-job" type="text" autocomplete="off" placeholder="Job id of a specific server"></label>
+<label>.ROBLOSECURITY<input id="wb-cookie" type="password" autocomplete="off" placeholder="Saved on this device only"></label>
+</div>
+<label class="check" style="margin-top:14px"><input id="wb-direct" type="checkbox"><span>Also open the game WebTransport connection and record what the server sends. This one connection goes straight from your browser to the game server; it cannot be sent through the proxy. <span id="wb-wt-support" class="dim"></span></span></label>
+<div class="fields" style="margin-top:12px"><label>WebTransport URL override (optional)<input id="wb-wt-url" type="text" autocomplete="off" placeholder="https://host:port/path"></label></div>
+<div class="actions">
+<button id="wb-go" class="primary">Join</button>
+<button id="wb-cancel" hidden>Cancel</button>
+<span id="wb-status" role="status" aria-live="polite">Starting…</span>
+</div>
+<p class="dim">Your cookie is only attached to requests for Roblox hosts, and every request goes through the proxy.</p>
+</section>
+
+<section class="card" aria-label="Progress">
+<h2>Progress</h2>
+<ol id="steps">
+<li data-step="proxy" data-state="idle"><span class="dot"></span><span>Proxy</span><span class="note"></span></li>
+<li data-step="join" data-state="idle"><span class="dot"></span><span>Join request</span><span class="note"></span></li>
+<li data-step="server" data-state="idle"><span class="dot"></span><span>Server lookup</span><span class="note"></span></li>
+<li data-step="players" data-state="idle"><span class="dot"></span><span>Player avatars</span><span class="note"></span></li>
+<li data-step="transport" data-state="idle"><span class="dot"></span><span>Game transport</span><span class="note"></span></li>
+</ol>
+</section>
+
+<div class="cols">
+<section class="card" aria-label="Players"><h2>Players</h2><div id="players"></div></section>
+<section class="card" aria-label="Join details"><h2>Join details</h2><div id="info"></div></section>
+</div>
+
+<section class="card" aria-label="Log">
+<h2>Log</h2>
+<pre id="wb-log"></pre>
+<div class="actions"><button id="wb-copy">Copy log</button><button id="wb-export">Download capture</button></div>
+</section>
+</main>
+<script type="module">import { boot } from "./src/join/app.mjs"; boot();</script>
+</body></html>
