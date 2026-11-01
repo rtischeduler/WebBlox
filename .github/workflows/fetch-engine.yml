@@ -24,6 +24,11 @@ jobs:
       - name: fetch engine
         run: node .github/scripts/fetch-engine.mjs engine "${{ inputs.engine_base }}"
 
+      - name: join strings from wasm
+        run: |
+          cat engine/WebClient.wasm.gz.part* | gunzip | strings -n 6 | grep -iE 'gamejoin|join-?game|joinscript|placelauncher|request(private)?game|authenticationticket|ticket|machineaddress|udmux|serverconnect|sessionid|wss?://|\.roblox\.com|\.rbxcdn\.com|websocket|handshake|replicat' | sort -u | head -c 400000 > engine/join-strings.txt || true
+          wc -c engine/join-strings.txt
+
       - name: summary
         run: |
           {
@@ -32,6 +37,10 @@ jobs:
             cat engine/engine-base.txt
             cat engine/manifest.json
             cat engine/wasm-info.txt
+            echo '```'
+            echo "## join strings (wasm)"
+            echo '```'
+            head -c 30000 engine/join-strings.txt
             echo '```'
             echo "## js hints"
             echo '```'
@@ -46,13 +55,11 @@ jobs:
           path: engine
           retention-days: 14
 
-      - name: publish snapshot branch
+      - name: commit engine to main
         run: |
-          rm -rf /tmp/pub && mkdir /tmp/pub && cp -r engine/. /tmp/pub/
-          cd /tmp/pub
-          git init -q -b engine-snapshot
           git config user.name github-actions
           git config user.email github-actions@users.noreply.github.com
-          git add -A
-          git commit -qm "engine snapshot $(cat engine-base.txt)"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" engine-snapshot
+          git add engine
+          git commit -qm "Engine snapshot $(cat engine/engine-base.txt)" || { echo nothing to commit; exit 0; }
+          git pull -q --rebase origin main
+          git push origin HEAD:main
