@@ -1,20 +1,19 @@
-flags total 22937 matching 322
-client-version {'version': '0.745.0.7451145', 'clientVersionUpload': 'version-75f1039cb4964863', 'bootstrapperVersion': ''}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?version=version-75f1039cb4964863 -> []
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?clientVersion=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?channelName=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?version=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?clientVersion=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WebClientApp?channelName=0.745.0.7451145 HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?version=version-75f1039cb4964863 -> []
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?clientVersion=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?channelName=version-75f1039cb4964863 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?version=0.745.0.7451145 -> []
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?clientVersion=0.745.0.7451145 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
-GET https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer?channelName=0.745.0.7451145 HTTP 400 {"errors":[{"code":4,"message":"Invalid app version."}]}
-GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp HTTP 400 {"errors":[{"code":7,"message":"Unsupported binaryType."}]}
-GET https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp?version=version-75f1039cb4964863 -> []
-candidate patch assets: []
-instances 0 scripts with Source 0
+engine base https://setup.rbxcdn.com/webclient/version-75f1039cb4964863-RobloxWebClient
+fetched /ExtraContent/models/InExperience/InExperience.rbxm 14330707 bytes b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
+fail /ExtraContent/models/InExperience/InExperience.rbxm IndexError('bytearray index out of range')
+fetched /content/configs/DataModelPatchConfig/DataModelPatchConfig.json 256 bytes b'{"AppStorageRese'
+    {"AppStorageResetId": "0", "AssetId": "115043838414809", "AssetVersion": "6833", "IsForcedUpdate": false, "LocalAssetURI": "rbxasset://models/DataModelPatch/DataModelPatch.rbxm", "LocalAssetHash": "e81494d865b68944a1c16bc71748c5bf", "MaxAppVersion": "721"}
+fetched /content/configs/InExperiencePatchConfig/InExperiencePatchConfig.json 252 bytes b'{"AppStorageRese'
+    {"AppStorageResetId": "0", "AssetId": "80471914653504", "AssetVersion": "15919", "IsForcedUpdate": false, "LocalAssetURI": "rbxasset://models/InExperience/InExperience.rbxm", "LocalAssetHash": "df3b8680647869f80269d0e7a7d89d19", "MaxAppVersion": "745"}
+fetched /content/configs/UniversalAppPatchConfig/UniversalAppPatchConfig.json 253 bytes b'{"AppStorageRese'
+    {"AppStorageResetId": "0", "AssetId": "118593852151835", "AssetVersion": "16012", "IsForcedUpdate": false, "LocalAssetURI": "rbxasset://models/UniversalApp/UniversalApp.rbxm", "LocalAssetHash": "5b76d60957f482b235935e214f67e412", "MaxAppVersion": "745"}
+fetched /content/configs/OtaPatchConfigs/DiscoveryOtaPatchConfig.json 179 bytes b'{"AppStorageRese'
+    {"AppStorageResetId": "0", "AssetId": "16639814581", "AssetVersion": "8687", "IsForcedUpdate": false, "LocalAssetHash": "88535e76eaf22408658fb7fcdcc37ad6", "MaxAppVersion": "718"}
+fetched /ExtraContent/scripts/CoreScripts/Modules/AvatarEditorPrompts/service-descriptor.yml 560 bytes b'name: lua-coresc'
+    name: lua-corescript-avatar-editor-prompts description: Avatar Editor Prompts Corescripts product: lua-corescript-avatar-editor-prompts repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/AvatarEditorPrompts owners: # Marketplace > Expression   - ros/1097   - email/avatar-core
+fetched /ExtraContent/scripts/CoreScripts/Modules/InspectAndBuy/service-descriptor.yml 295 bytes b'name: lua-module'
+    name: lua-module-inspect-and-buy description: The Inspect & Buy in-experience UX product: lua-module-inspect-and-buy repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/InspectAndBuy owners: # marketplace > expression   - ros/1097 tags:   - type:universal-app   - lang:lua
+fetched /ExtraContent/scripts/CoreScripts/Modules/EmotesMenu/service-descriptor.yml 282 bytes b'name: lua-module'
+    name: lua-module-emotes-menu description: The emotes menu in-experience UX product: lua-module-emotes-menu repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/EmotesMenu owners: # Marketplace > Expression   - ros/1097 tags:   - type:universal-app   - lang:lua
+instances 0 classes 0 scripts with Source 0 bytecode 0
+top classes []
