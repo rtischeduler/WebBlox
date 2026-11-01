@@ -6,7 +6,7 @@ chunk b'HASH' cl 370774 ul 547607 zstd
 HASH head b18500001000a8b31c6abf30b88b19e356991081d048286d6758923a9ccd78456a07f42c5d308dbad89c7ab90bca4db2 len 547607
 chunk b'PROP' cl 47 ul 10952 zstd
 Source(29) class ModuleScript n 34225 bytes 68322708 head 6c010000527a104a5b3209e00903090673637269707406506172656e7407726571756972650c4c756175506f6c7966696c6c064f626a65637404636f72650661737369676e044e6f6e6505726561637400010900000102002ba3000000ff0001
-Source(29) undecoded ModuleScript 34225 68322708
+Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\t\x03\t\x06script\x06Parent\x07require\x0cLuauPolyfill\x06Object\x04core\x06assign\x04None\x05react\x00\x01\t\x00'
 chunk b'PRNT' cl 23915 ul 295717 zstd
 chunk b'SIGU' cl 0 ul 324 raw
 chunk b'SIGN' cl 0 ul 324 raw
@@ -25,9 +25,13 @@ fetched /ExtraContent/scripts/CoreScripts/Modules/InspectAndBuy/service-descript
     name: lua-module-inspect-and-buy description: The Inspect & Buy in-experience UX product: lua-module-inspect-and-buy repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/InspectAndBuy owners: # marketplace > expression   - ros/1097 tags:   - type:universal-app   - lang:lua
 fetched /ExtraContent/scripts/CoreScripts/Modules/EmotesMenu/service-descriptor.yml 282 bytes b'name: lua-module'
     name: lua-module-emotes-menu description: The emotes menu in-experience UX product: lua-module-emotes-menu repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/EmotesMenu owners: # Marketplace > Expression   - ros/1097 tags:   - type:universal-app   - lang:lua
+stats baked scripts 34225 len min/med/max 71 289 1813107
+   first8 [('527a104a5b3209e0', 34225)]
+   byte8 [(9, 34225)]
+   byte9,10 [('0305', 6897), ('0306', 4075), ('0307', 2802), ('0303', 2610), ('0308', 1433), ('0304', 1340)]
 LinkedSource prefixes [('', 34225)]
 sample [('', '{c600a4ce-3c2d-4515-a1e3-c3124c856f7f}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient'), ('', '{b7e5e6bc-c15d-4c31-a038-3ca606bd06dc}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache'), ('', '{21e46648-1d5e-44b8-bbe1-ff09f8a6d52c}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/cache'), ('', '{ccf14c07-95cb-44f9-8889-a5649960d206}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/Cache'), ('', '{91d8c7c4-8505-43a0-ac2a-23110aa2b5f6}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/common')]
-instances 36964 classes 4 scripts with Source 0 bytecode 0
+instances 36964 classes 4 scripts with Source 34225 bytecode 33806
 top classes [('ModuleScript', 34225), ('Folder', 2731), ('StringValue', 6), ('LocalizationTable', 2)]
 ModuleScript props+types {'AttributesSerialize': 1, 'Capabilities': 33, 'DefinesCapabilities': 2, 'LinkedSource': 1, 'Name': 1, 'ScriptGuid': 1, 'Source': 29, 'SourceAssetId': 27, 'Tags': 28}
 online InExperience https://assetdelivery.roblox.com/v2/assetId/80471914653504/version/15919 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encodin'
@@ -39,12 +43,16 @@ chunk b'HASH' cl 370702 ul 547607 zstd
 HASH head b18500001000761803b875a122503a37fe389a9ed473358c03fae93614c1bed0f6aec9aafd6b534a0adad44766d338cc len 547607
 chunk b'PROP' cl 47 ul 10952 zstd
 Source(29) class ModuleScript n 34225 bytes 68624075 head 77020000527a104a5b3209e00d03110c7365746d6574617461626c650d637265617465456c656d656e7404726f6f74056d6f756e740957617465726d61726b07656c656d656e74036e65770467616d650c436f72655061636b616765730a4765
-Source(29) undecoded ModuleScript 34225 68624075
+Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\r\x03\x11\x0csetmetatable\rcreateElement\x04root\x05mount\tWatermark\x07element\x03new\x04game\x0cCor'
 chunk b'PRNT' cl 23869 ul 295717 zstd
 chunk b'SIGU' cl 0 ul 324 raw
 chunk b'SIGN' cl 0 ul 324 raw
 chunk b'END\x00' cl 0 ul 9 raw
-   parsed InExperience instances 36964 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+stats online-InExperience scripts 34225 len min/med/max 73 292 1818974
+   first8 [('527a104a5b3209e0', 34225)]
+   byte8 [(13, 34225)]
+   byte9,10 [('0305', 6897), ('0306', 4075), ('0307', 2802), ('0303', 2610), ('0308', 1433), ('0304', 1340)]
+   parsed InExperience instances 36964 with Source 34225 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
 online UniversalApp https://assetdelivery.roblox.com/v2/assetId/118593852151835/version/16012 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encodin'
    location https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encoding=gzip&version=1&__token__=key-id=1~exp=1793751818~acl=/sc1/8a058871b2547e4b4ec7e1faca15a145*~hmac=4a9f6c67d0b31340495b52c05f1297bd9092ebe1186975bf0c6567714d779a77&Expires=1793751818
    downloaded 13380245 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
@@ -54,12 +62,16 @@ chunk b'HASH' cl 68726 ul 75255 zstd
 HASH head 5f1200001000a35fc370232528a2f20165d45f46f6c2012dbcf25bf0e32ccdb4a1427c958d5f8a6a0060697cddffd5cf len 75255
 chunk b'PROP' cl 44 ul 2588 zstd
 Source(29) class ModuleScript n 4703 bytes 63469694 head 6f010000527a104a5b3209e00d03090673637269707406506172656e7407726571756972650c4c756175506f6c7966696c6c064f626a65637404636f72650661737369676e044e6f6e65057265616374000186020900000102002ba3000000ff
-Source(29) undecoded ModuleScript 4703 63469694
+Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\r\x03\t\x06script\x06Parent\x07require\x0cLuauPolyfill\x06Object\x04core\x06assign\x04None\x05react\x00\x01\x86\x02'
 chunk b'PRNT' cl 4566 ul 42797 zstd
 chunk b'SIGU' cl 0 ul 324 raw
 chunk b'SIGN' cl 0 ul 324 raw
 chunk b'END\x00' cl 0 ul 9 raw
-   parsed UniversalApp instances 5349 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+stats online-UniversalApp scripts 4703 len min/med/max 73 645 22758744
+   first8 [('527a104a5b3209e0', 4703)]
+   byte8 [(13, 4703)]
+   byte9,10 [('0305', 547), ('0304', 314), ('0303', 281), ('0306', 211), ('0308', 131), ('0307', 128)]
+   parsed UniversalApp instances 5349 with Source 4703 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
 online DataModelPatch https://assetdelivery.roblox.com/v2/assetId/115043838414809/version/6833 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encodin'
    location https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encoding=gzip&version=1&__token__=key-id=1~exp=1793730258~acl=/sc2/8ab1de1819d66bfe7ade69f6dbe398d7*~hmac=c775444f8454657ff0465c0c1abab7f0fa7c65c96f5a22293d59c0bcb387a343&Expires=1793730258
    downloaded 14705294 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
@@ -68,10 +80,15 @@ chunk b'HASH' cl 357359 ul 481015 zstd
 HASH head 6f75000010009cce8dad1e68f3f37a1218744bb43db22ca2e627e74c44162c1ec444d15ba8b6c3525162966453045669 len 481015
 chunk b'PROP' cl 47 ul 13592 zstd
 Source(29) class ModuleScript n 30063 bytes 64547696 head 69130000527a104a5b3209e006035e04456e756d0a55736572434672616d6504486561640d47657455736572434672616d65017006434672616d65036e657706416e676c6573076c6f63616c434613706f736974696f6e4469616c6f6750616e
-Source(29) undecoded ModuleScript 30063 64547696
+Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\x06\x03^\x04Enum\nUserCFrame\x04Head\rGetUserCFrame\x01p\x06CFrame\x03new\x06Angles\x07localCF\x13posit'
 chunk b'PRNT' cl 23339 ul 267717 zstd
 chunk b'SIGU' cl 0 ul 324 raw
 chunk b'SIGN' cl 0 ul 324 raw
 chunk b'END\x00' cl 0 ul 9 raw
-   parsed DataModelPatch instances 33464 with Source 0 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+stats online-DataModelPatch scripts 30063 len min/med/max 71 334 1173066
+   first8 [('527a104a5b3209e0', 30063)]
+   byte8 [(6, 30063)]
+   byte9,10 [('0305', 9559), ('0303', 1892), ('0304', 1399), ('0309', 730), ('0307', 718), ('030c', 666)]
+   parsed DataModelPatch instances 33464 with Source 30063 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+archived online InExperience
 write failures 0 []

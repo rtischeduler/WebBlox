@@ -13,7 +13,8 @@
 "AttributesSerialize",
 "LinkedSource",
 "Name",
-"ScriptGuid"
+"ScriptGuid",
+"Source"
 ],
 "StringValue": [
 "AttributesSerialize",
