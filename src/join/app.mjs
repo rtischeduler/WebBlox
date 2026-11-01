@@ -5,7 +5,6 @@ import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
 import { ChatClient, ChatLog } from "./chat.mjs";
 import { LoadingScreen } from "./loading.mjs";
-import { nameColor, flattenPlayers, MENU_TABS } from "./hud.mjs";
 import { Session } from "./session.mjs";
 import { downloadText } from "../download.mjs";
 import { startCoreGui } from "./coregui/index.mjs";
@@ -187,79 +186,10 @@ async function lookupPlayers(jobId, placeId) {
 }
 
 const chatLog = new ChatLog();
+chatLog.onChange((_, lines) => { const l = lines[lines.length - 1]; if (l) log("[chat]", l.kind === "system" ? l.text : `[${l.speaker}] ${l.text}`); });
 const chat = new ChatClient({ log: chatLog });
 let session = null;
 let loading = null;
-const hud = { tab: "Players", info: null };
-
-/* ---------- HUD: chat ---------- */
-const renderChat = (lines) => {
-  const root = $("g-chat-log");
-  const stick = root.scrollTop + root.clientHeight >= root.scrollHeight - 20;
-  root.replaceChildren(
-    ...lines.map((l) =>
-      l.kind === "system"
-        ? el("div", { className: "g-line g-sys", textContent: l.text })
-        : el("div", { className: "g-line" }, el("span", { className: "g-who", textContent: `[${l.speaker}]: `, style: `color:${nameColor(l.speaker)}` }), l.text),
-    ),
-  );
-  if (stick) root.scrollTop = root.scrollHeight;
-};
-chatLog.onChange((_, lines) => renderChat(lines));
-
-const syncChatInput = () => {
-  const can = chat.canSend && session?.state === "connected";
-  const input = $("g-chat-input");
-  input.disabled = !can;
-  input.placeholder = can ? "To chat click here or press / key" : "Chat isn't connected yet";
-};
-
-/* ---------- HUD: player list ---------- */
-const playerRow = (p) =>
-  el("div", { className: "g-row" + (p.you ? " g-you" : "") }, p.avatarUrl ? el("img", { src: p.avatarUrl, alt: "" }) : el("span", { className: "g-ph" }), el("span", { className: "g-n", textContent: p.label }));
-
-const renderHudPlayers = (sections) => {
-  const list = flattenPlayers(sections);
-  $("g-pcount").textContent = list.length || "";
-  $("g-prows").replaceChildren(...list.map(playerRow));
-  if (hud.tab === "Players" && !$("g-esc").hidden) renderTab();
-};
-players.onChange(renderHudPlayers);
-
-/* ---------- HUD: Esc menu ---------- */
-const renderTab = () => {
-  for (const b of $("g-tabs").children) b.setAttribute("aria-selected", String(b.dataset.tab === hud.tab));
-  const body = $("g-tabbody");
-  body.replaceChildren();
-  if (hud.tab === "Players") {
-    const list = flattenPlayers(players.sections());
-    body.append(...(list.length ? list.map(playerRow) : [el("p", { textContent: "No players yet." })]));
-  } else if (hud.tab === "Settings") {
-    const rows = [
-      ["Connection", session ? session.state : "not connected"],
-      ["Server (job id)", hud.info?.jobId || "—"],
-      ["Game server", hud.info?.machine ? hud.info.machine.host : "—"],
-      ["Chat", chat.status],
-    ];
-    const dl = el("dl", { className: "g-kv" });
-    for (const [k, v] of rows) dl.append(el("dt", { textContent: k }), el("dd", { textContent: v }));
-    body.append(dl, el("button", { className: "g-act", type: "button", textContent: "Download capture", onclick: downloadCapture }));
-  } else {
-    body.append(el("p", { textContent: "Esc: menu  ·  /: chat  ·  Tab: player list." }), el("p", { textContent: "The 3D view is not rendered yet; this is the interface only." }));
-  }
-};
-$("g-tabs").replaceChildren(...MENU_TABS.map((t) => el("button", { type: "button", role: "tab", dataset: { tab: t }, textContent: t, onclick: () => { hud.tab = t; renderTab(); } })));
-
-const openMenu = (open) => {
-  $("g-esc").hidden = !open;
-  if (open) renderTab();
-};
-
-const togglePanel = (btn, target) => {
-  const on = btn.getAttribute("aria-pressed") !== "true";
-  btn.setAttribute("aria-pressed", String(on));
-  target.hidden = !on;
-};
 
 function downloadCapture() {
   downloadText("webblox-capture.json", JSON.stringify({ version: 1, join: lastJoin, capture: capture.toJSON() }, null, 1));
@@ -270,23 +200,17 @@ const inGame = () => !$("g-layer").hidden;
 
 const showGame = () => {
   $("g-layer").hidden = false;
-  $("g-hud").hidden = true;
-  $("g-confirm").hidden = true;
-  openMenu(false);
   loading.prepare(true);
   loading.setStatus("Preparing Roblox…");
 };
 
 const showHud = () => {
-  $("g-hud").hidden = false;
   loading.setStatus("Joined.");
   loading.dismissAfterRenderedFrame();
 };
 
 const hideGame = () => {
   $("g-layer").hidden = true;
-  $("g-hud").hidden = true;
-  openMenu(false);
 };
 
 async function leaveGame(reason = "Leave") {
@@ -302,7 +226,6 @@ async function leaveGame(reason = "Leave") {
 
 const syncSessionUi = () => {
   $("wb-go").disabled = Boolean(controller) || inGame();
-  syncChatInput();
 };
 
 async function startSession(info) {
@@ -317,7 +240,7 @@ async function startSession(info) {
   session = new Session({ chat, capture, log });
   session.onState((state, detail) => {
     syncSessionUi();
-    if (state === "connected") setStep("transport", "ok", `connected (max datagram ${detail.maxDatagramSize}) — leave from the game menu`);
+    if (state === "connected") setStep("transport", "ok", `connected (max datagram ${detail.maxDatagramSize}) — press Esc in the game view to leave`);
     else if (state === "left") setStep("transport", "ok", `left after ${detail.stayed}`);
     else if (state === "dropped") setStep("transport", "warn", `server closed it after ${detail.stayed}`);
     else if (state === "failed") setStep("transport", "fail", detail.error);
@@ -390,7 +313,6 @@ async function run() {
     });
     const info = describeJoin(result.script);
     lastJoin = redact(result.script);
-    hud.info = info;
     renderInfo(info, result.script);
     players.update("joinscript", [
       { id: info.user.id, name: info.user.name, displayName: info.user.displayName, you: true },
@@ -402,7 +324,7 @@ async function run() {
     if ($("wb-direct").checked) await startSession(info);
     else chatLog.system("The game connection is off (see the launcher).");
     showHud();
-    say(session?.live ? "In game. Open the menu (Esc) to leave." : "Done.");
+    say(session?.live ? "In game. Press Esc to leave." : "Done.");
   } catch (e) {
     const cancelled = controller.signal.aborted;
     say(cancelled ? "Cancelled." : "Failed: " + (e.message || e));
@@ -446,42 +368,8 @@ export function boot() {
   renderInfo(null);
   $("wb-go").onclick = () => run();
   $("wb-cancel").onclick = () => controller?.abort();
-  $("g-menu").onclick = () => openMenu($("g-esc").hidden);
-  $("g-resume").onclick = () => openMenu(false);
-  $("g-leave").onclick = () => ($("g-confirm").hidden = false);
-  $("g-confirm-cancel").onclick = () => ($("g-confirm").hidden = true);
-  $("g-confirm-leave").onclick = () => leaveGame("Leave");
-  $("g-chat-btn").onclick = () => togglePanel($("g-chat-btn"), $("g-chat"));
-  $("g-plist-btn").onclick = () => togglePanel($("g-plist-btn"), $("g-plist"));
-  $("g-chat-input").onfocus = () => $("g-chat").classList.add("g-focus");
-  $("g-chat-input").onblur = () => $("g-chat").classList.remove("g-focus");
-  $("g-chat-form").onsubmit = async (ev) => {
-    ev.preventDefault();
-    const input = $("g-chat-input");
-    try {
-      await chat.send(input.value, { self: hud.info?.user.displayName || hud.info?.user.name || "You" });
-      input.value = "";
-    } catch (e) {
-      chatLog.system(e.message || String(e));
-    }
-  };
-  addEventListener("keydown", (e) => {
-    if (!inGame() || $("g-hud").hidden) return;
-    const typing = e.target instanceof HTMLInputElement;
-    if (e.key === "Escape") {
-      if (!$("g-confirm").hidden) $("g-confirm").hidden = true;
-      else openMenu($("g-esc").hidden);
-    } else if (e.key === "/" && !typing && !$("g-chat-input").disabled) {
-      e.preventDefault();
-      $("g-chat").hidden = false;
-      $("g-chat-btn").setAttribute("aria-pressed", "true");
-      $("g-chat-input").focus();
-    } else if (e.key === "Tab" && !typing) {
-      e.preventDefault();
-      togglePanel($("g-plist-btn"), $("g-plist"));
-    }
-  });
-  renderChat([]);
+  // Until the real CoreGui menu runs, Escape is the only way out of the game view.
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && inGame()) leaveGame("Leave"); });
   syncSessionUi();
   $("wb-copy").onclick = () => navigator.clipboard?.writeText($("wb-log").textContent).catch(() => {});
   $("wb-export").onclick = () =>

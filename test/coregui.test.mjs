@@ -175,6 +175,7 @@ test("download errors surface per patch instead of throwing", async () => {
 });
 
 test("coreGuiLines handles loading and error states", () => {
-  assert.equal(coreGuiLines(null, { progress: "Parsing…" })[1].t, "Parsing…");
-  assert.equal(coreGuiLines(null, { error: "boom" })[1].bad, true);
+  assert.equal(coreGuiLines(null, { progress: "Parsing…" })[0].t, "Parsing…");
+  assert.equal(coreGuiLines(null, { error: "boom" })[0].bad, true);
+  assert.equal(coreGuiLines(null, {}).length, 1);
 });

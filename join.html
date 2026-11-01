@@ -52,71 +52,10 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 #g-layer{position:fixed;inset:0;z-index:50;background:#000}
 #g-layer[hidden]{display:none!important}
 #canvas{cursor:default}
-#g-hud{position:fixed;inset:0;pointer-events:none;font:14px/1.4 "Builder Sans","Gotham SSm",Montserrat,system-ui,sans-serif;color:#fff}
-#g-hud>*{pointer-events:auto}
-#g-hud[hidden]{display:none!important}
-.g-tb{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));display:flex;gap:8px;z-index:2}
-#g-tb-left{left:calc(10px + env(safe-area-inset-left,0px))}
-#g-tb-right{right:calc(10px + env(safe-area-inset-right,0px))}
-.g-btn{width:44px;height:44px;padding:0;border-radius:22px;border:0;background:rgba(25,27,29,.75);color:#fff;display:grid;place-items:center;cursor:pointer}
-.g-btn:hover{background:rgba(60,63,66,.85)}
-.g-btn[aria-pressed=true]{background:rgba(255,255,255,.9);color:#000}
-.g-btn svg{width:22px;height:22px;fill:currentColor}
-#g-chat{position:fixed;left:calc(10px + env(safe-area-inset-left,0px));top:calc(64px + env(safe-area-inset-top,0px));width:min(340px,calc(100vw - 20px));display:flex;flex-direction:column;border-radius:8px;overflow:hidden;z-index:1}
-#g-chat-log{height:150px;overflow:hidden auto;padding:6px 8px;background:rgba(0,0,0,.45);font-size:15px;scrollbar-width:thin}
-#g-chat.g-focus #g-chat-log{background:rgba(0,0,0,.6)}
-.g-line{overflow-wrap:anywhere;text-shadow:0 1px 2px #000;padding:1px 0}
-.g-line.g-sys{color:#ddd}
-.g-who{font-weight:700}
-#g-chat-form{display:flex;background:rgba(25,27,29,.7);border-top:1px solid rgba(255,255,255,.12)}
-#g-chat-input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font:inherit;padding:9px 10px;width:auto}
-#g-chat-input::placeholder{color:#aaa}
-#g-chat-input:disabled{cursor:not-allowed}
-#g-plist{position:fixed;right:calc(10px + env(safe-area-inset-right,0px));top:calc(64px + env(safe-area-inset-top,0px));width:min(260px,calc(100vw - 20px));max-height:60vh;overflow:auto;background:rgba(0,0,0,.45);border-radius:8px;z-index:1}
-#g-plist header{padding:8px 10px;font-weight:700;border-bottom:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between}
-.g-row{display:flex;gap:8px;align-items:center;padding:6px 10px}
-.g-row.g-you{background:rgba(255,255,255,.12)}
-.g-row img,.g-row .g-ph{width:28px;height:28px;border-radius:50%;background:#333;flex:none;object-fit:cover}
-.g-row .g-n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#g-esc{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.6);display:grid;place-items:center;padding:12px;pointer-events:auto}
-#g-esc[hidden],#g-confirm[hidden]{display:none!important}
-#g-esc .g-sheet{width:min(720px,100%);height:min(460px,100%);background:#232527;border-radius:12px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.6)}
-#g-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.12)}
-#g-tabs button{flex:1;padding:14px 8px;background:transparent;color:#bdbebe;font-weight:700;border:0;border-bottom:3px solid transparent;border-radius:0}
-#g-tabs button[aria-selected=true]{color:#fff;border-bottom-color:#fff}
-#g-tabbody{padding:16px;overflow:auto}
-#g-tabbody p{margin:0 0 8px}
-.g-foot{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,.12)}
-.g-act{flex:1;padding:12px 8px;border-radius:8px;background:#393b3d;font-weight:700;border:0;color:#fff}
-.g-act:hover:not(:disabled){background:#4b4e50}
-.g-act.g-pri{background:#fff;color:#000}
-.g-kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0 0 14px}
-.g-kv dt{color:#bdbebe}.g-kv dd{margin:0;overflow-wrap:anywhere}
-#g-confirm{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.65);pointer-events:auto}
-#g-confirm .g-box{width:min(380px,100%);background:#232527;border-radius:12px;padding:20px;display:grid;gap:12px}
-#g-confirm h2{margin:0;font-size:20px;color:#fff;text-transform:none;letter-spacing:0}
-#g-confirm p{margin:0;color:#bdbebe}
-#g-confirm .g-two{display:flex;gap:8px}
 </style></head><body>
 
 <div id="g-layer" hidden>
 <canvas id="canvas" class="emscripten fullscreencanvas" tabindex="-1" aria-label="Game view (3D renderer not connected; showing loaded CoreGui data)"></canvas>
-<div id="g-hud" hidden>
-<div class="g-tb" id="g-tb-left">
-<button class="g-btn" id="g-menu" type="button" aria-label="Roblox menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.6 2.4 2.4 18.4l16 3.2 3.2-16-16-3.2Zm7.3 7.1 3.4.7-.7 3.4-3.4-.7.7-3.4Z"/></svg></button>
-<button class="g-btn" id="g-chat-btn" type="button" aria-label="Chat" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg></button>
-</div>
-<div class="g-tb" id="g-tb-right"><button class="g-btn" id="g-plist-btn" type="button" aria-label="Player list" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M1 21c0-4 3.6-7 8-7s8 3 8 7H1Zm16-9a3.500 3.500 0 1 0-1.500-6.700A6 6 0 0 1 16 11a6 6 0 0 1-.4 2.200c.5.300 1 .500 1.400.500ZM18 14c3 .5 5 2.700 5 5.500V21h-4c0-2.500-.8-4.600-2.200-6.200.4-.4.8-.6 1.200-.8Z"/></svg></button></div>
-<section id="g-chat" aria-label="Chat"><div id="g-chat-log" role="log" aria-live="polite"></div>
-<form id="g-chat-form" autocomplete="off"><input id="g-chat-input" type="text" maxlength="200" aria-label="Chat message" placeholder="To chat click here or press / key" disabled></form></section>
-<aside id="g-plist" aria-label="Players"><header><span>Players</span><span id="g-pcount"></span></header><div id="g-prows"></div></aside>
-<div id="g-esc" hidden role="dialog" aria-modal="true" aria-label="Menu"><div class="g-sheet">
-<nav id="g-tabs" role="tablist"></nav><div id="g-tabbody"></div>
-<div class="g-foot"><button class="g-act g-pri" id="g-leave" type="button">Leave</button><button class="g-act" id="g-reset" type="button" disabled title="Needs the game connection">Reset Character</button><button class="g-act" id="g-resume" type="button">Resume</button></div>
-</div></div>
-<div id="g-confirm" hidden role="alertdialog" aria-modal="true" aria-label="Leave game"><div class="g-box"><h2>Leave game?</h2><p>You will be disconnected from this server.</p>
-<div class="g-two"><button class="g-act g-pri" id="g-confirm-leave" type="button">Leave</button><button class="g-act" id="g-confirm-cancel" type="button">Cancel</button></div></div></div>
-</div>
 <div id="loading-overlay" hidden role="dialog" aria-label="Loading Roblox" aria-busy="true"><div class="loading-background" aria-hidden="true"><img id="loading-background-image" alt="" crossorigin="anonymous"/></div><div class="loading-dark-gradient" aria-hidden="true"></div><section class="loading-info-card" aria-labelledby="loading-experience-title"><div id="loading-icon-shell" aria-hidden="true"><img id="loading-experience-icon" alt="" crossorigin="anonymous"/></div><h1 id="loading-experience-title">Joining experience</h1><div class="loading-creator-line"><span id="loading-experience-creator" hidden=""></span><span id="loading-verified-badge" role="img" aria-label="Verified creator" title="Verified creator" hidden=""></span></div></section><section class="loading-error-panel" role="alertdialog" aria-modal="true" aria-labelledby="loading-error-title" aria-describedby="loading-error-message loading-error-code" hidden=""><header class="loading-error-header"><h1 id="loading-error-title">Join Error</h1></header><div class="loading-error-divider" aria-hidden="true"></div><div class="loading-error-body"><div class="loading-error-copy"><p id="loading-error-message"></p><p id="loading-error-code"></p></div><button id="loading-error-leave" type="button">Leave</button></div></section><div id="status" role="status" aria-live="polite">Preparing Roblox…</div><div class="loading-status-spinner" aria-hidden="true"></div><button id="loading-cancel" type="button" aria-label="Cancel loading" title="Cancel"></button></div>
 </div>
 <main>
