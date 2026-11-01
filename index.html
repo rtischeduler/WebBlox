@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WebBlox</title>
 <script>
-// On-screen console for mobile. Captures host console + errors, and the proxied page's console (via main.mjs ->
-// __wbConsole.frame). Lives on <html>, so swapping out <body> doesn't remove it. Text is selectable for copying.
 (() => {
   if (window.__wbConsole) return;
   const MAX = 3000, DOM_MAX = 1500, CAP = 4000;
@@ -158,7 +156,6 @@
   };
   const start = () => {
     mount();
-    // if the page swaps out its DOM and takes our host with it, put it back
     new MutationObserver(() => { if (ui && !ui.host.isConnected) document.documentElement.appendChild(ui.host); }).observe(document.documentElement, { childList: true });
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
@@ -173,15 +170,11 @@
 })();
 </script>
 <script>
-// Cross-origin isolation (needed for the Roblox client's SharedArrayBuffer/pthreads). If the host already sends
-// COOP/COEP this does nothing; on hosts that can't (GitHub Pages) a same-origin service worker adds them and the
-// page reloads once. Only runs as a top-level page: an embedding page has to send the headers itself.
 (() => {
   const KEY = "webblox_coi_reloads";
-  if (window.crossOriginIsolated) { try { sessionStorage.removeItem(KEY); } catch {} return; }
-  if (window !== window.top) return;
-  if (!window.isSecureContext || !("serviceWorker" in navigator)) return console.warn("[webblox] cannot enable cross-origin isolation here (needs HTTPS + service workers)");
-  const swUrl = new URL("coi-sw.js", document.baseURI).href;
+  const HOST = String(window.WEBBLOX_HOST || "https://rtischeduler.github.io/WebBlox/").replace(/\/?$/, "/");
+  const forever = () => new Promise(() => {});
+  const result = (ok, reason) => ({ ok, reason: reason || "" });
   const tries = () => { try { return +sessionStorage.getItem(KEY) || 0; } catch { return 99; } };
   const bump = () => { try { sessionStorage.setItem(KEY, String(tries() + 1)); } catch {} };
   const diagnose = async () => {
@@ -196,34 +189,35 @@
         hasOpener: !!window.opener, framed: window !== window.top, href: location.href }));
     } catch (e) { console.warn("[webblox] diagnostics failed", e); }
   };
-  const reloadOnce = (why) => {
-    if (tries() >= 3 && /; wv\)/.test(navigator.userAgent)) {
-      console.error("[webblox] this is an Android WebView (an in-app browser), which does not support cross-origin isolation. Open " + location.origin + location.pathname + " in the real Chrome app instead.");
-      const el = document.getElementById("wb-status"); if (el) el.textContent = "In-app browser detected: open this page in the Chrome app (WebViews can't run Roblox's threaded wasm).";
-      return;
+  window.__wbIsolation = (async () => {
+    if (window.crossOriginIsolated) { try { sessionStorage.removeItem(KEY); } catch {} return result(true); }
+    const target = HOST + location.search + location.hash;
+    if (!/^https?:$/.test(location.protocol) || location.origin === "null") {
+      console.warn("[webblox] no real origin here (" + location.protocol + "), moving to " + HOST);
+      try { if (window === window.top) { location.replace(target); return forever(); } window.top.location.replace(target); return forever(); } catch {}
+      return result(false, "opaque-origin-framed");
     }
-    if (tries() >= 3) diagnose();
-    if (tries() >= 3) return console.error("[webblox] still not cross-origin isolated after " + tries() + " reloads (" + why + "); is coi-sw.js served next to index.html? Try a normal (non-hard) refresh or clear site data.");
-    bump(); location.reload();
-  };
-  (async () => {
+    if (window !== window.top) return result(false, "framed");
+    if (!window.isSecureContext || !("serviceWorker" in navigator)) { console.warn("[webblox] cannot enable cross-origin isolation here (needs HTTPS + service workers)"); return result(false, "no-service-worker"); }
+    const coep = "credentialless" in HTMLIFrameElement.prototype ? "credentialless" : "require-corp";
+    const swUrl = new URL("coi-sw.js?coep=" + coep, document.baseURI).href;
     try {
       const probe = await fetch(swUrl, { cache: "no-store" });
-      if (!probe.ok) return console.error("[webblox] coi-sw.js not reachable: HTTP " + probe.status + " at " + swUrl);
-      // Drop stale registrations that cover this page but aren't ours (they would shadow the isolation worker).
+      if (!probe.ok) { console.error("[webblox] coi-sw.js not reachable: HTTP " + probe.status + " at " + swUrl); return result(false, "no-service-worker"); }
       for (const r of await navigator.serviceWorker.getRegistrations()) {
         const u = (r.active || r.waiting || r.installing || {}).scriptURL;
         if (u && u !== swUrl && location.href.startsWith(r.scope)) { console.warn("[webblox] removing conflicting service worker", u); await r.unregister(); }
       }
-      const reg = await navigator.serviceWorker.register(swUrl, { updateViaCache: "none" });
+      await navigator.serviceWorker.register(swUrl, { updateViaCache: "none" });
       await navigator.serviceWorker.ready;
       if (!navigator.serviceWorker.controller) {
-        // Page was loaded without the worker (first visit / hard refresh): wait for it to take control, then reload.
         await new Promise((res) => { navigator.serviceWorker.addEventListener("controllerchange", res, { once: true }); setTimeout(res, 1500); });
       }
-      if (window.crossOriginIsolated) return;
-      reloadOnce(navigator.serviceWorker.controller ? "worker active but headers missing, scope " + reg.scope : "worker not controlling page");
-    } catch (e) { console.warn("[webblox] isolation worker failed", e); }
+      if (window.crossOriginIsolated) return result(true);
+      if (tries() < 3) { bump(); location.reload(); return forever(); }
+      await diagnose();
+      return result(false, "no-isolation-after-reload");
+    } catch (e) { console.warn("[webblox] isolation worker failed", e); return result(false, "no-service-worker"); }
   })();
 })();
 </script>
@@ -245,7 +239,6 @@
     try { const r = await fetch(u, { cache: "no-store", signal: c.signal }); if (!r.ok) throw 0; return await r[type](); }
     finally { clearTimeout(k); }
   };
-  // Latest commit sha from the GitHub API, so jsdelivr serves an exact, uncached-stale revision.
   const sha = (repo) => get("https://api.github.com/repos/" + repo + "/commits/main", 3500, "json")
     .then((d) => (d && /^[0-9a-f]{40}$/i.test(d.sha) ? d.sha : "")).catch(() => "");
   const bases = async (repo) => {
