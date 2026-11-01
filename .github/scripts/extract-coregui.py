@@ -78,6 +78,21 @@ def unpack(raw, cl, ul):
     return lz4_block(raw, ul)
 
 PTYPES = {}
+_USED = set()
+def safe(path, guid=""):
+    parts = [re.sub(r"[^\w.-]", "_", x)[:100] or "_" for x in path.split("/")]
+    parts = [("_" + x) if x in (".", "..") else x for x in parts]
+    out = "/".join(parts)
+    if out in _USED and guid: out += "~" + re.sub(r"\W", "", guid)[:8]
+    _USED.add(out); return out
+
+def put(base, path, guid, data, ext):
+    try:
+        f = os.path.join(base, safe(path, guid) + ext); os.makedirs(os.path.dirname(f), exist_ok=True)
+        open(f, "wb").write(data); return True
+    except Exception as ex:
+        FAILS.append(repr(ex)[:100]); return False
+FAILS = []
 
 # ---------- rbxm ----------
 MAGIC = b"<roblox!\x89\xff\r\n\x1a\n"
@@ -181,7 +196,7 @@ def is_bytecode(b): return not b or b[0] < 9 or (b[0] < 32 and b[0] not in (9, 1
 
 CFG = {}
 
-def main():
+def _main():
     base = next(open(f).read().strip() for f in ("Client/engine-base.txt", "engine/engine-base.txt") if os.path.exists(f))
     log("engine base", base)
     tree = []
@@ -206,8 +221,7 @@ def main():
                 try: e["source"] = zstd_block(e["source"], 1 << 26)
                 except Exception: pass
             isb = is_bytecode(e["source"]); bc += isb; n += 1
-            f = os.path.join(SRC, re.sub(r"[^\w./-]", "_", e["path"]) + (".luauc" if isb else ".luau"))
-            os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
+            put(SRC, e["path"], e["guid"], e["source"], ".luauc" if isb else ".luau")
             rows.append(f"{e['class']}\t{len(e['source'])}\t{'bytecode' if isb else 'source'}\t{e['path']}")
     open(os.path.join(OUT, "scripts.tsv"), "w").write("\n".join(rows) + "\n")
     # structure: everything within 4 levels, plus every script path
@@ -252,13 +266,21 @@ def main():
                 if MAGIC[:8] in d[:64]:
                     PTYPES.clear(); items = parse_rbxm(d); src = [e for e in items if e["source"] is not None]
                     log("   parsed", nm, "instances", len(items), "with Source", len(src), "props", {c: sorted(v) for c, v in PTYPES.items() if c.endswith("Script")})
-                    for e in src:
-                        f = os.path.join("/tmp/cg-online", nm, re.sub(r"[^\w./-]", "_", e["path"]) + ".luau"); os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
+                    _USED.clear()
+                    for e in src: put(os.path.join("/tmp/cg-online", nm), e["path"], e["guid"], e["source"], ".luau")
                     break
             except urllib.error.HTTPError as ex: log("online", nm, u, "HTTP", ex.code, ex.read()[:160])
             except Exception as ex: log("online", nm, u, "failed", repr(ex)[:140])
     if os.path.isdir("/tmp/cg-online"):
         for nm in os.listdir("/tmp/cg-online"): shutil.make_archive(os.path.join(OUT, "src-online-" + nm), "gztar", os.path.join("/tmp/cg-online", nm)); log("archived online", nm)
     open(os.path.join(OUT, "report.txt"), "w").write("\n".join(REPORT) + "\n")
+
+def main():
+    try: _main()
+    except Exception:
+        import traceback; log("FATAL", traceback.format_exc()[-1500:])
+    finally:
+        log("write failures", len(FAILS), FAILS[:3])
+        open(os.path.join(OUT, "report.txt"), "w").write("\n".join(REPORT) + "\n")
 
 if __name__ == "__main__": main()
