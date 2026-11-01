@@ -51,3 +51,7 @@ Pressing Join opens a full-screen game layer over the launcher: the real Roblox 
 - Leave closes the game transport the way the engine does (`Transport.leave()`).
 
 Modules: `loading.mjs`, `hud.mjs`, `session.mjs`, `chat.mjs`. Tests: `node --test test/loading.test.mjs test/hud.test.mjs test/session.test.mjs`.
+
+## CoreGui loader (`src/join/coregui/`)
+On Join, `join.html` fetches the latest real CoreGui patch through the proxy (client-version -> OTA patch config -> assetdelivery -> rbxm), parses it in the browser, caches it per version in IndexedDB and draws what it found on the game canvas. The CoreGui scripts are Luau bytecode, so the UI itself is not rendered yet; see `docs/coregui-notes.md` for what is done and what is missing.
+Test: `node --test test/coregui.test.mjs`.

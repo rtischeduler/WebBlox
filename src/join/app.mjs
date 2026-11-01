@@ -8,6 +8,7 @@ import { LoadingScreen } from "./loading.mjs";
 import { nameColor, flattenPlayers, MENU_TABS } from "./hud.mjs";
 import { Session } from "./session.mjs";
 import { downloadText } from "../download.mjs";
+import { startCoreGui } from "./coregui/index.mjs";
 import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
 
 const $ = (id) => document.getElementById(id);
@@ -363,6 +364,7 @@ async function run() {
   try {
     setStep("proxy", "run");
     proxy ||= await createProxy({ getCookie: () => readHostCookie() || store.get("wb.cookie"), log, say });
+    startCoreGui({ proxy, canvas: $("canvas"), log }); // non-blocking: latest real CoreGui patch -> canvas
     setStep("proxy", "ok", proxy.wisp.replace(/^wss:\/\//, "").replace(/\/$/, ""));
     loading.request = proxy.request;
     loading.loadExperience(placeId).catch(() => {});

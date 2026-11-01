@@ -17,3 +17,21 @@ and every script `Source` to `analysis/coregui/` (`report.txt` says what was fou
 load that tree and drive the HUD from it instead of the hand-written HTML/CSS in `src/`, which later also lets it
 render real GUIs replicated from joined games.
 Unknown until the first run: whether the patch needs auth, and whether `Source` is plain Luau or bytecode.
+
+## Status: loader in the browser (src/join/coregui/)
+
+First `extract-coregui` run answered the unknowns: the patch needs no auth to list, and every `Source` is **Luau bytecode**
+(8-byte header, version, types version, varint string count, strings). There are no GUI instances in the patch
+(34,225 ModuleScripts, 2,731 Folders, 6 StringValues, 2 LocalizationTables): the UI is React-Lua built at runtime.
+
+What join.html now does on Join (non-blocking, through the same proxy as everything else):
+1. `clientsettings.roblox.com/v2/client-version/WebClientApp` -> latest engine base (falls back to `engine/engine-base.txt`, and says so).
+2. Reads `InExperiencePatchConfig` / `UniversalAppPatchConfig` from that base -> `AssetId` + `AssetVersion`.
+3. `assetdelivery.roblox.com/v2/assetId/<id>/version/<v>` -> signed URL -> downloads the rbxm (cached in IndexedDB per id@version, newest only).
+4. `rbxm.mjs` parses it (zstd via fzstd), `luau.mjs` reads each module's string table, `loader.mjs` indexes paths, modules, localization.
+5. `canvas.mjs` draws the real patch identity, module counts and strings found in Chat / PlayerList / TopBar / menu modules onto the canvas. `window.webblox.coregui` exposes `get`, `list`, `modulesMatching`, `uiText`, `summary`.
+
+**Not done:** actually rendering the real CoreGui. That needs a Luau VM that runs this bytecode (bytecode version 6-13 as seen in the patches)
+plus the engine's GUI classes (ScreenGui, Frame, TextLabel, UIListLayout, ...) and services (Players, GuiService, TextChatService, ...) bound to a 2D canvas.
+The data side is ready for it; the VM and the GUI class layer are the remaining work.
+Unverified from the author's sandbox: the live fetch (the sandbox cannot reach roblox.com). The parser is covered by tests on synthetic models and on the checked-in bytecode samples.
