@@ -61,7 +61,7 @@ def decode29(b, n):
     for how, fn in (("seq", lambda: seq(b, n, 0)), ("seq+1", lambda: seq(b, n, 1)), ("blk", lambda: blk(b, n))):
         try: o = fn()
         except Exception: o = None
-        if o is not None and all(_plausible(v) for v in o[:50]): o.how = how; return o
+        if o is not None and (how == "seq" or all(_plausible(v) for v in o[:50])): o.how = how; return o
     return None
 
 def zstd_block(raw, size):
@@ -192,7 +192,25 @@ PATHS = ["/ExtraContent/models/InExperience/InExperience.rbxm",
          "/ExtraContent/scripts/CoreScripts/Modules/InspectAndBuy/service-descriptor.yml",
          "/ExtraContent/scripts/CoreScripts/Modules/EmotesMenu/service-descriptor.yml"]
 
-def is_bytecode(b): return not b or b[0] < 9 or (b[0] < 32 and b[0] not in (9, 10, 13))
+def is_bytecode(b):
+    t = b[:200]
+    return not (t and sum(32 <= x < 127 or x in (9, 10, 13) for x in t) > 0.95 * len(t))
+
+def stats(tag, items, samples=False):
+    import collections
+    ms = [e for e in items if e["source"]]
+    if not ms: log("stats", tag, "no sources"); return
+    L = sorted(len(e["source"]) for e in ms)
+    log("stats", tag, "scripts", len(ms), "len min/med/max", L[0], L[len(L) // 2], L[-1])
+    log("   first8", collections.Counter(e["source"][:8].hex() for e in ms).most_common(3))
+    log("   byte8", collections.Counter(e["source"][8] for e in ms if len(e["source"]) > 8).most_common(8))
+    log("   byte9,10", collections.Counter(e["source"][9:11].hex() for e in ms if len(e["source"]) > 10).most_common(6))
+    if samples:
+        os.makedirs(os.path.join(OUT, "samples"), exist_ok=True); rows = []
+        pick = sorted(ms, key=lambda e: len(e["source"]))
+        for i, e in enumerate(pick[:3] + pick[len(pick) // 2:len(pick) // 2 + 2] + pick[-1:]):
+            fn = f"{i}.bin"; open(os.path.join(OUT, "samples", fn), "wb").write(e["source"]); rows.append(f"{fn}\t{len(e['source'])}\t{e['path']}")
+        open(os.path.join(OUT, "samples", "index.tsv"), "w").write("\n".join(rows) + "\n")
 
 CFG = {}
 
@@ -221,12 +239,13 @@ def _main():
                 try: e["source"] = zstd_block(e["source"], 1 << 26)
                 except Exception: pass
             isb = is_bytecode(e["source"]); bc += isb; n += 1
-            put(SRC, e["path"], e["guid"], e["source"], ".luauc" if isb else ".luau")
+            pass  # sources are archived from the online copy only
             rows.append(f"{e['class']}\t{len(e['source'])}\t{'bytecode' if isb else 'source'}\t{e['path']}")
     open(os.path.join(OUT, "scripts.tsv"), "w").write("\n".join(rows) + "\n")
     # structure: everything within 4 levels, plus every script path
     json.dump([{k: v for k, v in e.items() if k != "source"} for e in tree if e["path"].count("/") < 4 or e["source"] is not None],
               open(os.path.join(OUT, "tree.json"), "w"), indent=0)
+    stats("baked", tree, samples=True)
     mods = [e for e in tree if e["class"] == "ModuleScript"]
     open(os.path.join(OUT, "linked.tsv"), "w").write("\n".join(f"{e['guid']}\t{e['link']}\t{e['path']}" for e in mods) + "\n")
     pre = collections.Counter(re.sub(r"[A-Za-z0-9_./-]{12,}.*", "...", e["link"])[:40] for e in mods)
@@ -248,7 +267,6 @@ def _main():
     log("instances", len(tree), "classes", len(cc), "scripts with Source", n, "bytecode", bc)
     log("top classes", cc.most_common(12))
     import shutil
-    if os.listdir(SRC): shutil.make_archive(os.path.join(OUT, "src-InExperience"), "gztar", SRC); log("archived baked sources")
     json.dump(PTYPES, open(os.path.join(OUT, "prop-types.json"), "w"), indent=0)
     log("ModuleScript props+types", PTYPES.get("ModuleScript"))
     for pth, nm in (("/content/configs/InExperiencePatchConfig/InExperiencePatchConfig.json", "InExperience"),
@@ -265,9 +283,10 @@ def _main():
                     d = get(loc); log("   downloaded", len(d), d[:16])
                 if MAGIC[:8] in d[:64]:
                     PTYPES.clear(); items = parse_rbxm(d); src = [e for e in items if e["source"] is not None]
-                    log("   parsed", nm, "instances", len(items), "with Source", len(src), "props", {c: sorted(v) for c, v in PTYPES.items() if c.endswith("Script")})
+                    stats("online-" + nm, items); log("   parsed", nm, "instances", len(items), "with Source", len(src), "props", {c: sorted(v) for c, v in PTYPES.items() if c.endswith("Script")})
                     _USED.clear()
-                    for e in src: put(os.path.join("/tmp/cg-online", nm), e["path"], e["guid"], e["source"], ".luau")
+                    if nm == "InExperience":
+                        for e in src: put(os.path.join("/tmp/cg-online", nm), e["path"], e["guid"], e["source"], ".luauc" if is_bytecode(e["source"]) else ".luau")
                     break
             except urllib.error.HTTPError as ex: log("online", nm, u, "HTTP", ex.code, ex.read()[:160])
             except Exception as ex: log("online", nm, u, "failed", repr(ex)[:140])
