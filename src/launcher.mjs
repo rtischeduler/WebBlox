@@ -17,8 +17,8 @@ addEventListener("unhandledrejection", (e) => log("[reject]", e.reason));
 
 const DIST = "dist/sandstone.mjs";
 const BASES = ["https://cdn.jsdelivr.net/gh/lotsacookie/Singuloxy@main/", "https://fastly.jsdelivr.net/gh/lotsacookie/Singuloxy@main/"];
-async function loadSandstone() {
-  for (const b of BASES) { try { return await import(b + DIST); } catch { log("[launcher] sandstone import failed", b); } }
+async function loadSandstone(bases = BASES) {
+  for (const b of bases) { try { return await import(b + DIST); } catch { log("[launcher] sandstone import failed", b); } }
   const code = await (await fetch("https://raw.githubusercontent.com/lotsacookie/Singuloxy/main/" + DIST)).text();
   return import(URL.createObjectURL(new Blob([code], { type: "text/javascript" })));
 }
@@ -117,7 +117,7 @@ function patchNetwork(libcurl, getCookie, getWisp, cdnBase) {
   window.XMLHttpRequest = FetchXHR;
 }
 
-async function start() {
+async function start(opts = {}) {
   const cookie = $("wb-cookie").value.trim() || localStorage.getItem("wb.cookie") || "";
   const place = Number($("wb-place").value) || 0;
   if (!cookie) { say("Paste your .ROBLOSECURITY cookie first."); return; }
@@ -125,11 +125,11 @@ async function start() {
   localStorage.setItem("wb.cookie", cookie); localStorage.setItem("wb.place", String(place));
   $("wb-form").hidden = true;
   say("Loading proxy…");
-  const sandstone = await loadSandstone();
+  const sandstone = await loadSandstone(opts.sandstoneBases || BASES);
   provisionalWisp(sandstone.network);
   for (let i = 0; i < 300 && !sandstone.libcurl.ready; i++) await new Promise((r) => setTimeout(r, 100));
   if (!sandstone.libcurl.ready) throw new Error("libcurl did not load");
-  const wisp = await pickWisp(sandstone.network, say);
+  const wisp = await pickWisp(sandstone.network, say, { kstuffBases: opts.kstuffBases, storageBases: opts.storageBases });
   log("[launcher] wisp", wisp);
   const cdnBase = (await (await fetch("engine/engine-base.txt")).text()).trim().replace(/\/?$/, "/");
   patchNetwork(sandstone.libcurl, () => localStorage.getItem("wb.cookie") || cookie, () => wisp, cdnBase);
@@ -147,12 +147,12 @@ async function start() {
   document.body.appendChild(s);
 }
 
-export async function boot() {
+export async function boot(opts = {}) {
   $("wb-place").value = new URLSearchParams(location.search).get("placeId") || localStorage.getItem("wb.place") || "";
   const iso = await ensureIsolation();
   if (!iso.ok && !new URLSearchParams(location.search).has("force")) { say(explainIsolation(iso.reason, navigator.userAgent) + " (?force=1 tries anyway)"); return; }
   say("Ready. crossOriginIsolated=" + self.crossOriginIsolated);
   $("wb-go").disabled = false;
-  $("wb-go").onclick = () => start().catch((e) => { say("Failed: " + (e.message || e)); log("[launcher]", e); $("wb-form").hidden = false; });
+  $("wb-go").onclick = () => start(opts).catch((e) => { say("Failed: " + (e.message || e)); log("[launcher]", e); $("wb-form").hidden = false; });
   $("wb-copy").onclick = () => navigator.clipboard?.writeText(logEl().textContent).catch(() => {});
 }

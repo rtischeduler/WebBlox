@@ -90,5 +90,44 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 <div class="actions"><button id="wb-copy">Copy log</button><button id="wb-export">Download capture</button></div>
 </section>
 </main>
-<script type="module">import { boot } from "./src/join/app.mjs"; boot();</script>
+<script type="module">
+const HEX = /^[0-9a-f]{40}$/i;
+const TTL = 60000;
+const read = (repo) => { try { const o = JSON.parse(localStorage.getItem("wb.sha." + repo) || "null"); return o && HEX.test(o.sha) ? o : null; } catch { return null; } };
+const write = (repo, o) => { try { localStorage.setItem("wb.sha." + repo, JSON.stringify(o)); } catch {} };
+const ghHeaders = () => {
+  const h = { Accept: "application/vnd.github+json" };
+  try { const t = localStorage.getItem("wb.ghtoken"); if (t) h.Authorization = "Bearer " + t; } catch {}
+  return h;
+};
+const latest = async (repo) => {
+  const c = read(repo), now = Date.now();
+  if (c && (now - c.at < TTL || now < (c.until || 0))) return c.sha;
+  const ctrl = new AbortController(), k = setTimeout(() => ctrl.abort(), 4000);
+  try {
+    const r = await fetch("https://api.github.com/repos/" + repo + "/commits/main", { headers: ghHeaders(), signal: ctrl.signal, cache: "no-store" });
+    if (r.ok) {
+      const d = await r.json();
+      if (d && HEX.test(d.sha)) { write(repo, { sha: d.sha, at: Date.now() }); return d.sha; }
+    } else if (c && (r.status === 403 || r.status === 429)) {
+      const reset = Number(r.headers.get("x-ratelimit-reset")) * 1000;
+      write(repo, { sha: c.sha, at: c.at, until: reset > now ? reset : now + 600000 });
+    }
+  } catch {} finally { clearTimeout(k); }
+  return c ? c.sha : "";
+};
+const bases = async (repo) => {
+  const s = await latest(repo);
+  return [s && "https://cdn.jsdelivr.net/gh/" + repo + "@" + s + "/", ...["cdn", "fastly", "gcore"].map((h) => "https://" + h + ".jsdelivr.net/gh/" + repo + "@main/")].filter(Boolean);
+};
+const say = (t) => { const s = document.getElementById("wb-status"); if (s) s.textContent = t; };
+(async () => {
+  say("Checking for updates…");
+  const [own, sand, kst, stor] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff"), bases("TongSherbet/storage")]);
+  let mod = null, last = null;
+  for (const b of own) { try { mod = await import(b + "src/join/app.mjs"); break; } catch (e) { last = e; } }
+  if (!mod) { try { mod = await import("./src/join/app.mjs"); } catch (e) { throw last || e; } }
+  await mod.boot({ sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
+})().catch((e) => { say("Failed: " + (e && e.message || e)); console.error(e); });
+</script>
 </body></html>
