@@ -1,9 +1,18 @@
 export const HOSTS = /(^|\.)(roblox\.com|rbxcdn\.com|robloxlabs\.com)$/i;
 export const isProxied = (u, base = "https://x.invalid/") => { try { return HOSTS.test(new URL(u, base).hostname); } catch { return false; } };
+export const cleanCookie = (c) => {
+  let v = String(c || "").trim().replace(/^cookie:\s*/i, "").replace(/^["']|["']$/g, "");
+  const named = v.match(/(?:^|;\s*)\.?ROBLOSECURITY=([^;]*)/i);
+  v = named ? named[1] : v.split(";")[0];
+  v = v.trim().replace(/^["']|["']$/g, "").replace(/\s+/g, "");
+  if (/%[0-9a-f]{2}/i.test(v)) {
+    try { v = decodeURIComponent(v); } catch {}
+  }
+  return v;
+};
 export const cookieHeader = (c) => {
-  c = String(c || "").trim().replace(/^"|"$/g, "");
-  if (!c) return "";
-  return /^\.?ROBLOSECURITY=/i.test(c) ? (c[0] === "." ? c : "." + c) : ".ROBLOSECURITY=" + c;
+  const v = cleanCookie(c);
+  return v ? ".ROBLOSECURITY=" + v : "";
 };
 export const engineName = (u, base) => (u.startsWith(base) ? u.slice(base.length).split(/[?#]/)[0] : null);
 export const hex = (d, n = 16) => {

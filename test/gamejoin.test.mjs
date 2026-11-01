@@ -15,7 +15,7 @@ const reply = (status, body) => ({ status, ok: status >= 200 && status < 300, te
 const base = { placeId: 123, uuid: () => "attempt-1", sleep: async () => {} };
 
 test("buildJoinBody only sends gameId for a specific server", () => {
-  assert.deepEqual(buildJoinBody({ placeId: "5", attemptId: "a" }), { placeId: 5, isTeleport: false, gameJoinAttemptId: "a" });
+  assert.deepEqual(buildJoinBody({ placeId: "5", attemptId: "a" }), { placeId: 5, isTeleport: false, gameJoinAttemptId: "a", isPlayTogetherGame: false });
   assert.equal(buildJoinBody({ placeId: 5, jobId: "job", attemptId: "a" }).gameId, "job");
 });
 
@@ -127,11 +127,11 @@ test("joinGame fetches joinScriptUrl when the script is not inline", async () =>
 test("joinGame reports terminal statuses, HTTP errors and timeouts", async () => {
   await assert.rejects(
     joinGame({ ...base, request: async () => reply(200, { status: 6, message: "Game is full" }) }),
-    (e) => e instanceof JoinError && e.status === 6 && e.message === "Game is full",
+    (e) => e instanceof JoinError && e.status === 6 && e.message === "Game is full (status 6, HTTP 200)",
   );
   await assert.rejects(
     joinGame({ ...base, request: async () => reply(401, { errors: [{ code: 0, message: "Unauthorized" }] }) }),
-    (e) => e instanceof JoinError && e.message === "Unauthorized",
+    (e) => e instanceof JoinError && e.message === "Unauthorized (status none, HTTP 401, code 0)",
   );
   await assert.rejects(
     joinGame({ ...base, request: async () => ({ status: 502, ok: false, text: async () => "<html>" }) }),

@@ -240,7 +240,7 @@ async function run() {
       signal: controller.signal,
       onStatus: (s) => {
         say(`Waiting for a server (status ${s.status}${s.message ? ": " + s.message : ""})`);
-        log("[join] status", s.status, s.message || "", s.queuePosition ?? "");
+        log("[join] status", s.status, s.message || "", s.queuePosition ?? "", JSON.stringify(s.raw));
       },
     });
     const info = describeJoin(result.script);

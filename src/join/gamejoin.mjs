@@ -14,10 +14,12 @@ export class JoinError extends Error {
   }
 }
 
-export const buildJoinBody = ({ placeId, jobId, attemptId, browserTrackerId }) => {
-  const body = { placeId: Number(placeId), isTeleport: false, gameJoinAttemptId: attemptId };
+export const buildJoinBody = ({ placeId, jobId, attemptId, browserTrackerId, joinOrigin, gameJoinContext }) => {
+  const body = { placeId: Number(placeId), isTeleport: false, gameJoinAttemptId: attemptId, isPlayTogetherGame: false };
   if (jobId) body.gameId = jobId;
   if (browserTrackerId) body.browserTrackerId = Number(browserTrackerId);
+  if (joinOrigin) body.joinOrigin = String(joinOrigin);
+  if (gameJoinContext) body.gameJoinContext = String(gameJoinContext);
   return body;
 };
 
@@ -46,6 +48,8 @@ export async function joinGame({
   placeId,
   jobId = "",
   browserTrackerId = "",
+  joinOrigin = "",
+  gameJoinContext = "",
   signal,
   onStatus = () => {},
   sleep = defaultSleep,
@@ -55,7 +59,7 @@ export async function joinGame({
 }) {
   if (!Number.isFinite(Number(placeId)) || Number(placeId) <= 0) throw new JoinError("Invalid place id");
   const url = jobId ? ENDPOINTS.instance : ENDPOINTS.join;
-  const body = JSON.stringify(buildJoinBody({ placeId, jobId, attemptId: uuid(), browserTrackerId }));
+  const body = JSON.stringify(buildJoinBody({ placeId, jobId, attemptId: uuid(), browserTrackerId, joinOrigin, gameJoinContext }));
   const headers = {
     "content-type": "application/json",
     accept: "application/json",
@@ -75,7 +79,7 @@ export async function joinGame({
     }
     const status = data.status;
     const message = data.message || data.statusMessage || data.errors?.[0]?.message || "";
-    onStatus({ poll, status, message, queuePosition: data.queuePosition ?? null, httpStatus: res.status });
+    onStatus({ poll, status, message, queuePosition: data.queuePosition ?? null, httpStatus: res.status, raw: redact(data) });
     if (PENDING.has(status)) {
       await sleep(pollMs);
       continue;
@@ -86,7 +90,9 @@ export async function joinGame({
       if (!script) throw new JoinError("Join succeeded but no join script was returned", { status, data });
       return { jobId: data.jobId || script.GameId || "", status, message, script, raw: data };
     }
-    throw new JoinError(message || `Join failed (status ${status ?? "unknown"}, HTTP ${res.status})`, { status, data });
+    const code = data.errors?.[0]?.code ?? data.code ?? null;
+    const detail = `status ${status ?? "none"}, HTTP ${res.status}${code != null ? ", code " + code : ""}`;
+    throw new JoinError(message ? `${message} (${detail})` : `Join failed (${detail})`, { status, data });
   }
   throw new JoinError("Timed out waiting for a server");
 }
