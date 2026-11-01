@@ -1,0 +1,2711 @@
+f273 score=1160 cone=3 instrs=1170245 calls=['emscripten_asm_const_int', 'environ_sizes_get', 'environ_get', '_emscripten_init_main_thread_js', '_emscripten_thread_mailbox_await', 'f276', 'f278', 'f318', 'f328', 'f349', 'f358', 'f363', 'f369', 'f396', 'f402', 'f407', 'f410', 'f456', 'f463', 'f518', 'f558', 'f559', 'f580', 'f608', 'f618', 'f733', 'f734', 'f742', 'f743', 'f744']
+    str: InGame.ConnectionError.PlacelaunchDisabled
+    str: InGame.ConnectionError.PlacelaunchGameFull
+    str: InGame.ConnectionError.PlacelaunchHashException
+    str: InGame.ConnectionError.PlacelaunchHashExpired
+    str: InGame.ConnectionError.PlacelaunchUserPrivacyUnauthorized
+    str: InGame.ConnectionError.Queue
+    str: InGame.ConnectionError.PlacelaunchOtherError
+    str: RakNetEarlyPublicKey
+    str: RakNetEarlySecretKey
+    str: RakNetEphemeralEarlyPublicKey
+    str: RakNetEphemeralEarlySecretKey
+    str: handleConnectingCall
+    str: handleTransferCallTeleportJoin
+    str: HasReportPendingJoinToLua
+    str: GameJoinWithLaunchData
+    str: JoinCrossExpVoiceWithPartyIdFeature
+    str: ExperienceLaunchAttempt
+    str: (?:(?:https?://\w+\.roblox(?:labs)?\.com/games/start\?)|(?:roblox(?:mobile)?://(?:experiences/start\?)?))(?:(?:(?:(?:id=\d+)|(?:placeid=\d+)|(?:userID=\d+)|(?:launchtime=\d+)|(?:gameInstanceId=(?:\w|\
+    str: joinAttemptId
+    str: PlaceJoinStateEnabled
+    str: ExpChatFOMOUpsellImpressionsCountStorageKey
+    str: PlacelaunchCollaborationCoreGatedConnectionError
+    str: joinGameAttempt
+    str: joinGameSuccessV2
+    str: joinGameSuccess
+    str: JoinGameAttemptEphemeralCounter
+    str: JoinGameSuccessEphemeralCounter
+    str: JoinGameAttemptCounterV2
+    str: JoinGameSuccessCounterV2
+    str: JoinGamePlaceLauncherHttpResponse
+    str: JoinGamePlaceLauncherTimeoutRetry
+    str: JoinGamePlaceLauncherFailureV2
+    str: JoinGameServerTypeTransitionV2
+    str: JoinGamePlaceLauncherDurationV2
+    str: ReactiveJoinPathRouting
+    str: JoinGameSuccessV2POCCounter
+    str: JoinGameSuccessV2POCCounterForRollout
+    str: JoinByUserTakesOptionalPlaceId
+    str: UsingLinkCodeForPrivateServerJoinCounter
+    str: GameJoinUtil-JoinAsh-2
+    str: inExperienceChatEnabled
+    str: ConsoleInExperienceChatExperimentFeature
+    str: NotifyPartyVoiceReconnectRequested
+    str: RemoveObserverPartyVoiceReconnectRequested
+    str: AddObserverPartyVoiceReconnectRequested
+    str: RemoveObserverPartyVoiceGameJoinStarted
+    str: NotifyPartyVoiceGameJoinStarted
+    str: AddObserverPartyVoiceGameJoinStarted
+    str: NotifyPartyVoiceGameJoinSucceeded
+    str: AddObserverPartyVoiceGameJoinSucceeded
+    str: RemoveObserverPartyVoiceGameJoinSucceeded
+    str: NotifyPartyVoiceGameJoinFailed
+    str: RemoveObserverPartyVoiceGameJoinFailed
+    str: AddObserverPartyVoiceGameJoinFailed
+    str: WebLoginProtocolHandleDeepLink
+    str: WebLoginProtocolHandleAuthTicket
+    str: WebLoginProtocolPerformWebLogin
+    str: WebLoginProtocolWebLoginFailed
+    str: WebLoginProtocolWebLoginSucceeded
+    str: WebLoginProtocolLaunchExperience
+    str: BaseUrlProtocolHandleDeepLinkInLinkingHandler
+    str: BaseUrlProtocolNotRestartApp
+    str: PermissionsProtocolAllowsLocalNetworkAuthorization
+    str: CustomAppEntryPointAutoJoin
+    str: RegisterForExperienceJoin
+    str: GetPendingJoinAttempt
+    str: GetPlaceJoinState
+    str: HandleGamepadConnect
+    str: HandleGamepadDisconnect
+    str: AchievementProtocolEnabled
+    str: ConnectivityStatusMonitoring
+    str: ConnectivityV2ReachabilityProbeSummary
+    str: WebviewProtocol
+    str: WebViewProtocolV2
+    str: NativeAdsProtocolInitializeSdkLatencyMs
+    str: NativeAdsProtocolLoadAdLatencyMs
+    str: NativeAdsProtocolLoadAdCounter
+    str: NativeAdsProtocolLoadAdFailureEvent
+    str: NativeAdsProtocolPlatformHangDetectedCounter
+    str: NativeAdsProtocolPlatformHangDetectedEvent
+    str: PcgdkPaymentsProtocolEndpointCounter
+    str: PaymentsProtocolEndpointCounterInitiate
+    str: PaymentsProtocolEndpointCounterSuccess
+    str: PaymentsProtocolEndpointCounterFailure
+    str: PaymentsProtocolEndpointCounterUnknownError
+    str: PaymentsProtocolSubscriptionPurchaseNullCallback
+    str: PaymentsProtocolPerformSubscriptionPurchaseStart
+    str: PaymentsProtocolPerformSubscriptionPurchaseDispatched
+    str: PrefetchProtocolProd
+    str: connectionStatus
+    str: LinkingProtocolGetLastPendingUrlEnabled
+    str: LinkingProtocol
+    str: LinkingProtocolV2Counter
+    str: Connection fell back to legacy networking. Some features may be unavailable.
+    str: ConnectionTransportBranchSelection
+    str: RbxTransportFallbackToRakNetEvent
+    str: RbxTransportFallbackToRakNetStatus
+    str: RakNetFallbackToRbxTransportEvent
+    str: RakNetFallbackToRbxTransportStatus
+    str: RbxTransportUniqueConnectionErrors
+    str: JoinSampleBandwidthMetrics
+    str: JoinSamplePropertyBandwidthMetrics
+    str: InlineNetAssetBytesJoin
+    str: TotalNetAssetBytesJoin
+    str: InlineNetAssetsJoin
+    str: TotalNetAssetJoin
+    str: RakNetTimeToFirstJoinDataPacketArriveMs
+    str: RakNetJoinDataDownloadTimeMs
+    str: RakNetJoinBandwidthMbps
+    str: RakNetNonReTxJoinDataDownloadTimeMs
+    str: RaknetEffectiveInitialBandwidthMbps
+    str: RaknetTotalTimeToLastJoinByte
+    str: ReplicatorGameLoadPercent
+    str: ReplicatorDeserializeTimeUpToGameLoadTagMs
+    str: ReplicatorCalculated
+    str: JoinTicketV2_ParseError
+    str: JoinTicketV2_DecryptError
+    str: JoinTicketV2_SignatureInvalid
+    str: JoinTicketV2_TimestampExpired
+    str: JoinTicketV2_KeyMissing
+    str: JoinTicketV2_Success
+    str: JoinTicketV2_Fallback
+    str: JoinTicketV2_Attempted
+    str: JoinTicketV2_NotPresent
+    str: JoinTicketV2_NotEnrolled
+    str: JoinTicketV2_Duplicate
+    str: ClientPacketProcess
+    str: gameJoinPlaySession
+    str: gameJoinPlaySessionShadow
+    str: ProcessPacketsJobHaltStats
+    str: DeserializePacketsJobHaltStats
+    str: IrPacketsSentPerSecond
+    str: internal/InputReplicator
+    str: LastPhysicsUpdatesPerPacket
+    str: LastTimePerPhysicsPacketMs
+    str: AvgPacketWaitInDeserializeQueueMs
+    str: AvgPacketWaitInProcessQueueMs
+    str: ClientStreamingJoinPauseDuration
+    str: ClientStreamingAvgNonJoinPauseDuration
+    str: EarlyRakNetResentPercent
+    str: EarlyPhysicsPacketsLossPercentage
+    str: LargeReplicatorBytesRecv
+    str: LargeReplicatorInlineBytesRecv
+    str: LargeReplicatorAssetsRecv
+    str: LargeReplicatorInlineAssetsRecv
+    str: LargeReplicatorBytesSavedPercentRecv
+    str: LargeReplicatorBytesSavedPercentCompressionRecv
+    str: LargeReplicatorBytesSavedPercentDeltasRecv
+    str: LargeReplicatorBytesSent
+    str: LargeReplicatorInlineBytesSent
+    str: LargeReplicatorAssetsSent
+    str: LargeReplicatorInlineAssetsSent
+    str: LargeReplicatorBytesSavedPercentSent
+    str: LargeReplicatorBytesSavedPercentCompressionSent
+    str: LargeReplicatorBytesSavedPercentDeltasSent
+    str: LargeReplicatorHashMissesRecv
+    str: ClientDisconnect
+    str: RccDisconnect
+    str: ReplicatorDisconnectReason
+    str: PacketMissFrameWindowForAnyReasonLongTerm
+    str: PacketMissFrameWindowForDPJLongTerm
+    str: PacketMissFrameWindowAvgFrameTimeLongTerm
+    str: PacketMissFrameWindowAvgPPJFrameTimeLongTerm
+    str: SessionRakNetRxBpsStat
+    str: PacketMissFrameWindowMetricsShortTerm
+    str: StudioClientReplicatorStats
+    str: CloudEditServerReplicatorStats
+    str: StudioClientReplicatorStatsV2
+    str: CloudEditServerReplicatorStatsV2
+    str: StudioClientReplicatorEarlyStats
+    str: CloudEditServerReplicatorEarlyStats
+    str: TcClientReplicatorSessionSummaryStats
+    str: TcServerReplicatorSessionSummaryStats
+    str: ClientReplicatorCloseStats
+    str: ServerReplicatorCloseStats
+    str: ReplicatorSendError
+    str: PacketErrorCounter
+    str: ReplicatorSendErrorCounter
+    str: ChatReceiverCalls
+    str: network/processpackets
+    str: ServerJoinInstanceStats
+    str: RakNetTxBPSOverLastSecond
+    str: RakNetRxBPSOverLastSecond
+    str: RakNetSampledTxBPS
+    str: RakNetSampledRxBPS
+    str: ServerChatBytesSentPerSec
+    str: ServerChatBytesSentPerSecPerPlayer
+    str: PerConnectionAppPacketBytesSentPerSec
+    str: PerConnection_Data_AppPacketBytesSentPerSec
+    str: PerConnection_PhysicsSender_AppPacketBytesSentPerSec
+    str: PerConnection_PhysicsTouches_AppPacketBytesSentPerSec
+    str: PerConnection_Cluster_AppPacketBytesSentPerSec
+    str: PerConnection_Lr_AppPacketBytesSentPerSec
+    str: PerConnection_LrInline_AppPacketBytesSentPerSec
+    str: ServerTotal_LongLived_Lr_AppPacketBytesSentPerSec
+    str: ServerTotal_Lr_AppPacketBytesSentPerSec
+    str: PerConnection_Physics_AppPacketBytesSentPerSec
+    str: PerConnection_Facs_AppPacketBytesSentPerSec
+    str: PerConnection_Facs_CountPerSec
+    str: PerConnection_Facs_BandwidthPercentage
+    str: PerConnection_Facs_AppPacketBytesRecvPerSec
+    str: PerConnection_Facs_RecvCountPerSec
+    str: PerConnection_Facs_RevOutOfOrderPerSec
+    str: PerConnection_Facs_IngressBwPercent
+    str: ServerTotal_LongLived_AppPacketBytesSentPerSec
+    str: ServerTotal_Data_LongLived_AppPacketBytesSentPerSec
+    str: ServerTotal_PhysicsSender_LongLived_AppPacketBytesSentPerSec
+    str: ServerTotal_LongLived_PhysicsTouches_AppPacketBytesSentPerSec
+    str: ServerTotal_LongLived_Cluster_AppPacketBytesSentPerSec
+    str: ServerTotal_AppPacketBytesSentPerSec
+    str: ServerTotal_Data_AppPacketBytesSentPerSec
+    str: ServerTotal_PhysicsSender_AppPacketBytesSentPerSec
+    str: ServerTotal_PhysicsTouches_AppPacketBytesSentPerSec
+    str: ServerTotal_Cluster_AppPacketBytesSentPerSec
+    str: ServerTotal_Physics_AppPacketBytesSentPerSec
+    str: ServerTotal_Facs_AppPacketBytesSentPerSec
+    str: ServerTotal_Facs_AppPacketBytesRecvPerSec
+    str: ServerTotal_ServerPacketLossPercent
+    str: RakNetBandwidthReport
+    str: RCCRakNetRxPacketsPerPeerEachCycleReport
+    str: RakNetRouteWithoutPeer
+    str: network/replicator
+    str: JoinInfoLengthCheck
+    str: network/ISR/Connection
+    str: gcjob_null_client_replicator
+    str: ReplicatorJoinDataItemStats
+    str: ReplicatorJoinDataItemCacheEfficiency
+    str: PostJoinSetsStats
+    str: ReplicatorBacklog
+    str: /AbuseReport/InGameChatHandler.ashx
+    str: /Game/ChatFilter.ashx
+    str: [FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryStat"}}
+    str: [FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryCounter"}}
+    str: [DFLog::NetworkClient] RbxTransport Client will connect to server {}|{}, udmux {}|{}
+    str: RemoveCookieProtocolStorage
+    str: WebSocketServiceEnableClientCreation
+    str: network/ISR/Replicator
+    str: IsrPacketAckLatencyWorldSteps
+    str: IsrPacketLossPercent
+    str: IsrPacketAcksOutsideDirtyHistoryPercent
+    str: LargeReplicatorShutdownAssets
+    str: LargeReplicatorDetailed
+    str: LargeReplicatorTypeDetailed
+    str: CompressionAttemptsConnectionInternalSendUncompressedBytes
+    str: CompressionAttemptsConnectionInternalSendCompressedBytes
+    str: CompressionAttemptsConnectionInternalSendFailedBytes
+    str: CompressionAttemptsConnectionInternalSendExceedsMemoryPoolSizeBytes
+    str: kCompressionAttemptsConnectionInternalSendOverallCompressionRatio
+    str: CompressionAttemptsConnectionInternalSendIgnoredBytes
+    str: NumCompressionAttemptsConnectionInternalSend
+    str: NumExceedsMemoryPoolSizeCompressionAttemptsConnectionInternalSend
+    str: NumSuccessfulCompressionAttemptsConnectionInternalSend
+    str: network/compresspacket
+    str: network/decompresspacket
+    str: RbxTransportDummyClientConnectResultCounter
+    str: RbxTransportDummyClientConnectResultPoints
+    str: TextChat.ChatAvailabilityStatus.PlayerJoined
+    str: TextChat.ChatAvailabilityStatus.Changed
+    str: UniverseChat.IngestMessage
+    str: UniverseChat.GetMessages
+    str: UniverseChat.CsmMessage.Received
+    str: UniverseChat.CsmMessage.ServerRateLimited
+    str: UniverseChat.CsmMessage.ParseError
+    str: UniverseChat.AllocateChannel.Requested
+    str: UniverseChat.AllocateChannel.Deduped
+    str: UniverseChat.AllocateChannel.Result
+    str: UniverseChat.CheckPermissions
+    str: UniverseChat.ReassignChannel
+    str: UniverseChat.CsmMessage.CacheHit
+    str: UniverseChat.CsmMessage.CacheMiss
+    str: UniverseChat.AllocateChannelV2.ParseError
+    str: PresetChatManagerErrorCounter
+    str: TextChat.MessagePolicy.Loaded
+    str: TextChat.MessagePolicy.Cleared
+    str: TextChat.MessagePolicy.SendChecked
+    str: TextChat.MessagePolicy.ReceiveChecked
+    str: TextChat.MessagePolicy.Blocked
+    str: EnableTextChatConfigurationMeasurements
+    str: TextChatConfigChanged
+    str: UniverseChatChannelMonitor.Action.Unknown
+    str: UniverseChatChannelMonitor.Heartbeat.Skipped
+    str: TextChatReportEmojiTelemetryEnabled
+    str: TextChatUserMessageIntentSent
+    str: TextChatServiceIncludesColon
+    str: TextChatServicePropertyTextBox
+    str: EnableChatInputBarConfigurationStyleCustomizations
+    str: EnableChatInputBarConfigurationPropertyIsFocused
+    str: EnableChatInputBarConfigurationPropertyKeyboardKeyCode
+    str: EnableBubbleChatConfigurationTailVisible
+    str: EnableBubbleChatConfigurationMaxBubbles
+    str: EnableChatInputBarConfigurationAutocompleteEnabled
+    str: EnableTCSChatTranslation
+    str: EnableTCSChatTranslationLanguageSwitcher
+    str: TextChatServiceTextChatCommandAutocompleteVisible
+    str: TextChatServiceSettingsSaved
+    str: EnableChatWindowMessageProperties
+    str: TextChatServiceWhisperCheckEnabled
+    str: TextChatServiceInternalAPIs
+    str: ExpChatTypingIndicatorEngineChangesEnabled
+    str: EnableChatButtonTelemetryEnabled
+    str: TextChatCustomChannelCreated
+    str: EnableChatModerationMode
+    str: EnableChatModerationModeLoggingRefactor
+    str: TextChatPresetsEnabled
+    str: PresetChatUseExpressionTrayOptionsEndpoint
+    str: TextChatUniverseChatChannelAllocated
+    str: TextChatUniverseChatPresetsEnabled
+    str: EnableInExpChatSummary2
+    str: ExpChatGlobalChatEngineTelemetryEnabled
+    str: ExpChatLocalUserCountEnabled
+    str: EnableExpChatRephraseMessageSettingOnLua2
+    str: TextChatServiceProtectedChatEnabled
+    str: TextChatServiceInternalAPIs2
+    str: EnableExpChatSummarySettingOnLua
+    str: EnableExpChatDictatedSpeechOnLua
+    str: handshakeStage_{}
+    str: TextChat.SendAsync.Server.Processed
+    str: TextChat.SendAsync.Client.Processed
+    str: TextChat.MessageReceived.Client.Processed
+    str: TextChat.SendAsync.Server.Processed.ForModerators
+    str: TextChat.SendAsync.Failure.Unverified
+    str: TextChat.SendAsync.Server.SkippedMissingBlockingData
+    str: TextChat.SendAsync.Server.SkippedPresetBlockedLanguage
+    str: TextChat.SendAsync.Server.Unverified
+    str: TextChat.Command.Triggered
+    str: TextChat.ChatAction.Client.Received
+    str: CanUsersDirectChatAsyncCalled
+    str: EnableProtectedChat.Changed
+    str: ProtectedChat.CacheUpdated
+    str: TextChatMessageClientSending
+    str: TextChatMessageClientReceived
+    str: TextChatCallbackFired
+    str: TextChatSignalFired
+    str: TextChatCallbackAssigned
+    str: ExpChatWindowScrollChange
+    str: ExpChatLoadSuccessChange
+    str: ExpChatGetChatGroups
+    str: TextChat.UserMessageIntent.Server.Replicated
+    str: TextChat.UserMessageIntent.Client.Raised
+    str: TextChat.UserMessageIntent.Client.Failed
+    str: TextChat.UserMessageSent.Server.Failed
+    str: TextChat.ChatableUserCount.Server.RateLimited
+    str: TextChatServiceRoundtripLatency
+    str: ExpChatTelemetryEventTrigger
+    str: ExpChatWindowStatusChangeEvent
+    str: ExpChatWindowStateEventUpdate
+    str: ExpChatAddMessageRenderedSurfaceFields
+    str: ExpChatSendTextChatCommandClientSent
+    str: ExpChatDebuggerIncomingMessageEvent
+    str: ExperienceChat.HiddenMessages
+    str: ExperienceChat.3pSummaries
+    str: TextChatPropertyWrite
+    str: TextChatPropertyRead
+    str: TextChatService is not enabled. Check TextChatService.ChatVersion and make sure it is not set as ChatVersion.LegacyChatService.
+    str: SetDirectChatRequesterCalled
+    str: TextChatCommandTriggeredV2
+    str: GetSchema
+    str: ConnectAsync
+    str: DisconnectAsync
+    str: ServerBreakJoints
+    str: [FLog::TestServiceLog] [initConnectionManager] this={} hasManager={} uri='{}' isStudio={} isServer={} isPlayClient={} isNonNetworkEdit={}
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=rates backend=RbxTransport role={} connectionId={} elapsedSec={:.6f} population={} intervalSec={:.6f} rateIntervalSec={:.6f} egressB
+    str: ReportPartyChatWindowOpen
+    str: ReportPartyChatWindowClose
+    str: ReportChatSuspensionDialogOpen
+    str: ReportChatSuspensionDialogClose
+    str: ReportChatLineReportingOpen
+    str: ReportChatLineReportingClose
+    str: SetDirectChatRequester
+    str: ChatActionType
+    str: PresetChatVersion
+    str: CanUsersDirectChatAsync
+    str: CanUserChatAsync
+    str: CanUsersChatAsync
+    str: SendEnableChatButtonShown
+    str: SendEnableChatButtonClicked
+    str: GetChatGroupsAsync
+    str: IsProtectedChatEnabled
+    str: HasAllocatedUniverseChatContext
+    str: SendDictatedSpeechUniverseChatAsync
+    str: OnUserChatSettingUpdateAsync
+    str: GetChatableUserCountAsync
+    str: ChatIsLoaded
+    str: IsLegacyChatDisabled
+    str: ChatTranslationEnabled
+    str: ChatTranslationToggleEnabled
+    str: ChatTranslationFTUXShown
+    str: ServerToClientUniverseChatChannelAllocatedSignalV1
+    str: ServerToClientPresetChatUserAccessChangedSignal
+    str: ServerToClientUniverseChatMessageSignalV1
+    str: UniverseChatMessageReceived
+    str: ServerToClientChatActionReplicateSignal
+    str: ChatActionReceived
+    str: chatActionMessage
+    str: SendingUniverseChatMessage
+    str: OnUserChatSettingUpdateServer
+    str: ClientToServerChatableUserCountRequestSignal
+    str: [DFLog::InternalMessagingService] Connecting callback for subscriptionKey={} numSubscriptions={}
+    str: NativeAdsProtocolInstall
+    str: NativeAdsProtocolGetQueryInfo
+    str: NativeAdsProtocolSetAdStringWithCallback
+    str: NativeAdsProtocolShowAd
+    str: NativeAdsProtocolCloseAd
+    str: NativeAdsProtocolRegisterForReportAd
+    str: NativeAdsProtocolRegisterForAdProgress
+    str: NativeAdsProtocolInitWithCallback
+    str: NativeAdsProtocolRegisterForClickCTA
+    str: AnimatorApplyJointVelocitiesCallCount
+    str: AnimationRigJointModifiedCount
+    str: AnimatorJointCountPerAnimator
+    str: avatarFaceChatSDKFailedSessionInit
+    str: avatarFaceChatSDKFailedSetLod
+    str: avatarFaceChatSDKFailedCreateContext
+    str: avatarFaceChatLowCameraFPS
+    str: ApplyJointVelocities
+    str: [DFLog::VideoServer] postConnectAsync transport failure: error={}
+    str: GetJoint
+    str: SetJoint
+    str: GetJointLabels
+    str: [FLog::TestServiceLog] [installInboundHandlers] this={} connectionManager={}
+    str: [FLog::PaymentsProtocol] performSubscriptionPurchase failure: null callback, productType={}, productId={}, paymentProvider={}
+    str: GetJointSize
+    str: SetJointSize
+    str: GetJointRangeMin
+    str: SetJointRangeMin
+    str: GetJointRangeMax
+    str: SetJointRangeMax
+    str: GetR15JointLabels
+    str: GetR6JointLabels
+    str: GetJointNames
+    str: GetR15JointNames
+    str: GetR6JointNames
+    str: GetContainedJointLabels
+    str: GetJointFromName
+    str: AvatarChatSubsessionInputV2
+    str: AvatarChatSubsessionStatsV2
+    str: AvatarFacechatPipelineLodTelemetry
+    str: AvatarFacechatReplicationOverRCCTelemetry
+    str: AvatarFacechatLODCameraDisableTelemetry
+    str: InstanceName={} InstanceType={} isPostJoinSetItem={}
+    str: CharacterLoadingEventConnection
+    str: FetchedJoinScript
+    str: GameJoined
+    str: isReplicatorNull={}
+    str: AvatarChatServiceEnabled
+    str: AvatarChatProtocolDebugV1
+    str: [FLog::VoiceChatLogs] ClientSubscriberAudioQualitySelectAndAttachState: recording started for userId={}, audioLevel={}
+    str: AvatarChatServiceExposeUserVerifiedForVoice
+    str: AvatarChatServiceEnableVoiceEnabled
+    str: [DFLog::InternalMessagingService] Last callback disconnected for subscriptionKey={}, unsubscribing channel={}
+    str: FacialAnimationStreamingServiceRequireVoiceChat
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onDatagramReceived: receiveBytes failed for wireChannelId={} err={} dataSize={}
+    str: ReceiptJoinRetryCounter
+    str: [FLog::TestServiceConnectionManager] Invalid outbound payload; not queued. type={}
+    str: [FLog::VoiceChatLogs] Culling Pass Summary: Active={} Culled={} Muted={} Stale={}
+    str: GetJoinMode
+    str: Http2_ConnectionCount
+    str: Http2_ConnectionReuse
+    str: WebSocketStateChange
+    str: WebSocketSockConnectDurationMs
+    str: WebSocketUpgradeDurationMs
+    str: WebSocketFullConnectingDurationMs
+    str: WebSocketConnectedDurationMs
+    str: WebSocketConnectResultCounter
+    str: WebSocketConnectResultPoints
+    str: WebSocketDisconnectPoints
+    str: [DFLog::NetworkClient] Transport selection: useRbxTransportEnabled=false, selectedTransport=RakNet, rccPort={}, DatacenterId={}
+    str: PlayerApp.Authentication.Styling
+    str: Party.Coordination.ExperienceJoin
+    str: Party.Coordination.ExperienceJoin3
+    str: Party.Chat.Perf
+    str: Party.ChatDetailsPage
+    str: Party.ChatMembersPage
+    str: ProtocolTelemetry
+    str: ConsoleScreenProtocol
+    str: gamePlayFromChat
+    str: gamePlayFromJoinYourFriends
+    str: Unknown,Home,Games,AvatarExperienceRoot,Chat,More,Landing,Startup,ingame,loading,playing,idle,backgrounded
+    str: [DFLog::RbxTransportRnaExpConnection] Unreliable datagram dropped: recv queue full for channelId={}
+    str: GetProtocolLaunchUpdateType
+    str: GetProtocolLaunchUpdateName
+    str: OpenWeChatAuthWindow
+    str: [DFLog::RbxTransportRnaExpConnection] {}. Compat control: received OpenUnreliableChannel app={} channelId={} wireId={}
+    str: ChatLocal
+    str: GetShouldUseLuaChat
+    str: InvokeChatCallback
+    str: RegisterChatCallback
+    str: SetBubbleChatSettings
+    str: BubbleChatEnabled
+    str: LoadDefaultChat
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] deferring join (download in progress), placeId={}
+    str: GetInputSchemaKeyCodeTree
+    str: StateSchema
+    str: [DFLog::UniverseChatMessageManager] Parsed allocate channel response for user {}: channelId={}, channelGroup={}, channelGroupRaw={}, subscriptionTopic={}
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient failed to establish connection to server at {}:{}
+    str: [FLog::VoiceChatLogs] DebugFriendsCallSubscribeOperation: pruned calling peer ssrc:{} fakeUserId:{}
+    str: [FLog::VoiceChatLogs] ClientMuteUnmuteOperation Constructed with state muted:{} sessionId:{}
+    str: PrintJoinSizeBreakdown
+    str: RandomizeJoinInstanceOrder
+    str: IsLuaChatEnabled
+    str: [DFLog::CaptureService] CheckUploadCaptureStatusForSupportTicketAsync: HTTP {} 
+    str: GetConnectedWires
+    str: IsConnectionWeak
+    str: AvatarJointUpgrade
+    str: AvatarJointUpgrade_SerializedRollout
+    str: CharacterBreakJointsOnDeath
+    str: TeleportReconnect
+    str: GetTestControlSchema
+    str: IsChatRestrictionSupported
+    str: GetVoiceChatRestrictionStatus
+    str: GetEditableMeshSkinningTransferJointsInfo
+    str: GetSkinnedJointNamesFromEditableMesh
+    str: GetMaximalJointDistancesWithinFacs
+    str: GetFacsDrivenJointNamesFromEditableMesh
+    str: ChatVisible
+    str: ChatTranslationLocale
+    str: GetConnectedGamepads
+    str: GetGamepadConnected
+    str: GamepadDisconnected
+    str: VoiceChatEnabledForPlaceOnRcc
+    str: VoiceChatEnabledForUniverseOnRcc
+    str: UseNewJoinFlow
+    str: ClientRetryJoin
+    str: ClientRetryJoinWithConfig
+    str: PublishingHandshakeCompleted
+    str: ReJoinedVoice
+    str: ReJoinedVoiceV2
+    str: VoiceChatClientVoiceCapability
+    str: VoiceChatClientVoiceCapabilityWithConfig
+    str: VoiceChatPlayerMuteStateChangedClientToServer
+    str: VoiceChatPlayerMuteStateChangedServerToClient
+    str: VoiceChatSampleTaggedEventClientToServer
+    str: VoiceChatSampleTaggedEventServerToClient
+    str: VoiceChatSubscriptionInitialBatchEmpty
+    str: JoinToOutsiders
+    str: MakeJoints
+    str: UnjoinFromOutsiders
+    str: ExplicitAutoJoints
+    str: RealtimeMediaConnectionFlow
+    str: PermissionsProtocol
+    str: SslConnectFail
+    str: Joining
+    str: EnableCaptureUploadForSupportTicket
+    str: EnableCheckUploadCaptureStatusForSupportTicket
+    str: GuiServiceMenuConnection
+    str: GetChatForUserAsync is being deprecated. Use TextChatService instead which automatically filters text sent.
+    str: StartUploadCaptureForSupportTicketAsync
+    str: CheckUploadCaptureStatusForSupportTicketAsync
+    str: MouseButton1ClickConnectionCount
+    str: EventReplicator
+    str: MouseButton1DownConnectionCount
+    str: MouseButton1UpConnectionCount
+    str: MouseButton2ClickConnectionCount
+    str: MouseButton2DownConnectionCount
+    str: MouseButton2UpConnectionCount
+    str: [FLog::PrefetchProtocol] Store callback for {}
+    str: [FLog::PrefetchProtocol] Hash mismatch for {}
+    str: DragBeginConnectionCount
+    str: DragStoppedConnectionCount
+    str: MouseEnterConnectionCount
+    str: MouseLeaveConnectionCount
+    str: MouseMovedConnectionCount
+    str: MouseWheelBackwardConnectionCount
+    str: MouseWheelForwardConnectionCount
+    str: [DFLog::AvatarChatServiceTrace] Clearing cache for user {}
+    str: [FLog::VoiceChatLogs] VoiceChatClientGameDataClientImpl::sendClientStreamSwitchAckEvent Triggering client to server event for seq {}
+    str: GetChatForUserAsync
+    str: GetNonChatStringForBroadcastAsync
+    str: GetNonChatStringForUserAsync
+    str: [DFLog::RbxTransportRnaExpConnection] Connecting WASM WebTransport to {}
+    str: [DFLog::NetworkClient] Client:Disconnect setting replicator disconnect reason to {}
+    str: [FLog::UgcExperienceController] UgcExperienceController: finishTeleportWithJoinScriptPayload: failed to parse json {}
+    str: [DFLog::RbxTransportDummyClient] Failed to establish connection to server at {}:{}, reason {}
+    str: ExperienceStateCaptureExperienceChatSupport
+    str: [DFLog::LargeReplicatorTrace] Delta source {} version {} found Published, unblocking delta for guid {} version {}
+    str: UgcLocaleFromGameJoinEnabled
+    str: ChatLineAbuseReportAPIEnabled
+    str: [DFLog::LargeReplicatorTrace] {} Asset Incremented Type {} Handle {} Version {}
+    str: EventConnected
+    str: EventDisconnected
+    str: InputReplicatorRCCEvent
+    str: internal/ChatService
+    str: chat-permissions-service/safe-free-chat-enrollment
+    str: ChatServiceReconcileCommunicationRateLimit
+    str: ChatServiceReconcileCommunicationNoChange
+    str: EnableBubbleChatFromChatService
+    str: BubbleChatSettingsApi
+    str: ChatServiceCompatibilityForAll
+    str: ChatReconcileAccess
+    str: CanUserChatAsyncCalled
+    str: CanUserChatPresetAsyncCalled
+    str: ChatServiceAmpStatusErrorCounter
+    str: ageUnder13SafeChat
+    str: age13OrOverSafeChat
+    str: age13OrOverVngSafeChat
+    str: ageUnder13VngSafeChat
+    str: safeChatEnabledUserIds
+    str: internal/CSGDictionary
+    str: CSGDictionaryServiceEvent
+    str: ReceiverConnected
+    str: ReceiverDisconnected
+    str: [DFLog::RbxTransportRnaExpConnection] {}. QUIC stream acked data. streamId {}, offset {}, dataLen {}
+    str: [FLog::UgcExperienceController] UgcExperienceController: makeJoinScriptRequestForTeleport: url {}
+    str: [DFLog::LargeReplicatorTrace] Received Delta for guid {} version {} with additional {}
+    str: AvatarJointUpgradeWritable
+    str: VoiceChatNewSpeakerIcons
+    str: EnableTrustedConnectionIndicatorTooltip
+    str: PromptJoinAsync
+    str: GroupServicePromptJoinEvent
+    str: GroupServiceJoinPromptEngineAPIEnabled
+    str: wechatauth
+    str: MouseDragConnectionCount
+    str: cloud_pricing_http_service_packet_size
+    str: cloud_pricing_http_service_packet_size_extended
+    str: [DFLog::WebrtcInput] Unknown negotiated video codec name '{}'; keeping {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. channelId {}, maxBytes {}, bytesRead {}, bytes remaining {}
+    str: ticket=
+    str: MessagingService: Failed to connect to the service.
+    str: InternalMessagingService: Service disconnected.
+    str: NotificationServiceIsConnectedAvailable
+    str: JoiningPlaceId
+    str: JoiningUniverseId
+    str: chatEnabled
+    str: AvatarJointUpgradeFeature
+    str: AvatarJointUpgradeDefaultOnFeature
+    str: [DFLog::RakNetMissingPingPong] Ack stats: time since last ack sent {}, max ack bitstream size {}
+    str: /experience-join-preloading/v1/places/%lld/dependencies
+    str: /experience-join-preloading/v1/places/%lld/dependencies?assetVersion=%lld
+    str: TeleportReconnectRequestCounterV2
+    str: InstanceReconnectTeleportFailedCounterV2
+    str: ReconnectTeleportFailedEvent
+    str: PlatformTextChatRestrictionStatus
+    str: ThirdPartyTextChatPermissionsApi
+    str: ThirdPartyTextChatSettings
+    str: PCGDKCredentialsProtocolImpl
+    str: [FLog::TelemetryProtocol] Sending RobloxTelemetryStat event: {} with value {}
+    str: StratusReconcileResolutionOnConnect
+    str: FeatureMatchingSchema
+    str: [FLog::GameJoinUtil] Flooded and Teleport type {}
+    str: PrintHello
+    str: GetProtocolMethodRequestMessageId
+    str: protocolName
+    str: GetProtocolMethodResponseMessageId
+    str: PublishProtocolMethodRequest
+    str: SubscribeToProtocolMethodRequest
+    str: SubscribeToProtocolMethodResponse
+    str: [DFLog::LargeReplicatorTrace] Sending Header for {} of type {} additional {} guid {} and version {} and assetType {}
+    str: [DFLog::LargeReplicatorTrace] {} Sending Inline with guid {} and version {} and assetType {}
+    str: [DFLog::LargeReplicatorTrace] assignAsset registered guid {} version {} networkIdType {}
+    str: EngineUGCValidateFACSJointTransformsWithinBounds
+    str: GUACBehaviorFetchAttempted
+    str: {     "ChatConversationHeaderGroupDetails": true,     "ChatHeaderSearch": true,     "ChatHeaderCreateChatGroup": true,     "ChatHeaderHomeButton": false,     "ChatHeaderNotifications": true,     "Chat
+    str: {     "SchemaVersion": "1",     "CanaryPercentage": 0.0,     "CanaryUserIds": [],     "CanaryAppInstallationIds": [],     "Canary": {         "AssetId": "0",         "AssetVersion": "0",         "IsFo
+    str: EngineUGCValidationExpandReturnSchema
+    str: VoiceChatTaggedEventDroppedUnknownTag
+    str: VoiceChatTaggedEventDroppedWrongUser
+    str: VoiceChatV2JoinedVoiceInvalidFields
+    str: VoiceChatV2RejoinedVoiceInvalidFields
+    str: VoiceChatV2UserTurnAuthInvalidFields
+    str: VoiceChatV2PublishingHandshakeAckedInvalidFields
+    str: VoiceChatV2PublishingHandshakeCompletedInvalidFields
+    str: VoiceChatV2UserTurnAuthInvalidEmptyUris
+    str: VoiceChatV2FetchUserTurnAuthOperationFailedInvalidFields
+    str: VoiceChatV2VoiceSetupFailedInvalidFields
+    str: VoiceChatClientVoiceCapabilitySent
+    str: VoiceChatClientRetryVoiceCapabilitySent
+    str: VoiceChatUpdateTurnAuthInfoRequestSent
+    str: VoiceChatRelayCandidatesGatheredEventSent
+    str: VoiceChatPublishingHandshakeInitiatedRequestSent
+    str: VoiceChatOnPlayerModeratedClearCacheEventSent
+    str: VoiceChatSubscriptionHandshakeInitiatedInvalidEvent
+    str: VoiceChatSubscriptionHandshakeCompletedInvalidEvent
+    str: VoiceChatSubscriptionInitialBatchEmptyInvalidEvent
+    str: VoiceChatPublishingHandshakeCompletedInvalidEvent
+    str: VoiceChatPlayerMuteStatusChangedEventInvalidFields
+    str: VoicePublishingHandshakeAckedWithBothSdpInvalidFields
+    str: VoicePublishingHandshakeAckedWithCompressedSdpInvalidFields
+    str: VoiceSubscriptionHandshakeAckedWithBothSdpInvalidFields
+    str: VoiceSubscriptionHandshakeAckedWithCompressedSdpInvalidFields
+    str: VoiceChatDevConsoleTabEnabled
+    str: VoiceChatEnabledRccProperties
+    str: XboxRemoveVoiceChatButton
+    str: VoiceChatClientRewrite_OneFlagToRuleThemAll_Client
+    str: VoiceChatV2FirstJoinTimes
+    str: VoiceChatV2SubscriptionFeedStartedSent
+    str: VoiceChatFAEUpdateRejoinSent
+    str: VoiceChatFAEUpdateRejoinSkippedUserNotFound
+    str: VoiceChatNumRetryJoinEventRateLimited
+    str: VoiceChatNumPublishHandshakeEventRateLimited
+    str: VoiceChatNumIceCandidatesEventRateLimited
+    str: VoiceChatNumSubscriptionHandshakeAckEventRateLimited
+    str: VoiceChatNumStateChangeEventRateLimited
+    str: VoiceChatNumSubscribeStateChangeEventRateLimited
+    str: VoiceChatNumMiscEventRateLimited
+    str: VoiceChatNumTurnAuthEventRateLimited
+    str: VoiceChatNumUnknownPlayerEventRejected
+    str: VoiceChatUnknownPlayerEventRejectedDetail
+    str: VoiceChatClientEventRateLimitedDetail
+    str: VoiceChatNumUncategorizedEventReceived
+    str: VoiceChatUncategorizedEventReceived
+    str: VoiceChatGetChatGroups
+    str: EnableGameJoinContext
+    str: ChatSenderCalls
+    str: GetJoinData
+    str: SetChatTranslationSettingsLocaleId
+    str: SetSuperSafeChat
+    str: RawJoinData
+    str: SuperSafeChatReplicate
+    str: PlayerChatTranslationSettingsLocaleSetFromLua
+    str: [FLog::VoiceChatLogs] Message discarded, got sessionId {}, expected {}
+    str: ReportChatAbuse
+    str: TeamChat
+    str: WhisperChat
+    str: SetChatStyle
+    str: BubbleChat
+    str: ClassicChat
+    str: PlayerConnecting
+    str: PlayerDisconnecting
+    str: PlayerRejoining
+    str: [DFLog::VideoSelfTest] sendPacket({}) failed {}
+    str: TextChatSignalSubscribed
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 Regrouped: new channel {} group {} topic {}
+    str: [DFLog::VideoSelfTest] sendPacket({}) OK {}
+    str: PlayingReplicator
+    str: TimePositionReplicator
+    str: [DFLog::RbxTransportRnaExpConnection] getConnectionEvents = {}
+    str: [DFLog::PlayerConfigurer] Received GameFqdn from join script. GameFqdn = {}
+    str: JointLeftHandedCFrameDetected
+    str: DeferredRbxmJoinWaitMs
+    str: DeferredRbxmJoinOutcome
+    str: DeferredInExperienceRbxmJoinPending
+    str: SimulationPerf_AverageTime_ProcessPacketJob_msec
+    str: [FLog::WebLoginProtocol] Launch data = {}
+    str: joinSuccess
+    str: VoiceChatNumLeaveOpEnqueuedByJoinOp
+    str: VoiceChatNumUserJoinOperationResettingRoomBecauseOfInvalidRoomId
+    str: VoiceUserJoinOperationResult
+    str: VoiceMigrationJoinResult
+    str: VoiceChatNumSubscribeBeforeBlockListLoaded
+    str: VoiceChatSubscriptionsSdpOfferSize
+    str: VoiceChatSubscriptionsSdpAnswerSize
+    str: VoiceChatNumSubscriptionUpdateOperationFailedRoomInvalidV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedDueToTimeoutV2
+    str: VoiceChatNumSubscriberBlockListFailToLoadV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedInitiateGrpcResetV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedInitiateGrpcFailV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedInvalidClientAckV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedCompleteGrpcResetV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailedCompleteGrpcFailV2
+    str: VoiceChatNumSubscriptionUpdateOperationFailV2
+    str: VoiceChatSubscriptionOperationInitToFlowStartTimeMs
+    str: VoiceChatSubscriptionFlowStartToHandshakeCompletedTimeMs
+    str: VoiceChatSubscriptionCandidateFiltered
+    str: VoiceChatNumSubscriberMuteListFailToLoad
+    str: VoiceChatSubscriptionUpdateOpDeduped
+    str: VoiceChatSubscriptionUpdateOpReenqueued
+    str: VoiceChatNumSubscriptionHandshakeSent
+    str: VoiceChatNumSubscriptionHandshakeSuccess
+    str: VoiceChatSubscriptionHandshakeFail
+    str: VoiceChatSubscriptionHandshakeAbandoned
+    str: VoiceSubscriptionSwitchHandshakeOperationResult
+    str: VoiceChatRoomCounter
+    str: VoiceChatNonEmptyRoomCounter
+    str: VoiceChatPublisherCounter
+    str: VoiceChatSubscriptionCounter
+    str: VoiceChatSubscribedStreamCounter
+    str: VoiceChatMoreThanOneRejoinedVoiceEvent
+    str: VoiceChatV2ClientContextParsingFetchUserTurnAuthOperationFailedEventReceived
+    str: VoiceChatV2ClientContextParsingSubscriptionInitialBatchEmptyReceived
+    str: VoiceChatV2ClientContextParsingSubscriptionInitialBatchEmptyInvalidSession
+    str: VoiceChatMoreThanOneJoinedVoiceEvent
+    str: VoiceChatNumClientJoinOperationSuccess
+    str: VoiceChatNumClientJoinOperationFail
+    str: VoiceChatNumClientJoinOperationAbandon
+    str: VoiceChatNumClientJoinOperationFailedDueToTimeout
+    str: VoiceClientJoinOperationSuccessMs
+    str: VoiceClientJoinOperationFailedMs
+    str: VoiceChatNumClientTurnAuthOperationSuccess
+    str: VoiceChatNumClientTurnAuthOperationFail
+    str: VoiceChatNumClientTurnAuthOperationAbandon
+    str: VoiceChatNumClientTurnAuthOperationFailedDueToTimeout
+    str: VoiceChatNumClientTurnAuthOperationFailedDueToFetchUserTurnAuthOperationFailed
+    str: VoiceChatNoIceCandidatesFound
+    str: VoiceChatNumClientICETrickleOperationSuccess
+    str: VoiceChatNumClientICETrickleOperationFail
+    str: VoiceChatNumClientICETrickleOperationAbandon
+    str: VoiceChatNumClientICETrickleOperationFailedDueToTimeout
+    str: VoiceChatNumClientICETrickleCandidatesPub
+    str: VoiceChatNumClientICETrickleCandidatesSub
+    str: VoiceChatNumClientMuteUnmuteOperationSuccess
+    str: VoiceChatNumClientMuteUnmuteOperationFail
+    str: VoiceChatNumClientMuteUnmuteOperationAbandon
+    str: VoiceChatNumClientMuteUnmuteOperationFailedDueToTimeout
+    str: VoiceChatNumClientMuteUnmuteOperationAbandonedDueToNotPublishing
+    str: VoiceChatNumClientMuteUnmuteOperationAbandonedDueToSessionIdChange
+    str: VoiceChatNumClientMuteUnmuteOperationAbandonedDueToNoStateChange
+    str: VoiceChatNumClientRebootOperationSuccess
+    str: VoiceChatNumClientRebootOperationFail
+    str: VoiceChatPublishInCallFail
+    str: VoiceChatSubscribeInCallFail
+    str: VoiceChatJoinFail
+    str: VoiceChatUnknownFail
+    str: VoiceChatNumClientRebootOperationAbandon
+    str: VoiceChatRCCMigrationRequest
+    str: VoiceChatFAEUpdateFail
+    str: VoiceChatNumClientSubscribeOperationSuccess
+    str: VoiceChatNumClientSubscribeOperationFail
+    str: VoiceChatNumClientSubscribeOperationAbandon
+    str: VoiceChatNumClientSubscribeOperationFailedDueToTimeout
+    str: VoiceChatNumClientSubscribeOperationFailedDueToPeerConnectionCreationFailure
+    str: VoiceChatNumClientSubscribeOperationFailedDueToMissingPeerConnection
+    str: VoiceChatNumClientSubscriptionsUpdateOpAbandonDueToInvalidSeqNumber
+    str: VoiceChatNumClientSubscribeOperationAbandonedDueToSessionIdChange
+    str: VoiceChatNumClientSubscribeOperationAbandonedDueToLeaving
+    str: VoiceChatClientSubscribeOperationSetupFailed
+    str: VoiceChatClientSubscribeOperationFailedToCreateDataChannelForCulling
+    str: VoiceChatNumClientSubscribeOperationSuperseded
+    str: VoiceChatNumClientRebootFromInCallFailure
+    str: VideoDemuxedPacketBipBufferForVideoSize
+    str: VideoDemuxedPacketBipBufferForVideoCount
+    str: VideoDemuxedPacketBipBufferForAudioSize
+    str: VideoDemuxedPacketBipBufferForAudioCount
+    str: video/packet
+    str: PermissionsProtocolShouldShowUpsellAndroidEnabled
+    str: rejoinVoice
+    str: lastVoiceChatStats
+    str: lastVoiceChatConnectivity
+    str: lastVoiceChatSubscriptions
+    str: lastVoiceChatRemoteOperations
+    str: getInternalVoiceChatApiVersion
+    str: VoiceChatStreamTransactionMessageSenderMaxTransactionId
+    str: VoiceChatStreamTransactionMessageSenderAverageAttempts
+    str: VoiceChatStreamTransactionMessageSenderTransactionTimeMs
+    str: VoiceChatStreamTransactionMessageSenderAbandonedTransactionTimeMs
+    str: VoiceChatStreamTransactionMessageSenderAveragePendingTransactions
+    str: VoiceChatStreamTransactionMessageSenderAbandonedAndNeverCompleted
+    str: VoiceChatStreamTransactionMessageSenderAverageAbandonedAttempts
+    str: VoiceChatStreamTransactionMessageSenderTotalTransactions
+    str: VoiceChatStreamTransactionTransportSentMessage
+    str: VoiceChatStreamTransactionMessageTransportSentMessageBytes
+    str: VoiceChatStreamTransactionTransportReceivedMessage
+    str: VoiceChatStreamTransactionTransportReceivedMessageBytes
+    str: VoiceChatStreamTransactionTransportReceiveDeserializationError
+    str: clientTurnServerConnected
+    str: VoiceChatCountAudibleButCulled
+    str: VoiceChatCountAudibleAndNotCulled
+    str: VoiceChatCountInaudibleButNotCulled
+    str: VoiceChatCountInaudibleAndCulled
+    str: VoiceChatCountStaleSubs
+    str: VoiceChatCountMutedSubs
+    str: VoiceChatCountCullingAudibilityStatesEvent
+    str: VoiceChatQueueTransactionMaxQueueSizeLimitReached
+    str: VoiceChatQueueStreamTransactionMessageSenderNotInitialized
+    str: VoiceChatPubConnectionSetupSuccess
+    str: VoiceChatPubConnectionSetupFailure
+    str: VoiceChatPubConnectionCloseSuccess
+    str: VoiceChatPubConnectionDropFailure
+    str: VoiceChatSubConnectionSetupSuccess
+    str: VoiceChatSubConnectionSetupFailure
+    str: VoiceChatSubConnectionCloseSuccess
+    str: VoiceChatSubConnectionDropFailure
+    str: VoiceChatNoIceCandidatesTelemetry
+    str: VoiceChatPeerConnectionFailedTelemetry
+    str: VoicePeerConnectionTransitions
+    str: JoinProfilingInitialPublish
+    str: JoinProfilingInitialSubscription
+    str: JoinProfilingInitialJoin
+    str: JoinProfilingInitialSubscriptionEmpty
+    str: JoinProfilingInitialPublishStat
+    str: JoinProfilingInitialSubscriptionStat
+    str: JoinProfilingInitialJoinStat
+    str: JoinProfilingInitialSubscriptionEmptyStat
+    str: VoiceChatCallEndTelemetry
+    str: VoiceChatClientCullingOperationSuccessCount
+    str: VoiceChatClientCullingOperationAbandonCount
+    str: VoiceChatClientCullingOperationFailCount
+    str: voiceConnectionInterruption
+    str: VoiceRtcStatsTotalIncomingPackets
+    str: VoiceRtcStatsTotalOutgoingPackets
+    str: VoiceRtcStatsTotalIncomingPacketsLost
+    str: VoiceRtcStatsTotalOutgoingPacketsLost
+    str: VoiceRtcStatsTotalIncomingPacketsDiscarded
+    str: VoiceRtcStatsTotalOutgoingPacketsDiscarded
+    str: VoiceRtcStatsTotalIncomingFecPackets
+    str: VoiceRtcStatsTotalIncomingFecPacketsDiscarded
+    str: VoiceRtcStatsIncomingPacketLossRate
+    str: VoiceRtcStatsOutgoingPacketLossRate
+    str: VoiceRtcStatsPacketLossIncorrect
+    str: RakNetMissingPingPongStats
+    str: raknet/raknet
+    str: raknet/startup
+    str: raknet/recv-buffer
+    str: raknet/buffered-commands
+    str: raknet/packet-return
+    str: raknet/tx-outgoing
+    str: raknet/tx-datagram
+    str: raknet/rx-ordered-heap
+    str: raknet/rx-split-reassembly
+    str: raknet/rx-output
+    str: raknet/rx-handling
+    str: raknet/datagram-history
+    str: raknet/ack-nak
+    str: raknetBandwidthRecords
+    str: RakNetStoppedProduction
+    str: RakNetBannedConnectionRejected
+    str: NetConnectErrorHighFdCount
+    str: RakNetDownloadBandwidthComputedMbps
+    str: RakNetDownloadComputedBandwidthSampleBytes
+    str: RakNetDownloadBandwidthReadCount
+    str: RakNetDownloadBandwidthExpiredBandwidthCount
+    str: RakNetPingTracePoints
+    str: SocketBlockedRatio
+    str: SocketOtherFailureRatio
+    str: RakNetDecryptionFailure
+    str: RakNetEncryptionResultKibana
+    str: RakNetEncryptionResultCounter
+    str: RakNetRxOrderedHeapByteCapExceeded
+    str: RakNetRxOrderedHeapStallTimeout
+    str: [FLog::GameJoinUtil] Game join failed.  Here's why: {}
+    str: RakNetRxStaleIncompleteSplitPacketKill
+    str: RakNetRxSplitReassemblyMemoryCapExceeded
+    str: RakNetRxUndersizedSplitFragmentKill
+    str: connection stopped
+    str: CsmConnectSuccessfully
+    str: CsmConnectFailed
+    str: CsmReconnecting
+    str: CsmConnectionInitialize
+    str: CsmConnectingDuration
+    str: RealtimeClient.ConnectionState.Connected
+    str: RealtimeClient.ConnectionState.Disconnected
+    str: RealtimeClient.ConnectionState.Reconnecting
+    str: RealtimeClientConnectionChange
+    str: Reconnected
+    str: ConnectionId
+    str: RccRealtimeRelayConnected
+    str: RccRealtimeRelayDisconnected
+    str: SignalRCoreHubConnectionConnectAttemptsBeforeSuccess_Web
+    str: SignalRCoreHubConnectionTimeToConnectMs_Web
+    str: SignalRCoreHubConnectionHandshakeDurationMs_Web
+    str: SignalRCoreHubConnectionConnectedDurationMs_Web
+    str: SignalRCoreHubConnectionStopCalledCount_Web
+    str: SignalRCoreHubConnectionHandshakeTimeoutCount_Web
+    str: SignalRCoreHubConnectionServerTimeoutCount_Web
+    str: SignalRCoreHubConnectionBadMessageCount_Web
+    str: SignalRCoreHubConnectionWebsocketErrorCount_Web
+    str: SignalRCoreHubConnectionStartCalledCount_Web
+    str: SignalRCoreHubConnectionDisconnectInfo
+    str: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToReservedServer: URL: {} POST Body: {}
+    str: RbxTransport/RtcIo/Remote/AcceptConnection
+    str: RbxTransport/RtcIo/Remote/NewAppConnection
+    str: RbxTransport/RtcIo/Remote/Handshake
+    str: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToPlace: URL: {} POST Body: {}
+    str: ConnectivityV2NetworkChange
+    str: ConnectionClosedClassCounter
+    str: ConnectionClosedNone
+    str: ConnectionClosedIo
+    str: ConnectionClosedProtocol
+    str: ConnectionClosedNgtcp2
+    str: ConnectionClosedQuic
+    str: ConnectionClosedPort
+    str: ConnectionClosedNoResponse
+    str: ConnectionClosedSystem
+    str: ConnectionClosedRNA
+    str: ConnectionClosedPlayer
+    str: ConnectionClosedRCC
+    str: ConnectionClosedStudio
+    str: ConnectionClosedSecurity
+    str: ConnectionClosedMatchmaking
+    str: ConnectionClosedRoMark
+    str: ConnectionClosedReplication
+    str: ConnectionClosedPlaceLaunch
+    str: ConnectionClosedTeleport
+    str: ConnectionClosedPointsDeprecated
+    str: ConnectionClosedPoints
+    str: ConnectionClosedNonePoints
+    str: ConnectionClosedIoPoints
+    str: ConnectionClosedProtocolPoints
+    str: ConnectionClosedNgtcp2Points
+    str: ConnectionClosedQuicPoints
+    str: ConnectionClosedPortPoints
+    str: ConnectionClosedNoResponsePoints
+    str: ConnectionClosedSystemPoints
+    str: ConnectionClosedRNAPoints
+    str: ConnectionClosedPlayerPoints
+    str: ConnectionClosedRCCPoints
+    str: ConnectionClosedStudioPoints
+    str: ConnectionClosedSecurityPoints
+    str: ConnectionClosedMatchmakingPoints
+    str: ConnectionClosedRoMarkPoints
+    str: ConnectionClosedReplicationPoints
+    str: ConnectionClosedPlaceLaunchPoints
+    str: ConnectionClosedTeleportPoints
+    str: RbxTransportConnectionStatsReporting
+    str: RbxTransportHandshakeStatsReporting
+    str: ClientConnectionAttemptResultCounter
+    str: ClientConnectionAttemptResultPoints
+    str: ConnectionClosedCounter
+    str: PacketLossRatioStat
+    str: QuicMalformedPacketReceivedCounter
+    str: QuicPacketSendPacketCounter
+    str: QuicPacketSendByteCounter
+    str: QuicPacketReceivedPacketCounter
+    str: QuicPacketReceivedByteCounter
+    str: QuicPacketLostPacketCounter
+    str: QuicPacketLostByteCounter
+    str: SocketBlockedRatioStat
+    str: SocketOtherFailureRatioStat
+    str: QuicHandshakeCounter
+    str: QuicHandshakeStageTimeStat
+    str: QuicHandshakeTotalTimeStat
+    str: [FLog::VoiceChatLogs] VoiceChatStats::accumulateAllTrackers isPublishing: {}, trackingConusmerCount: {}
+    str: ServerRestartScheduledSignalConnect
+    str: physics/joint
+    str: [FLog::Output] Unknown joint: {}
+    str: [FLog::ModelTranscoder] Found joint: {}
+    str: [FLog::PrefetchProtocol] Could not convert version to an int: {}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received ClientSubscriptionInitialBatchEmptyEvent with invalid session id original sessionId: {} sessionId in the remote event: {}
+    str: [FLog::VoiceChatLogs] ClientSubscriptionsUpdateOperation: failed due to VoiceSetupFailedEvent: {}
+    str: [DFLog::PresetChatManager] Skipping malformed expression tray content: {}
+    str: makeJoints
+    str: GetConnectedParts
+    str: breakJoints
+    str: [DFLog::ThumbnailVideoStreamTrace] connectToService: intent: {}
+    str: DestroyJointRadiusPercent
+    str: [DFLog::UniverseChatMessageManager] Empty filterResultJson in ingest message result: {}
+    str: ClearJoinAfterMoveJoints
+    str: CreateJoinAfterMoveJoints
+    str: SetJoinAfterMoveInstance
+    str: joinInstance
+    str: SetJoinAfterMoveTarget
+    str: joinTarget
+    str: ShowPermissibleJoints
+    str: HasJointOffset
+    str: Exception during LR data out step, request disconnect: {}
+    str: AreJointCoordinatesShown
+    str: [DFLog::NetworkClient] RbxTransport DummyClient will connect without RuppConfig. udmuxEndpoint exists: {}, rbxTransportToken exists: {}
+    str: [DFLog::RealtimeMedia] send video packet pts: {}
+    str: [DFLog::HttpTraceNew] deferring connectivity update to worker thread, reason: {}, generation: {}, actions: {}
+    str: xsi:noNamespaceSchemaLocation
+    str: RBXAuthenticationNegotiation
+    str: [DFLog::TextChatFiltering] Failed to parse universe chat filter result for getMessages: {}
+    str: PartyVoiceCevJoinAttemptId
+    str: [DFLog::WebSocketTraceError] ws: {} url: {} error: {}
+    str: [DFLog::NetworkClient] RakNet connection closed, attempted fallback to RbxTransport, but it also failed. Reason: {}. Original RakNet error: {}
+    str: [DFLog::VideoStream] Dropping packet at send with pts {} due to error: {}
+    str: AuthenticatedTheme
+    str: PushUpsellChatPromptShownCount
+    str: PushUpsellChatEduPromptResponseTimestamp
+    str: PushUpsellChatEduPromptResponse
+    str: [DFLog::VideoTrace] Failed to read packet with error: {}
+    str: SeamlessConnectToVoice
+    str: HasSeenExpChatFtuxTooltip
+    str: ExpChatDictationFtux
+    str: ExpChatDictationU13PolicyToast
+    str: ExpChatDictationModeSetting
+    str: AppChatEnableRepliesUIFtuxTooltip
+    str: LaunchAtStartup
+    str: LaunchAtStartupInitialized
+    str: HasSeenTrustedConnectionIndicatorTooltip
+    str: [FLog::DefaultMediaPickerProtocol] pickMedia_DEPRECATED completed with error: {}
+f8842 score=106 cone=3 instrs=7361 calls=['f358', 'f502', 'f518', 'f1016', 'f2103', 'f2475', 'f2476', 'f2508', 'f2533', 'f2600', 'f5008', 'f8459', 'f8472', 'f8473', 'f8502', 'f8775', 'f8799', 'f8834', 'f8836', 'f8843', 'f8844', 'f8845', 'f8846', 'f8848', 'f8849', 'f8850', 'f9162', 'f9194', 'f10696', 'f10935']
+    str: Waiting for server to authenticate the placeID before spawning...
+    str: gameJoinFailureReason
+    str: GameJoinFailure
+    str: Protocol mismatch from {}
+    str: [FLog::Network] Protocol mismatch %s
+    str: ProtocolMistmatch
+f8964 score=106 cone=3 instrs=6217 calls=['f358', 'f502', 'f1016', 'f2103', 'f2475', 'f2476', 'f2508', 'f2533', 'f2600', 'f5008', 'f8459', 'f8473', 'f8502', 'f8775', 'f8788', 'f8836', 'f8844', 'f8845', 'f8846', 'f8848', 'f8849', 'f8850', 'f8965', 'f9162', 'f9194', 'f10696', 'f11184', 'f11211', 'f11337', 'f11353']
+    str: Protocol mismatch from %s
+    str: Waiting for server to authenticate the placeID before spawning...
+    str: gameJoinFailureReason
+    str: GameJoinFailure
+    str: [FLog::Network] Protocol mismatch %s
+    str: ProtocolMistmatch
+f10144 score=105 cone=3 instrs=4004 calls=['f336', 'f358', 'f742', 'f743', 'f744', 'f1016', 'f2005', 'f2140', 'f3616', 'f10235', 'f50368', 'f69781', 'f70041', 'f81125', 'f81128', 'f81131', 'f103545', 'f147858', 'f148045', 'f151790', 'f152029', 'f152055', 'f152067', 'f152100', 'f152503', 'f152511', 'f152512', 'f152514', 'f152520', 'f152521']
+    str: GameDisconnect-
+    str: JoinFailurePlace
+    str: JoinFailureIP
+    str: JoinFailureDataCenter
+    str: JoinFailure-
+f151072 score=103 cone=0 instrs=414 calls=['emscripten_websocket_close', 'emscripten_websocket_send_binary', 'emscripten_websocket_send_utf8_text', 'f4235', 'f150998', 'f150999', 'f157497', 'f158151', 'f158152', 'f166572', 'f166574']
+    str: Failed to close WebSocket
+    str: Failed to send WebSocket message
+    str: [DFLog::WebSocketTrace] ws: %u sent type: %d
+f17051 score=102 cone=3 instrs=49992 calls=['f398', 'f445', 'f470', 'f518', 'f742', 'f743', 'f744', 'f826', 'f828', 'f833', 'f978', 'f1034', 'f1130', 'f1152', 'f1177', 'f1189', 'f1478', 'f1488', 'f1834', 'f2001', 'f2103', 'f4622', 'f5312', 'f5718', 'f9371', 'f9540', 'f14184', 'f14192', 'f14371', 'f14384']
+    str: [FLog::GameJoinUtil] Creator experience ban message upon place launch: {}
+    str: outgoingPacketsLost
+f103118 score=102 cone=3 instrs=110605 calls=['f302', 'f316', 'f358', 'f445', 'f518', 'f742', 'f743', 'f744', 'f883', 'f965', 'f1003', 'f1021', 'f1033', 'f1062', 'f1073', 'f1134', 'f1330', 'f1805', 'f3886', 'f4047', 'f4050', 'f4235', 'f5010', 'f5312', 'f6630', 'f6632', 'f6809', 'f7446', 'f7930', 'f8011']
+    str: [FLog::ModelTranscoder] MultiMaterial Mesh has {} joints-times-vertices that is beyond {} cap. Therefore, SLIM simplifies each mesh separately.
+    str: metricsSchemaVersion
+f2981 score=101 cone=3 instrs=3991 calls=['f302', 'f316', 'f396', 'f430', 'f499', 'f627', 'f630', 'f631', 'f1190', 'f2020', 'f2568', 'f2621', 'f2812', 'f2955', 'f2956', 'f2983', 'f3033', 'f3034', 'f3075', 'f3101', 'f3108', 'f13918', 'f49315', 'f50030', 'f50044', 'f50373', 'f91610', 'f91612', 'f108769', 'f115360']
+    str: [FLog::UgcExperienceController] UgcExperienceController: join: initialized dm {}
+f17062 score=101 cone=3 instrs=69004 calls=['f302', 'f316', 'f357', 'f358', 'f398', 'f445', 'f499', 'f502', 'f518', 'f595', 'f632', 'f633', 'f742', 'f743', 'f744', 'f970', 'f977', 'f978', 'f1034', 'f1112', 'f1124', 'f1130', 'f1143', 'f1148', 'f1152', 'f1177', 'f1178', 'f1189', 'f1259', 'f1261']
+    str: DisconnectEvictedCollabTooManyCollaborators
+f146642 score=101 cone=3 instrs=723 calls=['f798', 'f4495', 'f6511', 'f154041', 'f157492', 'f158134', 'f158151', 'f158152', 'f163211', 'f163598', 'f163601', 'f164173', 'f164174', 'f164525', 'f164526', 'f164531', 'f166574', 'f168019']
+    str: [DFLog::LoadSettingsZstdDictionary] Failed to read dictionary file: {}
+f11493 score=78 cone=None instrs=20382 calls=['f302', 'f325', 'f358', 'f398', 'f410', 'f445', 'f499', 'f518', 'f632', 'f633', 'f742', 'f743', 'f744', 'f1010', 'f1090', 'f1118', 'f1209', 'f1261', 'f1478', 'f1539', 'f2005', 'f2103', 'f2230', 'f2327', 'f2476', 'f2487', 'f2525', 'f2552', 'f3679', 'f3680']
+    str: joinDataReadTimeInMs
+    str: joinDataProcessTimeInMs
+    str: totalMetaBytesRxInJoin
+    str: totalWasteBytesRxInJoin
+    str: totalSharedStringBytesRxDuringJoin
+    str: totalRxPackets
+    str: totalRxDroppedPackets
+    str: totalRxIgnoredPackets
+    str: connectionType
+    str: deltaTimeBetweenJoinRequestAndFirstBlobArrivalInMs
+    str: deltaTimeBetweenJoinRequestAndJoinProcessingCompleteInMs
+    str: packetProcessTimeCppMs
+    str: packetProcessTimeScriptContextMs
+    str: totalPacketProcessTimeMs
+    str: connectionAcceptedToGameLoadTimeMs
+    str: connectionAcceptedToFirstPacketProcessMs
+    str: [DFLog::JoinInstanceTypeBreakdown] Join Blob Breakdown: %s
+    str: joinBlobInstanceTypeBreakdown
+    str: joinBlobBreakdownTruncated
+    str: [DFLog::JoinInstanceTypeBreakdown] Replicated First Breakdown: %s
+    str: jdiv2TotalInstanceBytesRxInJoin
+    str: numFramesBetweenConnectionAcceptedAndGameLoadTime
+    str: averageFpsDuringJoin
+    str: totalJdiv2CountRecvDuringJoin
+    str: totalJdiv2BytesRecvDuringJoin
+    str: ReplicatorGameLoadPercentTimeWhenJoinDataCompleteTransfer
+    str: [DFLog::JoinDataRxStats] GameLoadProgressTime,lastSSArrive,%u,%f%%,SSDeserialized,%u,%f%%,gameLoadTagArrival,%u,%f%%,gameLoadTagDeserialize,%u,%f%%,gameLoadTagProcess,%u
+    str: [DFLog::JoinDataRxStats] GameLoadProgressCycle,lastSSArrive,%lu,%f%%,SSDeserialized,%lu,%f%%,gameLoadTagArrival,%lu,%f%%,gameLoadTagDeserialize,%lu,%f%%,gameLoadTagProcess,%lu
+    str: ReplicatorGameLoadPercentCycleWhenJoinDataCompleteTransfer
+    str: totalPacketsDeserializationTimeUpToGameLoadTagMs
+    str: ReplicatorDeserializeTimeUpToGameLoadTagMs
+    str: ReplicatorBytesReceivedUpToGameLoadTag
+    str: gameJoinIngestSpeed.calculatedNetworkSpeed
+    str: gameJoinIngestSpeed.deserializeSpeed
+    str: gameJoinIngestSpeed.processCppSpeed
+    str: gameJoinIngestSpeed.processCppAndScriptSpeed
+    str: DeserializeSpeedAtJoin
+    str: ProcessCppSpeedAtJoin
+    str: ProcessCppAndScriptSpeedAtJoin
+    str: ReplicatorCalculatedNetworkSpeedAtJoin
+    str: ReplicatorCalculatedDeserialiationSpeedAtJoin
+    str: ReplicatorCalculatedProcessSpeedAtJoinCppOnly
+    str: ReplicatorCalculatedProcessSpeedAtJoin
+    str: [DFLog::JoinDataRxStats] GameLoadTagProgressTime,TimeToArrive,%u,WaitForDeserialize,%u,WaitForProcess,%u
+    str: [DFLog::JoinDataRxStats] GameLoadTagProgressCycle,CycleToArrive,%lu,WaitForDeserialize,%lu,WaitForProcess,%lu
+    str: [DFLog::JoinDataRxStats] Join Rx Times : deltaTimeBetweenJoinRequestAndFirstBlobArrival=%fms, deltaTimeBetweenJoinRequestAndJoinProcessingComplete=%fms, joinDataReadTime=%fms, joinDataProcessTime=%fms
+    str: [DFLog::JoinDataRxStats] JoinData read breakdown : SharedStrings=%fms, Instance=%fms, BatchNetAssets=%fms
+    str: [DFLog::JoinDataRxStats] JoinData read breakdown : SharedStrings=%fms, Instance=%fms
+    str: [DFLog::JoinDataRxStats] JoinData count breakdown : SharedStrings=%u, TotalInstances=%u, WastedInstances=%u, PercentageUseful=%f%%
+    str: [DFLog::JoinDataRxStats] JoinData byte breakdown percentage: percentageOfBytesInSS=%f%%, percentageOfBytesMeta=%f%%, percentageOfBytesWaste=%f%%, percentageOfBytesInstancesUseful=%f%%
+    str: [DFLog::JoinDataRxStats] JoinData read time percentage : percentageReadTimeForSS=%f%%, percentageReadTimeForMetaInstances=%f%%
+    str: [DFLog::JoinDataRxStats] JoinData SharedString Compression: Compressed: %u -> Uncompressed -> %u, CompressionRatio %f%%
+    str: [DFLog::JoinDataRxStats] JoinData BatchNetAsset stats: Count=%u, CompressedBytes=%u, UncompressedBytes=%u, CompressionRatio=%f%%
+    str: [DFLog::JoinDataRxStats] JoinData NetAsset Compression: Compressed: %u -> Uncompressed: %u, CompressionRatio %f%%, EstimatedRaw: %u, EstimatedOptimized: %u
+    str: [DFLog::JoinDataRxStats] Join Rx Blob Stats : totalBlobBytesRxDuringJoin=%d, totalBlobRxDuringJoin=%d, totalMetaBytesRxInJoin=%d, totalWasteBytesRxInJoin=%d, totalSharedStringBytesRxDuringJoin=%d
+    str: [DFLog::JoinDataRxStats] Inline NetAsset received count=%d, bytes received and processed=%d. Total NetAsset received count=%d, bytes received and processed=%d
+    str: [DFLog::JoinDataRxStats] Join Rx Packet Stats : totalRxBytes={}, totalRxPackets={}, totalRxIgnoredBytes={}, totalRxIgnoredPackets={}, totalRxDroppedPackets={}
+    str: [DFLog::JoinDataRxStats] Total Packet Deserialization Time : %f ms   Total Process Packet Time : %f ms
+    str: [DFLog::JoinDataRxStats] Process Deserialization Time : Cluster : %f ms   Data : %f ms
+    str: [DFLog::JoinDataRxStats] Process Packet Script Time : %f ms   ProcessPacket Cpp Time : %f ms
+    str: [DFLog::JoinDataRxStats] Process Cluster Time : %f ms  Process Data Time : %f ms
+    str: [DFLog::JoinDataRxStats] Total Time from connection accept to load : %f ms 
+    str: [DFLog::JoinDataRxStats] Time from connection accept to first process packet : %f ms 
+    str: TotalPacketDeserializationTimeMsDuringJoin
+    str: DataDeserializationTimeMsDuringJoin
+    str: ClusterDeserializationTimeMsDuringJoin
+    str: JdiProcessTimeMsDuringJoin
+    str: ClusterProcessTimeMsDuringJoin
+    str: PacketProcessingTotalTimeMsJoin
+    str: PacketProcessingCppTimeMsJoin
+    str: PacketProcessingScriptTimeMsJoin
+    str: numJdiv2RecvDuringJoin
+    str: bytesJdiv2RecvDuringJoin
+    str: ClusterProcessTimeMsDursingJoin
+    str: \n === Join Completed ===\n
+    str: \nTotal Transmitted Join Bytes (Instance + Terrain) : %u (%u + %u)
+    str: deserializePacketsJob_total
+    str: connectionAcceptedToGameLoadTime
+f82460 score=62 cone=None instrs=26411 calls=['f302', 'f316', 'f324', 'f325', 'f337', 'f358', 'f445', 'f499', 'f518', 'f618', 'f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f970', 'f978', 'f993', 'f1034', 'f1117', 'f1124', 'f1130', 'f1148', 'f1152', 'f1177', 'f1178', 'f1259', 'f1460', 'f1473']
+    str: [FLog::Output] Hello World! CLI-230536
+    str: [FLog::Output] Hello World CLI-226594
+    str: [FLog::Output] Hello World CLI-217708
+    str: [FLog::Output] Hello World! CLI-212832
+    str: [FLog::Output] Hello world CLI211276!
+    str: [FLog::Output] Hello from 211136!
+    str: [FLog::Output] Hello world from CLI-210493!
+    str: [FLog::Output] World, hello!
+    str: [FLog::Output] Hello world, CLI-208683!
+    str: [FLog::Output] Hello world, CLI-207485!
+    str: [FLog::Output] Hello world, CLI-206270!
+    str: [FLog::Output] Hello again, world 206748!
+    str: [FLog::Output] Hello world CLI-206426!
+    str: [FLog::Output] Hello world 2049017!
+    str: [FLog::Output] Hello world ...!
+    str: [FLog::Output] Hello 186826
+    str: [FLog::Output] Hello 191878
+    str: [FLog::Output] Hello 198367!
+    str: [FLog::Output] Hello World! CLI-197462
+    str: [FLog::Output] Hello 9676
+    str: [FLog::Output] Hello World! CLI-199100
+    str: [FLog::Output] Hello World! **CLI-199819**
+    str: [FLog::Output] Hello World! CLI-226511
+    str: [FLog::Output] Hello World! CLI-199316
+    str: [FLog::Output] Hello World! CLI-203150
+    str: [FLog::Output] Hello World! CLI-203621
+    str: [FLog::Output] Hello World! CLI-206281
+    str: [FLog::Output] Hello World! CLI-206539
+    str: [FLog::Output] Hello World! from CLI-206127
+    str: [FLog::Output] Hello World! CLI-207330
+    str: [FLog::Output] Hello World! CLI-209433
+    str: [FLog::Output] Hello Roblox! CLI-211073
+    str: [FLog::Output] Hello World! Nice to be here! CLI-210481
+    str: [FLog::Output] Hello World! CLI-211349
+    str: [FLog::Output] Hello World! CLI210530
+    str: [FLog::Output] Hello World! CLI211426
+    str: [FLog::Output] Hello World! CLI-211424
+    str: [FLog::Output] Hello World CLI-212185!
+    str: [FLog::Output] Hello World CLI-217287! '^'
+    str: [FLog::Output] Hello World CLI-216820
+    str: [FLog::Output] Hello world...! CLI-219754
+    str: [FLog::Output] Hello World! CLI-219566
+    str: [FLog::Output] Hello world :)))) CLI-220390
+    str: [FLog::Output] Hello World! :D from CLI-220725
+    str: [FLog::Output] Hello World! CLI-218059
+    str: [FLog::Output] Hello World! CLI-220943
+    str: [FLog::Output] Hello World! CLI-222132
+    str: [FLog::Output] Hello World <3 CLI-225598
+    str: [FLog::Output] Hello World! From GNDM RX-78 - CLI-225432
+    str: [FLog::Output] Hello World! *_* - CLI-225882
+    str: [FLog::Output] Hello World! CLI-226199
+    str: [FLog::Output] Hello World CLI-226375
+    str: [FLog::Output] Hello World! CLI-226431
+    str: [FLog::Output] Hello World! CLI-226477
+    str: [FLog::Output] Hello World! CLI-227655
+    str: [FLog::Output] Hello World! CLI-228759
+    str: [FLog::Output] Hello World! CLI-230301
+    str: [FLog::Output] Hello World! CLI-232246
+    str: [FLog::Output] Hello World! CLI-231586
+    str: [FLog::Output] Hello World! CLI-233395
+    str: [FLog::Output] Hello World! CLI-233932
+    str: [FLog::Output] Hello World! CLIDEVOPS-10717
+f72778 score=57 cone=None instrs=1741 calls=['f148575', 'f148581', 'f148587', 'f153119']
+    str: ConnectErrors
+    str: IPRecentlyConnected
+    str: DisconnectErrors
+    str: DisconnectBadhash
+    str: DisconnectSecurityKeyMismatch
+    str: DisconnectProtocolMismatch
+    str: DisconnectReceivePacketError
+    str: DisconnectReceivePacketStreamError
+    str: DisconnectSendPacketError
+    str: DisconnectIllegalTeleport
+    str: DisconnectDuplicatePlayer
+    str: DisconnectDuplicateTicket
+    str: DisconnectTimeout
+    str: DisconnectLuaKick
+    str: DisconnectOnRemoteSysStats
+    str: DisconnectHashTimeout
+    str: DisconnectCloudEditKick
+    str: DisconnectPlayerless
+    str: DisconnectNewSecurityKeyMismatch
+    str: DisconnectEvicted
+    str: DisconnectDevMaintenance
+    str: DisconnectRobloxMaintenance
+    str: DisconnectRejoin
+    str: DisconnectConnectionLost
+    str: DisconnectIdle
+    str: DisconnectRaknetErrors
+    str: DisconnectWrongVersion
+    str: DisconnectBySecurityPolicy
+    str: DisconnectBlockedIP
+    str: DisconnectClientFailure
+    str: DisconnectClientRequest
+    str: DisconnectPrivateServerKickout
+    str: DisconnectModeratedGame
+    str: ReplicatorTimeout
+    str: DisconnectRomarkEndOfTest
+    str: DisconnectCollaboratorPermissionRevoked
+    str: DisconnectCollaboratorUnderage
+    str: DisconnectVerboselyModeratedGame
+    str: DisconnectCollaboratorNotAgeVerified
+    str: DisconnectCollaboratorTrustedConnectionsRequired
+    str: DisconnectCollaboratorOwnerActionRequired
+    str: DisconnectCollaboratorTooManyCollaborators
+    str: DisconnectCollaboratorUnknownError
+    str: DisconnectCollaboratorRequestedEviction
+    str: DisconnectCollaboratorTrustedConnectionsRequiredPC
+    str: DisconnectRemoteAttestationUnsupported
+    str: DisconnectRemoteAttestationGeneralFailure
+    str: DisconnectRemoteAttestationTimeout
+    str: DisconnectRemoteAttestationOSOutOfDate
+    str: DisconnectRemoteAttestationBootValidationFailure
+    str: DisconnectTransportIoError
+    str: DisconnectTransportIoInternetError
+    str: DisconnectTransportProtocolError
+    str: DisconnectTransportNgtcp2Error
+    str: DisconnectTransportQuicError
+    str: DisconnectTransportRnaError
+    str: DisconnectNoResponse
+f20225 score=50 cone=None instrs=6862 calls=['f10755', 'f20180', 'f20198', 'f20199', 'f20211', 'f20223', 'f20234', 'f20238', 'f20240', 'f20241', 'f20244', 'f20268', 'f20308', 'f20313', 'f20318', 'f151247', 'f151269', 'f151284', 'f151288', 'f151293', 'f151313', 'f151315', 'f151316', 'f151317', 'f151326', 'f151358', 'f151362', 'f151371', 'f151372', 'f151374']
+    str: LargeReplicatorSender received non-ack type packet!
+    str: Large Replicator Invalid Stream Id
+    str: Large Replicator receive exceeded max supported size
+    str: Large Replicator invalid type
+    str: [DFLog::LargeReplicatorTrace] Received Header for {} of type {} additional {} guid {} and version {}
+    str: Large Replicator missing hash
+    str: Large Replicator Invalid Network Id type
+    str: Large Replicator Invalid NetAsset type
+    str: Large Replicator Invalid Fire Forget
+    str: Large Replicator Invalid Fire Forget Delta
+    str: Large Replicator Unknown Creation
+    str: Large Replicator Invalid delta type
+    str: [DFLog::LargeReplicatorTrace] Resetting stale delta state for guid {} version {} (had {} of {} deltas, new additionalDeltas={})
+    str: [DFLog::LargeReplicatorTrace] Received End for {} guid {} version {} frame id {}
+    str: Large Replicator Incomplete Stream
+    str: Large Replicator - Unexpected size of decompression
+    str: Large Replicator - exceeded max size
+    str: Large Replicator decompression failed
+    str: Large Replicator decompression failed unexpected size
+    str: Large Replicator received data does not match hash
+    str: Large Replicator Unknown Factory
+    str: Large Replicator Delta Type Mismatch
+    str: Large Replicator Unable to Create Delta
+    str: Large Replicator Unknown factory
+    str: Large Replicator Unable to create asset
+    str: Large Replicator failed hash validation after load
+    str: [DFLog::LargeReplicatorTrace] Passed Checksum Compare {}
+    str: [DFLog::LargeReplicatorTrace] Received Delta for guid {} version {} with additional {}
+    str: [DFLog::LargeReplicatorTrace] Delta base missing: sourceId guid {} version {} lookupType {} assetExists {} containerNull {}
+    str: Large Replicator asset does not exists for delta
+    str: Large Replicator failed delta application
+    str: [DFLog::LargeReplicatorTrace] Passed Checksum Compare {} {} of {}
+    str: [DFLog::LargeReplicatorTrace] Creating Asset From {} Deltas for guid {} version {} with additional {}
+    str: [DFLog::LargeReplicatorTrace] Large Replicator stream id {} is out of range (max {})
+    str: Large Replicator Invalid stream id - out of range
+    str: Large Replicator cancel received for inline sender
+    str: [DFLog::LargeReplicatorTrace] Cancel received for stream {} guid {} version {}
+    str: [DFLog::LargeReplicatorTrace] Cancel cleaning up state for guid {} version {}
+    str: Large Replicator Cancel Completed Item
+    str: Large Replicator Cancel Invalid stream id
+    str: [DFLog::LargeReplicatorTrace] Remove received for guid {} version {} networkType {} frameId {}
+    str: Large Replicator Invalid Network Id
+    str: Large Replicator Unknown Removal
+    str: [DFLog::LargeReplicatorTrace] Removing partial delta entry for guid {} version {} ({} accumulated deltas)
+    str: Large Replicator Unknown action
+    str: Large Replicator chunk out of bounds
+    str: Large Replicator receive out of order
+    str: Large Replicator missing chunk data
+    str: Large Replicator not allowed to send, but got ack
+    str: Large Replicator not allowed to receive
+f10121 score=48 cone=None instrs=11023 calls=['f358', 'f445', 'f518', 'f1209', 'f2126', 'f3256', 'f8683', 'f8754', 'f10122', 'f10126', 'f10127', 'f10128', 'f10129', 'f10130', 'f10131', 'f10132', 'f10133', 'f10134', 'f10135', 'f10136', 'f10137', 'f10320', 'f12240', 'f39198', 'f39199', 'f39200', 'f87653', 'f147838', 'f147866', 'f150364']
+    str: FetchedJoinScriptTime
+    str: GameJoinTime
+    str: PlayerConfigToConnectTime_Country_%s
+    str: ConnectToReceivedGlobalsTime_Country_%s
+    str: GameLoadToGameJoinTime_Country_%s
+    str: GameJoinToAvatarLoadTime_Country_%s
+    str: PlayerConfigToConnectTime_Luobu
+    str: ConnectToReceivedGlobalsTime_Luobu
+    str: GameLoadToGameJoinTime_Luobu
+    str: GameJoinToAvatarLoadTime_Luobu
+    str: PlayerConfigToConnectTime_Country_%s_%s
+    str: ConnectToReceivedGlobalsTime_Country_%s_%s
+    str: GameLoadToGameJoinTime_Country_%s_%s
+    str: GameJoinToAvatarLoadTime_Country_%s_%s
+    str: PlayerConfigToConnectTime_Country_%s_Mobile
+    str: ConnectToReceivedGlobalsTime_Country_%s_Mobile
+    str: GameLoadToGameJoinTime_Country_%s_Mobile
+    str: GameJoinToAvatarLoadTime_Country_%s_Mobile
+    str: PlayerConfigToConnectTime
+    str: ConnectToReceivedGlobalsTime
+    str: GameLoadToGameJoinTime_Country
+    str: GameJoinToAvatarLoadTime_Country
+    str: HTTPBytesInJoin-
+    str: HTTPNonCachedBytesInJoin-
+    str: [FLog::JoinTimeLog] ======== Join Times =======
+    str: [FLog::JoinTimeLog] VideoAdFinishedTime   : %.4f
+    str: [FLog::JoinTimeLog] StartGameTime         : %.4f
+    str: [FLog::JoinTimeLog] PlacelauncherStartTime: %.4f
+    str: [FLog::JoinTimeLog] FetchedJoinScriptTime : %.4f
+    str: [FLog::JoinTimeLog] PlayerConfigureTime   : %.4f
+    str: [FLog::JoinTimeLog] ConnectTime           : %.4f
+    str: [FLog::JoinTimeLog] ReceivedGlobalsTime   : %.4f
+    str: [FLog::JoinTimeLog] GameLoadTime          : %.4f
+    str: [FLog::JoinTimeLog] InitSolidTextures     : %.4f
+    str: [FLog::JoinTimeLog] GameJoinTime          : %.4f
+    str: [FLog::JoinTimeLog] PlayerMovedTime       : %.4f
+    str: [FLog::JoinTimeLog] AvatarLoadTime        : %.4f
+    str: [FLog::JoinTimeLog] Connect-Ava           : %.4f
+    str: [FLog::JoinTimeLog] ======== Join Times (Delta) =======
+    str: [FLog::JoinTimeLog] UserClickToStartGameTime        : %.4f
+    str: [FLog::JoinTimeLog] StartGameToPlacelauncherStart   : %.4f
+    str: [FLog::JoinTimeLog] PlacelauncherStartToJoinScript  : %.4f
+    str: [FLog::JoinTimeLog] FetchedScriptToPlayerConfTime   : %.4f
+    str: [FLog::JoinTimeLog] PlayerConfigToConnectTime       : %.4f
+    str: [FLog::JoinTimeLog] ConnectToReceivedGlobalsTime    : %.4f
+    str: [FLog::JoinTimeLog] ReceivedGlobalToGameLoadTime    : %.4f
+    str: [FLog::JoinTimeLog] GameLoadToGameJoinTime          : %.4f
+    str: [FLog::JoinTimeLog] GameJoinToAvatarLoadTime        : %.4f
+f39199 score=43 cone=None instrs=1958 calls=['f157497', 'f157499']
+    str: [FLog::AvatarJoinMetrics] >>> Avatar Metrics #%lld, %p
+    str: [FLog::AvatarJoinMetrics] > LocalPlayer
+    str: [FLog::AvatarJoinMetrics] > OtherPlayer
+    str: [FLog::AvatarJoinMetrics] > NonPlayer
+    str: [FLog::AvatarJoinMetrics]   userId = %lld
+    str: [FLog::AvatarJoinMetrics]   appearanceId = %lld
+    str: [FLog::AvatarJoinMetrics]   createTime = %g
+    str: [FLog::AvatarJoinMetrics]   modelName = %s
+    str: [FLog::AvatarJoinMetrics]   displayName = %s
+    str: [FLog::AvatarJoinMetrics] > FC/TC
+    str: [FLog::AvatarJoinMetrics]   clusterStartTime = %g
+    str: [FLog::AvatarJoinMetrics]   clusterEndTime = %g
+    str: [FLog::AvatarJoinMetrics]   lastUpdateEntityTime = %g
+    str: [FLog::AvatarJoinMetrics]   clusterUpdateCnt = %lld
+    str: [FLog::AvatarJoinMetrics]   textureStartTime = %g
+    str: [FLog::AvatarJoinMetrics]   textureEndTime = %g
+    str: [FLog::AvatarJoinMetrics]   textureUpdateCnt = %lld
+    str: [FLog::AvatarJoinMetrics]   lastTextureRenderJobTime = %g
+    str: [FLog::AvatarJoinMetrics]   saLoadedTime = %g
+    str: [FLog::AvatarJoinMetrics] > Http
+    str: [FLog::AvatarJoinMetrics]   cacheHitCnt = %lld
+    str: [FLog::AvatarJoinMetrics]   cacheMissCnt = %lld
+    str: [FLog::AvatarJoinMetrics]   cacheHitBytes = %lld
+    str: [FLog::AvatarJoinMetrics]   cacheMissBytes = %lld
+    str: [FLog::AvatarJoinMetrics] > Categories
+    str: [FLog::AvatarJoinMetrics]   assetsByteSize = %lld
+    str: [FLog::AvatarJoinMetrics]   texturesByteSize = %lld
+    str: [FLog::AvatarJoinMetrics]   animationsByteSize = %lld
+    str: [FLog::AvatarJoinMetrics] > Assets
+    str: [FLog::AvatarJoinMetrics]   totalClientAssetRequestTime = %g
+    str: [FLog::AvatarJoinMetrics]   totalAssetResolveTime = %g
+    str: [FLog::AvatarJoinMetrics]   firstAssetQueuedTime = %g
+    str: [FLog::AvatarJoinMetrics]   lastAssetDeliveredTime = %g
+    str: [FLog::AvatarJoinMetrics]   allAssetNetworkingTime = %g
+    str: [FLog::AvatarJoinMetrics]   %s
+    str: [FLog::AvatarJoinMetrics] > Misc
+    str: [FLog::AvatarJoinMetrics]   baseTime = %g
+    str: [FLog::AvatarJoinMetrics]   #players = %lld
+    str: [FLog::AvatarJoinMetrics]   spawnPosition = %g %g %g
+    str: [FLog::AvatarJoinMetrics]   spawnDirection = %g %g %g
+    str: [FLog::AvatarJoinMetrics]   cameraPosition = %g %g %g
+    str: [FLog::AvatarJoinMetrics]   cameraDirection = %g %g %g
+    str: [FLog::AvatarJoinMetrics] <<<
+f127602 score=37 cone=None instrs=21982 calls=['f358', 'f410', 'f445', 'f618', 'f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f883', 'f970', 'f978', 'f1010', 'f1034', 'f1087', 'f1117', 'f1118', 'f1143', 'f1177', 'f1279', 'f1478', 'f1488', 'f1946', 'f1965', 'f1967', 'f2005', 'f2103', 'f5010', 'f10222']
+    str: #bufferedPackets: %d
+    str: fromConnectedSystem
+    str: connectionAgeMs
+    str: [DFLog::RakNetConnectTrace] RakNet: OpenReply2 received
+    str: [DFLog::SessionCrypto] RbxOpenReply2 too many recent connections
+    str: [DFLog::RakNetConnectTrace] (%s) RakNet connection failed because no connections are available
+    str: [DFLog::RakNetConnectTrace] RakNet: Send App Connection Request
+    str: [DFLog::RakNetConnectTrace] RCS was removed for: {}
+    str: [DFLog::SessionCrypto] RbxOpenRequest2 key exchange version incorrect for connecting to %s server
+    str: NegotiatedCapabilityBit
+    str: RakNetCapabilityBitNegotiated
+    str: [DFLog::SessionCrypto] RbxOpenRequest2 no free incoming connections
+    str: [DFLog::SessionCrypto] RbxOpenRequest2 recently connected
+    str: [DFLog::RakNetConnectTrace] Received RbxOpenRequest2 from %s
+    str: [DFLog::SessionCrypto] RbxOpenRequest2 already connected
+    str: [DFLog::RakNetConnectTrace] Looking up RCS using: {}
+    str: [DFLog::RakNetConnectTrace] RakNet: OpenReply1 received will send OpenRequest2 with mtu size %d
+    str: [DFLog::RakNetConnectTrace] RakNet: OpenReply1 received but cannot find related RCS
+    str: [DFLog::SessionCrypto] RbxOpenRequest1 Incompatible Protocol
+    str: [DFLog::RakNetConnectTrace] Received RbxOpenRequest1 from %s
+    str: [DFLog::RakNetConnectTrace] RakNet: Bad Offline message received, message id : %u
+    str: [DFLog::Rupp] ProcessPacket from reverse endpoint: {} | {}
+    str: [DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffer == 0, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: dhf.isValid==false, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: incomingAcks.Deserialize failed, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: incomingAcks minIndex > maxIndex, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: incomingNAKs.Deserialize failed, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: incomingNAKs minIndex>maxIndex, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: congestionManager->OnGotPacket failed, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: internalPacket->orderingChannel >= NUMBER_OF_ORDERED_STREAMS, length=%d, address=%s
+    str: [DFLog::NetworkTrace] Incoming packet error: holeCount > %d, length=%d, address=%s
+    str: RakNetRxHoleCountCapExceeded
+    str: Reconstructed packet too large %u > %u
+    str: RakNetRxIncompleteDatagramByteCapExceeded
+    str: [DFLog::NetworkTrace] Incoming packet error: CreateInternalPacketFromBitStream failed, length=%d, address=%s
+    str: [DFLog::RakNetMissingPingPong] Decryption failure rate: {}, failed to decrypt last {} packets
+    str: connectionTime
+f10184 score=36 cone=None instrs=45773 calls=['f302', 'f358', 'f445', 'f499', 'f501', 'f518', 'f618', 'f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f970', 'f995', 'f1010', 'f1016', 'f1034', 'f1109', 'f1118', 'f1143', 'f1148', 'f1152', 'f1177', 'f1189', 'f1478', 'f1488', 'f1519', 'f1521', 'f1572']
+    str: [FLog::AvatarJoinMetrics] startProgress/userClickTime = %g
+    str: JoinRequestType
+    str: join_request_type
+    str: [FLog::LogStepTimeAndNetworkUsage] Step Time, HTTP B/W, RakNet B/W, Overall B/W
+    str: [DFLog::PlayerConfigurer] Join params carried no CountryCode; Player.CountryRegionCode will be empty.
+    str: {"creationTime":"11:59 4/1/2024","applications":{"RakNetEarlyPublicKey":{"versions":[{"id":5,"value":"%s","allowed":true}],"send":5,"revert":5}}}
+    str: [DFLog::PlayerConfigurer] RbxTransportConfig server capabilities loaded from join reply
+    str: GameJoinStart,GameJoinStart
+    str: JoiningGame
+    str: ClientTicket
+    str: [FLog::Output] ! Joining game '%s' place %lld at %s
+    str: join_time
+    str: game_join_loadtime
+    str: [FLog::GameJoinLoadTime] Report game_join_loadtime: %s
+    str: gameJoinPlaySession
+    str: Started join script
+    str: Successfully connected to server
+    str: UdmuxToken
+    str: [FLog::ThirdPartyUserService] getTextChatRestrictionStatus entry
+    str: [FLog::ThirdPartyUserService] getTextChatRestrictionStatus defaulting to NotRestricted
+    str: [FLog::ThirdPartyUserService] getTextChatRestrictionStatus using platform API's restriction status
+    str: WhoCanWhisperChatWithMeInExperiences
+    str: GameChatType
+    str: RawJoinData
+    str: ClientJoinData
+    str: __joinTicket
+    str: ServerConnections
+    str: UdmuxEndpoints
+    str: [DFLog::PlayerConfigurer] Received GameFqdn from join script. GameFqdn = {}
+    str: GameServerConnectStarted
+    str: ReJoinFromSameDataModel
+    str: [DFLog::NetworkClient] Transport selection: useRbxTransportEnabled=false, selectedTransport=RakNet, rccPort={}, DatacenterId={}
+    str: [DFLog::NetworkClient] RakNet connection selected. Setting up fallback to RbxTransport if connection fails. 
+    str: [DFLog::NetworkClient] RakNet connection selected. RbxTransport cannot be used as fallback because rbxTransportHasValidPort={}, rbxTransportHasValidAddress={}, rbxTransportHasValidPubKey={}, canUseRbx
+    str: JoinTime_Case1_Attempt_%s
+    str: Finished join
+f9925 score=34 cone=None instrs=6565 calls=['f499', 'f518', 'f4069', 'f5312', 'f7921', 'f9049', 'f9065', 'f9066', 'f9067', 'f9926', 'f9927', 'f9928', 'f13735', 'f13752', 'f14013', 'f16528', 'f29346', 'f29347', 'f59496', 'f89725', 'f89731', 'f89733', 'f127550', 'f138372', 'f138382', 'f138398', 'f138402', 'f147100', 'f147155', 'f147175']
+    str: [DFLog::ClientRecvFromRaknet] Raknet rawpeer is detaching Peer plugin
+    str: [DFLog::ClientRecvFromRaknet] Raknet rawpeer is attaching Peer plugin
+    str: Net PacketReceive
+    str: MouseEnterConnectionCount
+    str: MouseLeaveConnectionCount
+    str: MouseDragConnectionCount
+    str: MouseButton1DownConnectionCount
+    str: MouseButton1UpConnectionCount
+    str: MouseMovedConnectionCount
+    str: MouseWheelForwardConnectionCount
+    str: MouseWheelBackwardConnectionCount
+    str: DragStoppedConnectionCount
+    str: DragBeginConnectionCount
+    str: MouseButton1ClickConnectionCount
+    str: MouseButton2ClickConnectionCount
+    str: MouseButton2DownConnectionCount
+    str: MouseButton2UpConnectionCount
+    str: PlayerChatTranslationSettingsLocaleSetFromLua
+    str: ServerBreakJoints
+    str: ClientToServerUniverseChatMessageSignalV1
+    str: ClientToServerChatableUserCountRequestSignal
+    str: ClientToServerChatIsLoadedSignal
+    str: OnUserChatSettingUpdateServer
+    str: PromptGameServerTargetedChatReportEnrichment
+    str: VoiceChatService
+    str: VoiceChatPlayerMuteStateChangedClientToServer
+    str: AvatarChatService
+    str: VoiceChatClientVoiceCapability
+    str: ClientRetryJoin
+    str: VoiceChatClientVoiceCapabilityWithConfig
+    str: ClientRetryJoinWithConfig
+    str: PublishingHandshakeInitiated
+    str: SubscriptionHandshakeAcked
+    str: VoiceChatTokenRequest
+f11484 score=34 cone=None instrs=43742 calls=['f445', 'f518', 'f632', 'f633', 'f742', 'f743', 'f744', 'f789', 'f978', 'f1034', 'f1063', 'f1090', 'f1117', 'f1118', 'f1124', 'f1152', 'f1177', 'f1178', 'f1189', 'f1203', 'f1204', 'f1229', 'f1242', 'f1261', 'f1340', 'f1455', 'f1473', 'f1478', 'f1488', 'f1497']
+    str: PacketsSeenByPPJ
+    str: PercentPacketsMissedFrameWindowDueToDPJ
+    str: PercentPacketsMissedFrameWindowForAnyReason
+    str: ReplicatorLifetimeMs
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=rates backend=RbxTransport role={} connectionId={} elapsedSec={:.6f} population={} intervalSec={:.6f} rateIntervalSec={:.6f} egressB
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=transport backend=RbxTransport role={} connectionId={} elapsedSec={:.6f} population={} wireSentBytes={} wireReceivedBytes={} payload
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=rates role={} connectionId={} elapsedSec={:.6f} population={} intervalSec={:.6f} egressBps={} ingressBps={} frames={} dataCapHit={} 
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=transport role={} connectionId={} elapsedSec={:.6f} population={} wireSentBytes={} wireReceivedBytes={} payloadSentBytes={} payloadR
+    str: [DFLog::DebugNetworkBandwidthAudit] BandwidthAudit: version=2 group=join role={} connectionId={} elapsedSec={:.6f} population={} socketSentBytes={} socketReceivedBytes={} rakPeerSentBytes={} joinSocke
+    str: connectionType
+    str: _RakNetIgnoredPercent
+    str: _RakNetIgnoredPercent_Platform_
+    str: _RakNetResentPercent
+    str: _RakNetResentPercent_Platform_
+    str: _RakNetResendMsgLen
+    str: _RakNetResendMsgLen_Platform_
+    str: _PhysicsPacketsLossPercentage_
+    str: _PhysicsPacketsLossPerSecond_
+    str: _PhysicsPacketsLossPercentage
+    str: _PhysicsPacketsLossPerSecond
+    str: _lastPhysicsUpdatesPerPacket
+    str: _lastTimePerPhysicsPacketMs
+    str: _avgPacketWaitInDeserializeQueueMs
+    str: _avgPacketWaitInProcessQueueMs
+    str: _clientStreamingJoinPauseDuration
+    str: _clientStreamingAvgNonJoinPauseDuration
+    str: CloudEditServerReplicatorStats
+    str: [FLog::NetworkStepsMultipliers] ProcessPacketsJob running
+    str: [FLog::NetworkStepsMultipliers] ProcessPacketsJob: StepOnce, processAllPackets: %d, packets in Queue: %d
+    str: rawPacket was null
+    str: processPacket
+    str: [FLog::Network] Error while processing physics packet (ignored): %s (Packet size: %d, packet type: %d)\n
+    str: [DFLog::AuroraRollback] [Client] receivedDataFromReplicator() remoteTimestamp {} localTimestamp {} offset {}
+    str: Delayed Packets
+f2568 score=31 cone=None instrs=10840 calls=['f627', 'f630', 'f631', 'f1010', 'f1946', 'f1965', 'f1967', 'f1983', 'f1989', 'f2477', 'f2478', 'f2479', 'f2480', 'f2481', 'f2489', 'f2557', 'f2567', 'f2660', 'f2707', 'f50054', 'f50061', 'f67098', 'f77749', 'f146647', 'f147858', 'f151868', 'f157182', 'f157229', 'f157296', 'f157330']
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGame
+    str: JoinGamePlaceLauncher-Start
+    str: JoinGamePlaceLauncher-{}
+    str: JoinGamePlaceLauncher-PartyLeaderRequest
+    str: /v1/join-game
+    str: [FLog::GameJoinUtil] Get EventId from joinGameParams {}
+    str: [FLog::GameJoinUtil] [ForcedPop] attached forcedPop='{}' to /join-game body
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostStandard: URL: {} BODY: {}
+    str: /v2/join-game
+    str: /v1/join-party-voice
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostCrossExpVoice: URL: {} BODY: {}
+    str: /v2/join-party-voice
+    str: /v1/join-game-instance
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostGameInstance: URL: {} BODY: {}
+    str: /v2/join-game-instance
+    str: /v1/join-private-game
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateServer: URL: {} BODY: {}
+    str: /v2/join-private-game
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostSpecificUser: URL: {} BODY: {}
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostParty: URL: {} BODY: {}
+    str: /v1/join-play-together-game
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame recieved an invalid conversation id ({}) or place id ({})
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPlayTogetherGame: URL: {} BODY: {}
+    str: /v1/join-reserved-game
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostReservedServer: URL: {} BODY: {}
+    str: /v2/join-reserved-game
+    str: /v1/join-private-party
+    str: [FLog::GameJoinUtil] GameJoinUtil::joinGamePostPrivateParty: URL: {} BODY: {}
+    str: [FLog::GameJoinUtil] joinGamePostTeamTest: unique gameCode: {}
+    str: [FLog::GameJoinUtil] joinGamePostTeamTest: URL: {}
+    str: [FLog::GameJoinUtil] joinGamePostIsolatedTeamTest: URL: {}
+f127614 score=31 cone=None instrs=11910 calls=['f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f970', 'f978', 'f1010', 'f1124', 'f1177', 'f1279', 'f1478', 'f1488', 'f2005', 'f2103', 'f9058', 'f127376', 'f127377', 'f127378', 'f127379', 'f127381', 'f127383', 'f127387', 'f127388', 'f127390', 'f127391', 'f127392', 'f127393', 'f127395']
+    str: [DFLog::RakNetMissingPingPong] Time since last (ms): ping recv {}, ping sent {}, pong recv {}, pong sent {}, {}pkt recv {}, pkt sent {}, reliable recv {}, ack recv {}, oldest unacked send {}, oldest u
+    str: [DFLog::RakNetMissingPingPong] Other stats: dead {}, outgoingWaiting {}, acksWaiting {}, netCapacity {}, resendBuf msg{}, resendBuf bytes{}, loss last sec{}, limitedByBw {}, outputQueueSize {}
+    str: [DFLog::RakNetMissingPingPong] Decryption failed {}, invalid dhf {}, incoming ack deserialize failure {}, ack range bad {}, incoming nak deserialize failure {}, nak range bad {}, on got packet failed 
+    str: [DFLog::RakNetMissingPingPong] Ack stats: time since last ack sent {}, max ack bitstream size {}
+    str: TimeSinceLastPacketReceivedMs
+    str: TimeSinceLastPacketSentMs
+    str: TimeSinceOldestSentPacketMs
+    str: IsDeadConnection
+    str: PacketLossLastSecond
+    str: TimeSinceLastOnGotPacketFailedMs
+    str: TimeSinceLastFailedCreateInternalPacketMs
+    str: TimeSinceLastPacketDroppedMs
+    str: PaddedPacketsRatio
+    str: reliablePacketBytesRe
+    str: reliablePacketsRe
+    str: unreliablePacketBytes
+    str: unreliablePackets
+    str: bwCappedDueToMaxPacketsInFlightCountToTotalCount
+    str: [DFLog::TxBwStatLog] TxBwStats#1 : availableCapacity = %d; totalAvailableCapacity = %d; availableCapacityKBps=%.2f; totalAvailableCapacityKBps=%.2f; highWaterMarkFortotalAvailableCapacityKBps=%.2f; al
+    str: [DFLog::TxBwStatLog] TxBwStats#2 : bwGivenByTargetSpeedKBps=%.2f; highWaterMarkForBwFromTargetSpeedKBps=%.2f; bwCappedDueToTargetSpeedCountToTotalCount=%.2f; bwCappedDueTo2xTargetSpeedCountToTotalCoun
+    str: [FLog::Network] AckTimeout: Last Packet received time: %d ms
+    str: [FLog::Network] Connection lost
+    str: [FLog::Network] Connection lost: connectMode: %s, timeMS:%llu, connectionTime %llu
+    str: [FLog::Network] Connection lost: AckTimeout %d, IsOutgoingDataWaiting %d
+    str: [DFLog::RakNetConnectTrace] (amServer: %s) RakNet connection failed. IsDeadConnection(): %d,\nconnectMode == DISCONNECT_ASAP: %d,\nIsOutgoingDataWaiting(): %d,\nconnectMode == DISCONNECT_PEER_NOTIFY: %d,
+    str: [FLog::Network] Connection attempt failed
+    str: [FLog::Network] Connection lost - Cannot contact server/client
+    str: [FLog::Network] Disconnection Notification. Reason: %d
+    str: [FLog::Network] Disconnect reason received: %d
+    str: [DFLog::RakNetConnectTrace] RakNet: App Level connection accepted!
+    str: #packets sent: %d
+f119236 score=27 cone=None instrs=15441 calls=['f445', 'f7948', 'f18248', 'f23544', 'f32910', 'f38438', 'f41255', 'f44372', 'f47916', 'f91378', 'f102287', 'f102384', 'f112613', 'f119218', 'f119220', 'f119227', 'f119232', 'f119233', 'f119237', 'f119238', 'f119239', 'f119240', 'f119246', 'f119247', 'f119248', 'f119258', 'f119262', 'f119263', 'f119268', 'f119270']
+    str: [FLog::VoiceChatLogs] ClientContextParsingState - Received Rejoined Voice Remote Event: channelName={}, participantId={}, sessionId={}, channelId={}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received FetchUserTurnAuthOperationFailedEvent sessionId: {}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received ClientSubscriptionInitialBatchEmptyEvent sessionId: {}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received ClientSubscriptionInitialBatchEmptyEvent with invalid session id original sessionId: {} sessionId in the remote event: {}
+    str: [FLog::VoiceChatLogs] Stream Switching: Processing SSRC mapping update for Seq: {}. Applying...
+    str: [FLog::VoiceChatLogs] Stream Switching: Applying new SSRC-to-UserID mapping. Mappings received: {}
+    str: [FLog::VoiceChatLogs] Stream Switching: Built SSRC-to-Handle map with {} entries.
+    str: [FLog::VoiceChatLogs] Stream Switching: Resetting stale handle for Mid='{}' SSRC={} (was userId={}, not in server mapping)
+    str: [FLog::VoiceChatLogs] Stream Switching: User {} has left.
+    str: [FLog::VoiceChatLogs] Stream Switching: User {} is new to this client.
+    str: [FLog::VoiceChatLogs] Stream Switching: Final state after applying mapping ({} streams, {} active users):
+    str: [FLog::VoiceChatLogs] Stream Switching:   Mid='{}' SSRC={} UserId={} Muted={} MutedLocally={} Culled={} SignalActive={} SubCompleted={}
+    str: [FLog::VoiceChatLogs] Stream Switching: Processing mapping SSRC {} -> User id {}...
+    str: [FLog::VoiceChatLogs] Stream Switching: Assigning Mid '{}' to user {}.
+    str: [FLog::VoiceChatLogs] Stream Switching: FATAL ERROR - Could not find a stream handle for SSRC '{}'.
+    str: [FLog::VoiceChatLogs] Stream Switching: Applied new mapping and sent StreamSwitchAckEvent.
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received PlayerMuteStatusChangedEvent sessionId:{} muted:{} userId:{} eventSessionId:{}
+    str: [FLog::VoiceChatLogs] ClientPeerRemoteMuteUnmuteOperation constructed with userId:{} muted:{} eventSessionId:{} localSessionId:{}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation [Sdp Compression] algo works, compressed sub offer size: {}, original size: {}
+    str: [FLog::VoiceChatLogs] ClientContextParsingOperation received UserTurnAuthEvent sessionId: {}
+    str: [FLog::VoiceChatLogs] Voice Chat Public Turn Auth IP address: {}
+    str: [FLog::VoiceChatLogs] ContextParsingOperation send publisherSignalActiveValue [{}] to Lua
+    str: [FLog::VoiceChatLogs] ClientContextParsingState::tryUpdateQueuedCullState [Error] connection api handle doesn't exist
+    str: [FLog::VoiceChatLogs] ClientContextParsingState::tryUpdateQueuedCullState() Voice culling completed state change for UserId:[{}] ssrc:[{}] culled:[{}] muted:[{}] mutedLocally:[{}]
+    str: [FLog::VoiceChatLogs] ClientContextParsingState::tryUpdateQueuedCullState() Voice culling completed state change for UserId:[{}] ssrc:[{}] mid:[{}] culled:[{}] muted:[{}] mutedLocally:[{}]
+    str: [FLog::VoiceChatLogs] VoiceSubscriberAudioQualityCaptureDelay misconfigured: min={}ms >= max={}ms, using min with no spread
+    str: [FLog::VoiceChatLogs] Voice network disconnected
+f9534 score=26 cone=None instrs=12829 calls=['f302', 'f316', 'f325', 'f358', 'f398', 'f499', 'f595', 'f742', 'f743', 'f744', 'f1109', 'f1112', 'f1805', 'f2005', 'f2103', 'f2327', 'f2376', 'f2487', 'f3810', 'f3942', 'f8713', 'f8735', 'f8741', 'f8762', 'f9071', 'f9082', 'f9162', 'f9280', 'f9285', 'f9290']
+    str: Server Join Snapshot
+    str: [DFLog::ReplicationJoinBatchLog] %zu Replicators waiting to join (isInitialJoin? %s)
+    str: [DFLog::ReplicationJoinBatchLog] First replicator, process on its own [Index: %d] [Time Waited : %f ms]
+    str: [DFLog::ReplicationJoinBatchLog] First replicator in batch [Index: %d] [Time Waited : %f ms]
+    str: [DFLog::ReplicationJoinBatchLog] Add replicator in batch [Index: %d] [Time Waited : %f ms] Batch will contain %zu replicators
+    str: [DFLog::ReplicationJoinBatchLog] Replicator not eligible for batch [Index: {}] (Capability Match? {})
+    str: [DFLog::ReplicationJoinBatchLog] Batching limit reached : %zu replicators in batch
+    str: MissingReplicator
+    str: ServerJoinReject
+    str: %zu Replicators waiting to join, Processing %zu replicators in this batch
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : %zu replicators in batch
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Index: %d send network schema
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Prebuild Replication Cache
+    str: [FLog::Network] Serializing Instances and preparing blobs for JoinDataItemV2
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Index: %d generate and queue JDIv2
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Done Batch. %zu still waiting in to join
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Index: %d Install Player
+    str: ServerReplicator unable to find workspace.
+    str: [FLog::Network] Replicator:SendMarker id(%d)
+    str: [DFLog::NetworkJoin] Server Join snapshot timer: %f
+    str: JoinStructureMismatchReport
+    str: ServerReplicator unable to find rawPeer.
+    str: ServerReplicator::sendNetworkSchemaDefinition
+    str: [DFLog::ReplicationJoinBatchLog] Process Joins : Index: %d send Globals and Top Containers
+    str: [FLog::Network] ServerReplicator: Start sending join for peer: %d
+    str: [FLog::Network] ServerReplicator: Start sending join for peer: %p
+f39194 score=26 cone=None instrs=3255 calls=['f632', 'f633', 'f970', 'f1010', 'f1063', 'f1209', 'f1261', 'f2017', 'f10122', 'f10129', 'f10130', 'f10131', 'f10132', 'f10133', 'f10134', 'f10135', 'f39198', 'f39199', 'f39200', 'f39201', 'f87653', 'f147838', 'f147866', 'f150364', 'f153726', 'f154181', 'f157497', 'f157498', 'f157499', 'f157633']
+    str: HTTPBytesInJoin-
+    str: HTTPNonCachedBytesInJoin-
+    str: [FLog::JoinTimeLog] ======== Join Times =======
+    str: [FLog::JoinTimeLog] VideoAdFinishedTime   : %.4f
+    str: [FLog::JoinTimeLog] StartGameTime         : %.4f
+    str: [FLog::JoinTimeLog] PlacelauncherStartTime: %.4f
+    str: [FLog::JoinTimeLog] FetchedJoinScriptTime : %.4f
+    str: [FLog::JoinTimeLog] PlayerConfigureTime   : %.4f
+    str: [FLog::JoinTimeLog] ConnectTime           : %.4f
+    str: [FLog::JoinTimeLog] ReceivedGlobalsTime   : %.4f
+    str: [FLog::JoinTimeLog] GameLoadTime          : %.4f
+    str: [FLog::JoinTimeLog] InitSolidTextures     : %.4f
+    str: [FLog::JoinTimeLog] GameJoinTime          : %.4f
+    str: [FLog::JoinTimeLog] PlayerMovedTime       : %.4f
+    str: [FLog::JoinTimeLog] AvatarLoadTime        : %.4f
+    str: [FLog::JoinTimeLog] Connect-Ava           : %.4f
+    str: [FLog::JoinTimeLog] ======== Join Times (Delta) =======
+    str: [FLog::JoinTimeLog] UserClickToStartGameTime        : %.4f
+    str: [FLog::JoinTimeLog] StartGameToPlacelauncherStart   : %.4f
+    str: [FLog::JoinTimeLog] PlacelauncherStartToJoinScript  : %.4f
+    str: [FLog::JoinTimeLog] FetchedScriptToPlayerConfTime   : %.4f
+    str: [FLog::JoinTimeLog] PlayerConfigToConnectTime       : %.4f
+    str: [FLog::JoinTimeLog] ConnectToReceivedGlobalsTime    : %.4f
+    str: [FLog::JoinTimeLog] ReceivedGlobalToGameLoadTime    : %.4f
+    str: [FLog::JoinTimeLog] GameLoadToGameJoinTime          : %.4f
+    str: [FLog::JoinTimeLog] GameJoinToAvatarLoadTime        : %.4f
+f11508 score=20 cone=None instrs=1077 calls=['f978', 'f1148', 'f1152', 'f1189', 'f1478', 'f1488', 'f1493', 'f2005', 'f151757', 'f151765', 'f151790', 'f151809', 'f151810', 'f151811', 'f151815', 'f157497', 'f164173', 'f164531', 'f166572', 'f166574']
+    str: JoinSnapShotTime
+    str: numOfPacketsSent
+    str: ReplicatorJoinDataItemV2Stats
+    str: JoinDataInstances
+    str: TotalReplicatorInstances
+    str: JoinInstanceTenthPercent
+    str: TotalJoinBytesCompressed
+    str: TotalJoinBytesUncompressed
+    str: CompressedBytesPerJoinInstance
+    str: UncompresedBytesPerJoinInstance
+    str: JoinInstanceStatsForStreaming
+    str: ReplicatorJoinDataItemV2CacheEfficiency
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : Cache Update Stats (CacheableInstances) : %u instances added, %u blob(s) added, %u raw bytes added, %u compressed bytes added
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : Cache Update Stats (NotCacheableInstances) : %u instances added, %u blob(s) added, %u raw bytes added, %u compressed bytes added
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : Cache Update Stats (PartInstances) : %u instances added, %u blob(s) added, %u raw bytes added, %u compressed bytes added
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : sharedStringsInstanceCounters : %u instances added, %u blob(s) added, %u raw bytes added, %u compressed bytes added, took %f ms
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : batchNetAssetsInstanceCounters : %u assets added, %u blob(s) added, %u raw bytes added, %u compressed bytes added
+    str: [DFLog::NetworkJoin] ~JoinDataItemV2 : Total Join Stats : %u instances, %u blob(s), %u total bytes, %u compressed bytes, %u uncompressed bytes, %u useful uncompressed bytes
+    str: [DFLog::NetworkJoinDetails] InstanceTypePtr,InstanceTypeName,BlobType,Count,minSize,maxSize,avgSize
+    str: [DFLog::NetworkJoinDetails] %p,%s,%d,%d,%d,%d,%d
+f68918 score=19 cone=None instrs=27114 calls=['f499', 'f518', 'f17073', 'f19398', 'f68742', 'f68750', 'f68755', 'f68769', 'f68778', 'f68779', 'f68780', 'f68783', 'f68786', 'f68788', 'f68789', 'f68790', 'f68791', 'f68792', 'f68794', 'f68797', 'f68798', 'f68800', 'f68802', 'f68809', 'f68811', 'f68812', 'f68813', 'f68815', 'f68816', 'f68818']
+    str: Joints......: 
+    str: numJoints
+    str: Joints.......: 
+    str: Incoming Packet Queue...: 
+    str: Packet Queue
+    str: Received Data Packets...: 
+    str: Received Data Packets
+    str: Received ISR Packets...: 
+    str: Received ISR Packets
+    str: Received LR Packets...: 
+    str: Received LR Packets
+    str: Received Physics Packets: 
+    str: Received Physics Packets
+    str: Received Cluster Packets: 
+    str: Received Cluster Packets
+    str: Sent Data Packets.......: 
+    str: Sent Data Packets
+    str: Sent Physics Packets....: 
+    str: Sent Physics Packets
+f11313 score=18 cone=None instrs=10961 calls=['f358', 'f398', 'f445', 'f742', 'f743', 'f744', 'f1340', 'f3838', 'f4527', 'f9179', 'f9203', 'f11264', 'f11285', 'f11410', 'f11412', 'f11415', 'f11416', 'f11417', 'f11521', 'f12222', 'f20180', 'f20187', 'f20195', 'f20198', 'f20202', 'f20203', 'f20204', 'f20211', 'f20213', 'f20215']
+    str: DataSender - sendItemsPacket High Priority Queue: %zu
+    str: DataSender - sendItemsPacket Pending Queue: %zu
+    str: DataSender - sendItemsPacket Common Queue Backlog: %d
+    str: ChatRed
+    str: [DFLog::NetworkSharedQueue] Replicator : %p : Sending from per-replicator queue (Common Id Marker : %llu)
+    str: [DFLog::NetworkSharedQueue] Replicator : %p : Sending from shared queue (Requires Common Id : %llu)
+    str: DataSender - Per-replicator items sent: %d
+    str: [DFLog::LargeReplicatorTrace] {} Cache Insert for guid {} and version {} and assetType {}
+    str: [DFLog::LargeReplicatorTrace] {} Cache Evict Deferring Removal guid {} and version {} and assetType {}
+    str: [DFLog::LargeReplicatorTrace] {} Marking for Cancel for {} guid {} and version {} and assetType {}
+    str: [DFLog::LargeReplicatorTrace] {} Sending Remove for stale delta state cleanup guid {} version {} assetType {}
+    str: [DFLog::LargeReplicatorTrace] Delta source {} version {} found Published, unblocking delta for guid {} version {}
+    str: Large Replicator Stream exceeded size for type {}
+    str: Large Replicator can't send passed max supported size
+    str: [DFLog::LargeReplicatorTrace] {} Processed Adds + Removes
+    str: LargeReplicator ack speed too slow. Disconnect.
+    str: Exception during LR data out step, request disconnect: {}
+    str: Exception during LR data out step, request disconnect: Unknown send failure
+f95866 score=18 cone=None instrs=29365 calls=['f445', 'f518', 'f1737', 'f2476', 'f3182', 'f3187', 'f4058', 'f4067', 'f9905', 'f12875', 'f13816', 'f13823', 'f14949', 'f16432', 'f18194', 'f18247', 'f18248', 'f21199', 'f21369', 'f21371', 'f23092', 'f23093', 'f23285', 'f27314', 'f31646', 'f33010', 'f36618', 'f36619', 'f36635', 'f42922']
+    str: FeatureMatchingService:CreateTable: schema must be a dictionary
+    str: SchemaName must be a string
+    str: schema.Channels missing or not an array
+    str: schema.Normalization is not None/StandardScore/UnitL2
+    str: schema.Channels entry is not a table
+    str: schema.Fields is not an array
+    str: schema.Fields entry is not a table
+    str: FeatureMatchingService:CreateTable: invalid schema: %s
+    str: FeatureMatchingService:CreateTable: rawFeatures buffer holds %zu floats, which is not a multiple of the schema's total dimension %u
+    str: FeatureMatchingService:CreateTable: schema.NormalizationField must be a non-empty field-name string
+    str: FeatureMatchingService:CreateTable: metadataColumns count %zu exceeds schema field count %zu
+    str: FeatureMatchingService:CreateTable: metadataColumns['%s'] has no matching schema field
+    str: FeatureMatchingService:CreateTable: schema.BlendSpaces must be a table of { name = spec }
+    str: FeatureMatchingService:CreateTable: schema.BlendSpaces exceeds the maximum of %u spaces
+    str: schema.BlendSpaces
+    str: FeatureMatchingService:CreateTable: schema.BlendSpaces declares more spaces than its cells can populate
+    str: schema has zero total dimension (no feature channels)
+    str: ' has no matching schema field
+f489 score=17 cone=None instrs=70924 calls=['emscripten_asm_const_async_on_main_thread', 'emscripten_asm_const_double', 'emscripten_asm_const_int', 'preallocate_emscripten_key_event_buffer', 'emscripten_get_element_css_size', 'get_effective_device_pixel_ratio', 'emscripten_set_canvas_element_size', 'emscripten_get_device_pixel_ratio', 'is_mobile_browser', 'install_pointer_source_tracking', 'emscripten_set_mousedown_callback_on_thread', 'emscripten_set_mouseup_callback_on_thread', 'emscripten_set_mousemove_callback_on_thread', 'emscripten_set_keydown_callback_on_thread', 'emscripten_set_keyup_callback_on_thread', 'emscripten_set_touchstart_callback_on_thread', 'emscripten_set_touchend_callback_on_thread', 'emscripten_set_touchmove_callback_on_thread', 'emscripten_set_touchcancel_callback_on_thread', 'emscripten_set_wheel_callback_on_thread', 'emscripten_set_mouseleave_callback_on_thread', 'emscripten_set_mouseenter_callback_on_thread', 'emscripten_set_pointerlockerror_callback_on_thread', 'emscripten_set_blur_callback_on_thread', 'emscripten_set_focus_callback_on_thread', 'is_touch_mobile', 'is_touch_screen_device', 'has_keyboard', 'has_mouse', 'schedule_main_loop']
+    str: Failed to initialize CrashReportProtocolCore (CrashReportError: %s)
+    str: [DFLog::LoadSettingsZstdDictionary] Platform assets path not set for dictionary loading.
+    str: [DFLog::LoadSettingsZstdDictionary] Dictionary file does not exist or is empty: {}
+    str: [DFLog::LoadSettingsZstdDictionary] Exception while getting dictionary path
+    str: DictionaryLoad
+    str: [DFLog::LoadSettingsZstdDictionary] Could not decompress because dictionary was null.
+    str: [DFLog::LoadSettingsZstdDictionary] Error getting uncompressed size: {}
+    str: Dictionary ID mismatch
+    str: [DFLog::LoadSettingsZstdDictionary] Error decompressing: {}
+    str: [DFLog::LoadSettingsZstdDictionary] Decompression successful: {} -> {}
+    str: Failed to download or apply critical settings, please check your internet connection. Error info: %s
+    str: [DFLog::AppBridge] adjustAppBridgeSettings: Feature_CookieProtocolEnabled: (%s), appBucket: %d. Set CookieProtocolEnabled => %s.
+    str: [DFLog::AppBridge] adjustAppBridgeSettings: Feature_UnifiedCookieProtocolEnabledSticky: ({}), appBucket: {}. Set UnifiedCookieProtocolEnabledSticky => {}.
+    str: [FLog::BaseUrlProtocol] Setting up LinkingProtocol handler
+    str: [FLog::BaseUrlProtocol] Finished setting up LinkingProtocol handler
+    str: [FLog::StartupController] initProtocols
+    str: [FLog::StartupController] PlatformNativeAdsProtocol initialized
+f146675 score=17 cone=None instrs=4992 calls=['f518', 'f627', 'f630', 'f631', 'f632', 'f633', 'f970', 'f995', 'f1010', 'f1029', 'f1034', 'f1117', 'f1124', 'f1148', 'f1152', 'f1178', 'f1261', 'f1478', 'f1488', 'f1505', 'f1508', 'f1519', 'f1731', 'f1737', 'f1738', 'f1739', 'f1946', 'f1961', 'f1962', 'f1963']
+    str: [FLog::TelemetryProtocol] [C++] hello from logEventFromLua
+    str: [FLog::TelemetryProtocol] [C++] logEventFromLua: eventType `%s`
+    str: [FLog::TelemetryProtocol] [C++] config non-null: `%s`
+    str: [FLog::TelemetryProtocol] [C++] data non-null: `%s`
+    str: [FLog::TelemetryProtocol] [C++] hello from V1 ephemeral counter
+    str: [FLog::TelemetryProtocol] Sending RobloxTelemetryEphemeralCounter event: %s with value %d
+    str: [FLog::TelemetryProtocol] [C++] hello from V1 stat
+    str: [FLog::TelemetryProtocol] Sending RobloxTelemetryEphemeralStat event: %s with value %f
+    str: [FLog::TelemetryProtocol] [C++] hello from V1 Event
+    str: [FLog::TelemetryProtocol] EventName: %s\nBackends: %s\nThrottle: %d
+    str: [FLog::TelemetryProtocol] RobloxTelemetryCounter EventName is:`{}`
+    str: [FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryCounter"}}
+    str: [FLog::TelemetryProtocol] Sending RobloxTelemetryCounter event: {} with value {}
+    str: [FLog::TelemetryProtocol] RobloxTelemetryStat EventName is:`{}`
+    str: [FLog::TelemetryProtocol] `backends` of event {} should be exactly {{"RobloxTelemetryStat"}}
+    str: [FLog::TelemetryProtocol] Sending RobloxTelemetryStat event: {} with value {}
+    str: [FLog::TelemetryProtocol] [C++] goodbye from logEventFromLua
+f11163 score=16 cone=None instrs=15278 calls=['f316', 'f396', 'f398', 'f445', 'f499', 'f518', 'f627', 'f630', 'f631', 'f632', 'f633', 'f742', 'f743', 'f744', 'f970', 'f978', 'f1010', 'f1090', 'f1109', 'f1117', 'f1118', 'f1124', 'f1130', 'f1148', 'f1152', 'f1177', 'f1178', 'f1204', 'f1209', 'f1261']
+    str: [DFLog::StreamingObserverDetailed] skipping disconnect compaction: replicatorSize {} / megaReplicatorIndex {} exceed subscription capacity {} (megaReplicatorIndex outran observer resize)
+    str: [FLog::Network] Time to disconnect replication data: %f
+    str: Replicator SendData
+    str: ReplicatorLifetimeMs
+    str: before_join
+    str: post_join
+    str: UncompressedPacketSize_P50
+    str: UncompressedPacketSize_P90
+    str: UncompressedPacketSize_P99
+    str: TotalRakNetRxBytes
+    str: ServerDisconnectWithCode_
+    str: ClientDisconnectWithCode_
+    str: LargeReplicatorUsed
+    str: ServerPacketQueueSizeStats
+    str: ServerLargePacketQueueSizeStats
+    str: Replicator ProcessPackets
+f4231 score=15 cone=None instrs=6858 calls=['f410', 'f459', 'f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f970', 'f993', 'f1034', 'f1143', 'f1152', 'f1177', 'f1226', 'f1478', 'f1488', 'f1497', 'f1591', 'f1646', 'f1666', 'f1779', 'f1861', 'f4225', 'f51118', 'f87653', 'f151496', 'f151939', 'f151957', 'f153726']
+    str: [FLog::BaseUrlProtocol] Receiving deep linking message, matched URL pattern is {}, deep linking URL is {}
+    str: [FLog::BaseUrlProtocol] Deep linking URL matches BaseUrlProtocol URL Pattern
+    str: [FLog::BaseUrlProtocol] Maybe handle warm start protocol launch {}
+    str: [FLog::BaseUrlProtocol] Handle warm start protocol launch {}
+    str: [FLog::BaseUrlProtocol] Target base URL is empty
+    str: [FLog::BaseUrlProtocol] Current base host is {}, target base host is {}, should change base url: {}
+    str: [FLog::BaseUrlProtocol] Target base URL is {}, restart app to apply the new base URL
+    str: [FLog::WebLoginProtocol] Maybe handle warm start protocol launch {}
+    str: [FLog::WebLoginProtocol] WebLoginProtocol is not initialized, stop handling.
+    str: /v1/authentication-ticket/redeem
+    str: [FLog::WebLoginProtocol] Auth ticket found, restart app to perform web login
+    str: [FLog::WebLoginProtocol] Invalid placeId value
+    str: [FLog::WebLoginProtocol] placeId out of range
+    str: [FLog::WebLoginProtocol] Isolation context = {}
+    str: [FLog::WebLoginProtocol] Launch data = {}
+f11631 score=15 cone=None instrs=5538 calls=['f317', 'f386', 'f387', 'f388', 'f389', 'f742', 'f743', 'f11583', 'f11599', 'f11607', 'f11608', 'f11610', 'f11636', 'f11663', 'f59496', 'f92386', 'f92422', 'f92433', 'f147175', 'f148602', 'f148607', 'f151152', 'f157453', 'f158120', 'f164173', 'f164519', 'f164524', 'f164531', 'f164561', 'f166572']
+    str: Packet Queue
+    str: Sent Data Packets
+    str: Sent Physics Packets
+    str: Items Per Packet
+    str: SentTouchPackets
+    str: Received Packets
+    str: Received Data Packets
+    str: Received ISR Packets
+    str: Received LR Packets
+    str: Received Physics Packets
+    str: Sent ISR Packets
+    str: Sent Cluster Packets
+    str: Received Cluster Packets
+    str: Received Touch Packets
+    str: MaxPacketLoss
+f68884 score=15 cone=None instrs=36189 calls=['f499', 'f518', 'f68742', 'f68750', 'f68755', 'f68768', 'f68776', 'f68779', 'f68780', 'f68781', 'f68782', 'f68783', 'f68784', 'f68786', 'f68787', 'f68788', 'f68789', 'f68790', 'f68791', 'f68792', 'f68793', 'f68794', 'f68796', 'f68799', 'f68800', 'f68803', 'f68804', 'f68805', 'f68806', 'f68807']
+    str: ----- Raknet -----
+    str: RakNet Ping*: 
+    str: R RakNet Recv' To App Time*: 
+    str: L RakNet Recv' To App Time*: 
+    str: packetlossTotalBytes.: 
+    str: packetlossTotal
+    str: packetLoss..........: 
+    str: packetLoss
+    str: packetsSent.........: 
+    str: totalPacketsSent
+    str: packetsReceived.....: 
+    str: totalPacketsReceived
+    str: packetsSendBlocked..: 
+    str: totalPacketsSendBlocked
+    str: rxMalformedPackets
+f127613 score=15 cone=None instrs=5958 calls=['f358', 'f398', 'f445', 'f627', 'f630', 'f631', 'f742', 'f743', 'f744', 'f1090', 'f1143', 'f1209', 'f2005', 'f88472', 'f127376', 'f127381', 'f127383', 'f127396', 'f127397', 'f127485', 'f127491', 'f127492', 'f127494', 'f127495', 'f127497', 'f127499', 'f127501', 'f127502', 'f127503', 'f127504']
+    str: [FLog::Network] Too many packets (%d) dropped in %dms
+    str: [DFLog::RakNetConnectTrace] RakNet : OpenRequest1 next request time triggered, requestsMade %u
+    str: [DFLog::RakNetConnectTrace] (%s) RakNet connection failed after too many attempts. Made %d requests.
+    str: [DFLog::RakNetConnectTrace] RakNet : Too many attempts tries : timed out, inform failure
+    str: [DFLog::RakNetConnectTrace] Current file descriptor count is {}, limit {}, fd {}
+    str: [DFLog::RakNetConnectTrace] RakNet: Create OpenRequest1 with MTU %d
+    str: [DFLog::RakNetConnectTrace] RakNet: Sending OpenRequest1
+    str: [FLog::Network] Socket send OpenRequest1 failed. Tried to connect to %s, %s
+    str: [DFLog::RakNetConnectTrace] Socket send OpenRequest1 failed. Tried to connect to %s, %s
+    str: RaknetArtificialLatency
+    str: RakNetLatencyPeakTxQueue
+    str: RakNetLatencyPeakRxQueue
+    str: RakNetLatencyPeakTxDelay
+    str: RakNetLatencyPeakRxDelay
+    str: RakNetRxBytesInQueueStats
+f127961 score=14 cone=None instrs=1130 calls=['f966', 'f20547', 'f166572', 'f166574']
+    str: REPLICATION_PACKET_START_DESERIALIZING
+    str: RAKNET_SEND
+    str: RAKNET_MSG_IN_BCS
+    str: RAKNET_STREAM_SERIALIZE_AND_SEND_INITIAL
+    str: RAKNET_STREAM_SERIALIZE_AND_SEND_LAST
+    str: RAKNET_SOCKET_DATA_DESERIALIZE_TO_INTERNAL_PACKET
+    str: RAKNET_INTERNAL_PACKET_FORMED
+    str: RAKNET_INTERNAL_PACKET_PUSH_TO_QUEUE
+    str: RAKNET_PACKET_PUSH_TO_RECEIVE_QUEUE
+    str: RAKNET_PACKET_RECEIVED_POPPED
+    str: RAKNET_RAKPING_SENDIMMEDIATE
+    str: RAKNET_RAKPING_RCV_RAKPONG_SENT
+    str: RAKNET_RAKPONG_RCV
+    str: RAKNET_SOCKET_RECEIVE
+f20484 score=13 cone=None instrs=3721 calls=['f358', 'f445', 'f518', 'f627', 'f630', 'f631', 'f826', 'f833', 'f970', 'f978', 'f1010', 'f1124', 'f1177', 'f1209', 'f1478', 'f1488', 'f8457', 'f8516', 'f8549', 'f8556', 'f8644', 'f8645', 'f20461', 'f20481', 'f20482', 'f20485', 'f20499', 'f131332', 'f131885', 'f131939']
+    str: [DFLog::RbxTransportDummyClient] Client is already connected!
+    str: [DFLog::RbxTransportDummyClient] Failed to create connection!
+    str: [DFLog::RbxTransportDummyClient] Connection attempt timed out after {} ms
+    str: Connection attempt timed out
+    str: handshakeDeltaTimeMs_
+    str: handshakeLastEvent
+    str: handshakeErrorMessage
+    str: handshakeEventCount
+    str: handshakeTrackerHasOverflowed
+    str: handshakeTrackerDebugInfo
+    str: [DFLog::RbxTransportDummyClient] Failed to establish connection to server at {}:{}, reason {}
+    str: [DFLog::RbxTransportDummyClient] Connection to server at {}:{} established
+    str: [DFLog::RbxTransportDummyClient] Connected to server at {}:{}
+f119501 score=13 cone=None instrs=4016 calls=['f470', 'f916', 'f11926', 'f19277', 'f65292', 'f65791', 'f65807', 'f65808', 'f110469', 'f111722', 'f119466', 'f119467', 'f119481', 'f119483', 'f119869', 'f119957', 'f119984', 'f119987', 'f119996', 'f119999', 'f120050', 'f124143', 'f124149', 'f124150', 'f154181', 'f157492', 'f157633', 'f158113', 'f163592', 'f164173']
+    str: [FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer::drainAndEncodeOggOpus: no format
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to create Opus codec
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to open Opus codec
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to create OGG container
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to add audio stream
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to write OGG header
+    str: [FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer::drainAndEncodeOggOpus: beginEncode failed
+    str: [FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer::drainAndEncodeOggOpus: encode failed
+    str: [FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer::drainAndEncodeOggOpus: no audio frames
+    str: [FLog::VoiceChatLogs] AudioQualityEncoder: failed to write OGG trailer
+    str: [FLog::VoiceChatLogs] SubscriberVoiceQualityBuffer::drainAndEncodeOggOpus: endEncode failed
+    str: [FLog::VoiceChatLogs] ClientSubscriberAudioQualityEncodeAndUploadState: encode failed
+    str: [FLog::VoiceChatLogs] ClientSubscriberAudioQualityEncodeAndUploadState: remote event fired for userId={}, session={}, playSession={}, payload={}B, retries={}
+f125056 score=13 cone=None instrs=11077 calls=['f302', 'f396', 'f407', 'f410', 'f445', 'f501', 'f1189', 'f1478', 'f1488', 'f2103', 'f2132', 'f2327', 'f9126', 'f10145', 'f10746', 'f16499', 'f18226', 'f19885', 'f39722', 'f51490', 'f87653', 'f87920', 'f102515', 'f102523', 'f102549', 'f102553', 'f102561', 'f102562', 'f102563', 'f102564']
+    str: VoiceChatService:GetChatGroupsAsync is disabled.
+    str: VoiceChatService:GetChatGroupsAsync error: Players Service null.
+    str: VoiceChatService:GetChatGroupsAsync can only be called from the server.
+    str: VoiceChatService:GetChatGroupsAsync error: SocialCounterpartyManager null.
+    str: VoiceChatService:GetChatGroupsAsync error: GetChatGroupsAsync is not available in this experience.
+    str: VoiceChatService:GetChatGroupsAsync error: Players are required.
+    str: VoiceChatService:GetChatGroupsAsync error: All instances must be Players.
+    str: VoiceChatExtension:isVoiceEnabledForUserIdsAsync() Players service not available
+    str: VoiceChatExtension:isVoiceEnabledForUserIdsAsync() API service not available
+    str: VoiceChatExtension:isVoiceEnabledForUserIdsAsync() API service invalid
+    str: VoiceChatService:isVoiceEnabledForUserIdsAsync() Players service not available
+    str: VoiceChatService:isVoiceEnabledForUserIdsAsync() API service not available
+    str: VoiceChatService:isVoiceEnabledForUserIdsAsync() API service invalid
+f38517 score=12 cone=None instrs=991 calls=['f499', 'f1010', 'f1117', 'f1124', 'f1178', 'f1478', 'f1488', 'f38523', 'f138327', 'f157417', 'f157497', 'f158155', 'f158158', 'f164173', 'f164174', 'f164531', 'f166871', 'f168019']
+    str: hbFaceChatLodPrev
+    str: hbFaceChatLodPrevVideoEnabled
+    str: hbFaceChatLodPrevAudioEnabled
+    str: hbFaceChatLodPrevExtrapolation
+    str: hbFaceChatLodNew
+    str: hbFaceChatLodNewVideoEnabled
+    str: hbFaceChatLodNewAudioEnabled
+    str: hbFaceChatLodNewExtrapolation
+    str: hbFaceChatLodFilteredProcessingTime
+    str: hbFaceChatLodOldStateId
+    str: hbFaceChatLodNewStateId
+    str: hbFaceChatLodNumberOfStates
+f68775 score=12 cone=None instrs=12859 calls=['f742', 'f743', 'f2103', 'f2126', 'f2197', 'f2226', 'f2255', 'f2751', 'f8571', 'f8954', 'f10787', 'f50422', 'f59496', 'f68740', 'f68758', 'f68759', 'f68760', 'f68761', 'f68762', 'f68764', 'f68765', 'f68766', 'f81842', 'f81846', 'f90793', 'f90809', 'f90829', 'f90852', 'f90857', 'f92414']
+    str: Waiting..., join status: %s
+    str: %.3f sec, join status: Joined
+    str: %.3f sec, join status: %s
+    str: Received Packets
+    str: Packet Queue
+    str: RakNetHealthStats
+    str: packetlossLastSecond
+    str: MaxPacketLoss
+    str: packetlossTotal
+    str: numJoints
+    str: numConnectorsAll
+    str: numConnectorsAndPoints
+f119831 score=12 cone=None instrs=10496 calls=['f358', 'f445', 'f518', 'f786', 'f826', 'f834', 'f973', 'f1063', 'f1328', 'f2122', 'f4098', 'f4490', 'f6092', 'f6101', 'f6117', 'f6122', 'f6125', 'f6126', 'f10787', 'f11957', 'f21038', 'f119739', 'f119801', 'f119843', 'f120406', 'f145209', 'f145215', 'f145231', 'f150759', 'f150768']
+    str: [DFLog::WebrtcInput] createPeerConnection failed
+    str: [DFLog::WebrtcInput] Setup PeerConnection took {} ms
+    str: [DFLog::WebrtcInput] Negotiated video codec: {} (was {})
+    str: [DFLog::WebrtcInput] Unknown negotiated video codec name '{}'; keeping {}
+    str: [DFLog::WebrtcInput] Connection timed out after {} ms
+    str: [DFLog::WebrtcInput] Connection failed or closed
+    str: [DFLog::WebrtcInput] Connected! Receiving video frames...
+    str: [DFLog::WebrtcInput] Wait for connection took {} ms
+    str: [DFLog::WebrtcInput] Total connect took {} ms
+    str: [DFLog::WebrtcInput] connect() took {} ms
+    str: [DFLog::WebrtcInput] Timed out waiting for first video packet after {} ms
+    str: [DFLog::WebrtcInput] No audio packet received within {} ms, proceeding without audio
+f8565 score=11 cone=None instrs=3163 calls=['f518', 'f970', 'f1010', 'f1177', 'f1478', 'f1488', 'f2103', 'f8451', 'f8472', 'f8473', 'f8502', 'f8539', 'f8540', 'f8557', 'f8579', 'f8622', 'f8623', 'f8632', 'f8690', 'f8693', 'f8842', 'f8956', 'f9942', 'f10606', 'f10690', 'f10783', 'f10944', 'f11349', 'f11374', 'f12239']
+    str: [DFLog::NetworkClient] RakPeer received ID_CONNECTION_REQUEST_ACCEPTED packet, calling OnNewConnection callback of plugin
+    str: [DFLog::NetworkClient] Connection accepted from {}
+    str: RakNetPasswordAccepted
+    str: GameServerConnectSuccess
+    str: [DFLog::NetworkClient] Successfully connected to server after falling back from RbxTransport to RakNet. Original connection failure reason: {}
+    str: [DFLog::NetworkTrace] noViableConnectionsLeft::: sc(%s:%d).state = %d :: returning false
+    str: [DFLog::NetworkClient] Failed to connect to server at {}, no response.
+    str: [DFLog::NetworkClient] Server reached at {}, but handshake failed. Connection error {}
+    str: RakNetPasswordRejected
+    str: Client::OnReceive error while trying to decompress packet: %s
+    str: [FLog::Network] Error decompressing packet in Client::OnReceive: {}
+f10578 score=11 cone=None instrs=5098 calls=['f445', 'f2103', 'f2476', 'f3973', 'f8715', 'f8734', 'f8770', 'f8914', 'f9080', 'f9158', 'f9663', 'f9905', 'f9908', 'f10394', 'f10407', 'f10575', 'f10577', 'f10666', 'f10681', 'f10790', 'f10791', 'f10866', 'f10977', 'f11206', 'f11220', 'f11245', 'f11247', 'f11337', 'f11497', 'f11501']
+    str: Batch NetAsset join: unknown net asset type
+    str: Batch NetAsset join: unknown factory
+    str: Batch NetAsset join: unable to create asset
+    str: [DFLog::ReplicationDataCaching] Begin reading join instance offset=%X bytes
+    str: Join data contained invalid class network id
+    str: read join object got a null object (guid %s)
+    str: [DFLog::LargeReplicatorTrace] registerCachedAssetInReceiver attempting guid {} version {} type {}
+    str: [DFLog::LargeReplicatorTrace] registerCachedAssetInReceiver skipped (already exists) guid {} version {} networkIdType {}
+    str: [DFLog::LargeReplicatorTrace] registerCachedAssetInReceiver registered guid {} version {} networkIdType {}
+    str: [DFLog::ReplicationDataCaching] Discarding join instance due to null local descriptor (schema diff)
+    str: [DFLog::ReplicationDataCaching] Done reading join instance %s offset=%X bytes with numOfChildren=%d, indexInParent=%d
+f11184 score=11 cone=None instrs=5534 calls=['f488', 'f627', 'f630', 'f631', 'f742', 'f743', 'f970', 'f1109', 'f1117', 'f1118', 'f1148', 'f1152', 'f1178', 'f1478', 'f1488', 'f2005', 'f2103', 'f8464', 'f9146', 'f9162', 'f10564', 'f10606', 'f10698', 'f10730', 'f10731', 'f10783', 'f11167', 'f11185', 'f11186', 'f11434']
+    str: RakNetBandwidth
+    str: [DFLog::ReplicationDataCaching] Replicator::OnReceive() Received Msg ID Type : %d
+    str: [FLog::Network] call to onreceive before physicsReceiver is initialized are ready, dropping packet
+    str: [FLog::Network] Lost connection to %s: ID_CONNECTION_LOST
+    str: [FLog::Network] Disconnect from %s: ID_DISCONNECTION_NOTIFICATION
+    str: Received ISR Packet without ISR being enabled.
+    str: Game server received an ID_REQUEST_MARKER packet
+    str: Disconnect from %s
+    str: rejoin
+    str: [FLog::Network] Client has been disconnected with reason: %s
+    str: [FLog::Network] Error on Replicator::OnReceive: %s
+f11369 score=11 cone=None instrs=7083 calls=['f488', 'f627', 'f630', 'f631', 'f742', 'f743', 'f970', 'f1109', 'f1117', 'f1118', 'f1148', 'f1152', 'f1178', 'f1478', 'f1488', 'f2005', 'f2103', 'f8464', 'f8472', 'f8473', 'f8834', 'f9137', 'f9162', 'f10698', 'f10730', 'f10731', 'f10782', 'f10783', 'f11167', 'f11185']
+    str: RakNetBandwidth
+    str: [DFLog::ReplicationDataCaching] Replicator::OnReceive() Received Msg ID Type : %d
+    str: [FLog::Network] call to onreceive before physicsReceiver is initialized are ready, dropping packet
+    str: Received ISR Packet without ISR being enabled.
+    str: Game server received an ID_REQUEST_MARKER packet
+    str: [FLog::Network] Disconnect from %s: ID_DISCONNECTION_NOTIFICATION
+    str: Disconnect from %s
+    str: rejoin
+    str: [FLog::Network] Client has been disconnected with reason: %s
+    str: [FLog::Network] Lost connection to %s: ID_CONNECTION_LOST
+    str: [FLog::Network] Error on Replicator::OnReceive: %s
+f11933 score=11 cone=None instrs=4718 calls=['f302', 'f518', 'f978', 'f1051', 'f1152', 'f1177', 'f1478', 'f1488', 'f1737', 'f1963', 'f2103', 'f8472', 'f8473', 'f8834', 'f9485', 'f9920', 'f9935', 'f9945', 'f10595', 'f10782', 'f10783', 'f10835', 'f10846', 'f10935', 'f10977', 'f11211', 'f11245', 'f11353', 'f11369', 'f11773']
+    str: [DFLog::NetworkJoin] initialSpawnName: %s
+    str: [DFLog::NetworkJoin] %s
+    str: Received a Terrain packet from a Client on a GameServer
+    str: Too many shared string hash packets
+    str: JoinInfoLength
+    str: JoinInfoLengthLimit
+    str: JoinInfoReportingLengthLimit
+    str: [DFLog::NetworkJoin] ClientPreloadedVersion received: {}
+    str: [DFLog::NetworkJoin] Player Creation Error
+    str: ServerReplicator::OnReceive packet %d: %s
+    str: [FLog::Network] Error on ServerReplicator::OnReceive: %s
+f11965 score=11 cone=None instrs=3924 calls=['f302', 'f518', 'f978', 'f1051', 'f1152', 'f1177', 'f1478', 'f1488', 'f1737', 'f1963', 'f2103', 'f8473', 'f9485', 'f9935', 'f9942', 'f9945', 'f10595', 'f10606', 'f10783', 'f10835', 'f10846', 'f10977', 'f11184', 'f11211', 'f11245', 'f11353', 'f11371', 'f11773', 'f11787', 'f11853']
+    str: [DFLog::NetworkJoin] initialSpawnName: %s
+    str: [DFLog::NetworkJoin] %s
+    str: Received a Terrain packet from a Client on a GameServer
+    str: Too many shared string hash packets
+    str: JoinInfoLength
+    str: JoinInfoLengthLimit
+    str: JoinInfoReportingLengthLimit
+    str: [DFLog::NetworkJoin] ClientPreloadedVersion received: {}
+    str: [DFLog::NetworkJoin] Player Creation Error
+    str: ServerReplicator::OnReceive packet %d: %s
+    str: [FLog::Network] Error on ServerReplicator::OnReceive: %s
+f22161 score=11 cone=None instrs=5657 calls=['f358', 'f445', 'f518', 'f627', 'f630', 'f631', 'f1118', 'f1250', 'f16499', 'f22155', 'f22157', 'f138327', 'f150870', 'f157199', 'f157209', 'f157216', 'f157248', 'f157258', 'f157262', 'f157277', 'f157310', 'f157333', 'f157348', 'f157350', 'f157362', 'f157363', 'f157375', 'f157377', 'f157383', 'f157417']
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 request failed: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 response: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Failed to parse heartbeat v2 response json
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 Reassigned result has no corresponding request channel; skipping
+    str: [DFLog::UniverseChatChannelMonitorLog] Unknown heartbeat v2 action: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 Regrouped action is missing channel id or topic; skipping
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 Regrouped: new channel {} group {} topic {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 Reassigned action is missing reassigned channelId or topic; skipping
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 result for channel group {}: Reassigned to channel {} topic {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat v2 result for channel group {}: Ok
+    str: [DFLog::UniverseChatChannelMonitorLog] Exception parsing heartbeat v2 response: {}
+f127810 score=11 cone=None instrs=3714 calls=['f298', 'f299', 'f301', 'f358', 'f445', 'f9058', 'f127489', 'f127491', 'f127492', 'f127498', 'f127499', 'f127501', 'f127505', 'f127524', 'f127525', 'f127529', 'f127600', 'f127628', 'f127634', 'f127689', 'f127772', 'f127813', 'f127823', 'f127846', 'f127848', 'f127855', 'f127858', 'f127903', 'f127934', 'f127938']
+    str: [FLog::Network] WARNING: {} sockets are being initialized, while DFFlag::RakNetDisablePollAndSelect is enabled.\n	* Recvmsg() will block on the first socket waiting for messages, even if other sockets 
+    str: [DFLog::NetworkDetailed] CreateBoundSocket() forcePort=%d, socketFamily=%d
+    str: [FLog::Network] Sharding CreateBoundSocket() forcePort=%d, portLow=%d, portHigh=%d, found port=%d after %d iterations and %.2f ms
+    str: [FLog::Network] Sharding CreateBoundSocket() forcePort=%d, portLow=%d, portHigh=%d, could not find open port after %d iterations and %.2f ms
+    str: bind__(): Argument is a descriptor for a file, not a socket.
+    str: bind__(): The addrlen is wrong, or the socket was not in the AF_UNIX family.
+    str: bind__(): The socket inode would reside on a read-only file system.
+    str: [FLog::Network] RakNet: failed to set send timeout on socket: {}
+    str: [FLog::Network] RakNet: failed to set recv timeout on socket: {}
+    str: [FLog::Network] RakNet Socket bound to invalid (privileged) port: %u
+    str: [DFLog::NetworkAudit] RakNet Socket Open: %s
+f132010 score=11 cone=None instrs=2174 calls=['f970', 'f1010', 'f1117', 'f1177', 'f1478', 'f1488', 'f20482', 'f20499', 'f131843', 'f131886', 'f132008', 'f157492', 'f157633', 'f157704', 'f166572', 'f166574']
+    str: handshakeLastEvent
+    str: handshakeRetryCount
+    str: handshakeEventCount
+    str: handshakeTrackerHasOverflowed
+    str: [DFLog::RbxTransportTimepointTracker] QUIC handshake tracker debug info: {}
+    str: handshakeStage_{}
+    str: handshakeTotalTimeMs
+    str: handshakeRetryEvent_{}_stage
+    str: handshakeRetryEvent_{}_deltaTimeMs
+    str: [DFLog::RbxTransportTimepointTracker] handshakeRetryEvent_{}: {} at {}ms
+    str: handshakeDebugInfo
+f2588 score=10 cone=None instrs=4903 calls=['f627', 'f630', 'f631', 'f970', 'f1117', 'f1118', 'f1735', 'f2103', 'f2205', 'f2269', 'f2377', 'f2469', 'f2482', 'f2483', 'f2493', 'f2497', 'f2508', 'f2513', 'f2519', 'f2521', 'f2532', 'f2533', 'f2540', 'f2554', 'f2564', 'f2575', 'f2650', 'f67098', 'f67101', 'f92702']
+    str: [FLog::GameJoinUtil] Team test server full; trying {}
+    str: isReconnect
+    str: [FLog::GameJoinUtil] GameFull and Teleport type {}
+    str: [FLog::GameJoinUtil] Flooded and Teleport type {}
+    str: [FLog::GameJoinUtil] Count and Teleport type {}
+    str: [FLog::GameJoinUtil] Creator experience ban message upon teleport: {}
+    str: joinScriptUrl
+    str: authenticationUrl
+    str: authenticationTicket
+    str: joinScript
+f4693 score=10 cone=None instrs=1241 calls=['f430', 'f1983', 'f1989', 'f2020', 'f4672', 'f4673', 'f4756', 'f4902', 'f4904', 'f4922', 'f4923', 'f133129', 'f133306', 'f157492', 'f157573', 'f157578', 'f163594', 'f164173', 'f164519', 'f164524', 'f164531', 'f166829', 'f166914', 'f168019']
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] swap ready but the join was cancelled; leaving it to the abandon
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] game DataModel loaded but the render surface is gone; deferring the swap
+    str: deferred_rbxm_join_success
+    str: deferred_rbxm_join_end_first_launch
+    str: deferred_rbxm_join_end
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] game DataModel loaded; swapping the surface
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] rbxm ready but the render surface is gone; waiting for a new one before resuming
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] resuming UGC join after download completed
+    str: [DFLog::DeferredRbxmJoin] [DeferredRbxm] relaunch returned {}ms after resume; the screen is uncovered from here until Lighting::onGameLoaded restores the sky
+    str: [FLog::SingleSurfaceApp] [DeferredRbxm] resuming UGC join after download completed (window={})
+f11786 score=10 cone=None instrs=3807 calls=['f518', 'f627', 'f630', 'f631', 'f977', 'f2103', 'f2533', 'f8472', 'f8473', 'f10606', 'f10690', 'f10783', 'f10944', 'f11222', 'f11349', 'f11374', 'f11677', 'f11678', 'f11679', 'f11692', 'f11873', 'f11971', 'f12239', 'f12307', 'f20333', 'f20366', 'f20372', 'f20373', 'f127497', 'f127499']
+    str: [FLog::Network] NetworkServer:NewIncomingConnection
+    str: [DFLog::NetworkJoin] Server::OnReceive new connection @ %f s
+    str: [FLog::Output] New connection from %s
+    str: [DFLog::NetworkAudit] RakNet Connect: New connection from %s
+    str: [FLog::Network] Server::OnReceive: ID_NEW_INCOMING_CONNECTION: SessionCrypto not found, new connection closed by RakNet before we could create a replicator
+    str: [FLog::Error] On receive packet %d
+    str: Server::OnReceive packet %d: %s
+    str: [FLog::Network] Server: dropped RakNet route for {} with no RakNet peer
+    str: Server::OnReceive error while trying to decompress packet: %s
+    str: [FLog::Network] Error decompressing packet in Server::OnReceive: {}
+f11818 score=10 cone=None instrs=4336 calls=['f445', 'f518', 'f8466', 'f8472', 'f8473', 'f8507', 'f8516', 'f8556', 'f8601', 'f8644', 'f8645', 'f10690', 'f10729', 'f10783', 'f10944', 'f11196', 'f11222', 'f11304', 'f11349', 'f11677', 'f11678', 'f11698', 'f11772', 'f11873', 'f11934', 'f11971', 'f20332', 'f20334', 'f20337', 'f20349']
+    str: Received RbxTransport::ConnectionEventType::NumConnectionEventTypes
+    str: [DFLog::RbxTransportIntegration] New RbxTransport connection accepted!
+    str: [FLog::Network] NetworkServer:NewIncomingConnection
+    str: [DFLog::NetworkJoin] Server::OnReceive new connection @ %f s
+    str: [FLog::Output] New connection from %s
+    str: [DFLog::NetworkAudit] RbxTransport Connect: New connection from %s
+    str: [DFLog::RbxTransportIntegration] Assigning capabilities {} to Replicator
+    str: [FLog::Error] RbxTransport::ListenerEventType::NewConnectionAccepted Error %s
+    str: Server::OnReceive packet (RbxTransport::ListenerEventType::NewConnectionAccepted)): %s
+    str: [DFLog::RbxTransportIntegration] Received invalid RbxTransport Connection Event!
+f22173 score=10 cone=None instrs=6352 calls=['f302', 'f316', 'f358', 'f445', 'f518', 'f627', 'f630', 'f631', 'f1063', 'f1118', 'f1134', 'f2327', 'f9092', 'f20681', 'f20883', 'f20884', 'f20885', 'f22164', 'f22170', 'f22773', 'f78314', 'f78316', 'f87653', 'f104822', 'f150759', 'f150768', 'f150771', 'f150779', 'f150826', 'f151965']
+    str: [DFLog::UniverseChatChannelMonitorLog] UniverseChatChannelMonitor: Pulse,  placeId: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] UniverseChatChannelMonitor: placeId: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] UniverseChatMessageManager not available, skipping heartbeat
+    str: NoUniverseChatMessageManager
+    str: [DFLog::UniverseChatChannelMonitorLog] No channel infos available to report
+    str: [DFLog::UniverseChatChannelMonitorLog] Nil SocialCounterpartyManager, returning
+    str: [DFLog::UniverseChatChannelMonitorLog] Found {} players in Players service
+    str: [DFLog::UniverseChatChannelMonitorLog] Sending heartbeat request body: {}
+    str: /universe-chat-messaging-api/v2/channel-heartbeats
+    str: /universe-chat-messaging-api/v1/channel-heartbeat
+f22445 score=10 cone=None instrs=3599 calls=['f742', 'f743', 'f1134', 'f1822', 'f1842', 'f1843', 'f2103', 'f2132', 'f2226', 'f2533', 'f21076', 'f21101', 'f22411', 'f22446', 'f22447', 'f22465', 'f22844', 'f22881', 'f27895', 'f27896', 'f27901', 'f27907', 'f27915', 'f27942', 'f27969', 'f27972', 'f27988', 'f27996', 'f103509', 'f104822']
+    str: Preset chat is not enabled
+    str: UniverseChatMessages are not enabled
+    str: UniverseChatPreset wire format (V2) is not enabled
+    str: TextChatService:SendUniverseChatPresetAsync can only be called on the client
+    str: SendUniverseChatPresetAsync error: PresetChatManager is not available.
+    str: SendUniverseChatPresetAsync error: unable to determine user locale.
+    str: SendUniverseChatPresetAsync error: presetId not found in catalog.
+    str: TextChatService.SendUniverseChatPresetAsync
+    str: [DFLog::TextChatFiltering] sendUniverseChatPresetAsync: firing SendingUniverseChatMessage event messageId='{}' presetId='{}' text='{}'
+    str: [DFLog::TextChatFiltering] sendUniverseChatPresetAsync: SUPPRESSED SendingUniverseChatMessage (hasFeatureTimeout=true) messageId='{}'
+f71504 score=10 cone=None instrs=11455 calls=['f357', 'f358', 'f396', 'f407', 'f445', 'f499', 'f518', 'f742', 'f743', 'f744', 'f973', 'f1063', 'f1134', 'f1250', 'f1563', 'f1591', 'f2226', 'f2600', 'f4498', 'f6117', 'f9091', 'f9105', 'f9120', 'f9144', 'f16499', 'f20841', 'f20846', 'f20852', 'f21077', 'f22191']
+    str: [DFLog::ChatFiltering] TextService:FilterStringAsync:Submitted %lld "%s"
+    str: [DFLog::ChatFiltering] filterTextWithCallback:Merged %lld "%s"
+    str: [DFLog::ChatFiltering] filterTextWithCallback:FromCache %lld "%s"
+    str: Sending chat filter and translate request from userId: {}
+    str: [DFLog::ChatFiltering] Sending chat filter and translate request from userId: %lld
+    str: isVerifiedUserChat
+    str: isTextChat
+    str: GameChatPublic
+    str: [DFLog::WebChatFiltering] Invalid localeId (%s)
+    str: chat-translation/v1/FilterAndTranslate
+f92691 score=10 cone=None instrs=1092 calls=['f1724', 'f1731', 'f1737', 'f1963', 'f23832', 'f76998', 'f92692', 'f104822', 'f148697', 'f148746', 'f157499', 'f158113', 'f164173', 'f166572', 'f166574', 'f168019']
+    str: [FLog::Teleport] onUserJoin parse teleportData failed
+    str: [FLog::Teleport] onUserJoin corrupted auth token
+    str: [FLog::Teleport] onUserJoin failed in verifying joinData
+    str: [FLog::Teleport] onUserJoin parse joinData error
+    str: [FLog::Teleport] onUserJoin no userId
+    str: [FLog::Teleport] onUserJoin invalid userId
+    str: [FLog::Teleport] onUserJoin no accountAge
+    str: [FLog::Teleport] onUserJoin invalid accountAge
+    str: [FLog::Teleport] onUserJoin no userData
+    str: [FLog::Teleport] onUserJoin no internalData
+f94869 score=10 cone=None instrs=4056 calls=['f302', 'f357', 'f499', 'f518', 'f965', 'f977', 'f993', 'f1021', 'f1073', 'f1101', 'f1879', 'f3786', 'f6119', 'f23590', 'f83805', 'f103001', 'f150817', 'f157417', 'f157492', 'f157497', 'f157633', 'f158113', 'f158128', 'f158131', 'f158132', 'f158137', 'f158155', 'f158158', 'f163604', 'f163621']
+    str: [FLog::PrefetchProtocol] PrefetchProtocolBank expired. No longer accept new registration.
+    str: [FLog::PrefetchProtocol] URL not found in requestUrlHashMap: {}
+    str: [FLog::PrefetchProtocol]   stored URL: {}
+    str: [FLog::PrefetchProtocol] Request body: {}
+    str: [FLog::PrefetchProtocol] Concat string: {}
+    str: [FLog::PrefetchProtocol] Hash mismatch for {}
+    str: [FLog::PrefetchProtocol] Prefetch blocked: {} has been handled before or response timed out
+    str: [FLog::PrefetchProtocol] Store callback for {}
+    str: [FLog::PrefetchProtocol] Response found. Trigger callback for {}
+    str: [FLog::PrefetchProtocol] Response map size %zu callback map size %zu
+f127651 score=10 cone=None instrs=1757 calls=['f632', 'f633', 'f946', 'f1010', 'f1261', 'f1305', 'f127503', 'f127524', 'f127525', 'f127529', 'f127600', 'f127634', 'f127689', 'f127813', 'f127876', 'f127920', 'f127930', 'f127959', 'f147857', 'f152019', 'f157464', 'f157492', 'f157493', 'f157497', 'f157633', 'f158155', 'f158158', 'f164173', 'f165277', 'f166087']
+    str: Crashing to see where RakNet::UpdateNetworkLoop is blocked
+    str: RakNetShutdown_endUpdateLoopFailure
+    str: [FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveThread(): The recv loop thread is not active and therefore the recv socket was not blocked. Nothing to do here...
+    str: [FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveThread(): Writing to socket to unblock select() or recvmsg()...
+    str: [FLog::Network] Timed-out: SendPacketsToSelfToUnblockSocketReceiveThread(): Failed to gracefully end receive loop after writing to socket for {} (ms)
+    str: [FLog::Network] Timed-out: Failed to gracefully end receive loop after writing to socket for {} (ms)
+    str: RakNetShutdown_endRecvLoopAfterWritingToSocketFailure
+    str: RakNetShutdown_endRecvLoopFailure
+    str: isRbxConnection
+    str: [DFLog::RakNetConnectTrace] RakNet: Clearing Requested Connection List
+f8561 score=9 cone=None instrs=3706 calls=['f518', 'f970', 'f1010', 'f1117', 'f1177', 'f1478', 'f1488', 'f8451', 'f8472', 'f8473', 'f8502', 'f8506', 'f8507', 'f8516', 'f8539', 'f8540', 'f8556', 'f8557', 'f8579', 'f8601', 'f8612', 'f8622', 'f8623', 'f8644', 'f8645', 'f8676', 'f8693', 'f8842', 'f8956', 'f9920']
+    str: Received RbxTransport::ConnectionEventType::NumConnectionEventTypes
+    str: [DFLog::NetworkClient] Connection accepted from {}
+    str: RakNetPasswordAccepted
+    str: originalRaknetError
+    str: [DFLog::NetworkClient] RbxTransport connection closed, falling back to RakNet. Reason: {}
+    str: [DFLog::NetworkClient] RakNet connection closed, attempted fallback to RbxTransport, but it also failed. Reason: {}. Original RakNet error: {}
+    str: [DFLog::RbxTransportIntegration] sendEarlyAuthData failed because no connection!
+    str: GameServerConnectSuccess
+    str: [DFLog::NetworkClient] Successfully connected to server after falling back from RakNet to RbxTransport. Original connection failure reason code: {}
+f10606 score=9 cone=None instrs=2522 calls=['f518', 'f627', 'f630', 'f631', 'f970', 'f1117', 'f2005', 'f9912', 'f14055', 'f103653', 'f103721', 'f148038', 'f148047', 'f151762', 'f151772', 'f151790', 'f151791', 'f151810', 'f151811', 'f151815', 'f151825', 'f152420', 'f157114', 'f157477', 'f157497', 'f157508', 'f157704', 'f163414', 'f163515', 'f164270']
+    str: Error while processing packet: %s (packet id: %d, packet length: %d, progress: %d, schema: %s)
+    str: Error while processing packet: {} (packet id: {})
+    str: Error while processing packet.
+    str: PacketId
+    str: SchemaHash
+    str: ReceivedPacketHash
+    str: ComputedPacketHash
+    str: PacketContents
+    str: [FLog::Network] Bad packet contents: %s
+f10745 score=9 cone=None instrs=4388 calls=['f302', 'f595', 'f970', 'f978', 'f1034', 'f1117', 'f1124', 'f1130', 'f1148', 'f1152', 'f1178', 'f1204', 'f1279', 'f1478', 'f1488', 'f2103', 'f2197', 'f8792', 'f9162', 'f9194', 'f10084', 'f10674', 'f10746', 'f12239', 'f13670', 'f13676', 'f20351', 'f59496', 'f89775', 'f90793']
+    str: PingRakNetSendTimeMs
+    str: PingRakNetRecvTimeMs
+    str: PingBackRakNetSendTimeMs
+    str: PingBackRakNetTimeMs
+    str: ============= DATA PING TRACE (RakNet) ============
+    str: Ping Send RakNet: {} ms
+    str: Ping Receive RakNet: {} ms
+    str: PingBack Send RakNet: {} ms
+    str: PingBack Receive RakNet: {} ms
+f10782 score=9 cone=None instrs=2565 calls=['f518', 'f627', 'f630', 'f631', 'f970', 'f1117', 'f2005', 'f9912', 'f14055', 'f20375', 'f103653', 'f103721', 'f148038', 'f148047', 'f151762', 'f151772', 'f151790', 'f151791', 'f151810', 'f151811', 'f151815', 'f151825', 'f152420', 'f157114', 'f157497', 'f157508', 'f157704', 'f163414', 'f163515', 'f164270']
+    str: Error while processing packet: {} (packet id: {}, packet length: {}, progress: {}, schema: {})
+    str: Error while processing packet: {} (packet id: {})
+    str: Error while processing packet.
+    str: PacketId
+    str: SchemaHash
+    str: ReceivedPacketHash
+    str: ComputedPacketHash
+    str: PacketContents
+    str: [FLog::Network] Bad packet contents: %s
+f11653 score=9 cone=None instrs=1477 calls=['f410', 'f11596', 'f11597', 'f11598', 'f147155', 'f157417', 'f164173', 'f166881']
+    str: totalPacketsSent
+    str: totalPacketsReceived
+    str: totalRxDroppedPackets
+    str: totalPacketsLostTx
+    str: totalPacketsSendBlocked
+    str: packetlossLastSecond
+    str: packetlossTotal
+    str: rxMalformedPackets
+    str: packetLoss
+f20537 score=9 cone=None instrs=1752 calls=['f600', 'f8516', 'f8556', 'f8644', 'f8645', 'f20534', 'f20536', 'f131332', 'f151351', 'f151441', 'f157492', 'f158155', 'f158158', 'f164270', 'f164531', 'f166574', 'f166861']
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient is already connected!
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient Failed to create RbxTransport connection!
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient connection opened.
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient ACK ReceiveChannelOpened IN WaitForConnection {}
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient connection closed.
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient failed to establish connection to server at {}:{}
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient connection to server at {}:{} established
+    str: [DFLog::RbxTransportClientLog] RbxTransportClient connected to server at {}:{}
+    str: [DFLog::RbxTransportClientLog] Both channels ready, firing connectionReady
+f22177 score=9 cone=None instrs=2516 calls=['f518', 'f627', 'f630', 'f631', 'f1118', 'f22162', 'f138327', 'f150870', 'f157199', 'f157209', 'f157216', 'f157258', 'f157277', 'f157310', 'f157333', 'f157348', 'f157362', 'f157363', 'f157375', 'f157377', 'f157417', 'f157492', 'f164010', 'f164012', 'f164173', 'f164174', 'f164270', 'f164525', 'f164526', 'f164531']
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat request failed: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat response: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Failed to parse heartbeat response json
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat response has more results than request channels ({}); ignoring extra
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat result for channel group {}: Ok
+    str: [DFLog::UniverseChatChannelMonitorLog] Reassigned action for channel {} is missing channelId or topic; skipping
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat result for channel group {}: Reassigned to channel {} topic {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Unknown heartbeat action: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Exception parsing heartbeat response: {}
+f119515 score=9 cone=None instrs=3729 calls=['f632', 'f633', 'f970', 'f1010', 'f1029', 'f1117', 'f1118', 'f1130', 'f1148', 'f1152', 'f1189', 'f1261', 'f1478', 'f1488', 'f1519', 'f102287', 'f119233', 'f119275', 'f119359', 'f119504', 'f119506', 'f119509', 'f119511', 'f123370', 'f125232', 'f125244', 'f157492', 'f157704', 'f158155', 'f158158']
+    str: [FLog::VoiceChatLogs] ClientLeaveOperation Initialize
+    str: [FLog::VoiceChatLogs] ClientLeaveOperation detected LEAVING status already set
+    str: [FLog::VoiceChatLogs] ClientLeaveOperation duplicate leave cleanup (teardown complete)
+    str: [FLog::VoiceChatLogs] VoiceChatStats::report: publishSec: {}, consumeSec: {}, pubAndConsumeSec: {}, sessionSec: {}
+    str: voiceChat
+    str: joinStage
+    str: VoiceChatSessionJoinStageLeft
+    str: [FLog::VoiceChatLogs] ClientLeaveOperation DisconnectPeerConnections
+    str: isRejoin
+f2558 score=8 cone=None instrs=4291 calls=['f627', 'f630', 'f631', 'f1010', 'f1152', 'f1724', 'f1731', 'f1735', 'f1737', 'f1983', 'f1989', 'f2270', 'f2477', 'f2478', 'f2480', 'f2496', 'f2504', 'f2517', 'f2518', 'f2519', 'f2540', 'f2559', 'f2560', 'f2710', 'f2715', 'f92807', 'f147858', 'f148691', 'f148701', 'f157229']
+    str: /v1/join-game-instance
+    str: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToInstance: URL: {} POST Body: {}
+    str: /v2/join-game-instance
+    str: /v1/join-reserved-game
+    str: [FLog::GameJoinUtil] GameJoinUtil::initiateTeleportToReservedServer: URL: {} POST Body: {}
+    str: /v2/join-reserved-game
+    str: /v1/join-private-game
+    str: /v2/join-private-game
+f3003 score=8 cone=None instrs=5848 calls=['f302', 'f362', 'f410', 'f488', 'f499', 'f502', 'f627', 'f630', 'f631', 'f1101', 'f1724', 'f1731', 'f1735', 'f1737', 'f1739', 'f2158', 'f2496', 'f2497', 'f2639', 'f2959', 'f2967', 'f2975', 'f2976', 'f2977', 'f2998', 'f3031', 'f3032', 'f3070', 'f3556', 'f23832']
+    str: [FLog::UgcExperienceController] UgcExperienceController: doTeleport: ticket {}
+    str: [FLog::UgcExperienceController] UgcExperienceController: doTeleport: joinScriptUrl {}
+    str: isReconnect
+    str: [FLog::UgcExperienceController] UgcExperienceController: makeJoinScriptRequestForTeleport: url {}
+    str: [FLog::UgcExperienceController] UgcExperienceController: finishTeleportWithJoinScriptPayload: begin
+    str: [FLog::UgcExperienceController] UgcExperienceController: finishTeleportWithJoinScriptPayload: failed to parse json {}
+    str: finishTeleportWithJoinScriptPayload: failed to parse json
+    str: [FLog::UgcExperienceController] UgcExperienceController: finishTeleportWithJoinScriptPayload: failed to find game id
+f9500 score=8 cone=None instrs=8353 calls=['f358', 'f445', 'f518', 'f742', 'f743', 'f973', 'f1063', 'f1109', 'f1259', 'f1328', 'f3816', 'f8464', 'f8924', 'f8927', 'f9262', 'f9263', 'f9265', 'f9332', 'f9342', 'f9405', 'f9433', 'f9436', 'f9530', 'f9871', 'f9881', 'f9882', 'f9883', 'f9884', 'f9897', 'f9898']
+    str: Requesting Invalid Schema Version.
+    str: Cannot construct schema, invalid class id for ISR properties
+    str: Cannot deserialize schema, too many ISR properties for class %s - count: %u, max: %zu
+    str: Cannot construct schema, invalid lr type range
+    str: Cannot construct schema, too many classes with ISR properties
+    str: rejoin
+    str: [FLog::Network] Time taken to initialize schema = %f ms
+    str: Invalid Schema
+f11287 score=8 cone=None instrs=1066 calls=['f2005', 'f127486', 'f148045', 'f151790', 'f151791', 'f151810', 'f151811', 'f157633', 'f166572', 'f166574']
+    str: Local RakNet BCS Queue Time                      :    %d 
+    str: Last Known RakNet Time (roundtrip)               :    %d 
+    str: Last Known Remote RakNet Recv' to App Recv' Time :    %d 
+    str: Remote Last Known RakNet BSC Queue Time          :    %d 
+    str: Local RakNet Recv' to App Recv' Time             :    %d 
+    str: LastKnownRakNetPing
+    str: LocalRakNetRecvToAppPopTime
+    str: ReplicatorDataPingBreakdown
+f11358 score=8 cone=None instrs=8665 calls=['f742', 'f743', 'f744', 'f1090', 'f1209', 'f2005', 'f8472', 'f8473', 'f8739', 'f9167', 'f9177', 'f9185', 'f9223', 'f9371', 'f9980', 'f10348', 'f10349', 'f10421', 'f10521', 'f10522', 'f10523', 'f10566', 'f10752', 'f10784', 'f10976', 'f11197', 'f11203', 'f11204', 'f11224', 'f11225']
+    str: [DFLog::NetworkJDIImpact] Frames with JoinData work : %u
+    str: [DFLog::NetworkJDIImpact] Frames with JoinData work over threshold : %u
+    str: CumulativeProcessDuringJoinOverThrottleMs
+    str: MaxProcessDuringJoinOverThrottleMs
+    str: FramesWithDuringJoinProcessOverThrottle
+    str: AverageMsOverProcessDuringJoinThrottle
+    str: deserializeBufferedPackets
+    str: [DFLog::ReplicationDataCaching] Replicator::deserializeStreamAsync() : deserializing packet ID=%d, Type=%d, SubType=%d
+f12399 score=8 cone=None instrs=11618 calls=['f632', 'f633', 'f742', 'f743', 'f744', 'f978', 'f1124', 'f1152', 'f1178', 'f1261', 'f1478', 'f1488', 'f9371', 'f10007', 'f10783', 'f20072', 'f20094', 'f20095', 'f20099', 'f20100', 'f20108', 'f20109', 'f20115', 'f20117', 'f20118', 'f20136', 'f20137', 'f20144', 'f20360', 'f151445']
+    str: Replicator: %p
+    str: Obj Sent: %u, Groups Sent: %u, Packets Sent: %u, Bytes Used: %u
+    str: PacketsAcked
+    str: PacketsAckedOutsideDirtyHistory
+    str: PacketsAckedOutsideDirtyHistoryPercent
+    str: [FLog::Network] Exception during ISR data out step, request disconnect: {}
+    str: Exception during ISR data out step, request disconnect: %s
+    str: [FLog::Network] Exception during ISR data out step, request disconnect: Unknown send failure
+f21018 score=8 cone=None instrs=2152 calls=['f627', 'f630', 'f631', 'f1010', 'f2533', 'f20868', 'f20890', 'f20925', 'f157199', 'f157248', 'f157258', 'f157262', 'f157277', 'f157309', 'f157333', 'f157348', 'f157350', 'f157363', 'f157383', 'f157492', 'f164173', 'f164174', 'f164285', 'f164525', 'f164526', 'f164531', 'f164573', 'f165277', 'f166566', 'f166574']
+    str: [DFLog::UniverseChatMessageManager] Handling ingest message response: {}
+    str: [DFLog::UniverseChatMessageManager] Failed to parse ingest message response: {}
+    str: [DFLog::UniverseChatMessageManager] Missing or invalid 'results' array in ingest message response: {}
+    str: [DFLog::UniverseChatMessageManager] Empty results array in ingest message response: {}
+    str: [DFLog::UniverseChatMessageManager] Missing required fields in ingest message result: {}
+    str: [DFLog::UniverseChatMessageManager] Empty filterResultJson in ingest message result: {}
+    str: [DFLog::UniverseChatMessageManager] Parsed ingest message result: messageId={}
+    str: [DFLog::UniverseChatMessageManager] Exception while parsing ingest message response: {}. Response: {}
+f47162 score=8 cone=None instrs=705 calls=['f1731', 'f1738', 'f4418', 'f148697', 'f148745', 'f157704', 'f163273', 'f164173', 'f166050', 'f166574', 'f168019']
+    str: SchemaDefinition has unsupported key '{}'
+    str: SchemaDefinition.{} is required
+    str: SchemaDefinition.{} must be an array
+    str: SchemaDefinition.{} must contain at least 1 part
+    str: SchemaDefinition.{} exceeds maximum of {} parts
+    str: SchemaDefinition.{} must contain only strings
+    str: SchemaDefinition.{} part name must not be empty
+    str: SchemaDefinition.{} part name '{}' exceeds maximum length of {}
+f47229 score=8 cone=None instrs=705 calls=['f1731', 'f1738', 'f4418', 'f148697', 'f148745', 'f157704', 'f163273', 'f164173', 'f166050', 'f166574', 'f168019']
+    str: SchemaDefinition has unsupported key '{}'
+    str: SchemaDefinition.{} is required
+    str: SchemaDefinition.{} must be an array
+    str: SchemaDefinition.{} must contain at least 1 part
+    str: SchemaDefinition.{} exceeds maximum of {} parts
+    str: SchemaDefinition.{} must contain only strings
+    str: SchemaDefinition.{} part name must not be empty
+    str: SchemaDefinition.{} part name '{}' exceeds maximum length of {}
+f66236 score=8 cone=None instrs=5916 calls=['f398', 'f445', 'f742', 'f743', 'f744', 'f783', 'f786', 'f961', 'f970', 'f978', 'f998', 'f1010', 'f1117', 'f1124', 'f1178', 'f1478', 'f1488', 'f4098', 'f6087', 'f16499', 'f66237', 'f66416', 'f145211', 'f145213', 'f145218', 'f145223', 'f145224', 'f145226', 'f153164', 'f153235']
+    str: videoPacketsReceived
+    str: videoPacketsLost
+    str: [DFLog::RealtimeMediaTelemetry] Video RTP: packets recv: {} lost: {} jitter: {:.2f}ms frames dropped: {}
+    str: audioRtpPacketsReceived
+    str: audioRtpPacketsLost
+    str: audioRtpPacketsDiscarded
+    str: [DFLog::RealtimeMediaTelemetry] Audio RTP: packets recv: {} lost: {} discarded: {} jitter: {:.2f}ms frames dropped: {}
+    str: [DFLog::RealtimeMediaTelemetry] Packet queues (avg/max): video={:.2f}/{} audio={:.2f}/{}
+f68921 score=8 cone=None instrs=6002 calls=['f499', 'f518', 'f68742', 'f68755', 'f68776', 'f68779', 'f68780', 'f68782', 'f68783', 'f68784', 'f68790', 'f68794', 'f68808', 'f68810', 'f68811', 'f68812', 'f68813', 'f68817', 'f68818', 'f68823', 'f68825', 'f68829', 'f68837', 'f68842', 'f68849', 'f68854', 'f68859', 'f68881', 'f68927', 'f68939']
+    str: ----- Network Connection Health -----
+    str: JoinStart (loading stage) 
+    str: RakNetPasswordAccepted 
+    str: RakNetPasswordAccepted
+    str: RakNet Bandwidth (In - Out) KBps: 
+    str: Total RakNet Data (In - Out) KB.: 
+    str: RakNetHealthStats
+    str: ----- Incoming rate: RakNet and Replicator -----
+f119412 score=8 cone=None instrs=2933 calls=['f7692', 'f119192', 'f119225', 'f119233', 'f119241', 'f119242', 'f119244', 'f119248', 'f119251', 'f119413', 'f119414', 'f123370', 'f123396', 'f125173', 'f157492', 'f158113', 'f158155', 'f158158', 'f163273', 'f164173', 'f164270', 'f164272', 'f164273', 'f164531', 'f166572', 'f166574']
+    str: [FLog::VoiceChatLogs] Initial handshake populated stream pool with {} handles.
+    str: [FLog::VoiceChatLogs] Stream Switching:  Created Pool Handle Mid '{}' -> SSRC {}
+    str: [FLog::VoiceChatLogs] ProcessSubscriptionInfo FeedReferenceId: {}, audio mid: {}
+    str: [FLog::VoiceChatLogs] ClientSubscriptionsUpdateInitiatedUpdateSsrcAndMidState matching audio mid: {} not found in sdp
+    str: [FLog::VoiceChatLogs] {} Did not find a corresponding SSRC value for the audio MID = {} in SDP offer
+    str: [FLog::VoiceChatLogs] {} FeedReferenceId: {} user to audio mid mapping not found
+    str: [FLog::VoiceChatLogs] Stream Switching: Initial handshake complete. Stream pool state ({} streams, {} active users):
+    str: [FLog::VoiceChatLogs] Stream Switching:   Mid='{}' SSRC={} UserId={} Muted={} MutedLocally={} Culled={}
+f125055 score=8 cone=None instrs=8407 calls=['f742', 'f743', 'f1626', 'f23888', 'f32518', 'f40612', 'f69243', 'f102519', 'f102634', 'f125078', 'f148689', 'f148691', 'f148696', 'f157464', 'f164531', 'f165853', 'f166572', 'f166574', 'f167378', 'f167379']
+    str: incomingPackets
+    str: incomingPacketsLost
+    str: outgoingPackets
+    str: outgoingPacketsLost
+    str: incomingPacketsDiscarded
+    str: outgoingPacketsDiscarded
+    str: incomingFecPackets
+    str: incomingFecPacketsDiscarded
+f2469 score=7 cone=None instrs=641 calls=['f2103', 'f166572']
+    str: Joining server
+    str: Not authorized to join this experience
+    str: Not authorized to join this experience due to privacy setting
+    str: The destination you're trying to teleport to has age restrictions that prevent you from joining. To ensure a safe and enjoyable experience, please check the destination's Experience Guidelines to make
+    str: The destination you're trying to teleport to has region restrictions that prevent you from joining. To ensure a safe and enjoyable experience, please check the destination's Experience Guidelines to m
+    str: You can join once the host is in this private server.
+    str: Based on your age, you cannot join this game.
+f8568 score=7 cone=None instrs=651 calls=['f358', 'f1016', 'f2600', 'f8693', 'f127491', 'f147924', 'f164271', 'f164828', 'f166572', 'f166574']
+    str: gameJoinFailureReason
+    str: ConnectTimeOut
+    str: GameJoinFailure
+    str: ConnectFailed_Timeout_NoReplies
+    str: ConnectFailed_Timeout_FirstReplyOnly
+    str: ConnectFailed_Timeout_FirstAndSecondReplied
+    str: ConnectFailed_Timeout_SecondReplyOnly
+f8693 score=7 cone=None instrs=3335 calls=['f518', 'f632', 'f633', 'f970', 'f978', 'f1010', 'f1117', 'f1118', 'f1178', 'f1209', 'f1261', 'f1478', 'f1488', 'f2005', 'f8683', 'f8690', 'f20329', 'f138327', 'f138387', 'f147866', 'f151765', 'f151772', 'f151788', 'f151790', 'f151791', 'f151810', 'f151811', 'f151939', 'f152420', 'f154181']
+    str: [DFLog::NetworkTrace] noViableConnectionsLeft::: sc(%s:%d).state = %d :: returning false
+    str: ConnectionFailure
+    str: UdMuxIp
+    str: UdMuxPort
+    str: ClientSocketIPVersion
+    str: ServerConnectionState
+    str: ClientJoinState
+f9896 score=7 cone=None instrs=6924 calls=['f358', 'f445', 'f518', 'f742', 'f743', 'f973', 'f1063', 'f1229', 'f1242', 'f9317', 'f9880', 'f9897', 'f9898', 'f9899', 'f10855', 'f11279', 'f12314', 'f148539', 'f148566', 'f148584', 'f148614', 'f148615', 'f148622', 'f148624', 'f151253', 'f151258', 'f151261', 'f151323', 'f151361', 'f151362']
+    str: Requesting Invalid Schema Version.
+    str: Cannot construct schema, too many enum types
+    str: Cannot construct schema, too many classes, properties, or events
+    str: Cannot construct schema, too many properties for %s
+    str: RagdollBallSocketConstraint
+    str: Cannot construct schema, too many ISR properties for %s - count: %u, max: %zu
+    str: Cannot construct schema, too many ISR properties for Attribute use %s - count: %d
+f22178 score=7 cone=None instrs=2161 calls=['f518', 'f627', 'f630', 'f631', 'f22162', 'f138327', 'f150870', 'f157199', 'f157209', 'f157216', 'f157258', 'f157277', 'f157310', 'f157333', 'f157348', 'f157362', 'f157363', 'f157375', 'f157377', 'f157417', 'f157492', 'f164010', 'f164012', 'f164173', 'f164174', 'f164270', 'f164525', 'f164526', 'f164531', 'f164573']
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat request failed: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat response: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Failed to parse heartbeat response json
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat result for channel group {}: Ok
+    str: [DFLog::UniverseChatChannelMonitorLog] Heartbeat result for channel group {}: Reassigned to channel {} topic {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Unknown heartbeat action: {}
+    str: [DFLog::UniverseChatChannelMonitorLog] Exception parsing heartbeat response: {}
+f22185 score=7 cone=None instrs=549 calls=['f518', 'f25623', 'f25830', 'f25904', 'f25982', 'f163435', 'f166572', 'f166574']
+    str: chat_version
+    str: is_default_chat_channels_enabled
+    str: enable_protected_chat
+    str: is_default_chat_window_enabled
+    str: is_default_chat_input_bar_enabled
+    str: is_default_chat_tabs_enabled
+    str: is_default_bubble_chat_enabled
+f92274 score=7 cone=None instrs=2053 calls=['f970', 'f1118', 'f1130', 'f1148', 'f1152', 'f1189', 'f1478', 'f1488', 'f1737', 'f2103', 'f2525', 'f3501', 'f23809', 'f37295', 'f58687', 'f92275', 'f93748', 'f138372', 'f148691', 'f148745', 'f148746', 'f157417', 'f157478', 'f157492', 'f163272', 'f164173', 'f164174', 'f164270', 'f164271', 'f164525']
+    str: HttpError: ConnectionClosed
+    str: HttpError: ConnectFail
+    str: [DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] PlayerSupport CreateTicket POST timeout, retrying (attempt {})
+    str: TICKET_CREATION_TEXT_FILTER_ERROR
+    str: TICKET_CREATION_FAILED
+    str: TICKET_CREATION_GIBBERISH_ERROR
+    str: [DFLog::PlayerFeedbackPromptLog] [PlayerFeedback] PlayerSupport CreateTicket POST failure ({}): {}
+f102614 score=7 cone=None instrs=1379 calls=['f396', 'f407', 'f18226', 'f102561', 'f157199', 'f157215', 'f157250', 'f157266', 'f157317', 'f157331', 'f157333', 'f157335', 'f157341', 'f157347', 'f157363', 'f157364', 'f157365', 'f157369', 'f157384', 'f157417', 'f157492', 'f157610', 'f158113', 'f164173', 'f164519', 'f164524', 'f164525', 'f164526', 'f164527', 'f164531']
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync: voice settings returned invalid JSON: {} at offset {}
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response.
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response data.
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid userId.
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid user data
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response node.
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid JSON for isVoiceEnabled for userId {}
+f125105 score=7 cone=None instrs=1393 calls=['f396', 'f407', 'f18226', 'f102561', 'f157199', 'f157215', 'f157250', 'f157266', 'f157317', 'f157331', 'f157333', 'f157335', 'f157341', 'f157347', 'f157363', 'f157364', 'f157365', 'f157369', 'f157384', 'f157417', 'f157492', 'f157610', 'f158113', 'f164173', 'f164519', 'f164524', 'f164525', 'f164526', 'f164527', 'f164531']
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync: voice settings returned invalid JSON: {} at offset {}
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response.
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response data.
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid userId.
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid user data
+    str: VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid response node.
+    str: [FLog::VoiceChatLogs] VoiceChatService:IsVoiceEnabledForUserIdsAsync() voice settings returned invalid JSON for isVoiceEnabled for userId {}
+f128053 score=7 cone=None instrs=2548 calls=['f358', 'f396', 'f518', 'f632', 'f633', 'f970', 'f1261', 'f2036', 'f51032', 'f83426', 'f127513', 'f128029', 'f128035', 'f128059', 'f128064', 'f157199', 'f157363', 'f157398', 'f157417', 'f157445', 'f157495', 'f157499', 'f157633', 'f158155', 'f158158', 'f163273', 'f163515', 'f164173', 'f164270', 'f164519']
+    str: [DFLog::CsmConnectionManager] CsmConnectionManager::invokeRpcAsync not connected to the server, adding to rpc queue
+    str: Message Router Service disconnected.
+    str: [DFLog::CsmConnectionManager] CsmConnectionManager::invokeRpcAsync RPC queue full.
+    str: Too many MessagingService requests when connecting to Messaging Router Service.
+    str: [DFLog::CsmConnectionManager] CsmConnectionManager::invalid invoke method: %s
+    str: [DFLog::CsmConnectionManager] CsmConnectionManager::invokeRpcAsync invoking started.
+    str: [DFLog::CsmConnectionManager] CsmConnectionManager::invokeRpcAsync enqueue methodName[%s]
+f128269 score=7 cone=None instrs=3884 calls=['f316', 'f499', 'f81862', 'f128239', 'f151001', 'f151991', 'f151998', 'f157199', 'f157229', 'f157258', 'f157277', 'f157296', 'f157309', 'f157330', 'f157333', 'f157334', 'f157348', 'f157363', 'f157383', 'f157398', 'f157417', 'f157499', 'f157606', 'f157633', 'f157704', 'f158155', 'f158158', 'f163272', 'f164173', 'f164174']
+    str: Failed to parse handshake
+    str: Handshake error: "{}"
+    str: Got unexpected message during handshake
+    str: Websocket closed
+    str: Unexpected websocket BinaryDataFrame
+    str: Websocket error: {}
+    str: Unexpected websocket ReadyStateChange: {}
+f131605 score=7 cone=None instrs=1731 calls=['f2027', 'f8472', 'f8517', 'f13510', 'f131493', 'f131508', 'f132241', 'f151332', 'f151351', 'f151441', 'f157492', 'f164531', 'f166574']
+    str: [DFLog::RbxTransportRnaExpConnection] {}. QUIC stream acked data. streamId {}, offset {}, dataLen {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. No streamId {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. Stream not opened locally
+    str: [DFLog::RbxTransportRnaExpConnection] {}. No channel header
+    str: [DFLog::RbxTransportRnaExpConnection] {}. channelId {} overflow
+    str: [DFLog::RbxTransportRnaExpConnection] {}. No app context
+    str: [DFLog::RbxTransportRnaExpConnection] {}. No channel {}
+f131638 score=7 cone=None instrs=2513 calls=['f8472', 'f8517', 'f12732', 'f14182', 'f14949', 'f131344', 'f131508', 'f131535', 'f131551', 'f131553', 'f131557', 'f131594', 'f131843', 'f131885', 'f132015', 'f132241', 'f132252', 'f151332', 'f151351', 'f151435', 'f151441', 'f157492', 'f157633', 'f164531', 'f166574']
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. streamId {}, stream status {}, err {}, cnt {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. Graceful close. streamId {}, stream status {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. Received unrecognized channel header. streamId {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. Received too large channelId value ({}), streamId {}
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. Channel header not fully read yet
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. streamId {}. Channel {} opened
+    str: [DFLog::RbxTransportRnaExpConnection] {}. onRecvCompletion. Received data through locally opened stream (channel ack)
+f7101 score=6 cone=None instrs=2203 calls=['f7107', 'f7108', 'f128222', 'f153412', 'f153414', 'f157199', 'f157229', 'f157277', 'f157296', 'f157330', 'f157348', 'f157363', 'f157492', 'f158113', 'f158155', 'f158158', 'f164173', 'f164270', 'f164531', 'f166565', 'f166566', 'f166568', 'f166570', 'f166572', 'f166574', 'f168019']
+    str: [FLog::RealtimeProtocol] topicNotification {}
+    str: [FLog::RealtimeProtocol] incomingTopicMessage {}
+    str: [FLog::RealtimeProtocol] topicSubscriptionError
+    str: [FLog::RealtimeProtocol] topicTokenExpiry
+    str: [FLog::RealtimeProtocol] connectionStatus {}
+    str: [FLog::RealtimeProtocol] incomingMessage {}
+f10126 score=6 cone=None instrs=2355 calls=['f518', 'f1086', 'f2007', 'f7930', 'f10119', 'f10222', 'f10223', 'f148696', 'f148697', 'f148701', 'f148745', 'f148746', 'f151757', 'f151762', 'f151765', 'f151772', 'f151791', 'f151811', 'f157229', 'f157275', 'f157296', 'f157330', 'f157478', 'f157633', 'f157641', 'f157643', 'f163273', 'f164012', 'f164173', 'f164254']
+    str: GameJoinTime
+    str: FetchedJoinScriptTime
+    str: CurrentJoinPhase
+    str: LastCompleteJoinPhase
+    str: JoinFailureError
+    str: ClientJoin_All
+f10596 score=6 cone=None instrs=2561 calls=['f518', 'f970', 'f978', 'f1010', 'f1109', 'f1117', 'f1118', 'f1124', 'f1148', 'f1152', 'f1177', 'f1473', 'f1478', 'f1488', 'f1491', 'f9306', 'f9852', 'f11174', 'f11183', 'f12415', 'f20355', 'f103653', 'f103721', 'f104822', 'f147554', 'f151442', 'f152420', 'f157633', 'f157635', 'f163435']
+    str: RakNetIngress
+    str: RakNetEgress
+    str: LargeReplicator
+    str: DisconnectMessage
+    str: LastReplicatorState
+    str: LastReplicatorStateChange
+f10634 score=6 cone=None instrs=828 calls=['f742', 'f743', 'f744', 'f1209', 'f2005', 'f3439', 'f11281', 'f105413', 'f108767', 'f108809', 'f147866', 'f151762', 'f151765', 'f151772', 'f151790', 'f151810', 'f151811', 'f153501', 'f157633', 'f158151', 'f158152', 'f164173', 'f164174', 'f164270', 'f166572', 'f166574', 'f168019']
+    str: NetworkJoin_SnapShotTime
+    str: NetworkJoin_FrameTime
+    str: NetworkJoin_LuaTime
+    str: NetworkJoin_CppTime
+    str: ReplicatorJoinTimeSnapShotTimeTeamCreate
+    str: ReplicatorJoinTimeSnapShotTime
+f20482 score=6 cone=None instrs=277 calls=['f166572']
+    str: CLIENT_HELLO_SENT
+    str: CLIENT_HELLO_RECEIVED
+    str: SERVER_HELLO_RECEIVED
+    str: HANDSHAKE_COMPLETE
+    str: HANDSHAKE_CONFIRMED
+    str: HANDSHAKE_ERROR
+f20918 score=6 cone=None instrs=1545 calls=['f2103', 'f2661', 'f20880', 'f20881', 'f20919', 'f146983', 'f157199', 'f157309', 'f157333', 'f157348', 'f157363', 'f157492', 'f164272', 'f164273', 'f164525', 'f164526', 'f164531', 'f164573', 'f166566', 'f166574']
+    str: [DFLog::UniverseChatMessageManager] Handling allocate channel response for user {}: {}
+    str: [DFLog::UniverseChatMessageManager] Failed to parse allocate channel response for user {}: {}
+    str: [DFLog::UniverseChatMessageManager] Missing required fields in allocate channel response for user {}: {}
+    str: [DFLog::UniverseChatMessageManager] Parsed allocate channel response for user {}: channelId={}, channelGroup={}, channelGroupRaw={}, subscriptionTopic={}
+    str: [DFLog::UniverseChatMessageManager] Invalid allocate channel response for user {}: {}
+    str: [DFLog::UniverseChatMessageManager] Exception while parsing allocate channel response for user {}: {}. Response: {}
+f21025 score=6 cone=None instrs=8156 calls=['f302', 'f396', 'f407', 'f499', 'f518', 'f627', 'f630', 'f631', 'f2103', 'f2327', 'f2678', 'f4220', 'f9121', 'f20681', 'f20867', 'f20868', 'f20876', 'f20880', 'f20901', 'f20930', 'f20959', 'f20975', 'f21003', 'f21013', 'f21090', 'f21097', 'f78314', 'f78316', 'f87653', 'f104822']
+    str: [DFLog::UniverseChatMessageManager] Received CSM message for channelId={}: {}
+    str: [DFLog::UniverseChatMessageManager] Invalid CSM universe chat payload: {}
+    str: universe-chat-messaging-api/v1/get-actions
+    str: [DFLog::UniverseChatMessageManager] CSM message missing senderUserId or messageId: {}
+    str: presetChatInfo
+    str: /universe-chat-messaging-api/v1/get-messages
+f22545 score=6 cone=None instrs=820 calls=['f1189', 'f1478', 'f1488', 'f2103', 'f2132', 'f2327', 'f9126', 'f10746', 'f20787', 'f22184', 'f22185', 'f22546', 'f138372', 'f138382', 'f147705', 'f164173', 'f164519', 'f164524', 'f166572', 'f166574', 'f166575', 'f167329', 'f168019']
+    str: TextChatService:GetChatGroupsAsync is disabled.
+    str: TextChatService:GetChatGroupsAsync error: Players Service null.
+    str: TextChatService:GetChatGroupsAsync can only be called from the server.
+    str: TextChatService:GetChatGroupsAsync error: SocialCounterpartyManager null.
+    str: TextChatService:GetChatGroupsAsync error: GetChatGroupsAsync is not available in this experience.
+    str: TextChatService:GetChatGroupsAsync error: Players are required.
+f22590 score=6 cone=None instrs=5970 calls=['f317', 'f357', 'f386', 'f387', 'f388', 'f389', 'f627', 'f631', 'f742', 'f743', 'f1063', 'f1118', 'f1739', 'f2001', 'f2036', 'f2103', 'f2126', 'f10787', 'f20818', 'f20863', 'f22399', 'f22432', 'f22449', 'f22494', 'f22584', 'f22591', 'f22592', 'f22593', 'f22594', 'f22604']
+    str: [DFLog::TextChatFiltering] DM not on the Server
+    str: [DFLog::TextChatFiltering] Source not from the server
+    str: [DFLog::TextChatFiltering] Incorrect argument count
+    str: [DFLog::TextChatFiltering] FeatureName is not defined
+    str: [DFLog::TextChatFiltering] Error occurred: rephrase setting is not available
+    str: [DFLog::TextChatFiltering] Error occurred: summary setting is not available
+f22745 score=6 cone=None instrs=5404 calls=['f302', 'f358', 'f445', 'f499', 'f518', 'f21039', 'f21040', 'f21048', 'f21076', 'f21084', 'f22437', 'f22485', 'f22620', 'f87653', 'f104822', 'f138372', 'f150759', 'f150768', 'f150775', 'f151965', 'f153716', 'f153741', 'f153747', 'f157417', 'f157477', 'f157633', 'f157704', 'f158113', 'f164173', 'f164174']
+    str: Preset chat is not enabled
+    str: Preset chat is not available
+    str: {\n    "status": "Enabled",\n    "categoryGroups": [\n        {\n            "categoryGroupId": "greetings",\n            "name": "Greetings",\n            "categories": [\n                {\n                
+    str: /preset-chat/v2/expression-tray-options
+    str: {\n    "version": "v1",\n    "accessLevel": "Enabled",\n    "categoryGroups": [\n        {\n            "categoryGroupId": "greetings",\n            "name": "Greetings",\n            "categories": [\n        
+    str: /preset-chat/v1/preset-chat-options
+f23680 score=6 cone=None instrs=37117 calls=['f358', 'f445', 'f499', 'f518', 'f618', 'f627', 'f630', 'f631', 'f825', 'f970', 'f973', 'f977', 'f1034', 'f1063', 'f1118', 'f1143', 'f1152', 'f1805', 'f2103', 'f2126', 'f2475', 'f2476', 'f4208', 'f4214', 'f6117', 'f6417', 'f6441', 'f7921', 'f9442', 'f9905']
+    str: chunk#%d[%.*s], unknown shared string dictionary version: %d
+    str: NetAsset dictionary index invalid: %u, while deserializing a net asset %zu/%zu
+    str:  << shared strings bpfSharedStringDictionaryIndex vector, size=%zu
+    str: SharedString dictionary index invalid %u/%zu, while deserializing a shared string %zu/%zu
+    str:  << strings bpfSharedStringDictionaryIndex vector, size=%zu
+    str: SharedString dictionary index invalid: %u, while deserializing a string %zu/%zu
+f39201 score=6 cone=None instrs=2391 calls=['f518', 'f1086', 'f2007', 'f7930', 'f10119', 'f10222', 'f10223', 'f39187', 'f148696', 'f148697', 'f148701', 'f148745', 'f148746', 'f151757', 'f151762', 'f151765', 'f151772', 'f151791', 'f151811', 'f157229', 'f157275', 'f157296', 'f157330', 'f157478', 'f157633', 'f157641', 'f157643', 'f163273', 'f164012', 'f164173']
+    str: GameJoinTime
+    str: FetchedJoinScriptTime
+    str: CurrentJoinPhase
+    str: LastCompleteJoinPhase
+    str: JoinFailureError
+    str: ClientJoin_All
+f39525 score=6 cone=None instrs=1823 calls=['f302', 'f396', 'f407', 'f499', 'f2327', 'f10209', 'f19885', 'f39544', 'f39722', 'f87653', 'f87920', 'f104822', 'f125078', 'f147705', 'f151973', 'f153741', 'f153747', 'f157417', 'f157464', 'f157492', 'f157499', 'f164173', 'f164174', 'f164270', 'f164519', 'f164524', 'f166572', 'f166574', 'f166575']
+    str: [DFLog::AvatarChatServiceTrace] [AvatarChatService::luaEnableVoice] Called EnableVoice from lua
+    str: [FLog::Error] [AvatarChatService:enableVoice] Player no longer available.
+    str: [FLog::VoiceChatLogs] VoiceChatService::invalidateEnabledCacheForUserId called for userId: ...{}
+    str: [DFLog::AvatarChatServiceTrace] [AvatarChatService::enableVoice] Called enableVoice on user %lld
+    str: [DFLog::AvatarChatServiceTrace] [AvatarChatService::postEnableUserVoice] Invoke.
+    str: [DFLog::AvatarChatServiceTrace] [AvatarChatService::postEnableUserVoice] Resolve url [url: %s].
+f66119 score=6 cone=None instrs=17260 calls=['f302', 'f362', 'f382', 'f396', 'f398', 'f519', 'f618', 'f742', 'f743', 'f744', 'f783', 'f792', 'f830', 'f1225', 'f2508', 'f4492', 'f4495', 'f6087', 'f6511', 'f25379', 'f50868', 'f65791', 'f65807', 'f65808', 'f65994', 'f66008', 'f66013', 'f66034', 'f66035', 'f66059']
+    str: [DFLog::RealtimeMedia] Stratus eligibility check failed, aborting connect
+    str: [DFLog::RealtimeMedia] StratusEligibility(connect): StratusSingleCallConnect needs the precheck path; refusing
+    str: [DFLog::RealtimeMedia] connectAsync: Failed to create RvInputFormat, error: {}
+    str: [DFLog::RealtimeMedia] connectAsync: Failed to find stream info, error: {}
+    str: [DFLog::RealtimeMedia] connectAsync: Failed to create RvCodec, error: {}
+    str: [DFLog::RealtimeMedia] connectAsync: Failed to open RvCodec, error: {}
+f67077 score=6 cone=None instrs=1742 calls=['f2103', 'f2132', 'f2677', 'f67078', 'f67079', 'f150985', 'f157199', 'f157229', 'f157230', 'f157296', 'f157309', 'f157330', 'f157351', 'f157363', 'f157364', 'f157383', 'f163273', 'f164173', 'f164174', 'f166562', 'f166566', 'f166574', 'f166878', 'f166914', 'f168019']
+    str: Malformed JoinQueuePositionUpdate data
+    str: authenticationUrl
+    str: authenticationTicket
+    str: joinScriptUrl
+    str: joinScript
+    str: Failed to decode GameJoinResponse JSON payload
+f80757 score=6 cone=None instrs=1716 calls=['f396', 'f407', 'f518', 'f4220', 'f21090', 'f21097', 'f22397', 'f22605', 'f50368', 'f80722', 'f80755', 'f80758', 'f80759', 'f80760', 'f80820', 'f148054', 'f157199', 'f157215', 'f157258', 'f157262', 'f157277', 'f157333', 'f157348', 'f157350', 'f157363', 'f157364', 'f157453', 'f157478', 'f157492', 'f158113']
+    str: No chat result element exist in filter response
+    str: Chat result element is not a valid object
+    str: Chat filtered result is not a valid string in filter result
+    str: presetChatInfo
+    str: ChatFailure
+    str: [DFLog::ChatFiltering] Error getting chat response: {}
+f80817 score=6 cone=None instrs=4443 calls=['f358', 'f396', 'f407', 'f445', 'f499', 'f518', 'f742', 'f743', 'f744', 'f973', 'f1063', 'f1134', 'f1563', 'f1591', 'f2226', 'f2600', 'f4498', 'f9105', 'f9120', 'f16499', 'f78316', 'f80745', 'f80751', 'f80752', 'f80765', 'f80778', 'f80847', 'f104129', 'f104822', 'f138372']
+    str: [DFLog::ChatFiltering] filterTextWithCallback:Merged %lld "%s"
+    str: [DFLog::ChatFiltering] filterTextWithCallback:FromCache %lld "%s"
+    str: isVerifiedUserChat
+    str: isTextChat
+    str: GameChatPublic
+    str: [DFLog::ChatFiltering] Sending TextFilter Request
+f95247 score=6 cone=None instrs=5247 calls=['f358', 'f398', 'f445', 'f742', 'f743', 'f744', 'f961', 'f978', 'f1029', 'f1087', 'f1124', 'f1148', 'f1152', 'f1178', 'f1478', 'f1488', 'f2197', 'f2327', 'f3075', 'f3770', 'f4968', 'f6586', 'f8571', 'f11210', 'f12173', 'f15522', 'f21117', 'f21138', 'f21228', 'f21236']
+    str: InputPackets
+    str: AcceptedPackets
+    str: RejectedPackets
+    str: OldPackets
+    str: OutOfOrderPackets
+    str: BufferOverflowPackets
+f107915 score=6 cone=None instrs=670 calls=['f4999', 'f27273', 'f51731', 'f107863', 'f107876', 'f107888', 'f109746', 'f109778', 'f119990', 'f149391', 'f149446', 'f149515', 'f157478', 'f164173', 'f164174', 'f168019']
+    str: Event.ConnectParallel
+    str: Function Event.ConnectParallel can only be used inside scripts
+    str: A module script may only connect in parallel if this instantiation of the script was required by a script associated with an actor.
+    str: The currently executing script thread is associated with an Actor however the script is not parented to an Actor. This may indicate the script attempted to connect after it was destroyed or had its Pa
+    str: Scripts that connect in parallel must be rooted under an Actor.
+    str: Function Event.ConnectParallel is not safe to call in parallel
+f116295 score=6 cone=None instrs=5466 calls=['f632', 'f633', 'f978', 'f1010', 'f1029', 'f1034', 'f1124', 'f1130', 'f1148', 'f1152', 'f1177', 'f1189', 'f1261', 'f1473', 'f1478', 'f1488', 'f1491', 'f1493', 'f1805', 'f2103', 'f2197', 'f10084', 'f59496', 'f90809', 'f90852', 'f116281', 'f116287', 'f116300', 'f116864', 'f116951']
+    str: str_joints_added_per_step_avg
+    str: str_joints_removed_per_step_avg
+    str: str_joints_added_max_step
+    str: str_joints_removed_max_step
+    str: joint_constraint_cnt
+    str: joint_rows
+f119036 score=6 cone=None instrs=1157 calls=['f518', 'f2508', 'f6269', 'f6511', 'f119037', 'f150870', 'f157199', 'f157229', 'f157281', 'f157284', 'f157296', 'f157333', 'f157348', 'f157363', 'f157364', 'f157492', 'f166565', 'f166566', 'f166568', 'f166570', 'f166572', 'f166574', 'f167242']
+    str: [DFLog::VideoServer] postConnectAsync transport failure: error={}
+    str: [DFLog::VideoServer] postConnectAsync: /connect not served -- StratusSingleCallConnect enabled before the server
+    str: [DFLog::VideoServer] postConnectAsync failed: httpCode={}, body={}
+    str: [DFLog::VideoServer] postConnectAsync: invalid response body
+    str: [DFLog::VideoServer] postConnectAsync refused: {}
+    str: [DFLog::VideoServer] postConnectAsync: response had neither answer nor refusal
+f119311 score=6 cone=None instrs=440 calls=['f119233', 'f119262', 'f119270', 'f157492', 'f157633', 'f166572', 'f166574']
+    str: ClientJoinOperation
+    str: ClientJoinPlaySoloState
+    str: ClientJoinInitializeState
+    str: [FLog::VoiceChatLogs] ClientJoinOperation Constructed for {}
+    str: rejoin
+    str: [FLog::VoiceChatLogs] ClientJoinOperation skipped in Play Solo mode
+f119352 score=6 cone=None instrs=1895 calls=['f518', 'f102287', 'f119233', 'f119347', 'f119348', 'f123370', 'f125190', 'f125191', 'f125192', 'f157492', 'f158155', 'f158158', 'f163272', 'f163273', 'f164269', 'f164270', 'f164272', 'f164273', 'f164531', 'f165571', 'f166572', 'f166574']
+    str: [FLog::VoiceChatLogs] ClientPublishOperation ClientPublishWaitForAnswerState
+    str: [FLog::VoiceChatLogs] ClientPublishOperation ClientPublishAbandonedState (Optimized)
+    str: [FLog::VoiceChatLogs] Message discarded, got sessionId {}, expected {}
+    str: [FLog::VoiceChatLogs] ClientPublishWaitForAnswerState: Too many PublishingHandshakeAcked events received
+    str: [FLog::VoiceChatLogs] ClientPublishOperation [Sdp Compression] algo works, compressed pub answer size: {}, original size: {}
+    str: [FLog::VoiceChatLogs] ClientPublishOperation publish answer {} received from RCC
+f125061 score=6 cone=None instrs=12041 calls=['f742', 'f743', 'f1624', 'f1626', 'f1822', 'f19974', 'f23888', 'f32518', 'f40612', 'f69242', 'f102519', 'f102520', 'f102565', 'f102610', 'f102618', 'f125078', 'f125095', 'f125171', 'f148689', 'f148691', 'f148696', 'f148697', 'f148745', 'f157464', 'f164173', 'f164531', 'f165853', 'f165854', 'f166572', 'f166574']
+    str: iceConnectionStateSubscribe
+    str: timeToConnectedMs
+    str: selectedCandidatePairLocalProtocolPublish
+    str: selectedCandidatePairRemoteProtocolPublish
+    str: selectedCandidatePairLocalProtocolSubscribe
+    str: selectedCandidatePairRemoteProtocolSubscribe
