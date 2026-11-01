@@ -117,12 +117,21 @@ function patchNetwork(libcurl, getCookie, getWisp, cdnBase) {
   window.XMLHttpRequest = FetchXHR;
 }
 
+async function probeSession(libcurl) {
+  try {
+    const r = await libcurl.fetch("https://users.roblox.com/v1/users/authenticated", { method: "GET", headers: {}, redirect: "follow" });
+    if (!r.ok) return 0;
+    const j = await r.json();
+    return Number(j && j.id) || 0;
+  } catch { return 0; }
+}
+
 async function start(opts = {}) {
   const cookie = $("wb-cookie").value.trim() || localStorage.getItem("wb.cookie") || "";
   const place = Number($("wb-place").value) || 0;
-  if (!cookie) { say("Paste your .ROBLOSECURITY cookie first."); return; }
   if (!place) { say("Enter a place id."); return; }
-  localStorage.setItem("wb.cookie", cookie); localStorage.setItem("wb.place", String(place));
+  if (cookie) localStorage.setItem("wb.cookie", cookie);
+  localStorage.setItem("wb.place", String(place));
   $("wb-form").hidden = true;
   say("Loading proxy…");
   const sandstone = await loadSandstone(opts.sandstoneBases || BASES);
@@ -131,6 +140,12 @@ async function start(opts = {}) {
   if (!sandstone.libcurl.ready) throw new Error("libcurl did not load");
   const wisp = await pickWisp(sandstone.network, say, { kstuffBases: opts.kstuffBases, storageBases: opts.storageBases });
   log("[launcher] wisp", wisp);
+  if (!cookie) {
+    say("Checking saved Roblox sign-in…");
+    const uid = await probeSession(sandstone.libcurl);
+    if (!uid) throw new Error("No saved Roblox sign-in found in the proxy. Sign in on roblox.com through it first, or paste a .ROBLOSECURITY cookie.");
+    log("[launcher] using the proxy's saved Roblox session, user", uid);
+  }
   const cdnBase = (await (await fetch("engine/engine-base.txt")).text()).trim().replace(/\/?$/, "/");
   patchNetwork(sandstone.libcurl, () => localStorage.getItem("wb.cookie") || cookie, () => wisp, cdnBase);
   window.robloxWasmHostConfig = { server: "prod", useCdnBinary: false };
