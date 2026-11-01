@@ -1,9 +1,11 @@
 import { createProxy } from "./proxy.mjs";
-import { joinGame, describeJoin, redact, randomTrackerId, probeJoin } from "./gamejoin.mjs";
+import { joinGame, describeJoin, redact, randomTrackerId, probeJoin, JoinError } from "./gamejoin.mjs";
 import { findServer, loadAvatars } from "./servers.mjs";
 import { PlayerList } from "./players.mjs";
 import { Transport, Capture } from "./transport.mjs";
-import { ChatClient, ChatLog, MAX_LENGTH } from "./chat.mjs";
+import { ChatClient, ChatLog } from "./chat.mjs";
+import { LoadingScreen } from "./loading.mjs";
+import { nameColor, flattenPlayers, MENU_TABS } from "./hud.mjs";
 import { Session } from "./session.mjs";
 import { downloadText } from "../download.mjs";
 import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
@@ -31,6 +33,8 @@ let proxy = null;
 let capture = new Capture();
 let lastJoin = null;
 let controller = null;
+const makeLoading = () =>
+  new LoadingScreen({ request: (u, i) => proxy.request(u, i), resolveImage: (u) => fetchBlobUrl(u), onLeave: (why) => leaveGame(why) });
 
 const say = (text) => {
   $("wb-status").textContent = text;
@@ -48,7 +52,9 @@ addEventListener("error", (e) => log("[error]", e.message));
 addEventListener("unhandledrejection", (e) => log("[reject]", e.reason));
 
 const el = (tag, props = {}, ...children) => {
-  const node = Object.assign(document.createElement(tag), props);
+  const { dataset, ...rest } = props;
+  const node = Object.assign(document.createElement(tag), rest);
+  if (dataset) Object.assign(node.dataset, dataset);
   for (const child of children) node.append(child);
   return node;
 };
@@ -182,33 +188,120 @@ async function lookupPlayers(jobId, placeId) {
 const chatLog = new ChatLog();
 const chat = new ChatClient({ log: chatLog });
 let session = null;
+let loading = null;
+const hud = { tab: "Players", info: null };
 
-const fmtTime = (t) => new Date(t).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-
+/* ---------- HUD: chat ---------- */
 const renderChat = (lines) => {
-  const root = $("chat-log");
-  root.replaceChildren();
-  for (const l of lines) {
-    const row = el("div", { className: "cline " + l.kind });
-    row.append(el("span", { className: "ctime", textContent: fmtTime(l.at) }));
-    if (l.kind === "chat") row.append(el("span", { className: "cwho", textContent: l.speaker + ":" }));
-    row.append(el("span", { className: "ctext", textContent: l.text }));
-    root.append(row);
-  }
-  root.scrollTop = root.scrollHeight;
+  const root = $("g-chat-log");
+  const stick = root.scrollTop + root.clientHeight >= root.scrollHeight - 20;
+  root.replaceChildren(
+    ...lines.map((l) =>
+      l.kind === "system"
+        ? el("div", { className: "g-line g-sys", textContent: l.text })
+        : el("div", { className: "g-line" }, el("span", { className: "g-who", textContent: `[${l.speaker}]: `, style: `color:${nameColor(l.speaker)}` }), l.text),
+    ),
+  );
+  if (stick) root.scrollTop = root.scrollHeight;
 };
-
 chatLog.onChange((_, lines) => renderChat(lines));
 
+const syncChatInput = () => {
+  const can = chat.canSend && session?.state === "connected";
+  const input = $("g-chat-input");
+  input.disabled = !can;
+  input.placeholder = can ? "To chat click here or press / key" : "Chat isn't connected yet";
+};
+
+/* ---------- HUD: player list ---------- */
+const playerRow = (p) =>
+  el("div", { className: "g-row" + (p.you ? " g-you" : "") }, p.avatarUrl ? el("img", { src: p.avatarUrl, alt: "" }) : el("span", { className: "g-ph" }), el("span", { className: "g-n", textContent: p.label }));
+
+const renderHudPlayers = (sections) => {
+  const list = flattenPlayers(sections);
+  $("g-pcount").textContent = list.length || "";
+  $("g-prows").replaceChildren(...list.map(playerRow));
+  if (hud.tab === "Players" && !$("g-esc").hidden) renderTab();
+};
+players.onChange(renderHudPlayers);
+
+/* ---------- HUD: Esc menu ---------- */
+const renderTab = () => {
+  for (const b of $("g-tabs").children) b.setAttribute("aria-selected", String(b.dataset.tab === hud.tab));
+  const body = $("g-tabbody");
+  body.replaceChildren();
+  if (hud.tab === "Players") {
+    const list = flattenPlayers(players.sections());
+    body.append(...(list.length ? list.map(playerRow) : [el("p", { textContent: "No players yet." })]));
+  } else if (hud.tab === "Settings") {
+    const rows = [
+      ["Connection", session ? session.state : "not connected"],
+      ["Server (job id)", hud.info?.jobId || "—"],
+      ["Game server", hud.info?.machine ? hud.info.machine.host : "—"],
+      ["Chat", chat.status],
+    ];
+    const dl = el("dl", { className: "g-kv" });
+    for (const [k, v] of rows) dl.append(el("dt", { textContent: k }), el("dd", { textContent: v }));
+    body.append(dl, el("button", { className: "g-act", type: "button", textContent: "Download capture", onclick: downloadCapture }));
+  } else {
+    body.append(el("p", { textContent: "Esc: menu  ·  /: chat  ·  Tab: player list." }), el("p", { textContent: "The 3D view is not rendered yet; this is the interface only." }));
+  }
+};
+$("g-tabs").replaceChildren(...MENU_TABS.map((t) => el("button", { type: "button", role: "tab", dataset: { tab: t }, textContent: t, onclick: () => { hud.tab = t; renderTab(); } })));
+
+const openMenu = (open) => {
+  $("g-esc").hidden = !open;
+  if (open) renderTab();
+};
+
+const togglePanel = (btn, target) => {
+  const on = btn.getAttribute("aria-pressed") !== "true";
+  btn.setAttribute("aria-pressed", String(on));
+  target.hidden = !on;
+};
+
+function downloadCapture() {
+  downloadText("webblox-capture.json", JSON.stringify({ version: 1, join: lastJoin, capture: capture.toJSON() }, null, 1));
+}
+
+/* ---------- game layer lifecycle ---------- */
+const inGame = () => !$("g-layer").hidden;
+
+const showGame = () => {
+  $("g-layer").hidden = false;
+  $("g-hud").hidden = true;
+  $("g-confirm").hidden = true;
+  openMenu(false);
+  loading.prepare(true);
+  loading.setStatus("Preparing Roblox…");
+};
+
+const showHud = () => {
+  $("g-hud").hidden = false;
+  loading.setStatus("Joined.");
+  loading.dismissAfterRenderedFrame();
+};
+
+const hideGame = () => {
+  $("g-layer").hidden = true;
+  $("g-hud").hidden = true;
+  openMenu(false);
+};
+
+async function leaveGame(reason = "Leave") {
+  loading?.abort();
+  controller?.abort();
+  if (session?.live) await session.leave();
+  session = null;
+  for (const url of blobUrls.splice(0)) URL.revokeObjectURL(url);
+  hideGame();
+  say(reason === "cancel" ? "Cancelled." : "You left the game.");
+  syncSessionUi();
+}
+
 const syncSessionUi = () => {
-  const live = Boolean(session?.live);
-  $("wb-leave").hidden = !live;
-  $("chat-leave").hidden = !live;
-  $("wb-leave").disabled = session?.state === "leaving";
-  $("wb-go").disabled = live || Boolean(controller);
-  $("chat-input").disabled = !chat.canSend || session?.state !== "connected";
-  $("chat-send").disabled = $("chat-input").disabled;
-  $("chat-note").textContent = chat.status;
+  $("wb-go").disabled = Boolean(controller) || inGame();
+  syncChatInput();
 };
 
 async function startSession(info) {
@@ -217,12 +310,13 @@ async function startSession(info) {
   const url = $("wb-wt-url").value.trim() || (endpoint ? `https://${hostForUrl(endpoint.host)}:${endpoint.port}/` : "");
   if (!url) {
     setStep("transport", "warn", "no endpoint in join script");
+    chatLog.system("The join script has no game server endpoint.");
     return;
   }
   session = new Session({ chat, capture, log });
   session.onState((state, detail) => {
     syncSessionUi();
-    if (state === "connected") setStep("transport", "ok", `connected (max datagram ${detail.maxDatagramSize}) \u2014 press Leave to disconnect`);
+    if (state === "connected") setStep("transport", "ok", `connected (max datagram ${detail.maxDatagramSize}) — leave from the game menu`);
     else if (state === "left") setStep("transport", "ok", `left after ${detail.stayed}`);
     else if (state === "dropped") setStep("transport", "warn", `server closed it after ${detail.stayed}`);
     else if (state === "failed") setStep("transport", "fail", detail.error);
@@ -233,12 +327,6 @@ async function startSession(info) {
   } catch (e) {
     log("[transport]", url, e.message || String(e));
   }
-}
-
-async function leaveSession() {
-  if (!session?.live) return;
-  await session.leave();
-  syncSessionUi();
 }
 
 addEventListener("pagehide", () => {
@@ -263,6 +351,8 @@ async function run() {
   store.set("wb.job", jobId);
   chatLog.clear();
   controller = new AbortController();
+  loading ||= makeLoading();
+  showGame();
   for (const url of blobUrls.splice(0)) URL.revokeObjectURL(url);
   capture = new Capture();
   lastJoin = null;
@@ -274,8 +364,11 @@ async function run() {
     setStep("proxy", "run");
     proxy ||= await createProxy({ getCookie: () => readHostCookie() || store.get("wb.cookie"), log, say });
     setStep("proxy", "ok", proxy.wisp.replace(/^wss:\/\//, "").replace(/\/$/, ""));
+    loading.request = proxy.request;
+    loading.loadExperience(placeId).catch(() => {});
     setStep("join", "run");
     say("Requesting a server…");
+    loading.setStatus("Joining experience…");
     let browserTrackerId = readBrowserTrackerId() || Number(store.get("wb.tracker")) || 0;
     if (!browserTrackerId) {
       browserTrackerId = randomTrackerId();
@@ -289,23 +382,33 @@ async function run() {
       signal: controller.signal,
       onStatus: (s) => {
         say(`Waiting for a server (status ${s.status}${s.message ? ": " + s.message : ""})`);
+        loading.setStatus(s.message || "Waiting for a server…");
         log("[join] status", s.status, s.message || "", s.queuePosition ?? "", JSON.stringify(s.raw));
       },
     });
     const info = describeJoin(result.script);
     lastJoin = redact(result.script);
+    hud.info = info;
     renderInfo(info, result.script);
     players.update("joinscript", [
       { id: info.user.id, name: info.user.name, displayName: info.user.displayName, you: true },
     ]);
     setStep("join", "ok", `status ${result.status}`);
     await lookupPlayers(result.jobId || info.jobId, placeId);
+    loading.setStatus("Connecting to the server…");
+    chatLog.system(`Joined as ${info.user.displayName || info.user.name || "guest"}.`);
     if ($("wb-direct").checked) await startSession(info);
-    say(session?.live ? "In server. Press Leave when you are done." : "Done.");
+    else chatLog.system("The game connection is off (see the launcher).");
+    showHud();
+    say(session?.live ? "In game. Open the menu (Esc) to leave." : "Done.");
   } catch (e) {
     const cancelled = controller.signal.aborted;
     say(cancelled ? "Cancelled." : "Failed: " + (e.message || e));
-    if (!cancelled) log("[join]", e);
+    if (!cancelled) {
+      log("[join]", e);
+      const code = e instanceof JoinError && Number.isInteger(e.status) ? e.status : null;
+      loading?.showEngineFailure({ message: e.message || String(e), errorCode: code, source: "join", statusCode: e instanceof JoinError ? e.status : null });
+    } else hideGame();
     if (!cancelled && new URLSearchParams(location.search).has("probe") && proxy) {
       say("Failed: " + (e.message || e) + " — probing variants…");
       try {
@@ -341,19 +444,42 @@ export function boot() {
   renderInfo(null);
   $("wb-go").onclick = () => run();
   $("wb-cancel").onclick = () => controller?.abort();
-  $("wb-leave").onclick = () => leaveSession();
-  $("chat-leave").onclick = () => leaveSession();
-  $("chat-input").maxLength = MAX_LENGTH;
-  $("chat-form").onsubmit = async (ev) => {
+  $("g-menu").onclick = () => openMenu($("g-esc").hidden);
+  $("g-resume").onclick = () => openMenu(false);
+  $("g-leave").onclick = () => ($("g-confirm").hidden = false);
+  $("g-confirm-cancel").onclick = () => ($("g-confirm").hidden = true);
+  $("g-confirm-leave").onclick = () => leaveGame("Leave");
+  $("g-chat-btn").onclick = () => togglePanel($("g-chat-btn"), $("g-chat"));
+  $("g-plist-btn").onclick = () => togglePanel($("g-plist-btn"), $("g-plist"));
+  $("g-chat-input").onfocus = () => $("g-chat").classList.add("g-focus");
+  $("g-chat-input").onblur = () => $("g-chat").classList.remove("g-focus");
+  $("g-chat-form").onsubmit = async (ev) => {
     ev.preventDefault();
-    const input = $("chat-input");
+    const input = $("g-chat-input");
     try {
-      await chat.send(input.value);
+      await chat.send(input.value, { self: hud.info?.user.displayName || hud.info?.user.name || "You" });
       input.value = "";
     } catch (e) {
       chatLog.system(e.message || String(e));
     }
   };
+  addEventListener("keydown", (e) => {
+    if (!inGame() || $("g-hud").hidden) return;
+    const typing = e.target instanceof HTMLInputElement;
+    if (e.key === "Escape") {
+      if (!$("g-confirm").hidden) $("g-confirm").hidden = true;
+      else openMenu($("g-esc").hidden);
+    } else if (e.key === "/" && !typing && !$("g-chat-input").disabled) {
+      e.preventDefault();
+      $("g-chat").hidden = false;
+      $("g-chat-btn").setAttribute("aria-pressed", "true");
+      $("g-chat-input").focus();
+    } else if (e.key === "Tab" && !typing) {
+      e.preventDefault();
+      togglePanel($("g-plist-btn"), $("g-plist"));
+    }
+  });
+  renderChat([]);
   syncSessionUi();
   $("wb-copy").onclick = () => navigator.clipboard?.writeText($("wb-log").textContent).catch(() => {});
   $("wb-export").onclick = () =>

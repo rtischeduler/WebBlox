@@ -80,3 +80,7 @@ What the JS does not show: the in-protocol goodbye. The wasm has `ClientDisconne
 `join.html` now keeps the WebTransport session open until you press **Leave server** (or the server closes it), instead of dropping it after 4 seconds. `Session` reports the result honestly: `left` if you left, `dropped` if the server closed it first.
 
 Expect `dropped`. Nothing answers the server's RUPP handshake or keepalives yet, so a real server will close the connection on its own. Staying for real, and reading or sending chat, both need open questions 3 to 5 above (channel header, RUPP, key agreement, replication decoding). `ChatClient` has slots for a `decode` and an `encode` function; until they exist, the chat panel shows connection events only and Send is disabled.
+
+## The engine's loading screen (`engine/WasmPlayer.js`)
+
+The page script for `/games/start` only renders markup. The engine's own JS (class `re`, a `LoadingScreen`) fills it in: title, creator and verified badge from `economy .../v2/assets/{placeId}/details`; icon and background from `thumbnails` after `apis .../universes/v1/places/{placeId}/universe`. The wasm reports progress and failures through `window.__onEngineLoadingStatus({kind, message, errorCode, source, statusCode})`, where `source` is `join`, `teleport` or `gui-service` and picks the error panel title and priority. `join.html` uses the same shape, so a decoded replication layer can report failures through `LoadingScreen.showEngineFailure`.
