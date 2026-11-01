@@ -5,7 +5,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances",
@@ -13,7 +15,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances/CorePackages",
@@ -21,7 +25,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances/CorePackages/Packages",
@@ -29,7 +35,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances/CorePackages/Workspace",
@@ -37,7 +45,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances/CoreGui",
@@ -45,7 +55,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/DataModelInstances/CoreGui/RobloxGui",
@@ -53,7 +65,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/CoreScripts",
@@ -61,7 +75,9 @@
 "props": [
 "AttributesSerialize",
 "Name"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScriptLocalization",
@@ -71,7 +87,9 @@
 "Contents",
 "Name",
 "SourceLocaleId"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScriptLocalizationTrimmed",
@@ -81,7 +99,9 @@
 "Contents",
 "Name",
 "SourceLocaleId"
-]
+],
+"link": "",
+"guid": ""
 },
 {
 "path": "PatchRoot/CoreScripts/ServerStarterScript",
@@ -91,7 +111,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{22259374-a317-4888-91f4-353889f4128c}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/AntiAddictionPrompt",
@@ -101,7 +123,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{a73baaac-974b-4c4d-9bab-8b63847f5dce}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/AppChatMain",
@@ -111,7 +135,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{954781fe-9869-45cf-bc8b-5bb7d3ec519e}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu",
@@ -121,7 +147,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{d6c505c4-a6b9-4ef7-84e3-645721d2c237}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/AvatarMood",
@@ -131,7 +159,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{38ced183-09a4-4e3e-91f3-f129da6f4006}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/BlockPlayerPrompt",
@@ -141,7 +171,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{4e422114-3081-4012-8d40-fab579f95e72}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp",
@@ -151,7 +183,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{1c88109b-341a-4f59-85f0-698b2ffbabcb}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CancelSubscriptionApp",
@@ -161,7 +195,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{29397389-d693-4721-b255-1c8da645001c}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CharacterNameHandler",
@@ -171,7 +207,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{446a7cbd-df4d-446b-be60-d63f02510854}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ChatEmoteUsage",
@@ -181,7 +219,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{0db9c67c-7373-4476-a9eb-deb4af3dc854}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CommercePurchaseApp",
@@ -191,7 +231,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{a6f91964-2273-47fb-b6ec-391772b300bd}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ContextActionTouch",
@@ -201,7 +243,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{9d921e84-6f0b-416c-ae8d-61bd66ad922b}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CoreGuiEnableAnalytics",
@@ -211,7 +255,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{298a5c91-b50a-4f5c-bf31-6aaf97e51806}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CoreScriptErrorReporter",
@@ -221,7 +267,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{c9835f16-37fe-4cc9-a18c-28fb0062f64f}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CoreScriptsGlobalEffects",
@@ -231,7 +279,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{27623082-f916-4ddd-89e0-0b5781de58a1}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CrossExperienceVoiceDefaultChannel",
@@ -241,7 +291,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{d934b14e-86b3-42d6-9211-e1c532e0b232}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/CrossExperienceVoiceErrorReporter",
@@ -251,7 +303,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{55105896-267a-4b0c-9be4-3716506df76b}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/DefaultListenerLocation",
@@ -261,7 +315,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{c37ce48d-949b-488b-8721-46581fb7f50a}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ExperienceAudioFocusBinder",
@@ -271,7 +327,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{d0b9091a-e2d5-4407-9121-d7bd561ed68c}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ExperienceChatMain",
@@ -281,7 +339,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{38df578d-0490-41ad-9da2-5f5ffb0e48c6}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ExperienceNotifications",
@@ -291,7 +351,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{25cea841-0d52-4094-a4d5-b3d016e2d5b4}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/FacialAnimationStreaming",
@@ -301,7 +363,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{32940eeb-174a-40bb-8e3e-192d8658ee9d}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/FriendPlayerPrompt",
@@ -311,7 +375,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{4e3d8a02-e0f6-4238-bef7-8c518d6b4f43}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/FriendsCallingMain",
@@ -321,7 +387,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{eaa7cdf1-8ce3-4bcc-bbb3-e4a99b08f979}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/GameInviteModalGUI",
@@ -331,7 +399,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{790fda69-be22-4ec8-8aa0-155545bc800c}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/InExperienceDataModelStreamStarter",
@@ -341,7 +411,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{8081736c-6acf-45a6-927a-11f1168a1917}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/InExperienceDetailsPrompt",
@@ -351,7 +423,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{1530096e-33a0-4616-ba34-689061af4ea0}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/InExperienceTransferApp",
@@ -361,7 +435,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{b36e5434-0b52-4daa-b1a5-9942395c9f6e}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/InspectAndBuy",
@@ -371,7 +447,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{12d704e4-d174-41d1-a906-f03be72953fb}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt",
@@ -381,7 +459,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{cba3ced7-bbed-4f0a-b206-1992695c0e2b}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/jest.config",
@@ -391,7 +471,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{93798378-899f-4791-8a6d-874bdd2a9b57}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/MainBotChatScript2",
@@ -401,7 +483,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e04fd19d-4b6b-4816-9afb-7357ebec778c}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/MicrophoneDevicePermissionsLoggingInitializer",
@@ -411,7 +495,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{61e1fc9f-badf-45df-99a0-edd1c6946d5b}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/NetworkPause",
@@ -421,7 +507,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{b5867adc-723b-4c80-8c01-6328dcfaf301}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/NotificationScript2",
@@ -431,7 +519,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{606adc62-7bd5-4164-bedc-5462d8fd632a}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/OpenShareSheetWithLink",
@@ -441,7 +531,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e49b01ad-bff7-48f4-b6a5-97043e421f3e}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/PerformanceStatsManagerScript",
@@ -451,7 +543,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{b8b053c3-7e2a-4172-bf6c-771d0fbd3481}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/PlayerBillboards",
@@ -461,7 +555,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{7b4ab425-dacc-4274-9a38-7246d7da3ac4}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/PlayerRagdoll",
@@ -471,7 +567,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{f98ef042-b866-44cc-b0f0-7778de1f85a9}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/PlayerView",
@@ -481,7 +579,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e4ededf7-eae7-4995-9b76-2a8e7f038ca8}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/PortalTeleportGUI",
@@ -491,7 +591,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{259fe7a8-c38d-4ef5-839c-d105228d0d84}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ProximityPrompt",
@@ -501,7 +603,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{3ed6afb0-f0c4-4ac1-b04a-110ae138ca51}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ScreenshotHud",
@@ -511,7 +615,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{7e3b8fb1-f7b6-4cfe-ab53-7930480375c9}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ScreenTimeInGame",
@@ -521,7 +627,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{abcd613b-1f19-4049-b813-2d2e7a67f34e}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/SendCameraAccessAnalytics",
@@ -531,7 +639,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{76dd54b6-f925-4f2a-926a-c09c436ce15a}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/SocialContextToast",
@@ -541,7 +651,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{2568f0a8-70d6-4959-815c-1a021b5d3df2}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/SoundTelemetry",
@@ -551,7 +663,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{a80672a5-2c03-4d35-97e4-d558bc773d12}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/SystemScrim",
@@ -561,7 +675,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{70b5a2f7-f6ce-40c3-a961-ce1c62e9b5a2}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/ToastNotificationGUI",
@@ -571,7 +687,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e8ac55f8-7431-4fa6-875d-2fd1840c66d3}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/UniversalShareSheetScreenGui",
@@ -581,7 +699,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{3718ac19-58d8-4407-adc8-c37d1bd654f9}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/VehicleHud",
@@ -591,7 +711,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{885a0b02-204c-41ab-b1a5-20d423ca8781}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/VoiceAttention",
@@ -601,7 +723,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{f34d1fbc-6a19-4d24-b69b-bbe6d36ec2a9}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/VoiceDefaultChannel",
@@ -611,7 +735,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{0eef04f8-6867-4833-b619-9531d8d60547}"
 },
 {
 "path": "PatchRoot/CoreScripts/CoreScripts/VoiceUserAgency",
@@ -621,7 +747,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{60994f74-fb8e-4b83-a89d-39b1f34dcad4}"
 },
 {
 "path": "PatchRoot/CoreScripts/Connection",
@@ -631,7 +759,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{be8d5103-7011-440e-a378-8a31ad590e8d}"
 },
 {
 "path": "PatchRoot/CoreScripts/LoadingScript",
@@ -641,7 +771,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{eed56d02-a826-435d-8927-fd86425e75bb}"
 },
 {
 "path": "PatchRoot/CoreScripts/challenge",
@@ -651,7 +783,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{4f39ee23-5e5b-4e33-9674-bdcf2e18daa5}"
 },
 {
 "path": "PatchRoot/CoreScripts/CaptureModeModuleStarterScript",
@@ -661,7 +795,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{303df4fc-83d1-4b02-8294-c5f3cf16ab01}"
 },
 {
 "path": "PatchRoot/CoreScripts/StarterScript",
@@ -671,7 +807,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e2d17131-2600-49f6-8e30-f262ed4f0e6c}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/EmoteSkinningDisable",
@@ -681,7 +819,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{cfd2eeb3-e593-4573-b24d-e17c5962e392}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/PlayerRagdollRigCreator",
@@ -691,7 +831,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{e65e48b5-dcb5-45f4-af88-f178704a8785}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/PlayerViewCapability",
@@ -701,7 +843,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{ef62ec87-efbc-43ab-9aaf-c64367c82afa}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ReferredByPlayerRemoteEvent",
@@ -711,7 +855,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{fe3280e4-3a31-4cec-88ba-be80f0f4a3b3}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerBuildExperiencePlaytestTeleport",
@@ -721,7 +867,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{b41ae1a4-14d2-47f3-ac39-ee7a7d3e396a}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerBulkPurchaseEvent",
@@ -731,7 +879,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{6ec2cb6c-7abb-4b44-af2e-d29812198c9a}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerDialog",
@@ -741,7 +891,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{ec7a375b-8372-46bf-892c-c2aafb6eb53e}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerInGameMenu",
@@ -751,7 +903,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{58307404-e4b4-4f49-90be-11002733e3d2}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerLeaderstats",
@@ -761,7 +915,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{03cd9e62-1d52-4dcd-b024-4fb35d607465}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerPlatformLeaderboard",
@@ -771,7 +927,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{285a14e6-b841-488e-87c1-0d678e22d181}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerPlatformLeaderboardDevMock",
@@ -781,7 +939,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{9e43ef85-e0bb-4d5c-aa5a-2a9d5bf49669}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerRoCaptchaHandler",
@@ -791,7 +951,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{05f85685-a748-49e8-bc0f-4965ea682d2d}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/ServerSocialScript",
@@ -801,7 +963,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{63fa04bf-55cb-4b23-9d81-dcab4d076bb2}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/VersionedFlagTest",
@@ -811,7 +975,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{4ece686a-d20c-4129-9f90-5618ce21c4ec}"
 },
 {
 "path": "PatchRoot/CoreScripts/ServerCoreScripts/VoiceDefault",
@@ -821,7 +987,9 @@
 "LinkedSource",
 "Name",
 "ScriptGuid"
-]
+],
+"link": "",
+"guid": "{ea19a0b7-09fe-48eb-aa93-94038b5d274b}"
 },
 {
 "path": "PatchRoot/CoreScripts/Assets",
@@ -830,6 +998,8 @@
 "AttributesSerialize",
 "Name",
 "Value"
-]
+],
+"link": "",
+"guid": ""
 }
 ]

@@ -3,6 +3,7 @@ fetched /ExtraContent/models/InExperience/InExperience.rbxm 14330707 bytes b'<ro
 chunk b'SSTR' cl 20 ul 28 zstd
 chunk b'INST' cl 1774 ul 10943 zstd
 chunk b'HASH' cl 370774 ul 547607 zstd
+HASH head b18500001000a8b31c6abf30b88b19e356991081d048286d6758923a9ccd78456a07f42c5d308dbad89c7ab90bca4db2 len 547607
 chunk b'PROP' cl 47 ul 10952 zstd
 chunk b'PRNT' cl 23915 ul 295717 zstd
 chunk b'SIGU' cl 0 ul 324 raw
@@ -22,5 +23,7 @@ fetched /ExtraContent/scripts/CoreScripts/Modules/InspectAndBuy/service-descript
     name: lua-module-inspect-and-buy description: The Inspect & Buy in-experience UX product: lua-module-inspect-and-buy repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/InspectAndBuy owners: # marketplace > expression   - ros/1097 tags:   - type:universal-app   - lang:lua
 fetched /ExtraContent/scripts/CoreScripts/Modules/EmotesMenu/service-descriptor.yml 282 bytes b'name: lua-module'
     name: lua-module-emotes-menu description: The emotes menu in-experience UX product: lua-module-emotes-menu repository: Roblox/lua-apps code_path: content/scripts/CoreScripts/Modules/EmotesMenu owners: # Marketplace > Expression   - ros/1097 tags:   - type:universal-app   - lang:lua
+LinkedSource prefixes [('', 34225)]
+sample [('', '{c600a4ce-3c2d-4515-a1e3-c3124c856f7f}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient'), ('', '{b7e5e6bc-c15d-4c31-a038-3ca606bd06dc}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache'), ('', '{21e46648-1d5e-44b8-bbe1-ff09f8a6d52c}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/cache'), ('', '{ccf14c07-95cb-44f9-8889-a5649960d206}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/Cache'), ('', '{91d8c7c4-8505-43a0-ac2a-23110aa2b5f6}', 'PatchRoot/DataModelInstances/CorePackages/Packages/_Index/ApolloClient/ApolloClient/cache/core/types/common')]
 instances 36964 classes 4 scripts with Source 0 bytecode 0
 top classes [('ModuleScript', 34225), ('Folder', 2731), ('StringValue', 6), ('LocalizationTable', 2)]
