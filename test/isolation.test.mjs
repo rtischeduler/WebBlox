@@ -20,3 +20,8 @@ test("coep choice and messages", () => {
   assert.match(explainIsolation("no-service-worker", "x; wv) y"), /WebView/);
   assert.match(explainIsolation("whatever"), /cross-origin isolated/);
 });
+
+test("host messages", () => {
+  assert.match(explainIsolation("host-missing-sw"), /coi-sw\.js/);
+  assert.match(explainIsolation("host-not-isolated"), /does not support/);
+});

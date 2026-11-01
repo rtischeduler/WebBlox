@@ -13,6 +13,10 @@ export function explainIsolation(reason, ua = "") {
       return "WebBlox is inside a frame of a page that is not cross-origin isolated. Open index.html as the top-level page of the WebView, from a server that sends COOP/COEP headers (see worker/coi-proxy.js)." + webview;
     case "opaque-origin-framed":
       return "WebBlox was loaded as inline HTML inside a frame, so it has no real address. Load the https address of a COOP/COEP-sending host in the WebView instead of pasting the HTML." + webview;
+    case "host-missing-sw":
+      return "The page hosting WebBlox has no coi-sw.js next to it, so it cannot be made isolated. Add coi-sw.js to the root of that site (see README)." + webview;
+    case "host-not-isolated":
+      return "The hosting page was reloaded with isolation turned on but the WebView still reports it as not isolated. This WebView does not support cross-origin isolation." + webview;
     case "no-service-worker":
       return "This WebView has no service workers, so the page cannot add isolation headers itself. Load WebBlox from a host that sends them (see worker/coi-proxy.js)." + webview;
     case "no-isolation-after-reload":
@@ -23,8 +27,31 @@ export function explainIsolation(reason, ua = "") {
 }
 
 const KEY = "webblox_coi_reloads";
+export const HOST_PARAM = "wbcoi";
 const forever = () => new Promise(() => {});
 const result = (ok, reason, url) => ({ ok, reason: reason || "", url: url || "" });
+
+async function isolateViaHost(win) {
+  let top;
+  try { top = win.top; void top.location.href; void top.document; } catch { return null; }
+  const tl = top.location;
+  const params = new URLSearchParams(tl.search);
+  if (params.has(HOST_PARAM)) return result(false, "host-not-isolated");
+  if (!top.isSecureContext || !("serviceWorker" in top.navigator)) return result(false, "host-no-service-worker");
+  const coep = pickCoep("credentialless" in top.HTMLIFrameElement.prototype);
+  const swUrl = new URL("coi-sw.js?coep=" + coep, top.document.baseURI).href;
+  try {
+    const probe = await fetch(swUrl, { cache: "no-store" });
+    if (!probe.ok) return result(false, "host-missing-sw");
+    const sw = top.navigator.serviceWorker;
+    await sw.register(swUrl, { updateViaCache: "none" });
+    await sw.ready;
+    params.set(HOST_PARAM, "1");
+    console.warn("[webblox] reloading the host page with isolation on");
+    tl.replace(tl.origin + tl.pathname + "?" + params.toString() + tl.hash);
+    return forever();
+  } catch (e) { console.warn("[webblox] host isolation failed", e); return result(false, "host-sw-failed"); }
+}
 
 export async function ensureIsolation(win = globalThis.window) {
   if (win.__wbIsolation) return win.__wbIsolation;
@@ -37,6 +64,11 @@ export async function ensureIsolation(win = globalThis.window) {
   if (win.crossOriginIsolated) { store.clear(); return result(true); }
   const target = hostedUrl(win.WEBBLOX_HOST, loc);
   const framed = win !== win.top;
+  if (framed) {
+    const viaHost = await isolateViaHost(win);
+    if (viaHost && viaHost.reason === "host-not-isolated") return { ...viaHost, url: target };
+    if (viaHost && !/^host-(missing-sw|no-service-worker|sw-failed)$/.test(viaHost.reason)) return viaHost;
+  }
   if (isOpaqueOrigin(loc)) {
     console.warn("[webblox] no real origin here (" + loc.protocol + "), moving to " + target);
     try { (framed ? win.top : win).location.replace(target); return forever(); } catch {}
