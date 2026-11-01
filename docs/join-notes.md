@@ -64,3 +64,7 @@ Strings in code order for the real builders (`analysis/join/join-request.txt`):
 - `isTeleport` appears only in the teleport functions, not in the first join. `gameJoinAttemptId` is not in any of these bodies.
 - The log format `{"browserTrackerId":{},"status":"{}"}` suggests `browserTrackerId` is numeric.
 - Not decoded: how the engine obtains `browserTrackerId`, its header set, and when it picks `/v2/join-game`.
+
+## Fix for status 12 "Unable to join Game 211"
+
+`join.html?probe` showed that only the request carrying `user-agent: Roblox/WinInet` was accepted (status 2 with a join script). Browser-style headers, `content-type` only, and a root referer all returned status 12 / 211, and `/v2/join-game` returned 404 for that account. `joinGame` now always sends that user-agent and no `Origin`.

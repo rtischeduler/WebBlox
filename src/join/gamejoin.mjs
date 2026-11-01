@@ -2,6 +2,13 @@ export const ENDPOINTS = {
   join: "https://gamejoin.roblox.com/v1/join-game",
   instance: "https://gamejoin.roblox.com/v1/join-game-instance",
 };
+export const ROBLOX_USER_AGENT = "Roblox/WinInet";
+export const joinHeaders = (placeId) => ({
+  "content-type": "application/json",
+  accept: "application/json",
+  "user-agent": ROBLOX_USER_AGENT,
+  referer: `https://www.roblox.com/games/${placeId}/`,
+});
 export const PENDING = new Set([0, 1]);
 export const JOINED = 2;
 
@@ -67,12 +74,7 @@ export async function joinGame({
   if (!Number.isFinite(Number(placeId)) || Number(placeId) <= 0) throw new JoinError("Invalid place id");
   const url = jobId ? ENDPOINTS.instance : ENDPOINTS.join;
   const body = JSON.stringify(buildJoinBody({ placeId, jobId, browserTrackerId, forcedPop }));
-  const headers = {
-    "content-type": "application/json",
-    accept: "application/json",
-    origin: "https://www.roblox.com",
-    referer: `https://www.roblox.com/games/${placeId}/`,
-  };
+  const headers = joinHeaders(placeId);
   for (let poll = 0; poll < maxPolls; poll++) {
     if (signal?.aborted) throw new JoinError("Cancelled");
     const res = await request(url, { method: "POST", headers, body, signal });
@@ -105,11 +107,10 @@ export async function joinGame({
 }
 
 export const PROBE_VARIANTS = [
-  { name: "baseline", url: ENDPOINTS.join, headers: (place) => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: `https://www.roblox.com/games/${place}/` }) },
-  { name: "v2 endpoint", url: "https://gamejoin.roblox.com/v2/join-game", headers: (place) => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: `https://www.roblox.com/games/${place}/` }) },
+  { name: "baseline", url: ENDPOINTS.join, headers: (place) => joinHeaders(place) },
+  { name: "old browser headers", url: ENDPOINTS.join, headers: (place) => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: `https://www.roblox.com/games/${place}/` }) },
   { name: "content-type only", url: ENDPOINTS.join, headers: () => ({ "content-type": "application/json" }) },
-  { name: "referer root", url: ENDPOINTS.join, headers: () => ({ "content-type": "application/json", accept: "application/json", origin: "https://www.roblox.com", referer: "https://www.roblox.com/" }) },
-  { name: "desktop user-agent", url: ENDPOINTS.join, headers: (place) => ({ "content-type": "application/json", accept: "application/json", "user-agent": "Roblox/WinInet", referer: `https://www.roblox.com/games/${place}/` }) },
+  { name: "user-agent only", url: ENDPOINTS.join, headers: () => ({ "content-type": "application/json", "user-agent": ROBLOX_USER_AGENT }) },
 ];
 
 export async function probeJoin({ request, placeId, browserTrackerId, signal, log = () => {} }) {

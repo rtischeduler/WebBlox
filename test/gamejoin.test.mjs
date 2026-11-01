@@ -173,14 +173,21 @@ test("probeJoin checks auth then tries each variant once and reports rows", asyn
   const rows = await probeJoin({ request, placeId: 5, browserTrackerId: 1 });
   assert.equal(rows[0].authenticated, true);
   assert.equal(rows[0].userId, 9);
-  assert.equal(rows.length, 6);
+  assert.equal(rows.length, 5);
   assert.ok(rows.slice(1).every((r) => r.status === 12 && r.http === 200));
-  assert.ok(seen.some((r) => r.url === "https://gamejoin.roblox.com/v2/join-game"));
-  assert.deepEqual(Object.keys(seen.find((r) => r.method === "POST" && r.headers["user-agent"]).headers).includes("user-agent"), true);
+  assert.equal(seen.find((r) => r.method === "POST").headers["user-agent"], "Roblox/WinInet");
 });
 
 test("probeJoin records network errors per variant", async () => {
   const rows = await probeJoin({ request: async () => { throw new Error("boom"); }, placeId: 5, browserTrackerId: 1 });
-  assert.equal(rows.length, 6);
+  assert.equal(rows.length, 5);
   assert.ok(rows.every((r) => r.error === "boom"));
+});
+
+test("joinGame sends the Roblox user-agent and no Origin header", async () => {
+  let headers = null;
+  await joinGame({ ...base, request: async (url, init) => { headers = init.headers; return reply(200, { status: 2, jobId: "j", joinScript: { UserId: 1 } }); } });
+  assert.equal(headers["user-agent"], "Roblox/WinInet");
+  assert.equal("origin" in headers, false);
+  assert.equal(headers.referer, "https://www.roblox.com/games/123/");
 });
