@@ -113,11 +113,35 @@ def main():
         log("flags total", len(st), "matching", len(hit))
         walk_json(hit, cands)
     except Exception as e: log("flags fetch failed:", e)
+    # OTA version endpoint + config-asset-mapping lookup (names taken from the wasm strings)
+    scal = []
+    def scalars(o):
+        if isinstance(o, dict):
+            for v in o.values(): scalars(v)
+        elif isinstance(o, list):
+            for v in o: scalars(v)
+        elif isinstance(o, (str, int)) and not isinstance(o, bool) and len(str(o)) < 80: scal.append(str(o))
+    for url in ["https://clientsettings.roblox.com/v2/ota-version/WebClientApp",
+                "https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp",
+                "https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer"]:
+        try:
+            body = get(url); log("GET", url, "->", body[:600].decode("utf8", "replace"))
+            j = json.loads(body); walk_json(j, cands); scalars(j)
+        except Exception as e: log("GET", url, "failed:", repr(e)[:200])
+    for sc in list(dict.fromkeys(scal))[:8]:
+        for repo in (0, 1, 2):
+            u = f"https://apis.rbxcdn.com/config-asset-mapping-api/v1/get-asset-id?resourceId={sc}&resourceType=1&repositoryType={repo}"
+            try:
+                body = get(u); log("GET", u, "->", body[:300].decode("utf8", "replace"))
+                j = json.loads(body); walk_json(j, cands)
+                for k in ("assetId", "AssetId", "id"):
+                    if isinstance(j, dict) and str(j.get(k, "")).isdigit(): cands.add((int(j[k]), 0))
+            except Exception as e: log("GET", u, "failed:", repr(e)[:120])
     log("candidate patch assets:", sorted(cands))
     tree = []
     for aid, ver in sorted(cands):
         try:
-            meta = json.loads(get(f"https://assetdelivery.roblox.com/v2/assetId/{aid}/version/{ver}"))
+            meta = json.loads(get(f"https://assetdelivery.roblox.com/v2/assetId/{aid}" + (f"/version/{ver}" if ver else "")))
             loc = meta["locations"][0]["location"]
             data = get(loc); log(f"asset {aid} v{ver}: {len(data)} bytes, head={data[:16]!r}")
             tree += parse_rbxm(data)
