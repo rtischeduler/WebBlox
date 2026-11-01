@@ -121,12 +121,22 @@ def main():
         elif isinstance(o, list):
             for v in o: scalars(v)
         elif isinstance(o, (str, int)) and not isinstance(o, bool) and len(str(o)) < 80: scal.append(str(o))
-    for url in ["https://clientsettings.roblox.com/v2/ota-version/WebClientApp",
-                "https://clientsettingscdn.roblox.com/v2/ota-version/WebClientApp",
-                "https://clientsettings.roblox.com/v2/ota-version/WindowsPlayer"]:
+    VS = ["version-75f1039cb4964863", "0.745.0.7451145"]
+    try:
+        cv = json.loads(get("https://clientsettings.roblox.com/v2/client-version/WebClientApp"))
+        VS = [cv.get("clientVersionUpload"), cv.get("version")] + VS; log("client-version", cv)
+    except Exception as e: log("client-version failed", repr(e)[:100])
+    urls = []
+    for host in ("clientsettings.roblox.com", "clientsettingscdn.roblox.com"):
+        for bt in ("WebClientApp", "WindowsPlayer"):
+            base = f"https://{host}/v2/ota-version/{bt}"
+            urls += [base] + [f"{base}?{q}={v}" for v in dict.fromkeys(x for x in VS if x) for q in ("version", "clientVersion", "channelName")]
+    for url in urls[:16]:
         try:
             body = get(url); log("GET", url, "->", body[:600].decode("utf8", "replace"))
             j = json.loads(body); walk_json(j, cands); scalars(j)
+        except urllib.error.HTTPError as e:
+            log("GET", url, "HTTP", e.code, e.read()[:200].decode("utf8", "replace"))
         except Exception as e: log("GET", url, "failed:", repr(e)[:200])
     for sc in list(dict.fromkeys(scal))[:8]:
         for repo in (0, 1, 2):
