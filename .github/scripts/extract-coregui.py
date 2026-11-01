@@ -33,6 +33,19 @@ def lz4_block(d, size):
     if len(o) != size: raise ValueError(f"lz4 size {len(o)} != {size}")
     return bytes(o)
 
+def zstd_block(raw, size):
+    try:
+        import zstandard
+        return zstandard.ZstdDecompressor().decompress(raw, max_output_size=size)
+    except ImportError:
+        import subprocess
+        return subprocess.run(["zstd", "-d", "-c", "-q"], input=raw, capture_output=True, check=True).stdout
+
+def unpack(raw, cl, ul):
+    if cl == 0: return raw
+    if raw[:4] == b"\x28\xb5\x2f\xfd": return zstd_block(raw, ul)
+    return lz4_block(raw, ul)
+
 # ---------- rbxm ----------
 MAGIC = b"<roblox!\x89\xff\r\n\x1a\n"
 def ints(b, p, n):  # interleaved, zigzag
@@ -52,29 +65,34 @@ def parse_rbxm(data):
     h = data.find(MAGIC)
     if h < 0: raise ValueError("no <roblox!> magic")
     b = data[h:]; ncls, ninst = struct.unpack_from("<ii", b, 16); p = 32
-    cls = {}; ref2cls = {}; props = {}; parent = {}
+    cls = {}; ref2cls = {}; props = {}; parent = {}; seen = set()
     while p + 16 <= len(b):
         name = b[p:p + 4]; cl, ul = struct.unpack_from("<II", b, p + 4); p += 16
         raw = b[p:p + (cl or ul)]; p += cl or ul
-        c = raw if cl == 0 else lz4_block(raw, ul)
-        if name == b"INST":
-            cid = struct.unpack_from("<i", c, 0)[0]; cn, q = rstr(c, 4); q += 1
-            n = struct.unpack_from("<i", c, q)[0]; q += 4
-            refs, _ = ints(c, q, n); refs = delta(refs)
-            cls[cid] = cn.decode("latin1")
-            for r in refs: ref2cls[r] = cid
-            cls[(cid, "refs")] = refs
-        elif name == b"PROP":
-            cid = struct.unpack_from("<i", c, 0)[0]; pn, q = rstr(c, 4); pn = pn.decode("latin1")
-            t = c[q]; q += 1
-            if t == 1:  # string
-                for r in cls.get((cid, "refs"), []):
-                    s, q = rstr(c, q); props.setdefault(r, {})[pn] = s
-        elif name == b"PRNT":
-            n = struct.unpack_from("<i", c, 1)[0]
-            ch, q = ints(c, 5, n); ch = delta(ch); pa, _ = ints(c, q, n); pa = delta(pa)
-            parent.update(zip(ch, pa))
-        elif name == b"END\0": break
+        try: c = unpack(raw, cl, ul)
+        except Exception as e:
+            log("chunk", name, "cl", cl, "ul", ul, "head", raw[:8], "decompress failed:", repr(e)[:120]); continue
+        if name not in seen: seen.add(name); log("chunk", name, "cl", cl, "ul", ul, "zstd" if raw[:4] == b"\x28\xb5\x2f\xfd" else "lz4" if cl else "raw")
+        try:
+            if name == b"INST":
+                cid = struct.unpack_from("<i", c, 0)[0]; cn, q = rstr(c, 4); q += 1
+                n = struct.unpack_from("<i", c, q)[0]; q += 4
+                refs, _ = ints(c, q, n); refs = delta(refs)
+                cls[cid] = cn.decode("latin1")
+                for r in refs: ref2cls[r] = cid
+                cls[(cid, "refs")] = refs
+            elif name == b"PROP":
+                cid = struct.unpack_from("<i", c, 0)[0]; pn, q = rstr(c, 4); pn = pn.decode("latin1")
+                t = c[q]; q += 1
+                if t == 1:  # string
+                    for r in cls.get((cid, "refs"), []):
+                        s, q = rstr(c, q); props.setdefault(r, {})[pn] = s
+            elif name == b"PRNT":
+                n = struct.unpack_from("<i", c, 1)[0]
+                ch, q = ints(c, 5, n); ch = delta(ch); pa, _ = ints(c, q, n); pa = delta(pa)
+                parent.update(zip(ch, pa))
+            elif name == b"END\0": break
+        except Exception as e: log("chunk", name, "parse failed:", repr(e)[:160])
     out = []
     def path(r):
         names = []

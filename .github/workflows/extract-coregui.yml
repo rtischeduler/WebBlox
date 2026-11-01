@@ -10,6 +10,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: zstd support
+        run: pip install -q zstandard
       - name: find + unpack the CoreGui patch
         run: python3 -u .github/scripts/extract-coregui.py analysis/coregui
       - name: summary
