@@ -23,3 +23,6 @@ The Roblox client needs `crossOriginIsolated`. `src/isolation.mjs` (loaded fresh
 For WebViews with no service worker support, serve the page from a host that sends the headers itself:
 `worker/coi-proxy.js` (Cloudflare Worker in front of GitHub Pages, set `UPSTREAM` to change the source), `_headers` (Cloudflare Pages), `netlify.toml`, `vercel.json`.
 Check `crossOriginIsolated` in the console. A WebView that does not implement isolation cannot run the game whatever the headers are.
+
+## Launcher (`launcher.html`)
+Runs the engine top-level (no proxy iframe). `src/launcher.mjs` isolates the page (same `ensureIsolation`), loads Singuloxy, then patches `fetch`, `XMLHttpRequest` and `WebSocket` so Roblox traffic goes through its libcurl/wisp, with your `.ROBLOSECURITY` added as a Cookie header. The wasm is unpacked in the browser from `engine/WebClient.wasm.gz.part*`; other engine files come from `engine/` or the CDN. Join/websocket traffic is logged (values redacted for join responses) so the protocol can be mapped. Test: `node --test test/netpatch.test.mjs`.
