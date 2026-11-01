@@ -1,0 +1,27 @@
+name: extract-coregui
+on:
+  workflow_dispatch:
+    inputs:
+      asset_id: { description: "optional patch assetId override", required: false }
+      asset_version: { description: "optional patch assetVersion override", required: false }
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: find + unpack the CoreGui patch
+        run: python3 -u .github/scripts/extract-coregui.py analysis/coregui ${{ inputs.asset_id }} ${{ inputs.asset_version }}
+      - name: summary
+        run: |
+          { echo "```"; cat analysis/coregui/report.txt; echo "```"; } >> "$GITHUB_STEP_SUMMARY"
+      - name: commit to main
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add analysis/coregui
+          git commit -qm "CoreGui patch extraction" || { echo nothing; exit 0; }
+          git pull -q --rebase origin main
+          git push origin HEAD:main
