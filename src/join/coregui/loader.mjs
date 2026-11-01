@@ -3,6 +3,7 @@
 // Every request goes through the supplied `request` (the wisp/libcurl proxy), so cookies and CSRF are handled there.
 import { parseRbxm } from "./rbxm.mjs";
 import { readStringTable, looksLikeUiText } from "./luau.mjs";
+import { decodeBytecode } from "./decode.mjs";
 
 export const PATCHES = {
   DataModelPatch: "/content/configs/DataModelPatchConfig/DataModelPatchConfig.json",
@@ -92,6 +93,12 @@ function api(result) {
   return {
     get: (path, patch) => (patch ? result.patches[patch] : first())?.byPath.get(path) || null,
     list: (path, patch) => ((patch ? result.patches[patch] : first())?.children.get(path) || []).map((i) => i.name),
+    // Standard Luau bytecode (wrapper removed, opcodes unscrambled) for one module: ready for luau_load in a Luau VM.
+    bytecode(path, patch) {
+      const m = this.get(path, patch);
+      if (!m?.source) throw new Error("no script at " + path);
+      return decodeBytecode(m.source);
+    },
     // Modules whose path matches, with the readable strings found in their bytecode.
     modulesMatching(re, patch) {
       const p = patch ? result.patches[patch] : first();

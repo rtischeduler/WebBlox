@@ -3,7 +3,7 @@
 //   8-byte header | version | types version | varint string count | (varint length + bytes)*
 // This does not execute anything. It is enough to index what each module is called, requires and says.
 const td = new TextDecoder();
-const HEADER = 8;
+const WRAPPED = (b) => (b[0] > 14 && b[0] !== 100 ? 8 : 0); // raw patch bytes carry an 8-byte wrapper; decoded bytecode does not
 
 const varint = (b, p) => {
   let v = 0, shift = 0;
@@ -16,10 +16,11 @@ const varint = (b, p) => {
 };
 
 export function readStringTable(b) {
-  if (!b || b.length < HEADER + 3) return null;
-  const version = b[HEADER], typesVersion = b[HEADER + 1];
+  if (!b || b.length < 11) return null;
+  const H = WRAPPED(b);
+  const version = b[H], typesVersion = b[H + 1];
   if (version === 0 || version > 63 || typesVersion > 16) return null;
-  let r = varint(b, HEADER + 2);
+  let r = varint(b, H + 2);
   if (!r) return null;
   const count = r[0]; let p = r[1];
   if (count > b.length) return null;

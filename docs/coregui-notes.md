@@ -35,3 +35,17 @@ What join.html now does on Join (non-blocking, through the same proxy as everyth
 plus the engine's GUI classes (ScreenGui, Frame, TextLabel, UIListLayout, ...) and services (Players, GuiService, TextChatService, ...) bound to a 2D canvas.
 The data side is ready for it; the VM and the GUI class layer are the remaining work.
 Unverified from the author's sandbox: the live fetch (the sandbox cannot reach roblox.com). The parser is covered by tests on synthetic models and on the checked-in bytecode samples.
+
+## Bytecode is runnable (verified)
+The patch bytecode is standard Luau (v13 for InExperience/UniversalApp) with two differences, handled by `src/join/coregui/decode.mjs`:
+an 8-byte wrapper, and each instruction's opcode byte stored as `op * 227 mod 256`. Stock Luau's `luau_load` accepts the header but aborts
+on the scrambled opcodes (about 18% of scripts crashed the loader before decoding). After `decodeBytecode()`:
+- 4,890 of 4,890 sampled InExperience scripts (every 7th of 34,225) load in an unmodified Luau VM built from luau-lang/luau (all fast flags on);
+- executing decoded modules works: 21 of 300 small modules ran to completion and returned tables/functions; the rest stopped only because
+  `script` / `game` are nil, i.e. the Roblox environment does not exist yet.
+
+Remaining work to render the real CoreGui, in order:
+1. Luau VM in the browser (wasm build of luau-lang/luau; needs a toolchain with exception or longjmp support) and a module loader that maps `require(script.Parent.X)` to the patch tree.
+2. Roblox runtime for the VM: `game`, `script`, `Instance` + property/signal system, `Enum`, datatypes (UDim2, Vector2, Color3, ...), task/RunService, and the services CoreGui touches (Players, GuiService, UserInputService, TextChatService, HttpService via the proxy).
+3. GUI layer: GuiObject classes, layout (UIListLayout, UIGridLayout, UIPadding, AutomaticSize), text measurement, image/sprite-sheet loading from `WebClient.metadata.json`, UICorner/UIStroke/UIGradient, input hit-testing, drawn on the canvas.
+4. Replication from the game server (transport.mjs) feeding Players, chat and the player list.
