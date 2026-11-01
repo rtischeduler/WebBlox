@@ -42,3 +42,8 @@ Sign-in: if the page already has a `.ROBLOSECURITY` cookie that script can read 
 
 Open with `?placeId=123` and optionally `&jobId=...`. Modules: `gamejoin.mjs` (join, polling, join script parsing, redaction), `requester.mjs` (proxy fetch with cookie and CSRF handling), `servers.mjs` (server list and avatars), `players.mjs` (player list by source, with a slot for replicated players), `transport.mjs` (WebTransport wrapper that records traffic), `proxy.mjs` (Singuloxy loading).
 Test: `node --test test/gamejoin.test.mjs test/servers.test.mjs test/players.test.mjs test/requester.test.mjs test/transport.test.mjs`.
+
+## Play screen (`play.html`)
+A Roblox-styled in-game interface over a black canvas: top bar (menu, chat, player list), chat window with Roblox-style coloured names, player list, Esc menu (Players / Settings / Help, Resume, Leave with confirmation), and a join/loading screen. Keys: `Esc` menu, `/` chat, `Tab` player list. It reuses the join, `Session` and `ChatClient` modules, so Leave closes the game transport the way the engine does.
+
+This is an HTML/CSS recreation, not the engine's own GUI: the real CoreGui is Lua plus assets that the engine draws into its canvas, so it cannot be lifted out of the wasm as markup. The canvas stays black until a renderer is connected, and chat stays disabled until the replication stream is decoded (see `docs/join-notes.md`). Modules: `src/play/app.mjs`, `src/play/ui.mjs`. Test: `node --test test/playui.test.mjs`.
