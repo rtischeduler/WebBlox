@@ -1,9 +1,7 @@
 name: extract-coregui
 on:
   workflow_dispatch:
-    inputs:
-      asset_id: { description: "optional patch assetId override", required: false }
-      asset_version: { description: "optional patch assetVersion override", required: false }
+
 jobs:
   extract:
     runs-on: ubuntu-latest
@@ -13,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: find + unpack the CoreGui patch
-        run: python3 -u .github/scripts/extract-coregui.py analysis/coregui ${{ inputs.asset_id }} ${{ inputs.asset_version }}
+        run: python3 -u .github/scripts/extract-coregui.py analysis/coregui
       - name: summary
         run: |
           { echo "```"; cat analysis/coregui/report.txt; echo "```"; } >> "$GITHUB_STEP_SUMMARY"

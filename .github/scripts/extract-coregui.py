@@ -27,7 +27,9 @@ def lz4_block(d, size):
                 x = d[i]; i += 1; m += x
                 if x != 255: break
         m += 4; s = len(o) - off
-        for k in range(m): o.append(o[s + k])
+        if off >= m: o += o[s:s + m]
+        else:
+            for k in range(m): o.append(o[s + k])
     if len(o) != size: raise ValueError(f"lz4 size {len(o)} != {size}")
     return bytes(o)
 
@@ -90,7 +92,7 @@ def parse_rbxm(data):
 # ---------- network ----------
 def get(url, hdr=None):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", **(hdr or {})})
-    with urllib.request.urlopen(req, timeout=60) as r: return r.read()
+    with urllib.request.urlopen(req, timeout=300) as r: return r.read()
 
 def walk_json(o, found):
     if isinstance(o, dict):
@@ -102,68 +104,47 @@ def walk_json(o, found):
         try: walk_json(json.loads(o), found)
         except Exception: pass
 
+PATHS = ["/ExtraContent/models/InExperience/InExperience.rbxm",
+         "/content/configs/DataModelPatchConfig/DataModelPatchConfig.json",
+         "/content/configs/InExperiencePatchConfig/InExperiencePatchConfig.json",
+         "/content/configs/UniversalAppPatchConfig/UniversalAppPatchConfig.json",
+         "/content/configs/OtaPatchConfigs/DiscoveryOtaPatchConfig.json",
+         "/ExtraContent/scripts/CoreScripts/Modules/AvatarEditorPrompts/service-descriptor.yml",
+         "/ExtraContent/scripts/CoreScripts/Modules/InspectAndBuy/service-descriptor.yml",
+         "/ExtraContent/scripts/CoreScripts/Modules/EmotesMenu/service-descriptor.yml"]
+
+def is_bytecode(b): return not b or b[0] < 9 or (b[0] < 32 and b[0] not in (9, 10, 13))
+
 def main():
-    cands = set()
-    if len(sys.argv) > 3: cands.add((int(sys.argv[2]), int(sys.argv[3])))
-    try:
-        flags = json.loads(get("https://clientsettingscdn.roblox.com/v2/settings/application/WebClientApp"))
-        st = flags.get("applicationSettings", {})
-        hit = {k: v for k, v in st.items() if re.search(r"patch|ota|corescript|luauforge|coregui", k, re.I)}
-        json.dump(hit, open(os.path.join(OUT, "flags-matching.json"), "w"), indent=1)
-        log("flags total", len(st), "matching", len(hit))
-        walk_json(hit, cands)
-    except Exception as e: log("flags fetch failed:", e)
-    # OTA version endpoint + config-asset-mapping lookup (names taken from the wasm strings)
-    scal = []
-    def scalars(o):
-        if isinstance(o, dict):
-            for v in o.values(): scalars(v)
-        elif isinstance(o, list):
-            for v in o: scalars(v)
-        elif isinstance(o, (str, int)) and not isinstance(o, bool) and len(str(o)) < 80: scal.append(str(o))
-    VS = ["version-75f1039cb4964863", "0.745.0.7451145"]
-    try:
-        cv = json.loads(get("https://clientsettings.roblox.com/v2/client-version/WebClientApp"))
-        VS = [cv.get("clientVersionUpload"), cv.get("version")] + VS; log("client-version", cv)
-    except Exception as e: log("client-version failed", repr(e)[:100])
-    urls = []
-    for host in ("clientsettings.roblox.com", "clientsettingscdn.roblox.com"):
-        for bt in ("WebClientApp", "WindowsPlayer"):
-            base = f"https://{host}/v2/ota-version/{bt}"
-            urls += [base] + [f"{base}?{q}={v}" for v in dict.fromkeys(x for x in VS if x) for q in ("version", "clientVersion", "channelName")]
-    for url in urls[:16]:
-        try:
-            body = get(url); log("GET", url, "->", body[:600].decode("utf8", "replace"))
-            j = json.loads(body); walk_json(j, cands); scalars(j)
-        except urllib.error.HTTPError as e:
-            log("GET", url, "HTTP", e.code, e.read()[:200].decode("utf8", "replace"))
-        except Exception as e: log("GET", url, "failed:", repr(e)[:200])
-    for sc in list(dict.fromkeys(scal))[:8]:
-        for repo in (0, 1, 2):
-            u = f"https://apis.rbxcdn.com/config-asset-mapping-api/v1/get-asset-id?resourceId={sc}&resourceType=1&repositoryType={repo}"
-            try:
-                body = get(u); log("GET", u, "->", body[:300].decode("utf8", "replace"))
-                j = json.loads(body); walk_json(j, cands)
-                for k in ("assetId", "AssetId", "id"):
-                    if isinstance(j, dict) and str(j.get(k, "")).isdigit(): cands.add((int(j[k]), 0))
-            except Exception as e: log("GET", u, "failed:", repr(e)[:120])
-    log("candidate patch assets:", sorted(cands))
+    base = next(open(f).read().strip() for f in ("Client/engine-base.txt", "engine/engine-base.txt") if os.path.exists(f))
+    log("engine base", base)
     tree = []
-    for aid, ver in sorted(cands):
+    for pth in PATHS:
         try:
-            meta = json.loads(get(f"https://assetdelivery.roblox.com/v2/assetId/{aid}" + (f"/version/{ver}" if ver else "")))
-            loc = meta["locations"][0]["location"]
-            data = get(loc); log(f"asset {aid} v{ver}: {len(data)} bytes, head={data[:16]!r}")
-            tree += parse_rbxm(data)
-        except urllib.error.HTTPError as e: log(f"asset {aid} v{ver} HTTP {e.code} (may need a .ROBLOSECURITY cookie)")
-        except Exception as e: log(f"asset {aid} v{ver} failed: {e!r}")
-    n = 0
+            data = get(base + pth); log("fetched", pth, len(data), "bytes", data[:16])
+            dst = os.path.join(OUT, "raw", pth.lstrip("/")); os.makedirs(os.path.dirname(dst), exist_ok=True)
+            if not pth.endswith(".rbxm"): open(dst, "wb").write(data); log("   ", data[:300].decode("utf8", "replace").replace("\n", " "))
+            else: tree += parse_rbxm(data)
+        except Exception as e: log("fail", pth, repr(e)[:200])
+    import collections
+    cc = collections.Counter(e["class"] for e in tree)
+    open(os.path.join(OUT, "classes.txt"), "w").write("\n".join(f"{n}\t{c}" for c, n in cc.most_common()) + "\n")
+    pc = {}
+    for e in tree: pc.setdefault(e["class"], set()).update(e["props"])
+    json.dump({c: sorted(v) for c, v in pc.items()}, open(os.path.join(OUT, "class-props.json"), "w"), indent=0)
+    n = bc = 0; rows = []
     for e in tree:
         if e["source"] is not None:
-            f = os.path.join(OUT, "src", re.sub(r"[^\w./-]", "_", e["path"]) + ".luau")
-            os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"]); n += 1
-    json.dump([{k: v for k, v in e.items() if k != "source"} for e in tree], open(os.path.join(OUT, "tree.json"), "w"), indent=0)
-    log("instances", len(tree), "scripts with Source", n)
+            isb = is_bytecode(e["source"]); bc += isb; n += 1
+            f = os.path.join(OUT, "src", re.sub(r"[^\w./-]", "_", e["path"]) + (".luauc" if isb else ".luau"))
+            os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "wb").write(e["source"])
+            rows.append(f"{e['class']}\t{len(e['source'])}\t{'bytecode' if isb else 'source'}\t{e['path']}")
+    open(os.path.join(OUT, "scripts.tsv"), "w").write("\n".join(rows) + "\n")
+    # structure: everything within 4 levels, plus every script path
+    json.dump([{k: v for k, v in e.items() if k != "source"} for e in tree if e["path"].count("/") < 4 or e["source"] is not None],
+              open(os.path.join(OUT, "tree.json"), "w"), indent=0)
+    log("instances", len(tree), "classes", len(cc), "scripts with Source", n, "bytecode", bc)
+    log("top classes", cc.most_common(12))
     open(os.path.join(OUT, "report.txt"), "w").write("\n".join(REPORT) + "\n")
 
 if __name__ == "__main__": main()
