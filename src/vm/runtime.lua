@@ -100,7 +100,7 @@ do
     if name == "GetEnums" then return function(self) local out = {}; for n in pairs(SPEC) do out[#out + 1] = self[n] end; return out end end
     local spec = SPEC[name]
     local e = makeEnum(name, spec or "")
-    meta[e].lazy = spec == nil; rawset(t, name, e); return e
+    meta[e].lazy = spec == nil or name == "AvatarAssetType" or name == "AccessoryType" or name == "AssetType"; rawset(t, name, e); return e
   end })
   G.Enum = Enum
 end
@@ -569,7 +569,7 @@ end
 InstMT.__newindex = function(self, k, v)
   local d = D[self]
   if k == "Parent" then return setParent(self, v) end
-  if k == "Name" then checkName(v, 2); d.name = v; notify(self, d, "Name", v); return end
+  if k == "Name" then if v == nil then v = "" end; checkName(v, 2); d.name = v; notify(self, d, "Name", v); return end
   local info = d.info
   if info.props[k] ~= nil then
     if info.readonly[k] then error("Unable to assign property " .. k .. ". Property is read only", 2) end
@@ -936,7 +936,7 @@ end
 -- require
 local results, failed, loading = {}, {}, {}
 -- VR-only modules: there is no VR in a browser; a permissive stub keeps their requirers loading.
-local function permissive() local t; t = setmetatable({}, { __index = function() return t end, __call = function() return nil end }); return t end
+local function permissive() local t; t = setmetatable({}, { __index = function() return t end, __call = function() return t end }); return t end
 RT.stubModules = { LaserPointer = permissive, InExpAchievementManager = permissive, Achievements = permissive }
 local function require_(n)
   local d = isInst(n) and D[n]
@@ -1069,6 +1069,8 @@ service("TeleportService", { lenient = true })
 classes.GuiService.props.SelectedCoreObject = NIL
 classes.ScreenGui.props.OnTopOfCoreBlur = false
 classes.Player.methods.GetUnder13 = function() return false end
+classes.AdService.methods.GetAdTeleportInfo = function() return 0, 0 end
+classes.GuiService.props.PreferredTransparency = 1
 classes.AdService.events.AdTeleportInitiated = true
 -- legacy/less common globals and constructors modules list at load time
 G.Delay = G.delay; G.Spawn = G.spawn; G.Wait = G.wait; G.ypcall = pcall; G.ElapsedTime = G.elapsedTime
