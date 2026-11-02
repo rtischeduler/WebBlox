@@ -681,7 +681,7 @@ service("StarterGui", { props = { ShowDevelopmentGui = true, ScreenOrientation =
   RegisterSetCore = function(self, n, f) coreSet[n] = f end, RegisterGetCore = function(self, n, f) coreGet[n] = f end,
   SetCoreGuiEnabled = function(self, t, en) coreStore["gui:" .. tostring(t)] = en; fireSig(D[self], "CoreGuiChangedSignal", t, en) end,
   GetCoreGuiEnabled = function(self, t) local v = coreStore["gui:" .. tostring(t)]; if v == nil then return true end; return v end } })
-service("GuiService", { props = { MenuIsOpen = false, TouchControlsEnabled = true, AutoSelectGuiEnabled = true, GuiNavigationEnabled = true, CoreGuiNavigationEnabled = true, SelectedObject = NIL, TopbarInset = G.Rect.new(0, 0, 0, 36), IsWindows = true },
+service("GuiService", { props = { MenuIsOpen = false, TouchControlsEnabled = true, AutoSelectGuiEnabled = true, GuiNavigationEnabled = true, CoreGuiNavigationEnabled = true, SelectedObject = NIL, TopbarInset = G.Rect.new(0, 0, 0, 36), IsWindows = true, ViewportDisplaySize = E.DisplaySize.Large },
   events = { "MenuOpened", "MenuClosed", "SafeZoneOffsetsChanged", "NetworkPause", "ErrorMessageChanged", "UiMessageChanged", "KeyPressed", "EmotesMenuOpenChanged", "InspectMenuEnabledChanged", "BrowserWindowClosed" },
   methods = { GetGuiInset = function() return v2(0, 36), v2(0, 0) end, IsTenFootInterface = function() return false end, SetMenuIsOpen = function(self, o) D[self].props.MenuIsOpen = o; fireSig(D[self], o and "MenuOpened" or "MenuClosed") end,
     AddSelectionParent = noop, RemoveSelectionParent = noop, AddSelectionTuple = noop, RemoveSelectionTuple = noop, Select = noop, ClearSelection = noop, GetUiMessage = function() return nil, "" end,
@@ -927,8 +927,8 @@ end
 -- require
 local results, failed, loading = {}, {}, {}
 -- VR-only modules: there is no VR in a browser; a permissive stub keeps their requirers loading.
-local function permissive() return setmetatable({}, { __index = function() return function() return nil end end, __call = function() return nil end }) end
-RT.stubModules = { LaserPointer = permissive, InExpAchievementManager = permissive }
+local function permissive() local t; t = setmetatable({}, { __index = function() return t end, __call = function() return nil end }); return t end
+RT.stubModules = { LaserPointer = permissive, InExpAchievementManager = permissive, Achievements = permissive }
 local function require_(n)
   local d = isInst(n) and D[n]
   if not d or d.class ~= "ModuleScript" then error("Attempted to call require with invalid argument(s).", 2) end
