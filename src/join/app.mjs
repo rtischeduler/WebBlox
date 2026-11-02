@@ -250,9 +250,9 @@ async function startSession(info) {
   const url = $("wb-wt-url").value.trim() || info.wt?.url || "";
   if (!url && info.wt?.missing?.length) chatLog.system("The join script has no " + info.wt.missing.join(" / ") + "; the real engine's WebTransport URL needs both (script keys: " + info.topKeys.join(", ") + ").");
   if (!url) {
-    setStep("transport", "warn", "no endpoint in join script");
-    chatLog.system("The join script has no game server endpoint.");
-    return;
+    setStep("transport", "fail", "no WebTransport URL");
+    const why = info.wt?.missing?.length ? "the join script has no " + info.wt.missing.join(" / ") : "no game server endpoint in the join script";
+    throw new JoinError("Could not connect to the game server: " + why + ".", { status: null });
   }
   session = new Session({ chat, capture, log });
   session.onState((state, detail) => {
@@ -267,6 +267,7 @@ async function startSession(info) {
     await session.join(url, info.certHashes);
   } catch (e) {
     log("[transport]", url, e.message || String(e));
+    throw new JoinError("Could not connect to the game server: " + (e.message || String(e)), { status: null });
   }
 }
 
@@ -339,10 +340,9 @@ async function run() {
     setStep("players", "warn", "needs the real engine (launcher)");
     loading.setStatus("Connecting to the server…");
     chatLog.system(`Joined as ${info.user.displayName || info.user.name || "guest"}.`);
-    if ($("wb-direct").checked) await startSession(info);
-    else chatLog.system("The game connection is off (see the launcher).");
+    await startSession(info); // throws (and the loading screen shows the error) unless the transport connects
     showHud();
-    say(session?.live ? "In game. Press Esc to leave." : "Done.");
+    say("Connected to the game server transport. Replication is not decoded yet, so no players or world data. Press Esc to leave.");
   } catch (e) {
     const cancelled = controller.signal.aborted;
     say(cancelled ? "Cancelled." : "Failed: " + (window.__wbFmtErr ? window.__wbFmtErr(e) : (e.message || e)));
