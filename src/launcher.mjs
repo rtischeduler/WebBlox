@@ -1,5 +1,7 @@
 import { ensureIsolation, explainIsolation } from "./isolation.mjs";
 import { pickWisp, provisionalWisp } from "./wisps.mjs";
+import { ensureBrowserTrackerId } from "./join/cookie.mjs";
+import { installWtTap } from "./wt-tap.mjs";
 import { isProxied, cookieHeader, engineName, hex, shape, isJoinUrl, describeRequest } from "./netpatch.mjs";
 
 const $ = (id) => document.getElementById(id);
@@ -158,6 +160,11 @@ async function start(opts = {}) {
     isCookieFromPool: () => false, allocateCookieFromPool: async () => null,
     setAuthCookie(c) { this.authCookie = c; },
   };
+  const tracker = ensureBrowserTrackerId({ doc: document, store: localStorage });
+  log("[launcher] browserTrackerId", tracker);
+  const fmt = (e) => "[wt] " + e.ev + " " + e.url + (e.hashes != null ? " hashes=" + e.hashes : "") + (e.ms != null ? " +" + e.ms + "ms" : "") + (e.code != null ? " code=" + e.code : "") + (e.reason ? " reason=" + e.reason : "") + (e.error ? " error=" + e.error : "") + (e.worker ? " (" + e.worker + ")" : "");
+  installWtTap(window, (e) => log(fmt(e)));
+  try { new BroadcastChannel("webblox-wt").onmessage = (m) => log(fmt(m.data)); } catch {}
   history.replaceState(null, "", "?placeId=" + place);
   $("wb-boot").hidden = true; $("game").hidden = false;
   const s = document.createElement("script");

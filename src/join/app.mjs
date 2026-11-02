@@ -333,7 +333,8 @@ async function run() {
       { id: info.user.id, name: info.user.name, displayName: info.user.displayName, you: true },
     ]);
     setStep("join", "ok", `status ${result.status}`);
-    await lookupPlayers(result.jobId || info.jobId, placeId);
+    setStep("server", "warn", "public list not used");
+    setStep("players", "warn", "needs the real engine (launcher)");
     loading.setStatus("Connecting to the server…");
     chatLog.system(`Joined as ${info.user.displayName || info.user.name || "guest"}.`);
     if ($("wb-direct").checked) await startSession(info);
