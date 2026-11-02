@@ -21,14 +21,19 @@ jobs:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
         run: python3 -u .github/scripts/extract-coregui.py /tmp/cg-out
       - name: run the real StarterScript headless (no npm needed)
+        continue-on-error: true
         run: |
+          set +e +o pipefail
           mkdir -p /tmp/patch analysis/coregui
-          set +o pipefail; f=$(find /tmp/cg-out -name 'src-online-*InExperience*.tar.gz' -print -quit); [ -n "$f" ] || f=$(find /tmp/cg-out -name 'src-online-*.tar.gz' -print -quit); echo "archive: $f"
-          tar xzf "$f" -C /tmp/patch
-          node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }} > analysis/coregui/corescripts-report.txt 2>&1 || true
-          s=$(find /tmp/patch -path '*CoreScripts/StarterScript*' -type f -print -quit)
-          { echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200; } >> analysis/coregui/corescripts-report.txt || true
-          head -c 3000 analysis/coregui/corescripts-report.txt
+          {
+            echo "archives:"; find /tmp/cg-out -name '*.tar.gz' -print
+            f=$(find /tmp/cg-out -name 'src-online-*.tar.gz' -print -quit); echo "using: $f"
+            tar xzf "$f" -C /tmp/patch; echo "tar exit $?"
+            node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }}; echo "node exit $?"
+            s=$(find /tmp/patch -path '*CoreScripts/StarterScript*' -type f -print -quit)
+            echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200
+          } > analysis/coregui/corescripts-report.txt 2>&1
+          head -c 2500 analysis/coregui/corescripts-report.txt
       - name: commit to main
         if: always()
         run: |
