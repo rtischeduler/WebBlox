@@ -896,7 +896,7 @@ D[game].props.Workspace = G.workspace
 -- settings()
 do
   local st = { GetFFlag = function(self, n) return flagVal("flag", n, false) end, GetFVariable = function(self, n) return tostring(flagVal("string", n, "")) end }
-  local S = setmetatable({}, { __index = function(_, k) if k == "GetService" then return function(self, n) local i = newInst("UserGameSettings"); return i end end; return st[k] end, __type = "GlobalSettings" })
+  local S = setmetatable({}, { __index = function(_, k) if k == "GetService" then return function(self, n) local i = newInst("UserGameSettings"); return i end end; if st[k] ~= nil then return st[k] end; if type(k) == "string" and k:match("^%u") then local g = rawget(st, "_g" .. k); if not g then g = newInst("SettingsGroup"); st["_g" .. k] = g end; return g end end, __type = "GlobalSettings" })
   G.settings = function() return S end
   G.UserSettings = function() return S end
 end
@@ -1070,4 +1070,8 @@ do
 end
 for _, n in ipairs(list("GenericChallengeService CreatorStoreService")) do service(n, { lenient = true }) end
 for _, n in ipairs(list("PlatformFriendsService ExperienceAuthService")) do service(n, { lenient = true }) end
+class("SettingsGroup", "Instance", { lenient = true, notCreatable = true, props = { SavedQualityLevel = E.SavedQualitySetting.Automatic, QualityLevel = 5, EagerBulkExecution = false }, events = { "PerformanceStatsVisibleChanged" } })
+classes.GuiService.events.InspectMenuEnabledChangedSignal = true; classes.GuiService.events.SpecialKeyPressed = true
+classes.GuiService.methods.AddSpecialKey = function() end; classes.GuiService.methods.RemoveSpecialKey = function() end
+classes.AdService.methods.GetAdTeleportInfo = function() return nil end
 return RT
