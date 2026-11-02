@@ -7,7 +7,7 @@ tar exit 0
 StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
-NotificationScript2: NotificationScript2:1089: attempt to call missing method 'connect' of table
+NotificationScript2: NotificationScript2:1093: GraphicsQualityChangeRequest is not a valid member of DataModel "Game"
 AvatarContextMenu: ContextMenuGui:122: attempt to compare nil < nil
 InviteToGamePrompt: Store:10: Received error: Caught error in thunk
 InspectAndBuy: Requested module experience
@@ -49,11 +49,12 @@ PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstan
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1089: attempt to call missing method 'connect' of table
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1093: GraphicsQualityChangeRequest is not a valid member of DataModel "Game"
 tracebacks:
-NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1089: attempt to call missing method 'connect' of table
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1093: GraphicsQualityChangeRequest is not a valid member of DataMo
 runtime.lua:963
-NotificationScript2:1089
+runtime.lua:567
+NotificationScript2:1093
 runtime.lua:963 function require_
 runtime.lua:990
 runtime.lua:990
@@ -173,94 +174,75 @@ tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 
   52  159 GETIMPORT A=15 B=52 C=0 D=52 aux=3246427187  ; "Enum"."AccessoryType"."Shoulder"
 cut: write error: Broken pipe
 
-== disasm Settings/BackButtonController 14-24 ==
--- proto 10 ? @1
-  14   61 GETIMPORT A=10 B=1 C=0 D=1 aux=1073741824  ; "game"
-  14   63 LOADK A=12 B=18 C=0 D=18  ; "TeleportHistoryButtons"
-  14   64 NAMECALL A=10 B=10 C=43 D=11018 aux=19  ; "GetEngineFeature"
-  14   66 CALL A=10 B=3 C=2 D=515
-  16   67 GETIMPORT A=11 B=9 C=0 D=9 aux=1082130432  ; "require"
-  16   69 GETTABLEKS A=12 B=2 C=202 D=-13822 aux=20  ; "Workspace"
-  16   71 GETTABLEKS A=12 B=12 C=230 D=-6644 aux=10  ; "Packages"
-  16   73 GETTABLEKS A=12 B=12 C=64 D=16396 aux=21  ; "RobloxTranslator"
-  16   75 CALL A=11 B=2 C=2 D=514
-  17   76 GETIMPORT A=12 B=9 C=0 D=9 aux=1082130432  ; "require"
-  17   78 GETTABLEKS A=13 B=2 C=202 D=-13822 aux=20  ; "Workspace"
-  17   80 GETTABLEKS A=13 B=13 C=230 D=-6643 aux=10  ; "Packages"
-  17   82 GETTABLEKS A=13 B=13 C=192 D=-16371 aux=22  ; "GameDetailRodux"
-  17   84 CALL A=12 B=2 C=2 D=514
-  17   85 GETTABLEKS A=12 B=12 C=172 D=-21492 aux=23  ; "GetGameNameAndDescription"
-  18   87 LOADB A=13 B=0 C=0 D=0
-  20   88 LOADN A=14 B=0 C=0 D=0
-  21   89 NAMECALL A=15 B=0 C=208 D=-12288 aux=24  ; "GetAdTeleportInfo"
-  21   91 CALL A=15 B=2 C=3 D=770
-  22   92 LOADN A=17 B=0 C=0 D=0
-  22   93 JUMPIFNOTLT A=17 B=12 C=0 D=12 aux=15
-  22   95 JUMPXEQKN A=16 B=7 C=0 D=7 aux=25
-  22   97 GETIMPORT A=17 B=1 C=0 D=1 aux=1073741824  ; "game"
-  22   99 GETTABLEKS A=17 B=17 C=187 D=-17647 aux=26  ; "GameId"
-  22  101 JUMPIFNOTEQ A=16 B=4 C=0 D=4 aux=17
-  23  103 MOVE A=14 B=15 C=0 D=15
-  24  104 JUMPIFNOT A=10 B=1 C=0 D=1
+== disasm ContextMenuGui 116-122 ==
+-- proto 5 updateAspectRatioForViewport @120
+ 121    0 GETIMPORT A=0 B=1 C=0 D=1 aux=1073741824  ; "workspace"
+ 121    2 GETTABLEKS A=0 B=0 C=72 D=18432 aux=2  ; "CurrentCamera"
+ 121    4 GETTABLEKS A=0 B=0 C=176 D=-20480 aux=3  ; "ViewportSize"
+ 122    6 GETTABLEKS A=1 B=0 C=153 D=-26368 aux=4  ; "x"
+ 122    8 GETTABLEKS A=2 B=0 C=152 D=-26624 aux=5  ; "y"
+ 122   10 JUMPIFNOTLT A=1 B=7 C=0 D=7 aux=2
+-- proto 7 CreateMenuFrame @89
+ 116   81 LOADK A=5 B=37 C=0 D=37  ; "MenuAspectRatio"
+ 116   82 SETTABLEKS A=5 B=4 C=186 D=-17916 aux=6  ; "Name"
+ 117   84 GETTABLEKS A=5 B=1 C=105 D=26881 aux=38  ; "AspectRatio"
+ 117   86 SETTABLEKS A=5 B=4 C=105 D=26884 aux=38  ; "AspectRatio"
+ 118   88 SETTABLEKS A=3 B=4 C=36 D=9220 aux=39  ; "Parent"
+ 120   90 NEWCLOSURE A=5 B=0 C=0 D=0
+ 120   91 CAPTURE A=0 B=4 C=0 D=4
+ 121  126 GETIMPORT A=9 B=41 C=0 D=41 aux=1115684864  ; "workspace"
+ 121  128 GETTABLEKS A=9 B=9 C=72 D=18441 aux=42  ; "CurrentCamera"
+ 121  130 GETTABLEKS A=9 B=9 C=176 D=-20471 aux=46  ; "ViewportSize"
+ 122  132 GETTABLEKS A=10 B=9 C=153 D=-26359 aux=47  ; "x"
+ 122  134 GETTABLEKS A=11 B=9 C=152 D=-26615 aux=48  ; "y"
+ 122  136 JUMPIFNOTLT A=10 B=6 C=0 D=6 aux=11
 
-== disasm CoreScripts/StarterScript 553-561 ==
--- proto 19 ? @1
- 554 1670 JUMPIFNOT A=36 B=8 C=0 D=8
- 555 1671 LOADK A=83 B=7 C=1 D=263  ; "CoreScripts/ExperienceNotifications"
- 555 1672 GETIMPORT A=84 B=106 C=0 D=106 aux=1183842304  ; "script"
- 555 1674 GETTABLEKS A=84 B=84 C=36 D=9300 aux=107  ; "Parent"
- 555 1676 NAMECALL A=81 B=1 C=129 D=-32511 aux=15  ; "AddCoreScriptLocal"
- 555 1678 CALL A=81 B=4 C=1 D=260
- 558 1679 GETIMPORT A=81 B=17 C=0 D=17 aux=1090519040  ; "require"
- 558 1681 GETTABLEKS A=82 B=0 C=202 D=-13824 aux=21  ; "Workspace"
- 558 1683 GETTABLEKS A=82 B=82 C=230 D=-6574 aux=18  ; "Packages"
- 558 1685 GETTABLEKS A=82 B=82 C=72 D=18514 aux=264  ; "Achievements"
- 558 1687 CALL A=81 B=2 C=2 D=514
- 558 1688 GETTABLEKS A=81 B=81 C=226 D=-7599 aux=265  ; "InExpAchievementManager"
- 559 1690 GETTABLEKS A=82 B=81 C=239 D=-4271 aux=130  ; "new"
- 559 1692 CALL A=82 B=1 C=2 D=513
- 560 1693 NAMECALL A=83 B=82 C=0 D=82 aux=266  ; "startUp"
- 560 1695 CALL A=83 B=2 C=1 D=258
-
-== disasm NotificationScript2 83-87 ==
--- proto 66 ? @1
-  83  272 GETIMPORT A=45 B=20 C=0 D=20 aux=1093664768  ; "require"
-  83  274 GETTABLEKS A=46 B=15 C=202 D=-13809 aux=21  ; "Workspace"
-  83  276 GETTABLEKS A=46 B=46 C=230 D=-6610 aux=22  ; "Packages"
-  83  278 GETTABLEKS A=46 B=46 C=11 D=2862 aux=64  ; "CachedPolicyService"
-  83  280 CALL A=45 B=2 C=2 D=514
-  86  281 LOADK A=47 B=65 C=0 D=65  ; 0.6
-  86  282 GETTABLEKS A=48 B=21 C=147 D=-27883 aux=66  ; "PreferredTransparency"
-  86  284 MUL A=46 B=47 C=48 D=12335
-
-== disasm AvatarExperienceCommon/Constants 177-182 ==
+== disasm AvatarExperienceCommon/Constants 170-178 ==
 -- proto 0 ? @1
- 179  804 NEWTABLE A=23 B=4 C=0 D=4 aux=0
- 180  806 GETTABLEKS A=24 B=10 C=0 D=10 aux=188  ; "EyeMakeup"
- 180  808 LOADB A=25 B=1 C=0 D=1
- 180  809 SETTABLE A=25 B=23 C=24 D=6167
- 181  810 GETTABLEKS A=24 B=10 C=152 D=-26614 aux=189  ; "FaceMakeup"
- 181  812 LOADB A=25 B=1 C=0 D=1
- 181  813 SETTABLE A=25 B=23 C=24 D=6167
- 182  814 GETTABLEKS A=24 B=10 C=210 D=-11766 aux=190  ; "LipMakeup"
- 182  816 LOADB A=25 B=1 C=0 D=1
- 182  817 SETTABLE A=25 B=23 C=24 D=6167
-
-== disasm BackpackScript 205-210 ==
--- proto 2 NewGui @207
- 208    0 GETIMPORT A=2 B=2 C=0 D=2 aux=2147484672  ; "Instance"."new"
- 208    2 MOVE A=3 B=0 C=0 D=0
- 208    3 CALL A=2 B=2 C=2 D=514
- 209    4 SETTABLEKS A=1 B=2 C=186 D=-17918 aux=3  ; "Name"
- 210    6 GETIMPORT A=3 B=5 C=0 D=5 aux=2151678976  ; "Color3"."new"
- 210    8 LOADN A=4 B=0 C=0 D=0
- 210    9 LOADN A=5 B=0 C=0 D=0
- 210   10 LOADN A=6 B=0 C=0 D=0
- 210   11 CALL A=3 B=4 C=2 D=516
- 210   12 SETTABLEKS A=3 B=2 C=159 D=-24830 aux=6  ; "BackgroundColor3"
--- proto 99 ? @1
- 207  481 NEWCLOSURE A=85 B=2 C=0 D=2
- 207  482 CAPTURE A=1 B=23 C=255 D=-233
+ 170  727 GETIMPORT A=24 B=86 C=0 D=86 aux=3246424149  ; "Enum"."AssetType"."ShortsAccessory"
+ 170  729 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 170  731 FASTCALL1 A=63 B=24 C=2 D=536
+ 170  732 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 170  734 CALL A=23 B=2 C=2 D=514
+ 170  735 GETIMPORT A=24 B=88 C=0 D=88 aux=3246427223  ; "Enum"."AccessoryType"."Shorts"
+ 170  737 SETTABLE A=24 B=22 C=23 D=5910
+ 171  738 GETIMPORT A=24 B=90 C=0 D=90 aux=3246424153  ; "Enum"."AssetType"."LeftShoeAccessory"
+ 171  740 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 171  742 FASTCALL1 A=63 B=24 C=2 D=536
+ 171  743 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 171  745 CALL A=23 B=2 C=2 D=514
+ 171  746 GETIMPORT A=24 B=92 C=0 D=92 aux=3246427227  ; "Enum"."AccessoryType"."LeftShoe"
+ 171  748 SETTABLE A=24 B=22 C=23 D=5910
+ 172  749 GETIMPORT A=24 B=94 C=0 D=94 aux=3246424157  ; "Enum"."AssetType"."RightShoeAccessory"
+ 172  751 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 172  753 FASTCALL1 A=63 B=24 C=2 D=536
+ 172  754 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 172  756 CALL A=23 B=2 C=2 D=514
+ 172  757 GETIMPORT A=24 B=96 C=0 D=96 aux=3246427231  ; "Enum"."AccessoryType"."RightShoe"
+ 172  759 SETTABLE A=24 B=22 C=23 D=5910
+ 173  760 GETIMPORT A=24 B=98 C=0 D=98 aux=3246424161  ; "Enum"."AssetType"."DressSkirtAccessory"
+ 173  762 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 173  764 FASTCALL1 A=63 B=24 C=2 D=536
+ 173  765 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 173  767 CALL A=23 B=2 C=2 D=514
+ 173  768 GETIMPORT A=24 B=100 C=0 D=100 aux=3246427235  ; "Enum"."AccessoryType"."DressSkirt"
+ 173  770 SETTABLE A=24 B=22 C=23 D=5910
+ 174  771 GETIMPORT A=24 B=38 C=0 D=38 aux=3246424101  ; "Enum"."AssetType"."HairAccessory"
+ 174  773 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 174  775 FASTCALL1 A=63 B=24 C=2 D=536
+ 174  776 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 174  778 CALL A=23 B=2 C=2 D=514
+ 174  779 GETIMPORT A=24 B=40 C=0 D=40 aux=3246427175  ; "Enum"."AccessoryType"."Hair"
+ 174  781 SETTABLE A=24 B=22 C=23 D=5910
+ 175  782 GETIMPORT A=24 B=102 C=0 D=102 aux=3246424165  ; "Enum"."AssetType"."EyebrowAccessory"
+ 175  784 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
+ 175  786 FASTCALL1 A=63 B=24 C=2 D=536
+ 175  787 GETIMPORT A=23 B=31 C=0 D=31 aux=1105199104  ; "tostring"
+ 175  789 CALL A=23 B=2 C=2 D=514
+ 175  790 GETIMPORT A=24 B=104 C=0 D=104 aux=3246427239  ; "Enum"."AccessoryType"."Eyebrow"
+ 175  792 SETTABLE A=24 B=22 C=23 D=5910
+ 176  793 GETIMPORT A=24 B=106 C=0 D=106 aux=3246424169  ; "Enum"."AssetType"."EyelashAccessory"
+ 176  795 GETTABLEKS A=24 B=24 C=236 D=-5096 aux=29  ; "Value"
 
 == StarterScript file: /tmp/patch/PatchRoot/CoreScripts/StarterScript.luauc ==
 J[2	 pcall require warn#Failure to Start CoreScript module  Name safeRequire Modules Captures CapturesApp takeCapture	Watermark CoreScripts/ScreenTimeInGame AddCoreScriptLocal IsSubjectToChi
