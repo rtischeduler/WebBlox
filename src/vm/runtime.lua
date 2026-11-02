@@ -926,6 +926,9 @@ function RT.mount(root)
 end
 -- require
 local results, failed, loading = {}, {}, {}
+-- VR-only modules: there is no VR in a browser; a permissive stub keeps their requirers loading.
+local function permissive() return setmetatable({}, { __index = function() return function() return nil end end, __call = function() return nil end }) end
+RT.stubModules = { LaserPointer = permissive }
 local function require_(n)
   local d = isInst(n) and D[n]
   if not d or d.class ~= "ModuleScript" then error("Attempted to call require with invalid argument(s).", 2) end
@@ -942,6 +945,7 @@ local function require_(n)
     error(failed[p] or "Requested module failed to load", 0)
   end
   st = { waiters = {}, co = coroutine.running() }; loading[p] = st
+  if RT.stubModules[d.name] then results[p] = { RT.stubModules[d.name]() }; loading[p] = nil; return results[p][1] end
   local fn = host.load(p)
   setfenv(fn, setmetatable({ script = n, require = require_ }, { __index = G }))
   -- Runs in the requiring thread (no coroutine per module): a module that yields yields its requirer, as in Roblox,
@@ -1065,4 +1069,5 @@ do
   G.Color3.fromLinearRGB = function(r, g, b) return G.Color3.new(enc(r), enc(g), enc(b)) end
 end
 for _, n in ipairs(list("GenericChallengeService CreatorStoreService")) do service(n, { lenient = true }) end
+for _, n in ipairs(list("PlatformFriendsService ExperienceAuthService")) do service(n, { lenient = true }) end
 return RT
