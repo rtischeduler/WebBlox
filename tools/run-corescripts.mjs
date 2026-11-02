@@ -21,3 +21,5 @@ console.log("StarterScript:", rt.tryRequire("PatchRoot/CoreScripts/StarterScript
 for (let i = 0; i < Number(steps); i++) { rt.step(1 / 30); if (i === 5) rt.layout(1280, 720, 0); }
 console.log("status:", rt.coreStatus(), "| draws:", rt.drawCount());
 console.log("errors:\n" + rt.errors(60).split("\n--\n").map((e) => e.split("\n")[0].replace(/(Requested module experienced an error while loading: )+/g, "").replace(/PatchRoot\/\S*\//g, "").slice(0, 200)).join("\n")); console.log("logs:\n" + logs.join("\n"));
+
+try { console.log("failed requires:\n" + String(rt.failedList()).split("\n").slice(0, 70).map((l) => l.slice(0, 230)).join("\n")); } catch (e) { console.log("failedList unavailable", e?.message); }

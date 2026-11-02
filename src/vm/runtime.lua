@@ -993,6 +993,11 @@ function RT.coreStatus()
   for p, o in pairs(RT.outcomes) do if string.find(p, "CoreScripts", 1, true) then if o.state == "ok" then ok += 1 elseif o.state == "err" then err += 1 else pend += 1 end end end
   return string.format("%d ok, %d failed, %d running", ok, err, pend)
 end
+function RT.failedList()
+  local t = {}
+  for p, m in pairs(failed) do t[#t + 1] = (string.gsub(p, "^PatchRoot/DataModelInstances/", "")) .. " :: " .. (string.gsub(string.gsub(tostring(m), "Requested module experienced an error while loading: ", ""), "\n.*", "")) end
+  table.sort(t); return table.concat(t, "\n")
+end
 function RT.outcome(path) local o = RT.outcomes[path]; if not o then return "none", "" end; return o.state, o.value or "" end
 function RT.errorCount() return #RT.errors end
 function RT.lazyEnumList() return table.concat(RT.lazyEnums, ",") end
