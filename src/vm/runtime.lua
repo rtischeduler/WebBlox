@@ -233,7 +233,14 @@ do
   G.Random = { new = function(seed) seed = floor(num(seed, os.time())) % 4294967296; if seed == 0 then seed = 2463534242 end; return setmetatable({ s = seed }, RND) end }
   local DT = datatype("DateTime", {}, nil, {})
   local function dtime(ms) return setmetatable({ UnixTimestampMillis = ms, UnixTimestamp = floor(ms / 1000) }, DT) end
-  G.DateTime = { now = function() return dtime(floor(host.now() * 1000)) end, fromUnixTimestamp = function(s) return dtime(s * 1000) end, fromUnixTimestampMillis = dtime }
+  G.DateTime = { now = function() return dtime(floor(host.now() * 1000)) end, fromUnixTimestamp = function(s) return dtime(s * 1000) end, fromUnixTimestampMillis = dtime,
+    fromUniversalTime = function(y, mo, d, h, mi, sec, ms)
+      y, mo, d = y or 1970, mo or 1, d or 1
+      local a = floor((14 - mo) / 12); local yy = y + 4800 - a; local mm = mo + 12 * a - 3
+      local jdn = d + floor((153 * mm + 2) / 5) + 365 * yy + floor(yy / 4) - floor(yy / 100) + floor(yy / 400) - 32045
+      return dtime(((jdn - 2440588) * 86400 + (h or 0) * 3600 + (mi or 0) * 60 + (sec or 0)) * 1000 + (ms or 0))
+    end }
+  G.DateTime.fromLocalTime = G.DateTime.fromUniversalTime
 end
 
 -- ===== Scheduler + signals =====

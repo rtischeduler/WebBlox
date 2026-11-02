@@ -49,8 +49,8 @@ jobs:
             for m in Workspace/Packages/Achievements Workspace/Packages/_Workspace/Achievements/Achievements Workspace/Packages/_Workspace/Achievements/Achievements/InExpAchievementManager; do
               echo; echo "== SINGLE $m =="; SINGLE=PatchRoot/DataModelInstances/CorePackages/$m node tools/measure-runtime.mjs /tmp/patch 1 2>&1 | cut -c1-900 | head -14
             done
-            for n in CreateAdCampaignSheetConfig; do
-              f=$(find /tmp/patch -path "*$n.luau*" -type f -print -quit); echo; echo "== consts $n ($f) =="; head -c 24 "$f" | xxd | head -2; strings -n 2 "$f" | tr '\n' ' ' | fold -w 200 | head -8
+            for n in AvatarExperienceCommon/Constants Settings/BackButtonController; do
+              f=$(find /tmp/patch -path "*$n.luau*" -type f -print -quit); echo; echo "== consts $n ($f) =="; head -c 24 "$f" | xxd | head -2; strings -n 2 "$f" | tr '\n' ' ' | fold -w 200 | tail -n 9
             done
             echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200
           } > analysis/coregui/corescripts-report.txt 2>&1
