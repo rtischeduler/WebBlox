@@ -23,3 +23,16 @@ console.log("status:", rt.coreStatus(), "| draws:", rt.drawCount());
 console.log("errors:\n" + rt.errors(60).split("\n--\n").map((e) => e.split("\n")[0].replace(/(Requested module experienced an error while loading: )+/g, "").replace(/PatchRoot\/\S*\//g, "").slice(0, 200)).join("\n")); console.log("logs:\n" + logs.join("\n"));
 
 try { console.log("failed requires:\n" + String(rt.failedList()).split("\n").slice(0, 70).map((l) => l.slice(0, 230)).join("\n")); } catch (e) { console.log("failedList unavailable", e?.message); }
+// Full tracebacks for the worklist (debugTraces is on): which function/line each failure came from.
+try {
+  const all = String(rt.errors(500)).split("\n--\n").filter((e) => /BackButtonController|Constants|NotificationScript2|AvatarContextMenu|Backpack|EmotesMenu/.test(e.split("\n")[0]));
+  console.log("tracebacks:\n" + all.slice(0, 5).map((e) => e.split("\n").slice(0, 10).map((l) => l.replace(/PatchRoot\/\S*\//g, "").slice(0, 160)).join("\n")).join("\n--\n"));
+  const pr = rt.run(`local out = {}
+    local ok, m = pcall(function() return require(game:GetService("CorePackages").Workspace.Packages.Achievements) end)
+    out[#out+1] = "Achievements ok=" .. tostring(ok) .. " type=" .. typeof(m)
+    local ok2, sg = pcall(function() return game:GetService("CoreGui"):FindFirstChild("RobloxGui") end)
+    out[#out+1] = "RobloxGui=" .. tostring(sg) .. " kids=" .. (sg and #sg:GetChildren() or -1)
+    local n = 0; for _, c in ipairs(game:GetService("CoreGui"):GetChildren()) do n += 1; out[#out+1] = "CoreGui child " .. c.Name .. " (" .. c.ClassName .. ")" if n > 15 then break end end
+    return table.concat(out, "; ")`, 1);
+  console.log("probe:", pr);
+} catch (e) { console.log("probe failed", e?.message); }
