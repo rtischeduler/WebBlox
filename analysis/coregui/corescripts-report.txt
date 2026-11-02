@@ -161,6 +161,95 @@ Rz J[2	 string sub ... truncateWithEllipsis Name andThen await$InGame.CommonUI.L
 eturnToPublisherExperience TeleportTrustedBackForth game	AdService GetService TeleportService CorePackages CoreGui HttpRbxApiService require Packages Promise Roact	RobloxGui WaitForChild M
 odules Common httpRequest TeleportHistoryButtons GetEngineFeature	Workspace RobloxTranslator GameDetailRodux GetGameNameAndDescription GetAdTeleportInfo GameId GetThirdPartyTeleportInfo defer ge
 tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 4- 4-  @  @ @o @o @o @o @o @M @M o	 @M	 M		s M		 R	 @o @M @M @M x! Q{M] 
+== disasm Settings/BackButtonController 14-24 ==
+-- proto 10 ? @1
+  14   61 GETIMPORT A=10 B=1 C=0 D=1 aux=1073741824  ; "game"
+  14   63 LOADK A=12 B=18 C=0 D=18  ; "TeleportHistoryButtons"
+  14   64 NAMECALL A=10 B=10 C=43 D=11018 aux=19  ; "GetEngineFeature"
+  14   66 CALL A=10 B=3 C=2 D=515
+  16   67 GETIMPORT A=11 B=9 C=0 D=9 aux=1082130432  ; "require"
+  16   69 GETTABLEKS A=12 B=2 C=202 D=-13822 aux=20  ; "Workspace"
+  16   71 GETTABLEKS A=12 B=12 C=230 D=-6644 aux=10  ; "Packages"
+  16   73 GETTABLEKS A=12 B=12 C=64 D=16396 aux=21  ; "RobloxTranslator"
+  16   75 CALL A=11 B=2 C=2 D=514
+  17   76 GETIMPORT A=12 B=9 C=0 D=9 aux=1082130432  ; "require"
+  17   78 GETTABLEKS A=13 B=2 C=202 D=-13822 aux=20  ; "Workspace"
+  17   80 GETTABLEKS A=13 B=13 C=230 D=-6643 aux=10  ; "Packages"
+  17   82 GETTABLEKS A=13 B=13 C=192 D=-16371 aux=22  ; "GameDetailRodux"
+  17   84 CALL A=12 B=2 C=2 D=514
+  17   85 GETTABLEKS A=12 B=12 C=172 D=-21492 aux=23  ; "GetGameNameAndDescription"
+  18   87 LOADB A=13 B=0 C=0 D=0
+  20   88 LOADN A=14 B=0 C=0 D=0
+  21   89 NAMECALL A=15 B=0 C=208 D=-12288 aux=24  ; "GetAdTeleportInfo"
+  21   91 CALL A=15 B=2 C=3 D=770
+  22   92 LOADN A=17 B=0 C=0 D=0
+  22   93 JUMPIFNOTLT A=17 B=12 C=0 D=12 aux=15
+  22   95 JUMPXEQKN A=16 B=7 C=0 D=7 aux=25
+  22   97 GETIMPORT A=17 B=1 C=0 D=1 aux=1073741824  ; "game"
+  22   99 GETTABLEKS A=17 B=17 C=187 D=-17647 aux=26  ; "GameId"
+  22  101 JUMPIFNOTEQ A=16 B=4 C=0 D=4 aux=17
+  23  103 MOVE A=14 B=15 C=0 D=15
+  24  104 JUMPIFNOT A=10 B=1 C=0 D=1
+
+== disasm CoreScripts/StarterScript 553-561 ==
+-- proto 19 ? @1
+ 554 1670 JUMPIFNOT A=36 B=8 C=0 D=8
+ 555 1671 LOADK A=83 B=7 C=1 D=263  ; "CoreScripts/ExperienceNotifications"
+ 555 1672 GETIMPORT A=84 B=106 C=0 D=106 aux=1183842304  ; "script"
+ 555 1674 GETTABLEKS A=84 B=84 C=36 D=9300 aux=107  ; "Parent"
+ 555 1676 NAMECALL A=81 B=1 C=129 D=-32511 aux=15  ; "AddCoreScriptLocal"
+ 555 1678 CALL A=81 B=4 C=1 D=260
+ 558 1679 GETIMPORT A=81 B=17 C=0 D=17 aux=1090519040  ; "require"
+ 558 1681 GETTABLEKS A=82 B=0 C=202 D=-13824 aux=21  ; "Workspace"
+ 558 1683 GETTABLEKS A=82 B=82 C=230 D=-6574 aux=18  ; "Packages"
+ 558 1685 GETTABLEKS A=82 B=82 C=72 D=18514 aux=264  ; "Achievements"
+ 558 1687 CALL A=81 B=2 C=2 D=514
+ 558 1688 GETTABLEKS A=81 B=81 C=226 D=-7599 aux=265  ; "InExpAchievementManager"
+ 559 1690 GETTABLEKS A=82 B=81 C=239 D=-4271 aux=130  ; "new"
+ 559 1692 CALL A=82 B=1 C=2 D=513
+ 560 1693 NAMECALL A=83 B=82 C=0 D=82 aux=266  ; "startUp"
+ 560 1695 CALL A=83 B=2 C=1 D=258
+
+== disasm NotificationScript2 83-87 ==
+-- proto 66 ? @1
+  83  272 GETIMPORT A=45 B=20 C=0 D=20 aux=1093664768  ; "require"
+  83  274 GETTABLEKS A=46 B=15 C=202 D=-13809 aux=21  ; "Workspace"
+  83  276 GETTABLEKS A=46 B=46 C=230 D=-6610 aux=22  ; "Packages"
+  83  278 GETTABLEKS A=46 B=46 C=11 D=2862 aux=64  ; "CachedPolicyService"
+  83  280 CALL A=45 B=2 C=2 D=514
+  86  281 LOADK A=47 B=65 C=0 D=65  ; 0.6
+  86  282 GETTABLEKS A=48 B=21 C=147 D=-27883 aux=66  ; "PreferredTransparency"
+  86  284 MUL A=46 B=47 C=48 D=12335
+
+== disasm AvatarExperienceCommon/Constants 177-182 ==
+-- proto 0 ? @1
+ 179  804 NEWTABLE A=23 B=4 C=0 D=4 aux=0
+ 180  806 GETTABLEKS A=24 B=10 C=0 D=10 aux=188  ; "EyeMakeup"
+ 180  808 LOADB A=25 B=1 C=0 D=1
+ 180  809 SETTABLE A=25 B=23 C=24 D=6167
+ 181  810 GETTABLEKS A=24 B=10 C=152 D=-26614 aux=189  ; "FaceMakeup"
+ 181  812 LOADB A=25 B=1 C=0 D=1
+ 181  813 SETTABLE A=25 B=23 C=24 D=6167
+ 182  814 GETTABLEKS A=24 B=10 C=210 D=-11766 aux=190  ; "LipMakeup"
+ 182  816 LOADB A=25 B=1 C=0 D=1
+ 182  817 SETTABLE A=25 B=23 C=24 D=6167
+
+== disasm BackpackScript 205-210 ==
+-- proto 2 NewGui @207
+ 208    0 GETIMPORT A=2 B=2 C=0 D=2 aux=2147484672  ; "Instance"."new"
+ 208    2 MOVE A=3 B=0 C=0 D=0
+ 208    3 CALL A=2 B=2 C=2 D=514
+ 209    4 SETTABLEKS A=1 B=2 C=186 D=-17918 aux=3  ; "Name"
+ 210    6 GETIMPORT A=3 B=5 C=0 D=5 aux=2151678976  ; "Color3"."new"
+ 210    8 LOADN A=4 B=0 C=0 D=0
+ 210    9 LOADN A=5 B=0 C=0 D=0
+ 210   10 LOADN A=6 B=0 C=0 D=0
+ 210   11 CALL A=3 B=4 C=2 D=516
+ 210   12 SETTABLEKS A=3 B=2 C=159 D=-24830 aux=6  ; "BackgroundColor3"
+-- proto 99 ? @1
+ 207  481 NEWCLOSURE A=85 B=2 C=0 D=2
+ 207  482 CAPTURE A=1 B=23 C=255 D=-233
+
 == StarterScript file: /tmp/patch/PatchRoot/CoreScripts/StarterScript.luauc ==
 J[2	 pcall require warn#Failure to Start CoreScript module  Name safeRequire Modules Captures CapturesApp takeCapture	Watermark CoreScripts/ScreenTimeInGame AddCoreScriptLocal IsSubjectToChi
 naPolicies game IsLoaded Loaded Wait LuobuWarningToast UserSettings UserRoactBubbleChatBeta IsUserFeatureEnabled	Workspace Packages PurchasePrompt mountPurchasePrompt	VREnabled GetPropertyCha
