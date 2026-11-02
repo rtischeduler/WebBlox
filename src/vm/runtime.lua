@@ -6,7 +6,7 @@
 local host = ...
 local G = getfenv(0)
 local type = type -- raw type() for the runtime itself; scripts get the userdata-aware one below
-local RT = { errors = {}, lazyEnums = {}, hooks = {}, outcomes = {}, mouse = { X = 0, Y = 0 }, strictEnums = false }
+local RT = { errors = {}, lazyEnums = {}, hooks = {}, host = host, outcomes = {}, mouse = { X = 0, Y = 0 }, strictEnums = false }
 G.__wb = RT
 local NIL = {}
 local function noopAny() end
@@ -567,6 +567,9 @@ end
 -- raw set for the engine (layout results etc.): bypasses read-only, still notifies
 function RT.setRaw(inst, k, v) local d = D[inst]; if d.props[k] == v then return end; if v == nil then d.props[k] = NIL else d.props[k] = v end; notify(inst, d, k, v) end
 function RT.isInstance(v) return isInst(v) end
+RT.D = D; RT.NIL = NIL
+function RT.kidsOf(o) return kidsOf(o) end
+function RT.fire(o, key, ...) fireSig(D[o], key, ...) end
 G.Instance = { new = function(cn, parent)
   local info = classes[cn]
   if not info or info.notCreatable then error("Unable to create an Instance of type \"" .. tostring(cn) .. "\"", 2) end
@@ -629,9 +632,9 @@ class("ImageLabel", "GuiObject", { props = merge(imageProps, { BackgroundColor3 
 class("ImageButton", "GuiButton", { props = merge(imageProps, { HoverImage = "", PressedImage = "" }) })
 class("Frame", "GuiObject", { props = { Style = E.Font.Legacy } }); class("CanvasGroup", "GuiObject", { props = { GroupColor3 = white, GroupTransparency = 0 } })
 class("ViewportFrame", "GuiObject", { props = { Ambient = c3(0.5, 0.5, 0.5), LightColor = white, CurrentCamera = NIL, ImageColor3 = white, ImageTransparency = 0 } })
-class("ScrollingFrame", "GuiObject", { props = { CanvasPosition = v2(0, 0), CanvasSize = u2(0, 0, 2, 0), AutomaticCanvasSize = E.AutomaticSize.None, ScrollBarThickness = 12, ScrollBarImageColor3 = c3(0, 0, 0), ScrollBarImageTransparency = 0,
+class("ScrollingFrame", "GuiObject", { props = { CanvasPosition = v2(0, 0), CanvasSize = u2(0, 0, 2, 0), AutomaticCanvasSize = E.AutomaticSize.None, ScrollBarThickness = 12, AbsoluteCanvasSize = v2(0, 0), ScrollBarImageColor3 = c3(0, 0, 0), ScrollBarImageTransparency = 0,
   ScrollingEnabled = true, ScrollingDirection = E.ScrollingDirection.XY, ElasticBehavior = E.ElasticBehavior.WhenScrollable, VerticalScrollBarInset = E.ScrollBarInset.None, HorizontalScrollBarInset = E.ScrollBarInset.None,
-  VerticalScrollBarPosition = E.VerticalScrollBarPosition.Right, TopImage = "", MidImage = "", BottomImage = "", ScrollBarImageColor3 = white, AbsoluteWindowSize = v2(0, 0), VerticalScrollBarVisible = true, ClipsDescendants = true }, readonly = { "AbsoluteWindowSize" },
+  VerticalScrollBarPosition = E.VerticalScrollBarPosition.Right, TopImage = "", MidImage = "", BottomImage = "", ScrollBarImageColor3 = white, AbsoluteWindowSize = v2(0, 0), VerticalScrollBarVisible = true, ClipsDescendants = true }, readonly = { "AbsoluteWindowSize", "AbsoluteCanvasSize" },
   methods = { ScrollToTop = noop } })
 class("LayerCollector", "GuiBase2d", { props = { Enabled = true, ResetOnSpawn = true, ZIndexBehavior = E.ZIndexBehavior.Sibling } })
 class("ScreenGui", "LayerCollector", { props = { DisplayOrder = 0, IgnoreGuiInset = false, ScreenInsets = E.ScreenInsets.CoreUISafeInsets, SafeAreaCompatibility = E.SafeAreaCompatibility.FullscreenExtension, ClipToDeviceSafeArea = true, SelectionImageObject = NIL } })

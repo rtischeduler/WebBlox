@@ -5,8 +5,8 @@
 import { decodeBytecode } from "../join/coregui/decode.mjs";
 import { T } from "./luau.mjs";
 
-async function readLua() {
-  const url = new URL("./runtime.lua", import.meta.url);
+async function readLua(name = "runtime.lua") {
+  const url = new URL("./" + name, import.meta.url);
   if (typeof process !== "undefined" && process.versions?.node && url.protocol === "file:") {
     const { readFileSync } = await import("node:fs");
     return readFileSync(url, "utf8");
@@ -85,6 +85,12 @@ export async function createRuntime(vm, tree, opts = {}) {
   L.pcall(1, 1); // -> RT
   L.setGlobal("__wb");
   L.settop(base);
+  for (const name of ["gui.lua"]) {
+    L.loadSource(await readLua(name), "=" + name);
+    L.getGlobal("__wb");
+    L.pcall(1, 0);
+    L.settop(base);
+  }
 
   function call(name, args = [], nres = 0) {
     const b = L.top();
@@ -99,7 +105,8 @@ export async function createRuntime(vm, tree, opts = {}) {
   return {
     stats,
     mount: (root = tree.root) => call("mount", [root]),
-    step: (dt = 1 / 60) => call("step", [dt]),
+    step: (dt = 1 / 60) => { call("step", [dt]); call("guiStep"); },
+    layout: (w, h, inset) => call("guiLayout", [w, h, inset], 1)[0],
     addPlayer: (userId, name, displayName = name, isLocal = false) => call("addPlayer", [userId, name, displayName, isLocal]),
     removePlayer: (userId) => call("removePlayer", [userId]),
     tryRequire: (path) => call("tryRequire", [path], 2),
