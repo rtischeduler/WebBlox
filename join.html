@@ -103,28 +103,39 @@ pre{margin:8px 0 0;padding:10px;background:#0b0d10;border:1px solid var(--line);
 </main>
 <script type="module">
 const HEX = /^[0-9a-f]{40}$/i;
-const TTL = 60000;
-const read = (repo) => { try { const o = JSON.parse(localStorage.getItem("wb.sha." + repo) || "null"); return o && HEX.test(o.sha) ? o : null; } catch { return null; } };
-const write = (repo, o) => { try { localStorage.setItem("wb.sha." + repo, JSON.stringify(o)); } catch {} };
-const ghHeaders = () => {
-  const h = { Accept: "application/vnd.github+json" };
+const KEY = "wb.sha2.";
+const MEMO = 20000;
+const read = (repo) => { try { const o = JSON.parse(localStorage.getItem(KEY + repo) || "null"); return o && HEX.test(o.sha) ? o : null; } catch { return null; } };
+const write = (repo, o) => { try { localStorage.setItem(KEY + repo, JSON.stringify(o)); } catch {} };
+const ghHeaders = (extra) => {
+  const h = { Accept: "application/vnd.github+json", ...extra };
   try { const t = localStorage.getItem("wb.ghtoken"); if (t) h.Authorization = "Bearer " + t; } catch {}
   return h;
 };
+const timed = async (url, init, ms = 4500) => {
+  const ctrl = new AbortController(), k = setTimeout(() => ctrl.abort(), ms);
+  try { return await fetch(url, { ...init, signal: ctrl.signal, cache: "no-store" }); } finally { clearTimeout(k); }
+};
+// Newest commit on main from the GitHub API. The newest sha seen is kept in localStorage and replaced only by what GitHub
+// itself reports (never by a stale mirror). Requests are conditional (ETag): an unchanged repo answers 304, which GitHub
+// does not count against the rate limit. If GitHub is unreachable the stored sha is reused, so a page that worked keeps working.
 const latest = async (repo) => {
   const c = read(repo), now = Date.now();
-  if (c && (now - c.at < TTL || now < (c.until || 0))) return c.sha;
-  const ctrl = new AbortController(), k = setTimeout(() => ctrl.abort(), 4000);
+  if (c && now - c.at < MEMO) return c.sha;
   try {
-    const r = await fetch("https://api.github.com/repos/" + repo + "/commits/main", { headers: ghHeaders(), signal: ctrl.signal, cache: "no-store" });
+    const r = await timed("https://api.github.com/repos/" + repo + "/commits/main", { headers: ghHeaders(c?.etag ? { "If-None-Match": c.etag } : {}) });
+    if (r.status === 304 && c) { write(repo, { ...c, at: now }); return c.sha; }
     if (r.ok) {
       const d = await r.json();
-      if (d && HEX.test(d.sha)) { write(repo, { sha: d.sha, at: Date.now() }); return d.sha; }
-    } else if (c && (r.status === 403 || r.status === 429)) {
-      const reset = Number(r.headers.get("x-ratelimit-reset")) * 1000;
-      write(repo, { sha: c.sha, at: c.at, until: reset > now ? reset : now + 600000 });
+      if (d && HEX.test(d.sha)) { write(repo, { sha: d.sha, etag: r.headers.get("etag") || "", at: now }); return d.sha; }
     }
-  } catch {} finally { clearTimeout(k); }
+  } catch {}
+  if (!c) { // first visit with GitHub unreachable: jsDelivr's resolver is accepted only because nothing is stored yet
+    try {
+      const r = await timed("https://data.jsdelivr.com/v1/packages/gh/" + repo + "/resolved?specifier=main", {});
+      if (r.ok) { const d = await r.json(); if (d && HEX.test(d.version || "")) { write(repo, { sha: d.version, etag: "", at: now }); return d.version; } }
+    } catch {}
+  }
   return c ? c.sha : "";
 };
 const bases = async (repo) => {
@@ -147,12 +158,17 @@ addEventListener("unhandledrejection", (ev) => say("Uncaught (in promise) " + fm
 (async () => {
   say("Checking for updates…");
   const [own, sand, kst, stor] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff"), bases("TongSherbet/storage")]);
-  // Same-origin only: app.mjs must match this exact join.html. A CDN copy can be hours stale and expect elements that no longer exist,
-  // so there is no CDN fallback; if this import fails the status line shows the full error instead.
-  const appUrl = "./src/join/app.mjs?v=" + encodeURIComponent(document.lastModified || Date.now());
-  let mod;
-  try { mod = await import(appUrl); } catch (e) { throw new Error("could not load " + new URL(appUrl, location.href).href + ": " + (e && e.message || e), { cause: e }); }
-  console.log("[join] app.mjs", mod.BUILD, "from", new URL(appUrl, location.href).href);
+  // Everything is loaded from one immutable commit (jsDelivr @<sha> from latest()), so app.mjs, its sub-modules and the wasm can never
+  // be a mix of versions or stale. Fallback: this site's own copy, cache-busted by that same sha (or the page's modified time).
+  const sha = read("rtischeduler/WebBlox")?.sha || "";
+  const tries = [];
+  if (sha) tries.push("https://cdn.jsdelivr.net/gh/rtischeduler/WebBlox@" + sha + "/src/join/app.mjs", "https://fastly.jsdelivr.net/gh/rtischeduler/WebBlox@" + sha + "/src/join/app.mjs");
+  tries.push("./src/join/app.mjs?v=" + encodeURIComponent(sha || document.lastModified || Date.now()));
+  let mod = null, last = null, from = "";
+  for (const u of tries) { try { mod = await import(u); from = u; break; } catch (e) { last = e; console.warn("[join] import failed", u, e); } }
+  if (!mod) throw new Error("could not load app.mjs from any source: " + (last && last.message || last), { cause: last });
+  window.__wbLoadedFrom = from;
+  console.log("[join] app.mjs", mod.BUILD, "from", new URL(from, location.href).href);
   await mod.boot({ sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
 })().catch((e) => { say("Failed: " + fmtErr(e)); console.error(e); });
 </script>
