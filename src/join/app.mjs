@@ -10,7 +10,15 @@ import { downloadText } from "../download.mjs";
 import { startCoreGui } from "./coregui/index.mjs";
 import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
 
-const $ = (id) => document.getElementById(id);
+const missingIds = new Set();
+// Never throw on a missing element (stale or different join.html): hand back an inert stub and remember the id so the status line can name it.
+const stub = () => new Proxy(function () {}, { get: (_, k) => (k === Symbol.toPrimitive ? () => "" : k === "classList" || k === "style" || k === "dataset" ? stub() : stub()), set: () => true, apply: () => stub() });
+const $ = (id) => {
+  const e = document.getElementById(id);
+  if (e) return e;
+  if (!missingIds.has(id)) { missingIds.add(id); console.warn("[join] missing element #" + id); }
+  return stub();
+};
 
 const store = {
   get(key) {
@@ -376,5 +384,5 @@ export function boot() {
   $("wb-copy").onclick = () => navigator.clipboard?.writeText($("wb-log").textContent).catch(() => {});
   $("wb-export").onclick = () =>
     downloadText("webblox-capture.json", JSON.stringify({ version: 1, join: lastJoin, capture: capture.toJSON() }, null, 1));
-  say("Ready.");
+  say(missingIds.size ? "Ready, but this page is missing: #" + [...missingIds].join(", #") + " (stale join.html? hard-refresh)" : "Ready.");
 }
