@@ -66,3 +66,24 @@ Measured against the real InExperience patch (extracted archive, every 25th Core
 148 require successfully. The remaining failures are the missing Roblox runtime: `game`/`GetService` (nil), `DefineFastFlag`/`DefineFastString`
 (flag module needs `game`), and failures cascading from those. That list is the step 2 worklist.
 Finding: 419 files are `.luau` binary blobs in a different encoding from the `.luauc` bytecode (first bytes are not a Luau header); not handled yet.
+
+## Step 2 done: Roblox runtime (src/vm/runtime.lua + runtime.mjs)
+Plain Luau run inside the VM (`runtime.lua`), fed host functions by `runtime.mjs` (`createRuntime(vm, tree, { flags, log, measure, async })`).
+`boot.mjs` now starts it after the patch loads and mounts `DataModelInstances/*` into `game` (`window.webblox.vm.runtime`).
+- **Instance system**: real classes with property tables and defaults, read-only/computed properties, `Instance.new`, Parent/ancestry events, `Changed`/`GetPropertyChangedSignal`,
+  attributes, tags (`CollectionService`), `Clone`/`Destroy`, `WaitForChild` with timeout. Patch nodes are lazy Instances (children materialised on first access).
+  Classes: Folder, ModuleScript, values, Bindable/Remote events, and the GUI set (ScreenGui, Frame, TextLabel/Button/Box, Image*, ScrollingFrame, CanvasGroup, UIListLayout/Grid/Padding/Corner/Stroke/Gradient/Scale/constraints/flex).
+  Unknown members raise Roblox's own "X is not a valid member of Y" error, which keeps the worklist honest.
+- **Enum / datatypes**: Enum (known sets with real values for KeyCode/UserInputType; anything else auto-created and listed in `rt.lazyEnums()`), Vector2/3, UDim(2), Color3, Rect, Number/ColorSequence, Font, TweenInfo, Random, DateTime, CFrame (translation only), BrickColor, Path2DControlPoint.
+  `type()` reports "userdata" for these (they are tables here) so deep-clone helpers do not walk Enum cycles; `typeof()` gives the Roblox name.
+- **Scheduler**: `task.wait/spawn/defer/delay/cancel`, `wait/spawn/delay`, events run in their own coroutines, `rt.step(dt)` drives sleepers, deferred work, RunService (Stepped/PreRender/RenderStepped/Heartbeat, BindToRenderStep) and TweenService tweens.
+  `RT.await(kind, payload)` yields a thread until the host answers (`createRuntime({ async: { http } })`): HttpService is built on it, so step 4 can reuse it for the proxy.
+- **Services**: Players (LocalPlayer, `rt.addPlayer/removePlayer`), GuiService, UserInputService, StarterGui (SetCore/GetCore/CoreGui enabled), TextChatService + TextChannel, HttpService (JSON in Luau), TextService (measure hook), ContextActionService, LocalizationService, PolicyService, AppStorageService,
+  plus telemetry-style services whose unknown methods are no-ops (recorded in `__wb.lenient`). Fast flags: `game:DefineFastFlag/Int/String` read the same flag set the client uses.
+- **require**: runs modules in the requiring thread (yields propagate; no coroutine per module, so the ~200-deep C-call limit is not hit by chains), caches results and failures, detects recursion.
+
+Measured against the real InExperience patch (extracted archive, every 25th CorePackages module, `node tools/measure-runtime.mjs <dir> 25`):
+**1027 of 1289 require cleanly (80%)**, up from 148 of 1273 with no runtime. 228 of the rest stop at `UIBlox.init(config)`, which is app-level setup (CoreScripts call it before anything renders), not a missing runtime piece.
+The leftovers are a few more services (InsertService), `Dev` folders the patch does not contain, and `ValidationEnums` (UGCValidation).
+Not done on purpose: layout/`AbsoluteSize`/rendering (step 3), real input, replication of players/chat from the server (step 4). Hooks left for them: `__wb.hooks` (property-change listeners), `__wb.setRaw(inst, prop, value)` for computed values,
+`__wb.remote` (RemoteEvent/TextChannel traffic), `host.measure` for text. 419 `.luau` blobs in the other encoding are still unhandled.
