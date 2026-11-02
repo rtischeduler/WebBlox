@@ -8,30 +8,31 @@ StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
 NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-AvatarContextMenu: runtime.lua:572: Argument 1 missing or nil
-InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
+AvatarContextMenu: BackpackScript:621: Draggable is not a valid member of TextButton "1"
+InviteToGamePrompt: ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
 InspectAndBuy: Requested module experience
 BulkPurchaseApp: Requested module experien
 logs:
-BackButtonController:22: attempt to compare number < nil
-runtime.lua:572: Argument 1 missing or nil
-runtime.lua:572: Argument 1 missing or nil
+ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+BackpackScript:621: Draggable is not a valid member of TextButton "1"
+BackpackScript:621: Draggable is not a valid member of TextButton "1"
 Store:10: Received error: Caught error in thunk
 Constants:181: table index is nil
 failed requires:
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
-CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:572: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:572: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/DevConsole/Components/DataProvider :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-CoreGui/RobloxGui/Modules/Settings/BackButtonController :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
-CoreGui/RobloxGui/Modules/Settings/Components/MenuBackButton :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
-CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
-CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
-CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
@@ -51,10 +52,10 @@ CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Compo
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccess :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccessContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarEx
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/renderBulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:18
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:572: Argument 1 missing or nil
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
 PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 tracebacks:
 NotificationScript2: Requested module experienced an error while loading: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
@@ -65,18 +66,12 @@ runtime.lua:989
 runtime.lua:989
 
 --
-AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: runtime.lua:572: Argument 1 missing
+AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:621: Draggable is no
 runtime.lua:962
-runtime.lua:483 function checkName
-runtime.lua:572
-BackpackScript:209 function NewGui
-BackpackScript:613 function MakeSlot
-Mo
---
-InviteToGamePrompt: Requested module experienced an error while loading: Requested module experienced an error while loading: Requested module experienced an er
-runtime.lua:962
-BackButtonController:22
-runtime.l
+runtime.lua:580
+BackpackScript:621 function MakeSlot
+BackpackScript:1449
+runtime.lua:962 f
 probe: [
   'RobloxGui Enabled=true desc=2411 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,hidden) VehicleHudFrame(Frame,hidden)]\n' +
     'RobloxNetworkPauseNotification Enabled=true desc=0 kids=[]\n' +
@@ -87,6 +82,7 @@ probe: [
 still waiting:
 
 loaded TopBar/PlayerList/Chat modules:
+CoreGui/RobloxGui/Modules/DevConsole/Components/DevConsoleTopBar
 CoreGui/RobloxGui/Modules/TopBar/Constants
 CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagAddTopBarScrim
 CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagTopBarDeprecateChatRodux
@@ -126,7 +122,6 @@ CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagLuaAppMo
 CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagLuaAppMoveProfileIntoTopBarIXP
 CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagReduceTopBarInsetsWhileHidden
 CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/GetFFlagEnableUseShowTopBar
-CoreGui/RobloxGui/Modules/PlayerList/ActionCreator
 flags: [
   'FFlagTopBarRefactor=false FFlagDebugDisableExperienceChatMain=false FFlagEnableChromeShortcutBar=false'
 ]
@@ -163,6 +158,9 @@ Rz J[2	 string sub ... truncateWithEllipsis Name andThen await$InGame.CommonUI.L
 eturnToPublisherExperience TeleportTrustedBackForth game	AdService GetService TeleportService CorePackages CoreGui HttpRbxApiService require Packages Promise Roact	RobloxGui WaitForChild M
 odules Common httpRequest TeleportHistoryButtons GetEngineFeature	Workspace RobloxTranslator GameDetailRodux GetGameNameAndDescription GetAdTeleportInfo GameId GetThirdPartyTeleportInfo defer ge
 tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 4- 4-  @  @ @o @o @o @o @o @M @M o	 @M	 M		s M		 R	 @o @M @M @M x! Q{M] 
+== R21 in NotificationScript2 ==
+  37  133 GETTABLEKS A=21 B=20 C=174 D=-20972 aux=31  ; "GameSettings"
+
 == disasm Settings/BackButtonController 14-24 ==
 -- proto 10 ? @1
   14   61 GETIMPORT A=10 B=1 C=0 D=1 aux=1073741824  ; "game"
