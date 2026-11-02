@@ -10,6 +10,7 @@ import { downloadText } from "../download.mjs";
 import { startCoreGui } from "./coregui/index.mjs";
 import { readHostCookie, readBrowserTrackerId } from "./cookie.mjs";
 
+export const BUILD = "2026-11-01-d";
 const missingIds = new Set();
 // Never throw on a missing element (stale or different join.html): hand back an inert stub and remember the id so the status line can name it.
 const stub = () => new Proxy(function () {}, { get: (_, k) => (k === Symbol.toPrimitive ? () => "" : k === "classList" || k === "style" || k === "dataset" ? stub() : stub()), set: () => true, apply: () => stub() });
@@ -388,5 +389,5 @@ export function boot() {
   $("wb-copy").onclick = () => navigator.clipboard?.writeText($("wb-log").textContent).catch(() => {});
   $("wb-export").onclick = () =>
     downloadText("webblox-capture.json", JSON.stringify({ version: 1, join: lastJoin, capture: capture.toJSON() }, null, 1));
-  say(missingIds.size ? "Ready, but this page is missing: #" + [...missingIds].join(", #") + " (stale join.html? hard-refresh)" : "Ready.");
+  say(missingIds.size ? "Ready (build " + BUILD + "), but this page is missing: #" + [...missingIds].join(", #") + " (stale join.html? hard-refresh)" : "Ready (build " + BUILD + ").");
 }
