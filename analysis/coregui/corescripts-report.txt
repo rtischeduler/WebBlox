@@ -1,0 +1,21 @@
+StarterScript: [
+  'err',
+  "Requested module experienced an error while loading: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'\n" +
+    'runtime.lua:953\n' +
+    'PatchRoot/CoreScripts/StarterScript:560\n' +
+    'runtime.lua:953 function require_\n' +
+    'runtime.lua:973\n'
+]
+status: 12 ok, 5 failed, 3 running | draws: 24
+errors:
+NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+AvatarContextMenu: runtime.lua:563: Argument 1 missing or nil
+InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
+InspectAndBuy: Requested module experience
+logs:
+CreateAdCampaignSheetConfig:9: attempt to call a nil value
+PlayerListController:196: PlayerListController:107: ViewportDisplaySize is not a valid member of GuiService "GuiService"
+runtime.lua:563: Argument 1 missing or nil
+runtime.lua:563: Argument 1 missing or nil
+Store:10: Received error: Caught error in thunk
+Constants:147: table index is nil
