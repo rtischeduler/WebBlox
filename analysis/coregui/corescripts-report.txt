@@ -7,32 +7,32 @@ tar exit 0
 StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
-NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-AvatarContextMenu: BackpackScript:621: Draggable is not a valid member of TextButton "1"
-InviteToGamePrompt: ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+NotificationScript2: NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText"
+AvatarContextMenu: BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+InviteToGamePrompt: ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
 InspectAndBuy: Requested module experience
 BulkPurchaseApp: Requested module experien
 logs:
-ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-BackpackScript:621: Draggable is not a valid member of TextButton "1"
-BackpackScript:621: Draggable is not a valid member of TextButton "1"
+ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 Store:10: Received error: Caught error in thunk
 Constants:181: table index is nil
 failed requires:
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
-CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
+CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/DevConsole/Components/DataProvider :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
+CoreGui/RobloxGui/Modules/DevConsole/Components/DataProvider :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service n
+CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
@@ -52,24 +52,25 @@ CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Compo
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccess :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccessContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarEx
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/renderBulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:18
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:621: Draggable is not a valid member of TextButton "1"
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:8: 'MeshContentProvider' is not a valid Service name
-PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText"
 tracebacks:
-NotificationScript2: Requested module experienced an error while loading: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText
 runtime.lua:962
-NotificationScript2:86
+runtime.lua:580
+NotificationScript2:246
 runtime.lua:962 function require_
 runtime.lua:989
 runtime.lua:989
 
 --
-AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:621: Draggable is no
+AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:705: DragBegin is no
 runtime.lua:962
-runtime.lua:580
-BackpackScript:621 function MakeSlot
+runtime.lua:567
+BackpackScript:705 function MakeSlot
 BackpackScript:1449
 runtime.lua:962 f
 probe: [
