@@ -37,7 +37,7 @@ jobs:
           set +e +o pipefail
           mkdir -p /tmp/patch analysis/coregui
           {
-            echo "archives:"; find /tmp/cg-out -name '*.tar.gz' -print
+            echo "archives:"; find /tmp/cg-out -name '*.tar.gz' -print; echo "extractor report tail:"; tail -n 25 /tmp/cg-out/report.txt 2>&1 | cut -c1-220
             f=$(find /tmp/cg-out -name 'src-online-*.tar.gz' -print -quit); echo "using: $f"
             tar xzf "$f" -C /tmp/patch; echo "tar exit $?"
             node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }}; echo "node exit $?"
