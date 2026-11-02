@@ -107,6 +107,7 @@ const renderInfo = (info, script) => {
     ["Game server", info.machine ? info.machine.host + (info.machine.port ? ":" + info.machine.port : "") : "—"],
     ["UDMUX endpoints", info.udmux.length ? info.udmux.map((e) => `${e.host}:${e.port}`).join(", ") : "—"],
     ["Certificate hashes", String(info.certHashes.length)],
+    ["WebTransport URL", info.wt?.url ? info.wt.url.replace(/(X-Rbx-Capabilities=)[^&]*/, "$1…") : "missing " + (info.wt?.missing || []).join(", ")],
     ["Transport config keys", info.configKeys.length ? info.configKeys.join(", ") : "—"],
   ];
   const list = el("dl", { className: "kv" });
@@ -246,7 +247,8 @@ const syncSessionUi = () => {
 async function startSession(info) {
   setStep("transport", "run");
   const endpoint = info.udmux[0];
-  const url = $("wb-wt-url").value.trim() || (endpoint ? `https://${hostForUrl(endpoint.host)}:${endpoint.port}/` : "");
+  const url = $("wb-wt-url").value.trim() || info.wt?.url || "";
+  if (!url && info.wt?.missing?.length) chatLog.system("The join script has no " + info.wt.missing.join(" / ") + "; the real engine's WebTransport URL needs both (script keys: " + info.topKeys.join(", ") + ").");
   if (!url) {
     setStep("transport", "warn", "no endpoint in join script");
     chatLog.system("The join script has no game server endpoint.");

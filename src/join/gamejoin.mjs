@@ -180,6 +180,24 @@ const collectHashes = (obj, out = [], depth = 0) => {
   return out;
 };
 
+// How the wasm builds the WebTransport URL (engine f131791, rbx_wasm_rna_connect_js caller): "https://" + the join
+// script's GameFqdn + ":" + port + "/wt?" + "X-Rbx-Capabilities=<caps>" + "&" + "X-Rbx-Close-Reason=utf8-v1".
+// It needs the FQDN (CA-signed cert); an IP address cannot pass TLS, which is why the old guess never connected.
+export function buildWtUrl(script) {
+  const s = script && typeof script === "object" ? script : {};
+  const config = ci(s, "rbxtransportconfig", "transportconfig");
+  const fqdn = ci(s, "gamefqdn") ?? ci(config, "gamefqdn");
+  const port = Number(ci(config, "rbxtransportserverport", "serverport", "port") ?? ci(s, "rbxtransportserverport", "udmuxport")) || 0;
+  const caps = ci(config, "servercapabilities", "capabilities") ?? ci(s, "servercapabilities");
+  const missing = [];
+  if (!fqdn) missing.push("GameFqdn");
+  if (!port) missing.push("port");
+  const capText = caps == null ? "" : typeof caps === "string" ? caps : JSON.stringify(caps);
+  const query = (capText ? `X-Rbx-Capabilities=${encodeURIComponent(capText)}&` : "") + "X-Rbx-Close-Reason=utf8-v1";
+  const url = missing.length ? "" : `https://${String(fqdn).includes(":") ? `[${fqdn}]` : fqdn}:${port}/wt?${query}`;
+  return { url, fqdn: fqdn ? String(fqdn) : null, port: port || null, hasCapabilities: Boolean(capText), missing };
+}
+
 export function describeJoin(script) {
   const s = script && typeof script === "object" ? script : {};
   const list = ci(s, "udmuxendpoints");
@@ -200,6 +218,7 @@ export function describeJoin(script) {
     jobId: ci(s, "gameid", "jobid") ?? null,
     machine: machine ? { host: String(machine), port: Number(ci(s, "serverport")) || null } : null,
     udmux,
+    wt: buildWtUrl(s),
     certHashes: collectHashes(config ?? s),
     configKeys: config && typeof config === "object" ? Object.keys(config) : [],
     topKeys: Object.keys(s),
