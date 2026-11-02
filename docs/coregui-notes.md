@@ -49,3 +49,20 @@ Remaining work to render the real CoreGui, in order:
 2. Roblox runtime for the VM: `game`, `script`, `Instance` + property/signal system, `Enum`, datatypes (UDim2, Vector2, Color3, ...), task/RunService, and the services CoreGui touches (Players, GuiService, UserInputService, TextChatService, HttpService via the proxy).
 3. GUI layer: GuiObject classes, layout (UIListLayout, UIGridLayout, UIPadding, AutomaticSize), text measurement, image/sprite-sheet loading from `WebClient.metadata.json`, UICorner/UIStroke/UIGradient, input hit-testing, drawn on the canvas.
 4. Replication from the game server (transport.mjs) feeding Players, chat and the player list.
+
+## Step 1 done: Luau VM in the browser + require loader
+- `engine/luau/` builds stock luau-lang/luau (commit `2a3d8937`, all `Luau*` fast flags on, as in the earlier native check) plus `shim.cpp` to wasm
+  (`build.sh`, emscripten 4.0.9 from conda-forge, `-fwasm-exceptions`). Output `luau.js` + `luau.wasm` (~950 KB, includes the compiler for tests/prelude) is checked in.
+  Luau's API has C++ linkage, so the build defines `LUA_API='extern "C"'`. Link runs at `-O0` only because conda's binaryen (117) is older than emscripten expects; objects are `-O2`.
+- The shim turns JS functions into Lua C closures (`wb_js_call`). A JS throw becomes a Lua error and `throw lua.yield(n)` becomes `lua_yield`, both raised
+  outside the JS frame, so no JS frame is unwound by a C++ exception.
+- `src/vm/luau.mjs`: `createVM()` and a small stack API (`load` bytecode, `loadSource`, `pcall`, `pushFunction`, `resume`, ...).
+  `luau_load` is not hardened against corrupt bytecode (it traps), so only feed it what `decodeBytecode()` accepted.
+- `src/vm/require.mjs`: `createLoader(vm, tree)` + `treeFromPatch(indexPatch)`. `script`/`require` per module, `require(script.Parent.X)`, results cached, failures cached,
+  recursive requires detected. Nodes are Instance stand-ins (Name, ClassName, Parent, child lookup, FindFirstChild, WaitForChild, GetChildren, IsA, GetFullName) that step 2 replaces.
+- `src/vm/boot.mjs` starts it after the patch loads (`window.webblox.vm`); failures are logged and never break join.
+
+Measured against the real InExperience patch (extracted archive, every 25th CorePackages module, 1,273 of 31,805), with **no Roblox environment at all**:
+148 require successfully. The remaining failures are the missing Roblox runtime: `game`/`GetService` (nil), `DefineFastFlag`/`DefineFastString`
+(flag module needs `game`), and failures cascading from those. That list is the step 2 worklist.
+Finding: 419 files are `.luau` binary blobs in a different encoding from the `.luauc` bytecode (first bytes are not a Luau header); not handled yet.
