@@ -12,7 +12,7 @@ local NIL = {}
 -- Unknown member of a lenient service: callable (as a method) AND signal-shaped (:Connect/:Once/:Wait), so both `svc:Foo()` and `svc.OnFoo:Connect(f)` are harmless.
 local noopConn = { Connected = false, Disconnect = function() end }
 local noopAny = setmetatable({}, { __call = function() return nil end, __index = function(_, k)
-  if k == "Connect" or k == "Once" or k == "ConnectParallel" then return function() return noopConn end end
+  if k == "Connect" or k == "connect" or k == "Once" or k == "ConnectParallel" then return function() return noopConn end end
   if k == "Wait" then return function() return nil end end
 end })
 RT.lenient = {}
