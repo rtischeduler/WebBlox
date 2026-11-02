@@ -56,7 +56,7 @@ do
   end
   EnumMT.__tostring = function(e) return "Enum." .. meta[e].name end
   function enumMethods.GetEnumItems(e) return table.clone(meta[e].list) end
-  function enumMethods.FromName(e, n) local v = rawget(e, n); return v end
+  function enumMethods.FromName(e, n) local v = rawget(e, n); if v == nil and meta[e].lazy and type(n) == "string" then return e[n] end; return v end
   function enumMethods.FromValue(e, v) return meta[e].byValue[v] end
   local function makeEnum(name, spec)
     local e = setmetatable({ Name = name }, EnumMT)
@@ -93,6 +93,7 @@ do
     TextTruncateMode = "None", AspectType = "FitWithinMaxSize,ScaleWithParentSize", DominantAxis = "Width,Height", UIFlexMode = "None,Grow,Shrink,Fill,Custom", ItemLineAlignment = "Automatic,Start,Center,End,Stretch",
     UIFlexAlignment = "None,Fill,SpaceAround,SpaceBetween,SpaceEvenly", TableMajorAxis = "RowMajor,ColumnMajor", RenderFidelity = "Automatic,Precise,Performance", ProductPurchaseDecision = "NotProcessedYet,PurchaseGranted",
     InfoType = "Asset,Product,GamePass,Subscription,Bundle", AssetType = "Image=1,TeeShirt=2,Audio=3,Mesh=4,Lua=5,Hat=8,Place=9,Model=10,Shirt=11,Pants=12,Decal=13", PrivilegeType = "Banned,Visitor,Member,Admin,Owner",
+    AccessoryType = "Unknown=0,Hat=1,Hair=2,Face=3,Neck=4,Shoulder=5,Front=6,Back=7,Waist=8,TShirt=9,Shirt=10,Pants=11,Jacket=12,Sweater=13,Shorts=14,LeftShoe=15,RightShoe=16,DressSkirt=17,Eyebrow=18,Eyelash=19", AvatarAssetType = "TShirt=2,Hat=8,Shirt=11,Pants=12,Head=17,Face=18,Gear=19,Torso=27,RightArm=28,LeftArm=29,LeftLeg=30,RightLeg=31,HairAccessory=41,FaceAccessory=42,NeckAccessory=43,ShoulderAccessory=44,FrontAccessory=45,BackAccessory=46,WaistAccessory=47,ClimbAnimation=48,DeathAnimation=49,FallAnimation=50,IdleAnimation=51,JumpAnimation=52,RunAnimation=53,SwimAnimation=54,WalkAnimation=55,PoseAnimation=56,EmoteAnimation=61,TShirtAccessory=64,ShirtAccessory=65,PantsAccessory=66,JacketAccessory=67,SweaterAccessory=68,ShortsAccessory=69,LeftShoeAccessory=70,RightShoeAccessory=71,DressSkirtAccessory=72,EyebrowAccessory=76,EyelashAccessory=77,MoodAnimation=78,DynamicHead=79",
     VirtualCursorMode = "Default,Disabled,Enabled", GamepadType = "Unknown", UITheme = "Light,Dark", Technology = "Legacy,Voxel,Compatibility,ShadowMap,Future", ReverbType = "NoReverb,GenericReverb",
   }
   Enum = setmetatable({}, { __type = "Enums", __tostring = function() return "Enum" end, __index = function(t, name)
