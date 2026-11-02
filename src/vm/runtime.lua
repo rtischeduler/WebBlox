@@ -269,7 +269,7 @@ do
     if type(fn) ~= "function" then error("Attempt to connect failed: Passed value is not a function", 2) end
     local c = setmetatable({ Connected = true, fn = fn, sig = s }, ConMT); s.conns[#s.conns + 1] = c; return c
   end
-  sm.ConnectParallel = sm.Connect
+  sm.ConnectParallel = sm.Connect; sm.connect = sm.Connect
   function sm.Once(s, fn) local c; c = s:Connect(function(...) c:Disconnect(); return fn(...) end); return c end
   function sm.Wait(s)
     if not coroutine.isyieldable() then error("Signal:Wait() called outside a yieldable thread", 2) end
@@ -539,7 +539,7 @@ RT.base = base
 InstMT.__tostring = function(self) return D[self].name end
 InstMT.__index = function(self, k)
   local d = D[self]
-  if k == "Name" then return d.name elseif k == "ClassName" then return d.class elseif k == "Parent" then return d.parent end
+  if k == "Name" or k == "name" then return d.name elseif k == "ClassName" then return d.class elseif k == "Parent" then return d.parent end
   local info = d.info
   local comp = info.computed[k]
   if comp then return comp(self, d) end
@@ -612,13 +612,13 @@ local guiBase = { AbsolutePosition = v2(0, 0), AbsoluteSize = v2(0, 0), Absolute
 class("GuiBase", "Instance"); class("GuiBase2d", "GuiBase", { props = guiBase, readonly = { "AbsolutePosition", "AbsoluteSize", "AbsoluteRotation" }, events = { "SelectionChanged" } })
 local guiObject = { Active = false, AnchorPoint = v2(0, 0), AutomaticSize = E.AutomaticSize.None, BackgroundColor3 = gray, BackgroundTransparency = 0, BorderColor3 = black,
   BorderMode = E.BorderMode.Outline, BorderSizePixel = 1, ClipsDescendants = false, LayoutOrder = 0, Position = u2(), Size = u2(), SizeConstraint = E.SizeConstraint.RelativeXY,
-  Rotation = 0, Selectable = true, SelectionImageObject = NIL, SelectionOrder = 0, ZIndex = 1, NextSelectionUp = NIL, NextSelectionDown = NIL, NextSelectionLeft = NIL, NextSelectionRight = NIL, Interactable = true }
+  Rotation = 0, Selectable = true, SelectionGroup = false, SelectionImageObject = NIL, SelectionOrder = 0, ZIndex = 1, NextSelectionUp = NIL, NextSelectionDown = NIL, NextSelectionLeft = NIL, NextSelectionRight = NIL, Interactable = true }
 local function noop() end
 class("GuiObject", "GuiBase2d", { props = guiObject,
   events = { "InputBegan", "InputChanged", "InputEnded", "MouseEnter", "MouseLeave", "MouseMoved", "MouseWheelBackward", "MouseWheelForward", "SelectionGained", "SelectionLost",
     "TouchLongPress", "TouchPan", "TouchPinch", "TouchRotate", "TouchSwipe", "TouchTap" },
   methods = { TweenSize = noop, TweenPosition = noop, TweenSizeAndPosition = noop } })
-local textProps = { Text = "", TextColor3 = black, TextSize = 14, TextTransparency = 0, TextStrokeColor3 = black, TextStrokeTransparency = 1, TextWrapped = false, TextScaled = false,
+local textProps = { FontSize = E.FontSize.Size14, Text = "", TextColor3 = black, TextSize = 14, TextTransparency = 0, TextStrokeColor3 = black, TextStrokeTransparency = 1, TextWrapped = false, TextScaled = false,
   RichText = false, TextXAlignment = E.TextXAlignment.Center, TextYAlignment = E.TextYAlignment.Center, TextTruncate = E.TextTruncate.None, LineHeight = 1, MaxVisibleGraphemes = -1,
   Font = E.Font.SourceSans, FontFace = G.Font.new("rbxasset://fonts/families/SourceSansPro.json"), TextDirection = E.TextDirection.LeftToRight, LocalizationMatchIdentifier = "", LocalizationMatchedSourceText = "", ContentText = "" }
 local function textBounds(self, d)
@@ -1029,4 +1029,16 @@ classes.LocalizationTable.methods.SetEntries = noop; classes.LocalizationTable.m
 classes.LocalizationTable.methods.GetString = function(self, target, key) return key end
 classes.LocalizationTable.methods.GetTranslator = function() return newInst("Translator") end
 classes.ScriptContext.methods.AddCoreScriptLocal = function(self, name, parent) runCore("PatchRoot/CoreScripts/" .. tostring(name)) end
+-- Step 3c: members the real CoreScripts touch at startup (found by tools/run-corescripts.mjs).
+for _, n in ipairs(list("PointsService InsertService FaceAnimatorService")) do service(n, { lenient = true }) end
+classes.GuiService.methods.GetInsetArea = function() return G.Rect.new(0, 0, 0, 0) end
+classes.Players.props.ClassicChat = false; classes.Players.props.BubbleChat = false
+classes.LocalizationService.events.AutoTranslateWillRun = true
+classes.VRService.props.AvatarGestures = false
+service("TeleportService", { lenient = true })
+classes.GuiService.props.SelectedCoreObject = NIL
+classes.ScreenGui.props.OnTopOfCoreBlur = false
+classes.MemStorageService.methods.BindAndFire = function(self, key, fn) spawnFn(fn, ""); return setmetatable({ Connected = true, Disconnect = function() end }, ConMT) end
+classes.Player.methods.GetUnder13 = function() return false end
+classes.AdService.events.AdTeleportInitiated = true
 return RT

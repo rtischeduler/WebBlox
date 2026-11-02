@@ -13,10 +13,10 @@ const tree = { root: "PatchRoot", children: kids,
   classOf: (p) => { const [a, b] = split(p); return kids(a).find((k) => k.name === b)?.class || "Folder"; },
   script: (p) => { const [a, b] = split(p); const k = kids(a).find((x) => x.name === b); return k?.file ? { kind: "bytecode", data: new Uint8Array(readFileSync(join(dir, a, k.file))) } : null; } };
 const logs = [];
-const rt = await createRuntime(await createVM({ wasmBinary }), tree, { log: (lv, m) => { if (logs.length < 12) logs.push(lv + ": " + String(m).slice(0, 250)); } });
+const rt = await createRuntime(await createVM({ wasmBinary }), tree, { log: (lv, m) => { if (logs.length < 60) logs.push(String(m).split("\n").slice(0, 2).join(" ").split("experienced an error while loading: ").pop().replace(/PatchRoot\/\S*\//g, "").slice(0, 220)); } });
 rt.mount("PatchRoot"); rt.addPlayer(1, "Player", "Player", true);
 rt.run?.("__wb.debugTraces = true", 0);
 console.log("StarterScript:", rt.tryRequire("PatchRoot/CoreScripts/StarterScript"));
 for (let i = 0; i < Number(steps); i++) { rt.step(1 / 30); if (i === 5) rt.layout(1280, 720, 0); }
 console.log("status:", rt.coreStatus(), "| draws:", rt.drawCount());
-console.log("errors:\n" + rt.errors(6)); console.log("logs:\n" + logs.join("\n"));
+console.log("errors:\n" + rt.errors(60).split("\n--\n").map((e) => e.split("\n")[0].replace(/(Requested module experienced an error while loading: )+/g, "").replace(/PatchRoot\/\S*\//g, "").slice(0, 200)).join("\n")); console.log("logs:\n" + logs.join("\n"));
