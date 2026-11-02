@@ -1,69 +1,180 @@
 archives:
+/tmp/cg-out/src-online-InExperience.tar.gz
 extractor report tail:
-instances 36964 classes 4 scripts with Source 34225 bytecode 33806
-top classes [('ModuleScript', 34225), ('Folder', 2731), ('StringValue', 6), ('LocalizationTable', 2)]
-ModuleScript props+types {'AttributesSerialize': 1, 'Capabilities': 33, 'DefinesCapabilities': 2, 'LinkedSource': 1, 'Name': 1, 'ScriptGuid': 1, 'Source': 29, 'SourceAssetId': 27, 'Tags': 28}
-online InExperience https://assetdelivery.roblox.com/v2/assetId/80471914653504/version/15919 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encodin'
-   location https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encoding=gzip&version=1&__token__=key-id=1~exp=1793757804~acl=/sc2/5d4067e3d8dfb7e98a58c200d1560a39*~hmac=aa3d2a75a1ece50639ee6135ae0c1048191a0c5
-   downloaded 14514645 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00L\xb8c\x94.\xc0'
-online InExperience https://assetdelivery.roblox.com/v1/asset/?id=80471914653504&version=15919 14514645 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00L\xb8c\x94.\xc0\xb2$\xfa\xb5m\xdb\xb6mc\xb7\xb5\xdb\xb6m\xdb\xb6mw\xef\xb6
-online UniversalApp https://assetdelivery.roblox.com/v2/assetId/118593852151835/version/16012 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encodin
-   location https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encoding=gzip&version=1&__token__=key-id=1~exp=1793751818~acl=/sc1/8a058871b2547e4b4ec7e1faca15a145*~hmac=4a9f6c67d0b31340495b52c05f1297bd9092ebe
-   downloaded 13353458 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00\x00J@\xb5\xbf<'
-chunk b'SSTR' cl 20 ul 28 zstd
-chunk b'INST' cl 388 ul 2579 zstd
-chunk b'HASH' cl 68726 ul 75255 head b'(\xb5/\xfd\xa0\xf7%\x01' decompress failed: ZstdError('decompression error: Data corruption detected')
-chunk b'\x0e\x16p\x9b' cl 2530832276 ul 753928995 head b'\xf7\xd00\xee\x8d3E4' decompress failed: IndexError('bytearray index out of range')
-stats online-UniversalApp no sources
-   parsed UniversalApp instances 5349 with Source 0 props {}
+stats online-UniversalApp scripts 4703 len min/med/max 73 645 22758744
+   first8 [('527a104a5b3209e0', 4703)]
+   byte8 [(13, 4703)]
+   byte9,10 [('0305', 547), ('0304', 314), ('0303', 281), ('0306', 211), ('0308', 131), ('0307', 128)]
+   parsed UniversalApp instances 5349 with Source 4703 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
 online DataModelPatch https://assetdelivery.roblox.com/v2/assetId/115043838414809/version/6833 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encodi
    location https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encoding=gzip&version=1&__token__=key-id=1~exp=1793730258~acl=/sc2/8ab1de1819d66bfe7ade69f6dbe398d7*~hmac=c775444f8454657ff0465c0c1abab7f0fa7c65c
-   downloaded 14676793 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00\x00Y@\xa6\xbf<'
+   downloaded 14705294 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
 chunk b'INST' cl 2045 ul 13583 zstd
-chunk b'HASH' cl 357359 ul 481015 head b'(\xb5/\xfd\xa0\xf7V\x07' decompress failed: ZstdError('decompression error: Data corruption detected')
-chunk b'\xbc\xfem\xa2' cl 2687054335 ul 2361765907 head b'\xbfA\xde\xa6\x1f\x00\xe7(' decompress failed: IndexError('bytearray index out of range')
-stats online-DataModelPatch no sources
-   parsed DataModelPatch instances 33464 with Source 0 props {}
+chunk b'HASH' cl 357359 ul 481015 zstd
+HASH head 6f75000010009cce8dad1e68f3f37a1218744bb43db22ca2e627e74c44162c1ec444d15ba8b6c3525162966453045669 len 481015
+chunk b'PROP' cl 47 ul 13592 zstd
+Source(29) class ModuleScript n 30063 bytes 64547696 head 69130000527a104a5b3209e006035e04456e756d0a55736572434672616d6504486561640d47657455736572434672616d65017006434672616d65036e657706416e676c6573076c6f63616c434613706f
+Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\x06\x03^\x04Enum\nUserCFrame\x04Head\rGetUserCFrame\x01p\x06CFrame\x03new\x06Angles\x07localCF\x13posit'
+chunk b'PRNT' cl 23339 ul 267717 zstd
+chunk b'SIGU' cl 0 ul 324 raw
+chunk b'SIGN' cl 0 ul 324 raw
+chunk b'END\x00' cl 0 ul 9 raw
+stats online-DataModelPatch scripts 30063 len min/med/max 71 334 1173066
+   first8 [('527a104a5b3209e0', 30063)]
+   byte8 [(6, 30063)]
+   byte9,10 [('0305', 9559), ('0303', 1892), ('0304', 1399), ('0309', 730), ('0307', 718), ('030c', 666)]
+   parsed DataModelPatch instances 33464 with Source 30063 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
+archived online InExperience
 write failures 0 []
-using: 
-tar (child): : Cannot open: No such file or directory
-tar (child): Error is not recoverable: exiting now
-tar: Child returned status 2
-tar: Error is not recoverable: exiting now
-tar exit 2
-StarterScript: [ 'err', 'Attempted to call require with invalid argument(s).' ]
-status: 0 ok, 1 failed, 0 running | draws: 0
+using: /tmp/cg-out/src-online-InExperience.tar.gz
+tar exit 0
+StarterScript: [
+  'err',
+  "Requested module experienced an error while loading: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'\n" +
+    'runtime.lua:953\n' +
+    'PatchRoot/CoreScripts/StarterScript:560\n' +
+    'runtime.lua:953 function require_\n' +
+    'runtime.lua:973\n'
+]
+status: 12 ok, 5 failed, 3 running | draws: 24
 errors:
-
+NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+AvatarContextMenu: runtime.lua:563: Argument 1 missing or nil
+InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
+InspectAndBuy: Requested module experience
 logs:
-
+CreateAdCampaignSheetConfig:9: attempt to call a nil value
+runtime.lua:563: Argument 1 missing or nil
+runtime.lua:563: Argument 1 missing or nil
+Store:10: Received error: Caught error in thunk
+Constants:147: table index is nil
 failed requires:
-
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table
+CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:563: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:563: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CoreGui/RobloxGui/Modules/Settings/BackButtonController :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+CoreGui/RobloxGui/Modules/Settings/Components/MenuBackButton :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: attempt to call a nil 
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: a
+CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CorePackages/Workspace/Packages/BuildExperience :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: attempt
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectAvatarPreviewColors :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/A
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectColorAdjustmentButtonColor :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectHasBodyTryOn :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarEx
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectTryOnBodyIds :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarEx
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AXCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index 
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Consta
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy/Types :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCam
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/BuildPage :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/C
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/AdsStatsView :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/Creat
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperie
+CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetView :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/B
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:563: Argument 1 missing or nil
+PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+PatchRoot/CoreScripts/StarterScript :: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'
 node exit 0
 
 == SINGLE Workspace/Packages/Achievements ==
-err | Attempted to call require with invalid argument(s).
+ok | table
 
 
 == SINGLE Workspace/Packages/_Workspace/Achievements/Achievements ==
-err | Attempted to call require with invalid argument(s).
+ok | table
 
 
 == SINGLE Workspace/Packages/_Workspace/Achievements/Achievements/InExpAchievementManager ==
-err | Attempted to call require with invalid argument(s).
+ok | table
 
 
 == consts CreateAdCampaignSheetConfig ==
 strings: '': No such file
 
 == consts BackButtonController ==
-strings: '': No such file
-
+Rz J[2	 string sub ... truncateWithEllipsis Name andThen await$InGame.CommonUI.Label.ReturnFallback FormatByKey InGame.CommonUI.Label.ReturnTo	placeName any delay getTooltipText createBinding pcall R
+eturnToPublisherExperience TeleportTrustedBackForth game	AdService GetService TeleportService CorePackages CoreGui HttpRbxApiService require Packages Promise Roact	RobloxGui WaitForChild M
+odules Common httpRequest TeleportHistoryButtons GetEngineFeature	Workspace RobloxTranslator GameDetailRodux GetGameNameAndDescription GetAdTeleportInfo GameId GetThirdPartyTeleportInfo defer ge
+tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 4- 4-  @  @ @o @o @o @o @o @M @M o	 @M	 M		s M		 R	 @o @M @M @M x! Q{M] 
 == consts NotificationScript2 ==
-strings: '': No such file
+Rz J[2	 FormatByKey pcall LocalizedGetString Format RobloxLocaleId new	SetLocale warn%Failed to translate string with key:  translateString settings!FriendRequestNotificationThrottle GetFVariable ton
+umber type boolean Instance Frame Name Size Position BackgroundTransparency createFrame TextButton UDim2 Color3 BackgroundColor3 BorderSizePixel Enum Font SourceSansBold FontSize TextColor3 TextTrunca
+te AtEnd TextScaled	UIPadding UDim PaddingTop PaddingBottom PaddingLeft PaddingRight Parent UITextSizeConstraint MaxTextSize MinTextSize createTextButton Notification createDefaultNotification Get
+PlayerImage ThumbnailSize	Size48x48 ThumbnailType HeadShot getFriendImage TextWrapped Text TextSize Vector2 AbsoluteSize GetTextSize Offset math min#updateNotificationForMultiLineTitle Clone Tex
+tFits Image Scale TextXAlignment Left string len sub  	ExtraText AnchorPoint GenerateGUID AddSelectionParent createNotification findNotification TweenOutCallback IsFriend TweenPositionInternal update
+Notifications wait Duration IsActive spawn tick Destroy game IsDescendantOf doTweenOut table remove Fire sendNotificationInfo Invoke function OnActivated ButtonType createNotificationButtonDetails dis
+connect Button2Text	VREnabled Callback Button1Text NotificationButtonType Primary insert	Secondary Title Icon	OnDisplay	OnDismiss Buttons Autolocalize TranslateGameText AutoLocalize Se
+ndNotification Button1 TranslateAndRegister MouseButton1Click connect Button2 onSendNotificationInfo number typeof BindableFunction IsA	GroupName	Developer createDeveloperNotification Accept$Not
+ificationScript-RequestFriendship ReportCounter Game RequestFriendship NotificationScript TrackEvent#NotificationScript-AcceptFriendship AcceptFriendship#NotificationScript-RevokeFriendship RevokeFrie
+ndship2NotificationScript-FriendshipNotificationDisplayed FriendshipNotificationDisplayed2NotificationScript-FriendshipNotificationDismissed FriendshipNotificationDismissed getAppFeaturePolicies getRe
+nameFriendsToConnections:InGame.NotificationScript2.Message.FriendRequestEvent.Sent Sent you a friend request! Friends DetailText Decline DisplayName UserId sendFriendNotification>InGame.NotificationS
+cript2.Message.FriendRequestEvent.Accepted New Friend getRequiresOSAFriendingEducation GetFriendCountAsync FriendRequestEvent4InGame.NotificationScript2.FriendRequestEvent.Accept RBX_NAME Issue onFrie
+fold: write error: Broken pipe
 
 == consts AvatarExperienceCommon/AvatarExperienceCommon/Constants ==
-strings: '': No such file
+Rz J[2	 script AvatarExperienceCommon FindFirstAncestor Parent require LabelAbuseTypeMapping Types CategoryTypes AvatarExperienceFlags AvatarExperienceModel Enums OutfitTypes InventoryOutfitType FFla
+gAXCatalogMakeupSupport Body AvatarAnimations Shoes DynamicHead Enum AvatarAssetType GetEnumItems Name Value tostring	AssetType Hat AccessoryType HairAccessory Hair FaceAccessory Face NeckAccessory 
+Neck ShoulderAccessory Shoulder FrontAccessory Front BackAccessory Back WaistAccessory Waist TShirtAccessory TShirt ShirtAccessory Shirt PantsAccessory Pants JacketAccessory Jacket SweaterAccessory Sw
+eater ShortsAccessory Shorts LeftShoeAccessory LeftShoe RightShoeAccessory	RightShoe DressSkirtAccessory DressSkirt EyebrowAccessory Eyebrow EyelashAccessory Eyelash GraphicTShirt HatAccessory He
+ad Torso RightArm LeftArm LeftLeg RightLeg ShouldersAccessory ClimbAnimation FallAnimation IdleAnimation JumpAnimation RunAnimation SwimAnimation WalkAnimation MoodAnimation bodyType BodyTypeScale hea
+d	HeadScale height HeightScale proportion ProportionScale depth DepthScale width WidthScale headColor3	HeadColor leftArmColor3 LeftArmColor leftLegColor3 LeftLegColor rightArmColor3 RightArmC
+olor rightLegColor3 RightLegColor torsoColor3 TorsoColor IS_LEFT IS_RIGHT Seen AXTooltipSeen TimeDismiss AXTooltipTimeDismiss ClickDismiss AXTooltipClickDismiss CallbackDismiss AXTooltipCallbackDismis
+s CreateOutfitKey avatar.createOutfit CreateMakeupLookKey avatar.createMakeupLook	EyeMakeup FaceMakeup	LipMakeup Avatar Makeup Outfit MakeupType Eye Lip BodyPart AttributeKey	IXP_LAYER TagNam
+e WIDGET Animations PurchasedMakeup CreatedMakeup tonumber BODY_BUNDLE_TYPE_ID AVATAR_ANIMATIONS_BUNDLE_TYPE_ID SHOES_BUNDLE_TYPE_ID DYNAMIC_HEAD_BUNDLE_TYPE_ID)BUNDLE_TYPE_ID_STRING_TO_NAME_FOR_BACKE
+ND ASSET_TYPE_TO_ACCESSORY_TYPE ACCESSORY_TYPE_TO_ASSET_TYPE1ASSET_TYPE_ID_STRING_TO_HUMANOID_DESCRIPTION_PROP"HUMANOID_DESCRIPTION_SCALE_TO_NAME6BODY_PART_FOR_SKIN_COLORING_ID_TO_HUMANOID_DESCRIPTION
+ ASSET_TYPE_NAME_TO_ID_STRING ASSET_TYPE_ID_STRING_TO_NAME NAVIGATION_DIRECTION LANDSCAPE_UI_WIDTH_PERCENTAGE LANDSCAPE_SCENE_WIDTH_PERCENTAGE 356 AVATAR_BLOCKY_DEFAULT_BUNDLE_ID AXTooltipStorageKey A
+X_TOOLTIP_STORAGE_KEY AX_TOOLTIP_COUNTERS AVATAR_EDITOR_CONSTANTS LAYERED_CLOTHING_ORDER LAYERED_ASSET_TYPES#ASSET_TYPE_ID_STRING_TO_MAKEUP_TYPE MAKEUP_TYPE_TO_ASSET_TYPE_ID LAYERED_MAKEUP_ORDER MAKEU
 
-== StarterScript file:  ==
-strings: '': No such file
+== StarterScript file: /tmp/patch/PatchRoot/CoreScripts/StarterScript.luauc ==
+J[2	 pcall require warn#Failure to Start CoreScript module  Name safeRequire Modules Captures CapturesApp takeCapture	Watermark CoreScripts/ScreenTimeInGame AddCoreScriptLocal IsSubjectToChi
+naPolicies game IsLoaded Loaded Wait LuobuWarningToast UserSettings UserRoactBubbleChatBeta IsUserFeatureEnabled	Workspace Packages PurchasePrompt mountPurchasePrompt	VREnabled GetPropertyCha
+ngedSignal VRAvatarHeightScaling VirtualKeyboard UserGui IxpServiceWrapper IXPServiceWrapper UserId InitializeAsync default initialize AdsEudsa starterScript AdGuiInteractivity EnhancedVideo InExperie
+nceClickout GenericChallenges Middleware"InitExperienceChallengeInterceptor start SocialUpsell Overlay initializeInExpOverlay GetDisplayStore setTopBarHeight TopbarInset Height Display Connect CorePac
+kages GetService ScriptContext UserInputService GuiService	VRService Players RunService CoreGui	RobloxGui WaitForChild#CoreScripts/CoreScriptErrorReporter Roact	Scheduler CachedPolicySe
+rvice Flags&FFlagUseRoactGlobalConfigInCoreScripts GetFFlagScreenshotHudApi GetFFlagEnableNewInviteMenuIXP Settings Pages	ShareGame NewInviteMenuExperimentManager#GetFFlagEnableSoundSessionTelem
+etry SharedFlags#GetFFlagReportAnythingAnnotationIXP TrustAndSafetyIxp TrustAndSafetyIXPManager Experiment GetCoreScriptsLayers GetFFlagRtMessaging AddPublishAssetPrompt6 DefineFastFlag EnablePromptAg
+eCheckListener isCharacterNameHandlerEnabled GetFFlagEnableSocialContextToast!GetFFlagEnableAppChatInExperience&GetFFlagChromeCentralizedConfiguration GetFFlagEnableCrossExpVoice FStringReactSchedulin
+gContext!FFlagFriendsCallingClientGate_DEV*LuaAppEnableToastNotificationsCoreScripts4 DisableLuobuWarningToast#FFlagDebugDisableExperienceChatMain GetFFlagVoiceUserAgency37GetFFlagLuaInExperienceCoreS
+criptsGameInviteUnification EnableSendCameraAccessAnalytics$EnableExperienceNotificationPrompts2 EnableCancelSubscriptionApp GetEngineFeature EnableCancelSubscriptionAppLua AudioFocusManagement8Enable
+ExperienceGenericChallengeRenderingOnLoadingScript EnableRobloxCommerce EnableLinkSharingEvent FFlagEnableShareSheet PlayerFeedbackEnabled$FFlagLuaAppInExperienceDetailsPrompt EnableSystemScrim Enable
+CoreUISystemV2 FFlagEnableNewBackpack EnableCorescriptsProfiler#CoreScriptsProfilerTelemetryContext SelfieFrontendConsoleDesktop3 EnableSelfieQRCode)GetEngineFeatureEnablePromptRobuxTransfer UIBlox Co
+reScriptsInitializer UIBloxInGameConfig init System InExperienceTopBar FFlagTopBarRefactor ExperimentCacheManager!LuaAppUseAppHttpStoreInExperience	HttpStore Instance _create GetReactSchedulerIXPC
+onfig unstable_setSchedulerFlags!FFlagEnableSchedulerFlagOverrides GetSchedulerFlagOverrides getInExp FFlagEnableAEGIS2CommsFAEUpsell LocalPlayer BuildExperiencePlaytestLaunch teamCreateUtils isViewer
+ BuildExperience mountTeamCreateViewer PlaceId+SoundServiceControlsDefaultListenerLocation#CoreScripts/DefaultListenerLocation script Parent CoreScripts/AppChatMain CoreScripts/FriendsCallingMain Cros
+sExperienceVoice IXPManager InExperienceSessionization Chrome Enabled ExpChat GlobalFlags AvatarChatEnabled ChromeEnabled!GetFFlagJoinWithoutMicPermissions JoinWithoutMicPermissions InExperienceInterv
+entionApp3FFlagLuaAppEnableInExperienceDataModelStreamStarter IsStudio setGlobalConfig propValidation elementTracing InGameMenuDependencies new Folder Sounds CoreScripts/NotificationScript2.CoreScript
+s/InExperienceDataModelStreamStarter4ProtocolLaunchPrivateChannelUpdateCheckEngineFeature ChannelUpdatePrompt	coroutine wrap ConfigureChrome SelfieView TopBar InExperienceSideSheetUtils isSideSheetE
+nabled InExperienceSideSheet FFlagEnableWhatsNew InGameWhatsNew FFlagAppNavMyStatsTab BuildModeLaunch hasBuildMode$mountCreatorAgentResumeToastReceiver StarterGui Enum CoreGuiType Chat SetCoreGuiEnabl
+ed'FFlagBuildExperienceInGameCaptureToChat mountChatSheet InExperienceOverlay createOverlay LuobuModerationStatus InExperienceIntervention CoreScripts/MainBotChatScript2 ProximityPrompts CoreScripts/P
+roximityPrompt ValidateUGCBodyAPIFeature Server UGCValidation UGCValidationFunctionInstaller)CoreScripts/PerformanceStatsManagerScript CoreScripts/PlayerRagdoll ChatSelector PlayerList PlayerListManag
+er EnableBubbleChatFromChatService CoreScripts/PlayerBillboards PublishAssetPrompt ExperienceEvents ExperienceEventsApp PlayerFeedback Groups	GroupsApp AvatarGeneration SelfieConsent SelfieQr CoreSc
+ripts/BlockPlayerPrompt CoreScripts/FriendPlayerPrompt PromptAgeCheckHandler CoreScripts/AvatarContextMenu Backpack BackpackScript KeyboardUINavigation EmotesMenu EmotesMenuMaster AvatarEditorPrompts 
+FFlagVirtualCursorModularization VirtualCursorModular VirtualCursor CoreScripts/VehicleHud CoreScripts/InviteToGamePrompt TouchScreenEnabled TouchEnabled CoreScripts/ContextActionTouch ControlFrame Bo
+ttomLeftControl Visible CoreScripts/InspectAndBuy VRAvatarGestures VRAvatarGesturesClient CoreScripts/NetworkPause CoreScripts/ScreenshotHud9CoreScripts/MicrophoneDevicePermissionsLoggingInitializer V
+oiceChatSupported CoreScripts/VoiceDefaultChannel CoreScripts/ExperienceChatMain CoreScripts/ChatEmoteUsage CoreScripts/ToastNotificationGUI RtMessagingService FacialAnimationStreaming2$CoreScripts/Fa
+cialAnimationStreaming CoreScripts/AvatarMood CoreScripts/PortalTeleportGUI'EnableAdGuiInteractivityControlRefactor EnableLuaAdPlayer AdPlayer EnableVoiceAttention CoreScripts/VoiceAttention CoreScrip
+ts/SoundTelemetry ApolloClient CoreScripts/CharacterNameHandler CoreScripts/VoiceUserAgency$CoreScripts/CoreScriptsGlobalEffects SoundManager CoreScripts/SocialContextToast CoreScripts/GameInviteModal
+GUI#CoreScripts/ExperienceNotifications Achievements InExpAchievementManager startUp Common GetFFlagPlayerViewRemoteEnabled CoreScripts/PlayerView%CoreScripts/SendCameraAccessAnalytics CoreScripts/Bul
+kPurchaseApp#CoreScripts/InExperienceTransferApp&CoreScripts/ExperienceAudioFocusBinder!CoreScripts/CancelSubscriptionApp CoreScripts/CommercePurchaseApp CoreScripts/SystemScrim"CoreScripts/CoreGuiEna
+bleAnalytics"CoreScripts/OpenShareSheetWithLink(CoreScripts/UniversalShareSheetScreenGui%CoreScripts/InExperienceDetailsPrompt ReactPerfTracker task delay$ReactSchedulingTrackerStartUpDelayMs DefineFa
+stInt ReactSchedulingTracker Memory MemoryScope InExperience RecordingServicePlaybackApiLua ExperienceStateReplay CoreScriptsProfiler CoreScriptsProfilerTelemetry  @R @@o 0@R P@o P@R p@o P@R p@o P@R p
+@o P@R p@o P@R p@o P@R p@o P@R p@o @o	 @o 1 @o!2 AM! M!!8 M!!}3 AM" M""8 M"" AM# M##8 M##H5 @o%6 ##H( @o&7 $$H( @o'8 %%+9 @o(: &&H( @o); ''+9 @o*< ((H( @o+= ))+9 @o,> **H( AM, M,, M,, M++ @o.@ ,,+9 
+AM. M.. M.. M--HA @o0B ..H( @o1C //H( AM1 M11 M11 M00OD @o3E 11H( @o4F 22H( @o5G 33H( @o5H 33+9 AM5 M55 M55 M44 AM6 M66nJ AM7 M77 M77CK M66TL M75 R86 AM8 M88 M88 AM8 M88 M88 M878 M88.P AM: M:: M:: M99
+ M:9 ::;S @o<T ::H( AM< M<< M<<TU M<; M<<mW AM< M<< M<< M;; R<; R>< AM> M>> M>> M==$Z AM? M?? M?? M>>^[ M?> RA? AM? M?? M?? M>>7] oB^ AMA MAA MAA MAA M@@ AMB MBB MBB MBB @MBB @oCg AA+9 oCh FMDD$k oCl 
+oCm AMB MBB MBB MAA MBA BB;S AMB MBB MBB AMC MCC MCC MBB AMD MDD MDDGs MDC 0ED MDC 0ED\v AMD MDD MDD MCC RDC AME MEE MEEGs MED 0FEix @oFy DDH( AMF MFF MFF MEE MF	 AMG MGG MGFnJ MHG RI6 0IH H$k F
+MMM$k @oL JJ+9 ARNK RJM HoP MQK RSM sOPS MKJ RKI MKK RKI RKI AMK MKK MKK MKK RLI AML MLL MLL MKK RMI AMM MMM MMM MLL` RNI MNN MNN MNN ROI MOO MOO RON ROM MPNi +@" @oR AMQ MQQ MQQ MPP MQN 0SRA RNI MNN 
+MNN% MNMM @oO MM+9 RNI MNN MNN @oO MM+9 @oO MM+9 AMN MNN MNN RNI MNNH RNI MNNA MNNs MNO @oP NN+9 ROI ROI MOO ROI ROI MOO ROI MOO( ROI MOOL ARRO RNQ HoT MUO RWQ sSTW MON AMO MOO MOO ROI MOOH ROI MOO RO
+I MOO MOO ROI MOO MOO ROI AMO MOO MOO MNNK RPI MPP MPP9 RPI MPP MPPS @oR PP+9 MPP 0QP RQI MQQ MQQ MQQ @oR PP+9 FMSS$k FMSS$k @oR @oR PP+9 FMSS$k FMSS$k @oR PP+9 @oR PP+9 MQQ MQQ ARTQ RPS HoV MWQ RYS s
+UVY MPP @oR PP+9 FMSS$k FMSS$k RQI FMSS$k RP! FMSS$k AMQ MQQ MQQ MPP MQP RQ" FMTT$k FMTT$k AMR MRR MRRH MQQ MRQ AMT MTTs MTT8 MTTf RTS RT4 AMU MUU, MUT @oW VUW AMX MXX RYV AMY MYY MYY9$ MYX M\X:& M\\ 
+@o[( YY+9 RZI MZZ MZZ AMZ MZZ MZZ MYY	- R[Y R\Z j3B 
