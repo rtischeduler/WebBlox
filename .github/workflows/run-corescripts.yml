@@ -31,6 +31,8 @@ jobs:
             tar xzf "$f" -C /tmp/patch; echo "tar exit $?"
             node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }}; echo "node exit $?"
             s=$(find /tmp/patch -path '*CoreScripts/StarterScript*' -type f -print -quit)
+            echo; echo "== where InExpAchievementManager lives =="; grep -rl --binary-files=text InExpAchievementManager /tmp/patch | head -8
+            find /tmp/patch -iname '*Achievement*' | head -12
             echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200
           } > analysis/coregui/corescripts-report.txt 2>&1
           head -c 2500 analysis/coregui/corescripts-report.txt

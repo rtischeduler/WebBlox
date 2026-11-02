@@ -673,7 +673,7 @@ local function serviceStub(names) for _, n in ipairs(list(names)) do service(n) 
 service("Workspace", { props = { CurrentCamera = NIL, Gravity = 196.2, DistributedGameTime = 0, FilteringEnabled = true, StreamingEnabled = false }, init = function(self, d) d.props.CurrentCamera = addChild(self, "Camera", "Camera") end,
   methods = { GetServerTimeNow = function() return host.now() end, Raycast = function() return nil end } })
 service("Lighting", { props = { Brightness = 2, ClockTime = 14, FogEnd = 100000, Technology = E.Technology.Compatibility, Ambient = c3(0, 0, 0) } })
-service("ReplicatedStorage"); service("ReplicatedFirst"); service("StarterPack"); service("StarterPlayer"); service("Teams"); service("ServerStorage")
+service("ReplicatedStorage"); service("ReplicatedFirst"); service("StarterPack"); service("StarterPlayer"); service("Teams", { methods = { GetTeams = function() return {} end } }); service("ServerStorage")
 service("SoundService", { props = { RespectFilteringEnabled = true, AmbientReverb = E.ReverbType.NoReverb }, methods = { SetListener = noop, PlayLocalSound = noop } })
 service("StarterGui", { props = { ShowDevelopmentGui = true, ScreenOrientation = E.ScreenOrientation.LandscapeSensor, VirtualCursorMode = E.VirtualCursorMode.Default }, events = { "CoreGuiChangedSignal" }, methods = {
   SetCore = function(self, n, v) local h = coreSet[n]; if h then return h(v) end; coreStore[n] = v end,
