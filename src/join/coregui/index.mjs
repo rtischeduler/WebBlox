@@ -37,7 +37,7 @@ export function startCoreGui({ proxy, canvas, log = () => {}, fallbackBase = "en
     for (const [n, e] of Object.entries(cg.errors)) log("[coregui] failed", n, e);
     repaint(cg);
     globalThis.webblox = Object.assign(globalThis.webblox || {}, { coregui: cg });
-    import("../../vm/boot.mjs").then((m) => m.bootVM(cg, { log })).then((v) => { globalThis.webblox.vm = v; })
+    import("../../vm/boot.mjs").then((m) => m.bootVM(cg, { log, canvas, player: globalThis.webblox?.player })).then((v) => { globalThis.webblox.vm = v; })
       .catch((e) => log("[vm] failed", e));
     return cg;
   })().catch((e) => { state.error = String(e.message || e); log("[coregui] failed", e); repaint(null); running = null; });

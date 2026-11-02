@@ -87,3 +87,11 @@ Measured against the real InExperience patch (extracted archive, every 25th Core
 The leftovers are a few more services (InsertService), `Dev` folders the patch does not contain, and `ValidationEnums` (UGCValidation).
 Not done on purpose: layout/`AbsoluteSize`/rendering (step 3), real input, replication of players/chat from the server (step 4). Hooks left for them: `__wb.hooks` (property-change listeners), `__wb.setRaw(inst, prop, value)` for computed values,
 `__wb.remote` (RemoteEvent/TextChannel traffic), `host.measure` for text. 419 `.luau` blobs in the other encoding are still unhandled.
+
+## Step 3 done: GUI layer on the canvas (layout + paint + input)
+- `src/vm/gui.lua` (3a): layout engine, writes `AbsolutePosition/Size`.
+- `src/vm/paint.lua` (3b): `__wb.guiDraw()` walks CoreGui/PlayerGui ScreenGuis (DisplayOrder, ZIndex, clipping) into a JSON draw list (rect/stroke/image/text/clip); `__wb.guiPointer(kind, x, y, button)` hit-tests topmost GuiObject and fires MouseEnter/Leave/MouseMoved, MouseButton1/2 Down/Up/Click, Activated.
+- `src/vm/canvasgui.mjs`: paints the list on the 2D canvas, canvas text measurement for the layout engine, image loading (`resolveImage`), pointer wiring, rAF loop calling `rt.step` + relayout on resize.
+- `boot.mjs` now attaches it to the join.html canvas, adds the local player, and tries to require the CoreGui entry modules (TopBarApp, PlayerList, Chat, InGameMenu...) logging the outcome in `window.webblox.vm.started`.
+Not done: keyboard/TextBox input, rbxasset:// image resolution via `WebClient.metadata.json`, UIGradient painting, running the CoreScripts' own app roots (UIBlox.init etc).
+Tests: `node --test test/gui-paint.test.mjs test/gui-layout.test.mjs`.

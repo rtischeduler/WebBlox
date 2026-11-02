@@ -85,7 +85,7 @@ export async function createRuntime(vm, tree, opts = {}) {
   L.pcall(1, 1); // -> RT
   L.setGlobal("__wb");
   L.settop(base);
-  for (const name of ["gui.lua"]) {
+  for (const name of ["gui.lua", "paint.lua"]) {
     L.loadSource(await readLua(name), "=" + name);
     L.getGlobal("__wb");
     L.pcall(1, 0);
@@ -106,6 +106,9 @@ export async function createRuntime(vm, tree, opts = {}) {
     stats,
     mount: (root = tree.root) => call("mount", [root]),
     step: (dt = 1 / 60) => { call("step", [dt]); call("guiStep"); },
+    draw: () => call("guiDraw", [], 1)[0] || "[]",
+    pointer: (kind, x, y, button = 1) => call("guiPointer", [kind, x, y, button], 1)[0],
+    needsPaint: () => call("guiNeedsPaint", [], 1)[0],
     layout: (w, h, inset) => call("guiLayout", [w, h, inset], 1)[0],
     addPlayer: (userId, name, displayName = name, isLocal = false) => call("addPlayer", [userId, name, displayName, isLocal]),
     removePlayer: (userId) => call("removePlayer", [userId]),
