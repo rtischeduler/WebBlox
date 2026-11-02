@@ -620,7 +620,7 @@ local white, black, gray = c3(1, 1, 1), c3(0, 0, 0), c3(0.639, 0.635, 0.647)
 local guiBase = { AbsolutePosition = v2(0, 0), AbsoluteSize = v2(0, 0), AbsoluteRotation = 0, Visible = true, AutoLocalize = true, RootLocalizationTable = NIL, SelectionBehaviorUp = E.SelectionBehavior.Escape,
   SelectionBehaviorDown = E.SelectionBehavior.Escape, SelectionBehaviorLeft = E.SelectionBehavior.Escape, SelectionBehaviorRight = E.SelectionBehavior.Escape }
 class("GuiBase", "Instance"); class("GuiBase2d", "GuiBase", { props = guiBase, readonly = { "AbsolutePosition", "AbsoluteSize", "AbsoluteRotation" }, events = { "SelectionChanged" } })
-local guiObject = { Active = false, AnchorPoint = v2(0, 0), AutomaticSize = E.AutomaticSize.None, BackgroundColor3 = gray, BackgroundTransparency = 0, BorderColor3 = black,
+local guiObject = { Draggable = false, Active = false, AnchorPoint = v2(0, 0), AutomaticSize = E.AutomaticSize.None, BackgroundColor3 = gray, BackgroundTransparency = 0, BorderColor3 = black,
   BorderMode = E.BorderMode.Outline, BorderSizePixel = 1, ClipsDescendants = false, LayoutOrder = 0, Position = u2(), Size = u2(), SizeConstraint = E.SizeConstraint.RelativeXY,
   Rotation = 0, Selectable = true, SelectionGroup = false, SelectionImageObject = NIL, SelectionOrder = 0, ZIndex = 1, NextSelectionUp = NIL, NextSelectionDown = NIL, NextSelectionLeft = NIL, NextSelectionRight = NIL, Interactable = true }
 local function noop() end
@@ -839,7 +839,7 @@ for _, n in ipairs(list("ChatWindowConfiguration ChatInputBarConfiguration Chann
   class(n, "Instance", { props = { Enabled = true, TextSize = 14, TextColor3 = white, BackgroundColor3 = black, BackgroundTransparency = 0.3, FontFace = G.Font.new("rbxasset://fonts/families/GothamSSm.json"), TextStrokeColor3 = black, TextStrokeTransparency = 1,
     HeightScale = 1, WidthScale = 1, AbsolutePosition = v2(0, 0), AbsoluteSize = v2(0, 0), HorizontalAlignment = E.HorizontalAlignment.Left, VerticalAlignment = E.VerticalAlignment.Top, PrimaryAlias = "", SecondaryAlias = "", AutocompleteVisible = true, Text = "", PrefixText = "", Translation = "" } })
 end
-serviceStub("CorePackages SocialService MarketplaceService BadgeService GroupService AnalyticsService VoiceChatService AvatarEditorService HapticService ScriptContext Stats LogService TestService MemStorageService UserService ProximityPromptService PermissionsService AssetService ContentProvider ExperienceStateCaptureService CaptureService VideoCaptureService GamePassService FriendService ChangeHistoryService Debris UserGameSettings AdService AvatarChatService MessageBusService CoreScriptSyncService VoiceChatInternal ExperienceService LanguageService SafetyService InputService CommerceService")
+serviceStub("MeshContentProvider SolidModelContentProvider TextureContentProvider"); serviceStub("CorePackages SocialService MarketplaceService BadgeService GroupService AnalyticsService VoiceChatService AvatarEditorService HapticService ScriptContext Stats LogService TestService MemStorageService UserService ProximityPromptService PermissionsService AssetService ContentProvider ExperienceStateCaptureService CaptureService VideoCaptureService GamePassService FriendService ChangeHistoryService Debris UserGameSettings AdService AvatarChatService MessageBusService CoreScriptSyncService VoiceChatInternal ExperienceService LanguageService SafetyService InputService CommerceService")
 class("LogService", "Instance", { service = true, events = { "MessageOut" }, methods = { GetLogHistory = function() return {} end } })
 class("Debris", "Instance", { service = true, methods = { AddItem = function(self, i, t) task.delay(t or 10, function() if isInst(i) then base.Destroy(i) end end) end } })
 
@@ -1097,7 +1097,7 @@ do
 end
 for _, n in ipairs(list("GenericChallengeService CreatorStoreService")) do service(n, { lenient = true }) end
 for _, n in ipairs(list("PlatformFriendsService ExperienceAuthService")) do service(n, { lenient = true }) end
-class("SettingsGroup", "Instance", { lenient = true, notCreatable = true, props = { SavedQualityLevel = E.SavedQualitySetting.Automatic, QualityLevel = 5, EagerBulkExecution = false }, events = { "PerformanceStatsVisibleChanged" } })
+class("SettingsGroup", "Instance", { lenient = true, notCreatable = true, props = { SavedQualityLevel = E.SavedQualitySetting.Automatic, QualityLevel = 5, EagerBulkExecution = false, PreferredTransparency = 1, ReducedMotion = false }, events = { "PerformanceStatsVisibleChanged" } })
 classes.GuiService.events.InspectMenuEnabledChangedSignal = true; classes.GuiService.events.SpecialKeyPressed = true
 classes.GuiService.methods.AddSpecialKey = function() end; classes.GuiService.methods.RemoveSpecialKey = function() end
 classes.GuiService.methods.GetHardwareSafeViewport = function() return G.Rect.new(0, 0, 1280, 720) end
