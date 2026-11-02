@@ -23,7 +23,7 @@ input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid
 button{font:15px system-ui,sans-serif;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:#1e242c;color:var(--text);cursor:pointer}
 button.primary{background:#2a5db0;border-color:#2a5db0}
 button:disabled{opacity:.5;cursor:default}
-#wb-status{margin-left:auto;color:var(--dim);font-size:13px}
+#wb-status{margin-left:auto;color:var(--dim);font-size:13px;white-space:pre-wrap;word-break:break-word;max-width:100%;user-select:text}#wb-status.err{color:#ff6b6b;font-family:ui-monospace,Consolas,monospace;font-size:12px}
 ol#steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 #steps li{display:grid;grid-template-columns:14px 110px 1fr;gap:10px;align-items:center;font-size:14px}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
@@ -131,14 +131,26 @@ const bases = async (repo) => {
   const s = await latest(repo);
   return [s && "https://cdn.jsdelivr.net/gh/" + repo + "@" + s + "/", ...["cdn", "fastly", "gcore"].map((h) => "https://" + h + ".jsdelivr.net/gh/" + repo + "@main/")].filter(Boolean);
 };
-const say = (t) => { const s = document.getElementById("wb-status"); if (s) s.textContent = t; };
+const say = (t) => { const s = document.getElementById("wb-status"); if (s) { s.textContent = t; s.classList.toggle("err", /^(Failed|Error|Uncaught)/.test(String(t))); } };
+// Full error text: name, message, cause chain, then every stack frame (each frame names its source script:line:col).
+const fmtErr = (e, where) => {
+  if (!(e instanceof Error) && !(e && e.stack)) return String(e && e.message || e);
+  const out = [(e.name || "Error") + ": " + (e.message || "")];
+  for (let c = e.cause, n = 0; c && n < 3; c = c.cause, n++) out.push("caused by " + (c.name || "Error") + ": " + (c.message || c));
+  if (where) out.push("source: " + where);
+  if (e.stack) out.push(String(e.stack).split("\n").filter((l) => !l.startsWith((e.name || "Error") + ": ")).slice(0, 12).join("\n"));
+  return out.join("\n");
+};
+window.__wbFmtErr = fmtErr;
+addEventListener("error", (ev) => { const w = ev.filename ? ev.filename + ":" + ev.lineno + ":" + ev.colno : "unknown script"; say("Uncaught " + fmtErr(ev.error || new Error(ev.message), w)); });
+addEventListener("unhandledrejection", (ev) => say("Uncaught (in promise) " + fmtErr(ev.reason)));
 (async () => {
   say("Checking for updates…");
   const [own, sand, kst, stor] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff"), bases("TongSherbet/storage")]);
   let mod = null, last = null;
-  for (const b of own) { try { mod = await import(b + "src/join/app.mjs"); break; } catch (e) { last = e; } }
+  for (const b of own) { try { mod = await import(b + "src/join/app.mjs"); break; } catch (e) { last = e; console.warn("[join] import failed", b + "src/join/app.mjs", e); } }
   if (!mod) { try { mod = await import("./src/join/app.mjs"); } catch (e) { throw last || e; } }
   await mod.boot({ sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
-})().catch((e) => { say("Failed: " + (e && e.message || e)); console.error(e); });
+})().catch((e) => { say("Failed: " + fmtErr(e)); console.error(e); });
 </script>
 </body></html>

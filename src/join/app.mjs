@@ -337,14 +337,14 @@ async function run() {
     say(session?.live ? "In game. Press Esc to leave." : "Done.");
   } catch (e) {
     const cancelled = controller.signal.aborted;
-    say(cancelled ? "Cancelled." : "Failed: " + (e.message || e));
+    say(cancelled ? "Cancelled." : "Failed: " + (window.__wbFmtErr ? window.__wbFmtErr(e) : (e.message || e)));
     if (!cancelled) {
       log("[join]", e);
       const code = e instanceof JoinError && Number.isInteger(e.status) ? e.status : null;
       loading?.showEngineFailure({ message: e.message || String(e), errorCode: code, source: "join", statusCode: e instanceof JoinError ? e.status : null });
     } else hideGame();
     if (!cancelled && new URLSearchParams(location.search).has("probe") && proxy) {
-      say("Failed: " + (e.message || e) + " — probing variants…");
+      say("Failed: " + (window.__wbFmtErr ? window.__wbFmtErr(e) : (e.message || e)) + "\n— probing variants…");
       try {
         const rows = await probeJoin({ request: proxy.request, placeId, browserTrackerId: Number(store.get("wb.tracker")) || undefined, signal: controller.signal, log });
         log("[probe] done", rows.length, "rows");
