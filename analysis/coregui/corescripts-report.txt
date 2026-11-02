@@ -1,4 +1,30 @@
 archives:
+extractor report tail:
+instances 36964 classes 4 scripts with Source 34225 bytecode 33806
+top classes [('ModuleScript', 34225), ('Folder', 2731), ('StringValue', 6), ('LocalizationTable', 2)]
+ModuleScript props+types {'AttributesSerialize': 1, 'Capabilities': 33, 'DefinesCapabilities': 2, 'LinkedSource': 1, 'Name': 1, 'ScriptGuid': 1, 'Source': 29, 'SourceAssetId': 27, 'Tags': 28}
+online InExperience https://assetdelivery.roblox.com/v2/assetId/80471914653504/version/15919 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encodin'
+   location https://fts.rbxcdn.com/v2/sc2/5d4067e3d8dfb7e98a58c200d1560a39?encoding=gzip&version=1&__token__=key-id=1~exp=1793757804~acl=/sc2/5d4067e3d8dfb7e98a58c200d1560a39*~hmac=aa3d2a75a1ece50639ee6135ae0c1048191a0c5
+   downloaded 14514645 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00L\xb8c\x94.\xc0'
+online InExperience https://assetdelivery.roblox.com/v1/asset/?id=80471914653504&version=15919 14514645 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00L\xb8c\x94.\xc0\xb2$\xfa\xb5m\xdb\xb6mc\xb7\xb5\xdb\xb6m\xdb\xb6mw\xef\xb6
+online UniversalApp https://assetdelivery.roblox.com/v2/assetId/118593852151835/version/16012 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encodin
+   location https://fts.rbxcdn.com/v2/sc1/8a058871b2547e4b4ec7e1faca15a145?encoding=gzip&version=1&__token__=key-id=1~exp=1793751818~acl=/sc1/8a058871b2547e4b4ec7e1faca15a145*~hmac=4a9f6c67d0b31340495b52c05f1297bd9092ebe
+   downloaded 13353458 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00\x00J@\xb5\xbf<'
+chunk b'SSTR' cl 20 ul 28 zstd
+chunk b'INST' cl 388 ul 2579 zstd
+chunk b'HASH' cl 68726 ul 75255 head b'(\xb5/\xfd\xa0\xf7%\x01' decompress failed: ZstdError('decompression error: Data corruption detected')
+chunk b'\x0e\x16p\x9b' cl 2530832276 ul 753928995 head b'\xf7\xd00\xee\x8d3E4' decompress failed: IndexError('bytearray index out of range')
+stats online-UniversalApp no sources
+   parsed UniversalApp instances 5349 with Source 0 props {}
+online DataModelPatch https://assetdelivery.roblox.com/v2/assetId/115043838414809/version/6833 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encodi
+   location https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encoding=gzip&version=1&__token__=key-id=1~exp=1793730258~acl=/sc2/8ab1de1819d66bfe7ade69f6dbe398d7*~hmac=c775444f8454657ff0465c0c1abab7f0fa7c65c
+   downloaded 14676793 b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x04\x00\x00Y@\xa6\xbf<'
+chunk b'INST' cl 2045 ul 13583 zstd
+chunk b'HASH' cl 357359 ul 481015 head b'(\xb5/\xfd\xa0\xf7V\x07' decompress failed: ZstdError('decompression error: Data corruption detected')
+chunk b'\xbc\xfem\xa2' cl 2687054335 ul 2361765907 head b'\xbfA\xde\xa6\x1f\x00\xe7(' decompress failed: IndexError('bytearray index out of range')
+stats online-DataModelPatch no sources
+   parsed DataModelPatch instances 33464 with Source 0 props {}
+write failures 0 []
 using: 
 tar (child): : Cannot open: No such file or directory
 tar (child): Error is not recoverable: exiting now
