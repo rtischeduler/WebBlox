@@ -23,12 +23,13 @@ jobs:
       - name: run the real StarterScript headless (no npm needed)
         run: |
           mkdir -p /tmp/patch analysis/coregui
-          tar xzf /tmp/cg-out/src-online-InExperience.tar.gz -C /tmp/patch 2>/dev/null || tar xzf "$(ls /tmp/cg-out/src-online-*.tar.gz | head -1)" -C /tmp/patch
-          node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }} 2>&1 | tee analysis/coregui/corescripts-report.txt | head -120
-      - name: StarterScript constants (what line 560 touches)
-        run: |
-          f=$(ls /tmp/patch/CoreScripts/StarterScript* | head -1)
-          { echo; echo "== StarterScript string constants =="; strings -n 3 "$f" | tr '\n' ' ' | fold -w 200; } >> analysis/coregui/corescripts-report.txt
+          f=$(ls /tmp/cg-out/src-online-*.tar.gz | head -1); echo "archive: $f"
+          tar xzf "$f" -C /tmp/patch
+          ls /tmp/patch | head
+          node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }} > analysis/coregui/corescripts-report.txt 2>&1 || true
+          s=$(find /tmp/patch -path '*CoreScripts/StarterScript*' -type f | head -1)
+          { echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200; } >> analysis/coregui/corescripts-report.txt || true
+          head -c 3000 analysis/coregui/corescripts-report.txt
       - name: commit to main
         if: always()
         run: |
