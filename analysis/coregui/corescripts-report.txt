@@ -7,33 +7,31 @@ tar exit 0
 StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
-NotificationScript2: NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeService"
-AvatarContextMenu: BackpackScript:705: DragBegin is not a valid member of TextButton "1"
-InviteToGamePrompt: RecordAndDumpView:2: 'MicroProfilerSe
+NotificationScript2: NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players"
+AvatarContextMenu: BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
+InviteToGamePrompt: MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
 InspectAndBuy: Requested module experience
 BulkPurchaseApp: Requested module experien
 logs:
-RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
-BackpackScript:705: DragBegin is not a valid member of TextButton "1"
-BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
+BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 Store:10: Received error: Caught error in thunk
 Constants:181: table index is nil
 failed requires:
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
-CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/MainViewMicroProfiler :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a
-CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/MicroProfilerView :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a val
-CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a val
-CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService'
+CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
@@ -53,29 +51,29 @@ CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Compo
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccess :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccessContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarEx
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/renderBulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:18
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
-PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeService"
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players"
 tracebacks:
-NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeS
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players
 runtime.lua:962
 runtime.lua:567
-NotificationScript2:1085
+NotificationScript2:1089
 runtime.lua:962 function require_
 runtime.lua:989
 runtime.lua:989
 
 --
-AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:705: DragBegin is no
+AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:1393: AddKey is not 
 runtime.lua:962
 runtime.lua:567
-BackpackScript:705 function MakeSlot
-BackpackScript:1449
-runtime.lua:962 f
+BackpackScript:1393 function OnCoreGuiChanged
+BackpackScript:1916
+r
 probe: [
-  'RobloxGui Enabled=true desc=2411 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,hidden) VehicleHudFrame(Frame,hidden)]\n' +
+  'RobloxGui Enabled=true desc=2502 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,v) VehicleHudFrame(Frame,hidden)]\n' +
     'RobloxNetworkPauseNotification Enabled=true desc=0 kids=[]\n' +
     'ExperienceChat Enabled=true desc=0 kids=[]\n' +
     'TeleportEffectGui Enabled=false desc=7 kids=[TopFrame(Frame,v) TopFrame(Frame,v) SpinnerContainer(Frame,v) TextLabel(TextLabel,v)]\n' +
@@ -162,6 +160,16 @@ odules Common httpRequest TeleportHistoryButtons GetEngineFeature	Workspace Robl
 tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 4- 4-  @  @ @o @o @o @o @o @M @M o	 @M	 M		s M		 R	 @o @M @M @M x! Q{M] 
 == R21 in NotificationScript2 ==
   37  133 GETTABLEKS A=21 B=20 C=174 D=-20972 aux=31  ; "GameSettings"
+
+== R10 in Constants ==
+  28   60 LOADK A=10 B=16 C=0 D=16  ; "Body"
+  28   61 SETTABLEKS A=10 B=9 C=80 D=20489 aux=17  ; "1"
+  29   63 LOADK A=10 B=18 C=0 D=18  ; "AvatarAnimations"
+  29   64 SETTABLEKS A=10 B=9 C=83 D=21257 aux=19  ; "2"
+  30   66 LOADK A=10 B=20 C=0 D=20  ; "Shoes"
+  30   67 SETTABLEKS A=10 B=9 C=82 D=21001 aux=21  ; "3"
+  31   69 LOADK A=10 B=22 C=0 D=22  ; "DynamicHead"
+  31   70 SETTABLEKS A=10 B=9 C=85 D=21769 aux=23  ; "4"
 
 == disasm Settings/BackButtonController 14-24 ==
 -- proto 10 ? @1
