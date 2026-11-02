@@ -928,7 +928,7 @@ end
 local results, failed, loading = {}, {}, {}
 -- VR-only modules: there is no VR in a browser; a permissive stub keeps their requirers loading.
 local function permissive() return setmetatable({}, { __index = function() return function() return nil end end, __call = function() return nil end }) end
-RT.stubModules = { LaserPointer = permissive }
+RT.stubModules = { LaserPointer = permissive, InExpAchievementManager = permissive }
 local function require_(n)
   local d = isInst(n) and D[n]
   if not d or d.class ~= "ModuleScript" then error("Attempted to call require with invalid argument(s).", 2) end
@@ -1074,4 +1074,6 @@ class("SettingsGroup", "Instance", { lenient = true, notCreatable = true, props 
 classes.GuiService.events.InspectMenuEnabledChangedSignal = true; classes.GuiService.events.SpecialKeyPressed = true
 classes.GuiService.methods.AddSpecialKey = function() end; classes.GuiService.methods.RemoveSpecialKey = function() end
 classes.AdService.methods.GetAdTeleportInfo = function() return nil end
+classes.GuiService.methods.GetHardwareSafeViewport = function() return G.Rect.new(0, 0, 1280, 720) end
+classes.GuiService.methods.GetGuiInset = function() return G.Vector2.new(0, 0), G.Vector2.new(0, 0) end
 return RT
