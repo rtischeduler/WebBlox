@@ -7,30 +7,30 @@ tar exit 0
 StarterScript: [
   'err',
   "Requested module experienced an error while loading: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'\n" +
-    'runtime.lua:961\n' +
+    'runtime.lua:962\n' +
     'PatchRoot/CoreScripts/StarterScript:560\n' +
-    'runtime.lua:961 function require_\n' +
-    'runtime.lua:981\n'
+    'runtime.lua:962 function require_\n' +
+    'runtime.lua:982\n'
 ]
 status: 12 ok, 5 failed, 3 running | draws: 24
 errors:
 NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-AvatarContextMenu: runtime.lua:571: Argument 1 missing or nil
+AvatarContextMenu: runtime.lua:572: Argument 1 missing or nil
 InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
 InspectAndBuy: Requested module experience
 logs:
 BackButtonController:22: attempt to compare number < nil
-runtime.lua:571: Argument 1 missing or nil
-runtime.lua:571: Argument 1 missing or nil
+runtime.lua:572: Argument 1 missing or nil
+runtime.lua:572: Argument 1 missing or nil
 Store:10: Received error: Caught error in thunk
 Constants:181: table index is nil
 failed requires:
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
-CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:571: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:572: Argument 1 missing or nil
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:571: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:572: Argument 1 missing or nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/Settings/BackButtonController :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
@@ -49,35 +49,37 @@ CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperien
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AXCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index 
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Consta
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy/Types :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:571: Argument 1 missing or nil
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:572: Argument 1 missing or nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 PatchRoot/CoreScripts/StarterScript :: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'
 tracebacks:
 NotificationScript2: Requested module experienced an error while loading: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-runtime.lua:961
+runtime.lua:962
 NotificationScript2:86
-runtime.lua:961 function require_
-runtime.lua:988
-runtime.lua:988
+runtime.lua:962 function require_
+runtime.lua:989
+runtime.lua:989
 
 --
-AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: runtime.lua:571: Argument 1 missing
-runtime.lua:961
+AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: runtime.lua:572: Argument 1 missing
+runtime.lua:962
 runtime.lua:483 function checkName
-runtime.lua:571
+runtime.lua:572
 BackpackScript:209 function NewGui
 BackpackScript:613 function MakeSlot
 Mo
 --
 InviteToGamePrompt: Requested module experienced an error while loading: Requested module experienced an error while loading: Requested module experienced an er
-runtime.lua:961
+runtime.lua:962
 BackButtonController:22
 runtime.l
 probe: [
   'Achievements ok=true type=table; RobloxGui=RobloxGui kids=10; CoreGui child RobloxGui (ScreenGui); CoreGui child RobloxNetworkPauseNotification (ScreenGui); CoreGui child ExperienceChat (ScreenGui); CoreGui child TeleportEffectGui (ScreenGui)'
 ]
+still waiting:
+
 node exit 0
 
 == SINGLE Workspace/Packages/Achievements ==
