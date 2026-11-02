@@ -1,77 +1,53 @@
 archives:
 /tmp/cg-out/src-online-InExperience.tar.gz
 extractor report tail:
-stats online-UniversalApp scripts 4703 len min/med/max 73 645 22758744
-   first8 [('527a104a5b3209e0', 4703)]
-   byte8 [(13, 4703)]
-   byte9,10 [('0305', 547), ('0304', 314), ('0303', 281), ('0306', 211), ('0308', 131), ('0307', 128)]
-   parsed UniversalApp instances 5349 with Source 4703 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
-online DataModelPatch https://assetdelivery.roblox.com/v2/assetId/115043838414809/version/6833 452 b'{"locations":[{"assetFormat":"source","location":"https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encodi
-   location https://fts.rbxcdn.com/v2/sc2/8ab1de1819d66bfe7ade69f6dbe398d7?encoding=gzip&version=1&__token__=key-id=1~exp=1793730258~acl=/sc2/8ab1de1819d66bfe7ade69f6dbe398d7*~hmac=c775444f8454657ff0465c0c1abab7f0fa7c65c
-   downloaded 14705294 b'<roblox!\x89\xff\r\n\x1a\n\x00\x00'
-chunk b'INST' cl 2045 ul 13583 zstd
-chunk b'HASH' cl 357359 ul 481015 zstd
-HASH head 6f75000010009cce8dad1e68f3f37a1218744bb43db22ca2e627e74c44162c1ec444d15ba8b6c3525162966453045669 len 481015
-chunk b'PROP' cl 47 ul 13592 zstd
-Source(29) class ModuleScript n 30063 bytes 64547696 head 69130000527a104a5b3209e006035e04456e756d0a55736572434672616d6504486561640d47657455736572434672616d65017006434672616d65036e657706416e676c6573076c6f63616c434613706f
-Source(29) decoded via seq sample b'Rz\x10J[2\t\xe0\x06\x03^\x04Enum\nUserCFrame\x04Head\rGetUserCFrame\x01p\x06CFrame\x03new\x06Angles\x07localCF\x13posit'
-chunk b'PRNT' cl 23339 ul 267717 zstd
-chunk b'SIGU' cl 0 ul 324 raw
-chunk b'SIGN' cl 0 ul 324 raw
-chunk b'END\x00' cl 0 ul 9 raw
-stats online-DataModelPatch scripts 30063 len min/med/max 71 334 1173066
-   first8 [('527a104a5b3209e0', 30063)]
-   byte8 [(6, 30063)]
-   byte9,10 [('0305', 9559), ('0303', 1892), ('0304', 1399), ('0309', 730), ('0307', 718), ('030c', 666)]
-   parsed DataModelPatch instances 33464 with Source 30063 props {'ModuleScript': ['AttributesSerialize', 'Capabilities', 'DefinesCapabilities', 'LinkedSource', 'Name', 'ScriptGuid', 'Source', 'SourceAssetId', 'Tags']}
-archived online InExperience
-write failures 0 []
+tail: cannot open '/tmp/cg-out/report.txt' for reading: No such file or directory
 using: /tmp/cg-out/src-online-InExperience.tar.gz
 tar exit 0
 StarterScript: [
   'err',
   "Requested module experienced an error while loading: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'\n" +
-    'runtime.lua:953\n' +
+    'runtime.lua:954\n' +
     'PatchRoot/CoreScripts/StarterScript:560\n' +
-    'runtime.lua:953 function require_\n' +
-    'runtime.lua:973\n'
+    'runtime.lua:954 function require_\n' +
+    'runtime.lua:974\n'
 ]
 status: 12 ok, 5 failed, 3 running | draws: 24
 errors:
 NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-AvatarContextMenu: runtime.lua:563: Argument 1 missing or nil
+AvatarContextMenu: runtime.lua:564: Argument 1 missing or nil
 InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
 InspectAndBuy: Requested module experience
 logs:
 CreateAdCampaignSheetConfig:9: attempt to call a nil value
-runtime.lua:563: Argument 1 missing or nil
-runtime.lua:563: Argument 1 missing or nil
+runtime.lua:564: Argument 1 missing or nil
+runtime.lua:564: Argument 1 missing or nil
 Store:10: Received error: Caught error in thunk
-Constants:147: table index is nil
+Constants:181: table index is nil
 failed requires:
-CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
-CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is
-CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table
-CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:563: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
+CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
+CoreGui/RobloxGui/Modules/BackpackScript :: runtime.lua:564: Argument 1 missing or nil
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:563: Argument 1 missing or nil
-CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
-CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: runtime.lua:564: Argument 1 missing or nil
+CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
+CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/Settings/BackButtonController :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 CoreGui/RobloxGui/Modules/Settings/Components/MenuBackButton :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: attempt to call a nil 
 CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: a
-CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
-CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
+CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BuildExperience :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig:9: attempt
-CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectAvatarPreviewColors :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/A
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectColorAdjustmentButtonColor :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectHasBodyTryOn :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarEx
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectTryOnBodyIds :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarEx
-CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AXCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index 
+CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AXCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index 
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Consta
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy/Types :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/
 CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCam
@@ -80,8 +56,8 @@ CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Compo
 CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience
 CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperie
 CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetView :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/B
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:563: Argument 1 missing or nil
-PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:147: table index is nil
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:564: Argument 1 missing or nil
+PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 PatchRoot/CoreScripts/StarterScript :: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'
@@ -99,43 +75,13 @@ ok | table
 ok | table
 
 
-== consts CreateAdCampaignSheetConfig ==
-strings: '': No such file
-
-== consts BackButtonController ==
-Rz J[2	 string sub ... truncateWithEllipsis Name andThen await$InGame.CommonUI.Label.ReturnFallback FormatByKey InGame.CommonUI.Label.ReturnTo	placeName any delay getTooltipText createBinding pcall R
-eturnToPublisherExperience TeleportTrustedBackForth game	AdService GetService TeleportService CorePackages CoreGui HttpRbxApiService require Packages Promise Roact	RobloxGui WaitForChild M
-odules Common httpRequest TeleportHistoryButtons GetEngineFeature	Workspace RobloxTranslator GameDetailRodux GetGameNameAndDescription GetAdTeleportInfo GameId GetThirdPartyTeleportInfo defer ge
-tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 4- 4-  @  @ @o @o @o @o @o @M @M o	 @M	 M		s M		 R	 @o @M @M @M x! Q{M] 
-== consts NotificationScript2 ==
-Rz J[2	 FormatByKey pcall LocalizedGetString Format RobloxLocaleId new	SetLocale warn%Failed to translate string with key:  translateString settings!FriendRequestNotificationThrottle GetFVariable ton
-umber type boolean Instance Frame Name Size Position BackgroundTransparency createFrame TextButton UDim2 Color3 BackgroundColor3 BorderSizePixel Enum Font SourceSansBold FontSize TextColor3 TextTrunca
-te AtEnd TextScaled	UIPadding UDim PaddingTop PaddingBottom PaddingLeft PaddingRight Parent UITextSizeConstraint MaxTextSize MinTextSize createTextButton Notification createDefaultNotification Get
-PlayerImage ThumbnailSize	Size48x48 ThumbnailType HeadShot getFriendImage TextWrapped Text TextSize Vector2 AbsoluteSize GetTextSize Offset math min#updateNotificationForMultiLineTitle Clone Tex
-tFits Image Scale TextXAlignment Left string len sub  	ExtraText AnchorPoint GenerateGUID AddSelectionParent createNotification findNotification TweenOutCallback IsFriend TweenPositionInternal update
-Notifications wait Duration IsActive spawn tick Destroy game IsDescendantOf doTweenOut table remove Fire sendNotificationInfo Invoke function OnActivated ButtonType createNotificationButtonDetails dis
-connect Button2Text	VREnabled Callback Button1Text NotificationButtonType Primary insert	Secondary Title Icon	OnDisplay	OnDismiss Buttons Autolocalize TranslateGameText AutoLocalize Se
-ndNotification Button1 TranslateAndRegister MouseButton1Click connect Button2 onSendNotificationInfo number typeof BindableFunction IsA	GroupName	Developer createDeveloperNotification Accept$Not
-ificationScript-RequestFriendship ReportCounter Game RequestFriendship NotificationScript TrackEvent#NotificationScript-AcceptFriendship AcceptFriendship#NotificationScript-RevokeFriendship RevokeFrie
-ndship2NotificationScript-FriendshipNotificationDisplayed FriendshipNotificationDisplayed2NotificationScript-FriendshipNotificationDismissed FriendshipNotificationDismissed getAppFeaturePolicies getRe
-nameFriendsToConnections:InGame.NotificationScript2.Message.FriendRequestEvent.Sent Sent you a friend request! Friends DetailText Decline DisplayName UserId sendFriendNotification>InGame.NotificationS
-cript2.Message.FriendRequestEvent.Accepted New Friend getRequiresOSAFriendingEducation GetFriendCountAsync FriendRequestEvent4InGame.NotificationScript2.FriendRequestEvent.Accept RBX_NAME Issue onFrie
-fold: write error: Broken pipe
-
-== consts AvatarExperienceCommon/AvatarExperienceCommon/Constants ==
-Rz J[2	 script AvatarExperienceCommon FindFirstAncestor Parent require LabelAbuseTypeMapping Types CategoryTypes AvatarExperienceFlags AvatarExperienceModel Enums OutfitTypes InventoryOutfitType FFla
-gAXCatalogMakeupSupport Body AvatarAnimations Shoes DynamicHead Enum AvatarAssetType GetEnumItems Name Value tostring	AssetType Hat AccessoryType HairAccessory Hair FaceAccessory Face NeckAccessory 
-Neck ShoulderAccessory Shoulder FrontAccessory Front BackAccessory Back WaistAccessory Waist TShirtAccessory TShirt ShirtAccessory Shirt PantsAccessory Pants JacketAccessory Jacket SweaterAccessory Sw
-eater ShortsAccessory Shorts LeftShoeAccessory LeftShoe RightShoeAccessory	RightShoe DressSkirtAccessory DressSkirt EyebrowAccessory Eyebrow EyelashAccessory Eyelash GraphicTShirt HatAccessory He
-ad Torso RightArm LeftArm LeftLeg RightLeg ShouldersAccessory ClimbAnimation FallAnimation IdleAnimation JumpAnimation RunAnimation SwimAnimation WalkAnimation MoodAnimation bodyType BodyTypeScale hea
-d	HeadScale height HeightScale proportion ProportionScale depth DepthScale width WidthScale headColor3	HeadColor leftArmColor3 LeftArmColor leftLegColor3 LeftLegColor rightArmColor3 RightArmC
-olor rightLegColor3 RightLegColor torsoColor3 TorsoColor IS_LEFT IS_RIGHT Seen AXTooltipSeen TimeDismiss AXTooltipTimeDismiss ClickDismiss AXTooltipClickDismiss CallbackDismiss AXTooltipCallbackDismis
-s CreateOutfitKey avatar.createOutfit CreateMakeupLookKey avatar.createMakeupLook	EyeMakeup FaceMakeup	LipMakeup Avatar Makeup Outfit MakeupType Eye Lip BodyPart AttributeKey	IXP_LAYER TagNam
-e WIDGET Animations PurchasedMakeup CreatedMakeup tonumber BODY_BUNDLE_TYPE_ID AVATAR_ANIMATIONS_BUNDLE_TYPE_ID SHOES_BUNDLE_TYPE_ID DYNAMIC_HEAD_BUNDLE_TYPE_ID)BUNDLE_TYPE_ID_STRING_TO_NAME_FOR_BACKE
-ND ASSET_TYPE_TO_ACCESSORY_TYPE ACCESSORY_TYPE_TO_ASSET_TYPE1ASSET_TYPE_ID_STRING_TO_HUMANOID_DESCRIPTION_PROP"HUMANOID_DESCRIPTION_SCALE_TO_NAME6BODY_PART_FOR_SKIN_COLORING_ID_TO_HUMANOID_DESCRIPTION
- ASSET_TYPE_NAME_TO_ID_STRING ASSET_TYPE_ID_STRING_TO_NAME NAVIGATION_DIRECTION LANDSCAPE_UI_WIDTH_PERCENTAGE LANDSCAPE_SCENE_WIDTH_PERCENTAGE 356 AVATAR_BLOCKY_DEFAULT_BUNDLE_ID AXTooltipStorageKey A
-X_TOOLTIP_STORAGE_KEY AX_TOOLTIP_COUNTERS AVATAR_EDITOR_CONSTANTS LAYERED_CLOTHING_ORDER LAYERED_ASSET_TYPES#ASSET_TYPE_ID_STRING_TO_MAKEUP_TYPE MAKEUP_TYPE_TO_ASSET_TYPE_ID LAYERED_MAKEUP_ORDER MAKEU
-
+== consts CreateAdCampaignSheetConfig (/tmp/patch/PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/BuildExperience/BuildExperience/Components/Ads/CreateAdCampaignSheet/CreateAdCampaignSheetConfig.luau) ==
+00000000: 527a 104a 5b32 09e0 0d03 171e 4445 4641  Rz.J[2......DEFA
+00000010: 554c 545f 4341 4d50                      ULT_CAMP
+Rz J[2	 DEFAULT_CAMPAIGN_DURATION_DAYS DEFAULT_ESTIMATED_PRICE_ROBUX DEFAULT_RUN_START_TIME_MS DEFAULT_RUN_END_TIME_MS ADVERTISING_TERMS_URLThttps://en.help.roblox.com/hc/en-us/articles/1549484626306
+0-Roblox-Advertising-Terms ADVERTISING_STANDARDS_URLQhttps://en.help.roblox.com/hc/en-us/articles/13722260778260-Advertising-Standards ADVERTISING_TERMS_START_MARKER <advertisingTerms> ADVERTISING_TER
+MS_END_MARKER </advertisingTerms>"ADVERTISING_STANDARDS_START_MARKER <advertisingStandards> ADVERTISING_STANDARDS_END_MARKER </advertisingStandards> BALANCE_LOADING ... BALANCE_UNAVAILABLE DateTime fr
+omUniversalTime UnixTimestampMillis `p `p `p 4>6 
 == StarterScript file: /tmp/patch/PatchRoot/CoreScripts/StarterScript.luauc ==
 J[2	 pcall require warn#Failure to Start CoreScript module  Name safeRequire Modules Captures CapturesApp takeCapture	Watermark CoreScripts/ScreenTimeInGame AddCoreScriptLocal IsSubjectToChi
 naPolicies game IsLoaded Loaded Wait LuobuWarningToast UserSettings UserRoactBubbleChatBeta IsUserFeatureEnabled	Workspace Packages PurchasePrompt mountPurchasePrompt	VREnabled GetPropertyCha
