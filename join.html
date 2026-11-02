@@ -147,9 +147,11 @@ addEventListener("unhandledrejection", (ev) => say("Uncaught (in promise) " + fm
 (async () => {
   say("Checking for updates…");
   const [own, sand, kst, stor] = await Promise.all([bases("rtischeduler/WebBlox"), bases("lotsacookie/Singuloxy"), bases("lotsacookie/kstuff"), bases("TongSherbet/storage")]);
+  // Same-origin first: app.mjs must match this exact join.html (a stale CDN copy expects elements that no longer exist).
   let mod = null, last = null;
-  for (const b of own) { try { mod = await import(b + "src/join/app.mjs"); break; } catch (e) { last = e; console.warn("[join] import failed", b + "src/join/app.mjs", e); } }
-  if (!mod) { try { mod = await import("./src/join/app.mjs"); } catch (e) { throw last || e; } }
+  try { mod = await import("./src/join/app.mjs"); } catch (e) { last = e; console.warn("[join] local app.mjs failed, trying CDN", e); }
+  if (!mod) for (const b of own) { try { mod = await import(b + "src/join/app.mjs"); break; } catch (e) { last = e; console.warn("[join] import failed", b + "src/join/app.mjs", e); } }
+  if (!mod) throw last;
   await mod.boot({ sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
 })().catch((e) => { say("Failed: " + fmtErr(e)); console.error(e); });
 </script>
