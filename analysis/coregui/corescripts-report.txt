@@ -54,6 +54,30 @@ PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/
 PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 PatchRoot/CoreScripts/StarterScript :: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'
+tracebacks:
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
+runtime.lua:961
+NotificationScript2:86
+runtime.lua:961 function require_
+runtime.lua:988
+runtime.lua:988
+
+--
+AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: runtime.lua:571: Argument 1 missing
+runtime.lua:961
+runtime.lua:483 function checkName
+runtime.lua:571
+BackpackScript:209 function NewGui
+BackpackScript:613 function MakeSlot
+Mo
+--
+InviteToGamePrompt: Requested module experienced an error while loading: Requested module experienced an error while loading: Requested module experienced an er
+runtime.lua:961
+BackButtonController:22
+runtime.l
+probe: [
+  'Achievements ok=true type=table; RobloxGui=RobloxGui kids=10; CoreGui child RobloxGui (ScreenGui); CoreGui child RobloxNetworkPauseNotification (ScreenGui); CoreGui child ExperienceChat (ScreenGui); CoreGui child TeleportEffectGui (ScreenGui)'
+]
 node exit 0
 
 == SINGLE Workspace/Packages/Achievements ==
