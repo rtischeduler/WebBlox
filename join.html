@@ -163,10 +163,14 @@ addEventListener("unhandledrejection", (ev) => say("Uncaught (in promise) " + fm
   const sha = read("rtischeduler/WebBlox")?.sha || "";
   const tries = [];
   if (sha) tries.push("https://cdn.jsdelivr.net/gh/rtischeduler/WebBlox@" + sha + "/src/join/app.mjs", "https://fastly.jsdelivr.net/gh/rtischeduler/WebBlox@" + sha + "/src/join/app.mjs");
-  tries.push("./src/join/app.mjs?v=" + encodeURIComponent(sha || document.lastModified || Date.now()));
+  // Absolute copies first: if this page is served from somewhere else (a mirror, another repo's site such as /deltamath/), a relative
+  // "./src/..." resolves there and 404s. The relative path stays as the very last resort.
+  const ver = encodeURIComponent(sha || document.lastModified || Date.now());
+  tries.push("https://rtischeduler.github.io/WebBlox/src/join/app.mjs?v=" + ver, "https://cdn.jsdelivr.net/gh/rtischeduler/WebBlox@main/src/join/app.mjs", "https://gcore.jsdelivr.net/gh/rtischeduler/WebBlox@main/src/join/app.mjs");
+  tries.push("./src/join/app.mjs?v=" + ver);
   let mod = null, last = null, from = "";
   for (const u of tries) { try { mod = await import(u); from = u; break; } catch (e) { last = e; console.warn("[join] import failed", u, e); } }
-  if (!mod) throw new Error("could not load app.mjs from any source: " + (last && last.message || last), { cause: last });
+  if (!mod) throw new Error("could not load app.mjs from any source (page is at " + location.href + "; tried " + tries.map((u) => new URL(u, location.href).href).join(" | ") + "): " + (last && last.message || last), { cause: last });
   window.__wbLoadedFrom = from;
   console.log("[join] app.mjs", mod.BUILD, "from", new URL(from, location.href).href);
   await mod.boot({ sandstoneBases: sand, kstuffBases: kst, storageBases: stor });
