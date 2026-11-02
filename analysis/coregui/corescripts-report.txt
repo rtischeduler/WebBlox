@@ -19,3 +19,46 @@ runtime.lua:563: Argument 1 missing or nil
 runtime.lua:563: Argument 1 missing or nil
 Store:10: Received error: Caught error in thunk
 Constants:147: table index is nil
+
+== StarterScript file: /tmp/patch/PatchRoot/CoreScripts/StarterScript.luauc ==
+J[2	 pcall require warn#Failure to Start CoreScript module  Name safeRequire Modules Captures CapturesApp takeCapture	Watermark CoreScripts/ScreenTimeInGame AddCoreScriptLocal IsSubjectToChi
+naPolicies game IsLoaded Loaded Wait LuobuWarningToast UserSettings UserRoactBubbleChatBeta IsUserFeatureEnabled	Workspace Packages PurchasePrompt mountPurchasePrompt	VREnabled GetPropertyCha
+ngedSignal VRAvatarHeightScaling VirtualKeyboard UserGui IxpServiceWrapper IXPServiceWrapper UserId InitializeAsync default initialize AdsEudsa starterScript AdGuiInteractivity EnhancedVideo InExperie
+nceClickout GenericChallenges Middleware"InitExperienceChallengeInterceptor start SocialUpsell Overlay initializeInExpOverlay GetDisplayStore setTopBarHeight TopbarInset Height Display Connect CorePac
+kages GetService ScriptContext UserInputService GuiService	VRService Players RunService CoreGui	RobloxGui WaitForChild#CoreScripts/CoreScriptErrorReporter Roact	Scheduler CachedPolicySe
+rvice Flags&FFlagUseRoactGlobalConfigInCoreScripts GetFFlagScreenshotHudApi GetFFlagEnableNewInviteMenuIXP Settings Pages	ShareGame NewInviteMenuExperimentManager#GetFFlagEnableSoundSessionTelem
+etry SharedFlags#GetFFlagReportAnythingAnnotationIXP TrustAndSafetyIxp TrustAndSafetyIXPManager Experiment GetCoreScriptsLayers GetFFlagRtMessaging AddPublishAssetPrompt6 DefineFastFlag EnablePromptAg
+eCheckListener isCharacterNameHandlerEnabled GetFFlagEnableSocialContextToast!GetFFlagEnableAppChatInExperience&GetFFlagChromeCentralizedConfiguration GetFFlagEnableCrossExpVoice FStringReactSchedulin
+gContext!FFlagFriendsCallingClientGate_DEV*LuaAppEnableToastNotificationsCoreScripts4 DisableLuobuWarningToast#FFlagDebugDisableExperienceChatMain GetFFlagVoiceUserAgency37GetFFlagLuaInExperienceCoreS
+criptsGameInviteUnification EnableSendCameraAccessAnalytics$EnableExperienceNotificationPrompts2 EnableCancelSubscriptionApp GetEngineFeature EnableCancelSubscriptionAppLua AudioFocusManagement8Enable
+ExperienceGenericChallengeRenderingOnLoadingScript EnableRobloxCommerce EnableLinkSharingEvent FFlagEnableShareSheet PlayerFeedbackEnabled$FFlagLuaAppInExperienceDetailsPrompt EnableSystemScrim Enable
+CoreUISystemV2 FFlagEnableNewBackpack EnableCorescriptsProfiler#CoreScriptsProfilerTelemetryContext SelfieFrontendConsoleDesktop3 EnableSelfieQRCode)GetEngineFeatureEnablePromptRobuxTransfer UIBlox Co
+reScriptsInitializer UIBloxInGameConfig init System InExperienceTopBar FFlagTopBarRefactor ExperimentCacheManager!LuaAppUseAppHttpStoreInExperience	HttpStore Instance _create GetReactSchedulerIXPC
+onfig unstable_setSchedulerFlags!FFlagEnableSchedulerFlagOverrides GetSchedulerFlagOverrides getInExp FFlagEnableAEGIS2CommsFAEUpsell LocalPlayer BuildExperiencePlaytestLaunch teamCreateUtils isViewer
+ BuildExperience mountTeamCreateViewer PlaceId+SoundServiceControlsDefaultListenerLocation#CoreScripts/DefaultListenerLocation script Parent CoreScripts/AppChatMain CoreScripts/FriendsCallingMain Cros
+sExperienceVoice IXPManager InExperienceSessionization Chrome Enabled ExpChat GlobalFlags AvatarChatEnabled ChromeEnabled!GetFFlagJoinWithoutMicPermissions JoinWithoutMicPermissions InExperienceInterv
+entionApp3FFlagLuaAppEnableInExperienceDataModelStreamStarter IsStudio setGlobalConfig propValidation elementTracing InGameMenuDependencies new Folder Sounds CoreScripts/NotificationScript2.CoreScript
+s/InExperienceDataModelStreamStarter4ProtocolLaunchPrivateChannelUpdateCheckEngineFeature ChannelUpdatePrompt	coroutine wrap ConfigureChrome SelfieView TopBar InExperienceSideSheetUtils isSideSheetE
+nabled InExperienceSideSheet FFlagEnableWhatsNew InGameWhatsNew FFlagAppNavMyStatsTab BuildModeLaunch hasBuildMode$mountCreatorAgentResumeToastReceiver StarterGui Enum CoreGuiType Chat SetCoreGuiEnabl
+ed'FFlagBuildExperienceInGameCaptureToChat mountChatSheet InExperienceOverlay createOverlay LuobuModerationStatus InExperienceIntervention CoreScripts/MainBotChatScript2 ProximityPrompts CoreScripts/P
+roximityPrompt ValidateUGCBodyAPIFeature Server UGCValidation UGCValidationFunctionInstaller)CoreScripts/PerformanceStatsManagerScript CoreScripts/PlayerRagdoll ChatSelector PlayerList PlayerListManag
+er EnableBubbleChatFromChatService CoreScripts/PlayerBillboards PublishAssetPrompt ExperienceEvents ExperienceEventsApp PlayerFeedback Groups	GroupsApp AvatarGeneration SelfieConsent SelfieQr CoreSc
+ripts/BlockPlayerPrompt CoreScripts/FriendPlayerPrompt PromptAgeCheckHandler CoreScripts/AvatarContextMenu Backpack BackpackScript KeyboardUINavigation EmotesMenu EmotesMenuMaster AvatarEditorPrompts 
+FFlagVirtualCursorModularization VirtualCursorModular VirtualCursor CoreScripts/VehicleHud CoreScripts/InviteToGamePrompt TouchScreenEnabled TouchEnabled CoreScripts/ContextActionTouch ControlFrame Bo
+ttomLeftControl Visible CoreScripts/InspectAndBuy VRAvatarGestures VRAvatarGesturesClient CoreScripts/NetworkPause CoreScripts/ScreenshotHud9CoreScripts/MicrophoneDevicePermissionsLoggingInitializer V
+oiceChatSupported CoreScripts/VoiceDefaultChannel CoreScripts/ExperienceChatMain CoreScripts/ChatEmoteUsage CoreScripts/ToastNotificationGUI RtMessagingService FacialAnimationStreaming2$CoreScripts/Fa
+cialAnimationStreaming CoreScripts/AvatarMood CoreScripts/PortalTeleportGUI'EnableAdGuiInteractivityControlRefactor EnableLuaAdPlayer AdPlayer EnableVoiceAttention CoreScripts/VoiceAttention CoreScrip
+ts/SoundTelemetry ApolloClient CoreScripts/CharacterNameHandler CoreScripts/VoiceUserAgency$CoreScripts/CoreScriptsGlobalEffects SoundManager CoreScripts/SocialContextToast CoreScripts/GameInviteModal
+GUI#CoreScripts/ExperienceNotifications Achievements InExpAchievementManager startUp Common GetFFlagPlayerViewRemoteEnabled CoreScripts/PlayerView%CoreScripts/SendCameraAccessAnalytics CoreScripts/Bul
+kPurchaseApp#CoreScripts/InExperienceTransferApp&CoreScripts/ExperienceAudioFocusBinder!CoreScripts/CancelSubscriptionApp CoreScripts/CommercePurchaseApp CoreScripts/SystemScrim"CoreScripts/CoreGuiEna
+bleAnalytics"CoreScripts/OpenShareSheetWithLink(CoreScripts/UniversalShareSheetScreenGui%CoreScripts/InExperienceDetailsPrompt ReactPerfTracker task delay$ReactSchedulingTrackerStartUpDelayMs DefineFa
+stInt ReactSchedulingTracker Memory MemoryScope InExperience RecordingServicePlaybackApiLua ExperienceStateReplay CoreScriptsProfiler CoreScriptsProfilerTelemetry  @R @@o 0@R P@o P@R p@o P@R p@o P@R p
+@o P@R p@o P@R p@o P@R p@o P@R p@o @o	 @o 1 @o!2 AM! M!!8 M!!}3 AM" M""8 M"" AM# M##8 M##H5 @o%6 ##H( @o&7 $$H( @o'8 %%+9 @o(: &&H( @o); ''+9 @o*< ((H( @o+= ))+9 @o,> **H( AM, M,, M,, M++ @o.@ ,,+9 
+AM. M.. M.. M--HA @o0B ..H( @o1C //H( AM1 M11 M11 M00OD @o3E 11H( @o4F 22H( @o5G 33H( @o5H 33+9 AM5 M55 M55 M44 AM6 M66nJ AM7 M77 M77CK M66TL M75 R86 AM8 M88 M88 AM8 M88 M88 M878 M88.P AM: M:: M:: M99
+ M:9 ::;S @o<T ::H( AM< M<< M<<TU M<; M<<mW AM< M<< M<< M;; R<; R>< AM> M>> M>> M==$Z AM? M?? M?? M>>^[ M?> RA? AM? M?? M?? M>>7] oB^ AMA MAA MAA MAA M@@ AMB MBB MBB MBB @MBB @oCg AA+9 oCh FMDD$k oCl 
+oCm AMB MBB MBB MAA MBA BB;S AMB MBB MBB AMC MCC MCC MBB AMD MDD MDDGs MDC 0ED MDC 0ED\v AMD MDD MDD MCC RDC AME MEE MEEGs MED 0FEix @oFy DDH( AMF MFF MFF MEE MF	 AMG MGG MGFnJ MHG RI6 0IH H$k F
+MMM$k @oL JJ+9 ARNK RJM HoP MQK RSM sOPS MKJ RKI MKK RKI RKI AMK MKK MKK MKK RLI AML MLL MLL MKK RMI AMM MMM MMM MLL` RNI MNN MNN MNN ROI MOO MOO RON ROM MPNi +@" @oR AMQ MQQ MQQ MPP MQN 0SRA RNI MNN 
+MNN% MNMM @oO MM+9 RNI MNN MNN @oO MM+9 @oO MM+9 AMN MNN MNN RNI MNNH RNI MNNA MNNs MNO @oP NN+9 ROI ROI MOO ROI ROI MOO ROI MOO( ROI MOOL ARRO RNQ HoT MUO RWQ sSTW MON AMO MOO MOO ROI MOOH ROI MOO RO
+I MOO MOO ROI MOO MOO ROI AMO MOO MOO MNNK RPI MPP MPP9 RPI MPP MPPS @oR PP+9 MPP 0QP RQI MQQ MQQ MQQ @oR PP+9 FMSS$k FMSS$k @oR @oR PP+9 FMSS$k FMSS$k @oR PP+9 @oR PP+9 MQQ MQQ ARTQ RPS HoV MWQ RYS s
+UVY MPP @oR PP+9 FMSS$k FMSS$k RQI FMSS$k RP! FMSS$k AMQ MQQ MQQ MPP MQP RQ" FMTT$k FMTT$k AMR MRR MRRH MQQ MRQ AMT MTTs MTT8 MTTf RTS RT4 AMU MUU, MUT @oW VUW AMX MXX RYV AMY MYY MYY9$ MYX M\X:& M\\ 
+@o[( YY+9 RZI MZZ MZZ AMZ MZZ MZZ MYY	- R[Y R\Z j3B 
