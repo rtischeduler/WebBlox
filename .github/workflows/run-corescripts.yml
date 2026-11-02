@@ -52,6 +52,9 @@ jobs:
             for n in AvatarExperienceCommon/Constants Settings/BackButtonController; do
               f=$(find /tmp/patch -path "*$n.luau*" -type f -print -quit); echo; echo "== consts $n ($f) =="; head -c 24 "$f" | xxd | head -2; strings -n 2 "$f" | tr '\n' ' ' | fold -w 200 | tail -n 9
             done
+            for spec in "Settings/BackButtonController 14 24" "CoreScripts/StarterScript 553 561" "NotificationScript2 83 87" "AvatarExperienceCommon/Constants 177 182" "BackpackScript 205 210"; do
+              set -- $spec; f=$(find /tmp/patch -path "*$1.luau*" -type f -print -quit); echo; echo "== disasm $1 $2-$3 =="; node tools/disasm.mjs "$f" $2 $3 2>&1 | cut -c1-170 | head -45
+            done
             echo; echo "== StarterScript file: $s =="; strings -n 3 "$s" | tr '\n' ' ' | fold -w 200
           } > analysis/coregui/corescripts-report.txt 2>&1
           head -c 2500 analysis/coregui/corescripts-report.txt
