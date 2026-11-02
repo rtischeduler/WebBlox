@@ -1,0 +1,36 @@
+name: run-corescripts
+on:
+  workflow_dispatch:
+    inputs:
+      steps:
+        description: scheduler steps to run
+        default: "200"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: zstd support
+        run: pip install -q zstandard
+      - name: extract the patch (into /tmp only, nothing big is committed)
+        env:
+          ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
+        run: python3 -u .github/scripts/extract-coregui.py /tmp/cg-out
+      - name: run the real StarterScript headless (no npm needed)
+        run: |
+          mkdir -p /tmp/patch analysis/coregui
+          tar xzf /tmp/cg-out/src-online-InExperience.tar.gz -C /tmp/patch 2>/dev/null || tar xzf "$(ls /tmp/cg-out/src-online-*.tar.gz | head -1)" -C /tmp/patch
+          node tools/run-corescripts.mjs /tmp/patch ${{ inputs.steps }} 2>&1 | tee analysis/coregui/corescripts-report.txt | head -120
+      - name: commit to main
+        if: always()
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add analysis/coregui/corescripts-report.txt
+          git commit -qm "CoreScripts headless run report" || { echo nothing; exit 0; }
+          git pull -q --rebase origin main
+          git push origin HEAD:main
