@@ -7,13 +7,13 @@ tar exit 0
 StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
-NotificationScript2: NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText"
+NotificationScript2: NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeService"
 AvatarContextMenu: BackpackScript:705: DragBegin is not a valid member of TextButton "1"
-InviteToGamePrompt: ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+InviteToGamePrompt: RecordAndDumpView:2: 'MicroProfilerSe
 InspectAndBuy: Requested module experience
 BulkPurchaseApp: Requested module experien
 logs:
-ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
 BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 Store:10: Received error: Caught error in thunk
@@ -24,15 +24,16 @@ CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp 
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
 CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/DevConsole/Components/DataProvider :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service n
-CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/MainViewMicroProfiler :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a
+CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/MicroProfilerView :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a val
+CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a val
+CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
 CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
@@ -55,13 +56,13 @@ CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/rende
 PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:705: DragBegin is not a valid member of TextButton "1"
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/Memory/ClientMemoryData:9: 'KeyframeSequenceProvider' is not a valid Service name
-PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText"
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/MicroProfiler/RecordAndDumpView:2: 'MicroProfilerService' is not a valid Service name
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeService"
 tracebacks:
-NotificationScript2: Requested module experienced an error while loading: NotificationScript2:246: TextWrap is not a valid member of TextLabel "NotificationText
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1085: OnBadgeAwarded is not a valid member of BadgeService "BadgeS
 runtime.lua:962
-runtime.lua:580
-NotificationScript2:246
+runtime.lua:567
+NotificationScript2:1085
 runtime.lua:962 function require_
 runtime.lua:989
 runtime.lua:989
