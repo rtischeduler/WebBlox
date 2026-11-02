@@ -84,6 +84,50 @@ probe: [
 ]
 still waiting:
 
+loaded TopBar/PlayerList/Chat modules:
+CoreGui/RobloxGui/Modules/TopBar/Constants
+CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagAddTopBarScrim
+CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagTopBarDeprecateChatRodux
+CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagTopBarDeprecateDisplayOptionsRodux
+CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagTopBarDeprecateGameInfoRodux
+CoreGui/RobloxGui/Modules/TopBar/Flags/FFlagTopBarDeprecateGamepadNavigationDialogRodux
+CoreGui/RobloxGui/Modules/TopBar/TokenMappers/MenuNavigationPromptTokenMapper
+CorePackages/Workspace/Packages/InExperienceTopBar
+CorePackages/Workspace/Packages/_Index/GameDetail/GameDetail/ExperienceDetailsPage/ExperienceDetailsBottomSheetTopBar
+CorePackages/Workspace/Packages/_Index/GameDetail/GameDetail/ExperienceDetailsPage/PeekViewTopBar
+CorePackages/Workspace/Packages/_Index/PeekView/PeekView/PeekViewWithTopBar
+CorePackages/Workspace/Packages/_Index/ProfileQRCode/ProfileQRCode/Components/ProfileQRCodeTopBar
+CorePackages/Workspace/Packages/_Index/ProfileQRCode/ProfileQRCode/Components/ProfileQRCodeTopBar/ProfileQRCodeTopBar
+CorePackages/Workspace/Packages/_Index/RobloxAppNavigation/RobloxAppNavigation/TopBarContext
+CorePackages/Workspace/Packages/_Index/UserList/UserList/Deprecated/Components/UserListPeekViewTopBar
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/Components/ChatLanding/ConversationListWithTopBar
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/Components/ChatLanding/SearchTopBar
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/Hooks/useTopBar
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/Stores/GetTopBarStore
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/Stores/GetTopBarStore/createTopBarStore
+CorePackages/Workspace/Packages/_Workspace/AppChat/AppChat/TopBarProvider
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Actions/ChatTopBarButtonActivated
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Actions/ChatTopBarFocusActivated
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Actions/ChatTopBarFocusSelect
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Events/ChatTopBarButtonActivated
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Events/ChatTopBarFocusActivated
+CorePackages/Workspace/Packages/_Workspace/ExpChat/ExpChat/Events/ChatTopBarFocusSelect
+CorePackages/Workspace/Packages/_Workspace/FriendsChat/FriendsChat/Flags/FFlagFriendsChatAddTopBarDivider
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/Chrome
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/CoreGuiCommon
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/InExperienceTopBar
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/InExperienceTopBar/Flags
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/InExperienceTopBar/Stores
+CorePackages/Workspace/Packages/_Workspace/InExperienceTopBar/SharedFlags
+CorePackages/Workspace/Packages/_Workspace/RobloxAppHooks/RobloxAppHooks/useTopBarHeight
+CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagLuaAppMoveProfileIntoTopBar
+CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagLuaAppMoveProfileIntoTopBarIXP
+CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/FFlagReduceTopBarInsetsWhileHidden
+CorePackages/Workspace/Packages/_Workspace/SharedFlags/SharedFlags/GetFFlagEnableUseShowTopBar
+CoreGui/RobloxGui/Modules/PlayerList/ActionCreator
+flags: [
+  'FFlagTopBarRefactor=false FFlagDebugDisableExperienceChatMain=false FFlagEnableChromeShortcutBar=false'
+]
 node exit 0
 
 == SINGLE Workspace/Packages/Achievements ==
