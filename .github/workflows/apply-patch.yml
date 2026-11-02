@@ -17,12 +17,12 @@ jobs:
       # 2. Check if the patch can be applied cleanly (Optional but recommended)
       - name: Check patch compatibility
         run: |
-          git apply --check path/to/your/file.patch
+          git apply --check patch.patch
 
       # 3. Apply the patch 
       - name: Apply patch file
         run: |
-          git apply path/to/your/file.patch
+          git apply patch.patch
 
       # 4. Commit and push the changes back to GitHub
       - name: Commit and push changes
