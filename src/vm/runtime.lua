@@ -569,7 +569,7 @@ end
 InstMT.__newindex = function(self, k, v)
   local d = D[self]
   if k == "Parent" then return setParent(self, v) end
-  if k == "Name" then if v == nil then v = "" end; checkName(v, 2); d.name = v; notify(self, d, "Name", v); return end
+  if k == "Name" then if type(v) ~= "string" then v = tostring(v or "") end; checkName(v, 2); d.name = v; notify(self, d, "Name", v); return end
   local info = d.info
   if info.props[k] ~= nil then
     if info.readonly[k] then error("Unable to assign property " .. k .. ". Property is read only", 2) end
@@ -1100,7 +1100,6 @@ for _, n in ipairs(list("PlatformFriendsService ExperienceAuthService")) do serv
 class("SettingsGroup", "Instance", { lenient = true, notCreatable = true, props = { SavedQualityLevel = E.SavedQualitySetting.Automatic, QualityLevel = 5, EagerBulkExecution = false }, events = { "PerformanceStatsVisibleChanged" } })
 classes.GuiService.events.InspectMenuEnabledChangedSignal = true; classes.GuiService.events.SpecialKeyPressed = true
 classes.GuiService.methods.AddSpecialKey = function() end; classes.GuiService.methods.RemoveSpecialKey = function() end
-classes.AdService.methods.GetAdTeleportInfo = function() return nil end
 classes.GuiService.methods.GetHardwareSafeViewport = function() return G.Rect.new(0, 0, 1280, 720) end
 classes.GuiService.methods.GetGuiInset = function() return G.Vector2.new(0, 0), G.Vector2.new(0, 0) end
 return RT
