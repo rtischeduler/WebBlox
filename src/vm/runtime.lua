@@ -96,6 +96,7 @@ do
     VirtualCursorMode = "Default,Disabled,Enabled", GamepadType = "Unknown", UITheme = "Light,Dark", Technology = "Legacy,Voxel,Compatibility,ShadowMap,Future", ReverbType = "NoReverb,GenericReverb",
   }
   Enum = setmetatable({}, { __type = "Enums", __tostring = function() return "Enum" end, __index = function(t, name)
+    if name == "GetEnums" then return function(self) local out = {}; for n in pairs(SPEC) do out[#out + 1] = self[n] end; return out end end
     local spec = SPEC[name]
     local e = makeEnum(name, spec or "")
     meta[e].lazy = spec == nil; rawset(t, name, e); return e
@@ -1041,4 +1042,9 @@ classes.ScreenGui.props.OnTopOfCoreBlur = false
 classes.MemStorageService.methods.BindAndFire = function(self, key, fn) spawnFn(fn, ""); return setmetatable({ Connected = true, Disconnect = function() end }, ConMT) end
 classes.Player.methods.GetUnder13 = function() return false end
 classes.AdService.events.AdTeleportInitiated = true
+-- legacy/less common globals and constructors modules list at load time
+G.Delay = G.delay; G.Spawn = G.spawn; G.Wait = G.wait; G.ypcall = pcall; G.ElapsedTime = G.elapsedTime
+G.CFrame.Angles = function() return G.CFrame.new() end; G.CFrame.fromEulerAnglesXYZ = G.CFrame.Angles; G.CFrame.fromEulerAnglesYXZ = G.CFrame.Angles
+G.CFrame.fromEulerAngles = G.CFrame.Angles; G.CFrame.fromAxisAngle = G.CFrame.Angles; G.CFrame.fromMatrix = G.CFrame.Angles; G.CFrame.fromOrientation = G.CFrame.Angles
+G.CFrame.lookAt = function(at) return G.CFrame.new(at) end
 return RT
