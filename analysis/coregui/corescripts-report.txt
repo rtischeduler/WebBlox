@@ -4,20 +4,14 @@ extractor report tail:
 tail: cannot open '/tmp/cg-out/report.txt' for reading: No such file or directory
 using: /tmp/cg-out/src-online-InExperience.tar.gz
 tar exit 0
-StarterScript: [
-  'err',
-  "Requested module experienced an error while loading: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'\n" +
-    'runtime.lua:962\n' +
-    'PatchRoot/CoreScripts/StarterScript:560\n' +
-    'runtime.lua:962 function require_\n' +
-    'runtime.lua:982\n'
-]
-status: 12 ok, 5 failed, 3 running | draws: 24
+StarterScript: [ 'ok', 'nil' ]
+status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
 NotificationScript2: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 AvatarContextMenu: runtime.lua:572: Argument 1 missing or nil
 InviteToGamePrompt: BackButtonController:22: attempt to compare number < nil
 InspectAndBuy: Requested module experience
+BulkPurchaseApp: Requested module experien
 logs:
 BackButtonController:22: attempt to compare number < nil
 runtime.lua:572: Argument 1 missing or nil
@@ -40,6 +34,7 @@ CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxG
 CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
+CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/State/Selectors/selectAvatarPreviewColors :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/A
@@ -49,11 +44,18 @@ CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperien
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AXCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index 
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Consta
 CorePackages/Workspace/Packages/_Workspace/AvatarExperienceInspectAndBuy/AvatarExperienceInspectAndBuy/Types :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index 
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: tab
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Components/ItemList :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181:
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccess :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccessContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarEx
+CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/renderBulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:18
 PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: runtime.lua:572: Argument 1 missing or nil
+PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/Settings/BackButtonController:22: attempt to compare number < nil
 PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
-PatchRoot/CoreScripts/StarterScript :: PatchRoot/CoreScripts/StarterScript:560: attempt to index nil with 'startUp'
 tracebacks:
 NotificationScript2: Requested module experienced an error while loading: NotificationScript2:86: attempt to perform arithmetic (mul) on number and table
 runtime.lua:962
