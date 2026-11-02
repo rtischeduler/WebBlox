@@ -76,7 +76,11 @@ runtime.lua:962
 BackButtonController:22
 runtime.l
 probe: [
-  'Achievements ok=true type=table; RobloxGui=RobloxGui kids=10; CoreGui child RobloxGui (ScreenGui); CoreGui child RobloxNetworkPauseNotification (ScreenGui); CoreGui child ExperienceChat (ScreenGui); CoreGui child TeleportEffectGui (ScreenGui)'
+  'RobloxGui Enabled=true desc=2411 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,hidden) VehicleHudFrame(Frame,hidden)]\n' +
+    'RobloxNetworkPauseNotification Enabled=true desc=0 kids=[]\n' +
+    'ExperienceChat Enabled=true desc=0 kids=[]\n' +
+    'TeleportEffectGui Enabled=false desc=7 kids=[TopFrame(Frame,v) TopFrame(Frame,v) SpinnerContainer(Frame,v) TextLabel(TextLabel,v)]\n' +
+    'PlayerGui=PlayerGui core=true'
 ]
 still waiting:
 
