@@ -199,7 +199,7 @@ do
   end
   function mc.ToHex(c) return string.format("%02X%02X%02X", floor(c.R * 255 + 0.5), floor(c.G * 255 + 0.5), floor(c.B * 255 + 0.5)) end
   G.Color3 = { new = c3, fromRGB = function(r, g, b) return c3(num(r, 0) / 255, num(g, 0) / 255, num(b, 0) / 255) end, fromHSV = hsv,
-    fromHex = function(s) s = string.gsub(s, "^#", ""); return c3(tonumber(string.sub(s, 1, 2), 16) / 255, tonumber(string.sub(s, 3, 4), 16) / 255, tonumber(string.sub(s, 5, 6), 16) / 255) end }
+    fromHex = function(s) s = string.gsub(tostring(s), "^#", ""); if #s == 3 then s = string.gsub(s, ".", "%0%0") end; s = string.sub(s .. "000000", 1, 6); return c3((tonumber(string.sub(s, 1, 2), 16) or 0) / 255, (tonumber(string.sub(s, 3, 4), 16) or 0) / 255, (tonumber(string.sub(s, 5, 6), 16) or 0) / 255) end }
   -- Rect, ranges, sequences
   RectT = datatype("Rect", {}, { Width = function(r) return r.Max.X - r.Min.X end, Height = function(r) return r.Max.Y - r.Min.Y end }, {
     __eq = function(a, b) return a.Min == b.Min and a.Max == b.Max end, __tostring = function(a) return tostring(a.Min) .. ", " .. tostring(a.Max) end })
@@ -270,7 +270,7 @@ do
     if type(fn) ~= "function" then error("Attempt to connect failed: Passed value is not a function", 2) end
     local c = setmetatable({ Connected = true, fn = fn, sig = s }, ConMT); s.conns[#s.conns + 1] = c; return c
   end
-  sm.ConnectParallel = sm.Connect; sm.connect = sm.Connect
+  sm.ConnectParallel = sm.Connect; sm.connect = sm.Connect; sm.wait = function(...) return sm.Wait(...) end
   function sm.Once(s, fn) local c; c = s:Connect(function(...) c:Disconnect(); return fn(...) end); return c end
   function sm.Wait(s)
     if not coroutine.isyieldable() then error("Signal:Wait() called outside a yieldable thread", 2) end
@@ -1039,7 +1039,6 @@ classes.VRService.props.AvatarGestures = false
 service("TeleportService", { lenient = true })
 classes.GuiService.props.SelectedCoreObject = NIL
 classes.ScreenGui.props.OnTopOfCoreBlur = false
-classes.MemStorageService.methods.BindAndFire = function(self, key, fn) spawnFn(fn, ""); return setmetatable({ Connected = true, Disconnect = function() end }, ConMT) end
 classes.Player.methods.GetUnder13 = function() return false end
 classes.AdService.events.AdTeleportInitiated = true
 -- legacy/less common globals and constructors modules list at load time
@@ -1047,4 +1046,18 @@ G.Delay = G.delay; G.Spawn = G.spawn; G.Wait = G.wait; G.ypcall = pcall; G.Elaps
 G.CFrame.Angles = function() return G.CFrame.new() end; G.CFrame.fromEulerAnglesXYZ = G.CFrame.Angles; G.CFrame.fromEulerAnglesYXZ = G.CFrame.Angles
 G.CFrame.fromEulerAngles = G.CFrame.Angles; G.CFrame.fromAxisAngle = G.CFrame.Angles; G.CFrame.fromMatrix = G.CFrame.Angles; G.CFrame.fromOrientation = G.CFrame.Angles
 G.CFrame.lookAt = function(at) return G.CFrame.new(at) end
+-- MemStorageService: in-memory key/value with change events
+do
+  local store, binds = {}, {}
+  local m = classes.MemStorageService.methods
+  m.GetItem = function(self, k) return store[k] or "" end
+  m.HasItem = function(self, k) return store[k] ~= nil end
+  m.SetItem = function(self, k, v) store[k] = tostring(v); for _, f in ipairs(binds[k] or {}) do spawnFn(f, store[k]) end end
+  m.RemoveItem = function(self, k) store[k] = nil end
+  m.BindAndFire = function(self, k, fn) binds[k] = binds[k] or {}; table.insert(binds[k], fn); spawnFn(fn, store[k] or ""); return setmetatable({ Connected = true, Disconnect = function() end }, ConMT) end
+  m.Bind = function(self, k, fn) binds[k] = binds[k] or {}; table.insert(binds[k], fn); return setmetatable({ Connected = true, Disconnect = function() end }, ConMT) end
+end
+classes.Player.events.FriendStatusChanged = true
+classes.GuiService.events.NetworkPausedEnabledChanged = true
+classes.AdService.events.AdTeleportEnded = true
 return RT
