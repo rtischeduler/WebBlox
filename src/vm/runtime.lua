@@ -6,7 +6,7 @@
 local host = ...
 local G = getfenv(0)
 local type = type -- raw type() for the runtime itself; scripts get the userdata-aware one below
-local RT = { errors = {}, lazyEnums = {}, hooks = {}, host = host, outcomes = {}, mouse = { X = 0, Y = 0 }, strictEnums = false }
+local RT = { waits = {}, awaits = {}, errors = {}, lazyEnums = {}, hooks = {}, host = host, outcomes = {}, mouse = { X = 0, Y = 0 }, strictEnums = false }
 G.__wb = RT
 local NIL = {}
 -- Unknown member of a lenient service: callable (as a method) AND signal-shaped (:Connect/:Once/:Wait), so both `svc:Foo()` and `svc.OnFoo:Connect(f)` are harmless.
@@ -368,11 +368,11 @@ do
     if not coroutine.isyieldable() then error("cannot yield here (" .. kind .. ")", 2) end
     sched.nextId += 1; local id = sched.nextId
     sched.waiting[id] = coroutine.running()
-    host.async(kind, id, payload or "")
+    host.async(kind, id, payload or ""); RT.awaits[id] = kind .. " " .. string.sub(tostring(payload or ""), 1, 140)
     local ok, res = coroutine.yield()
     return ok, res
   end
-  function RT.complete(id, ok, res) local co = sched.waiting[id]; sched.waiting[id] = nil; if co then resume(co, ok, res) end; runDeferred() end
+  function RT.complete(id, ok, res) RT.awaits[id] = nil; local co = sched.waiting[id]; sched.waiting[id] = nil; if co then resume(co, ok, res) end; runDeferred() end
 end
 
 -- ===== Instance system =====
@@ -509,7 +509,8 @@ function base.WaitForChild(self, name, timeout)
   local co, done, result, timer = coroutine.running(), false, nil, nil
   local conn; conn = sig(D[self], "ChildAdded"):Connect(function(ch) if D[ch].name == name and not done then done = true; conn:Disconnect(); result = ch; if timer then timer.cancelled = true end; resume(co) end end)
   if timeout then timer = RT.sleep(timeout, co) end
-  coroutine.yield(); conn:Disconnect()
+  if not timeout then RT.waits[co] = fullName(self) .. " :: " .. name end
+  coroutine.yield(); RT.waits[co] = nil; conn:Disconnect()
   return result
 end
 function base.IsA(self, cn) return D[self].info.chain[cn] == true end
@@ -1000,6 +1001,12 @@ function RT.coreStatus()
   local ok, err, pend = 0, 0, 0
   for p, o in pairs(RT.outcomes) do if string.find(p, "CoreScripts", 1, true) then if o.state == "ok" then ok += 1 elseif o.state == "err" then err += 1 else pend += 1 end end end
   return string.format("%d ok, %d failed, %d running", ok, err, pend)
+end
+function RT.waitReport()
+  local t = {}
+  for _, w in pairs(RT.waits) do t[#t + 1] = "WaitForChild " .. w end
+  for _, a in pairs(RT.awaits) do t[#t + 1] = "await " .. a end
+  table.sort(t); return table.concat(t, "\n")
 end
 function RT.failedList()
   local t = {}

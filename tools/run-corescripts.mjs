@@ -36,3 +36,4 @@ try {
     return table.concat(out, "; ")`, 1);
   console.log("probe:", pr);
 } catch (e) { console.log("probe failed", e?.message); }
+try { console.log("still waiting:\n" + String(rt.waitReport()).split("\n").slice(0, 60).map((l) => l.replace(/PatchRoot\/\S*\//g, "").slice(0, 200)).join("\n")); } catch (e) { console.log("waitReport failed", e?.message); }
