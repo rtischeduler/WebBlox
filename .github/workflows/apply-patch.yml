@@ -1,34 +1,42 @@
-name: Apply Git Patch
+name: Apply Patch File
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch: # Allows you to trigger this manually from the Actions tab
+  workflow_dispatch: # Allows manual triggering
+
+# Crucial fix: Grant write permissions to the repository contents
+permissions:
+  contents: write
 
 jobs:
-  patch:
+  apply-patch:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Check out the source code
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      # 2. Check if the patch can be applied cleanly (Optional but recommended)
-      - name: Check patch compatibility
-        run: |
-          git apply --check patch.patch
-
-      # 3. Apply the patch 
-      - name: Apply patch file
-        run: |
+    - name: Apply patch
+      run: |
+        if [ -f "patch.patch" ]; then
           git apply patch.patch
+        else
+          echo "patch.patch file not found!"
+          exit 1
+        fi
 
-      # 4. Commit and push the changes back to GitHub
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        git add .
+        
+        # Only commit and push if changes actually exist to prevent workflow errors
+        if ! git diff --cached --quiet; then
           git commit -m "chore: automatically applied patch"
           git push
+        else
+          echo "No changes to commit (patch might already be applied)."
+        fi
