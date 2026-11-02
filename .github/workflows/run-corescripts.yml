@@ -19,7 +19,12 @@ jobs:
       - name: extract the patch (into /tmp only, nothing big is committed)
         env:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
-        run: python3 -u .github/scripts/extract-coregui.py /tmp/cg-out
+        run: |
+          for i in 1 2 3 4; do
+            python3 -u .github/scripts/extract-coregui.py /tmp/cg-out || true
+            ls /tmp/cg-out/src-online-*.tar.gz >/dev/null 2>&1 && break
+            echo "no archive on try $i, retrying"; sleep 20
+          done
       - name: run the real StarterScript headless (no npm needed)
         continue-on-error: true
         run: |
