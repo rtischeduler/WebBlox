@@ -1060,4 +1060,9 @@ end
 classes.Player.events.FriendStatusChanged = true
 classes.GuiService.events.NetworkPausedEnabledChanged = true
 classes.AdService.events.AdTeleportEnded = true
+do
+  local function enc(l) l = math.clamp(l or 0, 0, 1); if l <= 0.0031308 then return 12.92 * l end; return 1.055 * l ^ (1 / 2.4) - 0.055 end
+  G.Color3.fromLinearRGB = function(r, g, b) return G.Color3.new(enc(r), enc(g), enc(b)) end
+end
+for _, n in ipairs(list("GenericChallengeService CreatorStoreService")) do service(n, { lenient = true }) end
 return RT
