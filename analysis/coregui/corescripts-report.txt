@@ -7,31 +7,25 @@ tar exit 0
 StarterScript: [ 'ok', 'nil' ]
 status: 14 ok, 5 failed, 3 running | draws: 24
 errors:
-NotificationScript2: NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players"
-AvatarContextMenu: BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
-InviteToGamePrompt: MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+NotificationScript2: NotificationScript2:1089: attempt to call missing method 'connect' of table
+AvatarContextMenu: ContextMenuGui:122: attempt to compare nil < nil
+InviteToGamePrompt: Store:10: Received error: Caught error in thunk
 InspectAndBuy: Requested module experience
 BulkPurchaseApp: Requested module experien
 logs:
-MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
-BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
-BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
+Store:10: Received error: Caught error in thunk
 Store:10: Received error: Caught error in thunk
 Constants:181: table index is nil
 failed requires:
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/AvatarEditorPromptsApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is
 CoreGui/RobloxGui/Modules/AvatarEditorPrompts/Components/Prompts/SaveAvatarTimeoutPrompt :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table
-CoreGui/RobloxGui/Modules/BackpackScript :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 CoreGui/RobloxGui/Modules/Captures/CapturesApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
-CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService'
-CoreGui/RobloxGui/Modules/DevConsoleMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/EmotesMenu/EmotesMenuMaster :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
 CoreGui/RobloxGui/Modules/InspectAndBuy/Components/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CoreGui/RobloxGui/Modules/InspectAndBuy/Services/Network :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
-CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
+CoreGui/RobloxGui/Modules/Settings/SettingsHub :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
+CoreGui/RobloxGui/Modules/TopBar :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
+CoreGui/RobloxGui/Modules/TopBar/Components/TopBarApp :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
 CorePackages/Workspace/Packages/AvatarExperienceCommon :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/AvatarExperienceInspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 CorePackages/Workspace/Packages/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
@@ -51,29 +45,30 @@ CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Compo
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccess :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceC
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/Features/BulkPurchasePartialSuccess/BulkPurchasePartialSuccessContainer :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarEx
 CorePackages/Workspace/Packages/_Workspace/BulkPurchaseApp/BulkPurchaseApp/renderBulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:18
-PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/BackpackScript:1393: AddKey is not a valid member of GuiService "GuiService"
+PatchRoot/CoreScripts/CoreScripts/AvatarContextMenu :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/AvatarContextMenu/ContextMenuGui:122: attempt to compare nil < nil
 PatchRoot/CoreScripts/CoreScripts/BulkPurchaseApp :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
 PatchRoot/CoreScripts/CoreScripts/InspectAndBuy :: PatchRoot/DataModelInstances/CorePackages/Workspace/Packages/_Workspace/AvatarExperienceCommon/AvatarExperienceCommon/Constants:181: table index is nil
-PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CoreGui/RobloxGui/Modules/DevConsole/Components/ScriptProfiler/MainViewScriptProfiler:5: 'ScriptProfilerService' is not a valid Service name
-PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players"
+PatchRoot/CoreScripts/CoreScripts/InviteToGamePrompt :: PatchRoot/DataModelInstances/CorePackages/Packages/_Index/Rodux/Rodux/Store:10: Received error: Caught error in thunk
+PatchRoot/CoreScripts/CoreScripts/NotificationScript2 :: PatchRoot/CoreScripts/CoreScripts/NotificationScript2:1089: attempt to call missing method 'connect' of table
 tracebacks:
-NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1089: FriendRequestEvent is not a valid member of Players "Players
-runtime.lua:962
-runtime.lua:567
+NotificationScript2: Requested module experienced an error while loading: NotificationScript2:1089: attempt to call missing method 'connect' of table
+runtime.lua:963
 NotificationScript2:1089
-runtime.lua:962 function require_
-runtime.lua:989
-runtime.lua:989
+runtime.lua:963 function require_
+runtime.lua:990
+runtime.lua:990
 
 --
-AvatarContextMenu: Requested module experienced an error while loading: Requested module experienced an error while loading: BackpackScript:1393: AddKey is not 
-runtime.lua:962
-runtime.lua:567
-BackpackScript:1393 function OnCoreGuiChanged
-BackpackScript:1916
-r
+AvatarContextMenu: Requested module experienced an error while loading: ContextMenuGui:122: attempt to compare nil < nil
+runtime.lua:963
+ContextMenuGui:122 function CreateMenuFrame
+AvatarContextMenu:112
+runtime.lua:963 function require_
+runtime.lua:990
+runtime.lua:990
+
 probe: [
-  'RobloxGui Enabled=true desc=2502 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,v) VehicleHudFrame(Frame,hidden)]\n' +
+  'RobloxGui Enabled=true desc=2503 kids=[Modules(Folder) Sounds(Folder) SendNotificationInfo(BindableEvent) SoundManager_Sounds(Folder) SoundManager_SoundGroups(Folder) ErrorPrompt(Frame,hidden) PerformanceStats(Frame,v) PromptDialog(Frame,hidden) Backpack(Frame,v) AvatarContextMenu(Frame,v) VehicleHudFrame(Frame,hidden)]\n' +
     'RobloxNetworkPauseNotification Enabled=true desc=0 kids=[]\n' +
     'ExperienceChat Enabled=true desc=0 kids=[]\n' +
     'TeleportEffectGui Enabled=false desc=7 kids=[TopFrame(Frame,v) TopFrame(Frame,v) SpinnerContainer(Frame,v) TextLabel(TextLabel,v)]\n' +
@@ -162,14 +157,21 @@ tTooltipTextTimeout getMenuText initiateBackButtonTeleport hasReturnUniverse w	 
   37  133 GETTABLEKS A=21 B=20 C=174 D=-20972 aux=31  ; "GameSettings"
 
 == R10 in Constants ==
-  28   60 LOADK A=10 B=16 C=0 D=16  ; "Body"
-  28   61 SETTABLEKS A=10 B=9 C=80 D=20489 aux=17  ; "1"
-  29   63 LOADK A=10 B=18 C=0 D=18  ; "AvatarAnimations"
-  29   64 SETTABLEKS A=10 B=9 C=83 D=21257 aux=19  ; "2"
-  30   66 LOADK A=10 B=20 C=0 D=20  ; "Shoes"
-  30   67 SETTABLEKS A=10 B=9 C=82 D=21001 aux=21  ; "3"
-  31   69 LOADK A=10 B=22 C=0 D=22  ; "DynamicHead"
-  31   70 SETTABLEKS A=10 B=9 C=85 D=21769 aux=23  ; "4"
+   7   47 GETTABLEKS A=7 B=7 C=91 D=23303 aux=12  ; "Enums"
+   8   52 GETTABLEKS A=7 B=5 C=91 D=23301 aux=12  ; "Enums"
+  41   76 GETIMPORT A=12 B=26 C=0 D=26 aux=2172675072  ; "Enum"."AvatarAssetType"
+  41   78 NAMECALL A=12 B=12 C=22 D=5644 aux=27  ; "GetEnumItems"
+  48  107 GETIMPORT A=15 B=34 C=0 D=34 aux=3246424097  ; "Enum"."AssetType"."Hat"
+  48  115 GETIMPORT A=15 B=36 C=0 D=36 aux=3246427169  ; "Enum"."AccessoryType"."Hat"
+  49  118 GETIMPORT A=15 B=38 C=0 D=38 aux=3246424101  ; "Enum"."AssetType"."HairAccessory"
+  49  126 GETIMPORT A=15 B=40 C=0 D=40 aux=3246427175  ; "Enum"."AccessoryType"."Hair"
+  50  129 GETIMPORT A=15 B=42 C=0 D=42 aux=3246424105  ; "Enum"."AssetType"."FaceAccessory"
+  50  137 GETIMPORT A=15 B=44 C=0 D=44 aux=3246427179  ; "Enum"."AccessoryType"."Face"
+  51  140 GETIMPORT A=15 B=46 C=0 D=46 aux=3246424109  ; "Enum"."AssetType"."NeckAccessory"
+  51  148 GETIMPORT A=15 B=48 C=0 D=48 aux=3246427183  ; "Enum"."AccessoryType"."Neck"
+  52  151 GETIMPORT A=15 B=50 C=0 D=50 aux=3246424113  ; "Enum"."AssetType"."ShoulderAccessory"
+  52  159 GETIMPORT A=15 B=52 C=0 D=52 aux=3246427187  ; "Enum"."AccessoryType"."Shoulder"
+cut: write error: Broken pipe
 
 == disasm Settings/BackButtonController 14-24 ==
 -- proto 10 ? @1
