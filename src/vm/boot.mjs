@@ -18,7 +18,7 @@ export async function bootVM(coregui, { log = () => {}, patch = "InExperience", 
     try { const [ok, msg] = runtime.tryRequire(path); started[want] = ok ? "ok" : String(msg).slice(0, 120); } catch (e) { started[want] = "error " + (e?.message || e); }
   }
   log("[vm] CoreGui entry modules:", JSON.stringify(started));
-  const painter = canvas ? gui.attachCanvasGui(canvas, runtime) : null;
+  const painter = canvas ? gui.attachCanvasGui(canvas, runtime, { status: () => "CoreGui VM running; entry modules: " + Object.entries(started).map(([k, v]) => k + " " + (v === "ok" ? "ok" : "failed")).join(", ") }) : null;
   log("[vm] Luau + Roblox runtime ready in", Math.round(performance.now() - t0), "ms");
   return { vm, runtime, loader: runtime, painter, started };
 }

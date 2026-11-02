@@ -82,6 +82,7 @@ const setBusy = (busy) => {
 
 const renderInfo = (info, script) => {
   const root = $("info");
+  if (!root) return;
   root.replaceChildren();
   if (!info) {
     root.append(el("p", { className: "dim", textContent: "Nothing yet." }));
@@ -112,6 +113,7 @@ const renderInfo = (info, script) => {
 
 const renderPlayers = (sections) => {
   const root = $("players");
+  if (!root) return;
   root.replaceChildren();
   if (!sections.length) {
     root.append(el("p", { className: "dim", textContent: "Join a server to see its players." }));
