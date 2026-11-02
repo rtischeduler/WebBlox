@@ -19,8 +19,11 @@ jobs:
       - uses: actions/cache@v4
         id: patchcache
         with:
-          path: /tmp/cg-out
-          key: coregui-patch-v1
+          path: patchcache
+          key: coregui-patch-v2
+      - name: use cached patch
+        if: steps.patchcache.outputs.cache-hit == 'true'
+        run: mkdir -p /tmp/cg-out && cp patchcache/*.tar.gz /tmp/cg-out/
       - name: extract the patch (into /tmp only, nothing big is committed)
         env:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
@@ -31,6 +34,7 @@ jobs:
             ls /tmp/cg-out/src-online-*.tar.gz >/dev/null 2>&1 && break
             echo "no archive on try $i, retrying"; sleep 20
           done
+          mkdir -p patchcache; cp /tmp/cg-out/src-online-InExperience.tar.gz patchcache/ || true
       - name: run the real StarterScript headless (no npm needed)
         continue-on-error: true
         run: |
