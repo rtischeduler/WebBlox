@@ -1008,6 +1008,11 @@ function RT.waitReport()
   for _, a in pairs(RT.awaits) do t[#t + 1] = "await " .. a end
   table.sort(t); return table.concat(t, "\n")
 end
+function RT.loadedList(pat)
+  local t = {}
+  for p in pairs(results) do if string.find(p, pat) then t[#t + 1] = (string.gsub(p, "^PatchRoot/DataModelInstances/", "")) end end
+  table.sort(t); return table.concat(t, "\n")
+end
 function RT.failedList()
   local t = {}
   for p, m in pairs(failed) do t[#t + 1] = (string.gsub(p, "^PatchRoot/DataModelInstances/", "")) .. " :: " .. (string.gsub(string.gsub(tostring(m), "Requested module experienced an error while loading: ", ""), "\n.*", "")) end

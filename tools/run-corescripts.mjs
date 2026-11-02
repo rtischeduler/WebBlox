@@ -40,3 +40,7 @@ try {
   console.log("probe:", pr);
 } catch (e) { console.log("probe failed", e?.message); }
 try { console.log("still waiting:\n" + String(rt.waitReport()).split("\n").slice(0, 60).map((l) => l.replace(/PatchRoot\/\S*\//g, "").slice(0, 200)).join("\n")); } catch (e) { console.log("waitReport failed", e?.message); }
+try {
+  console.log("loaded TopBar/PlayerList/Chat modules:\n" + String(rt.loadedList("TopBar") + "\n" + rt.loadedList("PlayerList") + "\n" + rt.loadedList("ExperienceChat")).split("\n").filter(Boolean).slice(0, 40).map((l) => l.slice(0, 200)).join("\n"));
+  console.log("flags:", rt.run(`local g = game; local o = {}; for _, n in ipairs({"FFlagTopBarRefactor","FFlagDebugDisableExperienceChatMain","FFlagEnableChromeShortcutBar"}) do o[#o+1] = n .. "=" .. tostring(g:DefineFastFlag(n, false)) end; return table.concat(o, " ")`, 1));
+} catch (e) { console.log("loadedList failed", e?.message); }

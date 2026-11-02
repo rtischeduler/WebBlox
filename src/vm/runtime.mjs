@@ -116,6 +116,7 @@ export async function createRuntime(vm, tree, opts = {}) {
     tryRequire: (path) => call("tryRequire", [path], 2),
     outcome: (path) => call("outcome", [path], 2),
     waitReport: () => call("waitReport", [], 1)[0] || "",
+    loadedList: (pat) => call("loadedList", [pat], 1)[0] || "",
     failedList: () => call("failedList", [], 1)[0] || "",
     errors: (n = 8) => call("errorList", [n], 1)[0] || "",
     coreStatus: () => call("coreStatus", [], 1)[0] || "",
