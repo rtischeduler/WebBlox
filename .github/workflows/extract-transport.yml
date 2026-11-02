@@ -1,0 +1,87 @@
+name: extract-transport
+on:
+  workflow_dispatch:
+    inputs:
+      refetch:
+        description: Pull the current production engine first (otherwise use the engine already in the repo)
+        type: boolean
+        default: false
+      engine_base:
+        description: Engine base URL (empty = resolve the current production version; only used with refetch)
+        required: false
+        default: ""
+      upload_wasm:
+        description: Attach the unpacked WebClient.wasm as a downloadable artifact
+        type: boolean
+        default: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        if: ${{ inputs.refetch }}
+        with:
+          node-version: 22
+
+      - name: pull engine
+        if: ${{ inputs.refetch }}
+        run: node .github/scripts/fetch-engine.mjs engine "${{ inputs.engine_base }}"
+
+      - name: get wasm-tools
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo bytecodealliance/wasm-tools --pattern 'wasm-tools-*-x86_64-linux.tar.gz' --output wt.tgz
+          mkdir wt && tar xzf wt.tgz -C wt --strip-components=1
+          wt/wasm-tools --version
+
+      - name: unpack wasm
+        run: |
+          cat engine/WebClient.wasm.gz.part* | gunzip > /tmp/WebClient.wasm
+          ls -l /tmp/WebClient.wasm
+          cat engine/engine-base.txt
+
+      - name: refresh string table for the new wasm
+        if: ${{ inputs.refetch }}
+        run: python3 -u .github/scripts/wasm-search.py /tmp/WebClient.wasm analysis wt/wasm-tools
+
+      - name: extract WebTransport connect code
+        run: python3 -u .github/scripts/extract-transport.py /tmp/WebClient.wasm analysis/transport wt/wasm-tools analysis/strings.txt.gz analysis/imports.txt
+
+      - name: summary
+        run: |
+          {
+            echo "## engine"; echo '```'; cat engine/engine-base.txt; echo '```'
+            echo "## WebTransport connect candidates"; echo '```'; head -c 60000 analysis/transport/transport-connect.txt; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          ls -l analysis/transport
+
+      - name: upload wasm
+        if: ${{ inputs.upload_wasm }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: WebClient-wasm
+          path: /tmp/WebClient.wasm
+          retention-days: 7
+
+      - name: upload extraction
+        uses: actions/upload-artifact@v4
+        with:
+          name: transport-extraction
+          path: analysis/transport
+          retention-days: 14
+
+      - name: commit to main
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add analysis engine
+          git commit -qm "Transport connect extraction" || { echo nothing to commit; exit 0; }
+          git pull -q --rebase origin main
+          git push origin HEAD:main
