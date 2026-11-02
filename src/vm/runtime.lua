@@ -888,6 +888,7 @@ class("DataModel", "Instance", { notCreatable = true, props = { PlaceId = 0, Gam
     local d = D[self]
     for _, c in ipairs(d.kids) do if D[c].class == name then return c end end
     local info = classes[name]
+    if not info and type(name) == "string" and (string.match(name, "Service$") or string.match(name, "Provider$")) then service(name, { lenient = true }); info = classes[name] end
     if not (info and info.service) then error("'" .. tostring(name) .. "' is not a valid Service name", 2) end
     local s = newInst(name); attach(self, s); return s
   end,
@@ -1071,6 +1072,7 @@ classes.ScreenGui.props.OnTopOfCoreBlur = false
 classes.Player.methods.GetUnder13 = function() return false end
 for _, n in ipairs({ "TextLabel", "TextButton", "TextBox" }) do classes[n].props.TextWrap = false end
 classes.BadgeService.events.OnBadgeAwarded = true
+for _, n in ipairs({ "Players", "GuiService", "BadgeService", "StarterGui", "ContextActionService", "TeleportService", "MarketplaceService" }) do if classes[n] then classes[n].lenient = true end end
 classes.AdService.methods.GetAdTeleportInfo = function() return 0, 0 end
 classes.GuiService.props.PreferredTransparency = 1
 classes.AdService.events.AdTeleportInitiated = true
