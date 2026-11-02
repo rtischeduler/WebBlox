@@ -84,3 +84,13 @@ Expect `dropped`. Nothing answers the server's RUPP handshake or keepalives yet,
 ## The engine's loading screen (`engine/WasmPlayer.js`)
 
 The page script for `/games/start` only renders markup. The engine's own JS (class `re`, a `LoadingScreen`) fills it in: title, creator and verified badge from `economy .../v2/assets/{placeId}/details`; icon and background from `thumbnails` after `apis .../universes/v1/places/{placeId}/universe`. The wasm reports progress and failures through `window.__onEngineLoadingStatus({kind, message, errorCode, source, statusCode})`, where `source` is `join`, `teleport` or `gui-service` and picks the error panel title and priority. `join.html` uses the same shape, so a decoded replication layer can report failures through `LoadingScreen.showEngineFailure`.
+
+## Fix for "the join script has no GameFqdn / port (Error Code: -1)" (wasm search, engine f10184 / f131791 / f8593)
+
+The old lookup used `RbxTransportConfig` / `RbxTransportServerPort`; neither string exists in the wasm. Real keys, read by the join-script handler (`PlayerConfigurer`, f10184, in code order): `ServerConnections`, `UdmuxEndpoints`, `DirectServerReturn`, `MachineAddress`, `NetStackTokenValue`, `NetStackPort`, `GameFqdn` (fallback `gameFqdn` when `RbxTransportReadLowercaseGameFqdn`; log "Received GameFqdn from join script"), then `ClientPort`, `UserName`. `UdmuxToken` is read earlier. `GameFqdn` is only 8 bytes, so the compiler inlined it as an i64 constant, which is why a strings search never found it.
+
+- Port = `NetStackPort`, token = `NetStackTokenValue` (log "RbxTransport token or port is empty" / "Received RbxTransport token and port").
+- URL (f131791) = `https://` + gameFqdn + `:` + port + `/wt?X-Rbx-Capabilities=<caps>&X-Rbx-Close-Reason=utf8-v1`; empty host logs "WASM WebTransport requires ConnectConfiguration::gameFqdn" and aborts.
+- Flags in `WebClientApp`: `RbxTransportUseGameFqdn`, `RbxTransportReadLowercaseGameFqdn`, `RbxTransportCertHashesInNetStackConfig2` (cert hashes arrive in the net-stack config), `RbxTransportTakeServerCapabilitiesFromJoin`.
+- `buildWtUrl` now matches these keys case-insensitively at any depth (<= 3) and reports `GameFqdn` / `NetStackPort` as missing by name.
+- Still open: if a real reply has no `GameFqdn` at all, the server did not select a WebTransport game server for this request; compare `topKeys` from `join.html` to see what it returned. The RUPP handshake, key agreement and keepalives are still not decoded, so the connection will still be dropped by the server after it opens.

@@ -180,22 +180,39 @@ const collectHashes = (obj, out = [], depth = 0) => {
   return out;
 };
 
-// How the wasm builds the WebTransport URL (engine f131791, rbx_wasm_rna_connect_js caller): "https://" + the join
-// script's GameFqdn + ":" + port + "/wt?" + "X-Rbx-Capabilities=<caps>" + "&" + "X-Rbx-Close-Reason=utf8-v1".
-// It needs the FQDN (CA-signed cert); an IP address cannot pass TLS, which is why the old guess never connected.
+// How the wasm builds the WebTransport URL (engine f131791, the caller of rbx_wasm_rna_connect_js): "https://" + the
+// ConnectConfiguration gameFqdn + ":" + port + "/wt?" + "X-Rbx-Capabilities=<caps>" + "&" + "X-Rbx-Close-Reason=utf8-v1".
+// It logs "WASM WebTransport requires ConnectConfiguration::gameFqdn" when the host is empty, and needs the FQDN
+// (CA-signed cert): an IP address cannot pass TLS.
+// Where the values come from (PlayerConfigurer join-script handler, engine f10184): the join script keys
+//   GameFqdn (fallback "gameFqdn", flag RbxTransportReadLowercaseGameFqdn; log "Received GameFqdn from join script"),
+//   NetStackPort (the RbxTransport port) and NetStackTokenValue (the RUPP token), next to MachineAddress,
+//   UdmuxEndpoints, UdmuxToken, ServerConnections, DirectServerReturn, ClientPort.
+// Keys are matched case-insensitively and also inside nested objects / ServerConnections entries.
+const findDeep = (obj, names, depth = 0) => {
+  if (!obj || typeof obj !== "object" || depth > 3) return undefined;
+  const direct = ci(obj, ...names);
+  if (direct != null && direct !== "") return direct;
+  for (const value of Object.values(obj)) {
+    const hit = findDeep(value, names, depth + 1);
+    if (hit != null && hit !== "") return hit;
+  }
+  return undefined;
+};
+
 export function buildWtUrl(script) {
   const s = script && typeof script === "object" ? script : {};
-  const config = ci(s, "rbxtransportconfig", "transportconfig");
-  const fqdn = ci(s, "gamefqdn") ?? ci(config, "gamefqdn");
-  const port = Number(ci(config, "rbxtransportserverport", "serverport", "port") ?? ci(s, "rbxtransportserverport", "udmuxport")) || 0;
-  const caps = ci(config, "servercapabilities", "capabilities") ?? ci(s, "servercapabilities");
+  const fqdn = findDeep(s, ["gamefqdn"]);
+  const port = Number(findDeep(s, ["netstackport", "rbxtransportserverport", "rbxtransportport"])) || 0;
+  const caps = findDeep(s, ["servercapabilities", "capabilities"]);
   const missing = [];
   if (!fqdn) missing.push("GameFqdn");
-  if (!port) missing.push("port");
+  if (!port) missing.push("NetStackPort");
   const capText = caps == null ? "" : typeof caps === "string" ? caps : JSON.stringify(caps);
   const query = (capText ? `X-Rbx-Capabilities=${encodeURIComponent(capText)}&` : "") + "X-Rbx-Close-Reason=utf8-v1";
   const url = missing.length ? "" : `https://${String(fqdn).includes(":") ? `[${fqdn}]` : fqdn}:${port}/wt?${query}`;
-  return { url, fqdn: fqdn ? String(fqdn) : null, port: port || null, hasCapabilities: Boolean(capText), missing };
+  const token = findDeep(s, ["netstacktokenvalue", "rbxtransporttokenvalue"]);
+  return { url, fqdn: fqdn ? String(fqdn) : null, port: port || null, hasToken: Boolean(token), hasCapabilities: Boolean(capText), missing };
 }
 
 export function describeJoin(script) {
@@ -219,7 +236,7 @@ export function describeJoin(script) {
     machine: machine ? { host: String(machine), port: Number(ci(s, "serverport")) || null } : null,
     udmux,
     wt: buildWtUrl(s),
-    certHashes: collectHashes(config ?? s),
+    certHashes: collectHashes(s),
     configKeys: config && typeof config === "object" ? Object.keys(config) : [],
     topKeys: Object.keys(s),
   };
