@@ -626,7 +626,7 @@ local guiObject = { Draggable = false, Active = false, AnchorPoint = v2(0, 0), A
 local function noop() end
 class("GuiObject", "GuiBase2d", { props = guiObject,
   events = { "InputBegan", "InputChanged", "InputEnded", "MouseEnter", "MouseLeave", "MouseMoved", "MouseWheelBackward", "MouseWheelForward", "SelectionGained", "SelectionLost",
-    "TouchLongPress", "TouchPan", "TouchPinch", "TouchRotate", "TouchSwipe", "TouchTap" },
+    "TouchLongPress", "TouchPan", "TouchPinch", "TouchRotate", "TouchSwipe", "TouchTap", "DragBegin", "DragStopped" },
   methods = { TweenSize = noop, TweenPosition = noop, TweenSizeAndPosition = noop } })
 local textProps = { FontSize = E.FontSize.Size14, Text = "", TextColor3 = black, TextSize = 14, TextTransparency = 0, TextStrokeColor3 = black, TextStrokeTransparency = 1, TextWrapped = false, TextScaled = false,
   RichText = false, TextXAlignment = E.TextXAlignment.Center, TextYAlignment = E.TextYAlignment.Center, TextTruncate = E.TextTruncate.None, LineHeight = 1, MaxVisibleGraphemes = -1,
@@ -839,7 +839,7 @@ for _, n in ipairs(list("ChatWindowConfiguration ChatInputBarConfiguration Chann
   class(n, "Instance", { props = { Enabled = true, TextSize = 14, TextColor3 = white, BackgroundColor3 = black, BackgroundTransparency = 0.3, FontFace = G.Font.new("rbxasset://fonts/families/GothamSSm.json"), TextStrokeColor3 = black, TextStrokeTransparency = 1,
     HeightScale = 1, WidthScale = 1, AbsolutePosition = v2(0, 0), AbsoluteSize = v2(0, 0), HorizontalAlignment = E.HorizontalAlignment.Left, VerticalAlignment = E.VerticalAlignment.Top, PrimaryAlias = "", SecondaryAlias = "", AutocompleteVisible = true, Text = "", PrefixText = "", Translation = "" } })
 end
-serviceStub("MeshContentProvider SolidModelContentProvider TextureContentProvider KeyframeSequenceProvider CSGDictionaryService NonReplicatedCSGDictionaryService"); serviceStub("CorePackages SocialService MarketplaceService BadgeService GroupService AnalyticsService VoiceChatService AvatarEditorService HapticService ScriptContext Stats LogService TestService MemStorageService UserService ProximityPromptService PermissionsService AssetService ContentProvider ExperienceStateCaptureService CaptureService VideoCaptureService GamePassService FriendService ChangeHistoryService Debris UserGameSettings AdService AvatarChatService MessageBusService CoreScriptSyncService VoiceChatInternal ExperienceService LanguageService SafetyService InputService CommerceService")
+serviceStub("MicroProfilerService MeshContentProvider SolidModelContentProvider TextureContentProvider KeyframeSequenceProvider CSGDictionaryService NonReplicatedCSGDictionaryService"); serviceStub("CorePackages SocialService MarketplaceService BadgeService GroupService AnalyticsService VoiceChatService AvatarEditorService HapticService ScriptContext Stats LogService TestService MemStorageService UserService ProximityPromptService PermissionsService AssetService ContentProvider ExperienceStateCaptureService CaptureService VideoCaptureService GamePassService FriendService ChangeHistoryService Debris UserGameSettings AdService AvatarChatService MessageBusService CoreScriptSyncService VoiceChatInternal ExperienceService LanguageService SafetyService InputService CommerceService")
 class("LogService", "Instance", { service = true, events = { "MessageOut" }, methods = { GetLogHistory = function() return {} end } })
 class("Debris", "Instance", { service = true, methods = { AddItem = function(self, i, t) task.delay(t or 10, function() if isInst(i) then base.Destroy(i) end end) end } })
 
@@ -1070,7 +1070,7 @@ classes.GuiService.props.SelectedCoreObject = NIL
 classes.ScreenGui.props.OnTopOfCoreBlur = false
 classes.Player.methods.GetUnder13 = function() return false end
 for _, n in ipairs({ "TextLabel", "TextButton", "TextBox" }) do classes[n].props.TextWrap = false end
-classes.GuiObject.events.DragBegin = true; classes.GuiObject.events.DragStopped = true
+classes.BadgeService.events.OnBadgeAwarded = true
 classes.AdService.methods.GetAdTeleportInfo = function() return 0, 0 end
 classes.GuiService.props.PreferredTransparency = 1
 classes.AdService.events.AdTeleportInitiated = true
