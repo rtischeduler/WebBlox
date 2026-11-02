@@ -963,6 +963,26 @@ function RT.tryRequire(path)
   spawnFn(function() local ok, r = pcall(require_, inst); out.state = ok and "ok" or "err"; out.value = ok and typeof(r) or tostring(r) end)
   return out.state, out.value
 end
+-- ScriptContext:AddCoreScriptLocal(name, parent): the engine's way of starting a CoreScript. Runs the patch script at CoreScripts/<name> in its own thread.
+local function runCore(path)
+  local out = { state = "pending" }; RT.outcomes[path] = out
+  spawnFn(function()
+    local ok, r = pcall(function() return require_(RT.resolve(path)) end)
+    out.state = ok and "ok" or "err"; out.value = ok and typeof(r) or tostring(r)
+    if not ok and #RT.errors < 500 then RT.errors[#RT.errors + 1] = path .. ": " .. tostring(r) end
+  end)
+end
+RT.runCore = runCore
+function RT.errorList(n)
+  local out = {}
+  for i = 1, math.min(#RT.errors, n or 8) do out[i] = string.sub(tostring(RT.errors[i]), 1, 500) end
+  return table.concat(out, "\n--\n")
+end
+function RT.coreStatus()
+  local ok, err, pend = 0, 0, 0
+  for p, o in pairs(RT.outcomes) do if string.find(p, "CoreScripts", 1, true) then if o.state == "ok" then ok += 1 elseif o.state == "err" then err += 1 else pend += 1 end end end
+  return string.format("%d ok, %d failed, %d running", ok, err, pend)
+end
 function RT.outcome(path) local o = RT.outcomes[path]; if not o then return "none", "" end; return o.state, o.value or "" end
 function RT.errorCount() return #RT.errors end
 function RT.lazyEnumList() return table.concat(RT.lazyEnums, ",") end
@@ -1003,4 +1023,5 @@ for _, n in ipairs(list("GamepadService ThirdPartyUserService AnimationClipProvi
 classes.LocalizationTable.methods.SetEntries = noop; classes.LocalizationTable.methods.GetEntries = function() return {} end
 classes.LocalizationTable.methods.GetString = function(self, target, key) return key end
 classes.LocalizationTable.methods.GetTranslator = function() return newInst("Translator") end
+classes.ScriptContext.methods.AddCoreScriptLocal = function(self, name, parent) runCore("PatchRoot/CoreScripts/" .. tostring(name)) end
 return RT

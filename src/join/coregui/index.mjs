@@ -17,6 +17,7 @@ let running = null;
 export function startCoreGui({ proxy, canvas, log = () => {}, fallbackBase = "engine/engine-base.txt" }) {
   if (running) return running;
   const state = { progress: "Starting…" };
+  let resolveReady; globalThis.webblox = Object.assign(globalThis.webblox || {}, { coreguiReady: new Promise((r) => { resolveReady = r; }) });
   const repaint = (cg) => { if (state.vm) return; try { paintCoreGui(canvas, cg, state); } catch (e) { log("[coregui] paint", e); } };
   repaint(null);
   addEventListener("resize", () => repaint(running?.value || null));
@@ -37,9 +38,9 @@ export function startCoreGui({ proxy, canvas, log = () => {}, fallbackBase = "en
     for (const [n, e] of Object.entries(cg.errors)) log("[coregui] failed", n, e);
     repaint(cg);
     globalThis.webblox = Object.assign(globalThis.webblox || {}, { coregui: cg });
-    import("../../vm/boot.mjs").then((m) => m.bootVM(cg, { log, canvas, player: globalThis.webblox?.player })).then((v) => { state.vm = true; globalThis.webblox.vm = v; })
-      .catch((e) => log("[vm] failed", e));
+    import("../../vm/boot.mjs").then((m) => m.bootVM(cg, { log, canvas, player: globalThis.webblox?.player })).then((v) => { state.vm = true; globalThis.webblox.vm = v; v.ready.then(resolveReady); })
+      .catch((e) => { log("[vm] failed", e); resolveReady({ drawn: false, status: "VM failed: " + (e?.message || e), errors: String(e?.stack || e) }); });
     return cg;
-  })().catch((e) => { state.error = String(e.message || e); log("[coregui] failed", e); repaint(null); running = null; });
+  })().catch((e) => { state.error = String(e.message || e); log("[coregui] failed", e); repaint(null); running = null; resolveReady({ drawn: false, status: "CoreGui failed: " + state.error, errors: String(e?.stack || e) }); });
   return running;
 }

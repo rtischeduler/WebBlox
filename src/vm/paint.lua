@@ -81,16 +81,24 @@ local function emit(o, out, depth)
   if clip or cls.ScrollingFrame then out[#out + 1] = { k = "unclip" } end
 end
 
-function RT.guiDraw()
+local function build()
   local out = {}
   for _, sg in ipairs(gui.roots()) do
     if P(sg, "Enabled") then
       for _, c in ipairs(paintKids(sg)) do emit(c, out, 1) end
     end
   end
+  return out
+end
+
+function RT.guiDraw()
+  local out = build()
   gui.paint = false
   return G.game:GetService("HttpService"):JSONEncode(out)
 end
+
+-- number of draw commands without consuming the repaint flag (used to detect "CoreGui has drawn")
+function RT.guiCount() return #build() end
 
 -- ===== input =====
 local function inside(info, px, py) return info and px >= info.x and py >= info.y and px < info.x + info.w and py < info.y + info.h end

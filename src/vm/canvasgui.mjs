@@ -96,7 +96,7 @@ export function attachCanvasGui(canvas, rt, { resolveImage = (s) => s, inset = 3
       ctx.clearRect(0, 0, w, h);
       try {
         const list = JSON.parse(rt.draw());
-        if (!list.length) { ctx.fillStyle = "#000"; ctx.fillRect(0, 0, w, h); ctx.fillStyle = "#6d6f73"; ctx.font = "13px system-ui, sans-serif"; ctx.textBaseline = "alphabetic"; ctx.fillText(status() || "CoreGui running; nothing drawn yet", 16, h - 16); }
+        if (!list.length) { ctx.fillStyle = "#000"; ctx.fillRect(0, 0, w, h); ctx.fillStyle = "#6d6f73"; ctx.font = "13px system-ui, sans-serif"; ctx.textBaseline = "alphabetic"; const ls = String(status() || "CoreGui running; nothing drawn yet").split("\n"); ls.forEach((t, i) => ctx.fillText(t.slice(0, 200), 16, h - 16 - 18 * (ls.length - 1 - i))); }
         else paintList(ctx, list, imgs, requestImage);
       } catch (e) { console.error("[gui] paint", e); }
     }

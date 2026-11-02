@@ -95,3 +95,9 @@ Not done on purpose: layout/`AbsoluteSize`/rendering (step 3), real input, repli
 - `boot.mjs` now attaches it to the join.html canvas, adds the local player, and tries to require the CoreGui entry modules (TopBarApp, PlayerList, Chat, InGameMenu...) logging the outcome in `window.webblox.vm.started`.
 Not done: keyboard/TextBox input, rbxasset:// image resolution via `WebClient.metadata.json`, UIGradient painting, running the CoreScripts' own app roots (UIBlox.init etc).
 Tests: `node --test test/gui-paint.test.mjs test/gui-layout.test.mjs`.
+
+## Running the real CoreScripts
+`PatchRoot/CoreScripts/StarterScript` is the engine's entry point (it starts UIBlox, TopBar, PlayerList, Chat, menus and calls `ScriptContext:AddCoreScriptLocal("CoreScripts/<X>")`
+for the rest). `boot.mjs` runs it via `runtime.tryRequire`; `AddCoreScriptLocal` runs `PatchRoot/CoreScripts/<name>` in its own thread (`RT.runCore`).
+`runtime.coreStatus()` = "N ok, N failed, N running"; `runtime.errors(n)` lists the first runtime errors. The join loading screen waits on
+`webblox.coreguiReady` (first non-empty draw list, VM failure, or 45 s) and then fades. Test: `node --test test/corescripts.test.mjs`.

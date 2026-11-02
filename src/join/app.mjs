@@ -214,7 +214,11 @@ const showGame = () => {
   loading.setStatus("Preparing Roblox…");
 };
 
-const showHud = () => {
+// The loading screen stays until the real CoreGui has drawn (or failed/timed out), then fades away revealing it.
+const showHud = async () => {
+  loading.setStatus("Loading CoreGui…");
+  const r = await (globalThis.webblox?.coreguiReady || Promise.resolve({ drawn: false, status: "CoreGui not started" }));
+  if (!r.drawn) { chatLog.system("CoreGui drew nothing: " + r.status); log("[coregui] ready without UI:", r.status, r.errors); }
   loading.setStatus("Joined.");
   loading.dismissAfterRenderedFrame();
 };
