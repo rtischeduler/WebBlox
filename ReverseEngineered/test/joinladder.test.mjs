@@ -24,3 +24,25 @@ test("returns the first script with diagnostics when no variant yields GameFqdn"
   assert.equal(r.tried[0].hasMachine, true);
   assert.deepEqual(r.tried[0].wtMissing, ["GameFqdn", "NetStackPort"]);
 });
+
+import { buildWtUrl, describeJoin } from "../src/join/gamejoin.mjs";
+
+test("reads port, caps and cert hashes from the URL-encoded NetStackConfig", () => {
+  const cfg = encodeURIComponent(JSON.stringify({ pubKey: "k", port: 65116, caps: "022dd3e750bb1896", certHashes: ["aBpCKN56yPZ+HrwgO4pE36/l6ZmU58jZB5eOowGG/dY="] }));
+  const w = buildWtUrl({ gameFqdn: "h.example.com", NetStackConfig: cfg });
+  assert.equal(w.url, "https://h.example.com:65116/wt?X-Rbx-Capabilities=022dd3e750bb1896&X-Rbx-Close-Reason=utf8-v1");
+  assert.equal(describeJoin({ NetStackConfig: cfg }).certHashes.length, 1);
+});
+
+test("fetches joinScriptUrl when the inline script has gameFqdn null", async () => {
+  const calls = [];
+  const request = async (url, opts) => {
+    calls.push(opts.method);
+    if (opts.method === "GET") return { ok: true, status: 200, text: async () => JSON.stringify({ GameFqdn: "h.example.com", NetStackPort: 443 }) };
+    return { ok: true, status: 200, text: async () => JSON.stringify({ status: 2, joinScript: { gameFqdn: null, NetStackPort: 443, MachineAddress: "10.0.0.1" }, joinScriptUrl: "https://x/Join.ashx" }) };
+  };
+  const r = await joinGame({ request, placeId: 1, browserTrackerId: 5 });
+  assert.deepEqual(calls, ["POST", "GET"]);
+  assert.equal(r.script.GameFqdn, "h.example.com");
+  assert.equal(r.script.MachineAddress, "10.0.0.1");
+});

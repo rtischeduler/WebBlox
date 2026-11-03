@@ -66,8 +66,14 @@ export const parseJoinScript = (value) => {
 
 const defaultSleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const mergeScripts = (inline, fetched) => {
+  const out = { ...inline };
+  for (const [k, v] of Object.entries(fetched)) if (v != null && v !== "") out[k] = v;
+  return out;
+};
+
 async function fetchJoinScript(request, url, signal) {
-  const res = await request(url, { method: "GET", signal });
+  const res = await request(url, { method: "GET", headers: { "user-agent": ROBLOX_USER_AGENT, accept: "application/json" }, signal });
   if (!res.ok) return null;
   return parseJoinScript(await res.text());
 }
@@ -125,7 +131,12 @@ async function joinOnce({ request, url, body, headers, signal, onStatus, sleep, 
     }
     if (status === JOINED) {
       let script = parseJoinScript(data.joinScript);
-      if (!script && data.joinScriptUrl) script = await fetchJoinScript(request, data.joinScriptUrl, signal);
+      // The inline script can carry gameFqdn: null. The engine also has a separate "FetchedJoinScript" step, so when the host is
+      // missing, fetch joinScriptUrl (Join.ashx) and take its values, keeping the inline ones for anything it lacks.
+      if ((!script || buildWtUrl(script).missing.includes("GameFqdn")) && data.joinScriptUrl) {
+        const fetched = await fetchJoinScript(request, data.joinScriptUrl, signal).catch(() => null);
+        if (fetched) script = script ? mergeScripts(script, fetched) : fetched;
+      }
       if (!script) throw new JoinError("Join succeeded but no join script was returned", { status, data });
       return { jobId: data.jobId || script.GameId || "", status, message, script, raw: data };
     }
@@ -230,11 +241,23 @@ const findDeep = (obj, names, depth = 0) => {
   return undefined;
 };
 
+// NetStackConfig arrives URL-encoded JSON: {"pubKey":..., "port":..., "caps":"<hex>", "certHashes":[...]} (seen in a live join script).
+export function netStackConfig(script) {
+  const raw = findDeep(script, ["netstackconfig"]);
+  if (raw && typeof raw === "object") return raw;
+  if (typeof raw !== "string") return null;
+  for (const text of [raw, (() => { try { return decodeURIComponent(raw); } catch { return ""; } })()]) {
+    try { const v = JSON.parse(text); if (v && typeof v === "object") return v; } catch {}
+  }
+  return null;
+}
+
 export function buildWtUrl(script) {
   const s = script && typeof script === "object" ? script : {};
+  const cfg = netStackConfig(s) || {};
   const fqdn = findDeep(s, ["gamefqdn"]);
-  const port = Number(findDeep(s, ["netstackport", "rbxtransportserverport", "rbxtransportport"])) || 0;
-  const caps = findDeep(s, ["servercapabilities", "capabilities"]);
+  const port = Number(findDeep(s, ["netstackport", "rbxtransportserverport", "rbxtransportport"]) || cfg.port) || 0;
+  const caps = findDeep(s, ["servercapabilities", "capabilities"]) ?? cfg.caps;
   const missing = [];
   if (!fqdn) missing.push("GameFqdn");
   if (!port) missing.push("NetStackPort");
@@ -266,7 +289,8 @@ export function describeJoin(script) {
     machine: machine ? { host: String(machine), port: Number(ci(s, "serverport")) || null } : null,
     udmux,
     wt: buildWtUrl(s),
-    certHashes: collectHashes(s),
+    certHashes: [...new Set([...collectHashes(s), ...[].concat((netStackConfig(s) || {}).certHashes || []).map(normalizeHash).filter(Boolean)])],
+    netStack: { hasConfig: Boolean(netStackConfig(s)), port: Number(findDeep(s, ["netstackport"])) || null },
     configKeys: config && typeof config === "object" ? Object.keys(config) : [],
     topKeys: Object.keys(s),
   };
