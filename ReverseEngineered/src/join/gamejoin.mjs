@@ -183,7 +183,9 @@ export async function probeJoin({ request, placeId, browserTrackerId, signal, lo
 const ci = (obj, ...names) => {
   if (!obj || typeof obj !== "object") return undefined;
   const wanted = names.map((n) => n.toLowerCase());
-  const key = Object.keys(obj).find((k) => wanted.includes(k.toLowerCase()));
+  const keys = Object.keys(obj).filter((k) => wanted.includes(k.toLowerCase()));
+  // "GameFqdn" and "gameFqdn" can both be present (one null): prefer a key that actually has a value.
+  const key = keys.find((k) => obj[k] != null && obj[k] !== "") ?? keys[0];
   return key === undefined ? undefined : obj[key];
 };
 
