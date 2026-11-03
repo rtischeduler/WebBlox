@@ -248,7 +248,7 @@ async function startSession(info) {
   setStep("transport", "run");
   const endpoint = info.udmux[0];
   const url = $("wb-wt-url").value.trim() || info.wt?.url || "";
-  if (!url && info.wt?.missing?.length) chatLog.system("The join script has no " + info.wt.missing.join(" / ") + "; the real engine's WebTransport URL needs both (script keys: " + info.topKeys.join(", ") + ").");
+  if (!url && info.wt?.missing?.length) chatLog.system("The join script has no " + info.wt.missing.join(" / ") + "; the real engine's WebTransport URL needs both (script keys: " + info.topKeys.join(", ") + ")." + (info.tried ? " Tried: " + info.tried.map((t) => t.variant + " [" + t.topKeys.join(",") + "]").join("; ") + "." : "") + (info.machine || info.udmux?.length ? " The server returned a UDP (RakNet) join script, which a browser cannot use; it did not offer a WebTransport server for this request." : ""));
   if (!url) {
     setStep("transport", "fail", "no WebTransport URL");
     const why = info.wt?.missing?.length ? "the join script has no " + info.wt.missing.join(" / ") : "no game server endpoint in the join script";
@@ -330,6 +330,7 @@ async function run() {
       },
     });
     const info = describeJoin(result.script);
+    info.tried = result.tried;
     lastJoin = redact(result.script);
     renderInfo(info, result.script);
     players.update("joinscript", [

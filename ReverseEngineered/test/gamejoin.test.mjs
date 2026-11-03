@@ -10,8 +10,7 @@ import {
   parseJoinScript,
   probeJoin,
   randomTrackerId,
-  redact,
-} from "../src/join/gamejoin.mjs";
+  redact,, JOIN_VARIANTS } from "../src/join/gamejoin.mjs";
 
 const reply = (status, body) => ({ status, ok: status >= 200 && status < 300, text: async () => JSON.stringify(body) });
 const base = { placeId: 123, uuid: () => "attempt-1", sleep: async () => {} };
@@ -90,7 +89,7 @@ test("joinGame polls until joined and returns the script", async () => {
   const replies = [reply(200, { status: 0 }), reply(200, { status: 1, message: "loading" }), reply(200, { status: 2, jobId: "j1", joinScript: { UserId: 1 } })];
   const seen = [];
   const calls = [];
-  const result = await joinGame({
+  const result = await joinGame({ variants: JOIN_VARIANTS.slice(0, 1),
     ...base,
     request: async (url, init) => {
       calls.push({ url, body: JSON.parse(init.body), method: init.method });
@@ -109,7 +108,7 @@ test("joinGame polls until joined and returns the script", async () => {
 test("joinGame uses the instance endpoint with a job id", async () => {
   let url = "";
   let body = null;
-  await joinGame({
+  await joinGame({ variants: JOIN_VARIANTS.slice(0, 1),
     ...base,
     jobId: "abc",
     request: async (u, init) => {
@@ -124,7 +123,7 @@ test("joinGame uses the instance endpoint with a job id", async () => {
 
 test("joinGame fetches joinScriptUrl when the script is not inline", async () => {
   const requests = [];
-  const result = await joinGame({
+  const result = await joinGame({ variants: JOIN_VARIANTS.slice(0, 1),
     ...base,
     request: async (url, init) => {
       requests.push(url);
@@ -138,29 +137,29 @@ test("joinGame fetches joinScriptUrl when the script is not inline", async () =>
 
 test("joinGame reports terminal statuses, HTTP errors and timeouts", async () => {
   await assert.rejects(
-    joinGame({ ...base, request: async () => reply(200, { status: 6, message: "Game is full" }) }),
+    joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, request: async () => reply(200, { status: 6, message: "Game is full" }) }),
     (e) => e instanceof JoinError && e.status === 6 && e.message === "Game is full (status 6, HTTP 200)",
   );
   await assert.rejects(
-    joinGame({ ...base, request: async () => reply(401, { errors: [{ code: 0, message: "Unauthorized" }] }) }),
+    joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, request: async () => reply(401, { errors: [{ code: 0, message: "Unauthorized" }] }) }),
     (e) => e instanceof JoinError && e.message === "Unauthorized (status none, HTTP 401, code 0)",
   );
   await assert.rejects(
-    joinGame({ ...base, request: async () => ({ status: 502, ok: false, text: async () => "<html>" }) }),
+    joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, request: async () => ({ status: 502, ok: false, text: async () => "<html>" }) }),
     /HTTP 502/,
   );
-  await assert.rejects(joinGame({ ...base, maxPolls: 2, request: async () => reply(200, { status: 0 }) }), /Timed out/);
-  await assert.rejects(joinGame({ ...base, placeId: "x", request: async () => reply(200, {}) }), /Invalid place id/);
+  await assert.rejects(joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, maxPolls: 2, request: async () => reply(200, { status: 0 }) }), /Timed out/);
+  await assert.rejects(joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, placeId: "x", request: async () => reply(200, {}) }), /Invalid place id/);
 });
 
 test("joinGame stops when aborted", async () => {
   const ac = new AbortController();
   ac.abort();
-  await assert.rejects(joinGame({ ...base, signal: ac.signal, request: async () => reply(200, { status: 0 }) }), /Cancelled/);
+  await assert.rejects(joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, signal: ac.signal, request: async () => reply(200, { status: 0 }) }), /Cancelled/);
 });
 
 test("joinGame fails clearly when success has no script", async () => {
-  await assert.rejects(joinGame({ ...base, request: async () => reply(200, { status: 2 }) }), /no join script/);
+  await assert.rejects(joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, request: async () => reply(200, { status: 2 }) }), /no join script/);
 });
 
 test("probeJoin checks auth then tries each variant once and reports rows", async () => {
@@ -186,7 +185,7 @@ test("probeJoin records network errors per variant", async () => {
 
 test("joinGame sends the Roblox user-agent and no Origin header", async () => {
   let headers = null;
-  await joinGame({ ...base, request: async (url, init) => { headers = init.headers; return reply(200, { status: 2, jobId: "j", joinScript: { UserId: 1 } }); } });
+  await joinGame({ variants: JOIN_VARIANTS.slice(0, 1), ...base, request: async (url, init) => { headers = init.headers; return reply(200, { status: 2, jobId: "j", joinScript: { UserId: 1 } }); } });
   assert.equal(headers["user-agent"], "Roblox/WinInet");
   assert.equal("origin" in headers, false);
   assert.equal(headers.referer, "https://www.roblox.com/games/123/");

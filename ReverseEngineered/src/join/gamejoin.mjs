@@ -9,6 +9,20 @@ export const joinHeaders = (placeId) => ({
   "user-agent": ROBLOX_USER_AGENT,
   referer: `https://www.roblox.com/games/${placeId}/`,
 });
+// Request shapes tried in order until the server hands back a WebTransport join script (one with GameFqdn + NetStackPort).
+// The engine (WasmPlayer.js Ae()) boots with channel "production", account locales and the place id, and its HTTP user-agent is
+// the fixed string "Roblox/WinInet" (wasm data). The headers below are the ones whose names exist in the wasm's header table.
+export const ENGINE_CHANNEL = "production";
+export const engineHeaders = (placeId, locale = "en_us") => ({
+  ...joinHeaders(placeId),
+  "roblox-place-id": String(placeId),
+  "roblox-channel-name": ENGINE_CHANNEL,
+  "rbx-in-experience-locale": locale,
+});
+export const JOIN_VARIANTS = [
+  { name: "baseline", headers: (place) => joinHeaders(place) },
+  { name: "engine headers", headers: (place) => engineHeaders(place) },
+];
 export const PENDING = new Set([0, 1]);
 export const JOINED = 2;
 
@@ -69,12 +83,28 @@ export async function joinGame({
   sleep = defaultSleep,
   maxPolls = 60,
   pollMs = 1500,
+  variants = JOIN_VARIANTS,
   uuid = () => crypto.randomUUID(),
 }) {
   if (!Number.isFinite(Number(placeId)) || Number(placeId) <= 0) throw new JoinError("Invalid place id");
   const url = jobId ? ENDPOINTS.instance : ENDPOINTS.join;
   const body = JSON.stringify(buildJoinBody({ placeId, jobId, browserTrackerId, forcedPop }));
-  const headers = joinHeaders(placeId);
+  const tried = [];
+  let first = null;
+  for (let v = 0; v < variants.length; v++) {
+    const headers = variants[v].headers(placeId);
+    const got = await joinOnce({ request, url, body, headers, signal, onStatus, sleep, maxPolls, pollMs });
+    const info = describeJoin(got.script);
+    const wtMissing = info.wt.missing;
+    tried.push({ variant: variants[v].name, topKeys: info.topKeys, hasMachine: Boolean(info.machine), hasUdmux: info.udmux.length > 0, wtMissing });
+    const result = { ...got, tried };
+    if (!wtMissing.length) return result;
+    first = first || result;
+  }
+  return first;
+}
+
+async function joinOnce({ request, url, body, headers, signal, onStatus, sleep, maxPolls, pollMs }) {
   for (let poll = 0; poll < maxPolls; poll++) {
     if (signal?.aborted) throw new JoinError("Cancelled");
     const res = await request(url, { method: "POST", headers, body, signal });
