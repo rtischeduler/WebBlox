@@ -1,0 +1,4 @@
+var Roblox = Roblox || {};
+Roblox.LangDynamic = Roblox.LangDynamic || {};
+Roblox.LangDynamic["Feature.BiometricChallenge"] = {"Title.ConfirmHuman":"Xác nhận bạn là người thật","Content.LivenessHostedPrompt":"Mở trình duyệt bên ngoài và tự chụp ảnh bản thân để xác nhận bạn là người thật.","Action.Continue":"Tiếp tục","Action.Cancel":"Hủy","Content.Loading":"Đang tải...","Title.QRHandoff":"Hãy xác nhận bạn là người thật bằng ứng dụng di động","Content.ScanQR":"Quét mã QR này bằng điện thoại hoặc máy tính bảng để mở khóa tài khoản.","Content.QRHelpPrompt":"Không quét được mã?","Content.QRHelpFull":"{prompt} Tải ứng dụng Roblox trên thiết bị di động và thử lại từ đó."};
+window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.BiometricChallenge");
