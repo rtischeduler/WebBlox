@@ -1,0 +1,4 @@
+var Roblox = Roblox || {};
+Roblox.LangDynamic = Roblox.LangDynamic || {};
+Roblox.LangDynamic["Feature.BiometricChallenge"] = {"Title.ConfirmHuman":"Bevestig dat je een mens bent","Content.LivenessHostedPrompt":"Open je externe browser en maak snel een selfie om te bevestigen dat je een mens bent.","Action.Continue":"Doorgaan","Action.Cancel":"Annuleren","Content.Loading":"Bezig met laden...","Title.QRHandoff":"Bevestig dat je een mens bent met de mobiele app","Content.ScanQR":"Scan deze QR-code met je telefoon of tablet om je account te ontgrendelen.","Content.QRHelpPrompt":"Lukt het scannen niet?","Content.QRHelpFull":"{prompt} Download de Roblox-app op je mobiele apparaat en probeer het vanaf daar opnieuw."};
+window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.BiometricChallenge");

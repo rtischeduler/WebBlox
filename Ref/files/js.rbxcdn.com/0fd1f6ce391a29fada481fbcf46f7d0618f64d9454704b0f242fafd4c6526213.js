@@ -1,0 +1,4 @@
+var Roblox = Roblox || {};
+Roblox.LangDynamic = Roblox.LangDynamic || {};
+Roblox.LangDynamic["Feature.PrivateAccessTokenChallenge"] = {"Description.VerificationSuccess":"वेरिफ़िकेशन हो गया.","Description.VerifyingYouAreNotBot":"वेरिफ़ाई किया जा रहा है कि कहीं आप बॉट तो नहीं हैं","Description.VerificationError":"कुछ गड़बड़ी हुई है. फिर से कोशिश करें. "};
+window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.PrivateAccessTokenChallenge");

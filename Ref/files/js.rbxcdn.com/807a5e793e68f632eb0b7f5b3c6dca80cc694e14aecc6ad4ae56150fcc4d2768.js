@@ -1,0 +1,4 @@
+var Roblox = Roblox || {};
+Roblox.LangDynamic = Roblox.LangDynamic || {};
+Roblox.LangDynamic["Feature.ForcePasswordlessLogin"] = {"ForcePasswordlessLogin.Header":"Inicia sesión de otra manera","ForcePasswordlessLogin.Body":"Por tu seguridad, elige uno de los siguientes métodos para iniciar sesión.","ForcePasswordlessLogin.Passkey":"Usar llave de acceso","ForcePasswordlessLogin.QRCode":"Código QR","ForcePasswordlessLogin.EmailOtp":"Código de correo electrónico","ForcePasswordlessLogin.Help":"¿Necesitas ayuda? {supportLinkStart}Comunícate con el equipo de soporte{linkEnd}","ForcePasswordlessLogin.Error":"Algo salió mal. Inténtalo de nuevo."};
+window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.ForcePasswordlessLogin");

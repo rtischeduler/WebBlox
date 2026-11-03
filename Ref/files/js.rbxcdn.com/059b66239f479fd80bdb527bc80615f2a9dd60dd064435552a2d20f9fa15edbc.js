@@ -1,0 +1,4 @@
+var Roblox = Roblox || {};
+Roblox.LangDynamic = Roblox.LangDynamic || {};
+Roblox.LangDynamic["Feature.PlacesList"] = {"Action.SeeAll":"مشاهدة الكل","Label.CreatorBy":"بواسطة {creatorLink}","Label.PlayingPhrase":"{playerCount} نشط","Label.PlacesListName":"التجارب","Label.ContextMenuTitle":"التجربة","Action.JoinGame":"الانضمام","Action.ViewDetails":"عرض التفاصيل","Label.NoGames":"لم يتم العثور على تجارب","Label.GenreExplorerName":"الفئات","Label.RatingPercentage":"التقييم {percentRating}%","Action.InterestCatcherContinue":"متابعة","Action.InterestCatcherSkip":"تخطي","Action.InterestCatcherContinueSelected":"المتابعة (تم تحديد {numSelected})","Action.InterestCatcherInterested":"أنا مهتم","Action.OpenTileMenu":"فتح قائمة اللوحة","Label.TileMenu":"قائمة اللوحة","NetworkError":"حدث خطأ ما. يُرجى إعادة المحاولة لاحقًا"};
+window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.PlacesList");
