@@ -10,7 +10,9 @@ import {
   parseJoinScript,
   probeJoin,
   randomTrackerId,
-  redact,, JOIN_VARIANTS } from "../src/join/gamejoin.mjs";
+  redact,
+  JOIN_VARIANTS,
+} from "../src/join/gamejoin.mjs";
 
 const reply = (status, body) => ({ status, ok: status >= 200 && status < 300, text: async () => JSON.stringify(body) });
 const base = { placeId: 123, uuid: () => "attempt-1", sleep: async () => {} };
