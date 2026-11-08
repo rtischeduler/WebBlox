@@ -187,6 +187,28 @@
   const DIST = "dist/sandstone.mjs";
   const SANDSTONE_RAW = "https://raw.githubusercontent.com/lotsacookie/Singuloxy/main/" + DIST;
   const FLAGS = { FFlagBaseClientGateOnSendChannel: "False", FLogGameJoinUtil: "7" };
+  // Auto-patch for "Failed to open send channel Chat! (256)" on "Joining server".
+  // The engine opens Chat on a logical channel over RtcIo; these flags relax that path.
+  // Levels are cumulative. Start at 1, escalate + relaunch each time the error is seen.
+  const CHAT_FAIL_RE = /Failed to open send channel\s*Chat/i;
+  const bothPrefixes = (o) => { const r = {}; for (const [k, v] of Object.entries(o)) { r["FFlag" + k] = v; r["DFFlag" + k] = v; } return r; };
+  const CHAT_PATCHES = [
+    bothPrefixes({ EnableExpChatUseLogicalChannelId: "False", RbxTransportRtcioRejectDuplicateChannel: "False", RbxTransportSentinelWireChannelIdCheck: "False" }),
+    bothPrefixes({ RbxTransportRtcioRejectChannelOpenOnFailedConnect: "False", RbxTransportRtcioCreditChannelHeader: "False", RbxTransportRtcioNativeControlChannel: "False", RbxTransportRtcioValidateApplicationEnum: "False" }),
+    bothPrefixes({ RbxTransportRtcIoClientForceReliableChannels: "True", RbxTransportRtcioConnStartReentrant: "False", RbxTransportRtcioAwaitIdleOnTransientError: "False", TextChatFixUniverseChatChannelReassignment: "False" }),
+  ];
+  const applyChatLevel = (n) => {
+    for (const p of CHAT_PATCHES) for (const k of Object.keys(p)) delete FLAGS[k];
+    for (let i = 0; i < Math.min(n, CHAT_PATCHES.length); i++) Object.assign(FLAGS, CHAT_PATCHES[i]);
+  };
+  const initialChatLevel = (search) => {
+    const q = new URLSearchParams(search).get("chatfix");
+    if (q === "off" || q === "0") return 0;
+    if (q !== null && /^\d+$/.test(q)) return Math.min(+q, CHAT_PATCHES.length);
+    const saved = store_get_level();
+    return Math.min(Math.max(saved, 1), CHAT_PATCHES.length);
+  };
+  const store_get_level = () => { try { const v = JSON.parse(localStorage.getItem("WB_CHATFIX")); return Number.isInteger(v) ? v : 1; } catch { return 1; } };
   const BUILTIN = [
     "cdn.northstreetumc.org", "cdn.vipersfutbol.com", "cdn.pcesc.org", "cdn.kcchallengevbc.com",
     "cdn.slcbmooc.org", "cdn.topstargym.net", "cdn.goaplytexas.org", "cdn.clearfieldswimming.com",
@@ -423,11 +445,12 @@
     return apply([FALLBACK, ...BUILTIN.filter(isBackup)].find(allowed) || FALLBACK);
   }
 
-  function createWatchdog({ current, switchWisp, relaunch, max = 2 }) {
+  function createWatchdog({ current, switchWisp, relaunch, chat, max = 2 }) {
     let used = 0, busy = false, lastSig = null, shared = false;
     const warn = (m) => console.warn("[webblox] " + m);
     return async (text) => {
       if (typeof text !== "string" || !/\[LoadingScreen\]\s*Engine failure/i.test(text)) return;
+      if (chat && CHAT_FAIL_RE.test(text) && (await chat())) return;
       if (busy || used >= max || shared) return;
       const msg = /"message"\s*:\s*"((?:[^"\\]|\\.)*)"/.exec(text);
       const code = /"errorCode"\s*:\s*(-?\d+)/.exec(text);
@@ -505,7 +528,26 @@
     await frame.wait_for_libcurl();
     let activeWisp = await pickWisp(sandstone.network, mirrors);
     console.log("[webblox] wisp:", activeWisp);
+    let chatLevel = initialChatLevel(pageLocation().search), chatBusy = false, chatAt = 0;
+    applyChatLevel(chatLevel);
+    console.log("[webblox] chat patch level:", chatLevel);
+    const chatEscalate = async () => {
+      if (chatBusy || Date.now() - chatAt < 8000) return true;
+      if (chatLevel >= CHAT_PATCHES.length) return false;
+      chatBusy = true;
+      try {
+        chatLevel++;
+        applyChatLevel(chatLevel);
+        try { localStorage.setItem("WB_CHATFIX", JSON.stringify(chatLevel)); } catch {}
+        console.warn("[webblox] send channel Chat failed, relaunching with chat patch level " + chatLevel + "/" + CHAT_PATCHES.length);
+        say("Patching chat channel (level " + chatLevel + ")…");
+        await frame.navigate_to(startUrl());
+      } catch (e) { console.warn("[webblox] chat patch relaunch failed: " + ((e && e.message) || e)); }
+      finally { chatBusy = false; chatAt = Date.now(); }
+      return true;
+    };
     const watchdog = createWatchdog({
+      chat: chatEscalate,
       current: () => activeWisp,
       switchWisp: async (exclude) => {
         activeWisp = await pickWisp(sandstone.network, mirrors, exclude);
