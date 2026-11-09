@@ -3,7 +3,7 @@
 (() => {
   const script = document.currentScript;
   const base = (script && script.src) || new URL((window.WB_ASSETS || "./Assets/") + "js/proxy-transport.js", location.href).href;
-  const coreUrl = new URL("proxy-core.mjs", base).href;
+  const coreUrl = new URL("proxy-core.mjs", base).href + "?v=" + String(window.WB_SHA || Date.now()).slice(0, 12);
   let core = null;
   let state = null;
   let starting = null;

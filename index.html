@@ -6,23 +6,75 @@
   window.WB_ROOT = new URL("./", document.baseURI).pathname;
 </script>
 </head><body><div id="wb-wait"><div id="wb-msg">Loading WebBlox</div></div>
-<script src="Assets/js/proxy-transport.js"></script>
 <script>
 (async () => {
+  const REPO = "rtischeduler/WebBlox", BRANCH = "main";
   const msg = document.getElementById("wb-msg");
+  const say = (t) => { msg.textContent = t; };
+
+  // 1. Ask the GitHub API for the newest commit and pin every URL to it.
+  const latestSha = async () => {
+    const c = new AbortController(), t = setTimeout(() => c.abort(), 5000);
+    try {
+      const r = await fetch("https://api.github.com/repos/" + REPO + "/commits/" + BRANCH, {
+        cache: "no-store", signal: c.signal, headers: { Accept: "application/vnd.github.sha" },
+      });
+      if (!r.ok) throw new Error("GitHub API " + r.status);
+      const sha = (await r.text()).trim();
+      if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error("bad sha");
+      try { localStorage.setItem("wb-sha", sha); } catch {}
+      return sha;
+    } finally { clearTimeout(t); }
+  };
+  say("Checking for the latest WebBlox…");
+  let sha = null;
+  try { sha = await latestSha(); }
+  catch (e) {
+    console.warn("[pin] GitHub API failed:", e && e.message);
+    try { sha = localStorage.getItem("wb-sha"); } catch {}
+  }
+  window.WB_SHA = sha || String(Date.now());
+  const v = window.WB_SHA.slice(0, 12);
+  console.log("[pin] using", window.WB_SHA);
+
+  // 2. The core pack: pinned URL on Pages, then pinned jsDelivr, then pinned raw GitHub.
+  const nativeFetch = window.fetch.bind(window);
+  const packSources = [
+    new URL("Assets/core.pack.gz?v=" + v, document.baseURI).href,
+    "https://cdn.jsdelivr.net/gh/" + REPO + "@" + window.WB_SHA + "/Assets/core.pack.gz",
+    "https://raw.githubusercontent.com/" + REPO + "/" + window.WB_SHA + "/Assets/core.pack.gz",
+  ];
+  window.fetch = async function (input, init) {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.href : input && input.url;
+    if (url && /\/core\.pack\.gz(\?|$)/.test(url) && !packSources.includes(url)) {
+      let last;
+      for (const src of packSources) {
+        try {
+          const r = await nativeFetch(src, { credentials: "omit" });
+          if (r.ok) return r;
+          last = r;
+          console.warn("[pin] core pack", r.status, src);
+        } catch (e) { console.warn("[pin] core pack failed", src, e && e.message); }
+      }
+      return last || nativeFetch(input, init);
+    }
+    return nativeFetch(input, init);
+  };
+
   const load = (src) => new Promise((resolve, reject) => {
     const s = document.createElement("script");
-    s.src = src;
+    s.src = src + (src.includes("?") ? "&" : "?") + "v=" + v;
     s.onload = resolve;
     s.onerror = () => reject(new Error("Could not load " + src));
     document.body.appendChild(s);
   });
   try {
-    msg.textContent = "Connecting to the proxy…";
-    await window.proxyTransport.start((t) => { msg.textContent = t; });
-    msg.textContent = "Loading WebBlox";
-    await load("Assets/games/webblox/signin.js?v=11");
-    await load("Assets/games/webblox/boot.js?v=11");
+    await load("Assets/js/proxy-transport.js");
+    say("Connecting to the proxy…");
+    await window.proxyTransport.start(say);
+    say("Loading WebBlox");
+    await load("Assets/games/webblox/signin.js");
+    await load("Assets/games/webblox/boot.js");
   } catch (e) {
     console.error(e);
     msg.innerHTML = "";
