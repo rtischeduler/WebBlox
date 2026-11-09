@@ -73,7 +73,20 @@
     say("Connecting to the proxy…");
     await window.proxyTransport.start(say);
     say("Loading WebBlox");
-    await load("Assets/games/webblox/signin.js");
+    // signin.js changes often: take it straight from the pinned commit so a stale Pages copy can never be used.
+    const loadPinnedText = async (path) => {
+      if (!/^[0-9a-f]{40}$/.test(window.WB_SHA)) throw new Error("no pinned commit");
+      const r = await nativeFetch("https://cdn.jsdelivr.net/gh/" + REPO + "@" + window.WB_SHA + "/" + path, { credentials: "omit" });
+      if (!r.ok) throw new Error("jsDelivr " + r.status);
+      const code = await r.text();
+      if (!code.includes("webbloxProxyCookie")) throw new Error("pinned copy is stale");
+      const s = document.createElement("script");
+      s.textContent = code;
+      document.body.appendChild(s);
+    };
+    try { await loadPinnedText("Assets/games/webblox/signin.js"); }
+    catch (e) { console.warn("[pin] signin.js from jsDelivr failed:", e && e.message); await load("Assets/games/webblox/signin.js"); }
+    if (!window.webbloxProxyCookie) console.warn("[signin] webbloxProxyCookie missing: stale signin.js");
     await load("Assets/games/webblox/boot.js");
   } catch (e) {
     console.error(e);
