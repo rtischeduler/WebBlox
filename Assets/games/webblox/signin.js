@@ -87,6 +87,15 @@
     return pendingSignIn;
   };
 
+  window.webbloxProxyCookie = async raw => {
+    const value = String(raw || '').trim().replace(/^\.?ROBLOSECURITY=/i, '').replace(/^["']|["';]$/g, '');
+    if (!value) return false;
+    try { localStorage.setItem(COOKIE_KEY, value); } catch { return false; }
+    if (await isSignedIn()) { closeFrame(); return true; }
+    try { localStorage.removeItem(COOKIE_KEY); } catch {}
+    return false;
+  };
+
   window.webbloxProxyResume = async () => {
     try { return await window.webbloxProxySignIn(true); } catch { return false; }
   };

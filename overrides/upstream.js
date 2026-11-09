@@ -21,6 +21,9 @@
         '<h1 id="session-title">' + (expired ? 'Sign in again' : 'Play WebBlox') + '</h1>' +
         '<p class="session-text">Sign in with Roblox to play.</p>' +
         '<button class="session-submit" type="button">Sign in with Roblox</button>' +
+        '<p class="session-text">Or paste your .ROBLOSECURITY cookie:</p>' +
+        '<input class="session-cookie" type="password" autocomplete="off" spellcheck="false" placeholder="_|WARNING:-DO-NOT-SHARE-THIS..." style="width:100%;box-sizing:border-box;padding:10px;margin-bottom:8px">' +
+        '<button class="session-submit session-cookie-submit" type="button">Use cookie</button>' +
         '<p class="session-error" role="alert"></p>' +
       '</div>';
     const open = root.querySelector('button');
@@ -37,6 +40,23 @@
       } catch (err) {
         error.textContent = err.message || 'Roblox sign-in failed. Try again.';
         open.disabled = false;
+      }
+    };
+    const cookieInput = root.querySelector('.session-cookie');
+    const cookieButton = root.querySelector('.session-cookie-submit');
+    cookieButton.onclick = async () => {
+      if (cookieButton.disabled || !cookieInput.value.trim()) return;
+      cookieButton.disabled = true;
+      error.textContent = '';
+      try {
+        if (!window.webbloxProxyCookie) throw new Error('Reload WebBlox to load Roblox sign-in.');
+        if (!await window.webbloxProxyCookie(cookieInput.value)) throw new Error('Roblox rejected that cookie. Paste a fresh one.');
+        cookieInput.value = '';
+        root.remove();
+        resolve();
+      } catch (err) {
+        error.textContent = err.message || 'Could not use that cookie.';
+        cookieButton.disabled = false;
       }
     };
     const mount = () => {
