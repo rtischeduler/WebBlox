@@ -1,0 +1,198 @@
+== wasm memories ==
+no wasm downloaded
+
+== javascript hits ==
+https://truffled.lol/games/webblox/boot.js
+  41  if (ArrayBuffer.isView(body)) return body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength);
+  424  /^\[MAIN\] heartbeat/, /^\[pthread\] thread #/, /^\[Direct /i, /^\[DIRECT KEY\]/, /^Tick \d+ took /,
+  881  const SharedBuffer = new WebAssembly.Memory({ initial: 0, maximum: 0, shared: true }).buffer.constructor;
+  882  Object.defineProperty(self, 'SharedArrayBuffer', { value: SharedBuffer, writable: true, configurable: true });
+  937  Atomics.store(flag, 0, pending + 1);
+  938  Atomics.notify(flag, 0, 1);
+  1006  SharedArrayBuffer: SharedBuffer,
+  1010  crossOriginIsolated: false,
+  1011  name: 'em-pthread',
+  1112:1867  n null;\n if (typeof body === 'string') return new TextEncoder().encode(body).buffer;\n if (body instanceof ArrayBuffer) return body.slice(0);\n if (ArrayBuffer.isView(body)) return body.buffer.slice(body.byteOf
+  1112:21449  olute(req.url).href }, sync: { control: control.buffer, data: shared } });\n Atomics.wait(control, 0, 0);\n const total = Atomics.load(control, 1);\n const bytes = new Uint8Array(shared, 0, total).slice();\n 
+  1112:21497  buffer, data: shared } });\n Atomics.wait(control, 0, 0);\n const total = Atomics.load(control, 1);\n const bytes = new Uint8Array(shared, 0, total).slice();\n const metaLength = new DataView(bytes.buffer).ge
+  1117  const NATIVE_SHARED = typeof SharedArrayBuffer === 'function';
+  1118  if (!self.crossOriginIsolated && NATIVE_SHARED) {
+  1119  Object.defineProperty(self, 'crossOriginIsolated', { configurable: true, get: () => true });
+  1121  const fakeThreads = !self.crossOriginIsolated && !NATIVE_SHARED && typeof WebAssembly.Suspending === 'function'
+  1384  Atomics.store(flag, 1, total);
+  1385  Atomics.store(flag, 0, 1);
+  1386  Atomics.notify(flag, 0);
+  1444  if (fakeThreads && options && options.name === 'em-pthread') return fakeThreads.create();
+https://truffled.lol/games/webblox/boot.js?v=9
+  41  if (ArrayBuffer.isView(body)) return body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength);
+  424  /^\[MAIN\] heartbeat/, /^\[pthread\] thread #/, /^\[Direct /i, /^\[DIRECT KEY\]/, /^Tick \d+ took /,
+  881  const SharedBuffer = new WebAssembly.Memory({ initial: 0, maximum: 0, shared: true }).buffer.constructor;
+  882  Object.defineProperty(self, 'SharedArrayBuffer', { value: SharedBuffer, writable: true, configurable: true });
+  937  Atomics.store(flag, 0, pending + 1);
+  938  Atomics.notify(flag, 0, 1);
+  1006  SharedArrayBuffer: SharedBuffer,
+  1010  crossOriginIsolated: false,
+  1011  name: 'em-pthread',
+  1112:1867  n null;\n if (typeof body === 'string') return new TextEncoder().encode(body).buffer;\n if (body instanceof ArrayBuffer) return body.slice(0);\n if (ArrayBuffer.isView(body)) return body.buffer.slice(body.byteOf
+  1112:21449  olute(req.url).href }, sync: { control: control.buffer, data: shared } });\n Atomics.wait(control, 0, 0);\n const total = Atomics.load(control, 1);\n const bytes = new Uint8Array(shared, 0, total).slice();\n 
+  1112:21497  buffer, data: shared } });\n Atomics.wait(control, 0, 0);\n const total = Atomics.load(control, 1);\n const bytes = new Uint8Array(shared, 0, total).slice();\n const metaLength = new DataView(bytes.buffer).ge
+  1117  const NATIVE_SHARED = typeof SharedArrayBuffer === 'function';
+  1118  if (!self.crossOriginIsolated && NATIVE_SHARED) {
+  1119  Object.defineProperty(self, 'crossOriginIsolated', { configurable: true, get: () => true });
+  1121  const fakeThreads = !self.crossOriginIsolated && !NATIVE_SHARED && typeof WebAssembly.Suspending === 'function'
+  1384  Atomics.store(flag, 1, total);
+  1385  Atomics.store(flag, 0, 1);
+  1386  Atomics.notify(flag, 0);
+  1444  if (fakeThreads && options && options.name === 'em-pthread') return fakeThreads.create();
+https://truffled.lol/studying/session.js
+  40  `,btoa(new TextEncoder().encode(o).reduce((e,t)=>(e.push(String.fromCharCode(t)),e),[]).join(""))))},codecEncode:this.controller.config.codec.encode,codecDecode:this.controller.config.codec.decode}}}plugins=[];constructo
+https://truffled.lol/studying/lesson.js
+  18:41163  ag!=="function"||typeof r==="undefined"||!e.getFlag("syncxhr"))return;let s=new SharedArrayBuffer(1024,{maxByteLength:0x7fffffff}),o=new DataView(s);e.natives.call("Worker.prototype.postMessage",r,{sab:s,args:a,headers:t
+  18:41836  =>g}),e.RawTrap(t.this,"response",{get:()=>"arraybuffer"===t.this.responseType?p.buffer:g}),e.RawTrap(t.this,"responseXML",{get:()=>new DOMParser().parseFromString(g,"text/xml")}),e.RawTrap(t.this,"getAllResponseHeaders"
+  19  //# sourceURL=${r.url.href}`),i}return s.body;case"style":return(0,n.sM)(await s.text(),e.context,r.meta);case"sharedworker":case"worker":return(0,n.iP)(new Uint8Array(await s.arrayBuffer()),s.url,e.context,r.meta,r.isMo
+  30:15167  null;function s(){return(null===a||0===a.byteLength)&&(a=new Uint8Array(n.memory.buffer)),a}let o=new TextDecoder("utf-8",{ignoreBOM:!0,fatal:!0});o.decode();let l=0;function c(e,t){var r;return e>>>=0,r=e,(l+=t)>=0x7ff0
+https://truffled.lol/studying/chobitsu/chobitsu.js
+  19:334219  sStream(A)||r.isFile(A)||r.isBlob(A))return A;if(r.isArrayBufferView(A))return A.buffer;if(r.isURLSearchParams(A))return u(e,"application/x-www-form-urlencoded;charset=utf-8"),A.toString();var t,o=r.isObject(A),i=e&&e["C
+https://js.rbxcdn.com/fc00826f9e0f8fd2f6bfe2152fb652d4f73e1a12e1ad50ad234d2f60854a311c-Polyfill.js
+  1:7292  gth");L(this,{type:M,buffer:t,byteLength:e,byteOffset:s,bytes:n.bytes}),o||(this.buffer=t,this.byteLength=e,this.byteOffset=s)})[_],o&&(Z(C,"byteLength",P),Z(U,"buffer",j),Z(U,"byteLength",j),Z(U,"byteOffset",j)),f(F,{ge
+  1:171057  turn t&&t.items&&t.files?t:null},tc=function(t,r,e){if(U(r,t))return F(r,t);if("SharedArrayBuffer"===(e||y(t)))n=ti?ti(t):t;else{var n,i,s,u,a,c,h=o.DataView;h||f(t.slice)||ts("ArrayBuffer");try{if(f(t.slice)&&!t.resizab
+  1:172213  break;case"DOMException":i=new C(t.message,t.name);break;case"ArrayBuffer":case"SharedArrayBuffer":i=tc(t,r,d);break;case"DataView":case"Int8Array":case"Uint8Array":case"Uint8ClampedArray":case"Int16Array":case"Uint16Arr
+https://js.rbxcdn.com/95aad7f7b1cdec3dc13afca4629d0d47d8fb30a40e4210acaca32664fe47b9ba-RealTime.js
+  1:14337  ?"undefined":r(e)));if(R(e,ArrayBuffer)||e&&R(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(R(e,SharedArrayBuffer)||e&&R(e.buffer,SharedArrayBuffer)))return h(e,t,n);if("number"==typeof e)throw TypeError('The "va
+  1:14361  (e,ArrayBuffer)||e&&R(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(R(e,SharedArrayBuffer)||e&&R(e.buffer,SharedArrayBuffer)))return h(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:14395  ayBuffer)||"u">typeof SharedArrayBuffer&&(R(e,SharedArrayBuffer)||e&&R(e.buffer,SharedArrayBuffer)))return h(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  1:39200  SetIteratorPrototype%":"u">typeof Set&&x&&T?T(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":x&&T?T(""[Symbol.iterator
+  1:39231  of Set&&x&&T?T(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":x&&T?T(""[Symbol.iterator]()):o,"%Symbol%":x?Symbol:o,"%
+  1:39251  et()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":x&&T?T(""[Symbol.iterator]()):o,"%Symbol%":x?Symbol:o,"%SyntaxError%":l,"%Th
+  1:42405  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:42436  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  6:319138  var t=new Uint8Array(e.length),n=0;n<e.length;n+=1)t[n]=e.charCodeAt(n);return t.buffer},fy=function(e){return ej(btoa(Array.from(new Uint8Array(e),function(e){return String.fromCodePoint(e)}).join("")))},fv=function(e,t
+https://js.rbxcdn.com/e33477c956a2adf0925fd9ce93004152929801c5bfc09f91ac19caa377b8e99f-ReactStyleGuide.js
+  1:5889  ?"undefined":r(e)));if(T(e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "va
+  1:5913  (e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:5947  ayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+https://js.rbxcdn.com/2fdef63668705a2aa45e93b457a701862bef9b6e3e7d8292483e9f2176538272-CoreUtilities.js
+  6:19145  ?"undefined":n(e)));if(k(e,ArrayBuffer)||e&&k(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  6:19169  (e,ArrayBuffer)||e&&k(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  6:19203  ayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  6:52456  SetIteratorPrototype%":"u">typeof Set&&I&&A?A(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&A?A(""[Symbol.iterator
+  6:52487  of Set&&I&&A?A(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&A?A(""[Symbol.iterator]()):o,"%Symbol%":I?Symbol:o,"%
+  6:52507  et()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&A?A(""[Symbol.iterator]()):o,"%Symbol%":I?Symbol:o,"%SyntaxError%":l,"%Th
+  6:55661  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  6:55692  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  11:90565  taView&&P(new DataView(new ArrayBuffer(1),0,1)),t.isDataView=I;var A="u">typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function T(e){return"[object SharedArrayBuffer]"===d(e)}function R(e){return void 0!==A&&(void 0=
+  11:90583  View(new ArrayBuffer(1),0,1)),t.isDataView=I;var A="u">typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function T(e){return"[object SharedArrayBuffer]"===d(e)}function R(e){return void 0!==A&&(void 0===T.working&&(T.wo
+  11:90637  >typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function T(e){return"[object SharedArrayBuffer]"===d(e)}function R(e){return void 0!==A&&(void 0===T.working&&(T.working=T(new A)),T.working?T(e):n(e,A))}function k(e){r
+  11:90912  return g(e,v)}function j(e){return l&&g(e,y)}function L(e){return f&&g(e,m)}t.isSharedArrayBuffer=R,t.isAsyncFunction=function(e){return"[object AsyncFunction]"===d(e)},t.isMapIterator=function(e){return"[object Map Iter
+  11:402473  var t=new Uint8Array(e.length),r=0;r<e.length;r+=1)t[r]=e.charCodeAt(r);return t.buffer},ph=function(e){return pi(new Uint8Array(e))},pv=function(e){var t;return new Uint8Array((t=ek(e),Uint8Array.from(atob(t),function(e
+https://js.rbxcdn.com/12b630149830d1df94cddc2165f9e0d7bfb1328b7d2b6a46ac59fa121db0342d-Sentry.js
+  1:3066  Buffer.isView(e)){var f=e;if(j(f,Uint8Array)){var v=new Uint8Array(f);return d(v.buffer,v.byteOffset,v.byteLength)}return p(f)}if(null==e)throw TypeError("The first argument must be one of type string, Buffer, ArrayBuffe
+https://js.rbxcdn.com/e3ee1d26df4ed304eedf103641f389dcfe507d24f0aa079d366824f187f14ffa-AngularJsUtilities.js
+  1:485577  orPrototype%":"undefined"!=typeof Set&&T&&x?x(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":T&&x?x(""[Symbol
+  1:485617  &&x?x(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":T&&x?x(""[Symbol.iterator]()):o,"%Symbol%":T?Symbol:o,"%
+  1:485637  ol.iterator]()):o,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":T&&x?x(""[Symbol.iterator]()):o,"%Symbol%":T?Symbol:o,"%SyntaxError%":l,"%Th
+  1:488854  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:488885  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+https://js.rbxcdn.com/1fb0ecc3db4cf6d25bfbbc5d65ef9516575863a1a18c5330cf8273d901ca6df8-Challenge.js
+  1:35850  ?"undefined":r(e)));if(x(e,ArrayBuffer)||e&&x(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(x(e,SharedArrayBuffer)||e&&x(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "va
+  1:35874  (e,ArrayBuffer)||e&&x(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(x(e,SharedArrayBuffer)||e&&x(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:35908  ayBuffer)||"u">typeof SharedArrayBuffer&&(x(e,SharedArrayBuffer)||e&&x(e.buffer,SharedArrayBuffer)))return p(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  1:65619  SetIteratorPrototype%":"u">typeof Set&&_&&A?A(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":_&&A?A(""[Symbol.iterator
+  1:65650  of Set&&_&&A?A(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":_&&A?A(""[Symbol.iterator]()):o,"%Symbol%":_?Symbol:o,"%
+  1:65670  et()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":_&&A?A(""[Symbol.iterator]()):o,"%Symbol%":_?Symbol:o,"%SyntaxError%":s,"%Th
+  1:68824  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:68855  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  6:18043  e.put(o.indexOf(this.data[t]),6)},e.exports=a},477:function(e){function t(){this.buffer=[],this.length=0}t.prototype={get:function(e){var t=Math.floor(e/8);return(this.buffer[t]>>>7-e%8&1)==1},put:function(e,t){for(var n
+https://js.rbxcdn.com/c2842bfcd97e55a576b1e191a6db391103a029714ef58c8932cd301be2bede05-WebBlox.js
+  1:3217  ed":a(n)));if(E(n,ArrayBuffer)||n&&E(n.buffer,ArrayBuffer)||"undefined"!=typeof SharedArrayBuffer&&(E(n,SharedArrayBuffer)||n&&E(n.buffer,SharedArrayBuffer)))return h(n,r,o);if("number"==typeof n)throw TypeError('The "va
+  1:3241  uffer)||n&&E(n.buffer,ArrayBuffer)||"undefined"!=typeof SharedArrayBuffer&&(E(n,SharedArrayBuffer)||n&&E(n.buffer,SharedArrayBuffer)))return h(n,r,o);if("number"==typeof n)throw TypeError('The "value" argument must not b
+  1:3275  ||"undefined"!=typeof SharedArrayBuffer&&(E(n,SharedArrayBuffer)||n&&E(n.buffer,SharedArrayBuffer)))return h(n,r,o);if("number"==typeof n)throw TypeError('The "value" argument must not be of type number. Received type nu
+  1:36989  orPrototype%":"undefined"!=typeof Set&&j&&I?I(new Set()[Symbol.iterator]()):i,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?i:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":j&&I?I(""[Symbol
+  1:37029  &&I?I(new Set()[Symbol.iterator]()):i,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?i:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":j&&I?I(""[Symbol.iterator]()):i,"%Symbol%":j?Symbol:i,"%
+  1:37049  ol.iterator]()):i,"%SharedArrayBuffer%":"undefined"==typeof SharedArrayBuffer?i:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":j&&I?I(""[Symbol.iterator]()):i,"%Symbol%":j?Symbol:i,"%SyntaxError%":f,"%Th
+  1:40266  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:40297  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  8:46961  (new DataView(new ArrayBuffer(1),0,1)),r.isDataView=j;var I="undefined"!=typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function W(n){return"[object SharedArrayBuffer]"===p(n)}function O(n){return void 0!==I&&(void 0=
+  8:46979  ArrayBuffer(1),0,1)),r.isDataView=j;var I="undefined"!=typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function W(n){return"[object SharedArrayBuffer]"===p(n)}function O(n){return void 0!==I&&(void 0===W.working&&(W.wo
+  8:47033  =typeof SharedArrayBuffer?SharedArrayBuffer:void 0;function W(n){return"[object SharedArrayBuffer]"===p(n)}function O(n){return void 0!==I&&(void 0===W.working&&(W.working=W(new I)),W.working?W(n):a(n,I))}function E(n){r
+  8:47308  return w(n,g)}function L(n){return f&&w(n,b)}function A(n){return m&&w(n,y)}r.isSharedArrayBuffer=O,r.isAsyncFunction=function(n){return"[object AsyncFunction]"===p(n)},r.isMapIterator=function(n){return"[object Map Iter
+  30:127990  i,l,u),r.writing){o++;break}}r.bufferProcessing=!1,o<r.buffer.length?r.buffer=r.buffer.slice(o):r.buffer.length=0}(n,o),a?BH.nextTick(function(){l(n,o,c,i)}):l(n,o,c,i)}}(r,n)},this.writecb=null,this.writelen=0,this.buff
+https://js.rbxcdn.com/19f3928bf9a30d9337452e9b282460e71a679459e774627bf76ac6fea1c8d4fb-VerificationUpsell.js
+  1:8161  SetIteratorPrototype%":"u">typeof Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator
+  1:8192  of Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  1:8212  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  1:11366  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:11397  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  1:42463  SetIteratorPrototype%":"u">typeof Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator
+  1:42494  of Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  1:42514  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  1:45668  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:45699  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  1:52800  SetIteratorPrototype%":"u">typeof Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator
+  1:52831  of Set&&E&&A?A((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  1:52851  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&A?A(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  1:56005  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:56036  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+https://js.rbxcdn.com/24a1c1b49140b8e5c860d8aafcc93b47060955d2a61218cf181dd5f24d7c2ec8-SearchLandingPage.js
+  1:2943  ?"undefined":n(e)));if(T(e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:2967  (e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:3001  ayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  13:1207908  ;C<e.length;C++)E[C]=HK(e[C],C,r,o,i);return E}if(HG(e,ArrayBuffer)||"u">typeof SharedArrayBuffer&&HG(e,SharedArrayBuffer))return e.slice(0);if(HG(e,DataView)){var A=new DataView(e.buffer.slice(0),e.byteOffset,e.byteLeng
+  13:1207932  e[C],C,r,o,i);return E}if(HG(e,ArrayBuffer)||"u">typeof SharedArrayBuffer&&HG(e,SharedArrayBuffer))return e.slice(0);if(HG(e,DataView)){var A=new DataView(e.buffer.slice(0),e.byteOffset,e.byteLength);return o.set(e,A),H$
+  13:1208009  (e,SharedArrayBuffer))return e.slice(0);if(HG(e,DataView)){var A=new DataView(e.buffer.slice(0),e.byteOffset,e.byteLength);return o.set(e,A),H$(A,e,r,o,i),A}if("u">typeof File&&HG(e,File)){var T=new File([e],e.name,{type
+https://js.rbxcdn.com/31ecff91fb059d786ff7d57dc1a5bfb9a52fe33f5b2f5bd8c4c5ec0075c7dc5a-AccessManagementUpsellV2.js
+  5:9500  SetIteratorPrototype%":"u">typeof Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator
+  5:9531  of Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  5:9551  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  5:12705  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  5:12736  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  5:43802  SetIteratorPrototype%":"u">typeof Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator
+  5:43833  of Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  5:43853  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  5:47007  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  5:47038  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  5:54139  SetIteratorPrototype%":"u">typeof Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator
+  5:54170  of Set&&E&&C?C((new Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%
+  5:54190  Set)[Symbol.iterator]()):n,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?n:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":E&&C?C(""[Symbol.iterator]()):n,"%Symbol%":E?Symbol:n,"%SyntaxError%":s,"%Th
+  5:57344  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  5:57375  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+https://js.rbxcdn.com/ac074606f5ac22fea18df92ab378f3566782c5c602e801122c951a80c5666137-Navigation.js
+  1:240995  ?"undefined":n(e)));if(P(e,ArrayBuffer)||e&&P(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(P(e,SharedArrayBuffer)||e&&P(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:241019  (e,ArrayBuffer)||e&&P(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(P(e,SharedArrayBuffer)||e&&P(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:241053  ayBuffer)||"u">typeof SharedArrayBuffer&&(P(e,SharedArrayBuffer)||e&&P(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  5:9130  SetIteratorPrototype%":"u">typeof Set&&A&&I?I(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":A&&I?I(""[Symbol.iterator
+  5:9161  of Set&&A&&I?I(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":A&&I?I(""[Symbol.iterator]()):o,"%Symbol%":A?Symbol:o,"%
+  5:9181  et()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":A&&I?I(""[Symbol.iterator]()):o,"%Symbol%":A?Symbol:o,"%SyntaxError%":s,"%Th
+  5:12335  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  5:12366  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  12:114316  ction(y){switch(y.label){case 0:if("u"<typeof CompressionStream)return[2,{body:t.buffer,compressed:!1}];return(r=(e=new CompressionStream("gzip")).writable.getWriter()).write(t).catch(rH),r.close().catch(rH),n=[],[4,(o=e
+https://js.rbxcdn.com/fbc5876baa8e6a2361d0d1f20bcb3a62c3dbc831dd7a187c165170016def6dda-GameLaunch.js
+  1:2943  ?"undefined":n(e)));if(T(e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return d(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:2967  (e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return d(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:3001  ayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return d(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+https://js.rbxcdn.com/10896dcc8b0f892dd5eda0d963f67234be7013fab2b30f56520148dc6fee15dc-ItemPurchase.js
+  1:14337  ?"undefined":n(e)));if(T(e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:14361  (e,ArrayBuffer)||e&&T(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:14395  ayBuffer)||"u">typeof SharedArrayBuffer&&(T(e,SharedArrayBuffer)||e&&T(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  1:43028  SetIteratorPrototype%":"u">typeof Set&&I&&j?j(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&j?j(""[Symbol.iterator
+  1:43059  of Set&&I&&j?j(new Set()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&j?j(""[Symbol.iterator]()):o,"%Symbol%":I?Symbol:o,"%
+  1:43079  et()[Symbol.iterator]()):o,"%SharedArrayBuffer%":"u"<typeof SharedArrayBuffer?o:SharedArrayBuffer,"%String%":String,"%StringIteratorPrototype%":I&&j?j(""[Symbol.iterator]()):o,"%Symbol%":I?Symbol:o,"%SyntaxError%":s,"%Th
+  1:46233  RegExpPrototype%":["RegExp","prototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","pro
+  1:46264  ototype"],"%SetPrototype%":["Set","prototype"],"%SharedArrayBufferPrototype%":["SharedArrayBuffer","prototype"],"%StringPrototype%":["String","prototype"],"%SymbolPrototype%":["Symbol","prototype"],"%SyntaxErrorPrototype
+  6:209179  ">typeof document&&"hidden"===document.visibilityState?(r=at(ae(i.map(i9),[],a)).buffer,fetch("".concat(iB()).concat("/v1/events/single"),{method:"POST",headers:{"Content-Type":"application/x-protobuf"},body:r,credential
+https://js.rbxcdn.com/f79f018fd146aa6bc41cb1adde1cdbb5d6a982d93e57f6107a6880153a786a2c-SduiLandingPage.js
+  1:3032  ?"undefined":r(e)));if(E(e,ArrayBuffer)||e&&E(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(E(e,SharedArrayBuffer)||e&&E(e.buffer,SharedArrayBuffer)))return m(e,t,n);if("number"==typeof e)throw TypeError('The "va
+  1:3056  (e,ArrayBuffer)||e&&E(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(E(e,SharedArrayBuffer)||e&&E(e.buffer,SharedArrayBuffer)))return m(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:3090  ayBuffer)||"u">typeof SharedArrayBuffer&&(E(e,SharedArrayBuffer)||e&&E(e.buffer,SharedArrayBuffer)))return m(e,t,n);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+https://js.rbxcdn.com/52270890a7fc237392a8f56bd24232e25e3392a84004d8514f8e26c281dc77fe-ReactLogin.js
+  1:2943  ?"undefined":n(e)));if(k(e,ArrayBuffer)||e&&k(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:2967  (e,ArrayBuffer)||e&&k(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:3001  ayBuffer)||"u">typeof SharedArrayBuffer&&(k(e,SharedArrayBuffer)||e&&k(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  21:118202  ction(h){switch(h.label){case 0:if("u"<typeof CompressionStream)return[2,{body:t.buffer,compressed:!1}];return(r=(e=new CompressionStream("gzip")).writable.getWriter()).write(t).catch(uc),r.close().catch(uc),n=[],[4,(o=e
+https://js.rbxcdn.com/d5ed442140c2fe16d5c061ae4886f43dd204d3fc8079a83120f2fce22d5847c3-ReactLanding.js
+  1:2947  ?"undefined":n(e)));if(I(e,ArrayBuffer)||e&&I(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(I(e,SharedArrayBuffer)||e&&I(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "va
+  1:2971  (e,ArrayBuffer)||e&&I(e.buffer,ArrayBuffer)||"u">typeof SharedArrayBuffer&&(I(e,SharedArrayBuffer)||e&&I(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not b
+  1:3005  ayBuffer)||"u">typeof SharedArrayBuffer&&(I(e,SharedArrayBuffer)||e&&I(e.buffer,SharedArrayBuffer)))return p(e,t,r);if("number"==typeof e)throw TypeError('The "value" argument must not be of type number. Received type nu
+  21:123965  ction(y){switch(y.label){case 0:if("u"<typeof CompressionStream)return[2,{body:t.buffer,compressed:!1}];return(r=(e=new CompressionStream("gzip")).writable.getWriter()).write(t).catch(cd),r.close().catch(cd),n=[],[4,(o=e
+
+total js hits: 170

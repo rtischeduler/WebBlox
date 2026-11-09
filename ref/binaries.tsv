@@ -1,0 +1,7 @@
+url	bytes	sha256	gz_bytes	parts	path
+https://truffled.lol/epoxy/epoxy.wasm	1267216	4e26f08ff06635cddc70b4449145490fd9a00b01fbfe318c2f62b0d22800508e	1267216	1	files/truffled.lol/epoxy/epoxy.wasm
+https://truffled.lol/png/logo.png	54087	bbe83f04bb670efce112a656f753f6545e6baf7700818f6d0ed1c1b37527b1c8	54087	1	files/truffled.lol/png/logo.png
+https://truffled.lol/studying/lesson.wasm	582226	59c03729bde43b44ce8477f36592705c1e6bbc7c5806ed129b364fc67ac2631a	582226	1	files/truffled.lol/studying/lesson.wasm
+https://truffled.lol/fonts/sc-400.woff2	7972	5f8322d9774f38769c182b4bfca0495bde4ba12eba971ca81bd50e4336118fd2	7972	1	files/truffled.lol/fonts/sc-400.woff2
+https://truffled.lol/fonts/sc-500.woff2	7864	a2cee9007f8d3e5328b6eec2c4f633b5fdead1d46cc57fdf61b5d1f12b7ad348	7864	1	files/truffled.lol/fonts/sc-500.woff2
+https://truffled.lol/fonts/sc-600.woff2	8128	6ba33ce9e463d5f26bd6f38c50c9637aca651165dba222505a4d0ed3a796f0e2	8128	1	files/truffled.lol/fonts/sc-600.woff2
