@@ -21,8 +21,8 @@
     msg.textContent = "Connecting to the proxy…";
     await window.proxyTransport.start((t) => { msg.textContent = t; });
     msg.textContent = "Loading WebBlox";
-    await load("Assets/games/webblox/signin.js?v=10");
-    await load("Assets/games/webblox/boot.js?v=9");
+    await load("Assets/games/webblox/signin.js?v=11");
+    await load("Assets/games/webblox/boot.js?v=11");
   } catch (e) {
     console.error(e);
     msg.innerHTML = "";
