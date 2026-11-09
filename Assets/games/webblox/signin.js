@@ -1,6 +1,10 @@
+// Roblox sign-in through Singuloxy (sandstone ProxyFrame + libcurl over wisp), no service worker.
+// The login page is shown in a ProxyFrame; the libcurl session keeps the cookies, and every later
+// Roblox request (webbloxProxyFetch) goes through that same session.
 (() => {
-  let proxyFrame, port, pendingSignIn, finishSignIn, failSignIn, requestId = 0;
-  const requests = new Map();
+  let frame, pendingSignIn, timer;
+  const JAR_KEY = 'proxy_libcurl_jar';
+  const AUTH_URL = 'https://users.roblox.com/v1/users/authenticated';
   try {
     localStorage.removeItem('cobalt-cookies');
     if (localStorage.getItem('webblox.launcher.theme') === 'Truffled') {
@@ -8,80 +12,74 @@
     }
   } catch {}
 
-  window.webbloxProxySignIn = (quiet = false) => {
-    if (pendingSignIn) return pendingSignIn;
-    pendingSignIn = new Promise((resolve, reject) => { finishSignIn = resolve; failSignIn = reject; });
-    proxyFrame = document.createElement('iframe');
-    proxyFrame.title = 'Sign in with Roblox';
-    if (quiet) proxyFrame.hidden = true;
-    else proxyFrame.className = 'session-prompt';
-    proxyFrame.setAttribute('width', '100%');
-    proxyFrame.setAttribute('height', '100%');
-    proxyFrame.setAttribute('frameborder', '0');
-    const url = new URL(WB_ASSETS + 'studying/frame/index.html', location.origin);
-    url.searchParams.set('mode', 'webblox-signin');
-    url.searchParams.set('transport', window.proxyTransport?.getTransport() || 'epoxy');
-    const relay = window.COBALT_WISP_URLS?.[0];
-    if (relay) url.searchParams.set('wisp', relay);
-    const onReady = event => {
-      if (event.origin !== location.origin || event.source !== proxyFrame.contentWindow) return;
-      if (event.data?.type === 'studying-bridge-error') {
-        window.removeEventListener('message', onReady);
-        proxyFrame.remove();
-        pendingSignIn = null;
-        failSignIn(new Error('Could not start Roblox sign-in. Try again.'));
-        return;
-      }
-      if (event.data?.type !== 'studying-bridge-ready') return;
-      window.removeEventListener('message', onReady);
-      const channel = new MessageChannel();
-      port = channel.port1;
-      port.onmessage = ({ data }) => {
-        if (data.needsSignIn && quiet) {
-          proxyFrame.remove();
-          port.close();
-          pendingSignIn = null;
-          finishSignIn(false);
-          return;
-        }
-        if (data.signedIn) {
-          proxyFrame.removeAttribute('class');
-          proxyFrame.hidden = true;
-          finishSignIn(true);
-          return;
-        }
-        const waiting = requests.get(data.id);
-        if (!waiting) return;
-        requests.delete(data.id);
-        clearTimeout(waiting.timeout);
-        if (data.error) waiting.reject(new Error(data.error));
-        else {
-          const empty = [204, 205, 304].includes(data.response.status) || waiting.method === 'HEAD';
-          waiting.resolve(new Response(empty ? null : data.response.body, { status: data.response.status, headers: data.response.headers }));
-        }
-      };
-      proxyFrame.contentWindow.postMessage({ type: 'webblox-memory-connect' }, location.origin, [channel.port2]);
-    };
-    window.addEventListener('message', onReady);
-    proxyFrame.src = url.href;
-    document.body.append(proxyFrame);
-    return pendingSignIn;
+  const hasSecurityCookie = () => {
+    try { return /ROBLOSECURITY\t[^\s]{20,}/.test(localStorage.getItem(JAR_KEY) || ''); } catch { return false; }
   };
-  window.webbloxProxyResume = async () => {
+  const proxy = () => window.proxyTransport.start();
+  const isSignedIn = async () => {
     try {
-      const cache = await caches.open('webblox-session-v1');
-      if (!await cache.match(new URL(WB_ASSETS + 'studying/webblox-session', location.origin).href)) return false;
-      return await window.webbloxProxySignIn(true);
+      const { libcurl } = await proxy();
+      const res = await libcurl.fetch(AUTH_URL, { headers: { accept: 'application/json' } });
+      return res.status === 200 && !!JSON.parse(await res.text()).id;
     } catch { return false; }
   };
-  window.webbloxProxyFetch = async (url, init = {}) => {
-    await window.webbloxProxySignIn();
-    const id = ++requestId;
-    return new Promise((resolve, reject) => {
-      const timeout = setTimeout(() => { requests.delete(id); reject(new Error('The Roblox request timed out.')); }, 30000);
-      requests.set(id, { resolve, reject, timeout, method: init.method || 'GET' });
-      port.postMessage({ id, url: String(url), method: init.method || 'GET', headers: [...new Headers(init.headers || {})], body: init.body ?? null });
-    });
+  const closeFrame = () => {
+    clearInterval(timer);
+    if (frame) { frame.iframe.remove(); frame = null; }
   };
 
+  window.webbloxProxySignIn = (quiet = false) => {
+    if (pendingSignIn) return pendingSignIn;
+    const run = (async () => {
+      if (await isSignedIn()) return true;
+      if (quiet) return false;
+      const st = await proxy();
+      const { ProxyFrame } = st.sandstone.controller;
+      frame = new ProxyFrame();
+      frame.iframe.title = 'Sign in with Roblox';
+      frame.iframe.className = 'session-prompt';
+      frame.iframe.setAttribute('allow', 'autoplay; fullscreen; clipboard-write');
+      Object.assign(frame.iframe.style, { position: 'fixed', inset: '0', width: '100%', height: '100%', border: '0', background: '#fff', zIndex: 2147483000 });
+      document.body.append(frame.iframe);
+      await frame.wait_for_libcurl();
+      frame.navigate_to('https://www.roblox.com/login').catch(e => console.warn('[signin] navigate failed', e));
+      return new Promise((resolve, reject) => {
+        const started = Date.now();
+        let busy = false;
+        timer = setInterval(async () => {
+          if (busy) return;
+          if (Date.now() - started > 15 * 60000) { closeFrame(); return reject(new Error('Roblox sign-in timed out.')); }
+          if (!hasSecurityCookie()) return;
+          busy = true;
+          try { if (await isSignedIn()) { closeFrame(); resolve(true); } }
+          finally { busy = false; }
+        }, 2000);
+      });
+    })();
+    pendingSignIn = run.finally(() => { pendingSignIn = null; });
+    return pendingSignIn;
+  };
+
+  window.webbloxProxyResume = async () => {
+    try { return await window.webbloxProxySignIn(true); } catch { return false; }
+  };
+
+  window.webbloxProxyFetch = async (url, init = {}) => {
+    if (!(await window.webbloxProxySignIn())) throw new Error('Not signed in to Roblox.');
+    const { libcurl } = await proxy();
+    const headers = {};
+    for (const [k, v] of new Headers(init.headers || {})) {
+      if (!['cookie', 'host', 'content-length'].includes(k.toLowerCase())) headers[k] = v;
+    }
+    let body = init.body ?? undefined;
+    if (body instanceof Blob) body = await body.arrayBuffer();
+    const method = init.method || 'GET';
+    const res = await libcurl.fetch(String(url), { method, headers, body, redirect: 'follow' });
+    const out = new Headers();
+    for (const [k, v] of res.headers.entries()) {
+      if (!['set-cookie', 'content-encoding', 'content-length', 'transfer-encoding'].includes(k.toLowerCase())) out.append(k, v);
+    }
+    const empty = [204, 205, 304].includes(res.status) || method === 'HEAD';
+    return new Response(empty ? null : await res.arrayBuffer(), { status: res.status, headers: out });
+  };
 })();
