@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WebBlox</title>
+<style>html,body{margin:0;height:100%;background:#18191c;color:#bdbebe;font:14px system-ui,sans-serif}#wb-wait{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px}#wb-wait button{margin-top:12px;padding:8px 16px;border:0;border-radius:6px;background:#335fff;color:#fff;font:inherit;cursor:pointer}</style>
+<script>
+  window.WB_ASSETS = new URL("Assets/", document.baseURI).pathname;
+  window.WB_ROOT = new URL("./", document.baseURI).pathname;
+</script>
+</head><body><div id="wb-wait"><div id="wb-msg">Loading WebBlox</div></div>
+<script src="Assets/js/proxy-transport.js"></script>
+<script>
+(async () => {
+  const msg = document.getElementById("wb-msg");
+  const load = (src) => new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error("Could not load " + src));
+    document.body.appendChild(s);
+  });
+  try {
+    msg.textContent = "Connecting to the proxy…";
+    await window.proxyTransport.start((t) => { msg.textContent = t; });
+    msg.textContent = "Loading WebBlox";
+    await load("Assets/games/webblox/signin.js?v=10");
+    await load("Assets/games/webblox/boot.js?v=9");
+  } catch (e) {
+    console.error(e);
+    msg.innerHTML = "";
+    msg.append((e && e.message) || "WebBlox failed to start.");
+    const b = document.createElement("div");
+    b.innerHTML = "<button type=button>Try again</button>";
+    b.firstChild.onclick = () => location.reload();
+    msg.append(b);
+  }
+})();
+</script>
+</body></html>
