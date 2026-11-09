@@ -5,11 +5,11 @@ on:
       start_url:
         description: Page to start crawling from
         required: true
-        default: https://play.roblox.com/games/start
+        default: https://truffled.lol/games/webblox/index.html
       out_dir:
         description: Folder in the repo for the results
         required: true
-        default: Ref
+        default: ref
 
 jobs:
   crawl:

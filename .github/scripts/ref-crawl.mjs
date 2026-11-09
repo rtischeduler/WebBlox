@@ -3,14 +3,15 @@ import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 
-const start = process.argv[2] || "https://play.roblox.com/games/start";
-const out_dir = process.argv[3] || "Ref";
+const start = process.argv[2] || "https://truffled.lol/games/webblox/index.html";
+const out_dir = process.argv[3] || "ref";
 const MAX_FETCHES = 2500;
 const MAX_DEPTH = 6;
 const MAX_TEXT = 8 * 1024 * 1024;
 const PART_SIZE = 40 * 1024 * 1024;
 const WORKERS = 8;
-const HOSTS = /(^|\.)(roblox\.com|rbxcdn\.com)$/i;
+const HOSTS = /(^|\.)(truffled\.lol|roblox\.com|rbxcdn\.com)$/i;
+const OURS = /(^|\.)truffled\.lol$/i;
 const DENY = /^(devforum|devforum-uploads|create|help|en\.help|corp|blog|about|prod\.docsiteassets|assets\.create)(\.|-)|docsiteassets|devforum/i;
 const TEXTUAL = /(javascript|json|html|css|xml|text\/)/i;
 const BINARY_EXT = /\.(wasm|data|bin|png|jpe?g|gif|webp|svg|woff2?|ttf|ico|mp3|ogg|zip|br|gz)(\?|#|$)/i;
@@ -73,6 +74,13 @@ function save_path(url) {
 }
 
 function saveBinary(url, buffer) {
+  if (OURS.test(new URL(url).hostname) && buffer.length < PART_SIZE) {
+    const raw = save_path(url);
+    mkdirSync(dirname(raw), { recursive: true });
+    writeFileSync(raw, buffer);
+    binaries.push([url, buffer.length, createHash("sha256").update(buffer).digest("hex"), buffer.length, 1, raw.slice(out_dir.length + 1)].join("\t"));
+    return;
+  }
   const file = save_path(url) + ".gz";
   mkdirSync(dirname(file), { recursive: true });
   const gz = gzipSync(buffer, { level: 9 });
@@ -99,7 +107,8 @@ async function visit(item) {
   fetched++;
 
   const binary = BINARY_EXT.test(url);
-  const full = FULL_EXT.test(url) && /rbxcdn\.com$/i.test(parsed.hostname);
+  const ours = OURS.test(parsed.hostname);
+  const full = ours ? binary : FULL_EXT.test(url) && /rbxcdn\.com$/i.test(parsed.hostname);
   const headers = { "User-Agent": UA, "Accept": "*/*", "Accept-Language": "en-US,en;q=0.9" };
   if (/rbxcdn\.com$/i.test(parsed.hostname)) {
     headers["Origin"] = "https://play.roblox.com";
@@ -284,7 +293,7 @@ function sabReport() {
 
 mkdirSync(out_dir, { recursive: true });
 note(start, "");
-await resolve_loader();
+if (/(^|\.)(roblox\.com|rbxcdn\.com)$/i.test(new URL(start).hostname)) await resolve_loader();
 await Promise.all(Array.from({ length: WORKERS }, () => worker()));
 
 rows.sort((a, b) => String(a[4]).localeCompare(String(b[4])));

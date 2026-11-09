@@ -1,4 +1,0 @@
-var Roblox = Roblox || {};
-Roblox.LangDynamic = Roblox.LangDynamic || {};
-Roblox.LangDynamic["Feature.BiometricChallenge"] = {"Title.ConfirmHuman":"Konfirmasi bahwa kamu manusia","Content.LivenessHostedPrompt":"Buka browser eksternal dan ambil swafoto cepat untuk mengonfirmasi bahwa kamu adalah manusia.","Action.Continue":"Lanjutkan","Action.Cancel":"Batalkan","Content.Loading":"Loading...","Title.QRHandoff":"Konfirmasi bahwa kamu manusia dengan aplikasi seluler","Content.ScanQR":"Scan kode QR ini dengan ponsel atau tabletmu untuk membuka akunmu.","Content.QRHelpPrompt":"Tidak bisa scan?","Content.QRHelpFull":"{prompt} Download aplikasi Roblox di perangkat selulermu dan coba lagi dari sana."};
-window.Roblox && window.Roblox.BundleDetector && window.Roblox.BundleDetector.bundleDetected("DynamicLocalizationResourceScript_Feature.BiometricChallenge");
